@@ -11,6 +11,7 @@
   /* add: muted‐gold (70% opacity over dark bg) */
   --muted-gold:   rgba(212, 175, 55, 0.7);
   --shadow-light: rgba(255,255,255,0.05);
+  --profile-gap: 0.2rem;
 }
 
 /*──────────────────────────────────────────────────────────────────────────────
@@ -76,7 +77,6 @@ body {
 
 .profile-meta .affiliation {
   font-size: 1.1rem;       /* a hair larger */
-  margin-bottom: 0.1rem;
   color: var(--text);      /* full silver/white */
 } 
 
@@ -88,7 +88,7 @@ body {
 .profile-meta .contact a {
   color: var(--accent-gold);
   text-decoration: none;
-  margin-left: 0.3rem;
+  /*margin-left: 0.3rem;*/
 }
 
 .profile-meta .contact a:hover {
@@ -97,7 +97,7 @@ body {
 }
 
 .social-links {
-  margin-top: 0.5rem;
+  /*margin-top: 0.5rem;*/
   display: inline-flex;
   gap: 0.5rem;
   font-size: 0.95rem;      /* match the email */
@@ -112,6 +112,15 @@ body {
 .social-links a:hover {
   color: var(--accent-gold);
   text-decoration: underline;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────────
+   2. Apply uniform vertical spacing
+─────────────────────────────────────────────────────────────────────────────── */
+.profile-meta .affiliation,
+.profile-meta .contact,
+.social-links {
+  margin: var(--profile-gap) 0;
 }
 
 /*──────────────────────────────────────────────────────────────────────────────
