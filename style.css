@@ -1,0 +1,118 @@
+/* 1. Base resets & type scale */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, serif;
+  line-height: 1.6;
+  color: #222;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 2. Profile header layout */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  /* optional: add subtle shadow */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-meta .name {
+  font-size: 2.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.profile-meta .title {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 0.1rem;
+}
+
+.profile-meta .affiliation {
+  font-size: 1rem;
+  margin-bottom: 0.1rem;
+}
+
+.profile-meta .contact {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.profile-meta .contact a {
+  color: #555;
+  text-decoration: none;
+  margin-left: 0.3rem;
+}
+
+.profile-meta .contact a:hover {
+  text-decoration: underline;
+}
+
+/* 3. Dashed divider */
+.divider {
+  border: none;
+  border-top: 1px dashed #ccc;
+  margin: 1.5rem 0;
+}
+
+/* 4. Intro paragraph styling */
+.intro p {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.intro a {
+  color: #1a0dab;
+  text-decoration: none;
+}
+
+.intro a:hover {
+  text-decoration: underline;
+}
+
+/* 5. Highlighted CTA text */
+.highlight {
+  color: #9e6f21;       /* a warm accent color */
+  font-weight: bold;
+}
+
+/* 6. Section headings */
+section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.2rem;
+  margin-top: 2rem;
+}
+
+/* 7. Footer */
+footer {
+  margin-top: 3rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+footer a {
+  color: #1a0dab;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
