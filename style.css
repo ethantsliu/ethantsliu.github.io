@@ -1,4 +1,26 @@
-/* 1. Base resets & type scale */
+/*──────────────────────────────────────────────────────────────────────────────
+  0. Color variables
+──────────────────────────────────────────────────────────────────────────────*/
+:root {
+  --bg:           #121212;   /* dark charcoal */
+  --text:         #ddd;      /* off-white / silver */
+  --muted:        #888;      /* secondary text */
+  --divider:      #333;      /* fallback divider */
+  --accent-gold:  #d4af37;   /* gold */
+  --accent-sage:  #9caf88;   /* sage green */
+  --shadow-light: rgba(255,255,255,0.05);
+}
+
+/*──────────────────────────────────────────────────────────────────────────────
+  1. Ensure full‐viewport background
+──────────────────────────────────────────────────────────────────────────────*/
+html {
+  background-color: var(--bg);
+}
+
+/*──────────────────────────────────────────────────────────────────────────────
+  2. Base resets & body styles
+──────────────────────────────────────────────────────────────────────────────*/
 *,
 *::before,
 *::after {
@@ -8,15 +30,18 @@
 }
 
 body {
+  background-color: var(--bg);
+  color: var(--text);
   font-family: Georgia, serif;
   line-height: 1.6;
-  color: #222;
   padding: 2rem;
   max-width: 900px;
   margin: 0 auto;
 }
 
-/* 2. Profile header layout */
+/*──────────────────────────────────────────────────────────────────────────────
+  3. Profile header & avatar
+──────────────────────────────────────────────────────────────────────────────*/
 .profile-header {
   display: flex;
   align-items: center;
@@ -29,90 +54,120 @@ body {
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  /* optional: add subtle shadow */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px var(--shadow-light);
 }
 
+/*──────────────────────────────────────────────────────────────────────────────
+  4. Profile text metadata
+──────────────────────────────────────────────────────────────────────────────*/
 .profile-meta .name {
   font-size: 2.5rem;
   margin-bottom: 0.2rem;
+  color: var(--text);
 }
 
-.profile-meta .title {
-  font-size: 1.1rem;
-  font-weight: 400;
-  margin-bottom: 0.1rem;
-}
-
+.profile-meta .title,
 .profile-meta .affiliation {
   font-size: 1rem;
   margin-bottom: 0.1rem;
+  color: var(--muted);
 }
 
 .profile-meta .contact {
   font-size: 0.95rem;
-  color: #555;
+  color: var(--muted);
 }
 
 .profile-meta .contact a {
-  color: #555;
+  color: var(--accent-gold);
   text-decoration: none;
   margin-left: 0.3rem;
 }
 
 .profile-meta .contact a:hover {
+  color: var(--accent-sage);
   text-decoration: underline;
 }
 
-/* 3. Dashed divider */
+/*──────────────────────────────────────────────────────────────────────────────
+  5. Divider (sage green)
+──────────────────────────────────────────────────────────────────────────────*/
 .divider {
   border: none;
-  border-top: 1px dashed #ccc;
+  border-top: 1px dashed var(--accent-sage);
   margin: 1.5rem 0;
 }
 
-/* 4. Intro paragraph styling */
+/*──────────────────────────────────────────────────────────────────────────────
+  6. Intro paragraphs & links
+──────────────────────────────────────────────────────────────────────────────*/
 .intro p {
   margin-bottom: 1rem;
   font-size: 1.05rem;
+  color: var(--text);
 }
 
 .intro a {
-  color: #1a0dab;
+  color: var(--accent-gold);
   text-decoration: none;
 }
 
 .intro a:hover {
+  color: var(--accent-sage);
   text-decoration: underline;
 }
 
-/* 5. Highlighted CTA text */
+/*──────────────────────────────────────────────────────────────────────────────
+  7. Call-to-action highlights
+──────────────────────────────────────────────────────────────────────────────*/
 .highlight {
-  color: #9e6f21;       /* a warm accent color */
+  color: var(--accent-gold);
   font-weight: bold;
 }
 
-/* 6. Section headings */
+.highlight-sage {
+  background-color: var(--accent-sage);
+  color: var(--bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/*──────────────────────────────────────────────────────────────────────────────
+  8. Section headings (sage underline)
+──────────────────────────────────────────────────────────────────────────────*/
 section h2 {
   font-size: 1.6rem;
-  margin-bottom: 0.5rem;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 0.2rem;
   margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid var(--accent-sage);
+  color: var(--text);
 }
 
-/* 7. Footer */
-footer {
-  margin-top: 3rem;
-  font-size: 0.95rem;
-  color: #555;
-}
-
-footer a {
-  color: #1a0dab;
+/*──────────────────────────────────────────────────────────────────────────────
+  9. Global links & footer
+──────────────────────────────────────────────────────────────────────────────*/
+a {
+  color: var(--accent-gold);
   text-decoration: none;
 }
 
-footer a:hover {
+a:hover {
+  color: var(--accent-sage);
   text-decoration: underline;
+}
+
+footer {
+  margin-top: 3rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+footer a {
+  color: var(--accent-gold);
+}
+
+footer a:hover {
+  color: var(--accent-sage);
 }
