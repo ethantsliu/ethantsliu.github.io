@@ -8,6 +8,8 @@
   --divider:      #333;      /* fallback divider */
   --accent-gold:  #d4af37;   /* gold */
   --accent-sage:  #9caf88;   /* sage green */
+  /* add: muted‐gold (70% opacity over dark bg) */
+  --muted-gold:   rgba(212, 175, 55, 0.7);
   --shadow-light: rgba(255,255,255,0.05);
 }
 
@@ -66,16 +68,21 @@ body {
   color: var(--text);
 }
 
-.profile-meta .title,
-.profile-meta .affiliation {
+.profile-meta .title {
   font-size: 1rem;
   margin-bottom: 0.1rem;
   color: var(--muted);
 }
 
+.profile-meta .affiliation {
+  font-size: 1.1rem;       /* a hair larger */
+  margin-bottom: 0.1rem;
+  color: var(--text);      /* full silver/white */
+} 
+
 .profile-meta .contact {
   font-size: 0.95rem;
-  color: var(--muted);
+  color: var(--muted-gold);  
 }
 
 .profile-meta .contact a {
@@ -89,12 +96,30 @@ body {
   text-decoration: underline;
 }
 
+.social-links {
+  margin-top: 0.5rem;
+  display: inline-flex;
+  gap: 0.5rem;
+  font-size: 0.95rem;      /* match the email */
+  color: var(--muted);
+}
+
+.social-links a {
+  color: var(--accent-sage);
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: var(--accent-gold);
+  text-decoration: underline;
+}
+
 /*──────────────────────────────────────────────────────────────────────────────
   5. Divider (sage green)
 ──────────────────────────────────────────────────────────────────────────────*/
 .divider {
   border: none;
-  border-top: 1px dashed var(--accent-sage);
+  border-top: 1px dashed var(--accent-gold);
   margin: 1.5rem 0;
 }
 
