@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Ethan Liu | Stuff</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="header-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+    <div style="font-size: 2.5rem; color: #111; font-weight: normal; font-family: 'Baskerville', 'Georgia', serif; letter-spacing: -0.5px;">Ethan Liu</div>
+    <nav class="main-nav" style="display: flex; gap: 2rem; align-items: center; font-size: 1.08rem;">
+      <a href="index.html">about</a>
+      <a href="stuff.html" style="color: var(--accent-gold); text-decoration: underline;">stuff</a>
+      <a href="writing.html">writing</a>
+    </nav>
+  </div>
+
+  <div style="max-width: 900px; margin: 2rem auto; display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
+    <div style="flex: 1 1 200px; min-width: 180px;">
+      <a href="Math DRP Sample Reduction.pdf" target="_blank" class="sage-link" style="font-size: 1.08rem; font-family: 'Baskerville', 'Georgia', serif;">sample reduction</a>
+    </div>
+    <div style="flex: 2 1 350px; min-width: 220px; font-size: 1.08rem; color: var(--text); font-family: 'Baskerville', 'Georgia', serif;">
+      representative sampling with numerous methods, advised by <a href="https://math.berkeley.edu/people/graduate-students" target="_blank" class="sage-link">Luke Triplett</a>
+    </div>
+  </div>
+
+  <div style="max-width: 900px; margin: 2rem auto; display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
+    <div style="flex: 1 1 200px; min-width: 180px;">
+      <a href="https://github.com/ethantsliu/ChessBuddy" target="_blank" class="sage-link" style="font-size: 1.08rem; font-family: 'Baskerville', 'Georgia', serif;">chess game</a>
+    </div>
+    <div style="flex: 2 1 350px; min-width: 220px; font-size: 1.08rem; color: var(--text); font-family: 'Baskerville', 'Georgia', serif;">
+      play chess alone or with a friend</a>
+    </div>
+  </div>
+
+  <div style="max-width: 900px; margin: 2rem auto; display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
+    <div style="flex: 1 1 200px; min-width: 180px;">
+      <a href="deficiencies.pdf" target="_blank" class="sage-link" style="font-size: 1.08rem; font-family: 'Baskerville', 'Georgia', serif;">deficiencies in networks</a>
+    </div>
+    <div style="flex: 2 1 350px; min-width: 220px; font-size: 1.08rem; color: var(--text); font-family: 'Baskerville', 'Georgia', serif;">
+      optimization methods for communication deficiencies, advised by <a href="https://brycelferguson.github.io/" target="_blank" class="sage-link">Bryce Ferguson</a>
+    </div>
+  </div>
+
+  <footer>
+    <p style="text-align:center; color: var(--muted); margin-top: 3rem; font-size: 0.95rem;">
+      Feel free to <a href="mailto:ethantsliu@berkeley.edu">reach out</a> if you're interested in collaborating or learning more about my work!
+    </p>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.sage-link').forEach(function(link) {
+        link.addEventListener('mouseenter', function(e) {
+          // Force repaint
+          e.target.style.outline = '1px solid transparent';
+          setTimeout(() => { e.target.style.outline = ''; }, 10);
+        });
+      });
+    });
+  </script>
+</body>
+</html> 

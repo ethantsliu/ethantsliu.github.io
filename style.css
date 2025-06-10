@@ -222,14 +222,35 @@ header {
   padding-top: 0;
 }
 
-.main-nav a {
-  color: var(--accent-sage);
-  text-decoration: none;
+nav.main-nav a,
+.header-bar .main-nav a,
+.sage-link {
+  color: var(--accent-sage) !important;
+  text-decoration: none !important;
   font-weight: normal;
   transition: color 0.2s;
 }
 
-.main-nav a:hover {
-  color: var(--accent-gold);
-  text-decoration: underline;
+nav.main-nav a:visited,
+.header-bar .main-nav a:visited,
+.sage-link:visited {
+  color: var(--accent-sage) !important;
+  text-decoration: none !important;
+}
+
+nav.main-nav a:hover,
+.header-bar .main-nav a:hover,
+.sage-link:hover {
+  color: var(--accent-gold) !important;
+  text-decoration: underline !important;
+}
+
+nav.main-nav a:active,
+nav.main-nav a:focus,
+.header-bar .main-nav a:active,
+.header-bar .main-nav a:focus,
+.sage-link:active,
+.sage-link:focus {
+  color: var(--accent-sage) !important;
+  text-decoration: none !important;
 }
