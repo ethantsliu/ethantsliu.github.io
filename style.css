@@ -48,7 +48,8 @@ body {
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .profile-image {
@@ -209,4 +210,26 @@ footer a {
 
 footer a:hover {
   color: var(--accent-sage);
+}
+
+header {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.profile-meta {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.main-nav a {
+  color: var(--accent-sage);
+  text-decoration: none;
+  font-weight: normal;
+  transition: color 0.2s;
+}
+
+.main-nav a:hover {
+  color: var(--accent-gold);
+  text-decoration: underline;
 }
