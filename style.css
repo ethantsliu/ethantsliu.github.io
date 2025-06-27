@@ -254,3 +254,151 @@ nav.main-nav a:focus,
   color: var(--accent-sage) !important;
   text-decoration: none !important;
 }
+
+/*──────────────────────────────────────────────────────────────────────────────
+ 10. Work Experience Timeline (light mode)
+──────────────────────────────────────────────────────────────────────────────*/
+.work-section {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.work-heading {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px dashed var(--divider);
+  color: #181818;
+  font-weight: normal;
+  letter-spacing: -0.5px;
+  font-family: 'Baskerville', 'Georgia', serif;
+}
+
+.work-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  margin-left: 0;
+  padding-left: 0;
+  border-left: none;
+  position: relative;
+}
+
+.work-entry {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 4.2rem;
+  gap: 2.1rem;
+  position: relative;
+}
+
+.work-icon, .work-icon-wide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0;
+}
+
+.work-icon {
+  width: 4.2rem;
+  height: 4.2rem;
+  background: none;
+  border-radius: 0.7rem;
+  box-shadow: none;
+  font-size: 2.8rem;
+  color: var(--accent-gold);
+  border: none;
+}
+
+.work-icon-wide {
+  align-items: center;
+  justify-content: center;
+  height: 4.2rem;
+}
+
+.work-icon img, .work-icon svg,
+.work-icon.work-icon-wide img, .work-icon.work-icon-wide svg {
+  display: block;
+  margin: auto;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.work-entry:not(:last-child) .work-icon::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 0.09rem;
+  height: 3.2rem;
+  background: rgba(191, 169, 74, 0.35);
+  z-index: 0;
+}
+
+.work-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  text-align: left;
+}
+
+.work-title {
+  font-size: 1.13rem;
+  font-weight: 500;
+  color: #181818;
+  font-family: 'Baskerville', 'Georgia', serif;
+  letter-spacing: 0.01em;
+}
+
+.work-role {
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+  font-family: 'Baskerville', 'Georgia', serif;
+}
+
+.work-dates {
+  font-size: 0.98rem;
+  color: var(--muted);
+  margin-left: 0;
+  font-family: 'Baskerville', 'Georgia', serif;
+  margin-top: 0.05rem;
+}
+
+.work-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+@media (max-width: 600px) {
+  .work-timeline {
+    gap: 1.5rem;
+  }
+  .work-entry {
+    gap: 0.7rem;
+  }
+  .work-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+  }
+  .work-icon-wide {
+    width: 3.2rem;
+    height: 1.3rem;
+  }
+  .work-icon img, .work-icon svg,
+  .work-icon.work-icon-wide img, .work-icon.work-icon-wide svg {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .work-entry:not(:last-child) .work-icon::after {
+    height: 1.5rem;
+  }
+}
