@@ -374,7 +374,18 @@ nav.main-nav a:focus,
 .work-title-row {
   display: flex;
   align-items: baseline;
-  gap: 0.4rem;
+  gap: 0;
+}
+
+.work-title, .work-dot, .work-dates {
+  font-size: 1.13rem;
+  line-height: 1.3;
+}
+
+.work-dot {
+  color: #181818;
+  margin: 0 0.6em;
+  font-weight: 500;
 }
 
 @media (max-width: 600px) {
