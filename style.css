@@ -1,15 +1,13 @@
 /*──────────────────────────────────────────────────────────────────────────────
-  0. Color variables (updated for light theme)
+  0. Color variables (minimal black and white theme)
 ──────────────────────────────────────────────────────────────────────────────*/
 :root {
-  --bg:           #fafaf8;   /* very light gray */
-  --text:         #222;      /* almost black */
-  --muted:        #888;      /* secondary text */
-  --divider:      #e0e0dc;   /* light divider */
-  --accent-gold:  #bfa94a;   /* more subtle gold */
-  --accent-sage:  #9caf88;   /* sage green */
-  --muted-gold:   rgba(191, 169, 74, 0.7); /* updated gold */
-  --shadow-light: rgba(0,0,0,0.04);
+  --bg:           #ffffff;   /* pure white */
+  --text:         #000000;   /* pure black */
+  --muted:        #666666;   /* dark gray for secondary text */
+  --divider:      #e0e0e0;   /* light gray divider */
+  --accent:       #000000;   /* black accent */
+  --shadow-light: rgba(0,0,0,0.1);
   --profile-gap: 0.2rem;
 }
 
@@ -34,7 +32,8 @@ html {
 body {
   background-color: var(--bg);
   color: var(--text);
-  font-family: 'Baskerville', 'Georgia', serif;
+  font-family: 'Iowan Old Style BT Roman', 'Iowan Old Style', Palatino, serif;
+  font-weight: 400;
   line-height: 1.7;
   padding: 2rem;
   max-width: 900px;
@@ -66,8 +65,8 @@ body {
 .profile-meta .name {
   font-size: 2.5rem;
   margin-bottom: 0.2rem;
-  color: #111;
-  font-weight: normal;
+  color: var(--text);
+  font-weight: 400;
   letter-spacing: -0.5px;
 }
 
@@ -85,17 +84,17 @@ body {
 
 .profile-meta .contact {
   font-size: 0.95rem;
-  color: var(--muted-gold);
+  color: var(--muted);
 }
 
 .profile-meta .contact a {
-  color: var(--accent-gold);
+  color: var(--text);
   text-decoration: none;
   /*margin-left: 0.3rem;*/
 }
 
 .profile-meta .contact a:hover {
-  color: var(--accent-sage);
+  color: var(--muted);
   text-decoration: underline;
 }
 
@@ -107,12 +106,12 @@ body {
 }
 
 .social-links a {
-  color: var(--accent-sage);
+  color: var(--text);
   text-decoration: none;
 }
 
 .social-links a:hover {
-  color: var(--accent-gold);
+  color: var(--muted);
   text-decoration: underline;
 }
 
@@ -144,13 +143,13 @@ body {
 }
 
 .intro a {
-  color: var(--accent-gold);
+  color: var(--text);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .intro a:hover {
-  color: var(--accent-sage);
+  color: var(--muted);
   text-decoration: underline;
 }
 
@@ -158,12 +157,12 @@ body {
   7. Call-to-action highlights
 ──────────────────────────────────────────────────────────────────────────────*/
 .highlight {
-  color: var(--accent-gold);
+  color: var(--text);
   font-weight: bold;
 }
 
 .highlight-sage {
-  background-color: var(--accent-sage);
+  background-color: var(--text);
   color: var(--bg);
   padding: 0.2em 0.4em;
   border-radius: 4px;
@@ -178,9 +177,9 @@ section h2 {
   margin-top: 2rem;
   margin-bottom: 0.5rem;
   padding-bottom: 0.2rem;
-  border-bottom: 2px solid var(--accent-sage);
-  color: #181818;
-  font-weight: 700;
+  border-bottom: 2px solid var(--text);
+  color: var(--text);
+  font-weight: 400;
   letter-spacing: -0.5px;
 }
 
@@ -188,13 +187,13 @@ section h2 {
   9. Global links & footer
 ──────────────────────────────────────────────────────────────────────────────*/
 a {
-  color: var(--accent-gold);
+  color: var(--text);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 a:hover {
-  color: var(--accent-sage);
+  color: var(--muted);
   text-decoration: underline;
 }
 
@@ -205,11 +204,11 @@ footer {
 }
 
 footer a {
-  color: var(--accent-gold);
+  color: var(--text);
 }
 
 footer a:hover {
-  color: var(--accent-sage);
+  color: var(--muted);
 }
 
 header {
@@ -225,7 +224,7 @@ header {
 nav.main-nav a,
 .header-bar .main-nav a,
 .sage-link {
-  color: var(--accent-sage) !important;
+  color: var(--text) !important;
   text-decoration: none !important;
   font-weight: normal;
   transition: color 0.2s;
@@ -234,14 +233,14 @@ nav.main-nav a,
 nav.main-nav a:visited,
 .header-bar .main-nav a:visited,
 .sage-link:visited {
-  color: var(--accent-sage) !important;
+  color: var(--text) !important;
   text-decoration: none !important;
 }
 
 nav.main-nav a:hover,
 .header-bar .main-nav a:hover,
 .sage-link:hover {
-  color: var(--accent-gold) !important;
+  color: var(--muted) !important;
   text-decoration: underline !important;
 }
 
@@ -251,7 +250,7 @@ nav.main-nav a:focus,
 .header-bar .main-nav a:focus,
 .sage-link:active,
 .sage-link:focus {
-  color: var(--accent-sage) !important;
+  color: var(--text) !important;
   text-decoration: none !important;
 }
 
@@ -269,10 +268,10 @@ nav.main-nav a:focus,
   margin-bottom: 0.5rem;
   padding-bottom: 0.2rem;
   border-bottom: 2px dashed var(--divider);
-  color: #181818;
-  font-weight: normal;
+  color: var(--text);
+  font-weight: 400;
   letter-spacing: -0.5px;
-  font-family: 'Baskerville', 'Georgia', serif;
+  font-family: 'Iowan Old Style BT Roman', 'Iowan Old Style', Palatino, serif;
 }
 
 .work-timeline {
@@ -309,7 +308,7 @@ nav.main-nav a:focus,
   border-radius: 0.7rem;
   box-shadow: none;
   font-size: 2.8rem;
-  color: var(--accent-gold);
+  color: var(--text);
   border: none;
 }
 
@@ -336,7 +335,7 @@ nav.main-nav a:focus,
   transform: translateX(-50%);
   width: 0.09rem;
   height: 3.2rem;
-  background: rgba(191, 169, 74, 0.35);
+  background: var(--muted);
   z-index: 0;
 }
 
@@ -350,9 +349,9 @@ nav.main-nav a:focus,
 
 .work-title {
   font-size: 1.13rem;
-  font-weight: 500;
-  color: #181818;
-  font-family: 'Baskerville', 'Georgia', serif;
+  font-weight: 400;
+  color: var(--text);
+  font-family: 'Iowan Old Style BT Roman', 'Iowan Old Style', Palatino, serif;
   letter-spacing: 0.01em;
 }
 
@@ -360,14 +359,14 @@ nav.main-nav a:focus,
   font-size: 1.05rem;
   color: var(--muted);
   margin-top: 0.15rem;
-  font-family: 'Baskerville', 'Georgia', serif;
+  font-family: 'Iowan Old Style BT Roman', 'Iowan Old Style', Palatino, serif;
 }
 
 .work-dates {
   font-size: 0.98rem;
   color: var(--muted);
   margin-left: 0;
-  font-family: 'Baskerville', 'Georgia', serif;
+  font-family: 'Iowan Old Style BT Roman', 'Iowan Old Style', Palatino, serif;
   margin-top: 0.05rem;
 }
 
@@ -383,9 +382,9 @@ nav.main-nav a:focus,
 }
 
 .work-dot {
-  color: #181818;
+  color: var(--text);
   margin: 0 0.6em;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 @media (max-width: 600px) {
