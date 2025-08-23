@@ -36,15 +36,112 @@ body {
   font-weight: 400;
   line-height: 1.7;
   padding: 2rem;
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
+  text-align: center;
 }
 
 /*──────────────────────────────────────────────────────────────────────────────
-  3. Profile header & avatar
+  3. Header and Navigation
+──────────────────────────────────────────────────────────────────────────────*/
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.name-title {
+  font-size: 2.5rem;
+  color: var(--text);
+  font-weight: 400;
+  font-family: 'Iowan Old Style BT Roman', 'Iowan Old Style', Palatino, serif;
+  letter-spacing: -0.5px;
+  margin: 0;
+  text-align: center;
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background: none;
+  border: 1px solid var(--text);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.dropdown-btn:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--bg);
+  min-width: 120px;
+  box-shadow: 0 2px 8px var(--shadow-light);
+  z-index: 1;
+  border: 1px solid var(--divider);
+  border-radius: 4px;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.dropdown-content a {
+  color: var(--text);
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--divider);
+}
+
+/* Remove hover-based display since we're using JavaScript */
+
+/*──────────────────────────────────────────────────────────────────────────────
+  4. Main content container
+──────────────────────────────────────────────────────────────────────────────*/
+.main-content {
+  text-align: left;
+  max-width: 100%;
+}
+
+/*──────────────────────────────────────────────────────────────────────────────
+  5. Profile header & avatar
 ──────────────────────────────────────────────────────────────────────────────*/
 .profile-header {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 2rem;
   margin-bottom: 0;
@@ -60,7 +157,7 @@ body {
 }
 
 /*──────────────────────────────────────────────────────────────────────────────
-  4. Profile text metadata (heading & muted)
+  6. Profile text metadata (heading & muted)
 ──────────────────────────────────────────────────────────────────────────────*/
 .profile-meta .name {
   font-size: 2.5rem;
@@ -85,12 +182,12 @@ body {
 .profile-meta .contact {
   font-size: 0.95rem;
   color: var(--muted);
+  text-align: center;
 }
 
 .profile-meta .contact a {
   color: var(--text);
   text-decoration: none;
-  /*margin-left: 0.3rem;*/
 }
 
 .profile-meta .contact a:hover {
@@ -103,6 +200,8 @@ body {
   gap: 0.5rem;
   font-size: 0.95rem;
   color: var(--muted);
+  text-align: center;
+  justify-content: center;
 }
 
 .social-links a {
@@ -116,7 +215,7 @@ body {
 }
 
 /* ──────────────────────────────────────────────────────────────────────────────
-   2. Apply uniform vertical spacing
+   7. Apply uniform vertical spacing
 ─────────────────────────────────────────────────────────────────────────────── */
 .profile-meta .affiliation,
 .profile-meta .contact,
@@ -125,21 +224,23 @@ body {
 }
 
 /*──────────────────────────────────────────────────────────────────────────────
-  5. Divider (lighter)
+  8. Divider (lighter)
 ──────────────────────────────────────────────────────────────────────────────*/
 .divider {
   border: none;
   border-top: 1px dashed var(--divider);
-  margin: 1.5rem 0;
+  margin: 1.5rem auto;
+  max-width: 600px;
 }
 
 /*──────────────────────────────────────────────────────────────────────────────
-  6. Intro paragraphs & links
+  9. Intro paragraphs & links
 ──────────────────────────────────────────────────────────────────────────────*/
 .intro p {
   margin-bottom: 1rem;
   font-size: 1.08rem;
   color: var(--text);
+  text-align: left;
 }
 
 .intro a {
@@ -154,7 +255,39 @@ body {
 }
 
 /*──────────────────────────────────────────────────────────────────────────────
-  7. Call-to-action highlights
+  10. Research section
+──────────────────────────────────────────────────────────────────────────────*/
+.research {
+  text-align: left;
+}
+
+.research-heading {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px dashed var(--divider);
+  color: var(--text);
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  text-align: center;
+}
+
+.research-entry {
+  margin-bottom: 1rem;
+}
+
+.research-authors {
+  color: var(--muted);
+  font-size: 0.98em;
+}
+
+.author-name {
+  color: var(--text);
+}
+
+/*──────────────────────────────────────────────────────────────────────────────
+  11. Call-to-action highlights
 ──────────────────────────────────────────────────────────────────────────────*/
 .highlight {
   color: var(--text);
@@ -170,7 +303,7 @@ body {
 }
 
 /*──────────────────────────────────────────────────────────────────────────────
-  8. Section headings (darker, modern)
+  12. Section headings (darker, modern)
 ──────────────────────────────────────────────────────────────────────────────*/
 section h2 {
   font-size: 1.6rem;
@@ -184,7 +317,7 @@ section h2 {
 }
 
 /*──────────────────────────────────────────────────────────────────────────────
-  9. Global links & footer
+  13. Global links & footer
 ──────────────────────────────────────────────────────────────────────────────*/
 a {
   color: var(--text);
@@ -201,6 +334,7 @@ footer {
   margin-top: 3rem;
   font-size: 0.95rem;
   color: var(--muted);
+  text-align: center;
 }
 
 footer a {
@@ -211,55 +345,13 @@ footer a:hover {
   color: var(--muted);
 }
 
-header {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-.profile-meta {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-nav.main-nav a,
-.header-bar .main-nav a,
-.sage-link {
-  color: var(--text) !important;
-  text-decoration: none !important;
-  font-weight: normal;
-  transition: color 0.2s;
-}
-
-nav.main-nav a:visited,
-.header-bar .main-nav a:visited,
-.sage-link:visited {
-  color: var(--text) !important;
-  text-decoration: none !important;
-}
-
-nav.main-nav a:hover,
-.header-bar .main-nav a:hover,
-.sage-link:hover {
-  color: var(--muted) !important;
-  text-decoration: underline !important;
-}
-
-nav.main-nav a:active,
-nav.main-nav a:focus,
-.header-bar .main-nav a:active,
-.header-bar .main-nav a:focus,
-.sage-link:active,
-.sage-link:focus {
-  color: var(--text) !important;
-  text-decoration: none !important;
-}
-
 /*──────────────────────────────────────────────────────────────────────────────
- 10. Work Experience Timeline (light mode)
+  14. Work Experience Timeline (light mode)
 ──────────────────────────────────────────────────────────────────────────────*/
 .work-section {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
+  text-align: left;
 }
 
 .work-heading {
@@ -272,6 +364,7 @@ nav.main-nav a:focus,
   font-weight: 400;
   letter-spacing: -0.5px;
   font-family: 'Iowan Old Style BT Roman', 'Iowan Old Style', Palatino, serif;
+  text-align: center;
 }
 
 .work-timeline {
@@ -387,7 +480,22 @@ nav.main-nav a:focus,
   font-weight: 400;
 }
 
+/* Responsive design */
 @media (max-width: 600px) {
+  body {
+    padding: 1rem;
+    max-width: 100%;
+  }
+  
+  .name-title {
+    font-size: 2rem;
+  }
+  
+  .dropdown-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
   .work-timeline {
     gap: 1.5rem;
   }
@@ -411,4 +519,103 @@ nav.main-nav a:focus,
   .work-entry:not(:last-child) .work-icon::after {
     height: 1.5rem;
   }
+}
+
+/*──────────────────────────────────────────────────────────────────────────────
+  15. Stuff page styles
+──────────────────────────────────────────────────────────────────────────────*/
+.page-intro {
+  text-align: center;
+  font-size: 1.08rem;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.stuff-grid {
+  max-width: 600px;
+  margin: 2rem auto;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.stuff-item {
+  flex: 1 1 200px;
+  min-width: 180px;
+}
+
+.stuff-description {
+  flex: 2 1 350px;
+  min-width: 220px;
+  font-size: 1.08rem;
+  color: var(--text);
+  font-family: 'Iowan Old Style BT Roman', 'Iowan Old Style', Palatino, serif;
+}
+
+.stuff-link {
+  font-size: 1.08rem;
+  font-family: 'Iowan Old Style BT Roman', 'Iowan Old Style', Palatino, serif;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.stuff-link:hover {
+  color: var(--muted);
+  text-decoration: underline;
+}
+
+/*──────────────────────────────────────────────────────────────────────────────
+  16. Writing page styles
+──────────────────────────────────────────────────────────────────────────────*/
+.writing-list {
+  max-width: 600px;
+  margin: 3rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.writing-entry {
+  text-align: center;
+}
+
+.writing-index {
+  color: var(--muted);
+  font-size: 1.2rem;
+  font-family: 'Iowan Old Style BT Roman', 'Iowan Old Style', Palatino, serif;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.2rem;
+  opacity: 0.7;
+}
+
+.writing-title {
+  font-family: 'Iowan Old Style BT Roman', 'Iowan Old Style', Palatino, serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.writing-title:hover {
+  color: var(--muted);
+  text-decoration: underline;
+}
+
+.writing-subtitle {
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin: 0.3rem 0 0.7rem 0;
+  font-style: italic;
+}
+
+.writing-meta {
+  color: var(--muted);
+  font-size: 1.08rem;
+  margin-top: 0.2rem;
+  font-family: 'Iowan Old Style BT Roman', 'Iowan Old Style', Palatino, serif;
 }
