@@ -68,9 +68,9 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--text);
+  width: 32px;
+  height: 32px;
+  border: none;
   border-radius: 50%;
   background: none;
   cursor: pointer;
@@ -88,8 +88,8 @@ body {
 }
 
 .theme-toggle svg {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
 }
 
 .sun-icon {
@@ -580,7 +580,7 @@ footer a:hover {
   15. Stuff page styles
 ──────────────────────────────────────────────────────────────────────────────*/
 .page-intro {
-  text-align: center;
+  text-align: left;
   font-size: 1.08rem;
   margin-bottom: 2rem;
   color: var(--text);
@@ -588,7 +588,7 @@ footer a:hover {
 }
 
 .stuff-grid {
-  max-width: 600px;
+  max-width: 800px;
   margin: 2rem auto;
   display: flex;
   gap: 2rem;
@@ -606,8 +606,8 @@ footer a:hover {
 }
 
 .stuff-description {
-  flex: 2 1 350px;
-  min-width: 220px;
+  flex: 2 1 400px;
+  min-width: 250px;
   font-size: 1.08rem;
   color: var(--text);
   font-family: 'Iowan Old Style BT Roman', 'Iowan Old Style', Palatino, serif;
