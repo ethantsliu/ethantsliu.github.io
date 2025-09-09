@@ -13,10 +13,10 @@
 
 /* Dark mode color variables */
 [data-theme="dark"] {
-  --bg:           #1a1a1a;   /* dark background */
+  --bg:           #0a0a0a;   /* very dark background */
   --text:         #ffffff;   /* white text */
   --muted:        #cccccc;   /* light gray for secondary text */
-  --divider:      #404040;   /* dark gray divider */
+  --divider:      #333333;   /* dark gray divider */
   --accent:       #ffffff;   /* white accent */
   --shadow-light: rgba(255,255,255,0.1);
 }
