@@ -332,13 +332,41 @@ body {
 }
 
 .research-entry {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   margin-top: 3rem;
+}
+
+.research-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.research-title {
+  flex: 1;
+  font-size: 1.08rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.research-year {
+  color: var(--muted);
+  font-size: 1.08rem;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .research-authors {
   color: var(--muted);
   font-size: 0.98em;
+  margin-bottom: 0.5rem;
+}
+
+.research-links {
+  font-size: 0.95em;
 }
 
 .author-name {
@@ -590,6 +618,17 @@ footer a:hover {
   }
   .work-entry:not(:last-child) .work-icon::after {
     display: none;
+  }
+  
+  .research-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+  
+  .research-year {
+    align-self: flex-start;
+    margin-top: 0.2rem;
   }
 }
 
