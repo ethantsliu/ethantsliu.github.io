@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Representative Sampling of High‑Dimensional Point Sets | Ethan Liu</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    /* Widen this page beyond the site default */
+    body { max-width: 1100px; }
+    .blog-container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      text-align: left;
+    }
+
+    .blog-hero-title {
+      font-size: 1.8rem;
+      font-family: 'Baskerville', 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      font-family: 'Baskerville', 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
+    }
+
+    .blog-subtitle {
+      font-size: 1.08rem;
+      color: var(--muted);
+      margin: 0.2rem 0 1rem 0;
+      font-style: italic;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--muted);
+      text-decoration: underline;
+    }
+
+    .blog-content { max-width: 100%; }
+
+    /* View controls */
+    .view-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 1.25rem 0 1.25rem 0;
+      border-top: none;
+      padding-top: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .view-toggle { display: inline-flex; gap: 0.5rem; }
+    .toggle-btn {
+      border: 1px solid var(--divider);
+      background: transparent;
+      color: var(--text);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .toggle-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
+    .hidden { display: none; }
+
+    /* Algorithm box (compact, no wrapping) */
+    .algorithm-box {
+      border-top: 1px solid var(--divider);
+      border-bottom: 1px solid var(--divider);
+      padding: 0.45rem 0.6rem 0.5rem;
+      margin: 0.8rem 0;
+      background: var(--bg);
+      font-family: inherit;     /* same font as body */
+      line-height: inherit;     /* same line-height */
+      font-size: inherit;       /* same size */
+      overflow-x: auto;         /* horizontal scroll if needed */
+    }
+    .algorithm-title {
+      font-size: inherit;
+      margin-bottom: 0.15rem;
+    }
+    .algorithm-title .algoname { font-weight: inherit; }
+    .algorithm-title .algodesc { font-weight: inherit; }
+    .algo-lines {
+      counter-reset: none;      /* no numbering */
+      list-style: none;
+      padding-left: 0;
+      margin: 0.25rem 0 0;
+      font-size: inherit;
+      font-family: inherit;
+      display: inline-block;      /* allow the list to size to content */
+      width: max-content;         /* so parent can scroll horizontally */
+    }
+    .algo-lines > li {
+      counter-increment: line;
+      display: block;
+      padding: 0.02rem 0;
+      white-space: nowrap;        /* no wrapping inside lines */
+      word-break: normal;         /* avoid breaking within words */
+      overflow-wrap: normal;
+    }
+    .algo-lines > li::before { display: none; content: none; }
+    .kw { font-weight: inherit; font-variant-caps: normal; }
+    .indent-1 { padding-left: 1.5rem; }
+    .indent-2 { padding-left: 3rem; }
+    .indent-3 { padding-left: 4.5rem; }
+
+    /* Prevent MathJax from wrapping math inside algorithms */
+    .algorithm-box mjx-container { display: inline-block; white-space: nowrap; }
+
+    .blog-content h2 {
+      font-size: 1.25rem;
+      margin-top: 1.75rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+      font-weight: 400;
+      letter-spacing: -0.2px;
+    }
+
+    .blog-content p {
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .blog-layout {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+
+    .blog-toc {
+      position: sticky;
+      top: 4rem;
+      align-self: flex-start;
+      min-width: 220px;
+      max-width: 260px;
+      border-left: 2px dashed var(--divider);
+      padding-left: 1rem;
+    }
+
+    .blog-toc h3 {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-toc ul { list-style: none; }
+    .blog-toc li { margin: 0.35rem 0; }
+    .blog-toc a { color: var(--text); text-decoration: none; font-size: 0.95rem; }
+    .blog-toc a:hover { color: var(--muted); text-decoration: underline; }
+
+    .blog-content ul {
+      margin: 0 0 1rem 1.2rem;
+      padding: 0;
+    }
+
+    .blog-content li {
+      margin: 0.3rem 0;
+    }
+
+    .blog-content .math-block {
+      margin: 1rem 0;
+    }
+
+    /* (intentionally minimal; no callout styles) */
+
+    /* Wide blog layout with right-side TOC similar to Thinking Machines */
+    .blog-layout {
+      display: flex;
+      align-items: flex-start;
+      gap: 3rem;
+    }
+
+    .blog-toc {
+      position: sticky;
+      top: 4rem;
+      align-self: flex-start;
+      min-width: 220px;
+      max-width: 260px;
+      border-left: 2px dashed var(--divider);
+      padding-left: 1rem;
+    }
+
+    .blog-toc h3 {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-toc ul { list-style: none; margin: 0; padding: 0; }
+    .blog-toc li { margin: 0.35rem 0; }
+    .blog-toc a { color: var(--text); text-decoration: none; font-size: 0.95rem; }
+    .blog-toc a:hover { color: var(--muted); text-decoration: underline; }
+
+    .view-controls { display: none; }
+
+    .view-toggle { display: none; }
+    .toggle-btn {
+      border: 1px solid var(--divider);
+      background: transparent;
+      color: var(--text);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .toggle-btn.active { border-color: var(--text); }
+    .hidden { display: none; }
+
+    .pdf-pages { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 1rem; }
+    .pdf-page { border: none; padding: 0; background: transparent; }
+    .pdf-page canvas { width: 100%; height: auto; display: block; }
+
+    .transcript {
+      margin-top: 2rem;
+    }
+
+    .transcript p {
+      font-size: 1.05rem;
+      margin-bottom: 0.7rem;
+      color: var(--text);
+      white-space: pre-wrap;
+    }
+
+    /* Remove figure/page rendering for a minimal layout */
+
+    pre, code {
+      font-family: 'Baskerville', 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Algorithm block styling — subtle left accent */
+    pre {
+      background: transparent;
+      border-left: 2px solid var(--divider);
+      padding: 0.75rem 1rem;
+      margin: 1rem 0 1.25rem 0;
+    }
+    pre code { white-space: pre; }
+
+    /* Soften bold emphasis to match minimal aesthetic */
+    .blog-content b, .blog-content strong {
+      font-weight: 500;
+      opacity: 0.9;
+      font-synthesis-weight: none;
+    }
+
+    /* Subtle anchor link on headings */
+    .blog-content h2 .anchor {
+      opacity: 0;
+      margin-left: 0.4rem;
+      text-decoration: none;
+      color: var(--muted);
+      transition: opacity 0.15s ease;
+      font-weight: 400;
+    }
+    .blog-content h2:hover .anchor { opacity: 1; }
+
+    @media (max-width: 900px) {
+      .blog-content { width: 100%; }
+      .blog-layout { flex-direction: column; }
+      .blog-toc { position: static; border-left: none; padding-left: 0; border-top: 2px dashed var(--divider); padding-top: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header-container">
+    <div class="theme-toggle" id="themeToggle">
+      <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+        <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
+        <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"/>
+        <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"/>
+        <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"/>
+      </svg>
+    </div>
+    <div class="header-content">
+      <div class="dropdown" id="dropdown">
+        <button class="dropdown-btn" id="dropdownBtn">天</button>
+        <div class="dropdown-content" id="dropdownContent">
+          <a href="index.html">about</a>
+          <a href="work.html">work</a>
+          <a href="research.html">research</a>
+          <a href="projects.html" style="color: var(--accent); text-decoration: underline;">projects</a>
+          <a href="writing.html">writing</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="blog-container">
+      <a href="projects.html" class="back-link">← back to projects</a>
+
+      <h1 id="blogTitle" class="blog-hero-title">Representative Sampling of High‑Dimensional Point Sets</h1>
+      <div id="blogMeta" class="blog-meta">By Ethan Liu · May 9, 2025</div>
+
+      <div class="blog-layout">
+        <aside class="blog-toc">
+          <h3 id="contents"><a href="#blogTitle">Contents</a></h3>
+          <ul>
+            <li><a href="#background">Background</a></li>
+            <li><a href="#metrics">Metrics</a></li>
+            <li><a href="#methods">Methods</a></li>
+            <li><a href="#method-kl">KL Greedy</a></li>
+            <li><a href="#method-sliced-kl">Sliced KL</a></li>
+            <li><a href="#method-sliced-w1">Sliced W1</a></li>
+            <li><a href="#method-mmd">Kernel Herding (MMD)</a></li>
+            <li><a href="#method-mean-var">Mean–Variance</a></li>
+            <li><a href="#method-hyperplane">Hyperplane</a></li>
+            <li><a href="#experiments">Experiments</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+            <li><a href="#references">References</a></li>
+          </ul>
+        </aside>
+        <article id="articleWrap" class="blog-content">
+          <h2 id="background">Background</h2>
+          <p>High-dimensional point sets arise in ML, vision, and simulation. A frequent goal is to select a compact subset \(X\subset Y\) of size \(|X|=m\ll|Y|\) that preserves properties of \(Y\): distributional similarity, geometry, or summary statistics. This enables faster downstream computation while controlling approximation error.</p>
+          <p>We primarily explore methods based in distributional fidelity—matching the probability distribution of the full dataset. We include other methods as lightweight geometric baselines for coverage and shape.</p>
+          <p>The reader may be curious about this choice. Many downstream uses (likelihood‑based modeling, simulation, risk estimation, domain shift evaluation) are sensitive to where probability mass actually lies. Distributional objectives encourage the subset to reflect modes and relative frequencies, including rare but relevant regions, while de‑emphasizing empty space. In contrast, geometric objectives are excellent for coverage and visualization (capturing extent, principal directions, boundaries), but they may over‑weight low‑density extremes and under‑sample dense cores.</p>
+
+          <h2 id="metrics">Metrics</h2>
+          <p>First, we must define the metric of measurement. Let \(Y=\{y_i\}_{i=1}^N \subset \mathbb{R}^d\) be the full set and \(X=\{x_j\}_{j=1}^m\subset Y\) the subset. We write \(P_Y\) and \(P_X\) for distributions induced by these sets. In practice, we use either the empirical distribution \(\tfrac{1}{N}\sum_i \delta_{y_i}\) and \(\tfrac{1}{m}\sum_j \delta_{x_j}\), or a smoothed KDE if density estimates are required.</p>
+          <p>KL divergence measures information loss when approximating \(P_Y\) by \(P_X\) and is asymmetric; we use the data-to-subset direction \(D_{\mathrm{KL}}(P_Y\Vert P_X)\) so mass in \(Y\) that is missing in \(X\) is penalized.</p>
+          <div class="math-block">\[ D_{\mathrm{KL}}(P\Vert Q)=\int P(x)\log\frac{P(x)}{Q(x)}\,dx\;=\;\sum_i p_i\log\frac{p_i}{q_i}. \]</div>
+          <p>Pushforward and projections: for a unit vector \(v\in\mathbb{S}^{d-1}\), define the 1D projection \(\pi_v(x)=\langle v,x\rangle\). The pushforward of a distribution \(P\) under \(\pi_v\) is \((\pi_v)_∗ P\), the distribution of \(\pi_v(X)\) when \(X\sim P\).</p>
+          <p>Sliced metrics improve scalability in high dimensions by projecting to 1D along random directions \(v_j\) and aggregating per-slice discrepancies.</p>
+          <p>Wasserstein‑1 (Earth‑Mover’s) distance between distributions \(P\) and \(Q\) on \(\mathbb{R}^d\) can be defined via optimal transport:</p>
+          <div class="math-block">\[ W_1(P,Q)=\inf_{\gamma\in\Pi(P,Q)} \; \mathbb{E}_{(x,y)\sim\gamma}\,\big[\,\lVert x-y\rVert\,\big], \]</div>
+          <p>and reduces in 1D to the L1 distance between sorted samples (empirically) or to the difference of quantile functions. We use the sliced variant (average of 1D \(W_1\) over random directions) to obtain a tractable high‑dimensional proxy:</p>
+          <div class="math-block">\[ \mathrm{SW}_1(P,Q)=\tfrac{1}{p}\sum_{j=1}^p W_1\!\left(\langle v_j,\cdot\rangle_{∗} P,\; \langle v_j,\cdot\rangle_{∗} Q\right),\quad W_1(a,b)=\tfrac{1}{n}\sum_i |a_{(i)}-b_{(i)}|. \]</div>
+          <p>The maximum mean discrepancy (MMD) compares mean embeddings in a reproducing‑kernel Hilbert space (RKHS) with kernel \(k\). An RKHS is a Hilbert space of functions in which point evaluation is continuous, and \(k\) acts as its reproducing kernel. If \(\phi\) is a feature map with \(k(x,y)=\langle\phi(x),\phi(y)\rangle\), the kernel mean embedding is \(\mu_P=\mathbb{E}[\phi(X)]\) and</p>
+          <div class="math-block">\[ \mathrm{MMD}^2_k(P,Q)=\mathbb{E}[k(Y,Y')]+\mathbb{E}[k(X,X')] -2\,\mathbb{E}[k(Y,X)]. \]</div>
+          <p>Here \(Y,Y'\) are independent draws from \(P_Y\), and \(X,X'\) are independent draws from \(P_X\).</p>
+          <p>Directional projection means/variances and hyperplane distances are simple, stable surrogates when moment matching and extent preservation are the priorities and full distributional matching is unnecessary.</p>
+          <p>For the sake of completeness, further readings are provided: <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">KL divergence</a>, <a href="https://en.wikipedia.org/wiki/Wasserstein_metric">Wasserstein distance (Earth Mover’s)</a>, <a href="https://arxiv.org/abs/1803.00567">Computational Optimal Transport</a>, <a href="https://www.jmlr.org/papers/volume13/gretton12a/gretton12a.pdf">A Kernel Two‑Sample Test</a>, <a href="https://arxiv.org/abs/1605.09522">Kernel mean embeddings</a>.</p>
+
+          <h2 id="methods">Methods</h2>
+
+          <h2 id="method-kl">KL-Divergence-Based Greedy Selection</h2>
+          <p>One principled way to measure how well a subset \(X\) of points represents a full set \(Y\) is to treat each set as defining a probability distribution over space (for example, an empirical distribution or a density estimate) and then compute the Kullback–Leibler (KL) divergence between these distributions. The KL divergence \(D_{\mathrm{KL}}(P\Vert Q)\) from distribution \(P\) to distribution \(Q\) is given by:</p>
+          <div class="math-block">\[ D_{\mathrm{KL}}(P\Vert Q) = \int P(x)\, \log \frac{P(x)}{Q(x)}\, dx \]</div>
+          <p>or equivalently, for discrete distributions:</p>
+          <div class="math-block">\[ D_{\mathrm{KL}}(P\Vert Q) = \sum_i p_i\,\log\frac{p_i}{q_i} \]</div>
+          <p>In our context, \(P\) can be thought of as the distribution of the full set \(Y\) and \(Q\) as that of the subsample \(X\). Intuitively, \(D_{\mathrm{KL}}(P\Vert Q)\) measures the information lost when \(Q\) (the subset's distribution) is used to approximate \(P\) (the full set's distribution). A smaller KL divergence means the subset \(X\) is a better stand-in for \(Y\).</p>
+          
+          <p>The KL-divergence-based greedy selection method starts with an empty subset and iteratively adds points from \(Y\) to \(X\) such that each addition yields the greatest reduction in \(D_{\mathrm{KL}}(P_Y\Vert P_X)\). Initially, \(P_X\) (with \(X\) empty or very small) is a poor approximation of \(P_Y\); as more points are added, \(P_X\) should become a closer approximation and the KL divergence decreases. To implement this, we need a way to estimate the distributions \(P_Y\) and \(P_X\) at each step. One approach is to use a discretization of the space into bins (a histogram) or a kernel density estimate. At each iteration, we evaluate which candidate point, if added to \(X\), would most decrease the divergence \(D_{\mathrm{KL}}(P_Y\Vert P_{X\cup\{p\}})\). That point is then selected into \(X\).</p>
+          <div class="algorithm-box">
+            <ul class="algo-lines">
+              <li><span class="kw">Input:</span> full set \(Y\), target \(m\); estimators for \(P_Y\), \(P_X\)</li>
+              <li>\(X = \varnothing\)</li>
+              <li>for \(t \in \{1..m\}\):</li>
+              <li class="indent-1">best = ∅; bestValue = ∞</li>
+              <li class="indent-1">for \(p \in Y\setminus X\):</li>
+              <li class="indent-2">score = \(D_{\mathrm{KL}}\big(P_Y\,\Vert\, P_{X\cup\{p\}}\big)\)</li>
+              <li class="indent-2">if score \(<\) bestValue: bestValue = score; best = \(p\)</li>
+              <li class="indent-1">\(X = X \cup \{\text{best}\}\)</li>
+              <li>return \(X\)</li>
+            </ul>
+          </div>
+          <div style="margin:0.5rem 0 1.25rem;">
+            <img src="sample-reduction_results/3d-result.png" alt="3D representative sampling: original (blue) vs KL-greedy subset (red)" style="width:100%;height:auto;border:0;"/>
+            <div class="blog-meta">3D KL-greedy subset \(X\) (red) covers dense regions of \(Y\) (blue) while spanning the volume.</div>
+          </div>
+          <p>This greedy procedure is computationally intensive for large \(Y\) (each iteration scans all remaining points to evaluate the KL divergence). However, it often yields a subset that very closely approximates the distribution of \(Y\). In practice, one can limit the resolution of the distribution estimate or use approximate updates to make this feasible. We implemented this method for both 2D and 3D point sets (in scripts 2d-KL.py and 3d-KL.py), using a fixed grid to estimate \(P_Y\) and \(P_X\) at each step. In the 3D case, the concepts are identical, but estimating \(P(Y)\) and \(P(X)\) requires a 3D grid or kernel, which increases computational cost. The result is a set \(X\) that minimizes the information loss (KL divergence) relative to \(Y\) by greedily covering regions of space in proportion to how much probability mass \(Y\) has in those regions.</p>
+
+          <h2 id="method-sliced-kl">Sliced KL Greedy Selection</h2>
+          <p>Sliced KL aggregates 1D KL divergences across random directions \(\{v_j\}_{j=1}^p\), using pushforward distributions of projections \(\langle v_j,\cdot\rangle_{∗} P\). The objective is</p>
+          <div class="math-block">\[ \mathrm{SKL}(P_Y,P_X)=\frac{1}{p}\sum_{j=1}^p D_{\mathrm{KL}}\!\left(\langle v_j,\cdot\rangle_{∗} P_Y\,\Big\Vert\,\langle v_j,\cdot\rangle_{∗} P_X\right). \]</div>
+          <div class="algorithm-box">
+            <ul class="algo-lines">
+              <li><span class="kw">Input:</span> \(Y\), target \(m\), directions \(\{v_j\}_{j=1}^p\)</li>
+              <li>\(X = \varnothing\)</li>
+              <li>for \(t \in \{1..m\}\):</li>
+              <li class="indent-1">best = ∅; bestValue = ∞</li>
+              <li class="indent-1">for \(p \in Y\setminus X\):</li>
+              <li class="indent-2">score = \(\tfrac{1}{p}\sum_{j=1}^p D_{\mathrm{KL}}\big(\langle v_j,\cdot\rangle_{∗} P_Y\,\Vert\,\langle v_j,\cdot\rangle_{∗} P_{X\cup\{p\}}\big)\)</li>
+              <li class="indent-2">if score \(<\) bestValue: bestValue = score; best = \(p\)</li>
+              <li class="indent-1">\(X = X \cup \{\text{best}\}\)</li>
+              <li>return \(X\)</li>
+            </ul>
+          </div>
+          <div style="margin:0.5rem 0 1.25rem;">
+            <img src="sample-reduction_results/blog/progress/sliced_kl_d64.png" alt="Sliced-KL progress (64D)" style="width:100%;height:auto;border:0;"/>
+            <div class="blog-meta">Sliced‑KL: average 1D KL decreases as \(|X|\) grows (64D).</div>
+          </div>
+
+          <h2 id="method-sliced-w1">Sliced Wasserstein-1 (SW1) Greedy Selection</h2>
+          <p>Sliced \(W_1\) minimizes the average 1D Earth-Mover distance across random directions. In 1D with empirical samples, \(W_1\) reduces to the L1 distance between sorted projections.</p>
+          <div class="math-block">\[ \mathrm{SW}_1(P_Y,P_X)=\frac{1}{p}\sum_{j=1}^p W_1\big(\langle v_j,\cdot\rangle_{∗} P_Y,\langle v_j,\cdot\rangle_{∗} P_X\big). \]</div>
+          <div class="algorithm-box">
+            <ul class="algo-lines">
+              <li><span class="kw">Input:</span> \(Y\), target \(m\), directions \(\{v_j\}_{j=1}^p\)</li>
+              <li>\(X = \varnothing\)</li>
+              <li>for \(t \in \{1..m\}\):</li>
+              <li class="indent-1">best = ∅; bestValue = ∞</li>
+              <li class="indent-1">for \(p \in Y\setminus X\):</li>
+              <li class="indent-2">score = \(\tfrac{1}{p}\sum_{j=1}^p W_1\big(\langle v_j,\cdot\rangle_{∗} P_Y,\langle v_j,\cdot\rangle_{∗} P_{X\cup\{p\}}\big)\)</li>
+              <li class="indent-2">if score \(<\) bestValue: bestValue = score; best = \(p\)</li>
+              <li class="indent-1">\(X = X \cup \{\text{best}\}\)</li>
+              <li>return \(X\)</li>
+            </ul>
+          </div>
+          <div style="margin:0.5rem 0 1.25rem;">
+            <img src="sample-reduction_results/blog/progress/sliced_w1_d64.png" alt="Sliced-W1 progress (64D)" style="width:100%;height:auto;border:0;"/>
+            <div class="blog-meta">Sliced‑W1: average per‑slice 1D \(W_1\) declines (64D).</div>
+          </div>
+
+          <h2 id="method-mmd">Kernel Herding (Maximum Mean Discrepancy, MMD)</h2>
+          <p>Kernel herding greedily matches the kernel mean embedding \(\mu_P=\mathbb{E}[\phi(Y)]\) in an RKHS. With an RBF kernel, an equivalent criterion uses kernel evaluations. A practical unweighted variant chooses at step \(t\)</p>
+          <div class="math-block">\[ x_t \in \arg\max_{y\in Y} \; \mu(y) - \frac{1}{t-1}\sum_{j=1}^{t-1} k(y,x_j),\quad \mu(y)=\frac{1}{|Y|}\sum_{i} k(y,y_i). \]</div>
+          <div class="algorithm-box">
+            <ul class="algo-lines">
+              <li><span class="kw">Input:</span> \(Y\), target \(m\), kernel \(k\)</li>
+              <li>Precompute \(\mu(y)=\tfrac{1}{|Y|}\sum_i k(y,y_i)\)</li>
+              <li>\(X = \varnothing\)</li>
+              <li>for \(t = 1..m\):</li>
+              <li class="indent-1">if \(t=1\): \(x = \arg\max_y \mu(y)\)</li>
+              <li class="indent-1">else: \(x = \arg\max_y \big[\mu(y) - \tfrac{1}{t-1}\sum_{z\in X} k(y,z)\big]\)</li>
+              <li class="indent-1">\(X = X \cup \{x\}\)</li>
+              <li>return \(X\)</li>
+            </ul>
+          </div>
+          <div style="margin:0.5rem 0 1.25rem;">
+            <img src="sample-reduction_results/blog/progress/rff_herding_d64.png" alt="Kernel herding progress (64D)" style="width:100%;height:auto;border:0;"/>
+            <div class="blog-meta">Kernel herding (RFF surrogate): MMD proxy improves with \(m\) (64D).</div>
+          </div>
+
+          <h2 id="method-mean-var">Projection Mean-Variance Tradeoff Method</h2>
+          <p>Another strategy for representative selection is to ensure that the subset \(X\) matches certain summary statistics of the full set \(Y\). In high dimensions, directly matching the full covariance structure of \(Y\) is complex. Instead, the projection-based mean-variance method uses random one-dimensional projections to capture the distribution's characteristics. The idea is to preserve, for a set of randomly chosen directions, both the mean (first moment) and the spread (second moment, or variance) of the data when projected onto those directions.</p>
+          
+          <p>Concretely, suppose we draw \(m\) random unit vectors \(\{u_1, u_2, \ldots, u_m\}\) in the plane (for 2D, these could be random angles) or in higher dimensions (random directions on the unit sphere). For each direction \(u_j\), we can compute the mean \(\mu_Y^{(j)}\) and standard deviation \(\sigma_Y^{(j)}\) of the projections of all points in \(Y\) onto \(u_j\). We would like our subset \(X\) to have similar statistics: i.e., for each \(j\), the mean \(\mu_X^{(j)}\) and standard deviation \(\sigma_X^{(j)}\) (computed over points in \(X\) projected onto \(u_j\)) should be as close as possible to those of the full set.</p>
+          
+          <p>There is often a trade-off between matching the mean and matching the variance (spread) along any given direction, especially if the distribution of \(Y\) is not uniform. For example, picking too many extreme outlier points can quickly match the range or variance of \(Y\), but may shift the subset's mean away from the true center of \(Y\); conversely, picking points near the center will align the means but reduce the variance of \(X\) relative to \(Y\). The greedy algorithm for the mean-variance method balances these by explicitly considering both in its selection criterion. We define an error metric that quantifies the discrepancy in mean and variance along the set of projection directions \(U = \{u_1, \ldots, u_m\}\). One such error function can be written as:</p>
+          <div class="math-block">\[ E(X) = \frac{1}{m}\sum_{j=1}^m \Big[(\mu_Y^{(j)}-\mu_X^{(j)})^2 + \lambda(\sigma_Y^{(j)}-\sigma_X^{(j)})^2\Big], \]</div>
+          <p>where \(\lambda\) is a weighting factor that can be tuned to give more or less emphasis to matching the variance relative to the mean. In our implementation (2d-mean-var.py), we took \(\lambda = 1\) for simplicity, weighing mean and variance equally.</p>
+          <div class="algorithm-box">
+            <ul class="algo-lines">
+              <li><span class="kw">Input:</span> \(Y\), target \(k\), directions \(U=\{u_j\}_{j=1}^m\)</li>
+              <li>Precompute \(\mu_Y^{(j)},\,\sigma_Y^{(j)}\;\forall j\)</li>
+              <li>\(X = \varnothing\)</li>
+              <li>for \(t = 1..k\):</li>
+              <li class="indent-1">pick \(p \in Y\setminus X\) minimizing \(E(X\cup\{p\})=\tfrac{1}{m}\sum_j[(\mu_Y^{(j)}-\mu_X^{(j)})^2+\lambda(\sigma_Y^{(j)}-\sigma_X^{(j)})^2]\)</li>
+              <li class="indent-1">\(X = X \cup \{p\}\)</li>
+              <li>return \(X\)</li>
+            </ul>
+          </div>
+          <div style="margin:0.5rem 0 1.25rem;">
+            <img src="sample-reduction_results/2d-result.png" alt="2D representative sampling (mean–variance): original (blue) vs subset (red)" style="width:100%;height:auto;border:0;"/>
+            <div class="blog-meta">2D mean–variance: subset (red) covers span and center of \(Y\) (blue).</div>
+          </div>
+          <div style="margin:0.5rem 0 1.25rem;">
+            <img src="sample-reduction_results/blog/progress/mean_var_d64.png" alt="Mean–Variance progress (64D)" style="width:100%;height:auto;border:0;"/>
+            <div class="blog-meta">Mean–Variance: projection mean error drops with \(m\) (64D).</div>
+          </div>
+          <p>The greedy selection procedure starts with \(X\) empty and adds one point at a time from \(Y\) that most reduces the error \(E(X)\). After each point is added, the means and variances \(\mu_X^{(j)}, \sigma_X^{(j)}\) are recomputed for the new subset before the next selection. In this approach, the random projection directions serve as a proxy for overall shape. By using multiple random projections, we capture different aspects of the distribution of \(Y\) without needing to consider the full high-dimensional geometry directly. This makes the method scalable: one can choose \(m\) (the number of projections) to balance accuracy and computational cost. In practice, even a modest number of random directions (e.g. \(m = 10\) or 20) can yield a good approximation of the data's spread in various orientations. The chosen subset \(X\) will tend to include both central points (to keep the projected means aligned with \(Y\)) and some peripheral points (to account for the variance along those projections). Thus, it inherently balances bias (mean alignment) and variance (coverage of spread) in multiple directions.</p>
+
+          <h2 id="method-hyperplane">Baseline Geometric Method (Hyperplane Distance Preservation)</h2>
+          <p>As a baseline, we also consider a simpler geometric selection strategy. This method aims to preserve the range or extent of the point set \(Y\) along various directions, without explicitly accounting for distribution or statistical moments. In 2D, a convenient way to do this is by using random hyperplanes (which in 2D are random lines through the origin) and ensuring that, for each such line, the subset \(X\) has a point that lies as far out along that line as the farthest point in \(Y\). In other words, \(X\) should approximate the convex hull of \(Y\) by capturing extreme points.</p>
+          
+          <p>One implementation is as follows: sample a set of \(k\) random unit direction vectors \(\{v_1, v_2, \ldots, v_k\}\) in 2D. For each direction \(v_i\), find the point \(p_i \in Y\) that maximizes the signed distance \(v_i \cdot p\) (i.e. the projection of \(p\) onto \(v_i\)). Include each such \(p_i\) in the subset \(X\). (If the same point ends up selected by multiple directions, it need only be included once.) This yields up to \(k\) points that cover the extremes of \(Y\) in those sampled directions. We used a variant of this idea in 2d.py. To make sure both sides of each hyperplane are considered, one can also sample \(v_i\) and \(-v_i\) pairs or sample more directions and then take the top \(k\) extreme points overall.</p>
+          
+          <p>This baseline does not attempt to match the overall distribution of points; rather, it focuses on the geometric boundary. It will ensure that the subset spans a similar bounding box or convex shape as \(Y\), but it may under-sample dense interior regions (since no explicit effort is made to pick points from high-density areas). The baseline is computationally cheap (linear in \(|Y|\) for a given set of directions) and provides a point of comparison for the more sophisticated strategies above.</p>
+          <div class="algorithm-box">
+            <ul class="algo-lines">
+              <li><span class="kw">Input:</span> full set \(Y\), target \(k\)</li>
+              <li>Sample \(k\) random unit directions \(\{v_i\}\)</li>
+              <li>\(X = \varnothing\)</li>
+              <li>for \(i = 1..k\):</li>
+              <li class="indent-1">\(p_i = \arg\max_{p\in Y} v_i^\top p\)</li>
+              <li class="indent-1">\(X = X \cup \{p_i\}\)</li>
+              <li>return \(X\)</li>
+            </ul>
+          </div>
+          <div style="margin:0.5rem 0 1.25rem;">
+            <img src="sample-reduction_results/blog/progress/hyperplane_d64.png" alt="Hyperplane preservation progress (64D)" style="width:100%;height:auto;border:0;"/>
+            <div class="blog-meta">Hyperplane: average absolute projection deviation shrinks (64D).</div>
+          </div>
+
+          <h2 id="experiments">Experiments</h2>
+          <p>Per‑method figures appear with each method (2D/3D visuals and 64D progress plots). Below is a concise, per‑method analysis guided by those figures.</p>
+          <p><b>KL (grid/KDE).</b> Quantitatively, KL drops fastest with \(|X|\). Qualitatively (3D), points concentrate in dense regions while spanning the support. Cost scales with grid/KDE resolution; strongest when density accuracy matters.</p>
+          <p><b>Sliced‑KL.</b> Aggregates 1D KL across \(p\) directions. Divergence declines rapidly; larger \(p\) improves stability and reduces variance in the objective at extra compute. Robust, high‑dimensional alternative to full KL.</p>
+          <p><b>Sliced‑W1.</b> Average 1D transport distance. Progress curves decrease steadily; more robust to support mismatch/outliers than KL. Captures geometric differences in location/scale/shape through projections; cost governed by \(p\) and 1D sorting.</p>
+          <p><b>Kernel Herding (MMD).</b> MMD surrogate improves consistently; quality depends on kernel and lengthscale. With RFF, scales well to high‑d and large \(|Y|\). Tends to match smooth feature averages; may under‑emphasize sharp extremes depending on kernel.</p>
+          <p><b>Mean–Variance.</b> Projection‑mean error reduces quickly; visuals (2D) show center + spread captured. Not distributional—can miss multi‑modal density alignment. Simple and stable; good for spread‑oriented summaries.</p>
+          <p><b>Hyperplane.</b> Extent deviation shrinks; visuals show strong coverage of extremes/hull. Cheapest, but can under‑represent dense cores and interior structure; best as a geometric baseline.</p>
+          <p><b>Summary.</b> For representative subsets, distributional methods (KL, Sliced‑KL, Sliced‑W1, MMD) deliver higher fidelity to \(P_Y\) than purely geometric surrogates. Sliced objectives and herding offer favorable accuracy–cost trade‑offs in higher dimensions.</p>
+
+          <h2 id="conclusion">Conclusion</h2>
+          <p><b>KL.</b> Best distribution match; use when density fidelity is paramount and compute allows.</p>
+          <p><b>Sliced‑KL.</b> KL‑like with better scalability; increase \(p\) for stability; strong default in high‑d.</p>
+          <p><b>Sliced‑W1.</b> Transport‑aware and robust to support mismatch; good for geometry‑sensitive distributions.</p>
+          <p><b>Kernel Herding (MMD).</b> Efficient via RFF; excels when kernel choice reflects task similarity; tunable cost.</p>
+          <p><b>Mean–Variance.</b> Preserves directional moments and spread; choose for quick, spread‑focused summaries.</p>
+          <p><b>Hyperplane.</b> Preserves extent/extremes; useful baseline or when boundary coverage matters most.</p>
+          <p><b>Recommendation.</b> Prefer distributional objectives for statistically faithful subsets; use geometric ones for fast coverage or as baselines. Hybrids are promising when both density and shape must be preserved.</p>
+
+          <div class="view-controls">
+            <span>View:</span>
+            <div class="view-toggle">
+              <button id="btnArticle" class="toggle-btn active">Article (LaTeX)</button>
+              <button id="btnTranscript" class="toggle-btn">Transcript</button>
+              <button id="btnPages" class="toggle-btn">Pages</button>
+            </div>
+          </div>
+
+          <h2 id="transcript">Transcript</h2>
+          <div id="transcriptContent" class="transcript hidden">
+            <pre>
+Representative Sampling of High-Dimensional Point Sets
+
+TL;DR
+- KL; Sliced-KL; Sliced-W1; Kernel Herding (MMD); Mean–Variance; Hyperplane.
+
+Why representative sampling?
+- Speed up downstream work; summarize; preserve structure with fewer points.
+
+Greedy KL minimization
+- Goal: choose X so P_X approximates P_Y.
+- Add the point that most reduces D_KL(P_Y || P_{X∪{p}}).
+
+Projection mean-variance
+- Goal: match mean and variance along random directions; greedily reduce E(X).
+
+Hyperplane extremes
+- Goal: approximate extent via extreme projections along sampled directions.
+
+Results at a glance
+- KL/Sliced-KL/SW1/Herding lower distributional metrics; Mean–Variance lowers projection error; Hyperplane is fastest baseline.
+
+When to use which?
+- KL/Sliced family/Herding for distribution; Mean–Variance for spread; Hyperplane for boundary extent.
+
+Practical notes
+- Tune density estimates; accelerate greedy loops; 10-20 directions often suffice.
+
+Conclusion
+- Pick the method that matches what you want to preserve; consider hybrids.
+            </pre>
+          </div>
+
+          <h2 id="figures">Figures</h2>
+          <div id="pdfPages" class="pdf-pages hidden">
+            <div class="blog-meta">Figures are embedded inline within the Experiments section above.</div>
+          </div>
+
+          <h2 id="references">References</h2>
+          <div id="referencesContent">
+            <ul>
+              <li><a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">Kullback–Leibler divergence (overview)</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Wasserstein_metric">Wasserstein metric / Earth Mover’s distance (overview)</a></li>
+              <li><a href="https://arxiv.org/abs/1803.00567">Computational Optimal Transport — Peyré &amp; Cuturi (survey)</a></li>
+              <li><a href="https://www.jmlr.org/papers/volume13/gretton12a/gretton12a.pdf">A Kernel Two‑Sample Test — Gretton et&nbsp;al., JMLR&nbsp;2012</a></li>
+              <li><a href="https://arxiv.org/abs/1605.09522">Kernel Mean Embedding of Distributions — Muandet et&nbsp;al. (survey)</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Pushforward_measure">Pushforward measure (notation)</a></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!-- View toggles only; no PDF loading -->
+
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const sunIcon = document.querySelector('.sun-icon');
+    const moonIcon = document.querySelector('.moon-icon');
+
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    updateThemeIcon(currentTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateThemeIcon(next);
+    });
+
+    function updateThemeIcon(theme) {
+      if (theme === 'dark') {
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+      } else {
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+      }
+    }
+
+    // Dropdown functionality
+    const dropdown = document.getElementById('dropdown');
+    const dropdownBtn = document.getElementById('dropdownBtn');
+    const dropdownContent = document.getElementById('dropdownContent');
+    let timeoutId;
+
+    function showDropdown() {
+      clearTimeout(timeoutId);
+      dropdownContent.style.display = 'block';
+      dropdownContent.style.opacity = '1';
+      dropdownContent.style.visibility = 'visible';
+    }
+
+    function hideDropdown() {
+      timeoutId = setTimeout(() => {
+        dropdownContent.style.display = 'none';
+        dropdownContent.style.opacity = '0';
+        dropdownContent.style.visibility = 'hidden';
+      }, 150);
+    }
+
+    dropdown.addEventListener('mouseenter', showDropdown);
+    dropdown.addEventListener('mouseleave', hideDropdown);
+  </script>
+
+  <script>
+    // View toggles for Article / Transcript / Pages (no PDF loading)
+    (function() {
+      const btnArticle = document.getElementById('btnArticle');
+      const btnTranscript = document.getElementById('btnTranscript');
+      const btnPages = document.getElementById('btnPages');
+      const articleWrap = document.getElementById('articleWrap');
+      const transcriptHdr = document.getElementById('transcript');
+      const transcriptEl = document.getElementById('transcriptContent');
+      const figuresHdr = document.getElementById('figures');
+      const pagesEl = document.getElementById('pdfPages');
+      function setActive(btn) {
+        [btnArticle, btnTranscript, btnPages].forEach(b => b.classList.toggle('active', b === btn));
+      }
+      function showArticle() {
+        articleWrap.classList.remove('hidden');
+        transcriptHdr.classList.add('hidden');
+        transcriptEl.classList.add('hidden');
+        figuresHdr.classList.add('hidden');
+        pagesEl.classList.add('hidden');
+        setActive(btnArticle);
+        if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise(); }
+      }
+      function showTranscript() {
+        articleWrap.classList.remove('hidden');
+        transcriptHdr.classList.remove('hidden');
+        transcriptEl.classList.remove('hidden');
+        figuresHdr.classList.add('hidden');
+        pagesEl.classList.add('hidden');
+        setActive(btnTranscript);
+      }
+      function showPages() {
+        articleWrap.classList.remove('hidden');
+        transcriptHdr.classList.add('hidden');
+        transcriptEl.classList.add('hidden');
+        figuresHdr.classList.remove('hidden');
+        pagesEl.classList.remove('hidden');
+        setActive(btnPages);
+      }
+      btnArticle.addEventListener('click', showArticle);
+      btnTranscript.addEventListener('click', showTranscript);
+      btnPages.addEventListener('click', showPages);
+      showArticle();
+    })();
+  </script>
+  <script>
+    // Add subtle anchor links to section headings
+    (function() {
+      const headings = document.querySelectorAll('.blog-content h2[id]');
+      headings.forEach(h => {
+        const id = h.getAttribute('id');
+        const a = document.createElement('a');
+        a.href = `#${id}`;
+        a.className = 'anchor';
+        a.textContent = '#';
+        h.appendChild(a);
+      });
+    })();
+  </script>
+</body>
+</html>

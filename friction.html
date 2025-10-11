@@ -3,96 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title> Friction and Obsession | Ethan Liu</title>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-  </script>
-
+  <title>Friction and Obsession | Ethan Liu</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
   <style>
-
-    p {
-    text-indent: 1.5em;
-    margin-bottom: 1.5rem;
-    }
-
-    .back-button {
-      position: fixed;
-      left: 2rem;
-      background: none;
-      border: 1px solid #000000;
-      color: #000000;
-      padding: 0.5rem 1rem;
-      font-family: 'Iowan Old Style BT Roman', 'Iowan Old Style', Palatino, serif;
-      font-size: 0.9rem;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      z-index: 1000;
-    }
-
-    .back-button:hover {
-      background: #000000;
-      color: white;
-    }
-
-    .back-button.top {
-      top: 2rem;
-    }
-
-    .back-button.bottom {
-      bottom: 2rem;
-    }
-
-    h1 {
-    font-size: 2.3rem;
-    font-family: 'Iowan Old Style BT Roman', 'Iowan Old Style', Palatino, serif;
-    font-weight: normal;
-    color: #000000;
-    margin-bottom: 1rem;
-    }
-
     .essay-container {
       max-width: 700px;
-      margin: 5rem auto 3rem auto;
+      margin: 2rem auto;
       padding: 0 1rem;
-      font-family: 'Iowan Old Style BT Roman', 'Iowan Old Style', Palatino, serif;
-      font-size: 1.1rem;
-      line-height: 1.75;
-      color: #000000;
+      text-align: left;
     }
-
-    h1 {
-      font-size: 2.3rem;
-      font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
-      margin-bottom: 1rem;
+    
+    .essay-title {
+      font-size: 1.3rem;
+      font-family: 'Baskerville', 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.5px;
     }
-
+    
     .essay-meta {
       font-size: 0.95rem;
-      color: #666666;
+      color: var(--muted);
       margin-bottom: 2rem;
-      font-family: 'Iowan Old Style BT Roman', 'Iowan Old Style', Palatino, serif;
+      font-family: 'Baskerville', 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
     }
-
-    a {
-      color: #000000;
-      text-decoration: underline;
+    
+    .essay-content p {
+      text-indent: 1.5em;
+      margin-bottom: 1.5rem;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: var(--text);
     }
-
-    a:hover {
+    
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      color: var(--text);
       text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+    
+    .back-link:hover {
+      color: var(--muted);
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <a href="writing.html" class="back-button top">← back to writing</a>
-  
-  <div class="essay-container">
-    <h1>Friction and Obsession</h1>
-    <div class="essay-meta">Ethan Liu | June 10, 2025 &middot; 4 min read</div>
+  <div class="header-container">
+    <div class="theme-toggle" id="themeToggle">
+      <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+        <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
+        <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"/>
+        <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"/>
+        <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"/>
+      </svg>
+    </div>
+    <div class="header-content">
+      <div class="dropdown" id="dropdown">
+        <button class="dropdown-btn" id="dropdownBtn">天</button>
+        <div class="dropdown-content" id="dropdownContent">
+          <a href="index.html">about</a>
+          <a href="work.html">work</a>
+          <a href="research.html">research</a>
+          <a href="projects.html">projects</a>
+          <a href="writing.html" style="color: var(--accent); text-decoration: underline;">writing</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="essay-container">
+      <a href="writing.html" class="back-link">← back to writing</a>
+      
+      <h1 class="essay-title">Friction and Obsession</h1>
+      <div class="essay-meta">Ethan Liu | June 10, 2025 &middot; 4 min read</div>
+      
+      <div class="essay-content">
 
     <p>
         Often, perhaps at the beginning of the new year, a new month, or in my and many other students' cases, the beginning of a new semester, we try to better ourselves. 
@@ -194,9 +194,68 @@
       And we simply don't need to be. Just make it a habit. Even if we need to exert a gargantuan amount of effort in the beginning, 
       designing some reward function for ourselves is enough to get us going. 
     </p>
-    <p>
+        <p>
         So, practice climbing. 
     </p>
+      </div>
+    </div>
   </div>
+
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const sunIcon = document.querySelector('.sun-icon');
+    const moonIcon = document.querySelector('.moon-icon');
+    
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    updateThemeIcon(currentTheme);
+    
+    // Toggle theme on click
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+    
+    // Update icon visibility based on theme
+    function updateThemeIcon(theme) {
+      if (theme === 'dark') {
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+      } else {
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+      }
+    }
+    
+    // Dropdown functionality
+    const dropdown = document.getElementById('dropdown');
+    const dropdownBtn = document.getElementById('dropdownBtn');
+    const dropdownContent = document.getElementById('dropdownContent');
+    let timeoutId;
+
+    function showDropdown() {
+      clearTimeout(timeoutId);
+      dropdownContent.style.display = 'block';
+      dropdownContent.style.opacity = '1';
+      dropdownContent.style.visibility = 'visible';
+    }
+
+    function hideDropdown() {
+      timeoutId = setTimeout(() => {
+        dropdownContent.style.display = 'none';
+        dropdownContent.style.opacity = '0';
+        dropdownContent.style.visibility = 'hidden';
+      }, 150);
+    }
+
+    dropdown.addEventListener('mouseenter', showDropdown);
+    dropdown.addEventListener('mouseleave', hideDropdown);
+  </script>
 </body>
 </html>

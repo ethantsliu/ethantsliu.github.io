@@ -1,0 +1,98 @@
+                           Representative Sampling of High-Dimensional Point Sets
+                                                                     Ethan Liu
+                                                                     05/9/2025
+                  1     Introduction
+                  Largedatasetsofpointsinhigh-dimensionalspacesariseinmanyfields, frommachinelearningandcomputer
+                  vision to scientific simulations. Often, we wish to summarize or compress a massive point cloud with a much
+                  smaller representative subset of points, while preserving the essential characteristics of the full set. This
+                  representative sampling makes it feasible to perform downstream tasks (such as clustering, visualization, or
+                  computation of expensive algorithms) more efÏciently, by operating on a summary of the data rather than
+                  the entire set. The challenge is selecting a small subset that “looks like” the full data in terms of distribution
+                  or geometric properties.
+                      Several strategies can be employed to choose representative points. In this report, we compare three
+                  different greedy sample-reduction strategies for capturing the structure of a high-dimensional point set: (1)
+                  a method that iteratively minimizes the Kullback–Leibler (KL) divergence between the full set and the
+                  selected subset (with implementations in both 2D and 3D), (2) a projection-based method that balances
+                  mean and variance along random directions (implemented for 2D), and (3) a baseline geometric method
+                  that preserves distances to random hyperplanes (implemented for 2D). We describe the algorithms in detail
+                  and provide pseudocode for the first two approaches. We then present a comparative evaluation using both
+                  qualitative visualizations and quantitative error metrics (projection error and KL divergence) to highlight
+                  the strengths and trade-offs of each method.
+                  2     KL-Divergence-Based Greedy Selection
+                  One principled way to measure how well a subset X of points represents a full set Y is to treat each set as
+                  defining a probability distribution over space (for example, an empirical distribution or a density estimate)
+                  and then compute the Kullback–Leibler (KL) divergence between these distributions. The KL divergence
+                  D (P∥Q)from distribution P to distribution Q is given by:
+                    KL
+                                                         DKL(P∥Q)=Z P(x)log P(x) dx,                                              (1)
+                                                                                    Q(x)
+                  for continuous densities (or D     (P∥Q) = P p log pi for discrete distributions). In our context, P can be
+                                                  KL              i  i    q
+                                                                           i
+                  thought of as the distribution of the full set Y and Q as that of the subsample X. Intuitively, D           (P∥Q)
+                                                                                                                           KL
+                  measures the information lost when Q (the subset’s distribution) is used to approximate P (the full set’s
+                  distribution). A smaller KL divergence means the subset X is a better stand-in for Y .
+                      The KL-divergence-based greedy selection method starts with an empty subset and iteratively adds
+                  points from Y to X such that each addition yields the greatest reduction in D            (P ∥P ). Initially, P
+                                                                                                         KL Y     X                X
+                  (with X empty or very small) is a poor approximation of P ; as more points are added, P            should become
+                                                                                 Y                                 X
+                  a closer approximation and the KL divergence decreases. To implement this, we need a way to estimate
+                  the distributions P    and P    at each step. One approach is to use a discretization of the space into bins (a
+                                      Y        X
+                  histogram) or a kernel density estimate. At each iteration, we evaluate which candidate point, if added to
+                  X, would most decrease the divergence D         (P ∥P        ). That point is then selected into X.
+                                                               KL Y      X∪{p}
+                      Pseudocode for the KL-based greedy subsampling algorithm is given in Algorithm 1. Here P(Y) and
+                  P(X)denote the current probability distributions (or frequency histogram
+
+) (based on mean and variance differences) for the mean-variance method is typically lower than
+               that for the KL-based method or the baseline, since the mean-variance greedy algorithm is directly optimizing
+               that metric. In our 2D experiments, after selecting around 15 points out of 100, the mean-variance method
+               achieved an E(X) value near zero (indicating almost perfect alignment of projected means and variances
+               with the full set), whereas the KL-based subset had a slightly higher E(X) (it preserved distribution but not
+               perfectly the variance in some random projections). The baseline subset had the highest projection error,
+               as expected, because it often failed to pick points representing the central mass of the distribution, causing
+               a bias in projected means.
+                  On the other hand, when comparing the KL divergence D   (P ∥P ) between the full set Y and the
+                                                                       KL Y     X
+               subset X, the KL-based method unsurprisingly excels. For the 3D data example, adding points via the KL
+               greedy strategy drove the divergence down significantly faster than the other methods. After selecting a
+               subset of moderate size, the KL divergence for the KL-based method was substantially lower (better by tens
+               of percent) than that of a subset of equal size chosen by the mean-variance method. The baseline method
+               fared the worst in terms of KL divergence, since it does not actively try to match the distribution; its subset
+               often under-represents dense regions, leading to a larger information loss relative to Y .
+                  It is worth noting that while each greedy approach focuses on a different objective, they all gradually
+               improve the representation of the data as more points are added. Early in the selection (when X is very
+               small), all methods might choose points that are intuitively “important” — for example, an extreme point
+               and a central point — because those help both distribution and spread. However, as X grows, the differences
+               become more pronounced: the KL method will continue to fill in dense areas, the mean-variance method will
+               try to cover directions that still have mismatch in mean or variance, and the baseline will continue picking
+               outer points. The choice of method should thus be informed by what aspect of the data one wishes to preserve:
+               overall distribution (KL), multi-directional spread (mean-variance), or just broad extent (baseline).
+               6    Conclusion
+               We presented and compared three greedy algorithms for selecting a representative subsample from a high-
+               dimensional point set. The KL-divergence minimization approach aims to preserve the full data distribution
+               as closely as possible, making it powerful when capturing density information is paramount. The projection-
+               based mean-variance method focuses on aligning key statistical properties (mean and variance) across multi-
+                                                              4
+        Figure 1: Representative sampling in 2D: The original points (blue) and the selected subset (red) obtained
+        using the projection-based mean-variance method. The subset of red points maintains the overall coverage
+        and central location of the full data.
+        ple directions, which is effective for preserving the shape and spread of the data. The simple baseline method
+        of picking extreme points via random hyperplanes provides a useful reference, highlighting the importance
+        of covering interior points in addition to boundary points.
+         Our experiments in 2D and 3D demonstrate that the more advanced methods (KL and mean-variance)
+        indeed offer superior preservation of data characteristics, each excelling in the metrics they optimize. In
+        practice, the choice between these approaches may be guided by specific needs: if one requires a subset that
+        can stand in for the original distribution in analyses or modeling, the KL-based selection is appropriate;
+        if one cares about capturing the range of variation and principal structure of the data, the mean-variance
+        method is a strong choice. Future work could explore optimizing these methods further (for example, using
+        smarter search to reduce computational cost) or combining criteria to achieve both low KL divergence and
+        low projection error with a single selection strategy.
+                               5
+        Figure 2: Representative sampling in 3D: The full point set Y (blue) and the greedy KL-divergence-based
+        subsample X (red). The subset captures high-density regions of Y while still covering the full extent of the
+        data.
+                               6
