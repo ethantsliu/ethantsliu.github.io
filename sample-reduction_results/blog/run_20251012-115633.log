@@ -1,0 +1,75 @@
+RFF pass: muY over 500000 pts in 26.1s
+Herding 50/1000; train_gap=0.008535; val_gap=0.008645
+Herding 100/1000; train_gap=0.002834; val_gap=0.002917
+Herding 150/1000; train_gap=0.001417; val_gap=0.001516
+Herding 200/1000; train_gap=0.000827; val_gap=0.000913
+Herding 250/1000; train_gap=0.000539; val_gap=0.000644
+Herding 300/1000; train_gap=0.000386; val_gap=0.000497
+Herding 350/1000; train_gap=0.000282; val_gap=0.000386
+Herding 400/1000; train_gap=0.000213; val_gap=0.000317
+Herding 450/1000; train_gap=0.000169; val_gap=0.000264
+Herding 500/1000; train_gap=0.000140; val_gap=0.000236
+Herding 550/1000; train_gap=0.000115; val_gap=0.000215
+Herding 600/1000; train_gap=0.000096; val_gap=0.000199
+Herding 650/1000; train_gap=0.000083; val_gap=0.000182
+Herding 700/1000; train_gap=0.000072; val_gap=0.000173
+Herding 750/1000; train_gap=0.000063; val_gap=0.000162
+Herding 800/1000; train_gap=0.000055; val_gap=0.000154
+Herding 850/1000; train_gap=0.000048; val_gap=0.000147
+Herding 900/1000; train_gap=0.000042; val_gap=0.000146
+Herding 950/1000; train_gap=0.000038; val_gap=0.000140
+Herding 1000/1000; train_gap=0.000034; val_gap=0.000136
+RFF pass: muY over 400000 pts in 41.7s
+Herding 50/1000; train_gap=0.009967; val_gap=0.010046
+Herding 100/1000; train_gap=0.003666; val_gap=0.003737
+Herding 150/1000; train_gap=0.001899; val_gap=0.001966
+Herding 200/1000; train_gap=0.001154; val_gap=0.001252
+Herding 250/1000; train_gap=0.000768; val_gap=0.000860
+Herding 300/1000; train_gap=0.000553; val_gap=0.000644
+Herding 350/1000; train_gap=0.000410; val_gap=0.000501
+Herding 400/1000; train_gap=0.000316; val_gap=0.000408
+Herding 450/1000; train_gap=0.000249; val_gap=0.000346
+Herding 500/1000; train_gap=0.000205; val_gap=0.000302
+Herding 550/1000; train_gap=0.000169; val_gap=0.000265
+Herding 600/1000; train_gap=0.000142; val_gap=0.000239
+Herding 650/1000; train_gap=0.000123; val_gap=0.000222
+Herding 700/1000; train_gap=0.000105; val_gap=0.000207
+Herding 750/1000; train_gap=0.000092; val_gap=0.000195
+Herding 800/1000; train_gap=0.000082; val_gap=0.000185
+Herding 850/1000; train_gap=0.000072; val_gap=0.000172
+Herding 900/1000; train_gap=0.000065; val_gap=0.000164
+Herding 950/1000; train_gap=0.000058; val_gap=0.000157
+Herding 1000/1000; train_gap=0.000053; val_gap=0.000153
+Sliced-W1 50/300 train≈0.1036 val≈0.1963
+Sliced-W1 100/300 train≈0.0740 val≈0.1871
+Sliced-W1 150/300 train≈0.0606 val≈0.1865
+Sliced-W1 200/300 train≈0.0536 val≈0.1840
+Sliced-W1 250/300 train≈0.0488 val≈0.1842
+Sliced-W1 300/300 train≈0.0457 val≈0.1834
+Mean-Var: computed μY over 400000 pts in 4.9s
+Mean-Var 100/800; mean_train=1.581309 mean_val=9.621142
+Mean-Var 200/800; mean_train=0.965919 mean_val=10.452943
+Mean-Var 300/800; mean_train=0.940203 mean_val=10.552656
+Mean-Var 400/800; mean_train=0.890674 mean_val=10.549109
+Mean-Var 500/800; mean_train=0.839161 mean_val=10.524606
+Mean-Var 600/800; mean_train=0.766807 mean_val=10.673585
+Mean-Var 700/800; mean_train=0.766949 mean_val=10.453163
+Mean-Var 800/800; mean_train=0.757169 mean_val=10.711830
+Saved subset to results/large/mean_var_d64.npy
+Hyperplane: computed target T over 600000 pts in 6.1s
+Hyperplane 100/800; dev_train=0.000000 dev_val=0.001814
+Hyperplane 200/800; dev_train=0.000000 dev_val=0.001814
+Hyperplane 300/800; dev_train=0.000000 dev_val=0.001813
+Hyperplane 400/800; dev_train=0.000000 dev_val=0.001814
+Hyperplane 500/800; dev_train=0.000000 dev_val=0.001813
+Hyperplane 600/800; dev_train=0.000000 dev_val=0.001814
+Hyperplane 700/800; dev_train=0.000000 dev_val=0.001814
+Early stop at t=700 (no improvement for 500 steps)
+Saved subset to results/large/hyperplane_d64.npy
+Sliced-KL first pass in 1.8s
+Sliced-KL second pass (target hists) in 4.3s
+Sliced-KL 100/300; train_KL≈1.4106 val_KL≈1.5266
+Sliced-KL 200/300; train_KL≈0.4407 val_KL≈0.5321
+Sliced-KL 300/300; train_KL≈0.2273 val_KL≈0.2944
+Saved subset to results/large/sliced_kl_d64.npy
+Wrote results/blog/summary.csv and saved subsets in results/blog/

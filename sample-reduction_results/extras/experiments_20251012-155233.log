@@ -1,0 +1,139 @@
+Starting comprehensive additional experiments...
+
+=== Experiment 1: Random Baseline ===
+Random sampling: d=64, N=500000, m=1000
+  W1: 0.1568, MMD²: 0.001104, KL: 0.0415
+Random sampling: d=128, N=400000, m=1000
+  W1: 0.1283, MMD²: 0.001149, KL: 0.0350
+Random sampling: d=256, N=300000, m=1000
+  W1: 0.1176, MMD²: 0.001088, KL: 0.0375
+
+=== Experiment 2: RFF Herding d=256 ===
+RFF pass: muY over 300000 pts in 43.5s
+Herding 50/1000; train_gap=0.011165; val_gap=0.011308
+Herding 100/1000; train_gap=0.004215; val_gap=0.004319
+Herding 150/1000; train_gap=0.002267; val_gap=0.002377
+Herding 200/1000; train_gap=0.001417; val_gap=0.001515
+Herding 250/1000; train_gap=0.000961; val_gap=0.001052
+Herding 300/1000; train_gap=0.000706; val_gap=0.000787
+Herding 350/1000; train_gap=0.000535; val_gap=0.000631
+Herding 400/1000; train_gap=0.000411; val_gap=0.000515
+Herding 450/1000; train_gap=0.000330; val_gap=0.000425
+Herding 500/1000; train_gap=0.000268; val_gap=0.000361
+Herding 550/1000; train_gap=0.000222; val_gap=0.000325
+Herding 600/1000; train_gap=0.000188; val_gap=0.000288
+Herding 650/1000; train_gap=0.000163; val_gap=0.000262
+Herding 700/1000; train_gap=0.000141; val_gap=0.000240
+Herding 750/1000; train_gap=0.000124; val_gap=0.000227
+Herding 800/1000; train_gap=0.000110; val_gap=0.000207
+Herding 850/1000; train_gap=0.000098; val_gap=0.000195
+Herding 900/1000; train_gap=0.000087; val_gap=0.000184
+Herding 950/1000; train_gap=0.000078; val_gap=0.000177
+Herding 1000/1000; train_gap=0.000070; val_gap=0.000167
+  d=256: W1: 0.0925, MMD²: 0.001157, KL: 0.0291
+
+=== Experiment 3: Sliced Methods d=128 ===
+Running Sliced-W1 d=128...
+Sliced-W1 50/500 train≈0.1218 val≈0.1929
+Sliced-W1 100/500 train≈0.0922 val≈0.1870
+Sliced-W1 150/500 train≈0.0796 val≈0.1808
+Sliced-W1 200/500 train≈0.0730 val≈0.1789
+Sliced-W1 250/500 train≈0.0682 val≈0.1795
+Sliced-W1 300/500 train≈0.0645 val≈0.1797
+Sliced-W1 350/500 train≈0.0620 val≈0.1792
+Sliced-W1 400/500 train≈0.0597 val≈0.1799
+Sliced-W1 450/500 train≈0.0581 val≈0.1794
+Sliced-W1 500/500 train≈0.0564 val≈0.1800
+  Sliced-W1 d=128: W1: 0.1472, MMD²: 0.002230, KL: 0.0378
+
+=== Experiment 4: Consistent N Comparison ===
+Using existing results with different N values noted...
+For a true fair comparison, all methods should be run with N=300,000
+
+=== Experiment 5: Different Output Sizes ===
+RFF Herding d=64 with m=100
+RFF pass: muY over 200000 pts in 6.5s
+Herding 50/100; train_gap=0.008307; val_gap=0.008361
+Herding 100/100; train_gap=0.002791; val_gap=0.002909
+  m=100: W1: 0.1488, MMD²: 0.009718, KL: 0.0421
+RFF Herding d=64 with m=500
+RFF pass: muY over 200000 pts in 6.2s
+Herding 50/500; train_gap=0.008307; val_gap=0.008361
+Herding 100/500; train_gap=0.002791; val_gap=0.002909
+Herding 150/500; train_gap=0.001397; val_gap=0.001498
+Herding 200/500; train_gap=0.000836; val_gap=0.000948
+Herding 250/500; train_gap=0.000543; val_gap=0.000651
+Herding 300/500; train_gap=0.000389; val_gap=0.000489
+Herding 350/500; train_gap=0.000283; val_gap=0.000389
+Herding 400/500; train_gap=0.000213; val_gap=0.000332
+Herding 450/500; train_gap=0.000173; val_gap=0.000285
+Herding 500/500; train_gap=0.000142; val_gap=0.000254
+  m=500: W1: 0.1044, MMD²: 0.002035, KL: 0.0273
+RFF Herding d=64 with m=1000
+RFF pass: muY over 200000 pts in 7.3s
+Herding 50/1000; train_gap=0.008307; val_gap=0.008361
+Herding 100/1000; train_gap=0.002791; val_gap=0.002909
+Herding 150/1000; train_gap=0.001397; val_gap=0.001498
+Herding 200/1000; train_gap=0.000836; val_gap=0.000948
+Herding 250/1000; train_gap=0.000543; val_gap=0.000651
+Herding 300/1000; train_gap=0.000389; val_gap=0.000489
+Herding 350/1000; train_gap=0.000283; val_gap=0.000389
+Herding 400/1000; train_gap=0.000213; val_gap=0.000332
+Herding 450/1000; train_gap=0.000173; val_gap=0.000285
+Herding 500/1000; train_gap=0.000142; val_gap=0.000254
+Herding 550/1000; train_gap=0.000119; val_gap=0.000231
+Herding 600/1000; train_gap=0.000099; val_gap=0.000212
+Herding 650/1000; train_gap=0.000084; val_gap=0.000197
+Herding 700/1000; train_gap=0.000072; val_gap=0.000184
+Herding 750/1000; train_gap=0.000062; val_gap=0.000175
+Herding 800/1000; train_gap=0.000054; val_gap=0.000163
+Herding 850/1000; train_gap=0.000048; val_gap=0.000159
+Herding 900/1000; train_gap=0.000043; val_gap=0.000153
+Herding 950/1000; train_gap=0.000038; val_gap=0.000148
+Herding 1000/1000; train_gap=0.000035; val_gap=0.000139
+  m=1000: W1: 0.1109, MMD²: 0.001099, KL: 0.0254
+RFF Herding d=64 with m=2000
+RFF pass: muY over 200000 pts in 6.9s
+Herding 100/2000; train_gap=0.002791; val_gap=0.002909
+Herding 200/2000; train_gap=0.000836; val_gap=0.000948
+Herding 300/2000; train_gap=0.000389; val_gap=0.000489
+Herding 400/2000; train_gap=0.000213; val_gap=0.000332
+Herding 500/2000; train_gap=0.000142; val_gap=0.000254
+Herding 600/2000; train_gap=0.000099; val_gap=0.000212
+Herding 700/2000; train_gap=0.000072; val_gap=0.000184
+Herding 800/2000; train_gap=0.000054; val_gap=0.000163
+Herding 900/2000; train_gap=0.000043; val_gap=0.000153
+Herding 1000/2000; train_gap=0.000035; val_gap=0.000139
+Herding 1100/2000; train_gap=0.000029; val_gap=0.000136
+Herding 1200/2000; train_gap=0.000024; val_gap=0.000124
+Herding 1300/2000; train_gap=0.000021; val_gap=0.000125
+Herding 1400/2000; train_gap=0.000018; val_gap=0.000124
+Herding 1500/2000; train_gap=0.000016; val_gap=0.000120
+Herding 1600/2000; train_gap=0.000014; val_gap=0.000118
+Herding 1700/2000; train_gap=0.000012; val_gap=0.000118
+Herding 1800/2000; train_gap=0.000010; val_gap=0.000117
+Herding 1900/2000; train_gap=0.000010; val_gap=0.000116
+Herding 2000/2000; train_gap=0.000009; val_gap=0.000117
+  m=2000: W1: 0.1003, MMD²: 0.000612, KL: 0.0217
+
+=== Summary of All Experiments ===
+
+Random Baseline:
+  random d=64, m=1000: W1=0.1522, MMD²=0.001071, KL=0.0426
+  random d=128, m=1000: W1=0.1404, MMD²=0.001141, KL=0.0423
+  random d=256, m=1000: W1=0.1282, MMD²=0.001058, KL=0.0352
+  random d=64, m=1000: W1=0.1568, MMD²=0.001104, KL=0.0415
+  random d=128, m=1000: W1=0.1283, MMD²=0.001149, KL=0.0350
+  random d=256, m=1000: W1=0.1176, MMD²=0.001088, KL=0.0375
+
+RFF Scalability:
+  rff_herding d=256, m=1000: W1=0.0925, MMD²=0.001157, KL=0.0291
+
+Output Sizes:
+  rff_herding d=64, m=100: W1=0.1488, MMD²=0.009718, KL=0.0421
+  rff_herding d=64, m=500: W1=0.1044, MMD²=0.002035, KL=0.0273
+  rff_herding d=64, m=1000: W1=0.1109, MMD²=0.001099, KL=0.0254
+  rff_herding d=64, m=2000: W1=0.1003, MMD²=0.000612, KL=0.0217
+
+All experiments completed!
+Results saved in results/extras/
