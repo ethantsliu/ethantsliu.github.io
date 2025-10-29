@@ -8,40 +8,41 @@
   <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 <body>
-  <div class="header-container">
-    <div class="theme-toggle" id="themeToggle">
-      <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
-        <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
-        <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"/>
-        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"/>
-        <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"/>
-        <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"/>
-        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"/>
-        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"/>
-      </svg>
-      <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"/>
-      </svg>
-    </div>
-    <div class="header-content">
-      <div class="dropdown" id="dropdown">
-        <button class="dropdown-btn" id="dropdownBtn">天</button>
-        <div class="dropdown-content" id="dropdownContent">
-          <a href="index.html">about</a>
-          <a href="work.html">work</a>
-          <a href="research.html" style="color: var(--accent); text-decoration: underline;">research</a>
-          <a href="projects.html">projects</a>
-          <a href="writing.html">writing</a>
+  <div class="page-wrapper">
+    <header class="header-container">
+      <div class="header-top">
+        <div class="theme-toggle" id="themeToggle">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
+            <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"/>
+            <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"/>
+            <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="dropdown" id="dropdown">
+          <button class="dropdown-btn" id="dropdownBtn">天</button>
+          <div class="dropdown-content" id="dropdownContent">
+            <a href="index.html">about</a>
+            <a href="work.html">work</a>
+            <a href="research.html" style="color: var(--accent); text-decoration: underline;">research</a>
+            <a href="projects.html">projects</a>
+            <a href="writing.html">writing</a>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    </header>
 
-  <div class="main-content">
-    <section class="research">
-      <div class="research-entry">
+    <div class="main-content">
+      <section class="research">
+        <div class="research-entry">
         <div class="research-title-row">
           <span class="research-title">VADER: A Human-Evaluated Benchmark for Vulnerability Assessment, Detection, Explanation, and Remediation</span>
           <span class="research-year">2025</span>
@@ -53,7 +54,7 @@
           [<a href="https://arxiv.org/abs/2505.19395" target="_blank">preprint</a>]&nbsp;[<a href="https://github.com/afterquery/vader" target="_blank">github</a>]
         </div>
       </div>
-      <div class="research-entry">
+        <div class="research-entry">
         <div class="research-title-row">
           <span class="research-title">Simplifying Multimodal Composition: A Novel Zero-shot Framework to Visual Question Answering and Image Captioning</span>
           <span class="research-year">2023</span>
@@ -64,10 +65,11 @@
         <div class="research-links">
           [<a href="https://www.researchgate.net/publication/371547363_Simplifying_Multimodal_Composition_A_Novel_Zero-shot_Framework_to_Visual_Question_Answering_and_Image_Captioning" target="_blank">preprint</a>]&nbsp;[<a href="https://github.com/ethantsliu/smmc" target="_blank">github</a>]
         </div>
-      </div>
-    </section>
+        </div>
+      </section>
+    </div>
   </div>
-
+  <script src="background.js"></script>
   <script>
     // Theme toggle functionality
     const themeToggle = document.getElementById('themeToggle');
@@ -111,6 +113,7 @@
       dropdownContent.style.display = 'block';
       dropdownContent.style.opacity = '1';
       dropdownContent.style.visibility = 'visible';
+      dropdownContent.style.pointerEvents = 'auto';
     }
 
     function hideDropdown() {
@@ -118,11 +121,14 @@
         dropdownContent.style.display = 'none';
         dropdownContent.style.opacity = '0';
         dropdownContent.style.visibility = 'hidden';
+        dropdownContent.style.pointerEvents = 'none';
       }, 150);
     }
 
     dropdown.addEventListener('mouseenter', showDropdown);
     dropdown.addEventListener('mouseleave', hideDropdown);
+    dropdownContent.addEventListener('mouseenter', showDropdown);
+    dropdownContent.addEventListener('mouseleave', hideDropdown);
   </script>
 </body>
 </html>

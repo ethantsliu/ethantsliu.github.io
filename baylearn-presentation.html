@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>BayLearn Presentation Reflections | Ethan Liu</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    .essay-container {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      text-align: left;
+    }
+
+    .essay-title {
+      font-size: 1.3rem;
+      font-family: 'Baskerville', 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.4px;
+    }
+
+    .essay-meta {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      font-family: 'Baskerville', 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
+    }
+
+    .essay-content p {
+      text-indent: 1.5em;
+      margin-bottom: 1.5rem;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--muted);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body data-pond="off">
+  <div class="page-wrapper">
+    <header class="header-container">
+      <div class="header-top">
+        <div class="theme-toggle" id="themeToggle">
+      <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+        <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
+        <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"/>
+        <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"/>
+        <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"/>
+      </svg>
+        </div>
+        <div class="dropdown" id="dropdown">
+          <button class="dropdown-btn" id="dropdownBtn">天</button>
+          <div class="dropdown-content" id="dropdownContent">
+            <a href="index.html">about</a>
+            <a href="work.html">work</a>
+            <a href="research.html">research</a>
+            <a href="projects.html">projects</a>
+            <a href="writing.html" style="color: var(--accent); text-decoration: underline;">writing</a>
+          </div>
+        </div>
+      </div>
+      <h1 class="name-title">Ethan 天适 Liu</h1>
+    </header>
+
+    <div class="main-content">
+    <div class="essay-container">
+      <a href="writing.html" class="back-link">← back to writing</a>
+
+      <h1 class="essay-title">BayLearn Presentation Reflections</h1>
+      <div class="essay-meta">Ethan Liu | October 2025 &middot; notes forthcoming</div>
+
+      <div class="essay-content">
+        <p>Coming soon.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const sunIcon = document.querySelector('.sun-icon');
+    const moonIcon = document.querySelector('.moon-icon');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    updateThemeIcon(currentTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const theme = document.documentElement.getAttribute('data-theme');
+      const newTheme = theme === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+
+    function updateThemeIcon(theme) {
+      if (theme === 'dark') {
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+      } else {
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+      }
+    }
+
+    const dropdown = document.getElementById('dropdown');
+    const dropdownBtn = document.getElementById('dropdownBtn');
+    const dropdownContent = document.getElementById('dropdownContent');
+    let timeoutId;
+
+    function showDropdown() {
+      clearTimeout(timeoutId);
+      dropdownContent.style.display = 'block';
+      dropdownContent.style.opacity = '1';
+      dropdownContent.style.visibility = 'visible';
+      dropdownContent.style.pointerEvents = 'auto';
+    }
+
+    function hideDropdown() {
+      timeoutId = setTimeout(() => {
+        dropdownContent.style.display = 'none';
+        dropdownContent.style.opacity = '0';
+        dropdownContent.style.visibility = 'hidden';
+        dropdownContent.style.pointerEvents = 'none';
+      }, 150);
+    }
+
+    dropdown.addEventListener('mouseenter', showDropdown);
+    dropdown.addEventListener('mouseleave', hideDropdown);
+    dropdownContent.addEventListener('mouseenter', showDropdown);
+    dropdownContent.addEventListener('mouseleave', hideDropdown);
+  </script>
+  </div>
+  <script src="background.js"></script>
+</body>
+</html>
