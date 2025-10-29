@@ -43,7 +43,7 @@
 
     <main class="main-content">
       <div class="contact-bar">
-        <span class="contact-email" data-encoded="ZXRoYW50c2xpdUBiZXJrZWxleS5lZHU=" aria-label="Email address">ude.yelekreb@uilstnahte</span>
+        <span class="contact-email">ethantsliu [at] berkeley [dot] edu</span>
         <span class="divider-dot">·</span>
         <a href="https://twitter.com/ethantsliu" target="_blank">twitter</a>
         <span class="divider-dot">·</span>
@@ -77,7 +77,7 @@
           </li>
           <li class="feature-item">
             <a class="feature-title" href="sample-reduction.html">Representative Sampling of High-Dimensional Point Sets</a>
-            <span class="feature-date">Jul 2025</span>
+            <span class="feature-date">May 2025</span>
           </li>
         </ul>
       </section>
@@ -144,19 +144,6 @@
     dropdownContent.addEventListener('mouseenter', showDropdown);
     dropdownContent.addEventListener('mouseleave', hideDropdown);
 
-    const emailNode = document.querySelector('.contact-email');
-    if (emailNode && emailNode.dataset.encoded) {
-      requestAnimationFrame(() => {
-        setTimeout(() => {
-          try {
-            const decoded = atob((emailNode.dataset.encoded || '').trim());
-            emailNode.textContent = decoded;
-          } catch (err) {
-            console.warn('Unable to decode email', err);
-          }
-        }, 50);
-      });
-    }
   </script>
 </body>
 </html>
