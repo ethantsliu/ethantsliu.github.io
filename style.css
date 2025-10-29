@@ -423,7 +423,7 @@ body {
 .dropdown-btn {
   background: transparent;
   border: none;
-  color: var(--text);
+  color: var(--accent-soft);
   padding: 0.35rem 1.1rem;
   font-family: inherit;
   font-size: 0.9rem;
@@ -616,6 +616,14 @@ html[data-theme="dark"] .dropdown-content {
 }
 
 .intro a:hover {
+  color: var(--accent-soft);
+  text-decoration: underline;
+}
+
+.accent-link {
+  color: var(--accent-soft);
+}
+.accent-link:hover {
   color: var(--accent-soft);
   text-decoration: underline;
 }
@@ -1193,6 +1201,12 @@ body.home::after {
   align-items: center;
 }
 
+.home .contact-bar .contact-email {
+  color: var(--accent-soft);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
 .home .contact-bar a {
   color: var(--text);
   text-decoration: none;
@@ -1203,6 +1217,12 @@ body.home::after {
 .home .contact-bar a:hover {
   color: var(--accent-soft);
   border-bottom-color: var(--accent-soft);
+}
+
+.home .contact-bar .contact-email:focus {
+  border-bottom-color: var(--accent-soft);
+  outline: 1px dashed var(--accent-soft);
+  outline-offset: 2px;
 }
 
 .home .divider-dot {

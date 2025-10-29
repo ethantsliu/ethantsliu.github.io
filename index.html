@@ -43,7 +43,7 @@
 
     <main class="main-content">
       <div class="contact-bar">
-        <span>ethantsliu [at] berkeley [dot] edu</span>
+        <span class="contact-email" data-encoded="ZXRoYW50c2xpdUBiZXJrZWxleS5lZHU=" aria-label="Email address">ude.yelekreb@uilstnahte</span>
         <span class="divider-dot">·</span>
         <a href="https://twitter.com/ethantsliu" target="_blank">twitter</a>
         <span class="divider-dot">·</span>
@@ -56,12 +56,12 @@
 
       <section class="intro">
         <p>
-          I'm a sophomore studying computer science and electrical engineering at UC Berkeley. I work on agentic evals and various research initiatives at <a href="https://www.afterquery.com/" target="_blank">AfterQuery</a>.
+          I'm a sophomore studying computer science and electrical engineering at UC Berkeley. I work on agentic evals and various research initiatives at <a class="accent-link" href="https://www.afterquery.com/" target="_blank">AfterQuery</a>.
         </p>
         <p>
           I've been very fortunate to collaborate with
           <a href="https://www.lisabdunlap.com/"
-            >Lisa Dunlap</a> at <a href="https://bair.berkeley.edu/" target="_blank">Berkeley AI Research</a> on studying model behavior. 
+            >Lisa Dunlap</a> at <a class="accent-link" href="https://bair.berkeley.edu/" target="_blank">Berkeley AI Research</a> on studying model behavior. 
         </p>
         <p>
             Among my interests are optimization, chess, and literature. 
@@ -143,6 +143,20 @@
     dropdown.addEventListener('mouseleave', hideDropdown);
     dropdownContent.addEventListener('mouseenter', showDropdown);
     dropdownContent.addEventListener('mouseleave', hideDropdown);
+
+    const emailNode = document.querySelector('.contact-email');
+    if (emailNode && emailNode.dataset.encoded) {
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          try {
+            const decoded = atob((emailNode.dataset.encoded || '').trim());
+            emailNode.textContent = decoded;
+          } catch (err) {
+            console.warn('Unable to decode email', err);
+          }
+        }, 50);
+      });
+    }
   </script>
 </body>
 </html>
