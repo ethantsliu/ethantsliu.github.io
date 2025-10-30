@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Representative Sampling of High‑Dimensional Point Sets | Ethan Liu</title>
+  <script>/* no-flash theme */(function(){try{var s=localStorage.getItem('theme');var t=s||(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
   <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="style.css"></noscript>
   <link rel="icon" type="image/svg+xml" href="photos/favicon-tian.svg" />
@@ -507,13 +508,7 @@
         <article id="articleWrap" class="blog-content">
           <h2 id="background"><strong>Background</strong></h2>
 
-      <p>High-dimensional point sets arise across numerous domains, presenting fundamental computational and statistical challenges:</p>
-      <ul>
-        <li>Machine Learning: Feature vectors in modern ML systems can have thousands of dimensions (e.g., text embeddings, image descriptors, molecular fingerprints)</li>
-        <li>Computational Biology: Gene expression profiles containing tens of thousands of genes and single-cell RNA-seq data</li>
-        <li>Scientific Computing: Particle simulations and climate models with high-dimensional state spaces</li>
-        <li>Computer Graphics: 3D point clouds, mesh vertices, and spatial coordinates with various attributes</li>
-      </ul>
+        <p>High-dimensional point sets arise in machine learning, genomics, simulation, and many other fields. A frequent goal is to select a compact subset \(X\subset Y\) of size \(|X|=m\ll|Y|\) that preserves properties of \(Y\): distributional similarity, geometry, and the like. This enables faster downstream computation while controlling approximation error.</p>
 
       <p>As dimensionality increases, data becomes exponentially sparse, distance metrics lose discriminative power, and computational costs grow rapidly. This motivates the need for representative sampling—selecting small subsets that preserve the essential characteristics of large datasets.</p>
 
@@ -542,20 +537,19 @@
       </ul>
 
       <h3 id="distributional-vs-geometric-objectives"><strong>Method Categories</strong></h3>
+      <p> We explore four categories of methods for selecting representative subsets of high-dimensional point sets: geometric, distributional, diversity-based, and sampling-based. </p>
+
+      <h4><strong>Geometric Methods</strong></h4>
+      <p>Perhaps the first thought that comes to mind when thinking about representative sampling are geometric methods. With geometric methods, we can emphasize spatial structure, such as extents, boundaries, and relative positions. These methods excel for visualization and downstream geometry (e.g., nearest neighbors) and are extremely fast, which means we can save on computation! However, they may under‑represent dense regions or subtle distributional features compared to distributional objectives.</p>
 
       <h4><strong>Distributional Methods</strong></h4>
       <p>These methods match probability distributions by minimizing a divergence \(d(P_Y, P_X)\), which is ideal for inference, generative modeling, and risk analysis where tails and modality matter. The benefit is principled fidelity to the data‑generating process; the drawback is computational load—full KL or OT can be prohibitive in high‑D—so we rely on tractable proxies like sliced variants and kernel metrics that retain signal while scaling linearly or nearly so.</p>
 
-      <h4><strong>Geometric Methods</strong></h4>
-      <p>These emphasize spatial structure—extents, boundaries, and relative positions. They excel for visualization and downstream geometry (e.g., nearest neighbors) and are extremely fast, but they may under‑represent dense regions or subtle distributional features compared to distributional objectives.</p>
-
-      
+      <h4><strong>Diversity‑Based Methods</strong></h4>
+      <p>These explicitly discourage redundancy to promote spread. k‑DPPs achieve this via kernel‑based repulsion; practical deployments rely on Nyström landmarking to approximate kernels and keep factorization and sampling within budget.</p>
 
       <h4><strong>Sampling‑Based Methods</strong></h4>
       <p>Stochastic optimization (e.g., MCMC) explores the subset space via probabilistic moves that can escape local optima and quantify uncertainty. Modern variants use delayed‑acceptance and streaming surrogates to keep proposal evaluation cheap while preserving global search behavior.</p>
-
-      <h4><strong>Diversity‑Based Methods</strong></h4>
-      <p>These explicitly discourage redundancy to promote spread. k‑DPPs achieve this via kernel‑based repulsion; practical deployments rely on Nyström landmarking to approximate kernels and keep factorization and sampling within budget.</p>
 
           
       <p>Let \(Y = \{y_i\}_{i=1}^N \subset \mathbb{R}^d\) be the full dataset and \(X = \{x_j\}_{j=1}^m \subset Y\) the selected subset with \(m \ll N\). We denote by \(P_Y\) and \(P_X\) the probability distributions induced by these sets. In practice, we work with either <strong>empirical distributions</strong> (\(P_Y = \frac{1}{N}\sum_{i=1}^N \delta_{y_i}\) and \(P_X = \frac{1}{m}\sum_{j=1}^m \delta_{x_j}\)) or <strong>smoothed distributions</strong> using kernel density estimates (KDE) to avoid atomic mass points.</p>
@@ -645,6 +639,50 @@
       
 
           <h2 id="methods"><strong>Methods</strong></h2>
+
+          <h2 id="method-hyperplane"><strong>Hyperplane Extent</strong></h2>
+          <p>The Hyperplane method provides a geometrically-motivated baseline for representative selection that focuses on preserving the spatial extent and boundary characteristics of the data distribution. Unlike distribution-aware methods that seek to match probability densities or moments, this approach emphasizes coverage of the geometric envelope and ensures that the selected subset spans all major directions in space.</p>
+
+          <p><strong>Geometric intuition:</strong> Imagine the point cloud \(Y\) as a collection of points in space. For any direction \(v\), there exists a point in \(Y\) that is furthest along that direction (the supporting point). By selecting these extreme points across multiple directions, we approximate the convex hull of the distribution. This ensures that our subset captures the shape, extent, and boundaries of the original data.</p>
+
+          <p><strong>Hyperplane formulation:</strong> In \(d\) dimensions, a hyperplane through the origin with normal vector \(n\) divides space into two half-spaces. The signed distance of a point \(x\) to this hyperplane is given by \(d(x,n) = \langle n, x \rangle\). Points with large absolute values of this distance are far from the hyperplane in either direction. By sampling many random normal vectors \(\{n_j\}_{j=1}^R\), we can assess the extent of the data along different orientations.</p>
+
+          <p><strong>Extent matching objective:</strong> We define the average absolute projection for a set \(S\) as:</p>
+          <div class="math-block">\[ A(S) = \frac{1}{|S|R}\sum_{x \in S}\sum_{j=1}^R |n_j^\top x|, \]</div>
+          which measures how well the set \(S\) covers the space along the sampled directions. Our goal is to minimize the deviation between the full set and subset extents:</p>
+          <div class="math-block">\[ J(S) = |A(S) - A(Y)|. \]</div>
+
+          <p><strong>Selection strategy:</strong> The greedy algorithm starts with an empty set and iteratively adds points that most reduce the extent deviation \(J(S)\). At each step, we evaluate every candidate point and compute the new extent that would result from adding it to the current subset. This naturally favors points that lie in directions that are currently under-represented.</p>
+
+          <p><strong>Statistical interpretation:</strong> While not explicitly statistical, this method can be viewed as matching the expected absolute value of projections under a uniform distribution over directions. This is related to the concept of mean width in convex geometry - the average distance between parallel supporting hyperplanes. By preserving this quantity, we maintain the overall size and scale of the point cloud.</p>
+
+          <p><strong>Computational efficiency:</strong> The hyperplane method is one of the fastest approaches available. Computing projections requires \(O(d)\) operations per point per direction, and we need \(O(R \cdot N)\) operations to compute the initial extent of the full set. Each greedy step requires \(O(R \cdot (|X_{t-1}| + N))\) operations, making the total complexity \(O(m \cdot R \cdot N)\). In practice, \(R\) can be much smaller than for sliced methods (20-50 directions often suffice).</p>
+
+          <p><strong>Geometric properties:</strong> The method naturally selects points from the convex hull or its vicinity, ensuring good coverage of the boundary. It's particularly effective for distributions with well-defined shapes or when the application requires preserving the support of the distribution. The selected points tend to be well-distributed across different regions of space.</p>
+
+          <p><strong>Robustness characteristics:</strong> Since the method focuses on geometric extent rather than density, it's robust to outliers in terms of selection frequency (outliers are naturally selected as extreme points). However, it may over-represent sparse regions if they contribute significantly to the geometric extent. This makes it less suitable for applications where density preservation is important.</p>
+
+          <p><strong>Relationship to other methods:</strong> The hyperplane approach can be seen as a geometric counterpart to moment-matching methods. While Mean-Variance preserves statistical moments along projections, Hyperplane preserves geometric extent. In practice, these methods complement each other - one captures internal structure, the other captures external boundaries.</p>
+
+          <p><strong>Practical applications:</strong> This baseline is particularly useful for tasks involving spatial coverage, boundary detection, convex approximation, or when computational efficiency is paramount. It serves as a reference point for evaluating more sophisticated distribution-aware methods.</p>
+          
+          <p>One implementation is as follows: sample a set of \(k\) random unit direction vectors \(\{v_1, v_2, \ldots, v_k\}\) in 2D. For each direction \(v_i\), find the point \(p_i \in Y\) that maximizes the signed distance \(v_i \cdot p\) (i.e. the projection of \(p\) onto \(v_i\)). Include each such \(p_i\) in the subset \(X\). (If the same point ends up selected by multiple directions, it need only be included once.) This yields up to \(k\) points that cover the extremes of \(Y\) in those sampled directions. We used a variant of this idea. To make sure both sides of each hyperplane are considered, one can also sample \(v_i\) and \(-v_i\) pairs or sample more directions and then take the top \(k\) extreme points overall.</p>
+          
+          <p>This baseline does not attempt to match the overall distribution of points; rather, it focuses on the geometric boundary. It will ensure that the subset spans a similar bounding box or convex shape as \(Y\), but it may under-sample dense interior regions (since no explicit effort is made to pick points from high-density areas). The baseline is computationally cheap (linear in \(|Y|\) for a given set of directions) and provides a point of comparison for the more sophisticated strategies above.</p>
+          <p class="algo-notes">\(n_r\) are random unit normals. We define \(A(S)=\tfrac{1}{|S|R}\sum_{x\in S}\sum_{r=1}^R |n_r^\top x|\) and match \(A(X)\) to \(A(Y)\) via \(J(X)=\lvert A(X)-A(Y)\rvert\).</p>
+          <div class="algorithm-box">
+            <div class="math-block">\[\begin{aligned}
+              &\text{Draw normals } \{n_r\}_{r=1}^R.\; A(S)=\frac{1}{|S|R}\sum_{x\in S}\sum_{r=1}^R |n_r^\top x|,\; J(S)=\big|A(S)-A(Y)\big|.\\
+              &X_0=\varnothing.\\
+              &\text{For } t=1,\ldots,m:\\
+              &\quad s_t(y)\;:=\;J\big(X_{t-1}\cup\{y\}\big).\\
+              &\quad x_t^{\ast} \,\in\, \arg\min_{y\in Y\setminus X_{t-1}}\; s_t(y).\\
+              &\quad X_t = X_{t-1}\cup\{x_t^{\ast}\}.
+            \end{aligned}\]</div>
+          </div>
+          <p class="algo-notes">We match the subset's average absolute projection to random normals to that of the full set by minimizing \(J(X)=\lvert A(X)-A(Y)\rvert\). Each step adds \(x_t^{\ast}\) that best reduces this deviation.</p>
+          <p class="algo-notes">Walkthrough. Draw random normals and match the average absolute projection \(A(X)\) to \(A(Y)\). Greedily add the point that reduces \(|A(X)-A(Y)|\); this captures extent/extremes.</p>
+          <div style="margin:0.5rem 0 1.25rem;"><div id="hp3d" class="plot3d"></div></div>
 
           <h2 id="method-kl"><strong>Kullback-Leibler Divergence</strong></h2>
           <p>One principled way to measure how well a subset \(X\) of points represents a full set \(Y\) is to treat each set as defining a probability distribution over space (for example, an empirical distribution or a density estimate) and then compute the Kullback–Leibler (KL) divergence between these distributions. The KL divergence \(D_{\mathrm{KL}}(P\Vert Q)\) from distribution \(P\) to distribution \(Q\) is given by:</p>
@@ -825,50 +863,6 @@
 
           <p class="algo-notes">Walkthrough. Sample random directions and keep \(X\) close to \(Y\) in projection means while preserving spread (variance). Each step adds the point that most reduces the directional moment error.</p>
           <div style="margin:0.5rem 0 1.25rem;"><div id="mv3d" class="plot3d"></div></div>
-
-          <h2 id="method-hyperplane"><strong>Hyperplane Extent</strong></h2>
-          <p>The Hyperplane method provides a geometrically-motivated baseline for representative selection that focuses on preserving the spatial extent and boundary characteristics of the data distribution. Unlike distribution-aware methods that seek to match probability densities or moments, this approach emphasizes coverage of the geometric envelope and ensures that the selected subset spans all major directions in space.</p>
-
-          <p><strong>Geometric intuition:</strong> Imagine the point cloud \(Y\) as a collection of points in space. For any direction \(v\), there exists a point in \(Y\) that is furthest along that direction (the supporting point). By selecting these extreme points across multiple directions, we approximate the convex hull of the distribution. This ensures that our subset captures the shape, extent, and boundaries of the original data.</p>
-
-          <p><strong>Hyperplane formulation:</strong> In \(d\) dimensions, a hyperplane through the origin with normal vector \(n\) divides space into two half-spaces. The signed distance of a point \(x\) to this hyperplane is given by \(d(x,n) = \langle n, x \rangle\). Points with large absolute values of this distance are far from the hyperplane in either direction. By sampling many random normal vectors \(\{n_j\}_{j=1}^R\), we can assess the extent of the data along different orientations.</p>
-
-          <p><strong>Extent matching objective:</strong> We define the average absolute projection for a set \(S\) as:</p>
-          <div class="math-block">\[ A(S) = \frac{1}{|S|R}\sum_{x \in S}\sum_{j=1}^R |n_j^\top x|, \]</div>
-          which measures how well the set \(S\) covers the space along the sampled directions. Our goal is to minimize the deviation between the full set and subset extents:</p>
-          <div class="math-block">\[ J(S) = |A(S) - A(Y)|. \]</div>
-
-          <p><strong>Selection strategy:</strong> The greedy algorithm starts with an empty set and iteratively adds points that most reduce the extent deviation \(J(S)\). At each step, we evaluate every candidate point and compute the new extent that would result from adding it to the current subset. This naturally favors points that lie in directions that are currently under-represented.</p>
-
-          <p><strong>Statistical interpretation:</strong> While not explicitly statistical, this method can be viewed as matching the expected absolute value of projections under a uniform distribution over directions. This is related to the concept of mean width in convex geometry - the average distance between parallel supporting hyperplanes. By preserving this quantity, we maintain the overall size and scale of the point cloud.</p>
-
-          <p><strong>Computational efficiency:</strong> The hyperplane method is one of the fastest approaches available. Computing projections requires \(O(d)\) operations per point per direction, and we need \(O(R \cdot N)\) operations to compute the initial extent of the full set. Each greedy step requires \(O(R \cdot (|X_{t-1}| + N))\) operations, making the total complexity \(O(m \cdot R \cdot N)\). In practice, \(R\) can be much smaller than for sliced methods (20-50 directions often suffice).</p>
-
-          <p><strong>Geometric properties:</strong> The method naturally selects points from the convex hull or its vicinity, ensuring good coverage of the boundary. It's particularly effective for distributions with well-defined shapes or when the application requires preserving the support of the distribution. The selected points tend to be well-distributed across different regions of space.</p>
-
-          <p><strong>Robustness characteristics:</strong> Since the method focuses on geometric extent rather than density, it's robust to outliers in terms of selection frequency (outliers are naturally selected as extreme points). However, it may over-represent sparse regions if they contribute significantly to the geometric extent. This makes it less suitable for applications where density preservation is important.</p>
-
-          <p><strong>Relationship to other methods:</strong> The hyperplane approach can be seen as a geometric counterpart to moment-matching methods. While Mean-Variance preserves statistical moments along projections, Hyperplane preserves geometric extent. In practice, these methods complement each other - one captures internal structure, the other captures external boundaries.</p>
-
-          <p><strong>Practical applications:</strong> This baseline is particularly useful for tasks involving spatial coverage, boundary detection, convex approximation, or when computational efficiency is paramount. It serves as a reference point for evaluating more sophisticated distribution-aware methods.</p>
-          
-          <p>One implementation is as follows: sample a set of \(k\) random unit direction vectors \(\{v_1, v_2, \ldots, v_k\}\) in 2D. For each direction \(v_i\), find the point \(p_i \in Y\) that maximizes the signed distance \(v_i \cdot p\) (i.e. the projection of \(p\) onto \(v_i\)). Include each such \(p_i\) in the subset \(X\). (If the same point ends up selected by multiple directions, it need only be included once.) This yields up to \(k\) points that cover the extremes of \(Y\) in those sampled directions. We used a variant of this idea. To make sure both sides of each hyperplane are considered, one can also sample \(v_i\) and \(-v_i\) pairs or sample more directions and then take the top \(k\) extreme points overall.</p>
-          
-          <p>This baseline does not attempt to match the overall distribution of points; rather, it focuses on the geometric boundary. It will ensure that the subset spans a similar bounding box or convex shape as \(Y\), but it may under-sample dense interior regions (since no explicit effort is made to pick points from high-density areas). The baseline is computationally cheap (linear in \(|Y|\) for a given set of directions) and provides a point of comparison for the more sophisticated strategies above.</p>
-          <p class="algo-notes">\(n_r\) are random unit normals. We define \(A(S)=\tfrac{1}{|S|R}\sum_{x\in S}\sum_{r=1}^R |n_r^\top x|\) and match \(A(X)\) to \(A(Y)\) via \(J(X)=\lvert A(X)-A(Y)\rvert\).</p>
-          <div class="algorithm-box">
-            <div class="math-block">\[\begin{aligned}
-              &\text{Draw normals } \{n_r\}_{r=1}^R.\; A(S)=\frac{1}{|S|R}\sum_{x\in S}\sum_{r=1}^R |n_r^\top x|,\; J(S)=\big|A(S)-A(Y)\big|.\\
-              &X_0=\varnothing.\\
-              &\text{For } t=1,\ldots,m:\\
-              &\quad s_t(y)\;:=\;J\big(X_{t-1}\cup\{y\}\big).\\
-              &\quad x_t^{\ast} \,\in\, \arg\min_{y\in Y\setminus X_{t-1}}\; s_t(y).\\
-              &\quad X_t = X_{t-1}\cup\{x_t^{\ast}\}.
-            \end{aligned}\]</div>
-          </div>
-          <p class="algo-notes">We match the subset's average absolute projection to random normals to that of the full set by minimizing \(J(X)=\lvert A(X)-A(Y)\rvert\). Each step adds \(x_t^{\ast}\) that best reduces this deviation.</p>
-          <p class="algo-notes">Walkthrough. Draw random normals and match the average absolute projection \(A(X)\) to \(A(Y)\). Greedily add the point that reduces \(|A(X)-A(Y)|\); this captures extent/extremes.</p>
-          <div style="margin:0.5rem 0 1.25rem;"><div id="hp3d" class="plot3d"></div></div>
 
           <h2 id="method-mcmc"><strong>MCMC Subset Selection</strong></h2>
           <p>Markov Chain Monte Carlo methods provide a fundamentally different approach to representative selection by exploring the space of possible subsets through stochastic transitions rather than deterministic greedy optimization. Instead of always picking the "best" point at each step, MCMC allows for probabilistic moves that can escape local optima and explore diverse solutions, potentially finding better global optima for complex distributions.</p>
@@ -1383,7 +1377,8 @@ Conclusion
     const sunIcon = document.querySelector('.sun-icon');
     const moonIcon = document.querySelector('.moon-icon');
 
-    const currentTheme = localStorage.getItem('theme') || 'light';
+    const savedTheme = localStorage.getItem('theme');
+    const currentTheme = savedTheme || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     document.documentElement.setAttribute('data-theme', currentTheme);
     updateThemeIcon(currentTheme);
 

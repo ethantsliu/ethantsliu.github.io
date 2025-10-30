@@ -511,6 +511,25 @@ html[data-theme="dark"] .dropdown-content {
   margin-top: 0.7rem;
 }
 
+/* Essay pages: constrain content width and align back-link */
+.essay-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-block;
+  margin: 0.2rem 0 1rem 0;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.back-link:hover {
+  color: var(--accent-soft);
+  text-decoration: underline;
+}
+
 /*──────────────────────────────────────────────────────────────────────────────
   5. Profile header & avatar
 ──────────────────────────────────────────────────────────────────────────────*/
