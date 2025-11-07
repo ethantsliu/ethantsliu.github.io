@@ -582,7 +582,7 @@
           <p>This routine is extremely light-weight. Computing the initial projections costs \(O(RNd)\), where \(R\) is the number of sampled directions and \(d\) is the ambient dimension; each additional point needs only updated dot products, so the overall complexity is \(O(mRN)\) with small constants because a few dozen directions already give smooth coverage. The selected subset hugs the convex hull, naturally surfaces outliers, and guarantees good boundary coverage even in high dimensions. The trade-off is that interior density can be under-represented.</p>
 
           <p>In practice we sample direction pairs \(v\) and \(-v\), take the farthest projections in each, and deduplicate the chosen indices. If the pass yields fewer than \(m\) points, we backfill by adding the farthest points from the centroid so that the envelope remains inflated. The result is a subset that maintains the geometric silhouette of \(Y\) with linear-time compute and minimal tuning.</p>
-          <p class="algo-notes">\(n_r\) are random unit normals (length-one vectors pointing in uniformly sampled directions). We define \(A(S)=\tfrac{1}{|S|R}\sum_{x\in S}\sum_{r=1}^R |n_r^\top x|\) and match \(A(X)\) to \(A(Y)\) via \(J(X)=\lvert A(X)-A(Y)\rvert\). So, in summary:</p>
+          <p class="algo-notes">\(n_r\) are random unit normals (length-1 vectors pointing in uniformly sampled directions). We define \(A(S)=\tfrac{1}{|S|R}\sum_{x\in S}\sum_{r=1}^R |n_r^\top x|\) and match \(A(X)\) to \(A(Y)\) via \(J(X)=\lvert A(X)-A(Y)\rvert\). So, in summary, the full algorithm:</p>
           <div class="algorithm-box">
             <div class="math-block">\[\begin{aligned}
               &\text{Draw normals } \{n_r\}_{r=1}^R.\; A(S)=\frac{1}{|S|R}\sum_{x\in S}\sum_{r=1}^R |n_r^\top x|,\; J(S)=\big|A(S)-A(Y)\big|.\\
@@ -598,15 +598,19 @@
           <div style="margin:0.5rem 0 1.25rem;"><div id="hp3d" class="plot3d"></div></div>
 
           <h4 id="method-mean-var"><strong>Mean-Variance</strong></h4>
-          <p>Now, instead of hugging extremes, we look along many random directions \(v_j\), project the cloud, and make sure the subset carries the same one-dimensional means and variances as the full set. Each direction acts like a probe; if a slice feels too light near the center or too thin in the tails, the next chosen point repairs that imbalance.</p>
+          <p>Hyperplane Extent keeps the boundary honest, but it can starve the interior: dense clusters lose weight, the global centroid drifts, and variances shrink when we only chase extremes. We want a subset that preserves those first two moments, so we turn to Mean-Variance.</p>
 
-          <p>Formally, every candidate subset \(X\) is scored by a projection-moment discrepancy</p>
+          <p>Intuitively, we reuse the random-direction machinery—project the cloud along many normals, compare the subset’s center and spread with the full set, and whenever a slice looks off we add the point that repairs it. Because the variance term still rewards scatter, the greedy steps keep a few of those edge points in play, which is exactly what you see near the periphery of the 3D plot.</p>
+
+          <p>Formally, we minimize the discrepancy</p>
           <div class="math-block">\[ E(X) = \frac{1}{p}\sum_{j=1}^p \Big[(\mu_Y^{(j)}-\mu_X^{(j)})^2 + \lambda(\sigma_Y^{(j)}-\sigma_X^{(j)})^2\Big], \]</div>
-          where \(\mu^{(j)}\) and \(\sigma^{(j)}\) denote the mean and standard deviation of \(v_j^\top y\). The weight \(\lambda\) tilts the trade-off: values above one emphasize matching spread, while smaller choices lock in the mean. Greedily minimizing \(E(X)\) adds whichever point most reduces the cumulative mismatch, so under-served directions immediately attract new representatives.</p>
+          where \(\mu^{(j)}\) and \(\sigma^{(j)}\) are the mean and standard deviation of the projected coordinates \(v_j^{\top}y\). The factor \(1/p\) simply averages over the \(p\) sampled directions; here we take \(p = 128\) probes, which is enough for stable moment estimates without blowing up runtime.</p>
 
-          <p>The mechanics stay lightweight. Computing the projections is just a batch of dot products, and we can update the directional moments incrementally, keeping each step near \(O(pN)\) with small constants. The resulting subset mixes central anchors with a few deliberate outliers—it mirrors the ellipsoidal structure of the data and complements Hyperplane Extent, which handles the outer shell.</p>
+          <p>The weighting \(\lambda\) controls how loudly variance argues relative to the mean; for the 3D visualization we set \(\lambda = 0.2\), so means take the lead while variance still has a vote. At each step we add the point that most reduces \(E(X)\), automatically steering new selections toward whichever directions currently look under-served.</p>
 
-          <p class="algo-notes">\(\mu_X^{(j)}\) and \(\sigma_X^{(j)}\) are the mean and standard deviation of \(v_j^{\top}x\) over \(x\in X\); \(\lambda\) controls how much variance matters relative to the mean.</p>
+          <p>The mechanics stay lightweight. Projections are just dot products, directional moments update incrementally, and the whole loop runs in roughly \(O(pN)\) per step. The resulting subset blends central anchors with a few deliberate outliers—it mirrors the ellipsoidal core of the data while keeping the statistics that matter to downstream inference intact.</p>
+
+          <p class="algo-notes">\(\mu_X^{(j)}\) and \(\sigma_X^{(j)}\) are the mean and standard deviation of \(v_j^{\top}x\) over \(x\in X\); we use \(p = 128\) directions and \(\lambda = 0.2\) for the rendered example.</p>
           <div class="algorithm-box">
             <div class="math-block">\[\begin{aligned}
               &E(X)=\frac{1}{p}\sum_{j=1}^p\Big[(\mu_Y^{(j)}-\mu_X^{(j)})^2+\lambda\, (\sigma_Y^{(j)}-\sigma_X^{(j)})^2\Big].\\
@@ -619,6 +623,22 @@
           </div>
 
           <div style="margin:0.5rem 0 1.25rem;"><div id="mv3d" class="plot3d"></div></div>
+
+          <p>Oh no! We actually ended up selecting all edge points, which is worse than the hyperplane extent method!</p>
+          <p>To see why, look at the variance term inside \(E(X)\). For each direction \(v_j\) the sample variance of the subset is \(\sigma_X^{(j)2} = \tfrac{1}{m}\sum_{x\in X} \big(v_j^{\top}x - \mu_X^{(j)}\big)^2\). Matching \(\sigma_Y^{(j)}\) therefore demands large values of \(|v_j^{\top}x|\); with only \(m\) candidates, the greedy step gets the biggest drop in the \(\lambda(\sigma_Y^{(j)}-\sigma_X^{(j)})^2\) penalty by pulling in whichever point has the largest squared projection along that direction. Different slices claim different extremes, so even with \(\lambda = 0.2\) we eventually hoard the entire set of boundary points.</p>
+
+          <p>Could we fix this? The reader's first thought might be to shrink \(\lambda\). Doing this causes the variance term to stop dragging points to the perimeter—but then we are back to pure mean matching, and the interior collapses again. Alternatively we could regularize each projected variance by subtracting the contribution of any one point, e.g. replace \(\sigma_X^{(j)2}\) with a leave-one-out estimate:</p>
+
+          <div class="math-block">\[
+          \tilde{\sigma}_{X}^{(j)2} = \frac{1}{m-1} \sum_{z \in X} \big(v_j^{\top}z - \mu_{X\setminus\{z\}}^{(j)}\big)^2,\qquad
+          \Delta_j(x) = \tilde{\sigma}_{X \cup \{x\}}^{(j)2} - \tilde{\sigma}_{X}^{(j)2} = \frac{1}{m-1}(v_j^{\top}x)^2 + O\!\left(\frac{1}{m}\right).
+          \]</div>
+
+          <p>The cross terms damp out at \(O(1/m)\), but the new squared projection stays \(O(1)\), so the greedy objective still rewards large \(|v_j^{\top}x|\) no matter how we rescale.</p>
+            
+          <p>As soon as we try to match higher moments or the full histogram along each direction, we have crossed into distributional territory. In other words, tweaking Mean-Variance in the ways that would stop the edge fetish slowly morphs it into the sliced divergences we study next.</p>
+            
+          <p>Clearly, the only way out is to constrain entire projected distribution—by matching quantiles, bins, or transport plans.</p>
 
           <h3 id="distributional-methods"><strong>Distributional Methods</strong></h3>
 
