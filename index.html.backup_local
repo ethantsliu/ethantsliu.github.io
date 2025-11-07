@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Ethan Liu</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+<body class="home">
+  <div class="page-wrapper">
+    <header class="header-container">
+      <div class="header-top">
+        <div class="theme-toggle" id="themeToggle">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
+            <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"/>
+            <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"/>
+            <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="dropdown" id="dropdown">
+          <button class="dropdown-btn" id="dropdownBtn">天</button>
+          <div class="dropdown-content" id="dropdownContent">
+            <a href="index.html" style="color: var(--accent); text-decoration: underline;">about</a>
+            <a href="work.html">work</a>
+            <a href="research.html">research</a>
+            <a href="projects.html">projects</a>
+            <a href="writing.html">writing</a>
+          </div>
+        </div>
+      </div>
+      <h1 class="name-title">Ethan 天适 Liu</h1>
+    </header>
+
+    <section class="hero-ambient" id="heroAmbient" aria-hidden>
+      <div class="hero-canvas-wrap">
+        <canvas id="meshCanvas" class="hero-canvas"></canvas>
+        <canvas id="fxCanvas" class="hero-canvas"></canvas>
+      </div>
+      <div id="blobA" class="blob" style="top:-120px; left:-120px; width:320px; height:320px; background: color-mix(in srgb, var(--accent-soft) 35%, transparent);"></div>
+      <div id="blobB" class="blob" style="bottom:-140px; right:-140px; width:420px; height:420px; background: color-mix(in srgb, var(--text) 18%, transparent);"></div>
+      <div class="overlay soft-grid"></div>
+      <div class="overlay spotlight"></div>
+      <div class="overlay hero-bottom-gradient"></div>
+    </section>
+
+    <main class="main-content">
+      <div class="contact-bar">
+        <span class="contact-email">ethantsliu [at] berkeley [dot] edu</span>
+        <span class="divider-dot">·</span>
+        <a href="https://twitter.com/ethantsliu" target="_blank">twitter</a>
+        <span class="divider-dot">·</span>
+        <a href="https://linkedin.com/in/ethantsliu" target="_blank">linkedin</a>
+        <span class="divider-dot">·</span>
+        <a href="https://scholar.google.com/citations?user=09DqYkoAAAAJ&amp;hl=en&amp;authuser=3" target="_blank">scholar</a>
+        <span class="divider-dot">·</span>
+        <a href="https://github.com/ethantsliu" target="_blank">github</a>
+      </div>
+
+      <section class="intro">
+        <p>
+          I'm a sophomore studying computer science and electrical engineering at UC Berkeley. I work on agentic evals and various research initiatives at <a class="accent-link" href="https://www.afterquery.com/" target="_blank">AfterQuery</a>.
+        </p>
+        <p>
+          I've been very fortunate to collaborate with
+          <a href="https://www.lisabdunlap.com/"
+            >Lisa Dunlap</a> at <a class="accent-link" href="https://bair.berkeley.edu/" target="_blank">Berkeley AI Research</a> on studying model behavior. 
+        </p>
+        <p>
+            Among my interests are optimization, chess, and literature. 
+        </p>
+      </section>
+
+      <section class="list-section">
+        <h2 class="section-subtitle">Updates</h2>
+        <ul class="feature-list">
+          <li class="feature-item">
+            <a class="feature-title" href="baylearn-presentation.html">Reflections on presenting at BayLearn</a>
+            <span class="feature-date">Oct 2025</span>
+          </li>
+          <li class="feature-item">
+            <a class="feature-title" href="sample-reduction.html">Representative Sampling of High-Dimensional Point Sets</a>
+            <span class="feature-date">May 2025</span>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
+  <script src="background.js"></script>
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const sunIcon = document.querySelector('.sun-icon');
+    const moonIcon = document.querySelector('.moon-icon');
+    
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    updateThemeIcon(currentTheme);
+    
+    // Toggle theme on click
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+    
+    // Update icon visibility based on theme
+    function updateThemeIcon(theme) {
+      if (theme === 'dark') {
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+      } else {
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+      }
+    }
+    
+    // Dropdown functionality
+    const dropdown = document.getElementById('dropdown');
+    const dropdownBtn = document.getElementById('dropdownBtn');
+    const dropdownContent = document.getElementById('dropdownContent');
+    let timeoutId;
+
+    function showDropdown() {
+      clearTimeout(timeoutId);
+      dropdownContent.style.display = 'block';
+      dropdownContent.style.opacity = '1';
+      dropdownContent.style.visibility = 'visible';
+      dropdownContent.style.pointerEvents = 'auto';
+    }
+
+    function hideDropdown() {
+      timeoutId = setTimeout(() => {
+        dropdownContent.style.display = 'none';
+        dropdownContent.style.opacity = '0';
+        dropdownContent.style.visibility = 'hidden';
+        dropdownContent.style.pointerEvents = 'none';
+      }, 150);
+    }
+
+    dropdown.addEventListener('mouseenter', showDropdown);
+    dropdown.addEventListener('mouseleave', hideDropdown);
+    dropdownContent.addEventListener('mouseenter', showDropdown);
+    dropdownContent.addEventListener('mouseleave', hideDropdown);
+
+    // Minimal hero interactions (mouse spotlight + parallax)
+    (function(){
+      const hero = document.getElementById('heroAmbient');
+      if (!hero) return;
+      // Mouse spotlight
+      hero.addEventListener('mousemove', (e) => {
+        const r = hero.getBoundingClientRect();
+        hero.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        hero.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+      // Respect reduced motion
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) return;
+      // Parallax blobs
+      const a = document.getElementById('blobA');
+      const b = document.getElementById('blobB');
+      let lastY = 0, ticking = false;
+      function rafUpdate(){
+        const offset = Math.min(140, lastY * 0.06);
+        if (a) a.style.transform = 'translate3d(0,' + (-offset) + 'px,0)';
+        if (b) b.style.transform = 'translate3d(0,' + (-offset * 0.7) + 'px,0)';
+        ticking = false;
+      }
+      function onScroll(){
+        lastY = window.scrollY || window.pageYOffset;
+        if (!ticking) { requestAnimationFrame(rafUpdate); ticking = true; }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      // FX layer: ribbons (particles)
+      const fx = document.getElementById('fxCanvas');
+      const mesh = document.getElementById('meshCanvas');
+      const ctx = fx.getContext('2d');
+      function sizeCanvas(c){
+        const dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+        const r = hero.getBoundingClientRect();
+        c.width = Math.floor(r.width * dpr);
+        c.height = Math.floor(r.height * dpr);
+        c.style.width = r.width + 'px';
+        c.style.height = r.height + 'px';
+        return dpr;
+      }
+      let dpr = sizeCanvas(fx); sizeCanvas(mesh);
+      window.addEventListener('resize', () => { dpr = sizeCanvas(fx); sizeCanvas(mesh); });
+
+      // Mesh layer (wireframe with subtle jitter)
+      const mctx = mesh.getContext('2d');
+      let meshGrid = null;
+      function headMask(x, y, w, h){
+        // Approximate left-facing bust: head ellipse + shoulder bulge
+        const cx = 0.58*w, cy = 0.46*h, rx = 0.16*w, ry = 0.22*h;
+        const nx = (x - cx)/rx, ny = (y - cy)/ry;
+        let insideHead = (nx*nx + ny*ny) <= 1.0;
+        // Nose protrusion (extend left slightly near mid Y)
+        if (!insideHead && x < cx && Math.abs(y - cy) < 0.18*h) {
+          const nx2 = (x - (cx - 0.06*w)) / (0.12*w);
+          const ny2 = (y - cy) / (0.14*h);
+          insideHead = (nx2*nx2 + ny2*ny2) <= 1.0;
+        }
+        // Neck/shoulder: a rounded rectangle region below head
+        const sx = x - (cx + 0.03*w), sy = y - (cy + 0.18*h);
+        const shoulder = (sy > 0 && sy < 0.20*h && sx > -0.08*w && sx < 0.22*w);
+        return insideHead || shoulder;
+      }
+      function buildMesh(){
+        const w = mesh.width, h = mesh.height;
+        const step = Math.max(8, Math.floor(16 * dpr));
+        const cols = Math.floor(w/step)+2, rows = Math.floor(h/step)+2;
+        const nodes = new Array(rows);
+        for (let j=0;j<rows;j++){
+          nodes[j] = new Array(cols);
+          for (let i=0;i<cols;i++){
+            const x = i*step, y = j*step;
+            const inside = headMask(x, y, w, h);
+            // Head weight: 1 near head ellipse, 0 elsewhere
+            const cx = 0.58*w, cy = 0.46*h, rx = 0.16*w, ry = 0.22*h;
+            const hw = 1 - Math.min(1, ((x-cx)*(x-cx)/(rx*rx) + (y-cy)*(y-cy)/(ry*ry)));
+            nodes[j][i] = { x, y, inside, hw: Math.max(0, hw), p: Math.random()*Math.PI*2 };
+          }
+        }
+        meshGrid = { step, cols, rows, nodes };
+      }
+      function noise2(a,b,t,phase){ return Math.sin(a*0.002 + b*0.002 + t*0.35*2*Math.PI + phase); }
+      function drawMesh(now){
+        if (!meshGrid) buildMesh();
+        const { step, cols, rows, nodes } = meshGrid;
+        const w = mesh.width, h = mesh.height;
+        // background gradient
+        const g = mctx.createLinearGradient(0,0,0,h);
+        g.addColorStop(0, '#cfcfcf');
+        g.addColorStop(1, '#bdbdbd');
+        mctx.fillStyle = g; mctx.fillRect(0,0,w,h);
+        // wireframe
+        mctx.strokeStyle = '#111';
+        mctx.globalAlpha = 0.9;
+        mctx.lineWidth = Math.max(1, 1*dpr);
+        const t = now/1000;
+        mctx.beginPath();
+        for (let j=0;j<rows-1;j++){
+          for (let i=0;i<cols-1;i++){
+            const a = nodes[j][i], b = nodes[j][i+1], c = nodes[j+1][i], d = nodes[j+1][i+1];
+            // two triangles: (a,b,c) and (b,d,c)
+            if (a.inside && b.inside && c.inside){
+              const ax = a.x + jitter(a, t, true), ay = a.y + jitter(a, t, false);
+              const bx = b.x + jitter(b, t, true), by = b.y + jitter(b, t, false);
+              const cx = c.x + jitter(c, t, true), cy = c.y + jitter(c, t, false);
+              mctx.moveTo(ax, ay); mctx.lineTo(bx, by); mctx.lineTo(cx, cy); mctx.lineTo(ax, ay);
+            }
+            if (b.inside && d.inside && c.inside){
+              const bx2 = b.x + jitter(b, t, true), by2 = b.y + jitter(b, t, false);
+              const dx2 = d.x + jitter(d, t, true), dy2 = d.y + jitter(d, t, false);
+              const cx2 = c.x + jitter(c, t, true), cy2 = c.y + jitter(c, t, false);
+              mctx.moveTo(bx2, by2); mctx.lineTo(dx2, dy2); mctx.lineTo(cx2, cy2); mctx.lineTo(bx2, by2);
+            }
+          }
+        }
+        mctx.stroke();
+      }
+      function jitter(node, t, isX){
+        if (reduce) return 0;
+        const ampHead = 1.2*dpr, ampTorso = 0.6*dpr;
+        const amp = node.hw*ampHead + (1-node.hw)*ampTorso;
+        const phase = node.p + (isX?0:1.3);
+        return amp * noise2(node.x, node.y, t, phase) * 0.5;
+      }
+      let meshTimer = null;
+      function startMesh(){
+        if (meshTimer) return;
+        const tick = ()=>{ drawMesh(performance.now()); };
+        drawMesh(performance.now());
+        if (!reduce) meshTimer = setInterval(tick, 100); // ~10 fps
+      }
+      startMesh();
+
+      const params = {
+        ribbonsPerSec: 9,
+        speedMin: 20, speedMax: 60,
+        lifeMin: 0.6, lifeMax: 1.8,
+        widthStart: 3,
+        burstInterval: 2200, burstJitter: 800, burstBoost: 2, burstDur: 150,
+        parallaxMax: 8
+      };
+      let mouseParallax = { x: 0, y: 0 };
+      hero.addEventListener('mousemove', (e)=>{
+        const r = hero.getBoundingClientRect();
+        const nx = (e.clientX - r.left) / r.width - 0.5;
+        const ny = (e.clientY - r.top) / r.height - 0.5;
+        mouseParallax.x = nx * params.parallaxMax;
+        mouseParallax.y = ny * params.parallaxMax * 0.4;
+      });
+
+      const particles = [];
+      let lastSpawn = performance.now();
+      let nextBurstAt = performance.now() + params.burstInterval + (Math.random()*2-1)*params.burstJitter;
+      let burstActiveUntil = 0;
+
+      function rand(a,b){ return a + Math.random()*(b-a); }
+      function easeOutSine(t){ return Math.sin((t*Math.PI)/2); }
+      function spawnRibbon(now){
+        const w = fx.width, h = fx.height;
+        // emission band: right-of-center vertical band, mid heights (placeholder mask)
+        const y = rand(0.3*h, 0.7*h);
+        const x = rand(0.45*w, 0.65*w);
+        const speed = rand(params.speedMin, params.speedMax) * (w/hero.clientWidth);
+        const life = rand(params.lifeMin, params.lifeMax);
+        const dir = rand(-0.12, 0.12); // slight vertical drift
+        particles.push({
+          x, y, vx: speed, vy: speed*dir*0.2,
+          born: now, life,
+          len: rand(40*(w/hero.clientWidth), 220*(w/hero.clientWidth)),
+          width0: params.widthStart * (w/hero.clientWidth),
+          alpha0: 0.9
+        });
+      }
+
+      function updateAndDraw(now){
+        // spawn control
+        const burst = now < burstActiveUntil;
+        const rate = params.ribbonsPerSec * (burst ? params.burstBoost : 1);
+        const dtSpawn = 1000 / Math.max(1, rate);
+        while (now - lastSpawn >= dtSpawn) { spawnRibbon(lastSpawn); lastSpawn += dtSpawn; }
+        if (now >= nextBurstAt) {
+          burstActiveUntil = now + params.burstDur;
+          nextBurstAt = now + params.burstInterval + (Math.random()*2-1)*params.burstJitter;
+        }
+
+        ctx.clearRect(0,0,fx.width,fx.height);
+        ctx.save();
+        ctx.translate(mouseParallax.x * dpr, mouseParallax.y * dpr);
+        ctx.fillStyle = '#111';
+        for (let i=particles.length-1; i>=0; i--) {
+          const p = particles[i];
+          const t = (now - p.born)/ (p.life*1000);
+          if (t >= 1) { particles.splice(i,1); continue; }
+          const fade = 1 - t;
+          const wcur = p.width0 * (1 - t);
+          const len = p.len * easeOutSine(1 - t);
+          const px = p.x + p.vx * (t * p.life) * 1000 * 0.001;
+          const py = p.y + p.vy * (t * p.life) * 1000 * 0.001;
+          ctx.globalAlpha = p.alpha0 * fade;
+          // draw horizontal ribbon as rounded rect
+          const x0 = px, y0 = py - wcur*0.5, rw = len, rh = wcur;
+          if (rw > 0 && rh > 0) {
+            const r = Math.min(rh*0.5, 2*dpr);
+            ctx.beginPath();
+            ctx.moveTo(x0+r, y0);
+            ctx.arcTo(x0+rw, y0, x0+rw, y0+rh, r);
+            ctx.arcTo(x0+rw, y0+rh, x0, y0+rh, r);
+            ctx.arcTo(x0, y0+rh, x0, y0, r);
+            ctx.arcTo(x0, y0, x0+rw, y0, r);
+            ctx.closePath();
+            ctx.fill();
+          }
+        }
+        ctx.restore();
+      }
+
+      let lastT = performance.now();
+      function fxLoop(t){
+        updateAndDraw(t);
+        lastT = t;
+        requestAnimationFrame(fxLoop);
+      }
+      if (!reduce) requestAnimationFrame(fxLoop);
+
+      // Scanline glitch bands
+      const scan = { bands: [], nextAt: performance.now() + 2200 + (Math.random()*1600-800) };
+      function spawnScanBurst(now){
+        const count = 2 + Math.floor(Math.random()*2); // 2-3 bands
+        const h = fx.height;
+        for (let i=0;i<count;i++){
+          const y = Math.floor(Math.random()*h);
+          const th = Math.max(1, Math.floor((1+Math.random()*2) * dpr));
+          const dx = (8 + Math.random()*6) * dpr;
+          const dur = 80 + Math.random()*80;
+          scan.bands.push({ y, th, dx, until: now + dur });
+        }
+      }
+      function renderScanlines(now){
+        if (now >= scan.nextAt){
+          spawnScanBurst(now);
+          scan.nextAt = now + 2200 + (Math.random()*1600-800);
+        }
+        if (!scan.bands.length) return;
+        ctx.save();
+        ctx.globalCompositeOperation = 'lighter';
+        ctx.fillStyle = 'rgba(255,255,255,0.10)';
+        for (let i=scan.bands.length-1;i>=0;i--){
+          const b = scan.bands[i];
+          if (now >= b.until){ scan.bands.splice(i,1); continue; }
+          ctx.fillRect(b.dx, b.y, fx.width*0.6, b.th);
+        }
+        ctx.restore();
+      }
+      // hook into fx loop by wrapping updateAndDraw
+      const _update = updateAndDraw;
+      function updateAndDraw(now){
+        _update(now);
+        renderScanlines(now);
+      }
+    })();
+
+  </script>
+</body>
+</html>

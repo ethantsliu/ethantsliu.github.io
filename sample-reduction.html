@@ -462,23 +462,36 @@
             <li class="toc-section">
               <a href="#methods" onclick="toggleSection(event)">Methods <span class="toggle-icon">+</span></a>
               <ul class="toc-sub" style="display:none">
-                <li><a href="#method-kl">Kullback-Leibler Divergence</a></li>
-            <li><a href="#method-sliced-kl">Sliced KL</a></li>
-                <li><a href="#method-w1">Wasserstein‑1</a></li>
-                <li><a href="#method-sliced-w1">Sliced Wasserstein-1</a></li>
-            <li><a href="#method-mmd">Kernel Herding (MMD)</a></li>
-                <li><a href="#method-mean-var">Mean-Variance</a></li>
-                <li><a href="#method-hyperplane">Hyperplane Extent</a></li>
                 <li class="toc-subsection">
-                  <a href="#method-mcmc" onclick="toggleSubsection(event)">MCMC Subset Selection <span class="toggle-icon">+</span></a>
+                  <a href="#geometric-methods" onclick="toggleSubsection(event)">Geometric Methods <span class="toggle-icon">+</span></a>
                   <ul class="toc-sub-sub" style="display:none">
+                    <li><a href="#method-hyperplane">Hyperplane Extent</a></li>
+                    <li><a href="#method-mean-var">Mean-Variance</a></li>
+                  </ul>
+                </li>
+                <li class="toc-subsection">
+                  <a href="#distributional-methods" onclick="toggleSubsection(event)">Distributional Methods <span class="toggle-icon">+</span></a>
+                  <ul class="toc-sub-sub" style="display:none">
+                    <li><a href="#method-kl">Kullback-Leibler Divergence</a></li>
+                    <li><a href="#sliced-approximations">Sliced Approximations</a></li>
+                    <li><a href="#method-sliced-kl">Sliced KL</a></li>
+                    <li><a href="#method-w1">Wasserstein‑1</a></li>
+                    <li><a href="#method-sliced-w1">Sliced Wasserstein-1</a></li>
+                    <li><a href="#method-mmd">Kernel Herding (MMD)</a></li>
+                  </ul>
+                </li>
+                <li class="toc-subsection">
+                  <a href="#sampling-based-methods" onclick="toggleSubsection(event)">Sampling-Based Methods <span class="toggle-icon">+</span></a>
+                  <ul class="toc-sub-sub" style="display:none">
+                    <li><a href="#method-mcmc">MCMC Subset Selection</a></li>
                     <li><a href="#method-mcmc-exact">MCMC (Exact)</a></li>
                     <li><a href="#method-mcmc-da">MCMC (Budgeted / Delayed‑Acceptance)</a></li>
                   </ul>
                 </li>
                 <li class="toc-subsection">
-                  <a href="#method-kdpp" onclick="toggleSubsection(event)">k‑DPP Diversity-Based Selection <span class="toggle-icon">+</span></a>
+                  <a href="#diversity-methods" onclick="toggleSubsection(event)">Diversity-Based Methods <span class="toggle-icon">+</span></a>
                   <ul class="toc-sub-sub" style="display:none">
+                    <li><a href="#method-kdpp">k‑DPP Diversity-Based Selection</a></li>
                     <li><a href="#method-kdpp-exact">k‑DPP (Exact)</a></li>
                     <li><a href="#method-kdpp-nystrom">The Nyström Approximation</a></li>
                   </ul>
@@ -546,131 +559,30 @@
       <p>Then, the next choice, naturally, is to look at probability distributions. We can match distributions by minimizing a divergence \(d(P_Y, P_X)\), solving the issue from the geometric methods! However, this is not always the best choice. Since we are working with high-dimensional data, it is often the case that the full distribution is not known, and we need to estimate it from the data. Additionally, greedily calculating the divergence is intractable in high dimensions. Consequently, we must use proxies that retain signal while scaling near-linearly.</p>
 
       <h4><strong>Diversity‑Based Methods</strong></h4>
-      <p>Diversity is another metric that we can use to select representative subsets. An ideal subset contains points that are both representative and diverse. Intuitively, we want to include points that appear in high-density regions, while avoiding redundant selections. Determinal point processes (DPPs) turn this into a simple bias: sets that span more volume are preferred. In practice we approximate the kernel (e.g., Nyström landmarks) so you get a well‑spread “skeleton” of the data without blowing the compute budget. We encode similarity with a kernel \(k(x,y)\); see the k‑DPP section below for details.</p>
-      <p>Briefly: a DPP is a distribution over subsets that favors repulsion. For a kernel matrix \(K\) with entries \(K_{ij}=k(y_i,y_j)\), a fixed‑size variant assigns \(\Pr(S) \propto \det(K_S)\) for \(|S|=m\). The determinant is the squared volume spanned by the selected feature vectors, so larger when points are less similar. The kernel \(k\) specifies the similarity geometry (e.g., RBF with lengthscale \(\ell\) promotes spatial separation; linear promotes directional spread). Details appear in the k‑DPP section.</p>
+      <p>Diversity is another metric that we can use to select representative subsets. An ideal subset contains points that are both representative and diverse. Intuitively, we want to include points that appear in high-density regions, while avoiding redundant selections. Determinantal point processes (DPPs) turn this into sets that span more volume are preferred. In practice we approximate the kernel so we obtain a well‑spread “skeleton” of the data with reasonable compute. A kernel \(k(x,y)\) is simply a positive semi-definite similarity function whose choice (e.g., RBF with length‑scale \(\ell\) vs linear) sets what “similar” means—and thus what “diverse” means. See k‑DPP for details.</p>
 
       <h4><strong>Sampling‑Based Methods</strong></h4>
-      <p>Stochastic optimization (e.g., MCMC) explores the subset space via probabilistic moves that can escape local optima and quantify uncertainty. Modern variants use delayed‑acceptance and streaming surrogates to keep proposal evaluation cheap while preserving global search behavior.</p>
+      <p>Sometimes the landscape of possible subsets is too rugged for a greedy rule to navigate cleanly. Sampling‑based methods treat subset selection as a stochastic search problem: we posit a probability distribution over candidate subsets and use Markov Chain Monte Carlo (MCMC) or related schemes to explore it. Rather than committing to the single best-looking point at each step, the chain proposes swaps, additions, or removals and accepts them in proportion to how much they improve—or occasionally worsen—the objective. This "probabilistic wandering" helps the algorithm escape local optima, provides a natural way to trade compute for quality, and even yields uncertainty estimates about which points truly matter!</p>
 
-          
-      <p>Let \(Y = \{y_i\}_{i=1}^N \subset \mathbb{R}^d\) be the full dataset and \(X = \{x_j\}_{j=1}^m \subset Y\) the selected subset with \(m \ll N\). We denote by \(P_Y\) and \(P_X\) the probability distributions induced by these sets. In practice, we work with either <strong>empirical distributions</strong> (\(P_Y = \frac{1}{N}\sum_{i=1}^N \delta_{y_i}\) and \(P_X = \frac{1}{m}\sum_{j=1}^m \delta_{x_j}\)) or <strong>smoothed distributions</strong> using kernel density estimates (KDE) to avoid atomic mass points.</p>
+      <p>The practical hurdle is that evaluating the objective for every proposal can be expensive. Modern variants therefore combine coarse, low-cost surrogates (fewer projection directions, sketchy summaries, streaming buffers) with occasional full evaluations to keep the exploration light-weight while still gravitating toward high-quality subsets.</p>
 
-      <h3 id="kl-divergence"><strong>Kullback-Leibler Divergence</strong></h3>
-      <p>The KL divergence is a type of information-theoretic divergence that measures the information loss when using \(Q\) to approximate \(P\). For continuous distributions with densities \(p\) and \(q\):</p>
-
-      <div class="math-block">\[
-        D_{\mathrm{KL}}(P \Vert Q) = \int_{\mathbb{R}^d} p(x) \log\frac{p(x)}{q(x)} \, dx
-      \]</div>
-
-      <p>For discrete distributions with probability masses \(\{p_i\}\) and \(\{q_i\}\):</p>
-
-      <div class="math-block">\[
-        D_{\mathrm{KL}}(P \Vert Q) = \sum_i p_i \log\frac{p_i}{q_i}
-      \]</div>
-
-      <p>\(D_{\mathrm{KL}}(P \Vert Q)\) penalizes regions where \(Y\) has mass but \(X\) does not. In our context, \(P\) can be thought of as the distribution of the full set \(Y\) and \(Q\) as that of the subsample \(X\). Intuitively, \(D_{\mathrm{KL}}(P \Vert Q)\) measures the information lost when \(Q\) (the subset's distribution) is used to approximate \(P\) (the full set's distribution). A smaller KL divergence means the subset \(X\) is a better stand-in for \(Y\). A smaller KL divergence means the subset \(X\) is a better stand-in for \(Y\).  
-      </p>
-
-      <p>However, direct estimation in high dimensions requires density estimation, which suffers from the curse of dimensionality. As dimension \(d\) increases, the volume of space grows exponentially (\(O(r^d)\)) while sample size grows only linearly, making data points exponentially more isolated and density estimates highly unreliable. Therefore, we need to approximate the KL divergence using tractable metrics that avoid explicit density estimation, which we will discuss in the following sections.</p>
-
-      <p><strong>Optimal transport.</strong> Rather than comparing densities, optimal transport measures the minimal cost to move mass from one distribution to another, respecting geometry. The p‑Wasserstein distance is defined as:</p>
-
-      <div class="math-block">\[
-        W_p(P,Q) = \left(\inf_{\gamma \in \Pi(P,Q)} \int_{\mathbb{R}^d \times \mathbb{R}^d} \|x - y\|^p \, d\gamma(x,y)\right)^{1/p}
-      \]</div>
-
-      <p>where \(\Pi(P,Q)\) is the set of all couplings (joint distributions) with marginals \(P\) and \(Q\).</p>
-
-      <p>For \(p=1\) (Wasserstein‑1), this is the minimum work to move mass from \(P\) to \(Q\). In 1D it reduces to:</p>
-
-      <div class="math-block">\[
-        W_1(P,Q) = \int_0^1 |F_P^{-1}(u) - F_Q^{-1}(u)| \, du
-      \]</div>
-
-      <p>where \(F_P^{-1}\) and \(F_Q^{-1}\) are quantile functions. In practice, we use sliced variants to make OT scalable.</p>
-
-      <p><strong>Kernel metrics.</strong> Maximum Mean Discrepancy (MMD) compares distributions via their embeddings in an RKHS <a href="https://doi.org/10.1007/s10994-012-5281-0" target="_blank" rel="noopener noreferrer">(Gretton et al., 2012)</a>:</p>
-
-      <div class="math-block">\[
-        \mathrm{MMD}^2_k(P,Q) = \|\mu_P - \mu_Q\|_{\mathcal{H}}^2
-      \]</div>
-
-      <p>where \(\mu_P = \mathbb{E}_{X \sim P}[\phi(X)]\) is the kernel mean embedding and \(\phi\) is the feature map associated with kernel \(k\).</p>
-
-      <p>An unbiased estimator using finite samples:</p>
-
-      <div class="math-block">\[
-        \widehat{\mathrm{MMD}}^2_k = \frac{1}{m(m-1)}\sum_{i \neq j}^m k(x_i, x_j) + \frac{1}{N(N-1)}\sum_{i \neq j}^N k(y_i, y_j) - \frac{2}{mN}\sum_{i=1}^m\sum_{j=1}^N k(x_i, y_j)
-      \]</div>
-
-      <p><strong>Common kernels:</strong></p>
-      <ul>
-        <li><strong>RBF (Gaussian) kernel:</strong>
-          <div class="math-block">\( k(x,y) = \exp\!\left(-\frac{\|x - y\|^2}{2\ell^2}\right) \)</div>
-          where \(\ell > 0\) is the bandwidth parameter</li>
-        <li><strong>Linear kernel:</strong> \(k(x,y) = x^\top y\)</li>
-        <li><strong>Laplace kernel:</strong> \(k(x,y) = \exp(-\|x - y\|/\ell)\)</li>
-      </ul>
-
-      <h3 id="sliced-approximations"><strong>Sliced Approximations</strong></h3>
-
-      <h4><strong>The Slicing Framework</strong></h4>
-      <p>Direct computation of high-dimensional divergences is often intractable. The slicing approach <a href="https://arxiv.org/abs/1301.2334" target="_blank" rel="noopener noreferrer">(Bonnotte, 2013)</a> projects distributions onto random 1D subspaces and aggregates the results:</p>
-
-      <p>For a unit vector \(v \in \mathbb{S}^{d-1}\), define the projection operator \(\pi_v(x) = \langle v, x \rangle\). The pushforward measure \((\pi_v)_* P\) is the distribution of projected values when \(X \sim P\).</p>
-
-      <h4><strong>Sliced Wasserstein Distance</strong></h4>
-
-      <div class="math-block">\[
-        \mathrm{SW}_1^p(P,Q) = \frac{1}{p}\sum_{j=1}^p W_1\left((\pi_{v_j})_* P, (\pi_{v_j})_* Q\right)
-      \]</div>
-
-      <p>where \(\{v_j\}_{j=1}^p\) are random unit directions sampled uniformly from the sphere.</p>
-
-      <h4><strong>Sliced KL Divergence</strong></h4>
-
-      <div class="math-block">\[
-        \mathrm{SKL}^p(P,Q) = \frac{1}{p}\sum_{j=1}^p D_{\mathrm{KL}}\left((\pi_{v_j})_* P \,\Big\|\, (\pi_{v_j})_* Q\right)
-      \]</div>
-
-      <p><strong>Computational advantage:</strong> Each 1D computation is \(O(N \log N)\) for sorting (Wasserstein) or \(O(N)\) for binning (KL), compared to intractable high-dimensional operations.</p>
-
-      
-
-      
+      <p>Let \(Y = \{y_i\}_{i=1}^N \subset \mathbb{R}^d\) be the full dataset and \(X = \{x_j\}_{j=1}^m \subset Y\) the selected subset with \(m \ll N\). We denote by \(P_Y\) and \(P_X\) the probability distributions induced by these sets. In practice, we work with either empirical distributions (\(P_Y = \frac{1}{N}\sum_{i=1}^N \delta_{y_i}\) and \(P_X = \frac{1}{m}\sum_{j=1}^m \delta_{x_j}\)) or smoothed distributions using kernel density estimates (KDEs) to avoid atomic mass points. These conventions anchor the method discussions that follow!</p>
 
           <h2 id="methods"><strong>Methods</strong></h2>
 
-          <h2 id="method-hyperplane"><strong>Hyperplane Extent</strong></h2>
-          <p>The Hyperplane method provides a geometrically-motivated baseline for representative selection that focuses on preserving the spatial extent and boundary characteristics of the data distribution. Unlike distribution-aware methods that seek to match probability densities or moments, this approach emphasizes coverage of the geometric envelope and ensures that the selected subset spans all major directions in space.</p>
+          <h3 id="geometric-methods"><strong>Geometric Methods</strong></h3>
 
-          <p><strong>Geometric intuition:</strong> Imagine the point cloud \(Y\) as a collection of points in space. For any direction \(v\), there exists a point in \(Y\) that is furthest along that direction (the supporting point). By selecting these extreme points across multiple directions, we approximate the convex hull of the distribution. This ensures that our subset captures the shape, extent, and boundaries of the original data.</p>
+          <h4 id="method-hyperplane"><strong>Hyperplane Extent</strong></h4>
+          <p>This method is most useful when we care about geometry-driven tasks (<e class="g">nearest neighbors, collision checks, or boundary visualization</e>). We care more about the shape of the cloud than the exact density inside it. Motivated by this, hyperplane extent focuses on which points mark the furthest reach of the cloud along different directions. Intuitively, we spin random hyperplanes through the origin and note which points sit at the front and back of each orientation; those extremes outline the convex hull. By sampling a number of random normals \(\{n_j\}_{j=1}^R\) and measuring how far each point projects, we collect the landmarks that preserve the outer envelope.</p>
 
-          <p><strong>Hyperplane formulation:</strong> In \(d\) dimensions, a hyperplane through the origin with normal vector \(n\) divides space into two half-spaces. The signed distance of a point \(x\) to this hyperplane is given by \(d(x,n) = \langle n, x \rangle\). Points with large absolute values of this distance are far from the hyperplane in either direction. By sampling many random normal vectors \(\{n_j\}_{j=1}^R\), we can assess the extent of the data along different orientations.</p>
-
-          <p><strong>Extent matching objective:</strong> We define the average absolute projection for a set \(S\) as:</p>
+          <p>For any set \(S\) we summarize coverage with the average absolute projection:</p>
           <div class="math-block">\[ A(S) = \frac{1}{|S|R}\sum_{x \in S}\sum_{j=1}^R |n_j^\top x|, \]</div>
-          which measures how well the set \(S\) covers the space along the sampled directions. Our goal is to minimize the deviation between the full set and subset extents:</p>
-          <div class="math-block">\[ J(S) = |A(S) - A(Y)|. \]</div>
+          and we keep the subset close to the full-set extent by minimizing \(J(S) = |A(S) - A(Y)|\). Starting from the empty set, the greedy procedure repeatedly chooses the point that most reduces this deviation, so directions that are currently underserved attract the next extreme point.</p>
 
-          <p><strong>Selection strategy:</strong> The greedy algorithm starts with an empty set and iteratively adds points that most reduce the extent deviation \(J(S)\). At each step, we evaluate every candidate point and compute the new extent that would result from adding it to the current subset. This naturally favors points that lie in directions that are currently under-represented.</p>
+          <p>This routine is extremely light-weight. Computing the initial projections costs \(O(RNd)\), where \(R\) is the number of sampled directions and \(d\) is the ambient dimension; each additional point needs only updated dot products, so the overall complexity is \(O(mRN)\) with small constants because a few dozen directions already give smooth coverage. The selected subset hugs the convex hull, naturally surfaces outliers, and guarantees good boundary coverage even in high dimensions. The trade-off is that interior density can be under-represented.</p>
 
-          <p><strong>Statistical interpretation:</strong> While not explicitly statistical, this method can be viewed as matching the expected absolute value of projections under a uniform distribution over directions. This is related to the concept of mean width in convex geometry - the average distance between parallel supporting hyperplanes. By preserving this quantity, we maintain the overall size and scale of the point cloud.</p>
-
-          <p><strong>Computational efficiency:</strong> The hyperplane method is one of the fastest approaches available. Computing projections requires \(O(d)\) operations per point per direction, and we need \(O(R \cdot N)\) operations to compute the initial extent of the full set. Each greedy step requires \(O(R \cdot (|X_{t-1}| + N))\) operations, making the total complexity \(O(m \cdot R \cdot N)\). In practice, \(R\) can be much smaller than for sliced methods (20-50 directions often suffice).</p>
-
-          <p><strong>Geometric properties:</strong> The method naturally selects points from the convex hull or its vicinity, ensuring good coverage of the boundary. It's particularly effective for distributions with well-defined shapes or when the application requires preserving the support of the distribution. The selected points tend to be well-distributed across different regions of space.</p>
-
-          <p><strong>Robustness characteristics:</strong> Since the method focuses on geometric extent rather than density, it's robust to outliers in terms of selection frequency (outliers are naturally selected as extreme points). However, it may over-represent sparse regions if they contribute significantly to the geometric extent. This makes it less suitable for applications where density preservation is important.</p>
-
-          <p><strong>Relationship to other methods:</strong> The hyperplane approach can be seen as a geometric counterpart to moment-matching methods. While Mean-Variance preserves statistical moments along projections, Hyperplane preserves geometric extent. In practice, these methods complement each other - one captures internal structure, the other captures external boundaries.</p>
-
-          <p><strong>Practical applications:</strong> This baseline is particularly useful for tasks involving spatial coverage, boundary detection, convex approximation, or when computational efficiency is paramount. It serves as a reference point for evaluating more sophisticated distribution-aware methods.</p>
-          
-          <p>One implementation is as follows: sample a set of \(k\) random unit direction vectors \(\{v_1, v_2, \ldots, v_k\}\) in 2D. For each direction \(v_i\), find the point \(p_i \in Y\) that maximizes the signed distance \(v_i \cdot p\) (i.e. the projection of \(p\) onto \(v_i\)). Include each such \(p_i\) in the subset \(X\). (If the same point ends up selected by multiple directions, it need only be included once.) This yields up to \(k\) points that cover the extremes of \(Y\) in those sampled directions. We used a variant of this idea. To make sure both sides of each hyperplane are considered, one can also sample \(v_i\) and \(-v_i\) pairs or sample more directions and then take the top \(k\) extreme points overall.</p>
-          
-          <p>This baseline does not attempt to match the overall distribution of points; rather, it focuses on the geometric boundary. It will ensure that the subset spans a similar bounding box or convex shape as \(Y\), but it may under-sample dense interior regions (since no explicit effort is made to pick points from high-density areas). The baseline is computationally cheap (linear in \(|Y|\) for a given set of directions) and provides a point of comparison for the more sophisticated strategies above.</p>
-          <p class="algo-notes">\(n_r\) are random unit normals. We define \(A(S)=\tfrac{1}{|S|R}\sum_{x\in S}\sum_{r=1}^R |n_r^\top x|\) and match \(A(X)\) to \(A(Y)\) via \(J(X)=\lvert A(X)-A(Y)\rvert\).</p>
+          <p>In practice we sample direction pairs \(v\) and \(-v\), take the farthest projections in each, and deduplicate the chosen indices. If the pass yields fewer than \(m\) points, we backfill by adding the farthest points from the centroid so that the envelope remains inflated. The result is a subset that maintains the geometric silhouette of \(Y\) with linear-time compute and minimal tuning.</p>
+          <p class="algo-notes">\(n_r\) are random unit normals (length-one vectors pointing in uniformly sampled directions). We define \(A(S)=\tfrac{1}{|S|R}\sum_{x\in S}\sum_{r=1}^R |n_r^\top x|\) and match \(A(X)\) to \(A(Y)\) via \(J(X)=\lvert A(X)-A(Y)\rvert\). So, in summary:</p>
           <div class="algorithm-box">
             <div class="math-block">\[\begin{aligned}
               &\text{Draw normals } \{n_r\}_{r=1}^R.\; A(S)=\frac{1}{|S|R}\sum_{x\in S}\sum_{r=1}^R |n_r^\top x|,\; J(S)=\big|A(S)-A(Y)\big|.\\
@@ -685,15 +597,39 @@
           <p class="algo-notes">Walkthrough. Draw random normals and match the average absolute projection \(A(X)\) to \(A(Y)\). Greedily add the point that reduces \(|A(X)-A(Y)|\); this captures extent/extremes.</p>
           <div style="margin:0.5rem 0 1.25rem;"><div id="hp3d" class="plot3d"></div></div>
 
-          <h2 id="method-kl"><strong>Kullback-Leibler Divergence</strong></h2>
-          <p>One principled way to measure how well a subset \(X\) of points represents a full set \(Y\) is to treat each set as defining a probability distribution over space (for example, an empirical distribution or a density estimate) and then compute the Kullback–Leibler (KL) divergence between these distributions. The KL divergence \(D_{\mathrm{KL}}(P\Vert Q)\) from distribution \(P\) to distribution \(Q\) is given by:</p>
+          <h4 id="method-mean-var"><strong>Mean-Variance</strong></h4>
+          <p>The Mean-Variance method keeps the subset in sync with the first two moments of the full set along many random projections. For each direction \(v_j\) we compute projected coordinates \(p_i^{(j)} = \langle v_j, y_i \rangle\) and track the mean \(\mu_Y^{(j)}\) and variance \(\sigma_Y^{(j)2}\) of those one-dimensional marginals. A candidate subset \(X\) is scored by how closely its own projections \(\mu_X^{(j)}\) and \(\sigma_X^{(j)}\) follow suit, so the method captures both location and spread without attempting to match all higher-order structure.</p>
+
+          <p>The discrepancy functional</p>
+          <div class="math-block">\[ E(X) = \frac{1}{p}\sum_{j=1}^p \Big[(\mu_Y^{(j)}-\mu_X^{(j)})^2 + \lambda(\sigma_Y^{(j)}-\sigma_X^{(j)})^2\Big] \]</div>
+          balances the two moments through the weight \(\lambda\). Setting \(\lambda>1\) encourages wider coverage, while \(\lambda<1\) keeps the subset near the center. The greedy algorithm evaluates each unselected point, measures how much it would shrink \(E\), and keeps the best candidate, so projected directions that are underrepresented draw in the next selection.</p>
+
+          <p>This procedure stays efficient because each projection only needs dot products and incremental updates, giving per-step complexity \(O(pN)\) with small constants. The resulting subset interleaves central and peripheral points, mirrors ellipsoidal structure, and works well as the statistical counterpart to Hyperplane Extent: one preserves spread and principal directions, the other preserves the support boundary.</p>
+
+          <p class="algo-notes">\(\mu_X^{(j)}\) and \(\sigma_X^{(j)}\) are the mean and standard deviation of \(v_j^{\top}x\) over \(x\in X\); \(\lambda\) controls the mean/variance trade‑off.</p>
+          <div class="algorithm-box">
+            <div class="math-block">\[\begin{aligned}
+              &E(X)=\frac{1}{p}\sum_{j=1}^p\Big[(\mu_Y^{(j)}-\mu_X^{(j)})^2+\lambda\, (\sigma_Y^{(j)}-\sigma_X^{(j)})^2\Big].\\
+              &X_0=\varnothing.\\
+              &\text{For } t=1,\ldots,m:\\
+              &\quad s_t(y) \;:=\; E\big(X_{t-1}\cup\{y\}\big).\\
+              &\quad x_t^{\ast} \,\in\, \arg\min_{y\in Y\setminus X_{t-1}}\; s_t(y).\\
+              &\quad X_t=X_{t-1}\cup\{x_t^{\ast}\}.
+            \end{aligned}\]</div>
+          </div>
+          <p class="algo-notes">We define a projection‑based error that balances mean and spread along random directions (controlled by \(\lambda\)), then add the point \(x_t^{\ast}\) that most reduces this error.</p>
+
+          <h3 id="distributional-methods"><strong>Distributional Methods</strong></h3>
+
+          <h4 id="method-kl"><strong>Kullback-Leibler Divergence</strong></h4>
+          <p>One principled way to measure how well a subset \(X\) of points represents a full set \(Y\) is to treat each set as defining a probability distribution over space (for example, an empirical distribution or a density estimate) and then compute the Kullback–Leibler (KL) divergence between these distributions. This information-theoretic divergence \(D_{\mathrm{KL}}(P\Vert Q)\) from distribution \(P\) to distribution \(Q\) is given by:</p>
           <div class="math-block">\[ D_{\mathrm{KL}}(P\Vert Q) = \int P(x)\, \log \frac{P(x)}{Q(x)}\, dx \]</div>
           <p>or equivalently, for discrete distributions:</p>
           <div class="math-block">\[ D_{\mathrm{KL}}(P\Vert Q) = \sum_i p_i\,\log\frac{p_i}{q_i} \]</div>
-          <p>In our context, \(P\) can be thought of as the distribution of the full set \(Y\) and \(Q\) as that of the subsample \(X\). Intuitively, \(D_{\mathrm{KL}}(P\Vert Q)\) measures the information lost when \(Q\) (the subset's distribution) is used to approximate \(P\) (the full set's distribution). A smaller KL divergence means the subset \(X\) is a better stand-in for \(Y\).</p>
+          <p>In our context, \(P\) can be thought of as the distribution of the full set \(Y\) and \(Q\) as that of the subsample \(X\). We instantiate \(P_Y\) and \(P_X\) as empirical distributions or smoothed kernel density estimates so that regions with sparse samples still retain non-zero mass, avoiding the infinite penalties that arise when \(Q\) assigns zero probability. Because high-dimensional density estimation suffers from the curse of dimensionality—volume grows exponentially while samples stay sparse—we coarsen histograms or regularize bandwidths to keep the estimates stable. Intuitively, \(D_{\mathrm{KL}}(P\Vert Q)\) measures the information lost when \(Q\) (the subset's distribution) is used to approximate \(P\) (the full set's distribution). A smaller KL divergence means the subset \(X\) is a better stand-in for \(Y\).</p>
           
-          <p>This method starts with an empty subset and iteratively adds points from \(Y\) to \(X\) such that each addition yields the greatest reduction in \(D_{\mathrm{KL}}(P_Y\Vert P_X)\). Initially, \(P_X\) (with \(X\) empty or very small) is a poor approximation of \(P_Y\); as more points are added, \(P_X\) should become a closer approximation and the KL divergence decreases. To implement this, we need a way to estimate the distributions \(P_Y\) and \(P_X\) at each step. One approach is to use a discretization of the space into bins (a histogram) or a kernel density estimate. At each iteration, we evaluate which candidate point, if added to \(X\), would most decrease the divergence \(D_{\mathrm{KL}}(P_Y\Vert P_{X\cup\{p\}})\). That point is then selected into \(X\).</p>
-          <p>Here \(P_Y\) and \(P_X\) denote the (empirical or smoothed) distributions of \(Y\) and \(X\); \(D_{\mathrm{KL}}\) is Kullback–Leibler divergence.</p>
+          <p>We start with an empty subset and iteratively add points from \(Y\) to \(X\) such that each addition yields the greatest reduction in \(D_{\mathrm{KL}}(P_Y\Vert P_X)\). Naturally \(P_X\) (with \(X\) empty or very small) is initially a very poor approximation of \(P_Y\); however, as more points are added, the KL divergence decreases, and \(P_X\) becomes a closer approximation. To implement this, we need a way to estimate the distributions \(P_Y\) and \(P_X\) at each step. One approach is to use a discretization of the space into bins (a histogram) or a kernel density estimate. At each iteration, we evaluate which candidate point, if added to \(X\), would most decrease the divergence \(D_{\mathrm{KL}}(P_Y\Vert P_{X\cup\{p\}})\). That point is then selected into \(X\).</p>
+          <p>Here \(P_Y\) and \(P_X\) denote those empirical or smoothed distributions of \(Y\) and \(X\); \(D_{\mathrm{KL}}\) is the resulting information-theoretic divergence.</p>
           <div class="algorithm-box">
             <div class="math-block">\[\begin{aligned}
               &X_0 = \varnothing.\\
@@ -705,25 +641,31 @@
           </div>
           <p class="algo-notes">At each step, we score a candidate \(y\) by the KL divergence between the full set and the subset if \(y\) were added, then pick the minimizer \(x_t^{\ast}\) and update \(X_t\). This directly targets distributional fidelity in the full space.</p>
           
-          <p>That's expected given how we generated and selected points. Data distribution: The synthetic 3D generator uses a 3‑cluster GMM with unequal weights (≈ 0.45, 0.35, 0.20). With m=30, the "fair" split by mass is roughly 14, 11, and 6 reps. So the two larger clusters will naturally get more red points. Method behavior: Distributional methods (KL/Sliced‑KL/Sliced‑W1/MMD) allocate more representatives where there's more probability mass, so bigger/denser clusters receive more points. Mean–Variance/Hyperplane can also bias toward clusters with larger spread or radius, which again favors the larger two if the smaller one is tighter. Greedy selection + randomness/seed will introduce small deviations from the exact mass ratio.</p>
+          <p>This outcome matches the data we feed in. The synthetic generator makes three clusters with weights about 0.45, 0.35, and 0.20, so a 30-point subset that mirrors those masses would give roughly 14, 11, and 6 representatives. Distribution-focused methods like KL, sliced KL, sliced W1, and MMD naturally pour more picks into the heavier clusters, while Mean-Variance and Hyperplane Extent also lean toward wide clusters because they chase spread. The greedy choice and random seed add a little noise around those proportions, but the broad pattern stays the same.</p>
           <p>This greedy procedure is computationally intensive for large \(Y\) (each iteration scans all remaining points to evaluate the KL divergence). However, it often yields a subset that very closely approximates the distribution of \(Y\). In practice, one can limit the resolution of the distribution estimate or use approximate updates to make this feasible. We implemented this method for both 2D and 3D point sets, using a fixed grid to estimate \(P_Y\) and \(P_X\) at each step. In the 3D case, the concepts are identical, but estimating \(P(Y)\) and \(P(X)\) requires a 3D grid or kernel, which increases computational cost. The result is a set \(X\) that minimizes the information loss (KL divergence) relative to \(Y\) by greedily covering regions of space in proportion to how much probability mass \(Y\) has in those regions.</p>
 
           <p class="algo-notes">Walkthrough. Estimate \(P_Y\) and the subset \(P_X\) (via KDE or grids). For each candidate \(y\), compute the drop in \(D_{\mathrm{KL}}(P_Y\Vert P_{X\cup\{y\}})\); add the minimizer. The 3D view shows how KL greedily concentrates reps in high‑density regions while still spanning the support.</p>
           <div style="margin:0.5rem 0 1.25rem;"><div id="kl3d" class="plot3d"></div></div>
 
-          <h2 id="method-sliced-kl"><strong>Sliced KL</strong></h2>
-          <p>Sliced KL provides a scalable approximation to full KL divergence by exploiting the fact that 1D distributions are much easier to estimate and compare than high-dimensional ones. Instead of working directly with the full d-dimensional distributions, we project the data onto random one-dimensional subspaces and aggregate the resulting 1D KL divergences. This approach transforms an intractable high-dimensional density estimation problem into a collection of tractable 1D problems.</p>
+          <h4 id="sliced-approximations"><strong>Sliced Approximations</strong></h4>
 
-          <p>The mathematical foundation rests on the pushforward measure: for a unit vector \(v\), the projection \(\pi_v(x) = \langle v, x \rangle\) creates a 1D distribution \((\pi_v)_* P\) that captures the behavior of \(P\) along direction \(v\). By sampling multiple directions \(\{v_j\}_{j=1}^p\), we obtain different "slices" or views of the original distribution. The sliced KL objective averages the 1D KL divergences across these directions:</p>
+          <p>High-dimensional divergences are punishing: estimating a full density or solving a transport plan explodes in cost long before the datasets we care about are finished loading. The sliced framework <a href="https://arxiv.org/abs/1301.2334" target="_blank" rel="noopener noreferrer">(Bonnotte, 2013)</a> offers a practical detour—peer at the data from one direction at a time, solve the one-dimensional problem exactly, then average the answers. Most of the structure we care about survives, yet the computation stays lightweight.</p>
+
+          <p>Formally, for a unit vector \(v \in \mathbb{S}^{d-1}\) the projection \(\pi_v(x) = \langle v, x \rangle\) induces the pushforward measure \((\pi_v)_*P\). Averaging over directions \(\{v_j\}_{j=1}^p\) produces sliced analogues of familiar metrics:</p>
+
+          <div class="math-block">\[
+            \mathrm{SW}_1^p(P,Q) = \frac{1}{p}\sum_{j=1}^p W_1\left((\pi_{v_j})_* P, (\pi_{v_j})_* Q\right), \qquad
+            \mathrm{SKL}^p(P,Q) = \frac{1}{p}\sum_{j=1}^p D_{\mathrm{KL}}\left((\pi_{v_j})_* P \,\Big\|\, (\pi_{v_j})_* Q\right).
+          \]</div>
+
+          <p>The directions come from uniform samples on the sphere, so every orientation gets a chance. Each slice is cheap—\(O(N \log N)\) for 1D Wasserstein via sorting or \(O(N)\) for 1D KL via histograms—letting us dodge the combinatorial blow-up of the full high-dimensional objectives.</p>
+
+          <h4 id="method-sliced-kl"><strong>Sliced KL</strong></h4>
+          <p>Sliced KL approximates the full divergence by comparing one-dimensional projections, turning a high-dimensional density-estimation challenge into a collection of manageable subproblems. For each random direction \(v\) we form the pushforward distribution \((\pi_v)_*P\) and compare it to its counterpart from the subset. Averaging over \(p\) directions gives the objective</p>
           <div class="math-block">\[ \mathrm{SKL}(P_Y,P_X)=\frac{1}{p}\sum_{j=1}^p D_{\mathrm{KL}}\!\left(\langle v_j,\cdot\rangle_{∗} P_Y\,\Big\Vert\,\langle v_j,\cdot\rangle_{∗} P_X\right). \]</div>
+          <p>This directional view preserves how mass is arranged along many axes rather than insisting on a perfect match of the full joint distribution. When the data has meaningful low-dimensional structure, those slices capture the salient features and make the approximation surprisingly faithful.</p>
 
-          <p><strong>Statistical interpretation:</strong> While full KL divergence captures the complete information loss between distributions, sliced KL focuses on preserving the distributional characteristics along diverse directions. This directional preservation often suffices for practical applications where the relative positions and densities along various axes matter more than the full joint distribution. The method is particularly effective when the underlying distribution has meaningful lower-dimensional structure or when correlations between dimensions are moderate.</p>
-
-          <p><strong>Computational advantages:</strong> In 1D, we can use simple histogram estimates or kernel density estimation with much smaller bandwidth requirements. Each 1D KL computation is \(O(N)\) for histogram binning, compared to \(O(N^2)\) or worse for full multivariate KDE. The total complexity becomes \(O(p \cdot N)\) per evaluation, where typically \(p \ll N\) and \(p\) can be as small as 50-200 for good results.</p>
-
-          <p><strong>Practical considerations:</strong> The number of projection directions \(p\) controls the approximation quality. Too few directions may miss important distributional features, while too many increase computation without proportional benefits. The directions are typically sampled uniformly from the unit sphere, though adaptive schemes that focus on informative directions are possible. For 1D density estimation, we use histograms with \(O(\sqrt{N})\) bins or simple KDE with adaptive bandwidth selection.</p>
-
-          <p><strong>Behavioral characteristics:</strong> Sliced KL tends to produce subsets that preserve the relative densities and cluster structures visible along various projections. It's more robust to the curse of dimensionality than full KL and can handle moderate-dimensional problems (d ≤ 100) effectively. The method naturally adapts to anisotropic distributions since different directions capture different aspects of the data structure.</p>
+          <p>The gains in tractability are substantial: one-dimensional KL estimates need only histograms or light kernel density estimates, so each slice costs \(O(N)\) time instead of the \(O(N^2)\) or worse demands of multivariate density estimation. Choosing \(p\) between 50 and 200 usually suffices, and the directions come from uniform draws on the unit sphere, though they can also be steered toward informative axes. With enough slices the subset inherits the relative densities seen along most projections, which in turn preserves cluster structure while staying robust to dimensionality.</p>
 
           <p class="algo-notes">Here \(v_j\) are random unit directions and \(\langle v_j,\cdot\rangle_{∗}P\) denotes the 1D pushforward (projection law) of a distribution \(P\).</p>
           <div class="algorithm-box">
@@ -740,29 +682,34 @@
           <p class="algo-notes">Walkthrough. Draw \(p\) random directions \(v_j\); in each 1D slice compare \(\langle v_j,\cdot\rangle_{∗}P_Y\) vs \(\langle v_j,\cdot\rangle_{∗}P_X\) by KL; add the point that minimizes the sliced average. This scales KL‑like selection to high‑d.</p>
           <div style="margin:0.5rem 0 1.25rem;"><div id="skl3d" class="plot3d"></div></div>
 
-          <h2 id="method-w1"><strong>Wasserstein‑1</strong></h2>
+          <h4 id="method-w1"><strong>Wasserstein‑1</strong></h4>
+          <p>Optimal transport measures the minimal cost required to morph one distribution into another while respecting geometry. The p‑Wasserstein distance between probability measures \(P\) and \(Q\) is</p>
+
+          <div class="math-block">\[
+            W_p(P,Q) = \left(\inf_{\gamma \in \Pi(P,Q)} \int_{\mathbb{R}^d \times \mathbb{R}^d} \|x - y\|^p \, d\gamma(x,y)\right)^{1/p},
+          \]</div>
+
+          <p>where \(\Pi(P,Q)\) denotes the set of couplings with marginals \(P\) and \(Q\). For \(p=1\) (the Earth-Mover distance), the objective captures the minimum work to move mass from \(P\) to \(Q\). In one dimension this simplifies to a quantile comparison:</p>
+
+          <div class="math-block">\[
+            W_1(P,Q) = \int_0^1 \big|F_P^{-1}(u) - F_Q^{-1}(u)\big| \, du,
+          \]</div>
+
+          <p>with \(F_P^{-1}\) and \(F_Q^{-1}\) the inverse CDFs. Direct high-dimensional evaluation is costly, motivating sliced variants introduced below.</p>
+
           <p>True \(W_1\) in 3D solves an optimal transport problem between \(P_Y\) and \(P_X\). It's accurate but expensive to generate at large \(N\). For the interactive below we may either use a small \(N\) true \(W_1\), or a high‑\(p\) sliced proxy that is visually indistinguishable at \(N=6000\).</p>
           <div style="margin:0.5rem 0 1.25rem;"><div id="w1dense3d" class="plot3d"></div></div>
 
-          <h2 id="method-sliced-w1"><strong>Sliced Wasserstein-1</strong></h2>
-          <p>Sliced Wasserstein-1 offers a transport-aware perspective on distributional matching that complements information-theoretic approaches like KL divergence. Instead of measuring information loss, Wasserstein distance quantifies the minimal "work" required to transform one distribution into another, where work is defined as the amount of probability mass moved multiplied by the distance it travels. This geometric interpretation makes W1 particularly suitable for applications where the spatial arrangement and support of the distribution matter.</p>
+          <h4 id="method-sliced-w1"><strong>Sliced Wasserstein-1</strong></h4>
+          <p>Sliced Wasserstein-1 complements information-theoretic distances by measuring the “work” needed to morph one distribution into another. Think of the full dataset as piles of sand and the subset as matching holes: the Wasserstein distance asks for the cheapest transport plan that fills every hole without spilling mass. That viewpoint captures both where probability lies and how far it must travel.</p>
 
-          <p><strong>Transport perspective:</strong> Imagine each point in the full set \(Y\) as a pile of sand of equal weight, and each point in the subset \(X\) as an empty hole. The Wasserstein distance finds the optimal way to move sand from the piles to fill the holes while minimizing the total transport cost. This optimal transport formulation captures both the differences in location (where mass needs to move) and the differences in quantity (how much mass needs to move).</p>
-
-          <p><strong>1D simplification:</strong> In one dimension, the optimal transport plan has a beautiful property: it's simply given by matching sorted quantiles. If we sort the projected values of both distributions, the optimal matching pairs the smallest with smallest, second smallest with second smallest, and so on. The Wasserstein-1 distance then reduces to the average absolute difference between these sorted values:</p>
+          <p>In one dimension the plan is simply a quantile match, so projecting onto \(v_j\) reduces the problem to sorting and taking absolute differences:</p>
           <div class="math-block">\[ W_1(P,Q) = \frac{1}{n}\sum_{i=1}^n |F_P^{-1}(i/n) - F_Q^{-1}(i/n)| = \int_0^1 |F_P^{-1}(u) - F_Q^{-1}(u)|\,du, \]</div>
-          where \(F_P^{-1}\) and \(F_Q^{-1}\) are the quantile functions.</p>
-
-          <p><strong>Sliced approximation:</strong> Extending this to high dimensions, we sample random directions and compute the 1D Wasserstein distances along each projection. The sliced W1 objective averages these directional distances:</p>
+          where \(F_P^{-1}\) and \(F_Q^{-1}\) are the quantile functions. In higher dimensions we repeat this projection trick for \(p\) random directions and average the resulting transport costs:</p>
           <div class="math-block">\[ \mathrm{SW}_1(P_Y,P_X)=\frac{1}{p}\sum_{j=1}^p W_1\big(\langle v_j,\cdot\rangle_{∗} P_Y,\langle v_j,\cdot\rangle_{∗} P_X\big). \]</div>
+          <p>Because Wasserstein respects the ambient metric, it remains finite even when support sets barely overlap and it produces useful gradients for optimization. Outliers exert limited leverage—they just contribute the distance required to move their mass—so the distance reacts smoothly to structural changes in the dataset.</p>
 
-          <p><strong>Statistical properties:</strong> Unlike KL divergence, Wasserstein distance is symmetric and respects the underlying metric of the space. It provides gradients even when distributions have disjoint support, making it numerically stable and well-behaved. The W1 metric is particularly robust to outliers and can handle distributions with different support without becoming infinite.</p>
-
-          <p><strong>Computational efficiency:</strong> Each 1D Wasserstein computation requires only sorting \(O(N \log N)\) followed by a linear pass \(O(N)\). With \(p\) projection directions, the total complexity is \(O(p \cdot N \log N)\) per evaluation, which is comparable to sliced KL but with better constants since sorting is highly optimized in practice.</p>
-
-          <p><strong>Practical behavior:</strong> Sliced W1 tends to preserve both the overall shape and the relative positions of probability mass across different regions. It's particularly effective at capturing differences in location, scale, and shape that might be missed by purely density-based methods. The method is less sensitive to precise density estimation and more focused on matching the cumulative distribution characteristics.</p>
-
-          <p><strong>Parameter sensitivity:</strong> The number of projections \(p\) typically ranges from 100 to 500 for good results. The method is relatively insensitive to the exact choice of \(p\) - more projections reduce variance in the estimate but with diminishing returns. The random directions can be either fixed across iterations (for consistency) or resampled (for stochasticity).</p>
+          <p>Each slice costs only \(O(N \log N)\) for the sort plus a linear pass, so \(p\) between 100 and 500 keeps the average stable without excessive compute. The method then preserves both the global shape and regional relationships between clusters more faithfully than density-focused proxies, making it a go-to choice when spatial structure matters.</p>
 
           <p class="algo-notes">\(v_j\) are random unit directions; \(\langle v_j,\cdot\rangle_{∗}P\) is the pushforward; \(W_1\) is the 1D Earth‑Mover distance between projected laws.</p>
           <div class="algorithm-box">
@@ -781,27 +728,25 @@
           
           
 
-          <h2 id="method-mmd"><strong>Kernel Herding (Maximum Mean Discrepancy, MMD)</strong></h2>
-          <p>Kernel herding provides an elegant framework for representative selection by operating in a high-dimensional feature space where the structure of the data becomes more apparent. The key insight is that through an appropriate kernel function, we can map points to a reproducing kernel Hilbert space (RKHS) where matching moments becomes equivalent to matching the full distribution. This approach avoids explicit density estimation while still capturing complex distributional characteristics.</p>
+          <h4 id="method-mmd"><strong>Kernel Herding (Maximum Mean Discrepancy, MMD)</strong></h4>
+          <p>Kernel herding rephrases representative selection in a reproducing kernel Hilbert space so that matching the subset to the full set boils down to aligning mean embeddings. A kernel \(k(x,y)=\langle\phi(x),\phi(y)\rangle_\mathcal{H}\) defines the feature map \(\phi\) and the distributional summary \(\mu_P = \mathbb{E}[\phi(X)]\). Characteristic kernels such as the RBF ensure that this mean embedding uniquely identifies the distribution, so keeping \(\mu_{P_X}\) close to \(\mu_{P_Y}\) effectively matches the two laws.</p>
 
-          <p><strong>RKHS and mean embeddings:</strong> The kernel function \(k: \mathbb{R}^d \times \mathbb{R}^d \rightarrow \mathbb{R}\) implicitly defines a feature map \(\phi: \mathbb{R}^d \rightarrow \mathcal{H}\) into a Hilbert space \(\mathcal{H}\) where \(k(x,y) = \langle \phi(x), \phi(y) \rangle_\mathcal{H}\). The kernel mean embedding \(\mu_P = \mathbb{E}[\phi(X)]\) provides a complete representation of the distribution \(P\) (for characteristic kernels like the RBF). By matching mean embeddings between \(P_Y\) and \(P_X\), we implicitly match the full distributions.</p>
-
-          <p><strong>Maximum Mean Discrepancy:</strong> The MMD squared measures the distance between mean embeddings in the RKHS:</p>
+          <p>The discrepancy is measured by the squared Maximum Mean Discrepancy</p>
           <div class="math-block">\[ \mathrm{MMD}^2(P_Y, P_X) = \|\mu_{P_Y} - \mu_{P_X}\|_\mathcal{H}^2 = \mathbb{E}[k(Y,Y')] + \mathbb{E}[k(X,X')] - 2\mathbb{E}[k(Y,X)], \]</div>
-          where the expectations are taken over independent samples from each distribution.</p>
+          and the unbiased finite-sample estimator follows as</p>
 
-          <p><strong>Herding algorithm:</strong> Instead of directly minimizing MMD (which would require recomputing all pairwise similarities), kernel herding uses a greedy strategy that sequentially selects points to best approximate the kernel mean. At step \(t\), we choose the point that maximizes the discrepancy between its kernel mean score and the average similarity to previously selected points:</p>
+          <div class="math-block">\[
+            \widehat{\mathrm{MMD}}^2_k = \frac{1}{m(m-1)}\sum_{i \neq j}^m k(x_i, x_j) + \frac{1}{N(N-1)}\sum_{i \neq j}^N k(y_i, y_j) - \frac{2}{mN}\sum_{i=1}^m\sum_{j=1}^N k(x_i, y_j).
+          \]</div>
+          <p>The kernel itself sets what similarity means. RBF kernels with bandwidth \(\ell\) emphasize local structure, linear kernels focus on first-order moments, and Laplace kernels give heavier tails; choosing among them tailors the notion of representativeness to the application.</p>
+
+          <p>Rather than solving a full optimization, kernel herding greedily builds the subset by picking the point whose kernel mean score stands out once we discount similarities to points already chosen. At iteration \(t\)</p>
           <div class="math-block">\[ x_t \in \arg\max_{y\in Y} \; \mu(y) - \frac{1}{t-1}\sum_{j=1}^{t-1} k(y,x_j),\quad \mu(y)=\frac{1}{|Y|}\sum_{i} k(y,y_i). \]</div>
+          <p>The first term \(\mu(y)\) pulls us toward dense, high-similarity regions, while the second discourages redundancy, so the algorithm naturally balances representativeness and diversity. Hyperparameters such as the RBF bandwidth \(\ell\) modulate the granularity of this balance; median pairwise distance is a common heuristic that often works well.</p>
 
-          <p><strong>Statistical interpretation:</strong> The term \(\mu(y)\) measures how typical the candidate point \(y\) is with respect to the full dataset - it's high in dense regions and low in sparse ones. The subtraction term \(\frac{1}{t-1}\sum_{j=1}^{t-1} k(y,x_j)\) penalizes points that are similar to already selected ones, promoting diversity. This balance between representativeness (high density) and diversity (low redundancy) is the hallmark of kernel herding.</p>
+          <p>Large datasets pose a computational challenge because evaluating all pairwise kernels is quadratic in \(N\). Random Fourier Features mitigate that cost by approximating \(k(x,y)\) with explicit feature maps \(\hat\phi(x)\), at which point the mean embedding reduces to averaging these vectors. With a few thousand features the approximation is accurate and the algorithm scales to millions of points while keeping MMD in check.</p>
 
-          <p><strong>Kernel choice and hyperparameters:</strong> The Radial Basis Function (RBF) kernel \(k(x,y) = \exp(-\|x-y\|^2/(2\ell^2))\) is commonly used due to its universal approximation properties. The lengthscale parameter \(\ell\) controls the smoothness: small \(\ell\) captures fine-grained local structure, while large \(\ell\) focuses on global patterns. In practice, \(\ell\) is often chosen as the median pairwise distance or via cross-validation.</p>
-
-          <p><strong>Random Fourier Features acceleration:</strong> For large datasets, computing all \(N^2\) kernel evaluations becomes prohibitive. Random Fourier Features (RFF) provide an explicit approximation \(\hat{\phi}(x)\) such that \(k(x,y) \approx \hat{\phi}(x)^\top \hat{\phi}(y)\). This allows us to compute the mean embedding directly: \(\hat{\mu}_P = \frac{1}{|P|}\sum_{x \in P} \hat{\phi}(x)\), reducing complexity from \(O(N^2)\) to \(O(NR)\) where \(R\) is the number of random features (typically 512-2048).</p>
-
-          <p><strong>Computational complexity:</strong> Without approximation, the naive approach is \(O(m \cdot N \cdot t)\) where \(m\) is the subset size and \(t\) is the current step. With RFF, this reduces to \(O(m \cdot N \cdot R)\) for precomputing features plus \(O(m \cdot R)\) for selection, making it scalable to millions of points.</p>
-
-          <p><strong>Behavioral characteristics:</strong> Kernel herding tends to select points that are both representative (appearing in high-density regions) and diverse (covering different modes of the distribution). The method naturally adapts to multi-modal distributions and can capture complex non-linear structure. The RBF kernel emphasizes local neighborhoods, leading to good coverage of dense regions while avoiding oversampling of sparse areas.</p>
+          <p>In the raw form the bookkeeping cost grows as \(O(mNt)\), where \(t\) is the iteration index, but the RFF shortcut prunes this to \(O(mNR)\) for the feature preprocessing and \(O(mR)\) for the greedy sweep, so million-point datasets become tractable. The selections typically interleave representatives from dense regions with well-spaced exemplars from each mode, yielding a subset that is simultaneously typical and diverse.</p>
 
           <p class="algo-notes">Here \(k\) is a positive‑definite kernel (RBF in our runs) and \(\mu(y)=|Y|^{-1}\sum_i k(y,y_i)\) is the kernel mean score.</p>
           <div class="algorithm-box">
@@ -819,145 +764,59 @@
           <div style="margin:0.5rem 0 1.25rem;"><div id="mmd3d" class="plot3d"></div></div>
           
 
-          <h2 id="method-mean-var"><strong>Mean-Variance</strong></h2>
-          <p>The Mean-Variance method provides a principled approach to representative selection by focusing on preserving the first two statistical moments along multiple random projections. This approach stems from the observation that many distributions can be reasonably characterized by their location (mean) and spread (variance) along various directions. By ensuring these moments match between the full set and the subset, we obtain a representative sample that captures both central tendency and dispersion.</p>
-
-          <p><strong>Moment matching principle:</strong> In classical statistics, the method of moments seeks to match sample moments to population moments. Here we adapt this idea: instead of matching all moments in high dimensions (which would be computationally expensive), we match only the first two moments along randomly chosen 1D projections. This provides a good balance between computational efficiency and statistical fidelity.</p>
-
-          <p><strong>Projection mechanics:</strong> For each random direction \(v_j\), we project all points onto that direction: \(p_i^{(j)} = \langle v_j, y_i \rangle\). The projected values form a 1D distribution characterized by its mean \(\mu_Y^{(j)} = \frac{1}{N}\sum_i p_i^{(j)}\) and variance \(\sigma_Y^{(j)2} = \frac{1}{N}\sum_i (p_i^{(j)} - \mu_Y^{(j)})^2\). Our goal is to select a subset \(X\) such that its projected statistics \(\mu_X^{(j)}\) and \(\sigma_X^{(j)}\) closely match those of the full set across all directions.</p>
-
-          <p><strong>The tradeoff dilemma:</strong> There's an inherent tension between matching means and matching variances. Points near the center of the distribution help match the mean but contribute little to variance. Points in the tails increase variance but may shift the mean away from the target. The parameter \(\lambda\) in the error function controls this tradeoff:</p>
-          <div class="math-block">\[ E(X) = \frac{1}{p}\sum_{j=1}^p \Big[(\mu_Y^{(j)}-\mu_X^{(j)})^2 + \lambda(\sigma_Y^{(j)}-\sigma_X^{(j)})^2\Big]. \]</div>
-
-          <p><strong>Statistical interpretation:</strong> When \(\lambda = 1\), we give equal importance to mean and variance matching. Setting \(\lambda > 1\) emphasizes variance (spread) and leads to selecting more extreme points, while \(\lambda < 1\) prioritizes mean matching and results in more centrally concentrated subsets. The choice of \(\lambda\) should reflect the application: for tasks where capturing variability is crucial, use larger \(\lambda\); for applications focused on central tendency, use smaller \(\lambda\).</p>
-
-          <p><strong>Computational advantages:</strong> Computing means and variances along projections is highly efficient - each projection requires \(O(N)\) operations for the dot products and \(O(N)\) for the moment calculations. With \(p\) directions, the total complexity is \(O(p \cdot N)\) per candidate evaluation, making it much faster than density-based methods.</p>
-
-          <p><strong>Direction selection strategy:</strong> The random directions are typically sampled uniformly from the unit sphere in \(\mathbb{R}^d\). The number of directions \(p\) controls the approximation quality - more directions provide better coverage of the angular space but increase computation. In practice, \(p = 50\) to \(200\) directions often suffice for good results. The directions can be fixed for reproducibility or resampled for stochastic variation.</p>
-
-          <p><strong>Behavioral characteristics:</strong> The Mean-Variance method tends to select a balanced mix of central and peripheral points. It naturally allocates points to maintain the shape of the distribution across multiple orientations. This method is particularly effective for unimodal or approximately elliptical distributions where first and second moments capture most of the distributional information.</p>
-
-          <p><strong>Limitations and extensions:</strong> For highly multi-modal distributions, matching only means and variances may not capture all relevant structure. The method can be extended to include higher moments (skewness, kurtosis) or to use adaptive projections that focus on directions with maximum variance (principal components) rather than random ones.</p>
-          
-          <p>Concretely, suppose we draw \(m\) random unit vectors \(\{u_1, u_2, \ldots, u_m\}\) in the plane (for 2D, these could be random angles) or in higher dimensions (random directions on the unit sphere). For each direction \(u_j\), we can compute the mean \(\mu_Y^{(j)}\) and standard deviation \(\sigma_Y^{(j)}\) of the projections of all points in \(Y\) onto \(u_j\). We would like our subset \(X\) to have similar statistics: i.e., for each \(j\), the mean \(\mu_X^{(j)}\) and standard deviation \(\sigma_X^{(j)}\) (computed over points in \(X\) projected onto \(u_j\)) should be as close as possible to those of the full set.</p>
-          
-          <p>There is often a trade-off between matching the mean and matching the variance (spread) along any given direction, especially if the distribution of \(Y\) is not uniform. For example, picking too many extreme outlier points can quickly match the range or variance of \(Y\), but may shift the subset's mean away from the true center of \(Y\); conversely, picking points near the center will align the means but reduce the variance of \(X\) relative to \(Y\). The greedy algorithm for the mean-variance method balances these by explicitly considering both in its selection criterion. We define an error metric that quantifies the discrepancy in mean and variance along the set of projection directions \(U = \{u_1, \ldots, u_m\}\). One such error function can be written as:</p>
-          <div class="math-block">\[ E(X) = \frac{1}{m}\sum_{j=1}^m \Big[(\mu_Y^{(j)}-\mu_X^{(j)})^2 + \lambda(\sigma_Y^{(j)}-\sigma_X^{(j)})^2\Big], \]</div>
-          <p>where \(\lambda\) is a weighting factor that can be tuned to give more or less emphasis to matching the variance relative to the mean. In our implementation, we took \(\lambda = 1\) for simplicity, weighing mean and variance equally.</p>
-          <p class="algo-notes">\(\mu_X^{(j)}\) and \(\sigma_X^{(j)}\) are the mean and standard deviation of \(v_j^{\top}x\) over \(x\in X\); \(\lambda\) controls the mean/variance trade‑off.</p>
-          <div class="algorithm-box">
-            <div class="math-block">\[\begin{aligned}
-              &E(X)=\frac{1}{p}\sum_{j=1}^p\Big[(\mu_Y^{(j)}-\mu_X^{(j)})^2+\lambda\, (\sigma_Y^{(j)}-\sigma_X^{(j)})^2\Big].\\
-              &X_0=\varnothing.\\
-              &\text{For } t=1,\ldots,m:\\
-              &\quad s_t(y) \;:=\; E\big(X_{t-1}\cup\{y\}\big).\\
-              &\quad x_t^{\ast} \,\in\, \arg\min_{y\in Y\setminus X_{t-1}}\; s_t(y).\\
-              &\quad X_t=X_{t-1}\cup\{x_t^{\ast}\}.
-            \end{aligned}\]</div>
-          </div>
-          <p class="algo-notes">We define a projection‑based error that balances mean and spread along random directions (controlled by \(\lambda\)), then add the point \(x_t^{\ast}\) that most reduces this error.</p>
-          
-          
-          
           
           <p>The greedy selection procedure starts with \(X\) empty and adds one point at a time from \(Y\) that most reduces the error \(E(X)\). After each point is added, the means and variances \(\mu_X^{(j)}, \sigma_X^{(j)}\) are recomputed for the new subset before the next selection. In this approach, the random projection directions serve as a proxy for overall shape. By using multiple random projections, we capture different aspects of the distribution of \(Y\) without needing to consider the full high-dimensional geometry directly. This makes the method scalable: one can choose \(m\) (the number of projections) to balance accuracy and computational cost. In practice, even a modest number of random directions (e.g. \(m = 10\) or 20) can yield a good approximation of the data's spread in various orientations. The chosen subset \(X\) will tend to include both central points (to keep the projected means aligned with \(Y\)) and some peripheral points (to account for the variance along those projections). Thus, it inherently balances bias (mean alignment) and variance (coverage of spread) in multiple directions.</p>
 
           <p class="algo-notes">Walkthrough. Sample random directions and keep \(X\) close to \(Y\) in projection means while preserving spread (variance). Each step adds the point that most reduces the directional moment error.</p>
           <div style="margin:0.5rem 0 1.25rem;"><div id="mv3d" class="plot3d"></div></div>
 
-          <h2 id="method-mcmc"><strong>MCMC Subset Selection</strong></h2>
-          <p>Markov Chain Monte Carlo methods provide a fundamentally different approach to representative selection by exploring the space of possible subsets through stochastic transitions rather than deterministic greedy optimization. Instead of always picking the "best" point at each step, MCMC allows for probabilistic moves that can escape local optima and explore diverse solutions, potentially finding better global optima for complex distributions.</p>
+          <h3 id="sampling-based-methods"><strong>Sampling-Based Methods</strong></h3>
 
-          <p><strong>Sampling perspective:</strong> We view the selection problem as sampling from a probability distribution over subsets, where "good" subsets (those with low objective value) have higher probability. The target distribution is typically defined as \(\pi(X) \propto \exp(-\beta \cdot f(X))\), where \(f(X)\) is our objective (e.g., sliced KL divergence) and \(\beta\) controls the concentration around good solutions.</p>
+          <h4 id="method-mcmc"><strong>MCMC Subset Selection</strong></h4>
+          <p>Markov Chain Monte Carlo reimagines subset selection as the task of wandering through the space of possible subsets rather than greedily committing to one choice at a time. Each state of the chain is a candidate subset, and transitions are guided by the objective: good subsets appear frequently, mediocre ones only occasionally, so the chain can slip out of local minima and keep discovering alternatives.</p>
 
-          <p><strong>Delayed Acceptance optimization:</strong> For high-dimensional problems, computing the full objective for every proposed move becomes expensive. Delayed Acceptance MCMC addresses this by using a two-stage evaluation process. First, we compute a cheap approximation using a subset of directions or features. Only if this approximation looks promising do we compute the full expensive objective.</p>
+          <p>The target distribution typically takes the Boltzmann form \(\pi(X) \propto \exp(-\beta f(X))\), where \(f\) is the quality metric (sliced KL in our case) and \(\beta\) plays the role of an inverse temperature. We propose a modification such as adding, removing, or swapping a point, and accept it with the usual Metropolis-Hastings rule. Because acceptance is probabilistic, the chain does not lock onto an early decision and continues exploring nearby valleys that might hide better subsets.</p>
 
-          <p><strong>Sliced‑DA specific implementation:</strong> Our optimized MCMC uses sliced KL divergence as the target objective. The delayed acceptance mechanism works as follows:</p>
-          <ul>
-            <li><strong>Stage 1 (Coarse evaluation):</strong> Compute sliced KL using a small number of random directions (e.g., 64 instead of 384). This provides a quick estimate of whether the proposed move is promising.</li>
-            <li><strong>Stage 2 (Fine evaluation):</strong> Only if the coarse evaluation passes a threshold, compute the full sliced KL with all directions. This two-stage process dramatically reduces computation while maintaining solution quality.</li>
-          </ul>
+          <p>Evaluating \(f(X)\) exactly at every step is expensive, so we use delayed acceptance: a coarse check based on a small batch of directions acts as a gatekeeper, and only proposals that pass this quick filter trigger the full evaluation with all 384 directions. The two-stage pipeline screens out most unpromising moves, cutting runtime dramatically while keeping the stationary distribution nearly unchanged.</p>
 
-          <p><strong>Proposal mechanisms:</strong> Several proposal strategies can be employed:</p>
-          <ul>
-            <li><strong>Add/Remove moves:</strong> Propose adding a new point to the subset or removing an existing one.</li>
-            <li><strong>Swap moves:</strong> Exchange one point in the current subset with one from the candidate pool.</li>
-            <li><strong>Adaptive proposals:</strong> Learn which points are more likely to be good candidates and bias proposals toward them.</li>
-          </ul>
+          <p>Proposal design is flexible. We mix add/remove moves with swaps and occasionally bias proposals toward points that have scored well in the past, which improves acceptance without sacrificing exploration. This blend maintains diversity in the visited subsets and keeps acceptance rates healthy.</p>
 
-          <p><strong>Computational advantages:</strong> While greedy methods are \(O(m \cdot N \cdot \text{cost_per_eval})\), MCMC can find good solutions in fewer evaluations because it doesn't exhaustively search all candidates at each step. The delayed acceptance mechanism can reduce computation by 5-10x while maintaining 90%+ of the solution quality.</p>
+          <p>Runtime depends on how long we let the chain run. Greedy selection is roughly \(O(mN \cdot \text{cost})\); a carefully tuned chain often reaches comparable or better objectives in far fewer full evaluations because it recycles information between steps and does not reconsider every candidate from scratch. We track effective sample size, autocorrelation, and acceptance to ensure mixing, and we gradually raise \(\beta\) (a form of simulated annealing) so the search sharpens as it converges.</p>
 
-          <p><strong>Convergence and mixing:</strong> The key challenge in MCMC is ensuring the chain mixes well and converges to the target distribution. We monitor effective sample size, autocorrelation, and acceptance rates. The temperature parameter \(\beta\) can be gradually increased (simulated annealing) to focus the search on increasingly better solutions.</p>
+          <p>The payoff is a controllable balance between quality and compute. Short runs yield quick improvements; long runs expose multiple high-quality subsets and even quantify uncertainty by examining the ensemble of states. Techniques like parallel tempering—running chains at different temperatures and swapping states—further help in rugged landscapes, albeit at additional implementation complexity.</p>
 
-          <p><strong>Quality vs. runtime tradeoffs:</strong> MCMC offers a tunable tradeoff between solution quality and computation time. Short runs (few thousand iterations) can find good-enough solutions quickly, while longer runs can explore more thoroughly and potentially find better optima than greedy methods.</p>
-
-          <p><strong>Advantages over greedy:</strong> MCMC can escape local optima that greedy methods get trapped in, explore multiple diverse solutions rather than committing to early decisions, and provide uncertainty estimates by examining the distribution of visited states.</p>
-
-          <p><strong>Practical considerations:</strong> The method requires careful tuning of proposal distributions, step sizes, and acceptance thresholds. Parallel tempering (running multiple chains at different temperatures) can improve exploration for complex distributions.</p>
-
-            <h3 id="method-mcmc-exact"><strong>MCMC (Exact)</strong></h3>
-            <p>The exact MCMC approach evaluates the full objective function for every proposed subset modification. While computationally intensive, this provides the most accurate exploration of the solution space. The method follows the standard Metropolis-Hastings algorithm:</p>
-
-            <p>Given current subset \(X_t\), propose a new subset \(X'\) by randomly adding, removing, or swapping a point. Accept the proposal with probability:</p>
+            <h5 id="method-mcmc-exact">MCMC (Exact)</h5>
+            <p>The exact variant evaluates the full objective for every proposal, so each Metropolis-Hastings step reflects the true landscape. Starting from subset \(X_t\), we draw a proposal \(X'\) (add, remove, or swap a point) and accept it with probability</p>
             <div class="math-block">\[
               \alpha = \min\left(1, \frac{\pi(X')}{\pi(X_t)}\right) = \min\left(1, \exp\left(-\beta(f(X') - f(X_t))\right)\right)
             \]</div>
+            <p>Our configuration uses sliced KL with 384 directions, symmetric proposals, and a simple annealing law \(\beta_t = \beta_0(1 + \gamma t)\) to slowly tighten the search. Ten thousand iterations with a 2,000-step burn-in offered a good balance in our experiments. The benefit is principled convergence and usable posterior summaries over subsets; the drawback is the high \(O(pN)\) cost per iteration, which restricts this flavor to moderate dataset sizes.</p>
 
-            <p><strong>Implementation details:</strong></p>
-            <ul>
-              <li>Uses sliced KL divergence with 384 projection directions as the objective</li>
-              <li>Employs symmetric proposals (equal probability of forward and reverse moves)</li>
-              <li>Implements annealing schedule: \(\beta_t = \beta_0 \cdot (1 + \gamma t)\) to gradually focus on better solutions</li>
-              <li>Runs 10,000 iterations with burn-in of 2,000 for convergence</li>
-            </ul>
-
-            <p><strong>Advantages:</strong> Guarantees convergence to the target distribution given infinite time; provides uncertainty estimates through the chain's stationary distribution.</p>
-            <p><strong>Limitations:</strong> Each iteration requires \(O(p N)\) operations for sliced KL evaluation, making it impractical for very large datasets.</p>
-
-            <h3 id="method-mcmc-da"><strong>MCMC (Budgeted / Delayed‑Acceptance)</strong></h3>
-            <p>The optimized MCMC implementation shown here uses the delayed acceptance framework with sliced KL divergence. It achieves comparable or better quality than greedy methods with significantly less computation by avoiding exhaustive search at each step. The two-stage evaluation ensures that only promising moves receive the full computational budget.</p>
+            <h5 id="method-mcmc-da">MCMC (Budgeted / Delayed‑Acceptance)</h5>
+            <p>The budgeted implementation layers delayed acceptance on top of the same proposal machinery. Coarse evaluations with 64 directions screen most moves, while the surviving fraction receives the full 384-direction assessment. This keeps quality close to the exact chain yet trims wall-clock time by an order of magnitude, making MCMC practical when greedy methods start to sputter.</p>
           <div style="margin:0.5rem 0 1.25rem;"><div id="mcmcda3d" class="plot3d"></div></div>
 
-          <h2 id="method-kdpp"><strong>k‑DPP Diversity-Based Selection</strong></h2>
-          <p>Determinantal Point Processes (DPPs) provide an elegant probabilistic framework for selecting diverse subsets by modeling the repulsive interactions between points. Unlike methods that explicitly match distributions or moments, k-DPPs focus on diversity as the primary selection criterion, ensuring that selected points are spread out and mutually informative.</p>
+          <h3 id="diversity-methods"><strong>Diversity-Based Methods</strong></h3>
 
-          <p><strong>Mathematical foundation:</strong> A DPP defines a probability distribution over subsets where the probability of selecting a subset \(S\) is proportional to the determinant of its kernel matrix:</p>
+          <h4 id="method-kdpp"><strong>k‑DPP Diversity-Based Selection</strong></h4>
+          <p>Determinantal Point Processes model the repulsion between similar items, so their samples naturally spread across the space. A subset \(S\) drawn from a DPP receives probability proportional to the determinant of the kernel submatrix,</p>
           <div class="math-block">\[ \mathbb{P}(S) \propto \det(K_S), \]</div>
-          where \(K_S\) is the submatrix of the kernel \(K\) indexed by points in \(S\). The determinant measures the volume spanned by the selected points in feature space - larger determinants correspond to more diverse sets.</p>
+          and the determinant captures the volume spanned by the selected feature vectors. Large volume implies that the points are mutually different, which is why DPPs gravitate toward diverse selections.</p>
 
-          <p><strong>Kernel diversity interpretation:</strong> The kernel function \(k(x_i, x_j)\) measures similarity between points. The DPP probability \(\det(K_S)\) can be expanded as a sum over all matchings, where each term penalizes selecting points that are highly similar. This creates a natural repulsion effect - the process discourages selecting redundant points.</p>
+          <p>Conditioning on the subset size yields the k-DPP used here:</p>
+          <div class="math-block">\[ \mathbb{P}(S) = \frac{\det(K_S)}{\sum_{|T|=m} \det(K_T)}, \qquad |S| = m, \]</div>
+          eliminating any size bias and focusing entirely on diversity. The kernel encodes the meaning of “different”: RBF kernels highlight geometric separation, linear kernels emphasize directional independence, and bespoke feature kernels reflect domain knowledge.</p>
 
-          <p><strong>Fixed-size k-DPP:</strong> Standard DPPs allow subsets of variable size, which can be problematic when we need exactly \(m\) points. The k-DPP modification conditions on the subset size, giving:</p>
-          <div class="math-block">\[ \mathbb{P}(S) = \frac{\det(K_S)}{\sum_{|T|=m} \det(K_T)}, \quad |S| = m. \]</div>
-          This removes any bias toward larger or smaller subsets and focuses entirely on the diversity of the selected content.</p>
-
-          <p><strong>Kernel choice and diversity semantics:</strong> The choice of kernel determines what "diversity" means:</p>
-          <ul>
-            <li><strong>RBF kernel:</strong> \(k(x,y) = \exp(-\|x-y\|^2/(2\ell^2))\) - promotes geometric diversity, selecting points that are spatially separated.</li>
-            <li><strong>Linear kernel:</strong> \(k(x,y) = x^\top y\) - promotes linear independence, selecting points that span different directions.</li>
-            <li><strong>Feature kernels:</strong> Any kernel defined on relevant features can encode domain-specific diversity.</li>
-          </ul>
-
-          <p><strong>Computational challenges:</strong> Computing exact k-DPP samples requires evaluating determinants of many submatrices, which is \(O(N^3)\) in naive form. Even with efficient algorithms using eigendecompositions, exact sampling remains expensive for large \(N\).</p>
-
-          <p><strong>Nyström approximation:</strong> To scale k-DPPs to large datasets, we use the Nyström method to approximate the kernel matrix. We select \(r\) landmark points (where \(r \ll N\)) and approximate:</p>
+          <p>Exact sampling requires repeated determinant computations or eigendecompositions, which is cubic in \(N\) and quickly becomes infeasible. We therefore approximate the kernel with Nyström landmarks, choosing \(r\) representative points and forming</p>
           <div class="math-block">\[ K \approx C W^{-1} C^\top, \]</div>
-          where \(W = K_{LL}\) is the kernel matrix on landmarks and \(C = K_{XL}\) contains cross-kernel values between all points and landmarks.</p>
+          with \(W = K_{LL}\) and \(C = K_{XL}\). Working in the low-rank feature matrix \(B = C W^{-1/2}\) lets us greedily maximize determinant volume by re-using rank-one updates.</p>
 
-          <p><strong>Greedy volume maximization:</strong> In the Nyström-approximated feature space \(B = C W^{-1/2}\), we select points by greedily maximizing the determinant of the selected submatrix. This is equivalent to greedily maximizing the volume spanned by the selected points in feature space.</p>
-
-          <p><strong>Scalability and complexity:</strong> The Nyström approximation reduces complexity from \(O(N^3)\) to \(O(Nr^2)\) for the initial approximation plus \(O(m^2 r)\) for the greedy selection. With \(r\) typically set to 64-256 landmarks, this enables scaling to millions of points.</p>
-
-          <p><strong>Diversity vs. representativeness:</strong> Pure k-DPP optimization may select diverse points that are not representative of the data distribution (e.g., selecting outliers because they're diverse). In practice, k-DPPs work best when combined with representativeness constraints or when the application specifically values diversity over density matching.</p>
-
-          <p><strong>Behavioral characteristics:</strong> k-DPP methods tend to select points that are well-spread across the data space, with good coverage of different modes or clusters. The selected points often form a natural "skeleton" of the data distribution. The method is particularly effective when the data has clear structure or when we want to avoid redundancy in our selection.</p>
-
-          <p><strong>Practical applications:</strong> k-DPPs excel in scenarios like experimental design (selecting diverse conditions), sensor placement (maximizing coverage), summarization (selecting diverse exemplars), and active learning (choosing informative samples).</p>
-          <h4 id="method-kdpp-exact"><strong>k‑DPP (Exact)</strong></h4>
+          <p>This pipeline cuts complexity to \(O(Nr^2)\) for the approximation and \(O(m^2 r)\) for selection; with \(r\) around 64–256 landmarks we can handle millions of points. The resulting subsets form a skeletal cover of the data, though the focus on diversity can over-emphasize outliers if used in isolation. In practice we often couple k-DPPs with mild density weighting or simply embrace them when coverage is the primary goal, as in experimental design, sensor placement, summarization, and active learning.</p>
+          <h5 id="method-kdpp-exact">k‑DPP (Exact)</h5>
           <p>The exact k-DPP implementation provides the gold standard for diversity-based selection by directly sampling from the determinantal distribution. It uses efficient algorithms based on eigendecomposition of the kernel matrix and the chain rule for DPP sampling. While computationally intensive, it provides the optimal diversity according to the chosen kernel.</p>
           <p>The exact method involves computing the eigendecomposition of the kernel matrix \(K = U\Lambda U^\top\) and then sampling sequentially using the eigenvectors. This ensures that each selected point maximizes the incremental gain in determinant volume, leading to provably optimal diversity under the kernel metric.</p>
           <div style="margin:0.5rem 0 1.25rem;"><div id="kdpp3d" class="plot3d"></div></div>
-          <h4 id="method-kdpp-nystrom"><strong>The Nyström Approximation</strong></h4>
+          <h5 id="method-kdpp-nystrom">The Nyström Approximation</h5>
           <p>The Nyström approximation makes k-DPP selection practical for large-scale problems. By working in a low-rank approximation of the kernel feature space, we can achieve near-exact diversity selection with dramatically reduced computation. The landmark count \(r\) serves as the computational budget parameter - smaller values are faster but less accurate.</p>
           <p>This approach first selects \(r\) landmark points (typically using k-means or random sampling) to approximate the kernel structure. Then it performs greedy selection in the transformed space, selecting points that maximize the incremental determinant. The quality of approximation depends on how well the landmarks capture the structure of the full dataset.</p>
           <div style="margin:0.5rem 0 1.25rem;"><div id="nystrom3d" class="plot3d"></div></div>
@@ -974,7 +833,7 @@
           <p><b>Streaming:</b> reads \(Y\) in passes and optimizes against small <em>sketches</em> (per‑direction 1D histograms/quantiles for sliced metrics; RFF mean embedding for MMD; aggregated projection moments for geometric methods). Pros: scales to millions with bounded memory; cons: small approximation bias governed by sketch size (\(p\), bins, R).</p>
 
           <h3><strong>Sketch Parameters</strong></h3>
-          <p>Unless stated otherwise, sliced methods use \(p=384\) random directions; MMD uses RBF with lengthscale \(\ell=0.5\); Mean–Variance uses \(p=384\) projections with \(\alpha=0.2\); Hyperplane uses \(k=40\,d\) normals. Increase \(p\)/R for more stability (lower variance) at higher compute.</p>
+          <p>Unless stated otherwise, sliced methods use \(p=384\) random directions; MMD uses RBF with lengthscale \(\ell=0.5\); Mean-Variance uses \(p=384\) projections with \(\alpha=0.2\); Hyperplane Extent uses \(k=40\,d\) normals. Increase \(p\)/R for more stability (lower variance) at higher compute.</p>
 
           <p>The careful reader may notice that full KL was not calculated in the experiments. This is because KL divergence is not tractable in high dimensions. The greedy step at iteration \(t\) evaluates candidates \(p\in Y\setminus X\) by scoring \(\Delta(p)=D_{\mathrm{KL}}\!\big(P_Y\,\Vert\,P_{X\cup\{p\}}\big).\) With KDE, \(P_{X}\) has density \(p_X(x)=\tfrac{1}{t}\sum_{j=1}^{t} K(x,x_j).\) A naive evaluation uses all \(N\) points:</p>
           <div class="math-block">\[\text{score}(p)\;=\;\sum_{i=1}^{N} p_Y(y_i)\,\log\frac{p_Y(y_i)}{p_{X\cup\{p\}}(y_i)}\quad\Rightarrow\quad O\big((t+1)\,N\big)\;\text{per candidate.}\]</div>
@@ -999,7 +858,7 @@
 
       <p><strong>Mean‑Variance.</strong> When speed dominates, we align first/second moments on random projections. It’s a single‑pass, streaming‑friendly heuristic that summarizes center and spread quickly—but, by design, it can miss fine multi‑modal structure.</p>
 
-      <p><strong>Hyperplane.</strong> To capture geometric extent without heavy computation, we pick extremes along sampled directions. This one‑pass, memory‑light baseline excels at boundary coverage and integrates naturally with batched or streaming ingestion.</p>
+      <p><strong>Hyperplane Extent.</strong> To capture geometric extent without heavy computation, we pick extremes along sampled directions. This one‑pass, memory‑light baseline excels at boundary coverage and integrates naturally with batched or streaming ingestion.</p>
 
       <p><strong>MCMC (Delayed Acceptance).</strong> Exact MCMC proposals are costly when every step evaluates an expensive objective. Delayed acceptance first screens proposals with a cheap surrogate (e.g., few projections), reserving the full evaluation for promising moves—retaining global search while cutting wall‑clock time.</p>
 
@@ -1056,8 +915,8 @@
           (function(){
             const order = ['mean_var','hyperplane','sliced_w1_stream','sliced_kl_stream','mmd_herding_stream','mcmc_da','k_dpp_nystrom'];
             const pretty = {
-              mean_var: 'Mean–Variance',
-              hyperplane: 'Hyperplane',
+              mean_var: 'Mean-Variance',
+              hyperplane: 'Hyperplane Extent',
               sliced_w1_stream: 'Sliced‑W1 (hist/stream)',
               sliced_kl_stream: 'Sliced‑KL (hist/stream)',
               mmd_herding_stream: 'Kernel Herding (MMD, RFF)',
@@ -1140,12 +999,12 @@
             </thead>
             <tbody>
               <tr>
-            <td>Mean–Variance</td>
+            <td>Mean-Variance</td>
             <td>Computational efficiency</td>
             <td>Quick summaries, moments</td>
           </tr>
           <tr>
-            <td>Hyperplane</td>
+            <td>Hyperplane Extent</td>
             <td>Boundary coverage</td>
             <td>Geometric baselines, extent</td>
               </tr>
@@ -1181,7 +1040,7 @@
       <p>Our experiments reveal clear trade-offs between computational efficiency and statistical fidelity:</p>
 
       <ul>
-        <li><strong>Linear-time methods</strong> (Mean-Variance, Hyperplane) offer 10-100x speedups but sacrifice distributional accuracy</li>
+        <li><strong>Linear-time methods</strong> (Mean-Variance, Hyperplane Extent) offer 10-100x speedups but sacrifice distributional accuracy</li>
         <li><strong>Sliced approximations</strong> retain 85-95% of performance with 10x reduction in cost</li>
         <li><strong>Kernel methods with RFF</strong> enable million-scale datasets with bounded memory</li>
         <li><strong>Dimensional scaling:</strong> Most methods transition from infeasible to tractable around \(d = 50\) when using appropriate approximations</li>
@@ -1218,7 +1077,7 @@
 Representative Sampling of High-Dimensional Point Sets
 
 TL;DR
-- KL; Sliced-KL; Sliced-W1; Kernel Herding (MMD); Mean–Variance; Hyperplane.
+- KL; Sliced-KL; Sliced-W1; Kernel Herding (MMD); Mean-Variance; Hyperplane Extent.
 
 Why representative sampling?
 - Speed up downstream work; summarize; preserve structure with fewer points.
@@ -1227,17 +1086,17 @@ Greedy KL minimization
 - Goal: choose X so P_X approximates P_Y.
 - Add the point that most reduces D_KL(P_Y || P_{X∪{p}}).
 
-Projection mean-variance
+Projection Mean-Variance
 - Goal: match mean and variance along random directions; greedily reduce E(X).
 
-Hyperplane extremes
+Hyperplane Extent extremes
 - Goal: approximate extent via extreme projections along sampled directions.
 
 Results at a glance
-- KL/Sliced-KL/SW1/Herding lower distributional metrics; Mean–Variance lowers projection error; Hyperplane is fastest baseline.
+- KL/Sliced-KL/SW1/Herding lower distributional metrics; Mean-Variance lowers projection error; Hyperplane Extent is fastest baseline.
 
 When to use which?
-- KL/Sliced family/Herding for distribution; Mean–Variance for spread; Hyperplane for boundary extent.
+- KL/Sliced family/Herding for distribution; Mean-Variance for spread; Hyperplane Extent for boundary extent.
 
 Practical notes
 - Tune density estimates; accelerate greedy loops; 10-20 directions often suffice.
@@ -1584,7 +1443,7 @@ Conclusion
         return chosen;
       }
 
-      // Mean–Variance proxy: half near mean, half from extremes
+      // Mean-Variance proxy: half near mean, half from extremes
       function meanVarProxy(pts, m){
         const n=pts.length/3; const cx=[0,0,0];
         for (let i=0;i<n;i++){ cx[0]+=pts[3*i]; cx[1]+=pts[3*i+1]; cx[2]+=pts[3*i+2]; }
@@ -1602,7 +1461,7 @@ Conclusion
         return [...pickFrom(near, half), ...pickFrom(far, m-half)];
       }
 
-      // Hyperplane: extremes along random directions
+      // Hyperplane Extent: extremes along random directions
       function hyperplaneProxy(pts, m){
         const n=pts.length/3; const K = Math.max(2, Math.floor(m/6));
         const dirs = Array.from({length:K}, randomDir);

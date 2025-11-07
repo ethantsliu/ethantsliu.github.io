@@ -17,12 +17,12 @@
   --accent-soft-light: rgba(63,107,79,0.2);
   --shadow-light: rgba(0,0,0,0.1);
   --profile-gap: 0.2rem;
-  --wash-top:     #f8f5ed;
-  --wash-bottom:  #fbfaf6;
-  --wash-core:    rgba(236,238,231,0.72);
-  --wash-haze:    rgba(155,179,162,0.26);
-  --wash-bloom:   rgba(191,205,220,0.18);
-  --wash-vein:    rgba(214,198,163,0.18);
+  --wash-top:     #faf5ea;
+  --wash-bottom:  #fffaf1;
+  --wash-core:    rgba(242,232,206,0.74);
+  --wash-haze:    rgba(192,172,128,0.22);
+  --wash-bloom:   rgba(224,198,148,0.18);
+  --wash-vein:    rgba(214,184,120,0.2);
   --grain-color:  rgba(0,0,0,0.04);
   --bloom-iris:         rgba(114,154,214,0.62);
   --bloom-rose:         rgba(228,142,164,0.68);
@@ -30,6 +30,16 @@
   --bloom-moss:         rgba(130,178,156,0.48);
   --vine-ink:           rgba(70,94,102,0.36);
   --spark-light:        rgba(255,255,255,0.78);
+  --ripple-ink:         rgba(32,68,92,0.9);
+  --rain-ink:           rgba(22,52,74,0.4);
+  --lily-base:          rgba(141,176,134,0.55);
+  --lily-core:          rgba(187,208,168,0.65);
+  --lily-shadow:        rgba(66,102,82,0.25);
+  --butterfly-wing:     rgba(243,133,32,0.92);
+  --butterfly-highlight:rgba(255,225,170,0.7);
+  --butterfly-body:     rgba(51,52,58,0.8);
+  --butterfly-shadow:   rgba(34,50,60,0.45);
+  --water-glow:         rgba(196,228,235,0.5);
   --dropdown-bg: var(--wash-gradient);
   --dropdown-bg-color: var(--wash-bottom);
   --wash-gradient:
@@ -63,6 +73,16 @@
   --bloom-moss:         rgba(108,148,130,0.38);
   --vine-ink:           rgba(132,148,160,0.32);
   --spark-light:        rgba(230,236,236,0.5);
+  --ripple-ink:         rgba(255,255,255,0.85);
+  --rain-ink:           rgba(220,236,255,0.38);
+  --lily-base:          rgba(58,92,74,0.72);
+  --lily-core:          rgba(96,132,110,0.58);
+  --lily-shadow:        rgba(16,24,24,0.45);
+  --butterfly-wing:     rgba(247,156,48,0.95);
+  --butterfly-highlight:rgba(255,210,150,0.65);
+  --butterfly-body:     rgba(230,230,230,0.85);
+  --butterfly-shadow:   rgba(0,0,0,0.55);
+  --water-glow:         rgba(48,74,92,0.55);
   --dropdown-bg: none;
   --dropdown-bg-color: var(--bg);
   --wash-gradient:
@@ -98,7 +118,7 @@ html::after {
   z-index: -1;
 }
 
-body > *:not(.pond-overlay) {
+body > *:not(.pond-overlay):not(.math-lines-overlay) {
   position: relative;
   z-index: 1;
 }
@@ -334,11 +354,96 @@ body {
 
 .page-wrapper {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   max-width: 880px;
   margin: 0 auto;
   padding: 3.5rem 3.25rem 4rem;
+}
+
+
+.hummingbird-illustration {
+  position: absolute;
+  top: 6.7rem;
+  left: -6.9rem;
+  width: 240px;
+  opacity: 0.38;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hummingbird-illustration img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: saturate(0) contrast(0.82) brightness(1.08);
+  transform: rotate(-25deg);
+}
+
+html[data-theme="dark"] .hummingbird-illustration img {
+  filter: invert(85%) saturate(40%) brightness(1.35) contrast(0.8);
+  opacity: 0.65;
+  box-shadow: 0 0 18px rgba(235, 240, 255, 0.18), 0 0 36px rgba(220, 232, 255, 0.12);
+}
+
+.magnolia-illustration {
+  position: absolute;
+  bottom: 4.5rem;
+  right: -1.4rem;
+  width: 220px;
+  pointer-events: none;
+  opacity: 0.45;
+  filter: saturate(0) contrast(0.82) brightness(1.08);
+  z-index: 0;
+}
+
+.magnolia-illustration img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+html[data-theme="dark"] .magnolia-illustration img {
+  filter: invert(85%) saturate(40%) brightness(1.35) contrast(0.8);
+  opacity: 0.65;
+  box-shadow: 0 0 18px rgba(235, 240, 255, 0.18), 0 0 36px rgba(220, 232, 255, 0.12);
+}
+
+@media (max-width: 900px) {
+  .hummingbird-illustration {
+    top: 6.3rem;
+    left: -2.1rem;
+    width: 200px;
+    opacity: 0.34;
+  }
+
+  .magnolia-illustration {
+    bottom: 3.6rem;
+    right: -0.6rem;
+    width: 180px;
+    opacity: 0.45;
+  }
+}
+
+@media (max-width: 640px) {
+  .hummingbird-illustration {
+    position: relative;
+    top: 1.6rem;
+    left: auto;
+    right: auto;
+    margin: 0 auto 2rem;
+    width: 170px;
+    opacity: 0.3;
+  }
+
+  .magnolia-illustration {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin: 1.6rem auto 0;
+    width: 150px;
+    opacity: 0.45;
+  }
 }
 
 .page-wrapper.page-wide {
@@ -509,6 +614,46 @@ html[data-theme="dark"] .dropdown-content {
   text-align: left;
   max-width: 100%;
   margin-top: 0.7rem;
+}
+
+/* Minimal hero ambient effects */
+.hero-ambient {
+  position: relative;
+  min-height: 42vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 0.6rem;
+}
+
+.hero-ambient .overlay { position: absolute; inset: 0; pointer-events: none; }
+
+.hero-canvas-wrap { position: absolute; inset: 0; pointer-events: none; }
+.hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+.hero-bottom-gradient {
+  background: linear-gradient(to top, rgba(0,0,0,0.3), rgba(0,0,0,0));
+}
+
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(36px);
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.soft-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--text) 12%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--text) 12%, transparent) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.06;
+}
+
+.spotlight {
+  background: radial-gradient(600px circle at var(--mx,50%) var(--my,50%), color-mix(in srgb, var(--text) 10%, transparent) 0%, transparent 60%);
 }
 
 /* Essay pages: constrain content width and align back-link */
@@ -1198,6 +1343,12 @@ body.home::after {
   margin-bottom: 0.6rem;
 }
 
+/* Math lines background (blended) */
+.math-lines-overlay { position: fixed; inset: 0; pointer-events: none; z-index: 1; mix-blend-mode: normal; opacity: 1; }
+.math-lines-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+
+
 .home .header-top {
   width: 100%;
   display: flex;
@@ -1358,6 +1509,7 @@ body.home::after {
   text-align: right;
   min-width: 5.5rem;
   margin-left: auto;
+  font-weight: 600;
 }
 
 @media (max-width: 720px) {
@@ -1378,4 +1530,3 @@ body.home::after {
     white-space: normal;
   }
 }
-
