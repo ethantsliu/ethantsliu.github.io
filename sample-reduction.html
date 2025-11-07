@@ -598,15 +598,15 @@
           <div style="margin:0.5rem 0 1.25rem;"><div id="hp3d" class="plot3d"></div></div>
 
           <h4 id="method-mean-var"><strong>Mean-Variance</strong></h4>
-          <p>The Mean-Variance method keeps the subset in sync with the first two moments of the full set along many random projections. For each direction \(v_j\) we compute projected coordinates \(p_i^{(j)} = \langle v_j, y_i \rangle\) and track the mean \(\mu_Y^{(j)}\) and variance \(\sigma_Y^{(j)2}\) of those one-dimensional marginals. A candidate subset \(X\) is scored by how closely its own projections \(\mu_X^{(j)}\) and \(\sigma_X^{(j)}\) follow suit, so the method captures both location and spread without attempting to match all higher-order structure.</p>
+          <p>Now, instead of hugging extremes, we look along many random directions \(v_j\), project the cloud, and make sure the subset carries the same one-dimensional means and variances as the full set. Each direction acts like a probe; if a slice feels too light near the center or too thin in the tails, the next chosen point repairs that imbalance.</p>
 
-          <p>The discrepancy functional</p>
-          <div class="math-block">\[ E(X) = \frac{1}{p}\sum_{j=1}^p \Big[(\mu_Y^{(j)}-\mu_X^{(j)})^2 + \lambda(\sigma_Y^{(j)}-\sigma_X^{(j)})^2\Big] \]</div>
-          balances the two moments through the weight \(\lambda\). Setting \(\lambda>1\) encourages wider coverage, while \(\lambda<1\) keeps the subset near the center. The greedy algorithm evaluates each unselected point, measures how much it would shrink \(E\), and keeps the best candidate, so projected directions that are underrepresented draw in the next selection.</p>
+          <p>Formally, every candidate subset \(X\) is scored by a projection-moment discrepancy</p>
+          <div class="math-block">\[ E(X) = \frac{1}{p}\sum_{j=1}^p \Big[(\mu_Y^{(j)}-\mu_X^{(j)})^2 + \lambda(\sigma_Y^{(j)}-\sigma_X^{(j)})^2\Big], \]</div>
+          where \(\mu^{(j)}\) and \(\sigma^{(j)}\) denote the mean and standard deviation of \(v_j^\top y\). The weight \(\lambda\) tilts the trade-off: values above one emphasize matching spread, while smaller choices lock in the mean. Greedily minimizing \(E(X)\) adds whichever point most reduces the cumulative mismatch, so under-served directions immediately attract new representatives.</p>
 
-          <p>This procedure stays efficient because each projection only needs dot products and incremental updates, giving per-step complexity \(O(pN)\) with small constants. The resulting subset interleaves central and peripheral points, mirrors ellipsoidal structure, and works well as the statistical counterpart to Hyperplane Extent: one preserves spread and principal directions, the other preserves the support boundary.</p>
+          <p>The mechanics stay lightweight. Computing the projections is just a batch of dot products, and we can update the directional moments incrementally, keeping each step near \(O(pN)\) with small constants. The resulting subset mixes central anchors with a few deliberate outliers—it mirrors the ellipsoidal structure of the data and complements Hyperplane Extent, which handles the outer shell.</p>
 
-          <p class="algo-notes">\(\mu_X^{(j)}\) and \(\sigma_X^{(j)}\) are the mean and standard deviation of \(v_j^{\top}x\) over \(x\in X\); \(\lambda\) controls the mean/variance trade‑off.</p>
+          <p class="algo-notes">\(\mu_X^{(j)}\) and \(\sigma_X^{(j)}\) are the mean and standard deviation of \(v_j^{\top}x\) over \(x\in X\); \(\lambda\) controls how much variance matters relative to the mean.</p>
           <div class="algorithm-box">
             <div class="math-block">\[\begin{aligned}
               &E(X)=\frac{1}{p}\sum_{j=1}^p\Big[(\mu_Y^{(j)}-\mu_X^{(j)})^2+\lambda\, (\sigma_Y^{(j)}-\sigma_X^{(j)})^2\Big].\\
@@ -617,7 +617,8 @@
               &\quad X_t=X_{t-1}\cup\{x_t^{\ast}\}.
             \end{aligned}\]</div>
           </div>
-          <p class="algo-notes">We define a projection‑based error that balances mean and spread along random directions (controlled by \(\lambda\)), then add the point \(x_t^{\ast}\) that most reduces this error.</p>
+
+          <div style="margin:0.5rem 0 1.25rem;"><div id="mv3d" class="plot3d"></div></div>
 
           <h3 id="distributional-methods"><strong>Distributional Methods</strong></h3>
 
@@ -765,11 +766,6 @@
           
 
           
-          <p>The greedy selection procedure starts with \(X\) empty and adds one point at a time from \(Y\) that most reduces the error \(E(X)\). After each point is added, the means and variances \(\mu_X^{(j)}, \sigma_X^{(j)}\) are recomputed for the new subset before the next selection. In this approach, the random projection directions serve as a proxy for overall shape. By using multiple random projections, we capture different aspects of the distribution of \(Y\) without needing to consider the full high-dimensional geometry directly. This makes the method scalable: one can choose \(m\) (the number of projections) to balance accuracy and computational cost. In practice, even a modest number of random directions (e.g. \(m = 10\) or 20) can yield a good approximation of the data's spread in various orientations. The chosen subset \(X\) will tend to include both central points (to keep the projected means aligned with \(Y\)) and some peripheral points (to account for the variance along those projections). Thus, it inherently balances bias (mean alignment) and variance (coverage of spread) in multiple directions.</p>
-
-          <p class="algo-notes">Walkthrough. Sample random directions and keep \(X\) close to \(Y\) in projection means while preserving spread (variance). Each step adds the point that most reduces the directional moment error.</p>
-          <div style="margin:0.5rem 0 1.25rem;"><div id="mv3d" class="plot3d"></div></div>
-
           <h3 id="sampling-based-methods"><strong>Sampling-Based Methods</strong></h3>
 
           <h4 id="method-mcmc"><strong>MCMC Subset Selection</strong></h4>
