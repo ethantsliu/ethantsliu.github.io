@@ -594,7 +594,7 @@
             \end{aligned}\]</div>
           </div>
           <p class="algo-notes">We match the subset's average absolute projection to random normals to that of the full set by minimizing \(J(X)=\lvert A(X)-A(Y)\rvert\). Each step adds \(x_t^{\ast}\) that best reduces this deviation.</p>
-          <p class="algo-notes">Walkthrough. Draw random normals and match the average absolute projection \(A(X)\) to \(A(Y)\). Greedily add the point that reduces \(|A(X)-A(Y)|\); this captures extent/extremes.</p>
+          <p class="algo-notes">The interactive below shoud be useful for gaining some geometric intuition. Using your mouse, rotate the 3D Gaussian mixture. The generator places three anisotropic clusters at (-1.5, 0, 0), (1.6, 0.9, 0.4), and (0, -1.2, 1.1), tuned so one blob is compact, another elongated, and the third mid-spread, with mixture weights about 0.45, 0.35, and 0.20.</p>
           <div style="margin:0.5rem 0 1.25rem;"><div id="hp3d" class="plot3d"></div></div>
 
           <h4 id="method-mean-var"><strong>Mean-Variance</strong></h4>
