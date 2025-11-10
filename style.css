@@ -1509,7 +1509,7 @@ body.home::after {
 .home .feature-date {
   white-space: nowrap;
   font-size: 0.9rem;
-  color: var(--muted);
+  color: var(--accent-soft);
   text-align: right;
   min-width: 5.5rem;
   margin-left: auto;
