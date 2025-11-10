@@ -1497,6 +1497,10 @@ body.home::after {
   margin-right: auto;
 }
 
+.home .feature-label {
+  color: var(--accent-soft);
+}
+
 .home .feature-title:hover {
   border-bottom-color: var(--accent-soft);
   color: var(--accent-soft);
