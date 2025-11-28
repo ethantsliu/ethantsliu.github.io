@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Ethan Liu | Projects</title>
+  <title>Ethan Liu | Archive</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="favicon.png" />
 </head>
@@ -33,19 +33,31 @@
             <a href="index.html">about</a>
             <a href="work.html">work</a>
             <a href="research.html">research</a>
-            <a href="projects.html" style="color: var(--accent); text-decoration: underline;">projects</a>
+            <a href="archive.html" style="color: var(--accent); text-decoration: underline;">archive</a>
             <a href="writing.html">writing</a>
           </div>
         </div>
       </div>
     </header>
 
-    <div class="main-content projects-page">
+    <div class="main-content archive-page">
       <p class="page-intro">
       Here are some of the things I've worked on in the past—projects, short papers, write-ups, etc.
     </p>
 
       <div class="projects-grid">
+        <article class="project-card">
+        <a href="token-embeddings-manifold.html" class="project-link">
+          <div class="project-title">Token embeddings violate the manifold hypothesis</div>
+          <div class="project-meta">Paper notes</div>
+          <p class="project-desc">On singular token spaces.</p>
+          <div class="project-tags">
+            <span class="project-tag">paper notes</span>
+            <span class="project-tag">geometry</span>
+          </div>
+        </a>
+      </article>
+
         <article class="project-card">
         <a href="sample-reduction.html" class="project-link">
           <div class="project-title">Representative sampling of high‑dimensional point sets</div>
@@ -84,7 +96,6 @@
       </div>
     </div>
   </div>
-</div>
 <script src="background.js"></script>
   <script>
     // Theme toggle functionality

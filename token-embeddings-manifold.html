@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Token Embeddings Geometry Notes | Ethan Liu</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .essay-container {
+      width: 100%;
+      margin: 2.2rem auto 3rem;
+      padding: 0 1rem;
+      text-align: left;
+    }
+
+    .essay-title {
+      font-size: 1.32rem;
+      font-family: 'Baskerville', 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.55rem;
+      letter-spacing: -0.3px;
+    }
+
+    .essay-meta {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 1.9rem;
+      font-family: 'Baskerville', 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
+    }
+
+    .essay-content p {
+      margin-bottom: 1.05rem;
+      font-size: 1.14rem;
+      line-height: 1.8;
+      color: var(--text);
+    }
+
+    .essay-content h2 {
+      font-size: 1.25rem;
+      margin-top: 1.75rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.2px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1.8rem;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.92rem;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--muted);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body data-pond="off">
+  <div class="page-wrapper page-essay-wide">
+    <header class="header-container">
+      <div class="header-top">
+        <div class="theme-toggle" id="themeToggle">
+      <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+        <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
+        <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"/>
+        <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"/>
+        <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"/>
+      </svg>
+        </div>
+        <div class="dropdown" id="dropdown">
+          <button class="dropdown-btn" id="dropdownBtn">天</button>
+          <div class="dropdown-content" id="dropdownContent">
+            <a href="index.html">about</a>
+            <a href="work.html">work</a>
+            <a href="research.html">research</a>
+            <a href="archive.html" style="color: var(--accent); text-decoration: underline;">archive</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-content">
+      <div class="essay-container essay-wide">
+        <a href="archive.html" class="back-link">← back to archive</a>
+        <h1 class="essay-title">Token Embeddings Violate the Manifold Hypothesis</h1>
+        <div class="essay-meta">Ethan Liu | November 19, 2025</div>
+
+        <div class="essay-content">
+          <p>This is an article that walks through my understanding of the paper <span style="text-decoration: underline;"><a href="https://arxiv.org/abs/2509.19059">Token Embeddings Violate the Manifold Hypothesis</a></span>. I highly recommend reading.
+          
+          <h2>Manifold</h2>
+          
+          <p>In many machine learning papers, a manifold hypothesis is either tacitly or explicitly assumed—that is, high-dimensional data are not uniformly scattered throughout a high-dimensional space, but rather, concentrate near a lower-dimensional manifold. That is, the token cloud \(e(T)\subset \mathbb{R}^{\ell}\) locally resembles a smooth \(d\)-dimensional manifold, with bounded curvature.</p>
+
+          <p>The definition of a manifold is global. If a single point doesn't have a Euclidean neighborhood, then the space cannot be considered a manifold. This kind of point is called a singularity.</p>
+          
+          <p>Since the token input embedding matrix defines the salient subspace of the latent space for language models, let's take a look. Assume that the token subspace has reach \(\tau\). We would like to estimate the dimension of a ball centered at token \(\psi\) with radius \(r\) < \(\tau\). The idea is to construct two statistical tests:</p>
+
+          <table class="hypothesis-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Manifold test</th>
+                <th>Fiber bundle test</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">\(H_0\)</th>
+                <td>There is a unique dimension at \(\psi\).</td>
+                <td>The dimension at \(\psi\) within a radius-\(r\) ball does not increase as \(r\) grows.</td>
+              </tr>
+              <tr>
+                <th scope="row">\(H_1\)</th>
+                <td>There is not a unique dimension at \(\psi\).</td>
+                <td>The dimension at \(\psi\) increases for some \(r\).</td>
+              </tr>
+            </tbody>
+          </table> 
+
+          <p>Low reach \(\tau\) indicates high curvature, and high reach indicates low curvature. Intuitively, if we have low curvature, this means we can roll a massive ball, touching the manifold at many points. If we have high curvature, we can only roll a small ball. Therefore, we can use the reach to estimate the curvature of the token subspace.</p>
+
+          <h2>Modeling the token subspace as a fiber bundle</h2>
+          
+          <p>Let \(T\) denote the vocabulary (the set of discrete tokens a language model knows how to emit) and \(e: T\to\mathbb{R}^{\ell}\) the embedding map, so \(e(T)\subset\mathbb{R}^{\ell}\) is the resulting token cloud.</p>
+
+          <p>Given an embedding dimension \(\ell\), the token cloud lives inside a subspace \(\mathcal{M}\subset\mathbb{R}^{\ell}\) and inherits the ambient Euclidean metric and volume. Because the inclusion map \(e: \mathcal{M}\to\mathbb{R}^{\ell}\) is one-to-one with full-rank Jacobian, tiny neighborhoods behave like \(\mathbb{R}^d\) for some \(d=\dim \mathcal{M}\). Classical geometry therefore gives (Gray, 1974)</p>
+          <p>\[v(r) = K r^d + (\text{curvature terms})\cdot r^{d+1},\]
+          <span class="citation"><a href="https://projecteuclid.org/journals/michigan-mathematical-journal/volume-20/issue-4/The-volume-of-a-small-geodesic-ball-of-a-Riemannian/10.1307/mmj/1029001150.full" target="_blank" rel="noopener">(Gray 1974)</a></span></p>
+          <p>so the leading term grows like \(r^d\) and the correction encodes curvature. Large corrections indicate high curvature. To handle regions where the manifold picture breaks down (boundaries, cusps, or dimension jumps), we use fiber bundles: locally the space looks like \(B\times F\), with \(B\) smooth (the base) and \(F\) capturing boundary-like behavior.</p>
+
+          <p>Curvature is not well-defined at singularities, so we switch to the embedded reach. For \(\mathcal{M}\subset\mathbb{R}^{\ell}\), set</p>
+          <p>\[\tau(\mathcal{M}) = \sup\Big\{\rho \ge 0 : y\in\mathbb{R}^{\ell},\ \operatorname{dist}(y,\mathcal{M}) < \rho \Rightarrow \#\operatorname*{arg\,min}_{x\in\mathcal{M}} \|y-x\|_2 = 1 \Big\},\]</p>
+          <p>the largest radius for which every point still has a unique closest projection. Convex sets have \(\tau=\infty\); cusps or self-intersections force \(\tau=0\).</p>
+
+          <p>With reach under control we can compare volumes. Write \(B_r(\psi)\) for the Euclidean ball of radius \(r\) around \(\psi\). Taking any volume form \(\nu\) on \(T\), we find that for a continuous \(e: T\to\mathbb{R}^{\ell}\) define the pushforward</p>
+          <p>\[(e_*\nu)(V) = \nu\big(e^{-1}(V)\big),\]</p>
+          <p>for measurable \(V\subset\mathbb{R}^{\ell}\). If \(e\) is an embedding or fiber-bundle map, \(e_*\nu\) is again a volume form, so the geometry of \(T\) carries over to \(e(T)\).</p>
+
+          <p>Assume now that \(e\) is smooth. Then \(e(T)\) is a \(\dim T\) manifold with volume form \(e_*\nu\). Gray's result tells us that for \(\psi\in e(T)\) and \(r\ll\tau\)</p>
+          <p>\[(e_*\nu)(B_r(\psi)) = \Theta\big(r^{\dim T}\big).\]</p>
+          <p>Compactness guarantees strict containment radii: there exists \(\rho(\psi)>0\) so that \(B_r(\psi)\subset e(T)\) for all \(r\le\rho(\psi)\), with bounds satisfying \(0< r_1\le \rho(\psi)\le r_2 < \tau\). Hence the \(r^{\dim T}\) scaling holds up to \(r=\rho(\psi)\). Once \(\rho(\psi) < r < \tau\), the ball leaks outside \(e(T)\) and the volume is strictly smaller than the \(\Theta(r^{\dim T})\) envelope.</p>
+
+          <p>To bound that leaked regime, push \(\nu\) through the global bundle projection \(p: T\to S\) (here \(S\) is the same “base” as the local \(B\) from \(B\times F\)). We obtain</p>
+          <p>\[(e_*\nu)(B_r(\psi)) = \nu\big(e^{-1}(B_r(\psi))\big) \le (p_*\nu)\big(p(e^{-1}(B_r(\psi)))\big) = O\big(r^{\dim S}\big).\]</p>
+          <p>Re-centering at \(r = \rho(\psi)\) gives the two regimes in a single expression:</p>
+          <p>\[
+          (e_*\nu)(B_r(\psi)) =
+          \begin{cases}
+            \Theta\big(r^{\dim T}\big), & 0 \le r \le \rho(\psi), \\
+            (e_*\nu)(B_{\rho(\psi)}(\psi)) + O\big((r-\rho(\psi))^{\dim S}\big), & \rho(\psi) < r < \tau.
+          \end{cases}
+          \]</p>
+          <p>That matches the two-case statement of Theorem&nbsp;1 from the paper: up until the ball hits the edge of \(e(T)\) it grows with slope \(\dim T\), and once it “sticks out” the slope drops to the base dimension \(\dim S\). Full technical details (compactness arguments, tubular neighborhoods, and the exact inequalities) live in the appendix of the paper.</p>
+
+          <h2>Context windows cannot hide singularities</h2>
+
+          <p>A \(w\)-token context is simply a tuple \((x_1,\ldots,x_w)\) of tokens, i.e. a point of the Cartesian product \(T^w = T\times\cdots\times T\). If \(T\) fails to be a manifold at some token \(x\), then \(T^w\) fails wherever a coordinate equals \(x\). Therefore, stacking tokens cannot eliminate singularities.</p>
+
+          <p>Let \(Z\) be a \(d\)-dimensional smooth manifold containing \(T\subset Z\subset\mathbb{R}^{\ell}\). A transformer with context window \(w\) and output length \(m\) induces a map \(E:T^w\to Z^m\). When</p>
+          <p>\[2wd < m\ell \qquad \text{and} \qquad m\le w,\]</p>
+          <p>the Jacobian of \(E\) is generically full rank: the right inequality keeps the output dimension \(m\ell\) no larger than the input latent space \(w\ell\), while the left inequality guarantees we collect enough coordinates to avoid collisions. Therefore \(E\) restricts to a topological embedding on \(T^w\). Equivalently, there exists a map \(\Phi\) such that</p>
+          <p>\[\Phi(e(x_1),\ldots,e(x_w)) = (y_1,\ldots,y_m) \in Z^m, \qquad \Phi \text{ is injective with a continuous inverse on its image.}\]</p>
+          <p>Embeddings preserve local topology, so any singularity carried by \((x_1,\ldots,x_w)\) survives in the output. Hence, if the token subspace \(T\) has irregular points, the generated tokens inherit them whenever the inequalities above are met.</p>
+
+          <p>Intuitively, a longer context window simply copies \(T\) multiple times and feeds the product through the transformer. As soon as \(2wd < m\ell\), the mixing remains injective (there are enough observed coordinates to keep track of every token) so the geometry of \(T^w\) lives on inside the response. Therefore, singularities persist.</p>
+          <p>There’s a lot more in the paper—the deterministic neighbor-count tests, synthetic sanity checks, and a full GPT2/Llemma7B/Mistral7B/Pythia6.9B sweep showing wide variation in local dimension and many tokens violating both hypotheses—that I highly recommend reading. They also explore auxiliary questions (e.g., approximating softmax as non-parametric regression or via Taylor series) that are perfect rabbit holes if you want to tinker further.</p>
+        <p>Paper link: <a href="https://arxiv.org/abs/2509.19059">https://arxiv.org/abs/2509.19059</a></p>
+      </div>
+    </div>
+
+    <script>
+      const themeToggle = document.getElementById('themeToggle');
+      const sunIcon = document.querySelector('.sun-icon');
+      const moonIcon = document.querySelector('.moon-icon');
+      const currentTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', currentTheme);
+      updateThemeIcon(currentTheme);
+
+      themeToggle.addEventListener('click', () => {
+        const theme = document.documentElement.getAttribute('data-theme');
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+      });
+
+      function updateThemeIcon(theme) {
+        if (theme === 'dark') {
+          sunIcon.style.display = 'block';
+          moonIcon.style.display = 'none';
+        } else {
+          sunIcon.style.display = 'none';
+          moonIcon.style.display = 'block';
+        }
+      }
+
+      const dropdown = document.getElementById('dropdown');
+      const dropdownBtn = document.getElementById('dropdownBtn');
+      const dropdownContent = document.getElementById('dropdownContent');
+      let timeoutId;
+
+      function showDropdown() {
+        clearTimeout(timeoutId);
+        dropdownContent.style.display = 'block';
+        dropdownContent.style.opacity = '1';
+        dropdownContent.style.visibility = 'visible';
+        dropdownContent.style.pointerEvents = 'auto';
+      }
+
+      function hideDropdown() {
+        timeoutId = setTimeout(() => {
+          dropdownContent.style.display = 'none';
+          dropdownContent.style.opacity = '0';
+          dropdownContent.style.visibility = 'hidden';
+          dropdownContent.style.pointerEvents = 'none';
+        }, 150);
+      }
+
+      dropdown.addEventListener('mouseenter', showDropdown);
+      dropdown.addEventListener('mouseleave', hideDropdown);
+      dropdownContent.addEventListener('mouseenter', showDropdown);
+      dropdownContent.addEventListener('mouseleave', hideDropdown);
+    </script>
+  </div>
+  <script src="background.js"></script>
+</body>
+</html>
