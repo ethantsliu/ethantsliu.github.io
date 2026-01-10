@@ -166,58 +166,34 @@
     dropdownContent.addEventListener('mouseenter', showDropdown);
     dropdownContent.addEventListener('mouseleave', hideDropdown);
 
-    // Visit counter powered by countapi.xyz
+    // Visit counter backed by KVdb.io bucket
     const visitCountEl = document.getElementById('visitCount');
-    const visitNamespaceFallback = 'ethantsliu-site';
-    const visitKey = 'home';
+    const visitCounterEndpoint = 'https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home';
 
-    function buildNamespace() {
-      const hostname = window.location.hostname || '';
-      const sanitized = hostname
-        .toLowerCase()
-        .replace(/[^a-z0-9._-]/g, '-')
-        .replace(/^-+|-+$/g, '');
-      return sanitized || visitNamespaceFallback;
-    }
-
-    async function requestVisit(endpoint) {
-      const response = await fetch(endpoint, { cache: 'no-store' });
-      if (!response.ok) throw new Error(`Visit counter request failed (${response.status})`);
-      return response.json();
-    }
-
-    async function initializeCounter(endpoint) {
-      try {
-        const response = await fetch(endpoint, { cache: 'no-store' });
-        if (response.ok) {
-          await response.json().catch(() => null);
-          return true;
-        }
-        if (response.status === 409) return true; // already created
-      } catch (error) {
-        console.error('Visit counter init error:', error);
-      }
-      return false;
-    }
-
-    async function updateVisitCounter(retry = false) {
+    async function updateVisitCounter() {
       if (!visitCountEl) return;
-      const namespace = buildNamespace();
-      const visitCounterEndpoint = `https://api.countapi.xyz/hit/${namespace}/${visitKey}`;
-      const visitCounterInitEndpoint = `https://api.countapi.xyz/create?namespace=${namespace}&key=${visitKey}&value=0`;
       try {
-        const data = await requestVisit(visitCounterEndpoint);
-        if (typeof data.value === 'number') {
-          visitCountEl.textContent = data.value.toLocaleString('en-US');
+        const response = await fetch(visitCounterEndpoint, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'text/plain',
+          },
+          body: '+1',
+          cache: 'no-store',
+        });
+        if (!response.ok) {
+          const errorText = await response.text().catch(() => '');
+          throw new Error(`Visit counter request failed (${response.status}) ${errorText}`.trim());
+        }
+        const rawValue = await response.text();
+        const parsedValue = parseInt(rawValue, 10);
+        if (Number.isFinite(parsedValue)) {
+          visitCountEl.textContent = parsedValue.toLocaleString('en-US');
           visitCountEl.removeAttribute('title');
-          return;
+        } else {
+          throw new Error('Visit counter payload missing numeric value');
         }
-        throw new Error('Visit counter payload missing value');
       } catch (error) {
-        if (!retry) {
-          const initialized = await initializeCounter(visitCounterInitEndpoint);
-          if (initialized) return updateVisitCounter(true);
-        }
         visitCountEl.textContent = 'offline';
         visitCountEl.title = 'Visit counter temporarily unavailable';
         console.error('Visit counter error:', error);
