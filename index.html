@@ -168,21 +168,56 @@
 
     // Visit counter powered by countapi.xyz
     const visitCountEl = document.getElementById('visitCount');
-    const visitCounterEndpoint = 'https://api.countapi.xyz/hit/ethantsliu.github.io/home';
+    const visitNamespaceFallback = 'ethantsliu-site';
+    const visitKey = 'home';
 
-    async function updateVisitCounter() {
-      if (!visitCountEl) return;
+    function buildNamespace() {
+      const hostname = window.location.hostname || '';
+      const sanitized = hostname
+        .toLowerCase()
+        .replace(/[^a-z0-9._-]/g, '-')
+        .replace(/^-+|-+$/g, '');
+      return sanitized || visitNamespaceFallback;
+    }
+
+    async function requestVisit(endpoint) {
+      const response = await fetch(endpoint, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`Visit counter request failed (${response.status})`);
+      return response.json();
+    }
+
+    async function initializeCounter(endpoint) {
       try {
-        const response = await fetch(visitCounterEndpoint, { cache: 'no-store' });
-        if (!response.ok) throw new Error('Visit counter request failed');
-        const data = await response.json();
+        const response = await fetch(endpoint, { cache: 'no-store' });
+        if (response.ok) {
+          await response.json().catch(() => null);
+          return true;
+        }
+        if (response.status === 409) return true; // already created
+      } catch (error) {
+        console.error('Visit counter init error:', error);
+      }
+      return false;
+    }
+
+    async function updateVisitCounter(retry = false) {
+      if (!visitCountEl) return;
+      const namespace = buildNamespace();
+      const visitCounterEndpoint = `https://api.countapi.xyz/hit/${namespace}/${visitKey}`;
+      const visitCounterInitEndpoint = `https://api.countapi.xyz/create?namespace=${namespace}&key=${visitKey}&value=0`;
+      try {
+        const data = await requestVisit(visitCounterEndpoint);
         if (typeof data.value === 'number') {
           visitCountEl.textContent = data.value.toLocaleString('en-US');
           visitCountEl.removeAttribute('title');
-        } else {
-          throw new Error('Visit counter payload missing value');
+          return;
         }
+        throw new Error('Visit counter payload missing value');
       } catch (error) {
+        if (!retry) {
+          const initialized = await initializeCounter(visitCounterInitEndpoint);
+          if (initialized) return updateVisitCounter(true);
+        }
         visitCountEl.textContent = 'offline';
         visitCountEl.title = 'Visit counter temporarily unavailable';
         console.error('Visit counter error:', error);
