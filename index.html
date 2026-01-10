@@ -99,6 +99,10 @@
         <img src="photos/magnolia.png" alt="" loading="lazy" decoding="async" />
       </div>
     </main>
+    <div class="visit-counter" aria-live="polite">
+      <span class="visit-label">visits</span>
+      <span class="visit-value" id="visitCount">—</span>
+    </div>
   </div>
   <script src="background.js"></script>
   <script>
@@ -161,6 +165,31 @@
     dropdown.addEventListener('mouseleave', hideDropdown);
     dropdownContent.addEventListener('mouseenter', showDropdown);
     dropdownContent.addEventListener('mouseleave', hideDropdown);
+
+    // Visit counter powered by countapi.xyz
+    const visitCountEl = document.getElementById('visitCount');
+    const visitCounterEndpoint = 'https://api.countapi.xyz/hit/ethantsliu.github.io/home';
+
+    async function updateVisitCounter() {
+      if (!visitCountEl) return;
+      try {
+        const response = await fetch(visitCounterEndpoint, { cache: 'no-store' });
+        if (!response.ok) throw new Error('Visit counter request failed');
+        const data = await response.json();
+        if (typeof data.value === 'number') {
+          visitCountEl.textContent = data.value.toLocaleString('en-US');
+          visitCountEl.removeAttribute('title');
+        } else {
+          throw new Error('Visit counter payload missing value');
+        }
+      } catch (error) {
+        visitCountEl.textContent = 'offline';
+        visitCountEl.title = 'Visit counter temporarily unavailable';
+        console.error('Visit counter error:', error);
+      }
+    }
+
+    updateVisitCounter();
 
   </script>
 </body>

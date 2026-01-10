@@ -1434,6 +1434,26 @@ body.home::after {
   outline-offset: 2px;
 }
 
+.home .visit-counter {
+  margin: 3rem auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.home .visit-counter .visit-label {
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.home .visit-counter .visit-value {
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
 .home .divider-dot {
   color: var(--muted);
   font-size: 0.85rem;
