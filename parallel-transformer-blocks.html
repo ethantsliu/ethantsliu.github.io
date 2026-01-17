@@ -42,9 +42,14 @@
       font-size: 1.25rem;
       margin-top: 1.75rem;
       margin-bottom: 0.5rem;
-      font-weight: 500;
+      font-weight: 400;
       color: var(--text);
       letter-spacing: -0.2px;
+    }
+
+    .essay-content b, .essay-content strong {
+      font-weight: 600;
+      font-synthesis-weight: none;
     }
 
     .back-link {
@@ -97,17 +102,17 @@
       <div class="essay-container essay-wide">
         <a href="archive.html" class="back-link">← back to archive</a>
         <h1 class="essay-title">Parallel Transformer Blocks</h1>
-        <div class="essay-meta">Ethan Liu | January 15, 2026</div>
+        <div class="essay-meta">Ethan TS. Liu | January 15, 2026</div>
 
         <div class="essay-content">
           <p>These are quick notes on why the "parallel" Transformer block is not exactly equivalent to the usual serial attention-then-MLP block. It is best viewed as an approximation or architectural variant of the standard pre-norm Transformer. Here \(\mathrm{Norm}(\cdot)\) denotes the model's normalization (LayerNorm or RMSNorm, depending on the architecture).</p>
 
-          <h2>Serial pre-norm block</h2>
+          <h2 id="serial-pre-norm-block"><strong>Serial pre-norm block</strong></h2>
           <p>The common two-step form is: \(h = x + \mathrm{Attn}(\mathrm{Norm}(x))\) and \(y = h + \mathrm{MLP}(\mathrm{Norm}(h))\).</p>
 
           <p>Substitute \(h\) into \(y\): \(y = x + \mathrm{Attn}(\mathrm{Norm}(x)) + \mathrm{MLP}(\mathrm{Norm}(x + \mathrm{Attn}(\mathrm{Norm}(x))))\).</p>
 
-          <h2>Parallel block</h2>
+          <h2 id="parallel-block"><strong>Parallel block</strong></h2>
           <p>The parallel variant uses: \(y = x + \mathrm{Attn}(\mathrm{Norm}(x)) + \mathrm{MLP}(\mathrm{Norm}(x))\).</p>
 
           <p>The only difference is the MLP input: serial uses \(\mathrm{MLP}(\mathrm{Norm}(x + \mathrm{Attn}(\mathrm{Norm}(x))))\), while parallel uses \(\mathrm{MLP}(\mathrm{Norm}(x))\). So the two are identical only if \(\mathrm{Norm}(x + \mathrm{Attn}(\mathrm{Norm}(x))) = \mathrm{Norm}(x)\), which is not true in general. However, they can be approximately equivalent under common conditions. If the residual branch is small compared to \(x\), then \(\mathrm{Norm}(x + \delta) \approx \mathrm{Norm}(x)\) when \(\lVert \delta \rVert \ll \lVert x \rVert\), where \(\delta = \mathrm{Attn}(\mathrm{Norm}(x))\).</p>

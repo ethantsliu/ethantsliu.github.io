@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>From QK-clip to Muon clip | Ethan Liu</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .essay-container {
+      width: 100%;
+      margin: 2.2rem auto 3rem;
+      padding: 0 1rem;
+      text-align: left;
+    }
+
+    .essay-title {
+      font-size: 1.32rem;
+      font-family: 'Baskerville', 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.55rem;
+      letter-spacing: -0.3px;
+    }
+
+    .essay-meta {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 1.9rem;
+      font-family: 'Baskerville', 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
+    }
+
+    .essay-content h2 {
+      font-size: 1.25rem;
+      margin-top: 1.75rem;
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: -0.2px;
+    }
+
+    .essay-content p {
+      margin-bottom: 1.05rem;
+      font-size: 1.14rem;
+      line-height: 1.8;
+      color: var(--text);
+    }
+
+    .essay-content ul {
+      margin: 0 0 1.05rem 1.2rem;
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 1.14rem;
+    }
+
+    .essay-content b, .essay-content strong {
+      font-weight: 600;
+      font-synthesis-weight: none;
+    }
+
+    .math-block {
+      margin: 1.4rem 0;
+      color: var(--text);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1.8rem;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.92rem;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--muted);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body data-pond="off">
+  <div class="page-wrapper page-essay-wide">
+    <header class="header-container">
+      <div class="header-top">
+        <div class="theme-toggle" id="themeToggle">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
+            <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"/>
+            <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"/>
+            <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="dropdown" id="dropdown">
+          <button class="dropdown-btn" id="dropdownBtn">天</button>
+          <div class="dropdown-content" id="dropdownContent">
+            <a href="index.html">about</a>
+            <a href="research.html">research</a>
+            <a href="archive.html" style="color: var(--accent); text-decoration: underline;">archive</a>
+            <a href="writing.html">writing</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-content">
+      <div class="essay-container essay-wide">
+        <a href="archive.html" class="back-link">← back to archive</a>
+
+        <h1 class="essay-title">From QK-clip to Muon clip</h1>
+        <div class="essay-meta">Ethan TS. Liu | January 17, 2026</div>
+
+        <div class="essay-content">
+          <p>
+            QK-clip is a simple but sharp idea: if attention logits explode, rescale the query and key
+            projections so the largest logit is capped. The same intuition survives in multi-head latent
+            attention, but the shared rotary key projection forces a careful tweak. This post walks through
+            the math and the fix, usually called muon clip.
+          </p>
+
+          <h2 id="why-exploding-logits-are-harmful"><strong>Why exploding logits are harmful</strong></h2>
+          <p>
+            For a token \(i\), attention weights are
+          </p>
+          <div class="math-block">\[
+            A_{ij} = \frac{\exp(S_{ij})}{\sum_{t} \exp(S_{it})}, \quad
+            S_{ij} = \frac{q_i^\top k_j}{\sqrt{d_k}}
+          \]</div>
+          <p>
+            Dividing by the largest entry for that row makes the collapse explicit. Let
+            \(j^* = \operatorname*{argmax}_j S_{ij}\), so \(S_{ij^*} \ge S_{ij}\) for all \(j\). It follows that 
+          </p>
+          <div class="math-block">\[
+            \frac{A_{ij}}{A_{ij^*}} = \exp(S_{ij} - S_{ij^*})
+          \]</div>
+          <p>
+            If the gaps \(S_{ij^*} - S_{ij} \gg 0\) are large, the distribution collapses, so \(A_{ij}\) is essentially zero for most \(j\). This low-entropy regime starves most keys of gradient. Taking the Jacobian makes it clear:
+          </p>
+          <div class="math-block">\[
+            \frac{\partial A_{ij}}{\partial S_{ik}} = A_{ij}(\delta_{jk} - A_{ik}).
+          \]</div>
+          <p>
+            To see this, write \(A_{ij} = \exp(S_{ij})/Z_i\) with \(Z_i = \sum_t \exp(S_{it})\). Then
+          </p>
+          <div class="math-block">\[
+            \frac{\partial A_{ij}}{\partial S_{ik}}
+            = \frac{\partial}{\partial S_{ik}} \left(\frac{e^{S_{ij}}}{Z_i}\right)
+            = \frac{e^{S_{ij}}\delta_{jk} Z_i - e^{S_{ij}} \frac{\partial Z_i}{\partial S_{ik}}}{Z_i^2}
+            = \frac{e^{S_{ij}}}{Z_i}\left(\delta_{jk} - \frac{e^{S_{ik}}}{Z_i}\right)
+            = A_{ij}(\delta_{jk} - A_{ik}).
+          \]</div>
+          <p>
+            When \(A_{ij^*} \approx 1\), we get \(\partial A_{ij^*}/\partial S_{ij^*} \approx 0\) and
+            \(\partial A_{ij}/\partial S_{ik} \approx 0\) for \(j \ne j^*\). This means brittle,
+            overconfident attention and vanishing gradients to most keys. Large \(S_{ij}\) also push
+            \(\exp(S_{ij})\) toward numeric overflow in reduced precision, which destabilizes training.
+          </p>
+
+          <h2 id="qk-clip-in-one-equation"><strong>QK-clip in one equation</strong></h2>
+          <p>
+            Let \(X \in \mathbb{R}^{n \times d}\), \(Q = XW^Q\), \(K = XW^K\), and logits
+          </p>
+          <div class="math-block">\[
+            S = \frac{QK^\top}{\sqrt{d_k}}.
+          \]</div>
+          <p>
+            QK-clip introduces a threshold \(\tau\) and rescales both projections when \(S_{\max} > \tau\):
+          </p>
+          <div class="math-block">\[
+            \gamma = \frac{\tau}{S_{\max}}, \quad
+            W^Q \leftarrow \sqrt{\gamma}\,W^Q, \quad
+            W^K \leftarrow \sqrt{\gamma}\,W^K.
+          \]</div>
+          <p>
+            The dot product is bilinear, so the logits scale by \(\gamma\):
+            \(S \leftarrow \gamma S\), and the maximum is pulled back to \(\tau\).
+          </p>
+
+          <h2 id="per-head-qk-clip-in-mha"><strong>Per-head QK-clip in standard multi-head attention</strong></h2>
+          <p>
+            In vanilla multi-head attention, each head \(h\) has its own projections:
+          </p>
+          <div class="math-block">\[
+            Q_h = X W_h^Q, \quad K_h = X W_h^K, \quad V_h = X W_h^V, \quad
+            S_h = \frac{Q_h K_h^\top}{\sqrt{d_k}}.
+          \]</div>
+          <p>
+            If a single head blows up, we can clip that head alone. Let \(S_{h,\max}\) be the largest logit
+            in head \(h\), define \(\gamma_h = \tau / S_{h,\max}\) when \(S_{h,\max} > \tau\), and rescale
+            its query/key projections:
+          </p>
+          <div class="math-block">\[
+            W_h^Q \leftarrow \sqrt{\gamma_h}\,W_h^Q, \quad
+            W_h^K \leftarrow \sqrt{\gamma_h}\,W_h^K.
+          \]</div>
+          <p>
+            We do not need to rescale \(W_h^V\): values do not appear in the logits, so scaling \(V_h\)
+            does not prevent softmax saturation. It only rescales the output and can be absorbed by the
+            output projection.
+          </p>
+
+          <h2 id="mla-and-decoupled-rope"><strong>MLA and decoupled RoPE</strong></h2>
+          <p>
+            Multi-head latent attention (MLA) compresses queries and KV into low-rank latents:
+          </p>
+          <div class="math-block">\[
+            C^Q = X W^Q, \quad C^{KV} = X W^{KV}, \quad W^{KV} \in \mathbb{R}^{d \times r}, \quad r \ll d.
+          \]</div>
+          <p>
+            Each head then uses up-projections to recover its own content queries/keys/values:
+          </p>
+          <div class="math-block">\[
+            Q_h^C = C^Q W_h^{Q_C}, \quad K_h^C = C^{KV} W_h^{K_C}, \quad V_h^C = C^{KV} W_h^V.
+          \]</div>
+          <p>
+            RoPE does not fit cleanly inside the shared low-rank KV path, because the rotation must act in
+            each head's key space. The standard fix is decoupled RoPE: add rotary projections computed
+            directly from \(X\),
+          </p>
+          <div class="math-block">\[
+            Q_h^R = R_\theta(X W_h^{Q_R}), \quad K^R = R_\theta(X W^{K_R}),
+          \]</div>
+          <p>
+            where all heads share \(W^{K_R}\) but each head has its own \(W_h^{Q_R}\). The head vectors are
+            then concatenated:
+          </p>
+          <div class="math-block">\[
+            Q_h = [Q_h^C; Q_h^R], \quad K_h = [K_h^C; K^R], \quad V_h = V_h^C.
+          \]</div>
+          <p>
+            This is where the new clipping constraint appears: the rotary key projection is shared, so it
+            cannot be rescaled separately for each head.
+          </p>
+
+          <h2 id="muon-clip-rescale-only-the-rotary-queries"><strong>Muon clip: rescale only the rotary queries</strong></h2>
+          <p>
+            We still clip per head, but we must respect what is shared. For head \(h\), define
+            \(\gamma_h = \tau / S_{h,\max}\) when \(S_{h,\max} > \tau\). Then rescale the head-specific
+            up-projections and the head-specific rotary query:
+          </p>
+          <div class="math-block">\[
+            W_h^{Q_C} \leftarrow \sqrt{\gamma_h}\,W_h^{Q_C}, \quad
+            W_h^{K_C} \leftarrow \sqrt{\gamma_h}\,W_h^{K_C}, \quad
+            W_h^{Q_R} \leftarrow \gamma_h\,W_h^{Q_R}, \quad
+            W^{K_R}\ \text{unchanged}.
+          \]</div>
+          <p>
+            Because \(K^R\) is fixed, scaling \(Q_h^R\) by \(\gamma_h\) scales the rotary dot product by
+            \(\gamma_h\) directly, matching the content term's \(\gamma_h\) factor from the paired
+            \(\sqrt{\gamma_h}\) scalings.
+          </p>
+          <p>
+            We do not rescale \(W_h^V\) because values do not affect logits, and we do not rescale the shared
+            \(W^{K_R}\) because that would multiply it multiple times across heads. This is the muon clip
+            rule: per-head scaling for the content up-projections and rotary queries, shared rotary key left
+            alone.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const themeToggle = document.getElementById('themeToggle');
+      const sunIcon = document.querySelector('.sun-icon');
+      const moonIcon = document.querySelector('.moon-icon');
+      const currentTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', currentTheme);
+      updateThemeIcon(currentTheme);
+
+      themeToggle.addEventListener('click', () => {
+        const theme = document.documentElement.getAttribute('data-theme');
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+      });
+
+      function updateThemeIcon(theme) {
+        if (theme === 'dark') {
+          sunIcon.style.display = 'block';
+          moonIcon.style.display = 'none';
+        } else {
+          sunIcon.style.display = 'none';
+          moonIcon.style.display = 'block';
+        }
+      }
+
+      const dropdown = document.getElementById('dropdown');
+      const dropdownBtn = document.getElementById('dropdownBtn');
+      const dropdownContent = document.getElementById('dropdownContent');
+      let timeoutId;
+
+      function showDropdown() {
+        clearTimeout(timeoutId);
+        dropdownContent.style.display = 'block';
+        dropdownContent.style.opacity = '1';
+        dropdownContent.style.visibility = 'visible';
+        dropdownContent.style.pointerEvents = 'auto';
+      }
+
+      function hideDropdown() {
+        timeoutId = setTimeout(() => {
+          dropdownContent.style.display = 'none';
+          dropdownContent.style.opacity = '0';
+          dropdownContent.style.visibility = 'hidden';
+          dropdownContent.style.pointerEvents = 'none';
+        }, 150);
+      }
+
+      dropdown.addEventListener('mouseenter', showDropdown);
+      dropdown.addEventListener('mouseleave', hideDropdown);
+      dropdownContent.addEventListener('mouseenter', showDropdown);
+      dropdownContent.addEventListener('mouseleave', hideDropdown);
+    </script>
+  </div>
+  <script src="background.js"></script>
+</body>
+</html>
