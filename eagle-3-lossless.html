@@ -181,22 +181,43 @@
 
           <p>
             In the current EAGLE-3 implementation, the non-greedy branch does not compute \(q(x)\) at all. Instead, it
-            sets \(q(x) = 1\) and only uses the target distribution \(p(x)\) after candidate masking. So \(q(x)\) is
-            treated as a constant, and acceptance uses \(p(x)\) directly. Additionally, rejected tokens are zeroed out
-            rather than replaced via the residual distribution.
+            sets \(q(x) = 1\), assuming one-hot encoding and only uses the target distribution \(p(x)\) after candidate
+            masking. So \(q(x)\) is treated as a constant, and acceptance uses \(p(x)\) directly.
+          </p>
 
           <p>
-            This essentially breaks the math.
-            The lossless guarantee depends on the acceptance ratio and the residual distribution both
-            using the same draft distribution \(q(x)\). If \(q(x)\) is not the true draft distribution,
-            the accept step and the replacement step no longer cancel out in expectation, so the final
-            distribution deviates from \(p(x)\) except in special cases (for example, greedy decoding
-            or \(q \approx p\)).
+            This is actually lossless! This code uses \(acp = p(x)\) (since it assumes \(q(x)=1\)) and recovers by
+            sampling from \(p\) excluding the rejected token.
           </p>
           <p>
-            In short, the non-greedy path appears to trade the exact lossless property for a simpler
-            target-only heuristic. The open question is whether this produces meaningful quality
-            regressions in real-world workloads or whether the deviation is small in practice.
+            In code, "resampling from a distribution excluding \(x\)" is exactly what this does:
+          </p>
+          <pre><code class="language-python">gtp[xi] = 0
+gtp = gtp / gtp.sum()</code></pre>
+
+          <p>
+            This creates the conditional distribution \(P(k \mid k \ne x)\). When the code later calls
+            torch.multinomial(gtp, 1), it draws from that adjusted distribution.
+          </p>
+          <p>
+            The probability of outputting token \(k\) under this implementation is:
+          </p>
+          <div class="math-block">\[
+            P(\text{output } k) = q(k)p(k) + \sum_{j \ne k} q(j)(1-p(j)) \frac{p(k)}{1-p(j)} = q(k)p(k) + \sum_{j \ne k} q(j)p(k).
+          \]</div>
+          <p>
+            Here \(j\) is the rejected draft token (\(j \ne k\)). The \((1-p(j))\) terms cancel, so each summand becomes
+            \(q(j)p(k)\).
+          </p>
+          <div class="math-block">\[
+            P(\text{output } k)
+            = q(k)p(k) + p(k)\sum_{j \ne k} q(j)
+            = p(k).
+          \]</div>
+          <p>
+            However, even though the distribution is correct, the efficiency is terrible. In the
+            standard algorithm, if \(p(x)=q(x)=0.1\), you accept 100% of the time. In this code, you accept only 10% of
+            the time and resample 90% of the time for no reason.
           </p>
 
           <h2 id="references"><strong>References and discussion</strong></h2>
