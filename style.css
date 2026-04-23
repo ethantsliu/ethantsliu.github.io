@@ -1694,10 +1694,18 @@ body.home::after {
   color: var(--text);
   text-decoration: none;
   border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  transition-delay: 0.1s;
 }
 
 .home .intro a:hover {
   border-bottom-color: var(--accent-soft);
+  color: var(--accent-soft);
+}
+
+/* Prevent double underline for accent-link inside intro - use border-bottom only */
+.home .intro a.accent-link:hover {
+  text-decoration: none;
 }
 
 .home .list-section {
