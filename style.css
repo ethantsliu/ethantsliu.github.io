@@ -1045,6 +1045,22 @@ html[data-theme="dark"] .dropdown-content {
   text-align: center;
 }
 
+.experience-entry {
+  margin-bottom: 2rem;
+}
+
+.experience-title {
+  font-size: 1.08rem;
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 0.2rem;
+}
+
+.experience-meta {
+  color: var(--muted);
+  font-size: 0.98em;
+}
+
 .research-entry {
   margin-bottom: 2rem;
   margin-top: 3rem;
