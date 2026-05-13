@@ -1,6 +1,5 @@
 'use client'
 
-import { motion, useScroll, useTransform } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 import { ME } from '@/lib/data'
 
@@ -24,20 +23,18 @@ function useMouseSpotlight() {
 
 export default function Hero() {
   const ref = useMouseSpotlight()
-  const { scrollYProgress } = useScroll()
-  const y = useTransform(scrollYProgress, [0, 1], [0, -100])
 
   return (
     <section
       ref={ref}
       className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"
     >
-      <motion.div style={{ y }} className="pointer-events-none absolute -top-40 -left-32 h-96 w-96 rounded-full blur-3xl opacity-20" aria-hidden>
+      <div className="pointer-events-none absolute -top-40 -left-32 h-96 w-96 rounded-full blur-3xl opacity-20" aria-hidden>
         <div className="h-full w-full rounded-full bg-violet-500/30" />
-      </motion.div>
-      <motion.div style={{ y }} className="pointer-events-none absolute -bottom-32 -right-32 h-[28rem] w-[28rem] rounded-full blur-3xl opacity-20" aria-hidden>
+      </div>
+      <div className="pointer-events-none absolute -bottom-32 -right-32 h-[28rem] w-[28rem] rounded-full blur-3xl opacity-20" aria-hidden>
         <div className="h-full w-full rounded-full bg-cyan-500/30" />
-      </motion.div>
+      </div>
 
       <div className="absolute inset-0 spotlight" aria-hidden />
 

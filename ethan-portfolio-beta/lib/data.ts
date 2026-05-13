@@ -20,6 +20,17 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    title: 'Autoencoders: The Geometry of Compression',
+    blurb:
+      'A visually rich interactive essay on bottlenecks, sparse features, VAEs, latent geometry, and diffusion connections.',
+    tags: ['Interactive essay', 'Representation learning', 'Autoencoders'],
+    href: '/autoencoders',
+    media: {
+      type: 'image',
+      src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop',
+    },
+  },
+  {
     title: 'VADER: Security Benchmark',
     blurb:
       'Human-evaluated vulnerability assessment benchmark across 15+ languages; severity-weighted scoring and multi-file repos.',
