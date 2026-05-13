@@ -758,16 +758,23 @@ html[data-theme="dark"] .magnolia-illustration img {
   color: var(--text);
   padding: 0.35rem 0.65rem;
   text-decoration: none;
-  display: block;
-  transition: color 0.15s ease, text-decoration 0.15s ease;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  transition: color 0.15s ease, background-size 0.26s ease;
   font-size: 0.9rem;
   text-align: center;
   background: transparent;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: center calc(100% - 0.28rem);
+  background-size: 0 1px;
 }
 
 .dropdown-content a:hover {
   color: var(--accent-soft);
-  text-decoration: underline;
+  text-decoration: none;
+  background-size: calc(100% - 1.3rem) 1px;
 }
 
 html[data-theme="dark"] .dropdown-content {
@@ -1670,13 +1677,20 @@ body.home::after {
 .home .contact-bar a {
   color: var(--text);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  border-bottom: 0;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 calc(100% - 0.02em);
+  background-size: 0 1px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: color 0.2s ease, background-size 0.26s ease;
+  transition-delay: 0.1s;
 }
 
 .home .contact-bar a:hover {
   color: var(--accent-soft);
-  border-bottom-color: var(--accent-soft);
+  background-size: 100% 1px;
 }
 
 .home .contact-bar .contact-email:focus {
@@ -1882,12 +1896,8 @@ a:hover,
   display: inline;
 }
 
-.dropdown-content a {
-  background-image: none;
-}
-
 .dropdown-content a:hover {
-  text-decoration: underline !important;
+  text-decoration: none !important;
 }
 
 .blog-toc a {
