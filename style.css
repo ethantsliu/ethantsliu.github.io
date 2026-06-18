@@ -20,12 +20,12 @@
   --accent-soft-light: rgba(63, 107, 79, 0.2);
   --shadow-light: rgba(0, 0, 0, 0.1);
   --profile-gap: 0.2rem;
-  --wash-top: #faf5ea;
-  --wash-bottom: #fffaf1;
-  --wash-core: rgba(242, 232, 206, 0.74);
-  --wash-haze: rgba(192, 172, 128, 0.22);
-  --wash-bloom: rgba(224, 198, 148, 0.18);
-  --wash-vein: rgba(214, 184, 120, 0.2);
+  --wash-top: #ffffff;
+  --wash-bottom: #ffffff;
+  --wash-core: rgba(255, 255, 255, 0);
+  --wash-haze: rgba(255, 255, 255, 0);
+  --wash-bloom: rgba(255, 255, 255, 0);
+  --wash-vein: rgba(255, 255, 255, 0);
   --grain-color: rgba(0, 0, 0, 0.04);
   --bloom-iris: rgba(114, 154, 214, 0.62);
   --bloom-rose: rgba(228, 142, 164, 0.68);
@@ -531,7 +531,7 @@ body {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 880px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 2.6rem 3.25rem 3.6rem;
 }
@@ -621,10 +621,10 @@ html[data-theme="dark"] .magnolia-illustration img {
   }
 }
 
-.page-wrapper.page-wide {
-  max-width: 1100px;
-}
-
+/* All pages now share the base 1320px wrapper width so the header bar (theme
+   toggle + dropdown) sits at the same place on every page. These modifiers are
+   kept for backward compatibility but no longer change the width. */
+.page-wrapper.page-wide,
 .page-wrapper.page-essay-wide {
   max-width: 1320px;
 }
@@ -798,8 +798,18 @@ html[data-theme="dark"] .dropdown-content {
 ──────────────────────────────────────────────────────────────────────────────*/
 .main-content {
   text-align: left;
-  max-width: 100%;
+  /* Text-based main pages (home, work, research, writing) keep a comfortable
+     left-aligned reading column even though the wrapper/header now span the
+     full 1320px. The column's left edge lines up with the header. */
+  max-width: 776px;
   margin-top: 0.7rem;
+}
+
+/* Article pages and the archive card grid use the full wrapper width. */
+.page-wide .main-content,
+.page-essay-wide .main-content,
+.main-content.archive-page {
+  max-width: none;
 }
 
 /* Minimal hero ambient effects */
@@ -1609,7 +1619,7 @@ body.home::after {
 .home .page-wrapper {
   position: relative;
   z-index: 1;
-  max-width: 880px;
+  max-width: 1320px;
   padding: 2.6rem 3.25rem 4rem;
 }
 
@@ -1657,6 +1667,8 @@ body.home::after {
 
 .home .main-content {
   margin-top: 0.9rem;
+  /* Home content spans the full wrapper width to match the header and articles. */
+  max-width: none;
 }
 
 .home .contact-bar {
