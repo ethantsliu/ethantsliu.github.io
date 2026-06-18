@@ -531,7 +531,7 @@ body {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1320px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2.6rem 3.25rem 3.6rem;
 }
@@ -626,7 +626,7 @@ html[data-theme="dark"] .magnolia-illustration img {
    kept for backward compatibility but no longer change the width. */
 .page-wrapper.page-wide,
 .page-wrapper.page-essay-wide {
-  max-width: 1320px;
+  max-width: 1200px;
 }
 
 /*──────────────────────────────────────────────────────────────────────────────
@@ -874,7 +874,7 @@ html[data-theme="dark"] .dropdown-content {
 }
 
 .essay-container.essay-wide {
-  max-width: 1240px;
+  max-width: 1200px;
 }
 
 .essay-content .hypothesis-table {
@@ -1619,7 +1619,7 @@ body.home::after {
 .home .page-wrapper {
   position: relative;
   z-index: 1;
-  max-width: 1320px;
+  max-width: 1200px;
   padding: 2.6rem 3.25rem 4rem;
 }
 
