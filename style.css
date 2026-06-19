@@ -1461,6 +1461,12 @@ footer a:hover {
 /*──────────────────────────────────────────────────────────────────────────────
   16. Writing page styles
 ──────────────────────────────────────────────────────────────────────────────*/
+/* Writing page: center the content column within the full-width wrapper so the
+   entries sit in the middle of the page rather than the left reading column. */
+.writing-page .main-content {
+  max-width: none;
+}
+
 .writing-list {
   max-width: 600px;
   margin: 3rem auto 0 auto;
