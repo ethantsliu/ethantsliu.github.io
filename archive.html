@@ -30,11 +30,11 @@
         <div class="dropdown" id="dropdown">
           <button class="dropdown-btn" id="dropdownBtn">天</button>
           <div class="dropdown-content" id="dropdownContent">
-            <a href="index.html">about</a>
-            <a href="work.html">work</a>
-            <a href="research.html">research</a>
-            <a href="archive.html" style="color: var(--accent); text-decoration: underline;">archive</a>
-            <a href="writing.html">writing</a>
+            <a href="/">about</a>
+            <a href="work">work</a>
+            <a href="research">research</a>
+            <a href="archive" style="color: var(--accent); text-decoration: underline;">archive</a>
+            <a href="writing">writing</a>
           </div>
         </div>
       </div>
@@ -43,6 +43,18 @@
     <div class="main-content archive-page">
 
       <div class="projects-grid">
+        <article class="project-card">
+        <a href="hadamard-monarch" class="project-link">
+          <div class="project-title">Hadamard and Monarch: Compressing GPT-2 Small</div>
+          <div class="project-meta">Blog</div>
+          <p class="project-desc">Hadamard rotations for low-bit quantization, and Monarch matrices for structured compression of GPT-2 small.</p>
+          <div class="project-tags">
+            <span class="project-tag">quantization</span>
+            <span class="project-tag">structured matrices</span>
+          </div>
+        </a>
+      </article>
+
         <article class="project-card">
         <a href="https://substack.com/home/post/p-200079379" target="_blank" class="project-link">
           <div class="project-title">Moravec's Paradox</div>
@@ -56,7 +68,7 @@
       </article>
 
         <article class="project-card">
-        <a href="autoencoders.html" class="project-link">
+        <a href="autoencoders" class="project-link">
           <div class="project-title">Autoencoders</div>
           <div class="project-meta">Notes</div>
           <p class="project-desc">A compact walkthrough of bottlenecks, latent spaces, and reconstruction.</p>
@@ -68,7 +80,7 @@
       </article>
 
         <article class="project-card">
-        <a href="eagle-3-lossless.html" class="project-link">
+        <a href="eagle-3-lossless" class="project-link">
           <div class="project-title">Is EAGLE-3 Speculative Decoding Lossless?</div>
           <div class="project-meta">Notes</div>
           <p class="project-desc">Non-greedy acceptance, residual sampling, and why q matters.</p>
@@ -80,7 +92,7 @@
       </article>
 
         <article class="project-card">
-        <a href="muon-clip.html" class="project-link">
+        <a href="muon-clip" class="project-link">
           <div class="project-title">From QK-clip to Muon clip</div>
           <div class="project-meta">Notes</div>
           <p class="project-desc">Clipping attention logits for MLA with shared rotary keys.</p>
@@ -92,7 +104,7 @@
       </article>
 
         <article class="project-card">
-        <a href="parallel-transformer-blocks.html" class="project-link">
+        <a href="parallel-transformer-blocks" class="project-link">
           <div class="project-title">Parallel Transformer Blocks</div>
           <div class="project-meta">Notes</div>
           <p class="project-desc">Approximating the serial pre-norm block.</p>
@@ -104,7 +116,7 @@
       </article>
 
         <article class="project-card">
-        <a href="token-embeddings-manifold.html" class="project-link">
+        <a href="token-embeddings-manifold" class="project-link">
           <div class="project-title">Token Embeddings Violate the Manifold Hypothesis</div>
           <div class="project-meta">Paper notes</div>
           <p class="project-desc">On singular token spaces.</p>
@@ -116,7 +128,7 @@
       </article>
 
         <article class="project-card">
-        <a href="sample-reduction.html" class="project-link">
+        <a href="sample-reduction" class="project-link">
           <div class="project-title">Representative Sampling of High‑Dimensional Point Sets</div>
           <div class="project-meta">Advised by Luke Triplett (Berkeley Math)</div>
           <p class="project-desc">Small but faithful subsets of large point sets.</p>
