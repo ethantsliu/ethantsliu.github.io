@@ -1678,6 +1678,14 @@ body.home::after {
   max-width: none;
 }
 
+/* Let listing pages use the same content width as the home page. Research
+   needs the extra room for its right-aligned years; work remains visually
+   unchanged because its entries are naturally short and left-aligned. */
+.research-page .main-content,
+.work-page .main-content {
+  max-width: none;
+}
+
 .home .contact-bar {
   display: flex;
   flex-wrap: wrap;
