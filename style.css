@@ -1828,23 +1828,24 @@ body.home::after {
 
 .home .feature-item {
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: 0.3rem minmax(0, 1fr) auto;
   align-items: baseline;
-  justify-content: space-between;
-  gap: 1.4rem;
-  padding-left: 1.2rem;
+  column-gap: 0.9rem;
 }
 
 .home .feature-item::before {
   content: '\203A';
-  position: absolute;
-  left: 0;
-  top: 0.05rem;
+  grid-column: 1;
+  grid-row: 1;
   font-size: 1.05rem;
+  line-height: 1.35;
   color: var(--muted);
 }
 
 .home .feature-title {
+  grid-column: 2;
+  grid-row: 1;
   color: var(--text);
   text-decoration: none;
   font-size: 1.05rem;
@@ -1853,7 +1854,7 @@ body.home::after {
   border-bottom: 1px solid transparent;
   transition: color 0.2s ease, border-color 0.2s ease;
   display: inline-block;
-  margin-right: auto;
+  min-width: 0;
 }
 
 .home .feature-label {
@@ -1866,12 +1867,13 @@ body.home::after {
 }
 
 .home .feature-date {
+  grid-column: 3;
+  grid-row: 1;
   white-space: nowrap;
   font-size: 0.9rem;
   color: var(--accent-soft);
   text-align: right;
   min-width: 5.5rem;
-  margin-left: auto;
   font-weight: 600;
 }
 
@@ -1885,13 +1887,16 @@ body.home::after {
   }
 
   .home .feature-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.2rem;
+    grid-template-columns: 0.3rem minmax(0, 1fr);
+    column-gap: 0.9rem;
+    row-gap: 0.2rem;
   }
 
   .home .feature-date {
+    grid-column: 2;
+    grid-row: 2;
     white-space: normal;
+    text-align: left;
   }
 }
 
