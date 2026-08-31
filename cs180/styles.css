@@ -772,9 +772,18 @@ footer a {
     margin: 0.55in;
   }
 
+  html,
+  body,
+  *,
+  *::before,
+  *::after {
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
   body {
     color: #111;
-    background: white;
+    background-color: var(--paper);
   }
 
   .site-header {
@@ -789,12 +798,19 @@ footer a {
 
   .hero {
     min-height: 9in;
+    background-color: var(--blue);
   }
 
-  .architecture-section,
+  .architecture-section {
+    background-color: var(--blue);
+  }
+
   .takeaway {
-    print-color-adjust: exact;
-    -webkit-print-color-adjust: exact;
+    background-color: var(--gold);
+  }
+
+  footer {
+    background-color: #020b18;
   }
 
   .image-frame img {
