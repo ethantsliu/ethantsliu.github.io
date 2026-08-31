@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CS 180 Project 0 — Becoming Friends with Your Camera, by Ethan Liu.">
+  <meta name="theme-color" content="#041e42">
+  <title>Becoming Friends with Your Camera — CS 180</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to project</a>
+
+  <header class="site-header">
+    <a class="berkeley-mark" href="https://www.berkeley.edu/" aria-label="UC Berkeley home">
+      <span class="mark-monogram" aria-hidden="true">B</span>
+      <span class="mark-name">UC Berkeley</span>
+    </a>
+    <div class="course-tag">
+      <span>CS 180</span>
+      <span class="course-divider" aria-hidden="true"></span>
+      <span>Fall 2026</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="project-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Programming Project <span>#0</span></p>
+        <h1 id="project-title">Becoming Friends<br>with Your Camera</h1>
+        <p class="deck">An exploration of how camera position and focal length reshape faces, buildings, and the space between them.</p>
+      </div>
+      <div class="hero-aside">
+        <div class="aperture" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <b>01</b>
+        </div>
+        <p>Perspective is not a property of the lens. It is a record of where the camera stood.</p>
+      </div>
+      <div class="hero-meta">
+        <span>Intro to Computer Vision &amp;<br>Computational Photography</span>
+        <span>Ethan Liu</span>
+        <span>September 2026</span>
+      </div>
+    </section>
+
+    <section class="project-section portrait-section" id="portraits" aria-labelledby="portraits-title">
+      <header class="section-heading">
+        <p class="section-number">01</p>
+        <div>
+          <p class="section-kicker">Distance changes the face</p>
+          <h2 id="portraits-title">The Wrong Way<br><em>vs.</em> the Right Way</h2>
+        </div>
+      </header>
+
+      <div class="image-pair portrait-pair">
+        <figure class="photo-card photo-card-close">
+          <div class="image-frame">
+            <img src="assets/selfie-close.jpg" alt="A close-up selfie showing strong perspective distortion" width="1350" height="1800">
+            <span class="photo-index">A</span>
+          </div>
+          <figcaption>
+            <span>Close + wide</span>
+            <span>Distorted selfie</span>
+          </figcaption>
+        </figure>
+        <figure class="photo-card photo-card-distance">
+          <div class="image-frame">
+            <img src="assets/selfie-distance.jpg" alt="A portrait taken from farther away with zoom" width="1800" height="1759">
+            <span class="photo-index">B</span>
+          </div>
+          <figcaption>
+            <span>Far + zoomed</span>
+            <span>Natural portrait</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="observation">
+        <p class="observation-label">What changed?</p>
+        <p class="observation-lead">The lens framed the image. The camera position shaped the face.</p>
+        <p>In the close portrait, the camera is much nearer to the nose than to the ears, so the nose projects larger while the sides of the face recede. Stepping back makes those relative depth differences smaller. Zoom then restores roughly the same face size in the frame without bringing back the close-up distortion.</p>
+      </div>
+    </section>
+
+    <section class="project-section architecture-section" id="architecture" aria-labelledby="architecture-title">
+      <header class="section-heading light-heading">
+        <p class="section-number">02</p>
+        <div>
+          <p class="section-kicker">Space, compressed</p>
+          <h2 id="architecture-title">Architectural<br>Perspective</h2>
+        </div>
+      </header>
+
+      <div class="building-stage">
+        <figure class="building-photo building-zoomed">
+          <img src="assets/building-zoomed.jpg" alt="Apartment building photographed from farther away with zoom" width="1350" height="1800">
+          <figcaption><b>01</b> Farther away · zoomed in</figcaption>
+        </figure>
+        <figure class="building-photo building-wide">
+          <img src="assets/building-wide.jpg" alt="The same apartment building photographed from nearby without zoom" width="1350" height="1800">
+          <figcaption><b>02</b> Walked closer · wide angle</figcaption>
+        </figure>
+      </div>
+
+      <div class="architecture-notes">
+        <p class="pull-quote">“Same building.<br>Different geometry.”</p>
+        <div>
+          <p>From farther away, the building’s near and far surfaces are at more similar distances from the camera. Their projected sizes become more alike, producing the flatter, compressed look.</p>
+          <p>Walking closer exaggerates the depth differences. Nearby balconies and edges grow relative to the receding facade, and parallel lines converge more dramatically. Zoom only helps match the building’s overall size; the viewpoint creates the perspective.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section dolly-section" id="dolly" aria-labelledby="dolly-title">
+      <header class="section-heading">
+        <p class="section-number">03</p>
+        <div>
+          <p class="section-kicker">The Vertigo shot</p>
+          <h2 id="dolly-title">The Dolly<br>Zoom</h2>
+        </div>
+      </header>
+
+      <div class="dolly-layout">
+        <figure class="gif-card">
+          <div class="gif-frame">
+            <img src="assets/dolly-zoom.gif" alt="Animated dolly zoom centered on a ceramic cactus as the background perspective shifts" width="600" height="800">
+            <span class="live-indicator"><i aria-hidden="true"></i> 6 frames</span>
+          </div>
+          <figcaption>Camera movement + changing focal length</figcaption>
+        </figure>
+        <div class="dolly-copy">
+          <p class="dolly-lead">The subject holds its ground while the room seems to breathe.</p>
+          <p>Across six stills, I changed my distance from the ceramic cactus while adjusting zoom to keep it near the same size. The cactus stays visually anchored, but the keyboard, monitor, and objects behind it shift in scale and spacing.</p>
+          <div class="motion-key" aria-label="Dolly zoom motion diagram">
+            <div>
+              <span>Camera</span>
+              <b>Move</b>
+              <i aria-hidden="true">→</i>
+            </div>
+            <div>
+              <span>Lens</span>
+              <b>Zoom</b>
+              <i aria-hidden="true">←</i>
+            </div>
+            <p>Opposing changes preserve subject size while transforming perspective.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="filmstrip" aria-label="The six source frames for the dolly zoom">
+        <img src="assets/dolly-4032.jpg" alt="Dolly zoom frame 1" width="600" height="800">
+        <img src="assets/dolly-4033.jpg" alt="Dolly zoom frame 2" width="600" height="800">
+        <img src="assets/dolly-4034.jpg" alt="Dolly zoom frame 3" width="600" height="800">
+        <img src="assets/dolly-4035.jpg" alt="Dolly zoom frame 4" width="600" height="800">
+        <img src="assets/dolly-4036.jpg" alt="Dolly zoom frame 5" width="600" height="800">
+        <img src="assets/dolly-4037.jpg" alt="Dolly zoom frame 6" width="600" height="800">
+      </div>
+    </section>
+
+    <section class="takeaway" aria-labelledby="takeaway-title">
+      <p class="section-number">∞</p>
+      <div>
+        <p class="section-kicker">Final takeaway</p>
+        <h2 id="takeaway-title">Move first.<br>Zoom second.</h2>
+      </div>
+      <p>Camera position determines perspective; focal length determines how much of that perspective enters the frame. Treating those as separate creative choices makes the camera feel much less mysterious.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-mark">
+      <span class="mark-monogram" aria-hidden="true">B</span>
+      <span>CS 180 · Project 0</span>
+    </div>
+    <p>Photographed &amp; built by Ethan Liu</p>
+    <a href="https://ethantsliu.github.io/cs180/">ethantsliu.github.io/cs180</a>
+  </footer>
+</body>
+</html>
