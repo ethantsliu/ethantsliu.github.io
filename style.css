@@ -6,11 +6,19 @@
   margin-bottom: 0.1rem;
 }
 
+@font-face {
+  font-family: 'CMU Serif';
+  src: url('fonts/cmunrm.otf') format('opentype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 /*──────────────────────────────────────────────────────────────────────────────
   0. Color variables (minimal black and white theme)
 ──────────────────────────────────────────────────────────────────────────────*/
 :root {
-  --serif-stack: 'Baskerville', 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', 'Songti SC', 'STSong', 'Noto Serif CJK SC', 'Source Han Serif SC', 'SimSun', serif;
+  --serif-stack: 'CMU Serif', 'Songti SC', 'STSong', 'Noto Serif CJK SC', 'Source Han Serif SC', 'SimSun', serif;
   --bg: #ffffff;
   /* base background */
   --text: #000000;
