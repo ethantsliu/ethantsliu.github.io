@@ -91,7 +91,7 @@ html[data-theme="dark"] .cloud-site .moon-icon { display: none; }
   padding: 16px 0 0;
   border-top: 1px solid var(--divider);
   border-bottom: 0;
-  color: var(--text);
+  color: var(--accent-soft);
   font-size: 1.1rem;
   position: relative;
   z-index: 1;
@@ -157,7 +157,7 @@ html[data-theme="dark"] .cloud-site .moon-icon { display: none; }
     mask-image: linear-gradient(to right, transparent 0%, #000 46%), linear-gradient(to bottom, #000 70%, transparent 100%);
     mask-composite: intersect;
   }
-  .cloud-artwork img { height: auto; max-height: 100%; object-fit: contain; mask-image: none; }
+  .cloud-artwork img { height: auto; max-height: 100%; object-fit: cover; mask-image: none; }
   .latest-list { grid-row: 2; }
 }
 @media (max-width: 720px) {
