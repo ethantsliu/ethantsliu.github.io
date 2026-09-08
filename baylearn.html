@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <script>
+    // Restore the chosen theme before the page is painted.
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+    } catch { document.documentElement.dataset.theme = 'light'; }
+  </script>
   <title>Reflections on BayLearn | Ethan Liu</title>
   <link rel="preload" href="fonts/cmunrm.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="style.css" />
@@ -57,12 +63,14 @@
       text-decoration: underline;
     }
   </style>
+  <link rel="stylesheet" href="clouds.css" />
+  <script src="site.js" defer></script>
 </head>
-<body data-pond="off">
+<body data-pond="off" class="cloud-site">
   <div class="page-wrapper">
     <header class="header-container">
       <div class="header-top">
-        <div class="theme-toggle" id="themeToggle">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme">
       <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
         <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
@@ -77,9 +85,9 @@
       <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"/>
       </svg>
-        </div>
+        </button>
         <div class="dropdown" id="dropdown">
-          <button class="dropdown-btn" id="dropdownBtn">天</button>
+          <button class="dropdown-btn" id="dropdownBtn" type="button" aria-controls="dropdownContent" aria-expanded="false">天</button>
           <div class="dropdown-content" id="dropdownContent">
             <a href="/">about</a>
             <a href="work">work</a>
@@ -121,60 +129,11 @@
     </div>
   </div>
 
-  <script>
-    const themeToggle = document.getElementById('themeToggle');
-    const sunIcon = document.querySelector('.sun-icon');
-    const moonIcon = document.querySelector('.moon-icon');
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    updateThemeIcon(currentTheme);
 
-    themeToggle.addEventListener('click', () => {
-      const theme = document.documentElement.getAttribute('data-theme');
-      const newTheme = theme === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateThemeIcon(newTheme);
-    });
-
-    function updateThemeIcon(theme) {
-      if (theme === 'dark') {
-        sunIcon.style.display = 'block';
-        moonIcon.style.display = 'none';
-      } else {
-        sunIcon.style.display = 'none';
-        moonIcon.style.display = 'block';
-      }
-    }
-
-    const dropdown = document.getElementById('dropdown');
-    const dropdownBtn = document.getElementById('dropdownBtn');
-    const dropdownContent = document.getElementById('dropdownContent');
-    let timeoutId;
-
-    function showDropdown() {
-      clearTimeout(timeoutId);
-      dropdownContent.style.display = 'block';
-      dropdownContent.style.opacity = '1';
-      dropdownContent.style.visibility = 'visible';
-      dropdownContent.style.pointerEvents = 'auto';
-    }
-
-    function hideDropdown() {
-      timeoutId = setTimeout(() => {
-        dropdownContent.style.display = 'none';
-        dropdownContent.style.opacity = '0';
-        dropdownContent.style.visibility = 'hidden';
-        dropdownContent.style.pointerEvents = 'none';
-      }, 150);
-    }
-
-    dropdown.addEventListener('mouseenter', showDropdown);
-    dropdown.addEventListener('mouseleave', hideDropdown);
-    dropdownContent.addEventListener('mouseenter', showDropdown);
-    dropdownContent.addEventListener('mouseleave', hideDropdown);
-  </script>
   </div>
-  <script src="background.js"></script>
+
+  <div class="page-cloud" aria-hidden="true">
+    <img src="photos/clouds-portrait.webp" width="1173" height="1341" alt="" loading="lazy" decoding="async" />
+  </div>
 </body>
 </html>
