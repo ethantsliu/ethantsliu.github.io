@@ -1,0 +1,21 @@
+{
+  "title": "Ginkgo — fine ASCII portrait v2",
+  "prompt": "Use case: stylized-concept.\nAsset type: original native portrait ASCII botanical artwork for a website, aspect ratio exactly 7:8, ideally 1344 by 1536 pixels or the highest available native resolution at this ratio. Designed to display intact in an approximately 804 by 940 CSS pixel column with minimal crop.\nPrimary request: A graceful branching ginkgo bough with elegant fan-shaped leaves in the right two-thirds, rendered entirely through fine crisp monospaced ASCII characters. Preserve soft sage, celadon and warm ivory color gradations within the leaves while restoring the clearly visible computational character texture.\nTechnique is essential: identifiable tiny ASCII symbols @ # % * + = - : . / | build the leaves, stems, contour and shading. The symbols remain upright on fine monospaced rows, with varying ink color, density and character weight creating the leaf shapes. Each character should be roughly 5–8 native pixels tall, intended to appear 3–5 CSS pixels tall at the final display size. Leaves read as smooth graceful natural forms at a glance and as actual tiny crisp terminal characters on inspection. Dark sage @ and # form shadow cores, sage % * + = form middle tones, pale celadon - : . / | form lighter delicate edges. This is sophisticated fine ASCII art, not a drawing with generic texture.\nComposition: fan leaves at varied scales, with the branch occupying the right two-thirds. TOP 6 percent is genuinely blank neutral paper. The first leaf and branch contours start at varied, uneven natural heights BELOW this empty margin and remain complete, with nothing cut through the top edge. The branch may enter through the right edge below the top margin. BOTTOM 6 percent is also genuinely blank paper; a delicate natural branch/leaf tip ends above it. No straight horizontal contour or cutoff.\nBackdrop: neutral near-white paper #f7f7f3. LEFT 15 percent is clear. Towards the left-facing contour of the foliage, individual ASCII marks become gradually sparser and paler into the empty paper, preserving a subtle sideways sage-to-paper transition. This transition exists through glyph density and ink color, not a blurry overlay. Retain definition and natural color in all upper leaves.\nConstraints: No vertical fade, fog, whitewash, vignette or gradient overlay. No engraved line veins, etching, brush strokes, generic stipple, fuzzy dithering, large glyph blocks, low-resolution pixel art or blurred characters. No text label, readable words, typography outside the ASCII artwork, watermark, border, oval or frame. Native original re-render, not an upscale or repaint of an old image.",
+  "tool": "image_gen.imagegen (built-in)",
+  "source_path": "/Users/EthanLiu/.codex/generated_images/01a07fb3-e8d3-7d72-9068-eceebf6c0426/exec-ece9d094-75e0-4611-9b66-6a67a46619fd.png",
+  "output_path": "output/sage-backgrounds/portraits/ginkgo-ascii-v2.png",
+  "dimensions": {
+    "width": 1173,
+    "height": 1341
+  },
+  "bytes": 2048555,
+  "requested_dimensions": "1344x1536 or highest native 7:8",
+  "reference_style_paths": [
+    "output/sage-backgrounds/scenes/s4-ginkgo.png",
+    "output/sage-backgrounds/portraits/ginkgo-hd.png"
+  ],
+  "references_inspected": true,
+  "references_used_as_tool_inputs": false,
+  "untouched_generated_original": true,
+  "inspection": "Actual characters are much more identifiable than previous engraving version, predominately @/rounded glyphs and punctuation on fine rows. Sage-to-ivory tonal variation and sparse leftward marks preserved; no vertical whitewash. Native near-7:8 portrait. Top natural silhouette begins below about 3% blank margin, short of requested 6%; bottom about 8% blank and left about15% clear. No horizontal truncation at top or bottom."
+}

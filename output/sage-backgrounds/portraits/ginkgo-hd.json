@@ -1,0 +1,20 @@
+{
+  "title": "Ginkgo — native portrait fine engraving",
+  "prompt": "Use case: stylized-concept.\nAsset type: original high-definition portrait botanical illustration for a minimal personal website. Generate a NEW native TALL composition, portrait aspect ratio 2:3, at the highest native resolution available, ideally 2048 by 3072 pixels or 1536 by 2304 pixels.\nPrimary request: A graceful ginkgo branch descending through the right two-thirds of a tall canvas, with distinctive cream and sage fan-shaped leaves at varied scales distributed naturally from the upper region down to roughly 85 percent of the height.\nScene/backdrop: quiet neutral near-white paper, #f7f7f3. The leftmost 15 to 20 percent remains mostly clear with only sparse natural feathering of tiny marks at the silhouette. Leave breathing room at top and bottom; the botanical silhouette ends naturally, with no straight horizontal cutoff.\nComposition/framing: Designed to be displayed INTACT at 600 by 900 CSS pixels, with no enlargement or crop. Tall graceful rhythm, varied fan leaves, refined asymmetry and natural branching. The right-side branch and leaves carry the composition while the left space remains airy.\nStyle/medium: Exquisite fine botanical engraving and restrained editorial illustration. Crisp, intricate, very fine radiating veins in each fan leaf. Strong elegant sage linework, clear celadon and cream leaf planes, selective deep sage shadows giving definition without heaviness. Tiny stipple and faint computational grain only become apparent on close inspection; the overall surface reads as delicate detailed engraving at normal size.\nConstraints: Render original fine detail at native portrait resolution. No enlarged glyph blocks, coarse dots, visible pixel-art grid, chunky halftone, pixelated edges, softness, blur or washed-out values. No all-over green tint. No frame, border, oval, typography, UI, logo or watermark. Do not upscale, crop, or repaint an existing image. Preserve a naturally terminating botanical silhouette and open top/bottom space.",
+  "tool": "image_gen.imagegen (built-in)",
+  "source_path": "/Users/EthanLiu/.codex/generated_images/01a07fb3-e8d3-7d72-9068-eceebf6c0426/exec-79c50574-3f25-449a-9c6b-4a3405acca9b.png",
+  "output_path": "output/sage-backgrounds/portraits/ginkgo-hd.png",
+  "dimensions": {
+    "width": 1024,
+    "height": 1536
+  },
+  "bytes": 2464847,
+  "requested_dimensions": [
+    "2048x3072",
+    "1536x2304"
+  ],
+  "reference_style": "output/sage-backgrounds/scenes/s4-ginkgo.png",
+  "reference_used_as_input": false,
+  "untouched_generated_original": true,
+  "inspection": "Native 2:3 portrait with much finer botanical engraving and crisp veins, no enlarged glyph blocks. Left approximately 29% stays clear; natural branch tip ends around 94% height with open paper below. The top branches/leaf edges enter from top and right, so no top breathing margin. Tool delivered 1024x1536 despite request for higher native resolution; at 600x900 CSS this provides approximately 1.71 source pixels per CSS pixel without cropping or upscaling."
+}

@@ -1,0 +1,27 @@
+{
+  "title": "Tidal — fine ASCII portrait",
+  "file": "tidal-ascii-v2.png",
+  "tool": "built-in image_gen.imagegen",
+  "mode": "generate",
+  "source_path": "/Users/EthanLiu/.codex/generated_images/01a07fb3-83fb-7351-8d16-bed852ad08c4/exec-aaf8dec7-b08f-4bbe-8581-af51c4e3fe43.png",
+  "source_role": "Untouched native PNG copied into workspace; no local image editing or upscaling",
+  "reference_paths": [
+    "output/sage-backgrounds/02-tidal.png",
+    "output/sage-backgrounds/portraits/tidal-hd.png"
+  ],
+  "reference_role": "Both inspected before generation; reference images not passed as edit targets",
+  "prompt": "Use case: stylized-concept.\nAsset type: one brand-new high-resolution PORTRAIT 7:8 website illustration, native 1344 by 1536 pixels if available, composed to display intact in an approximately 804 by 940 CSS-pixel column. Generate the native image at this resolution; do not magnify a preexisting image.\nSubject: calm sculptural tidal waves, gentle overlapping currents and long ripple fronts, pale luminous cream horizon and original muted sage/celadon palette with dusty deep teal-sage shadows. A refined organic computational landscape.\nMOST IMPORTANT STYLE REQUIREMENT: the water surfaces, wave crests, ripples, and tonal shading must visibly be BUILT FROM SMALL CRISP MONOSPACED ASCII CHARACTERS. Use recognizable individual symbols @ # % * + = - : . ~ / | in delicate horizontal character rows that subtly conform to the waves. The glyphs must remain identifiable on inspection, not dissolve into imitation engraving, random stipple, photographic grain, or unrecognizable pixels. Characters approximately 5 to 8 native pixels tall, equivalent to about 3 to 5 pixels when shown on the intended webpage. Dense varied dark characters describe shadows, sparse light punctuation describes highlights and edges; retain ivory gaps between marks. Build fluid contours from the character field itself. Balanced detail with clearly visible ASCII intention at full view. No coarse pixel blocks, no oversized glyphs, no hatching or etching substitute, no photographic water.\nComposition and edge behavior: topmost 8 to 10 percent is entirely clean neutral near-white paper #f7f7f3. Waves begin below this at varied natural heights, with their distant upper crests gently undulating into an irregular silhouette, NEVER a hard straight top edge. Keep a luminous pale horizon feeling inside the wave composition through ivory light and sparse symbols, not an opaque colored rectangular sky. Preserve the leftmost 15 percent as clean paper; transition SIDEWAYS from sage water on the right into the left paper using progressively lighter and sparser distinct glyphs. The bottommost 6 percent naturally ends in sparse glyphs and clear paper at varying heights, never a hard horizontal cutoff. The right edge may crop the continuing waves. Forms are gracefully scaled to the full portrait, no magnified close crop.\nConstraints: no oval, no enclosed vignette, no frame, no border, no boxed panel, no opaque colored sky rectangle, no whitewash, no blur, no fog, no artificial top opacity fade, no readable words or text labels, no title, no logo, no watermark, no UI, no clouds, no sun disk. The ASCII symbols are the image-making material, not written content. Output exactly one high-definition portrait 7:8 image.",
+  "requested_dimensions": {
+    "width": 1344,
+    "height": 1536,
+    "aspect_ratio": "7:8"
+  },
+  "actual_image": {
+    "width": 1173,
+    "height": 1341,
+    "mode": "RGB",
+    "bytes": 2889077,
+    "sha256": "d74b31762ccefea0bd1cd577722a1d06270e444cc553e5525b8ff242385911b7"
+  },
+  "assessment": "Clearly visible small monospaced character forms build sculptural teal-sage tidal surfaces and cream crests. Top and bottom boundaries break naturally into sparse glyphs on neutral near-white paper; no hard straight cut, oval, frame, or opaque sky rectangle. Stronger ASCII intention than the preceding engraved portrait. Left edge includes a few sparse marks inside the requested 15% clean strip; the fully empty margin is closer to 4–5%, broadening visually through low-density punctuation."
+}

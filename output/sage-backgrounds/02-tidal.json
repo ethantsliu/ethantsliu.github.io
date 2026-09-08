@@ -1,0 +1,9 @@
+{
+  "title": "Tidal",
+  "file": "02-tidal.png",
+  "tool": "built-in image_gen.imagegen",
+  "source_path": "/Users/EthanLiu/.codex/generated_images/01a07fb3-83fb-7351-8d16-bed852ad08c4/exec-7b0791eb-888e-446b-b2c2-c8929671e0e8.png",
+  "reference_path": "output/wafer-inspired/sage-clouds-v1.png",
+  "reference_role": "Inspected for aesthetic only; not passed as edit target",
+  "prompt": "Use case: stylized-concept. Asset type: original 16:9 wide minimalist personal website background. Primary request: a quiet shallow tidal water landscape with long gentle overlapping ripples and a faint luminous horizon; no clouds. Style/medium: delicate organic retro-computer illustration, fine ASCII-like abstract character halftone and ordered dithering integrated into water ripples. A coherent restricted palette of muted pale sage and celadon, buttercream highlights, dusty teal shadows, like softly printed green monochrome computer art on warm cream paper. Composition: preserve the upper and central 60 percent of the canvas as nearly flat pale sage, open and exceptionally calm for page copy. The low horizon falls near the lower third, a narrow soft glow; the water's gently crossing ripple curves collect in the bottom third and outer lower corners, with subdued teal shadow lines. No large foreground object, no dramatic waves, no crisp photographic reflections. Tiny regular matrix marks are barely visible in the calm field and become more defined along the wavelets, never words. Soft diffused luminous light, contemplative, restrained contrast, refined subtle grain, clean overall visual hierarchy. Edge-to-edge artwork, no text, no typography, no logos, no UI, no frame, no border, no watermark, no clouds, no sun disk. Create one original landscape image, 16:9 aspect ratio."
+}

@@ -1,0 +1,475 @@
+{
+  "title": "The Dark Forest and Generative AI",
+  "url": "https://maggieappleton.com/ai-dark-forest",
+  "headings": [
+    {
+      "text": "Essays",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "text": "Notes",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "text": "Patterns",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "text": "Smidgeons",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "text": "Talks",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "text": "Podcasts",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "text": "Library",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "text": "Antilibrary",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "text": "The Dark Forest and Generative AI",
+      "rect": {
+        "x": 320,
+        "y": 167,
+        "width": 800,
+        "height": 123.1875,
+        "top": 167,
+        "right": 1120,
+        "bottom": 290.1875,
+        "left": 320
+      }
+    },
+    {
+      "text": "A Generated Web",
+      "rect": {
+        "x": 324,
+        "y": 5432.28125,
+        "width": 792,
+        "height": 61.59375,
+        "top": 5432.28125,
+        "right": 1116,
+        "bottom": 5493.875,
+        "left": 324
+      }
+    },
+    {
+      "text": "Passing the Reverse Turing Test",
+      "rect": {
+        "x": 324,
+        "y": 7366.875,
+        "width": 792,
+        "height": 61.59375,
+        "top": 7366.875,
+        "right": 1116,
+        "bottom": 7428.46875,
+        "left": 324
+      }
+    },
+    {
+      "text": "1. Triangulate objective reality",
+      "rect": {
+        "x": 324,
+        "y": 8579.46875,
+        "width": 792,
+        "height": 45.8125,
+        "top": 8579.46875,
+        "right": 1116,
+        "bottom": 8625.28125,
+        "left": 324
+      }
+    }
+  ],
+  "images": [
+    {
+      "alt": "An illustration of layers of the web: the dark forest on top, followed by layers of cozyweb holes where people hide away from bots and ad scavengers",
+      "src": "https://maggieappleton.com/_astro/cozyweb.BVIqIDfT_Z2r2bHR.avif",
+      "rect": {
+        "x": 220,
+        "y": 1425.03125,
+        "width": 1000,
+        "height": 1161,
+        "top": 1425.03125,
+        "right": 1220,
+        "bottom": 2586.03125,
+        "left": 220
+      }
+    },
+    {
+      "alt": "...",
+      "src": "https://maggieappleton.com/_astro/mj8.Bnqrk4no_Z1mTHF8.avif",
+      "rect": {
+        "x": 175.5,
+        "y": 3620.03125,
+        "width": 533.5,
+        "height": 533.5,
+        "top": 3620.03125,
+        "right": 709,
+        "bottom": 4153.53125,
+        "left": 175.5
+      }
+    },
+    {
+      "alt": "...",
+      "src": "https://maggieappleton.com/_astro/mj1.Cizq_YN0_1EGlfW.avif",
+      "rect": {
+        "x": 731,
+        "y": 3620.03125,
+        "width": 533.5,
+        "height": 533.5,
+        "top": 3620.03125,
+        "right": 1264.5,
+        "bottom": 4153.53125,
+        "left": 731
+      }
+    },
+    {
+      "alt": "...",
+      "src": "https://maggieappleton.com/_astro/mj7.COEY91Y2_Z2qokLK.avif",
+      "rect": {
+        "x": 175.5,
+        "y": 4175.53125,
+        "width": 533.5,
+        "height": 533.5,
+        "top": 4175.53125,
+        "right": 709,
+        "bottom": 4709.03125,
+        "left": 175.5
+      }
+    },
+    {
+      "alt": "...",
+      "src": "https://maggieappleton.com/_astro/mj3.D7xY0Ce1_19JJtk.avif",
+      "rect": {
+        "x": 731,
+        "y": 4175.53125,
+        "width": 533.5,
+        "height": 533.5,
+        "top": 4175.53125,
+        "right": 1264.5,
+        "bottom": 4709.03125,
+        "left": 731
+      }
+    },
+    {
+      "alt": "...",
+      "src": "https://maggieappleton.com/_astro/mj9.DEMAnIWG_Z2uQTrk.avif",
+      "rect": {
+        "x": 175.5,
+        "y": 4731.03125,
+        "width": 533.5,
+        "height": 533.5,
+        "top": 4731.03125,
+        "right": 709,
+        "bottom": 5264.53125,
+        "left": 175.5
+      }
+    },
+    {
+      "alt": "...",
+      "src": "https://maggieappleton.com/_astro/mj4.CeGAypdE_1H68Nu.avif",
+      "rect": {
+        "x": 731,
+        "y": 4731.03125,
+        "width": 533.5,
+        "height": 533.5,
+        "top": 4731.03125,
+        "right": 1264.5,
+        "bottom": 5264.53125,
+        "left": 731
+      }
+    },
+    {
+      "alt": "Google search results showing a 'certified human' badge on some items",
+      "src": "https://maggieappleton.com/_astro/human_google.BIxHiVzI_2dEeWX.avif",
+      "rect": {
+        "x": 720,
+        "y": 13432,
+        "width": 0,
+        "height": 0,
+        "top": 13432,
+        "right": 720,
+        "bottom": 13432,
+        "left": 720
+      }
+    },
+    {
+      "alt": "The original internet dog meme: 'On the internet, no one knows you're a dog'",
+      "src": "https://maggieappleton.com/_astro/Internet_dog.C2uOQtuM_Z21FCVh.avif",
+      "rect": {
+        "x": 720,
+        "y": 13680.5,
+        "width": 0,
+        "height": 0,
+        "top": 13680.5,
+        "right": 720,
+        "bottom": 13680.5,
+        "left": 720
+      }
+    },
+    {
+      "alt": "Paul Watson",
+      "src": "https://avatars.webmention.io/cdn.lazaruscorporation.co.uk/3664fa966087b574b02abf5da8ae6ccfb511108fbfdc85579967c470e09c2686.jpg",
+      "rect": {
+        "x": 313,
+        "y": 15561.734375,
+        "width": 42,
+        "height": 42,
+        "top": 15561.734375,
+        "right": 355,
+        "bottom": 15603.734375,
+        "left": 313
+      }
+    },
+    {
+      "alt": "Matthew J Lutz",
+      "src": "https://avatars.webmention.io/pbs.twimg.com/9665e10abfeb092d1443fb1761034d58981e6056dc593b9d7b116d644ebe2a63.jpg",
+      "rect": {
+        "x": 339,
+        "y": 15561.734375,
+        "width": 42,
+        "height": 42,
+        "top": 15561.734375,
+        "right": 381,
+        "bottom": 15603.734375,
+        "left": 339
+      }
+    },
+    {
+      "alt": "inyigo",
+      "src": "https://avatars.webmention.io/pbs.twimg.com/d4896333f8e740e922d79ffccd3ec01ff1a331a08a7ee2d677d28748bdc90d15.jpg",
+      "rect": {
+        "x": 365,
+        "y": 15561.734375,
+        "width": 42,
+        "height": 42,
+        "top": 15561.734375,
+        "right": 407,
+        "bottom": 15603.734375,
+        "left": 365
+      }
+    },
+    {
+      "alt": "Rasagy Sharma",
+      "src": "https://avatars.webmention.io/pbs.twimg.com/8df7d0436e81495a1cf249f8213a1f03c802acda32fcb51d6c3872ad325f3dc3.jpg",
+      "rect": {
+        "x": 391,
+        "y": 15561.734375,
+        "width": 42,
+        "height": 42,
+        "top": 15561.734375,
+        "right": 433,
+        "bottom": 15603.734375,
+        "left": 391
+      }
+    },
+    {
+      "alt": "Chrinfosec",
+      "src": "https://avatars.webmention.io/pbs.twimg.com/626b01855f489da9754f94e77b861b6026949b5094a77cb1285d0d38b0fe6422.jpg",
+      "rect": {
+        "x": 417,
+        "y": 15561.734375,
+        "width": 42,
+        "height": 42,
+        "top": 15561.734375,
+        "right": 459,
+        "bottom": 15603.734375,
+        "left": 417
+      }
+    },
+    {
+      "alt": "💤",
+      "src": "https://avatars.webmention.io/pbs.twimg.com/68a4a6538b12211cd6a7b85b167b0fed4fefba7b7a37bcd4d3f0a7c623cdaceb.jpg",
+      "rect": {
+        "x": 443,
+        "y": 15561.734375,
+        "width": 42,
+        "height": 42,
+        "top": 15561.734375,
+        "right": 485,
+        "bottom": 15603.734375,
+        "left": 443
+      }
+    },
+    {
+      "alt": "RJ Andrews",
+      "src": "https://avatars.webmention.io/pbs.twimg.com/65944c537187868381aced4ef53b327f4b4022cc1af365ce6a3f908031ee0ce8.jpg",
+      "rect": {
+        "x": 469,
+        "y": 15561.734375,
+        "width": 42,
+        "height": 42,
+        "top": 15561.734375,
+        "right": 511,
+        "bottom": 15603.734375,
+        "left": 469
+      }
+    },
+    {
+      "alt": "sangmin.eth @ChoimiraiSchool",
+      "src": "https://avatars.webmention.io/pbs.twimg.com/ce1bf22787d57ea18bf003f2fd46896dff74fb9bf50f8cb4556559c58690cea2.jpg",
+      "rect": {
+        "x": 495,
+        "y": 15561.734375,
+        "width": 42,
+        "height": 42,
+        "top": 15561.734375,
+        "right": 537,
+        "bottom": 15603.734375,
+        "left": 495
+      }
+    },
+    {
+      "alt": "catherine woodiwiss",
+      "src": "https://avatars.webmention.io/pbs.twimg.com/9dfbf8a547f7f1d08371b60fc8b6928812e1cbdfa84605ab62590e4a3f34dd0d.jpg",
+      "rect": {
+        "x": 521,
+        "y": 15561.734375,
+        "width": 42,
+        "height": 42,
+        "top": 15561.734375,
+        "right": 563,
+        "bottom": 15603.734375,
+        "left": 521
+      }
+    },
+    {
+      "alt": "Ishaan Singh Shekhawat",
+      "src": "https://avatars.webmention.io/pbs.twimg.com/1303c24bfc4f4501ccc911c5eef36698472fd35cf155047c191642ac4b739e4a.jpg",
+      "rect": {
+        "x": 547,
+        "y": 15561.734375,
+        "width": 42,
+        "height": 42,
+        "top": 15561.734375,
+        "right": 589,
+        "bottom": 15603.734375,
+        "left": 547
+      }
+    },
+    {
+      "alt": "Colin Z. Robertson",
+      "src": "https://avatars.webmention.io/pbs.twimg.com/86f53333a8a78dce688785d2456988eeebcc265a2b255e4ea1e5d132ff3cc0f4.jpg",
+      "rect": {
+        "x": 573,
+        "y": 15561.734375,
+        "width": 42,
+        "height": 42,
+        "top": 15561.734375,
+        "right": 615,
+        "bottom": 15603.734375,
+        "left": 573
+      }
+    }
+  ],
+  "bodyBackground": "rgb(246, 245, 241)",
+  "links": [
+    {
+      "text": "dark forest theory",
+      "href": "https://maggieappleton.com/cozy-web"
+    },
+    {
+      "text": "Dark Forest",
+      "href": "https://onezero.medium.com/the-dark-forest-theory-of-the-internet-7dc3e68a7cb1"
+    },
+    {
+      "text": "Theory of",
+      "href": "https://onezero.medium.com/the-dark-forest-theory-of-the-internet-7dc3e68a7cb1"
+    },
+    {
+      "text": "the Internet",
+      "href": "https://onezero.medium.com/the-dark-forest-theory-of-the-internet-7dc3e68a7cb1"
+    },
+    {
+      "text": "The Expanding Dark Forest and Generative AI An exploration of the problems and possible futures of flooding the web with generative AI content",
+      "href": "https://maggieappleton.com/forest-talk"
+    },
+    {
+      "text": "lukealexdavismentioned     in Maggie Appleton on the dark forest theory and generative AI's place within itJanuary 24, 2023",
+      "href": "https://logicface.co.uk/maggie-appleton-on-the-dark-forest-theory-and-generative-ais-place-within-it/"
+    },
+    {
+      "text": "hacktech.promentioned     in The Expanding Dark Forest and Generative AI by colinprinceJanuary 04, 2023",
+      "href": "https://hacktech.pro/the-expanding-dark-forest-and-generative-ai-by-colinprince/"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "checks": [
+    "Palette switches image and accents",
+    "Blue restored after amber",
+    "Hash reload retains selection",
+    "Original hides footer",
+    "Hover menu navigates",
+    "Jump to secondary artwork scrolls to footer",
+    "Mobile palette visible, no overflow"
+  ],
+  "events": [
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    }
+  ]
+}

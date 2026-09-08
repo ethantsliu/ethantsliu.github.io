@@ -1,0 +1,19 @@
+{
+  "title": "Magnolia page environment",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "intent": "generate",
+  "useCase": "stylized-concept",
+  "prompt": "Use case: stylized-concept\nAsset type: one complete wide background scene for a minimalist personal website, landscape 16:9.\nPrimary request: a large magnolia tree branch with two cream flowers and sage/celadon leaves enters the page from the right and upper-right edges, forming a botanical environment along the right side of a mostly empty near-white page.\nScene/backdrop: neutral almost-white paper color #F7F8F4. The entire LEFT 60 PERCENT must remain CLEAN, FLAT, EMPTY near-white paper for actual website text. The entire BOTTOM 12 PERCENT must also be completely clean matching near-white paper. No green tint, wash, gradient, or texture in these reserved text and bottom regions.\nSubject/composition: the magnolia scene occupies the RIGHTMOST 38 PERCENT only, between the top edge and the 86-percent height line. Large naturally composed branch limbs enter from the right and top-right, with foliage and a large cream blossom partly cropped beyond the image bounds to imply a tree continuing outside the page. A second smaller blossom opens inward at approximately x=78%, y=53%. Several leaves angle toward the empty page but stop before x=62%. Keep the left side and bottom entirely untouched. This is a page environment, not a centered sprig or an isolated botanical sticker.\nStyle/medium: elegant detailed editorial print made from visible tiny computational terminal-glyph stippling. Petal shading and leaf forms consist of irregular matrices of small dot, dash, plus-like micro marks with the feeling of ASCII halftone. At ordinary scale these read as soft yet clearly colored botanical shapes; close up, the computer-print texture is visible.\nColor palette: moderately strong muted sage and celadon foliage, dusty teal #617F73 twig shadows, buttercream #FFF0BD petals, all on flat almost-white #F7F8F4 paper. The botanical artwork should have clear color and readable forms, not faded beyond recognition.\nConstraints: one full-bleed 16:9 scene, plain near-white page surroundings, natural sparse ink edges between foliage and paper. No clouds, no mountain landscape, no all-green backdrop, no tinted rectangle, no card, no border, no frame, no oval, no vignette, no Gaussian blur, no feathered background patch, no shadow behind an illustration, no UI, no logos, no letters or readable text, no watermark. Use the image edges as part of the composition.",
+  "source": "/Users/EthanLiu/.codex/generated_images/01a07fb4-4930-7030-a0f7-6a02e5059608/exec-9fc469a9-358d-4f86-b885-f521a1fda88c.png",
+  "output": "output/sage-backgrounds/scenes/s5-magnolia.png",
+  "referenced_image_paths": [],
+  "validation": {
+    "mode": "RGB",
+    "width": 1672,
+    "height": 941,
+    "visualAssessment": "Clear near-white paper, two cream flowers and strong sage leaves enter from right and top-right edges. Leftmost roughly 54% stays completely clear; a top-edge leaf reaches farther left than the requested 60% clearance. Most body-height artwork remains beyond about 59%. Bottom roughly 13% is clear. Texture reads as fine engraved stipple, with some dash-like marks but fewer conspicuous ASCII glyph shapes than requested."
+  },
+  "attempts": 1,
+  "manualPixelEdits": false
+}

@@ -1,0 +1,17 @@
+{
+  "prompt": "Use case: stylized-concept.\nAsset type: original minimalist website background, wide 16:9 raster image.\nScene/backdrop: matte nearly white paper, exact target background #F7F8F4, smooth flat color with no overall green wash.\nSubject: immense curving orbital ribbons and elliptical wave arcs, mathematically inspired. Show only a fragment of an enormous system of arcs, as a crop of a larger scene. Layered bands of sage, celadon, muted dusty teal and buttercream contain intricate visible ASCII-like terminal glyph halftone marks, tiny dots, pluses, colons and short strokes that describe the curvature. Clear readable contrast and rich computational detail confined to the forms. Sparse printed marks transition naturally to blank paper at the edge of the motif.\nComposition: the LEFT 60 percent of the entire canvas must be completely flat blank #F7F8F4, absolutely no marks, texture, gradients or subject. The BOTTOM 12 percent of the entire canvas must also remain the same completely flat blank paper. All forms restricted to the RIGHT 38 percent above the bottom blank band, extending decisively beyond the RIGHT image edge and TOP-RIGHT image edge. Large cropped open arcs with their centers beyond the right frame; no complete ring visible. Motif fills the top-right and mid-right edge while leaving broad white space. Minimal, elegant, spacious, sculptural mathematical print.\nConstraints: no literal complete ring enclosing an object; no orb, planet or central object. No enclosed oval vignette, no sticker, no isolated icon, no frame, no card, no readable text, no labels, no logo, no UI, no watermark, no all-green background, no fog. Do not add any typography.",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "source_path": "/Users/EthanLiu/.codex/generated_images/01a07fb4-a8da-7c20-b913-4930d4c05d32/exec-26e36294-f6c3-4ae0-972b-3b70b9e7c7ab.png",
+  "output_path": "/Users/EthanLiu/Documents/Programming/ethantsliu.github.io/output/sage-backgrounds/scenes/s8-orbits.png",
+  "generated_date": "2026-09-08",
+  "requested_aspect_ratio": "16:9",
+  "reference_images": [],
+  "postprocessing": "None; source PNG copied untouched",
+  "visual_assessment": "Cropped open orbital bands in top-right with visible glyph halftone and strong detail. Bottom 12% is visually blank; left approximately 51% completely clear, with sparse outer marks extending into requested left 60%. No complete ring, text, frame or fog.",
+  "dimensions": {
+    "width": 1672,
+    "height": 941
+  },
+  "sha256": "854df092f049894558331b9bcc292e13ff3581662ae5da8284f4badb636898f0"
+}

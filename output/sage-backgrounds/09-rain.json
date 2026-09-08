@@ -1,0 +1,12 @@
+{
+  "name": "Rain",
+  "prompt": "Use case: stylized-concept\nAsset type: original minimalist personal website background, landscape 16:9.\nPrimary request: gentle rain touching a still pond, expressed as a few soft concentric ripple rings clustered along the bottom edge, quiet atmospheric abstraction.\nScene/backdrop: an almost flat pale sage and celadon field fills the entire canvas. The upper and central 65 percent must be nearly empty pale sage, with only extremely subtle fine print grain so website text will read cleanly.\nSubject: three or four delicate elliptical concentric ring groups on still water, with restrained buttercream glints and dusty teal shadows. Keep all discernible rings in the lower third and close to the left and right bottom edges. A few whisper-soft vertical rain marks in the lower third only.\nStyle/medium: organic print texture with fine ASCII-like micro glyphs, tiny dots, dither shading and softly stepped tonal transitions. Delicate low-contrast stipple texture, tactile and atmospheric, with no actual words. Refined, airy, understated computer-texture illustration.\nColor palette: muted pale sage, celadon, warm ivory and buttercream glints, dusty desaturated teal. Low saturation and soft contrast throughout.\nComposition/framing: wide 16:9 horizontal. Concentrate subtle artwork in the bottom 30 percent. Preserve the calm open upper and central 65 percent as visually empty light sage negative space.\nConstraints: no cloud imagery, no mountains, no buildings, no foliage, no readable text, no letters that form words, no UI, no logos, no watermarks, no borders. No dramatic reflections, no dark foreground, no bold linework, no photorealism. Single continuous image, no collage.",
+  "tool": "image_gen__imagegen",
+  "mode": "built-in",
+  "source": "/Users/EthanLiu/.codex/generated_images/01a07fb4-f382-7082-892d-9da21647aa63/exec-5ad9d686-e4b6-4208-af36-3748ce010baa.png",
+  "output": "/Users/EthanLiu/Documents/Programming/ethantsliu.github.io/output/sage-backgrounds/09-rain.png",
+  "width": 1672,
+  "height": 941,
+  "style_reference": "output/wafer-inspired/sage-clouds-v1.png",
+  "assessment": "Pale sage with calm upper field and four delicate bottom-edge rain ripple groups. Fine glyph/dither texture concentrated in the lower band. Suitable for sparse hero copy, profile header, or a quiet footer."
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Clouds ASCII v2",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "generation_calls": 1,
+  "prompt": "Use case: stylized-concept\nAsset type: Original native high-resolution ASCII cloud artwork for a minimalist website, PORTRAIT 7:8 canvas, ideally 1344x1536 pixels or nearest high-resolution portrait 7:8. Full image will be displayed approximately 804x940 CSS pixels, so compose for the complete canvas without cropping.\nPrimary request: Sculptural cumulus cloud banks in sage and cream, built ENTIRELY from clearly legible, crisp, SMALL ACTUAL MONOSPACED ASCII CHARACTERS. The allowed printed marks are @ # % * + = - : . / |. These literal characters must be unmistakable upon inspection and remain visibly textual at normal page scale. Individual character height about 5–8 native pixels at 1344x1536, equivalent to about 3–5 pixels at the website display size. Smooth continuous rounded cloud volumes emerge from variations in character density and character color, never from a photographic cloud image with noise over it.\nStyle: Fine ASCII/terminal art, clear orderly monospaced character placement, highly refined character-level shading. Dense @ # % define strong deep desaturated sage shadows, medium * + = build celadon midtones, light - : . / | articulate warm cream-lit edges and sparse transition areas. Preserve rich original sage-to-celadon-to-warm-cream color gradations and clear sculptural form. Clouds have rounded projecting lobes and deep shadowed folds, with compelling light/shadow contrast. Crisp actual text glyphs, not engraving, not random stipple, not dots only, not photographic grain, not block pixels, not tiny crosses repeated uniformly.\nComposition: The cloud banks occupy the right portion, reaching the right edge. The leftmost 15 percent stays empty near-white neutral paper #f7f7f3. The ENTIRE TOP 6 PERCENT is genuinely blank clean paper with NO marks. Beneath this blank area, the visible upper cloud boundary forms an IRREGULAR NATURAL SCALLOPED SILHOUETTE: different cumulus peaks stand at clearly DIFFERENT heights across the right half. One rounded peak starts near y=12 percent at x=76 percent; a lower neighboring peak begins near y=25 percent at x=50 percent; the far-right bank begins near y=18 percent. There is clean paper directly above all these differently staggered contours. NO art touches the top image edge. Do not crop or fade the top. The cloud masses extend down to roughly y=88 percent and finish in naturally tapering scattered characters; the entire bottom 6 percent is blank paper. Do not create a straight horizontal termination at top or bottom.\nSideways transition: The cloud silhouette dissolves only sideways into the left paper through characters becoming individually sparser and lighter, with organic scalloped bays. This is genuine absent ink and increasingly sparse ASCII characters, not an applied white gradient, not a fog veil. Leave the neutral paper completely flat and uniform wherever there is no art.\nMood and palette: Warm cream highlights, celadon midtones, confident dark desaturated sage shadows, calm minimal almost-white paper. All green is inside cloud character forms. No global green cast.\nConstraints: Crisp ASCII must be the dominant visual language. No engraved lines, no stipple substitute, no low-resolution pixel blocks, no coarse enlarged glyphs, no blur, no fog, no haze, no vertical white gradient over the image, no gradient masking the cloud tops, no horizontal cutoff, no words or slogans, no logo, no watermark, no UI, no frame, no oval/vignette enclosure. Right-edge cropping is allowed; top-edge or bottom-edge cloud cropping is not. Make this a polished intentional ASCII illustration with native tiny sharp glyphs and genuinely clean empty margins.",
+  "source_path": "/Users/EthanLiu/.codex/generated_images/01a07fb3-b8c2-7880-9871-c49f91b04759/exec-e8e3c69a-7312-45b2-be58-65a8b3024ab7.png",
+  "output_path": "output/sage-backgrounds/portraits/clouds-ascii-v2.png",
+  "references_viewed": [
+    "output/sage-backgrounds/scenes/s1-clouds.png",
+    "output/sage-backgrounds/portraits/clouds-hd.png"
+  ],
+  "reference_images_passed": false,
+  "requested_dimensions": {
+    "width": 1344,
+    "height": 1536,
+    "aspect_ratio": "7:8"
+  },
+  "actual_dimensions": {
+    "width": 1024,
+    "height": 1536,
+    "aspect_ratio": "2:3"
+  },
+  "native_mode": "RGBA",
+  "untouched_native_copy": true,
+  "locally_edited": false,
+  "upscaled": false,
+  "file_size_bytes": 2214085,
+  "inspection": {
+    "ascii": "Fine actual monospaced ASCII-like characters are visible within cream/sage cloud volumes, restoring the computational character language.",
+    "composition": "Upper cloud peaks start at visibly different heights, separated from top edge. Right side crops through image edge. Top 6 percent and bottom 6 percent are effectively empty via transparency, with average alpha 0.04/255 and 0.05/255 respectively.",
+    "issues": "The tool returned a 2:3 RGBA image, rather than the requested 7:8 opaque paper canvas. Empty margins contain near-zero alpha and dark RGB values, causing a black-looking preview in viewers that disregard or mishandle alpha. The image has a broad soft alpha transition around the cloud contour; this may retain the forced-fade feeling and should be reviewed on actual near-white page before adoption.",
+    "clearance": "Left 15 percent mostly transparent, average alpha 0.2/255; bottom-left cloud extends into that region but mostly faintly. Top and bottom do not have a straight hard cutoff."
+  }
+}

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Art &amp; the reading surface — real website references</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #272526; background: #f8f7f4; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    a { color: inherit; text-underline-offset: .2em; }
+    a:hover { color: #6c3446; }
+    button { font: inherit; color: inherit; cursor: pointer; }
+    :focus-visible { outline: 2px solid #77394d; outline-offset: 5px; }
+    .shell { width: min(1512px, 100%); margin: auto; padding: 34px 44px 28px; }
+    .topline { display: flex; justify-content: space-between; gap: 20px; font-size: 12px; color: #686266; }
+    h1 { font-family: Georgia, serif; font-weight: 400; font-size: clamp(32px, 3.6vw, 48px); letter-spacing: -.035em; margin: 32px 0 12px; }
+    .intro { max-width: 810px; font-size: 16px; line-height: 1.65; margin: 0; color: #575154; }
+    #sites { display: flex; flex-wrap: wrap; gap: 5px 24px; margin: 28px 0 24px; border-bottom: 1px solid #d7d1cd; }
+    #sites button { border: 0; border-bottom: 2px solid transparent; background: transparent; padding: 13px 0; font-size: 14px; }
+    #sites button[aria-pressed="true"] { color: #703348; border-bottom-color: #703348; }
+    .layout { display: grid; grid-template-columns: minmax(0, 1fr) 310px; gap: 32px; align-items: start; }
+    .viewbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; min-height: 35px; margin-bottom: 12px; font-size: 12px; }
+    #views { display: flex; flex-wrap: wrap; gap: 6px; }
+    #views button { border: 1px solid #d5cfcc; padding: 7px 11px; background: transparent; border-radius: 3px; font-size: 12px; }
+    #views button[aria-pressed="true"] { background: #e8e4df; border-color: #aaa09a; }
+    figure { margin: 0; }
+    .image-surface { display: flex; background: #eeece8; justify-content: center; border: 1px solid #ddd7d2; }
+    .image-surface a { display: flex; width: 100%; justify-content: center; }
+    #screenshot { display: block; width: 100%; height: min(66vh, 760px); object-fit: contain; }
+    figcaption { font-size: 12px; color: #686266; line-height: 1.5; padding-top: 10px; }
+    aside { padding-top: 46px; }
+    .number { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: #76696f; }
+    h2 { margin: 10px 0 14px; font: 400 30px/1.18 Georgia, serif; letter-spacing: -.02em; }
+    .source { display: inline-block; font-size: 13px; margin: 0 0 22px; }
+    h3 { font-size: 12px; margin: 24px 0 7px; font-weight: 650; }
+    aside p { font-size: 14px; line-height: 1.65; margin: 0; color: #514b4e; }
+    .takeaway { margin: 30px 0 0; padding-top: 20px; border-top: 1px solid #d7d1cd; font-size: 14px; line-height: 1.7; max-width: 920px; }
+    .takeaway strong { font-weight: 650; }
+    footer { margin-top: 18px; color: #756d71; font-size: 11px; line-height: 1.6; }
+    @media (min-width: 1650px) { .layout { grid-template-columns: minmax(0, 1fr) 350px; } }
+    @media (max-width: 1000px) { .layout { grid-template-columns: 1fr; gap: 24px; } aside { padding-top: 0; max-width: 740px; } #screenshot { height: auto; max-height: 75vh; } #sites { gap: 2px 22px; } h3 { margin-top: 18px; } }
+    @media (max-width: 600px) { .shell { padding: 22px 20px; } .topline { flex-direction: column; gap: 10px; } h1 { margin-top: 26px; } .intro { font-size: 15px; } #sites { margin-top: 20px; gap: 0 20px; } #sites button { font-size: 13px; } h2 { font-size: 28px; } .source { margin-bottom: 10px; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div class="topline"><span>Visual references · September 2026</span><a href="../">Back to artwork preview</a></div>
+      <h1>How art lives with text.</h1>
+      <p class="intro">Six real websites, six different roles for artwork. These are screenshots of the live sites, with observations about their composition and ideas to consider for your page.</p>
+    </header>
+    <nav id="sites" aria-label="Choose a reference website"></nav>
+    <main>
+      <div class="layout">
+        <section aria-label="Website screenshots">
+          <div class="viewbar"><div id="views" role="group" aria-label="Choose a screenshot"></div><a id="full-image" href="josh-desktop.png" target="_blank" rel="noopener">Open full screenshot ↗</a></div>
+          <figure>
+            <div class="image-surface"><a id="image-link" href="josh-desktop.png" target="_blank" rel="noopener"><img id="screenshot" src="josh-desktop.png" alt="Josh Comeau’s illustrated blue sky gives way to a white article reading area."></a></div>
+            <figcaption id="caption"></figcaption>
+          </figure>
+        </section>
+        <aside aria-live="polite" aria-atomic="true">
+          <div class="number" id="number"></div>
+          <h2 id="title"></h2>
+          <a class="source" id="source" target="_blank" rel="noopener">Visit the live page ↗</a>
+          <h3>What the site does</h3><p id="observed"></p>
+          <h3>What we could learn from it</h3><p id="transfer"></p>
+          <h3>Where the analogy stops</h3><p id="limit"></p>
+        </aside>
+      </div>
+      <p class="takeaway"><strong>Your preferred references:</strong> Anthropic Research and Wafer. The current <a href="../">interactive preview</a> places all Latest entries on the left, with smaller titles and category/date lines. Tall artwork fades into the paper on the right. Clouds, ginkgo, and tidal scenes now have native portrait versions with finer detail.</p>
+    </main>
+    <footer>Captured September 8, 2026. Screenshots show the original sites and belong to their respective creators. Transfer ideas are design judgments, not claims made by the sites. This reference page does not change your site layout.</footer>
+  </div>
+  <script src="references.js"></script>
+</body>
+</html>

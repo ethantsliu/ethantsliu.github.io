@@ -1,0 +1,20 @@
+{
+  "name": "Cloud scene",
+  "slug": "s1-clouds",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "generation_calls": 1,
+  "prompt": "Use case: stylized-concept\nAsset type: Original wide 16:9 raster page environment for a minimalist personal website, edge-to-edge background art\nPrimary request: Monumental sculptural cumulus cloud banks made from dense visible tiny ASCII and terminal-like glyph halftones. The scene occupies only the RIGHTMOST 38 PERCENT of the canvas, with cloud banks cropped boldly through the RIGHT and TOP-RIGHT image edges so that they read as a surrounding environment extending beyond the page.\nComposition: CRITICAL: the entire LEFT 60 PERCENT of the canvas is clean, FLAT, EMPTY almost-white paper color #F7F8F4, suitable for actual HTML text added later. CRITICAL: the BOTTOM 12 PERCENT across the full width is also that same FLAT, EMPTY almost-white paper color #F7F8F4. No objects or texture in those reserved zones. The clouds occupy right x=62%-100%, top y=0%-82%, extending outside the top-right and right edges. The cloud silhouette and terminal-glyph fragments gradually become sparse near its leftmost margin at x=62%, then stop entirely before the empty left region. Naturally irregular contour with deep rounded bays; no contained oval silhouette.\nStyle/medium: Computational cloud art with recognizable crisp tiny ASCII-like nonword glyphs, terminal characters, dashes, plus signs and dense tiny dot matrices forming all shaded cloud volume. Confident readable sculptural form with deeply structured sage/celadon shadows and warm cream light. Marks must be visible at website scale, intentional and sharp. Not fuzzy stipple or photographic grain. Several substantial connected cloud lobes arranged vertically at the right boundary, layered rounded volumes, thoughtful varied contrast.\nColor palette: Almost-white paper #F7F8F4 everywhere outside the subject. Within the clouds only: muted sage, celadon, desaturated deep sage-teal shadows, warm cream illumination. Never an all-over green background.\nConstraints: No actual words or readable text, no typography, no logos, no UI, no people, no border, no frame, no card, no enclosed ornament, no oval, no vignette, no spotlight, no blur, no broad gradient covering the left, no ground or horizon, no clouds or glyphs in the left 60 percent, no clouds or glyphs in the bottom 12 percent. The result is a spare website environment with a cloud formation extending beyond the outer page edge.",
+  "source_path": "/Users/EthanLiu/.codex/generated_images/01a07fb3-b8c2-7880-9871-c49f91b04759/exec-0ab0f715-59dd-4da1-a007-303dcf83949f.png",
+  "output_path": "output/sage-backgrounds/scenes/s1-clouds.png",
+  "dimensions": {
+    "width": 1672,
+    "height": 941
+  },
+  "untouched_copy": true,
+  "inspection": {
+    "style": "Strongly visible dense terminal glyph texture, sculptural sage shadow and cream light. Cloud mass crops through top-right and right boundaries. No words, logos, UI or frame.",
+    "clearance": "Upper and mid left 60 percent mostly clear. A few sparse glyphs from the lower-left cloud lobe reach approximately x=50.5 percent, so strict left-60-percent clearance is not met. Bottom 12 percent is blank.",
+    "limitation": "The lower-right cloud mass ends along a nearly horizontal boundary above the blank bottom strip."
+  }
+}

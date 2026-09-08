@@ -1,0 +1,17 @@
+{
+  "name": "Flow — neutral page scene",
+  "asset": "s6-flow.png",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "generation_calls": 1,
+  "prompt": "Use case: stylized-concept.\nAsset type: a wide 16:9 original raster page environment for an elegant minimalist personal website. Aim for 2048x1152.\nPrimary request: sculptural sweeping flow-field streamlines, pale sage and celadon ribbons with cream highlights, whose flowing motion is visibly defined by fine deliberate terminal-glyph / ASCII-like stippling. The scene should have confident legible color and contrast, with clear fine print detail.\nComposition: the LEFT 60 PERCENT of the entire canvas is totally clean, flat, almost-neutral off-white paper color #F7F8F4, reserved for website text. The BOTTOM 12 PERCENT across the entire canvas is the exact same perfectly clean flat off-white paper. All main forms occupy the RIGHT 38 PERCENT. Several broad, sculptural streams arc down from beyond the TOP-RIGHT boundary and sweep out through the RIGHT boundary; their continuation beyond both canvas edges makes this feel like a broad page environment. Keep shapes substantial and beautifully composed, never a tiny faded ornament. The streams bend naturally like an abstract computational flow field. Toward the left edge of the subject zone only, natural sparse printed marks gently dissipate into the untouched off-white paper. Keep the left text zone and bottom clean strip completely free of marks.\nStyle and material: sophisticated computational print art, clear dusty sage #789D87 and celadon #AAC1AB with warm cream highlights #EFEAD3 and occasional dark muted forest-green glyph accents #4E7566. Thousands of intentional tiny glyph fragments, dashes, and stippled points describe fluid streamlines and ribbon contours; visible as purposeful terminal-print texture rather than noise or blur. Matte ink on smooth almost-white paper, restrained but distinctly present. Flat off-white page ground, no all-canvas green wash.\nConstraints: only background artwork. No oval, no vignette, no radial fade, no blur, no frame, no border, no card, no isolated centered object, no panel, no UI, no text, no words, no numbers, no axes, no labels, no logo, no watermark. No cloud forms. No texture or color wash in the left 60 percent or bottom 12 percent. Do not fill the canvas with green.",
+  "source": "/Users/EthanLiu/.codex/generated_images/01a07fb4-75b7-7aa1-b63c-cc5dade0b317/exec-1a9fe735-e527-4dd3-92b6-96915d76cb21.png",
+  "reference_inputs": [],
+  "image_modified": false,
+  "requested_aspect_ratio": "16:9",
+  "actual_dimensions": {
+    "width": 1672,
+    "height": 941
+  },
+  "assessment": "Strong legible sage/celadon flow ribbons enter top-right and right edges, formed by fine deliberate dash/glyph texture. Broad neutral off-white left paper field. Bottom approximately 13% is clean neutral paper. Main dense forms are on right, but sparse markings at the top reach to approximately 44% of canvas width; requested perfectly clean left 60% clearance is not fully achieved. The bottom blank band creates a sharp artwork cutoff near lower-right rather than a fully natural dissipating edge."
+}

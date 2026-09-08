@@ -1,0 +1,79 @@
+# Sage background studies
+
+Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
+
+## Revision 15: small closing clouds and a Golden hour comparison
+
+Work, Research, Archive, Writing, and the essay now share a small cloud fragment at the lower-right page edge. A normal-flow footer follows the existing wrapper; on short pages it sits at the viewport bottom, and on long pages it follows the reading content. Its height is 180px on desktop and 140px on mobile. The original header and content positions, reading widths, gutters, and wrapper padding remain unchanged. The native portrait's upper silhouette needs no top fade, and its continuation is clipped at the page bottom. This motif is independent of the selected homepage artwork; homepage-only artwork controls remain disabled on secondary pages.
+
+The visible **Palette** control now includes **Golden hour** (`accent=amber`). In light mode, a mild CSS filter warms the cloud highlights while retaining cooler shadows, with ochre accents `#8a642d`. Dark mode uses bronze cloud ink and gold accents `#c8aa70`. Page backgrounds remain pure white and black. The prior Cloud blue treatment is still the default, and all saved green values remain commented. No image files were changed. [Wafer](https://www.wafer.ai/) informed the warm-highlight/cool-shadow balance.
+
+Browser checks compare all five secondary previews with their production source pages at 1440px and 390px: all measured content geometry matches, with at least 57.59px between the reading area and decorative footer and no horizontal overflow. Decorations are hidden from assistive technology and ignore pointer input. Amber text contrast is 5.33:1 on white and 9.44:1 on black. Screenshots and results are in `revision-15/`.
+
+## Retained from revision 14: homepage clouds and white/black backgrounds
+
+**Clouds · Portrait** is the default artwork. On desktop, the illustration now extends through the footer to the bottom of the page. Its lower edge uses the actual shared footer spacing, so the change adds no page height. The image covers this taller area with a modest left crop and a natural upper silhouette; the sideways blend still protects the reading column. At 1440px, the 804×1077px image box renders below native resolution. Mobile retains the short illustration above Latest so text stays clear.
+
+Light mode uses **pure white `#ffffff`**. Dark mode uses **pure black `#000000`**, with the same cloud drawing tinted a subdued blue using CSS presentation filters. The original image files and daytime cloud palette are preserved. Small accents and selection highlights now use cloud blue: `#4c6e83` in light mode and `#a5bfd3` in dark mode. The original site green `#3f6b4f`, the study green `#4c6757`, their highlight values, and the former dark greens remain commented in `site-preview.css`; the corresponding old gallery swatches/options are also preserved in comments. Text contrast for the active blue accents is 5.43:1 on white and 10.99:1 on black.
+
+Revision 14 removed secondary-page header artwork and restored the original layout. Revision 15 adds only the closing fragment described above. Clicking a study still returns to About to show that drawing.
+
+Revision 14 checks covered all five secondary pages at 1440px and 390px in all three saved placements. Homepage checks confirm pure white/black backgrounds, the clouds ending at the desktop page bottom, and no enlargement beyond native image dimensions at 1440/1000/390 widths. Those screenshots and results remain in `revision-14/`. The live visit counter remains a GET-only read in the preview.
+
+## The selected drawing stays the same
+
+The gallery previously showed the original landscape thumbnails for Clouds, Ginkgo, and Tidal, while the About page silently substituted regenerated portraits. They were different drawings, so selecting a thumbnail did not reliably show that artwork.
+
+Each drawing has its own stable selection. The original IDs still select their original landscapes. `clouds-portrait`, `ginkgo-portrait`, and `tidal-portrait` select the corresponding ASCII drawings, shown in a separate Portrait studies collection. Cards, image views, PNG downloads, prompts, and homepage backgrounds all refer to the selected composition. Placement changes may alter its crop, but never substitute another drawing. Portrait cards display their full composition. Secondary pages remember the selection for returning to About, while using the fixed cloud fragment at their foot.
+
+The `s1-clouds` entry is labeled **Clouds · Original** and displays the original cloud artwork shown in its card. **Clouds · Portrait** is independently selectable and is now the default. The catalog contains 23 drawings across three collections. Existing saved artwork IDs remain valid.
+
+Selection checks confirm that image views and downloads match their cards, saved selections survive reloads, and all 23 entries are available. The gallery fits a 390px viewport without overflow. Old `sage` or `original` accent settings fall back to cloud blue; valid artwork selections are preserved.
+
+## Retained layout and ASCII treatment
+
+All twelve Latest entries form one left-hand column, now up to 680px wide instead of 557px. At 1440px, the full Dementor sentence fits on one line. Every entry uses a smaller title (16.96px at the default root size) and a separate category/date line (13.12px). All titles, dates, categories, and destinations are preserved. The homepage’s name, contact information, and biography keep their original centered, wide layout.
+
+Artwork extends vertically beside the list and reaches the right viewport edge. It is positioned independently so widening the text does not push the drawing farther away. Its empty paper can overlap the layout, while the existing sideways blend keeps the painted area beyond the text column. The three ASCII portraits have intact, uneven upper silhouettes and clear paper above them, so they do not use a CSS top fade. Clouds fills the extended column to the page bottom, with its final 80px blending into the background. Ginkgo and Tidal retain their complete portrait fit. Mobile uses a shorter scene around the Latest heading with a bottom blend, followed by the complete list at full reading width.
+
+**The three portrait studies use recognizable small ASCII characters to construct their forms.** The earlier HD portraits overcorrected into engraving and stipple. Clouds · Portrait uses `clouds-hd.png` as its sole editing reference to retain its ivory highlights and muted blue-green shadows. The pale transparent Clouds v2 and differently colored v3 remain archived and are not selected by the gallery.
+
+The three portrait images are **1173×1341 native pixels**. At the checked 1440px viewport, the extended Clouds drawing renders at approximately 942×1077 CSS pixels within an 804px-wide crop; Ginkgo and Tidal display at approximately 804×919. No enlargement beyond native size is needed. The original PNGs remain untouched. WebP delivery copies preserve native dimensions and use cwebp quality 92, with no resizing. Presentation normalizes the generated paper before blending, avoiding a rectangular tint in light or dark mode. These are not 4K assets.
+
+Default: **Clouds · Portrait / With the work / 100% / Cloud blue / Light**. All twenty landscape studies use their own sources, with family-specific crops. Opening scene, Closing scene, and Show original remain available as homepage comparisons.
+
+## New portrait assets and exact prompts
+
+Each pair below includes the untouched built-in imagegen result and the exact generation prompt, actual dimensions, and provenance. Each portrait has its own gallery card, download, and prompt link.
+
+- Clouds: [PNG](portraits/clouds-ascii-v4.png), [exact prompt and provenance](portraits/clouds-ascii-v4.json), [WebP](portraits/clouds-ascii-v4.webp). Selected as `clouds-portrait`.
+- Ginkgo: [PNG](portraits/ginkgo-ascii-v2.png), [exact prompt and provenance](portraits/ginkgo-ascii-v2.json), [WebP](portraits/ginkgo-ascii-v2.webp). Selected as `ginkgo-portrait`.
+- Tidal: [PNG](portraits/tidal-ascii-v2.png), [exact prompt and provenance](portraits/tidal-ascii-v2.json), [WebP](portraits/tidal-ascii-v2.webp). Selected as `tidal-portrait`.
+
+All three adopted assets were produced with the **built-in imagegen tool**, one call per saved version. Clouds had two earlier ASCII attempts before the reference edit. Exact prompts and provenance are also saved for those unused versions. No CLI generation, local upscaling, or repainting was used. Previous `*-hd` PNGs, prompts, and WebPs are retained.
+
+## Catalog and controls
+
+- `scenes.js`: twenty-three independent studies, responsive landscape assets, native portraits, and defaults.
+- Root PNG/JSON files: twelve earlier landscape artworks and their generation prompts.
+- `scenes/`: eight newer edge compositions and their prompts.
+- `web/`: landscape delivery images and thumbnails; asset manifests retain dimensions and provenance details.
+- `portraits/`: the three new native portraits, full-resolution WebPs, and exact prompts.
+- `index.html`, `gallery.css`, `gallery.js`: interactive comparison and three collections.
+- `site-preview.html` and five `preview-*.html` files: About, Work, Research, Archive, Writing, and BayLearn essay snapshots.
+- `site-preview.css`, `site-preview.js`: scoped visual treatment, the alternate Latest list, and preview navigation.
+- `revision-15/`: small secondary-page clouds, Golden hour light/dark comparisons, geometry and interaction checks.
+- `revision-14/`: white/black themes, blue clouds, extended homepage artwork, plain secondary pages, and browser checks. `revision-13/` through `revision-9/` retain the previous treatments.
+- `references-2026/`: six real website references. The user preferred Anthropic Research and Wafer.
+
+The page uses white or black, readable text, and neutral dates. Image edges blend into the page; dark mode uses subdued blue or bronze ink. Homepage strength and placement controls remain available. Cloud blue, Golden hour, or graphite accents can be compared on every page. Jump to artwork also reaches the closing fragment on secondary pages.
+
+## Saved comparisons, scope, and verification
+
+The URL hash stores artwork, placement, page, theme, accent, strength, width, and original comparison. `scene=9` remains the saved-state schema and restores valid settings; this revision preserves those comparisons. Older hashes retain valid artwork, page, theme, width, and accent while resetting to editorial, full strength, and original comparison off.
+
+The 天 navigation matches the original hover behavior on desktop, with a 150ms closing delay for crossing into its links. Clicking an already hover-open button keeps the links available. Touch taps and keyboard activation still toggle the menu; Escape closes it and restores focus when appropriate. Leaving the menu or clicking outside closes it. On mobile, the dropdown aligns with the button's right edge to stay inside the screen. Browser checks cover hover-to-link navigation, mouse leave, keyboard Enter/Tab/Escape, outside dismissal, touch toggle/navigation, and mobile bounds.
+
+The approved Golden hour design is deployed on the main site through `clouds.css`, `site.js`, and `photos/clouds-portrait.webp`. This gallery preserves the broader artwork collection and earlier comparisons independently. The user's requested biography wording is also applied to the root `index.html`. **The live visit counter is preserved.** The preview reads the same KVdb endpoint using GET and displays the current total; it never increments the count while trying variants. Production retains its existing PATCH `+1` behavior and accumulated count. The preview shows `offline` if the count is unavailable. Supported links stay among the six preview snapshots; other links open separately. Preview theme changes do not write localStorage.
+
+Earlier browser checks confirmed all twelve entries and metadata, eleven visible feature links, the original introduction geometry, Original comparison, saved-state migration, and all twenty artwork selections. Current portrait checks cover native sources, visible character detail, intact upper silhouettes, smaller titles, and desktop/mobile composition at 390/1000/1440 widths, with no text collision or document overflow. Dark-mode paper edges were checked and normalized. Live counter verification returned the existing total and recorded only GET requests from the preview.

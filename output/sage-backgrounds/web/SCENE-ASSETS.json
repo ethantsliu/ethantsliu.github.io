@@ -1,0 +1,435 @@
+{
+  "format": "webp",
+  "encoder": "cwebp 1.5.0",
+  "quality": 85,
+  "method": 6,
+  "resize": "cwebp -resize WIDTH 0; aspect ratio preserved; no upscaling",
+  "created_utc": "2026-09-08T16:39:06.528578+00:00",
+  "common_left_paper": {
+    "sampling": "Combined channel medians of leftmost 15% width, between 10% and 90% of source height; read-only source samples",
+    "median_rgb": [
+      246,
+      247,
+      243
+    ],
+    "median_hex": "#f6f7f3"
+  },
+  "assets": [
+    {
+      "id": "s1-clouds",
+      "source": {
+        "path": "scenes/s1-clouds.png",
+        "width": 1672,
+        "height": 941,
+        "bytes": 1790616,
+        "sha256": "85cdffc77a36529a138b20f6f12b4e1b8893b861a991faf283ea9376a95d3860"
+      },
+      "left_paper": {
+        "sample_rect_px": [
+          0,
+          94,
+          251,
+          847
+        ],
+        "median_rgb": [
+          246,
+          246,
+          243
+        ],
+        "median_hex": "#f6f6f3",
+        "mean_rgb": [
+          245.72,
+          246.31,
+          242.63
+        ]
+      },
+      "derivatives": {
+        "1600": {
+          "path": "web/s1-clouds-1600.webp",
+          "width": 1600,
+          "height": 901,
+          "bytes": 134354,
+          "quality": 85
+        },
+        "800": {
+          "path": "web/s1-clouds-800.webp",
+          "width": 800,
+          "height": 451,
+          "bytes": 41814,
+          "quality": 85
+        },
+        "thumb": {
+          "path": "web/s1-clouds-thumb.webp",
+          "width": 480,
+          "height": 271,
+          "bytes": 13894,
+          "quality": 85
+        }
+      }
+    },
+    {
+      "id": "s2-ridgelines",
+      "source": {
+        "path": "scenes/s2-ridgelines.png",
+        "width": 1672,
+        "height": 941,
+        "bytes": 2076996,
+        "sha256": "d6935dd1b0910e5801510edb919955736871c1c22a25d9efcf19653980900d44"
+      },
+      "left_paper": {
+        "sample_rect_px": [
+          0,
+          94,
+          251,
+          847
+        ],
+        "median_rgb": [
+          246,
+          246,
+          242
+        ],
+        "median_hex": "#f6f6f2",
+        "mean_rgb": [
+          245.68,
+          246.23,
+          241.64
+        ]
+      },
+      "derivatives": {
+        "1600": {
+          "path": "web/s2-ridgelines-1600.webp",
+          "width": 1600,
+          "height": 901,
+          "bytes": 197092,
+          "quality": 85
+        },
+        "800": {
+          "path": "web/s2-ridgelines-800.webp",
+          "width": 800,
+          "height": 451,
+          "bytes": 51076,
+          "quality": 85
+        },
+        "thumb": {
+          "path": "web/s2-ridgelines-thumb.webp",
+          "width": 480,
+          "height": 271,
+          "bytes": 15466,
+          "quality": 85
+        }
+      }
+    },
+    {
+      "id": "s3-tidal",
+      "source": {
+        "path": "scenes/s3-tidal.png",
+        "width": 1672,
+        "height": 941,
+        "bytes": 1704034,
+        "sha256": "da82a5d3d69602e75b41a996caf391a518e02402d0ac0af10e79288ddc80e5a1"
+      },
+      "left_paper": {
+        "sample_rect_px": [
+          0,
+          94,
+          251,
+          847
+        ],
+        "median_rgb": [
+          246,
+          247,
+          243
+        ],
+        "median_hex": "#f6f7f3",
+        "mean_rgb": [
+          246.3,
+          246.69,
+          242.76
+        ]
+      },
+      "derivatives": {
+        "1600": {
+          "path": "web/s3-tidal-1600.webp",
+          "width": 1600,
+          "height": 901,
+          "bytes": 116078,
+          "quality": 85
+        },
+        "800": {
+          "path": "web/s3-tidal-800.webp",
+          "width": 800,
+          "height": 451,
+          "bytes": 39320,
+          "quality": 85
+        },
+        "thumb": {
+          "path": "web/s3-tidal-thumb.webp",
+          "width": 480,
+          "height": 271,
+          "bytes": 14206,
+          "quality": 85
+        }
+      }
+    },
+    {
+      "id": "s4-ginkgo",
+      "source": {
+        "path": "scenes/s4-ginkgo.png",
+        "width": 1672,
+        "height": 941,
+        "bytes": 1755808,
+        "sha256": "7d1e4f344b7b804e61466f320e987769b927b0e25d665da61c94495684f05180"
+      },
+      "left_paper": {
+        "sample_rect_px": [
+          0,
+          94,
+          251,
+          847
+        ],
+        "median_rgb": [
+          246,
+          247,
+          244
+        ],
+        "median_hex": "#f6f7f4",
+        "mean_rgb": [
+          246.04,
+          246.96,
+          243.86
+        ]
+      },
+      "derivatives": {
+        "1600": {
+          "path": "web/s4-ginkgo-1600.webp",
+          "width": 1600,
+          "height": 901,
+          "bytes": 149548,
+          "quality": 85
+        },
+        "800": {
+          "path": "web/s4-ginkgo-800.webp",
+          "width": 800,
+          "height": 451,
+          "bytes": 42848,
+          "quality": 85
+        },
+        "thumb": {
+          "path": "web/s4-ginkgo-thumb.webp",
+          "width": 480,
+          "height": 271,
+          "bytes": 14256,
+          "quality": 85
+        }
+      }
+    },
+    {
+      "id": "s5-magnolia",
+      "source": {
+        "path": "scenes/s5-magnolia.png",
+        "width": 1672,
+        "height": 941,
+        "bytes": 1676076,
+        "sha256": "b1a23a87fb910ffee07c9d4c953a13d57c67baf62de371dff77da257185ad92d"
+      },
+      "left_paper": {
+        "sample_rect_px": [
+          0,
+          94,
+          251,
+          847
+        ],
+        "median_rgb": [
+          246,
+          247,
+          244
+        ],
+        "median_hex": "#f6f7f4",
+        "mean_rgb": [
+          246.3,
+          247.05,
+          244.0
+        ]
+      },
+      "derivatives": {
+        "1600": {
+          "path": "web/s5-magnolia-1600.webp",
+          "width": 1600,
+          "height": 901,
+          "bytes": 124870,
+          "quality": 85
+        },
+        "800": {
+          "path": "web/s5-magnolia-800.webp",
+          "width": 800,
+          "height": 451,
+          "bytes": 32864,
+          "quality": 85
+        },
+        "thumb": {
+          "path": "web/s5-magnolia-thumb.webp",
+          "width": 480,
+          "height": 271,
+          "bytes": 11306,
+          "quality": 85
+        }
+      }
+    },
+    {
+      "id": "s6-flow",
+      "source": {
+        "path": "scenes/s6-flow.png",
+        "width": 1672,
+        "height": 941,
+        "bytes": 1693451,
+        "sha256": "99afc545740bdea7422c6a7401d64d6f8ba58221a4224f574b81765bbc50f943"
+      },
+      "left_paper": {
+        "sample_rect_px": [
+          0,
+          94,
+          251,
+          847
+        ],
+        "median_rgb": [
+          247,
+          247,
+          243
+        ],
+        "median_hex": "#f7f7f3",
+        "mean_rgb": [
+          246.67,
+          246.63,
+          242.73
+        ]
+      },
+      "derivatives": {
+        "1600": {
+          "path": "web/s6-flow-1600.webp",
+          "width": 1600,
+          "height": 901,
+          "bytes": 115962,
+          "quality": 85
+        },
+        "800": {
+          "path": "web/s6-flow-800.webp",
+          "width": 800,
+          "height": 451,
+          "bytes": 37364,
+          "quality": 85
+        },
+        "thumb": {
+          "path": "web/s6-flow-thumb.webp",
+          "width": 480,
+          "height": 271,
+          "bytes": 12992,
+          "quality": 85
+        }
+      }
+    },
+    {
+      "id": "s7-dunes",
+      "source": {
+        "path": "scenes/s7-dunes.png",
+        "width": 1672,
+        "height": 941,
+        "bytes": 1542921,
+        "sha256": "f17a4aa86bf40b1f986dde464faa3e55027978836d8b50904f874d7a8b33ab74"
+      },
+      "left_paper": {
+        "sample_rect_px": [
+          0,
+          94,
+          251,
+          847
+        ],
+        "median_rgb": [
+          248,
+          248,
+          244
+        ],
+        "median_hex": "#f8f8f4",
+        "mean_rgb": [
+          247.65,
+          247.63,
+          243.57
+        ]
+      },
+      "derivatives": {
+        "1600": {
+          "path": "web/s7-dunes-1600.webp",
+          "width": 1600,
+          "height": 901,
+          "bytes": 120326,
+          "quality": 85
+        },
+        "800": {
+          "path": "web/s7-dunes-800.webp",
+          "width": 800,
+          "height": 451,
+          "bytes": 39300,
+          "quality": 85
+        },
+        "thumb": {
+          "path": "web/s7-dunes-thumb.webp",
+          "width": 480,
+          "height": 271,
+          "bytes": 12880,
+          "quality": 85
+        }
+      }
+    },
+    {
+      "id": "s8-orbits",
+      "source": {
+        "path": "scenes/s8-orbits.png",
+        "width": 1672,
+        "height": 941,
+        "bytes": 1280030,
+        "sha256": "854df092f049894558331b9bcc292e13ff3581662ae5da8284f4badb636898f0"
+      },
+      "left_paper": {
+        "sample_rect_px": [
+          0,
+          94,
+          251,
+          847
+        ],
+        "median_rgb": [
+          246,
+          247,
+          245
+        ],
+        "median_hex": "#f6f7f5",
+        "mean_rgb": [
+          246.45,
+          247.45,
+          244.67
+        ]
+      },
+      "derivatives": {
+        "1600": {
+          "path": "web/s8-orbits-1600.webp",
+          "width": 1600,
+          "height": 901,
+          "bytes": 74508,
+          "quality": 85
+        },
+        "800": {
+          "path": "web/s8-orbits-800.webp",
+          "width": 800,
+          "height": 451,
+          "bytes": 25388,
+          "quality": 85
+        },
+        "thumb": {
+          "path": "web/s8-orbits-thumb.webp",
+          "width": 480,
+          "height": 271,
+          "bytes": 9320,
+          "quality": 85
+        }
+      }
+    }
+  ]
+}

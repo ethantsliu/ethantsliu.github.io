@@ -1,0 +1,262 @@
+{
+  "headings": [
+    {
+      "tag": "H1",
+      "class": "hero-title v2-h1 max-w-[631px]",
+      "text": "Inference thatkeeps getting better",
+      "x": 488.84375,
+      "y": 216,
+      "w": 462.296875,
+      "h": 112,
+      "font": "\"DM Sans\", system-ui, sans-serif",
+      "size": "56px",
+      "lineHeight": "56px",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "tag": "H2",
+      "class": "v2-h2 max-w-[449px] text-white",
+      "text": "The inference your product actually needs",
+      "x": 89.5,
+      "y": 1335,
+      "w": 449,
+      "h": 76,
+      "font": "\"DM Sans\", system-ui, sans-serif",
+      "size": "36px",
+      "lineHeight": "38px",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "tag": "H2",
+      "class": "v2-h2 text-white",
+      "text": "Why across-the-stackoptimization matters",
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "font": "\"DM Sans\", system-ui, sans-serif",
+      "size": "36px",
+      "lineHeight": "38px",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "tag": "H2",
+      "class": "v2-h2 text-white",
+      "text": "Why across-the-stackoptimization matters",
+      "x": 88.5,
+      "y": 2534.859375,
+      "w": 1263,
+      "h": 76,
+      "font": "\"DM Sans\", system-ui, sans-serif",
+      "size": "36px",
+      "lineHeight": "38px",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "tag": "H2",
+      "class": "v2-h1 v2-h1--airy max-w-[631px]",
+      "text": "Find the fastest configurationfor your workload",
+      "x": 436.3125,
+      "y": 6031.265625,
+      "w": 567.375,
+      "h": 104,
+      "font": "\"DM Sans\", system-ui, sans-serif",
+      "size": "48px",
+      "lineHeight": "52px",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgba(0, 0, 0, 0)"
+    }
+  ],
+  "sections": [
+    {
+      "tag": "SECTION",
+      "class": "relative w-full overflow-hidden bg-[var(--v2-green)]",
+      "text": "ProductTechnologyCasesDedicatedCompanyTeamCareersManifestoBlog(function(){let e=document.querySelect",
+      "x": 0,
+      "y": 50,
+      "w": 1440,
+      "h": 1136,
+      "font": "\"Space Grotesk\", system-ui, sans-serif",
+      "size": "16px",
+      "lineHeight": "24px",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(149, 171, 167)"
+    },
+    {
+      "tag": "SECTION",
+      "class": "feature-grid px-[24px] pt-[52px] lg:px-[56px]",
+      "text": "400 TOK/STailored to your trafficYour real request mix — not a generic benchmark — drives batching, ",
+      "x": 33.5,
+      "y": 1471,
+      "w": 1373,
+      "h": 899.859375,
+      "font": "\"Space Grotesk\", system-ui, sans-serif",
+      "size": "16px",
+      "lineHeight": "24px",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "tag": "SECTION",
+      "class": "pinned",
+      "text": "Why across-the-stackoptimization mattersThe fastest setup is rarely a single switch. Kernel choices,",
+      "x": 33.5,
+      "y": 2451.859375,
+      "w": 1373,
+      "h": 2577.59375,
+      "font": "\"Space Grotesk\", system-ui, sans-serif",
+      "size": "16px",
+      "lineHeight": "24px",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "tag": "SECTION",
+      "class": "layers",
+      "text": "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+      "x": 88.5,
+      "y": 5165.453125,
+      "w": 1263,
+      "h": 679.8125,
+      "font": "\"Space Grotesk\", system-ui, sans-serif",
+      "size": "16px",
+      "lineHeight": "24px",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "tag": "SECTION",
+      "class": "cta relative overflow-hidden",
+      "text": "Your workload, optimizedFind the fastest configurationfor your workloadBring your model and real tra",
+      "x": 33.5,
+      "y": 5845.265625,
+      "w": 1373,
+      "h": 575,
+      "font": "\"Space Grotesk\", system-ui, sans-serif",
+      "size": "16px",
+      "lineHeight": "24px",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgba(0, 0, 0, 0)"
+    }
+  ],
+  "body": {
+    "tag": "BODY",
+    "class": "v2",
+    "text": "<iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-KRTWTM8P\" height=\"0\" width=\"0\" style=\"d",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 7182.84375,
+    "font": "\"Space Grotesk\", system-ui, sans-serif",
+    "size": "16px",
+    "lineHeight": "24px",
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgb(10, 10, 10)"
+  },
+  "images": [
+    {
+      "src": "https://www.wafer.ai/assets/v2/clouds@mid.webp",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/moon.svg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/arrow-external.svg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/arrow-external.svg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/moon.svg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/mark.svg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/moon.svg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/eyebrow-dot.svg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/quote-grid.svg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/testimonial-avatar.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/quote-grid.svg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/jared-friedman.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/quote-grid.svg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/ben-goldsmith.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/quote-grid.svg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/digitalocean-mark.svg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/chevron.svg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/chevron.svg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/quote-grid.svg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/testimonial-avatar.png",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/quote-grid.svg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/jared-friedman.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/quote-grid.svg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/ben-goldsmith.jpg",
+      "alt": ""
+    },
+    {
+      "src": "https://www.wafer.ai/assets/v2/quote-grid.svg",
+      "alt": ""
+    }
+  ]
+}

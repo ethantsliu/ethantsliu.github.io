@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head><base href="../../"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>Reflections on BayLearn | Ethan Liu</title>
+<link as="font" crossorigin="" href="fonts/cmunrm.woff2" rel="preload" type="font/woff2"/>
+<link href="style.css" rel="stylesheet"/>
+<link href="photos/favicon.png" rel="icon" type="image/png"/>
+<style>
+    .essay-container {
+      max-width: 720px;
+      margin: 2.5rem auto 3.5rem;
+      padding: 0 1.2rem;
+      text-align: left;
+    }
+
+    .essay-title {
+      font-size: 1.35rem;
+      font-family: var(--serif-stack);
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.35px;
+    }
+
+    .essay-meta {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 2.2rem;
+      font-family: var(--serif-stack);
+    }
+
+    .essay-content p {
+      margin-bottom: 1.5rem;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    .essay-content .note {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--muted);
+      text-decoration: underline;
+    }
+  </style>
+<link href="output/sage-backgrounds/site-preview.css" rel="stylesheet"/></head>
+<body class="sage-preview" data-placement="opening" data-pond="off" data-preview-page="essay"><div aria-hidden="true" class="sage-scene"></div>
+<div class="page-wrapper">
+<header class="header-container">
+<div class="header-top">
+<button aria-label="Switch to dark theme" class="theme-toggle" id="themeToggle" type="button">
+<svg class="sun-icon" fill="none" height="20" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"></circle>
+<line stroke="currentColor" stroke-width="2" x1="12" x2="12" y1="1" y2="3"></line>
+<line stroke="currentColor" stroke-width="2" x1="12" x2="12" y1="21" y2="23"></line>
+<line stroke="currentColor" stroke-width="2" x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line stroke="currentColor" stroke-width="2" x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line stroke="currentColor" stroke-width="2" x1="1" x2="3" y1="12" y2="12"></line>
+<line stroke="currentColor" stroke-width="2" x1="21" x2="23" y1="12" y2="12"></line>
+<line stroke="currentColor" stroke-width="2" x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line stroke="currentColor" stroke-width="2" x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+<svg class="moon-icon" fill="none" height="20" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</button>
+<div class="dropdown" id="dropdown">
+<button aria-controls="dropdownContent" aria-expanded="false" class="dropdown-btn" id="dropdownBtn" type="button">天</button>
+<div class="dropdown-content" id="dropdownContent">
+<a href="/">about</a>
+<a href="work">work</a>
+<a href="research">research</a>
+<a href="archive">archive</a>
+<a href="writing" style="color: var(--accent); text-decoration: underline;">writing</a>
+</div>
+</div>
+</div>
+</header>
+<div class="main-content">
+<div class="essay-container">
+<a class="back-link" href="writing">← back to writing</a>
+<h1 class="essay-title">Reflections on BayLearn</h1>
+<div class="essay-meta">Ethan TS. Liu | November 10, 2025</div>
+<div class="essay-content">
+<p>
+          First of all, I want to thank everyone who attended our presentation at BayLearn. It was a great experience to share my work with such a talented audience. In particular, I want to thank my mentor, Lisa Dunlap, for her guidance and support, as well as the other members of my research group, David Chan, Anya Ji, and Naz Col, for their work on this project, and for entrusting me with the task of presenting it.
+        </p>
+<p>The hosts, Santa Clara University and UC Santa Cruz, did an amazing job setting up the venue. The food was great, and the talks were quite interesting. Being a one-day conference, the format was alternating between keynotes and oral presentations, and finally the poster session near the end.</p>
+<p>Attending a conference for the first time is a pretty surreal experience. Suddenly you're in a new world, surrounded by people who are just as excited about the same things you are. The exchange of ideas and knowledge is just amazing. Professors, industry professionals, and students were attending from all across the Bay Area, and even further. It was a humbling experience to see the level of research being done in the field, and to see the talent of the students and professors alike. </p>
+<p>As an undergrad who hadn't attended a conference before, I was a bit nervous about presenting our work. Tack on the fact that I hadn't presented anything since senior year of high school, and I was a bit more nervous to stack up to the quality of the previous presentations by PhD students and professors.</p>
+<p>My presentation was the last one of the day, so I was concerned about running out of time. From the morning all the way up until my presentation, I felt a bit of anxiety that ebbed and flowed. Sometimes I forgot about it, and other times it would come back and surge in. I don't exactly know how large the conference room was, but you can imagine something like rows and rows of seats, filled with eager faces awaiting your presentation. How can you possibly let them down?</p>
+<p>However, once I stepped on stage, all of these uncertain feelings naturally fell away. Like always, I think chewing gum before the presentation might have helped me a bit. Other than that, I can't explain why this kind of phenomenon happens, but I'm definitely grateful for it.</p>
+<p>After the presentation, we transitioned into the poster session. Our group had a bit of miscommunication, so we weren't able to prepare a poster. Instead, I decided to wander around, and I ended up talking to various different people about their research. Several of them recognized me from my presentation. In my opinion, there's this energy that perpetrates and hovesr throughout the poster session in particular that can't be found in the rest of the conference. Everywhere there are curious faces listening to people who want to share their work. I mean one of the key qualities of a poster is that most of them are far too dense for someone to read on their own; if you tried reading it without talking to the person who made it, it would be most akin to reading a dense blog. Instead, it's much better to speak to the person who made it. If you don't have any specific questions yet, just ask them to summarize it, and they'll be more than happy to do so!</p>
+<p>Attending BayLearn was a great experience. I met many new people, and learned a lot about the current state of the field. I'm looking forward to attending more conferences in the future! If you haven't done so, I highly recommend attending a conference in your field of study at least once during your academic career. If you're an undergrad, it's a great way to network with professors and industry professionals, and to get a sense of what the field is like.</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<script src="output/sage-backgrounds/scenes.js"></script>
+<script src="output/sage-backgrounds/site-preview.js"></script></body>
+</html>

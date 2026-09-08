@@ -1,0 +1,31 @@
+{
+  "title": "Tidal — portrait with fine engraved texture",
+  "file": "tidal-hd.png",
+  "revision": 9,
+  "tool": "built-in image_gen.imagegen",
+  "mode": "generate",
+  "source_path": "/Users/EthanLiu/.codex/generated_images/01a07fb3-83fb-7351-8d16-bed852ad08c4/exec-2b7f3bea-c585-489b-8145-978d7a4989cb.png",
+  "source_role": "Untouched native PNG copied into workspace; no local enlargement, repainting, cropping, or re-encoding",
+  "reference_path": "output/sage-backgrounds/02-tidal.png",
+  "reference_role": "Inspected as a visual style reference only; not submitted as an edit target",
+  "prompt": "Use case: stylized-concept.\nAsset type: brand-new high-definition PORTRAIT illustration, vertical 2:3 aspect ratio, intended to be displayed IN FULL as a 600 by 900 CSS-pixel right-side column on a minimalist website. Compose the entire picture specifically for this tall format, with gracefully scaled complete forms. Generate at the highest native portrait resolution available, preferably 2048 by 3072 pixels, otherwise 1536 by 2304 pixels. Fine native detail is essential.\nSubject and composition: flowing overlapping tidal currents and shallow-water ripples in sage and ivory. A narrow luminous cream horizon sits near the upper 20 percent of the image; layered water occupies most of the remaining vertical composition, its fine long curved crests interweaving in an elegant rhythmic pattern. Moderately sized flowing forms should read together as a complete tidal landscape when the whole tall image is seen, not as a magnified close crop. The scene naturally continues beyond the right edge. Reserve a near-white neutral-paper region, color #f7f7f3, along the leftmost 15 to 20 percent, tapering into the waves with progressively sparse engraved marks and naturally irregular contours. Give the lower edge a little quiet paper breathing space through organic thinning of marks, with NO hard horizontal cutoff or pasted-panel edge.\nColor and lighting: refined muted sage, celadon, deeper dark sage marks, ivory, tiny luminous cream ripple crests. Warm restrained light, crisp and clear, never foggy. Keep paper neutral and near-white where water is absent.\nStyle and texture: exceptionally fine, SHARP engraved grain, tiny precise stippling, slender etched wave contours and dense delicate hatch-work. The mood is organic computational printmaking, but the texture must be miniature and high-definition: NOT coarse terminal glyphs, NOT blocky dots, NOT pixel art, NOT enlarged low-resolution texture. Clearly resolved tiny marks with clean edges, rich dark sage detail and controlled highlights, no blur or soft-focus.\nConstraints: original portrait composition generated from scratch; no upscaling, no magnified landscape crop, no frame, no border, no oval, no vignette mask, no clouds, no sun disk, no text, no letters, no numerals, no watermark, no logo, no UI. Deliver one native high-resolution 2:3 vertical image.",
+  "requested_dimensions": {
+    "preferred": {
+      "width": 2048,
+      "height": 3072
+    },
+    "alternate": {
+      "width": 1536,
+      "height": 2304
+    },
+    "aspect_ratio": "2:3"
+  },
+  "actual_dimensions": {
+    "width": 1024,
+    "height": 1536
+  },
+  "color_mode": "RGB",
+  "bytes": 3443554,
+  "sha256": "1b494085b739381c85761e743c5ecb4d1b1694f1e16184d5d72945d48a0a7866",
+  "assessment": "Native 2:3 portrait with crisp fine etched tidal lines, sage waves and cream glints, naturally irregular left paper edge and lower shoreline breathing space. No frame or oval. Water occupies most of the portrait; the luminous horizon is nearer 10% down than the requested 20%. Left margin broadens downward and is narrower than 15% near the upper horizon. Tool returned 1024×1536 despite requesting a larger native resolution; preserved as returned. At a complete 600×900 CSS display, this provides approximately 1.71 source pixels per CSS pixel."
+}

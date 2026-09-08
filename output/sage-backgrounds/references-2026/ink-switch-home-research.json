@@ -1,0 +1,459 @@
+{
+  "title": "Ink & Switch",
+  "url": "https://www.inkandswitch.com/",
+  "headings": [
+    {
+      "text": "An independent research lab exploring the future of tools for thought.",
+      "rect": {
+        "x": 256,
+        "y": 104.78125,
+        "width": 928,
+        "height": 96,
+        "top": 104.78125,
+        "right": 1184,
+        "bottom": 200.78125,
+        "left": 256
+      }
+    },
+    {
+      "text": "Research Areas",
+      "rect": {
+        "x": 256,
+        "y": 336.78125,
+        "width": 928,
+        "height": 36,
+        "top": 336.78125,
+        "right": 1184,
+        "bottom": 372.78125,
+        "left": 256
+      }
+    },
+    {
+      "text": "Local-first Software",
+      "rect": {
+        "x": 357,
+        "y": 476.78125,
+        "width": 427,
+        "height": 24,
+        "top": 476.78125,
+        "right": 784,
+        "bottom": 500.78125,
+        "left": 357
+      }
+    },
+    {
+      "text": "Malleable Software",
+      "rect": {
+        "x": 357,
+        "y": 592.78125,
+        "width": 427,
+        "height": 24,
+        "top": 592.78125,
+        "right": 784,
+        "bottom": 616.78125,
+        "left": 357
+      }
+    },
+    {
+      "text": "Programmable Ink",
+      "rect": {
+        "x": 357,
+        "y": 720.78125,
+        "width": 427,
+        "height": 24,
+        "top": 720.78125,
+        "right": 784,
+        "bottom": 744.78125,
+        "left": 357
+      }
+    },
+    {
+      "text": "Universal Version Control",
+      "rect": {
+        "x": 357,
+        "y": 848.78125,
+        "width": 427,
+        "height": 24,
+        "top": 848.78125,
+        "right": 784,
+        "bottom": 872.78125,
+        "left": 357
+      }
+    },
+    {
+      "text": "Featured Work",
+      "rect": {
+        "x": 256,
+        "y": 996.78125,
+        "width": 928,
+        "height": 36,
+        "top": 996.78125,
+        "right": 1184,
+        "bottom": 1032.78125,
+        "left": 256
+      }
+    },
+    {
+      "text": "Malleable Software",
+      "rect": {
+        "x": 256,
+        "y": 1176.78125,
+        "width": 528,
+        "height": 24,
+        "top": 1176.78125,
+        "right": 784,
+        "bottom": 1200.78125,
+        "left": 256
+      }
+    },
+    {
+      "text": "\n        Ambsheets: Spreadsheets for exploring scenarios\n      ",
+      "rect": {
+        "x": 256,
+        "y": 1275.171875,
+        "width": 528,
+        "height": 24,
+        "top": 1275.171875,
+        "right": 784,
+        "bottom": 1299.171875,
+        "left": 256
+      }
+    },
+    {
+      "text": "Keyhive: Local-first access control",
+      "rect": {
+        "x": 256,
+        "y": 1395.5625,
+        "width": 528,
+        "height": 24,
+        "top": 1395.5625,
+        "right": 784,
+        "bottom": 1419.5625,
+        "left": 256
+      }
+    },
+    {
+      "text": "Patchwork: Local-first malleable software",
+      "rect": {
+        "x": 256,
+        "y": 1515.953125,
+        "width": 528,
+        "height": 24,
+        "top": 1515.953125,
+        "right": 784,
+        "bottom": 1539.953125,
+        "left": 256
+      }
+    },
+    {
+      "text": "Livelymerge: Toward a collaborative programming kernel",
+      "rect": {
+        "x": 256,
+        "y": 1614.34375,
+        "width": 528,
+        "height": 24,
+        "top": 1614.34375,
+        "right": 784,
+        "bottom": 1638.34375,
+        "left": 256
+      }
+    }
+  ],
+  "images": [
+    {
+      "alt": "Ink & Switch",
+      "src": "https://www.inkandswitch.com/static/logo/logo.svg",
+      "rect": {
+        "x": 169.609375,
+        "y": -1.125,
+        "width": 327.828125,
+        "height": 104.9375,
+        "top": -1.125,
+        "right": 497.4375,
+        "bottom": 103.8125,
+        "left": 169.609375
+      }
+    },
+    {
+      "alt": "",
+      "src": "https://www.inkandswitch.com/static/logo/local-first-software--drawn.svg",
+      "rect": {
+        "x": 245,
+        "y": 460.78125,
+        "width": 104,
+        "height": 104,
+        "top": 460.78125,
+        "right": 349,
+        "bottom": 564.78125,
+        "left": 245
+      }
+    },
+    {
+      "alt": "",
+      "src": "https://www.inkandswitch.com/static/logo/malleable-software--drawn.svg",
+      "rect": {
+        "x": 245,
+        "y": 588.78125,
+        "width": 104,
+        "height": 104,
+        "top": 588.78125,
+        "right": 349,
+        "bottom": 692.78125,
+        "left": 245
+      }
+    },
+    {
+      "alt": "",
+      "src": "https://www.inkandswitch.com/static/logo/programmable-ink--drawn.svg",
+      "rect": {
+        "x": 245,
+        "y": 716.78125,
+        "width": 104,
+        "height": 104,
+        "top": 716.78125,
+        "right": 349,
+        "bottom": 820.78125,
+        "left": 245
+      }
+    },
+    {
+      "alt": "",
+      "src": "https://www.inkandswitch.com/static/logo/universal-version-control--drawn.svg",
+      "rect": {
+        "x": 245,
+        "y": 844.78125,
+        "width": 104,
+        "height": 104,
+        "top": 844.78125,
+        "right": 349,
+        "bottom": 948.78125,
+        "left": 245
+      }
+    },
+    {
+      "alt": "",
+      "src": "https://www.inkandswitch.com/static/logo/malleable-software-small.svg",
+      "rect": {
+        "x": 256,
+        "y": 1227.171875,
+        "width": 24,
+        "height": 24,
+        "top": 1227.171875,
+        "right": 280,
+        "bottom": 1251.171875,
+        "left": 256
+      }
+    },
+    {
+      "alt": "",
+      "src": "https://www.inkandswitch.com/static/logo/malleable-software-small.svg",
+      "rect": {
+        "x": 256,
+        "y": 1347.5625,
+        "width": 24,
+        "height": 24,
+        "top": 1347.5625,
+        "right": 280,
+        "bottom": 1371.5625,
+        "left": 256
+      }
+    },
+    {
+      "alt": "",
+      "src": "https://www.inkandswitch.com/static/logo/local-first-software-small.svg",
+      "rect": {
+        "x": 256,
+        "y": 1467.953125,
+        "width": 24,
+        "height": 24,
+        "top": 1467.953125,
+        "right": 280,
+        "bottom": 1491.953125,
+        "left": 256
+      }
+    },
+    {
+      "alt": "",
+      "src": "https://www.inkandswitch.com/static/logo/universal-version-control-small.svg",
+      "rect": {
+        "x": 256,
+        "y": 1566.34375,
+        "width": 24,
+        "height": 24,
+        "top": 1566.34375,
+        "right": 280,
+        "bottom": 1590.34375,
+        "left": 256
+      }
+    },
+    {
+      "alt": "",
+      "src": "https://www.inkandswitch.com/static/logo/malleable-software-small.svg",
+      "rect": {
+        "x": 286.90625,
+        "y": 1566.34375,
+        "width": 24,
+        "height": 24,
+        "top": 1566.34375,
+        "right": 310.90625,
+        "bottom": 1590.34375,
+        "left": 286.90625
+      }
+    },
+    {
+      "alt": "",
+      "src": "https://www.inkandswitch.com/static/logo/local-first-software-small.svg",
+      "rect": {
+        "x": 317.8125,
+        "y": 1566.34375,
+        "width": 24,
+        "height": 24,
+        "top": 1566.34375,
+        "right": 341.8125,
+        "bottom": 1590.34375,
+        "left": 317.8125
+      }
+    },
+    {
+      "alt": "",
+      "src": "https://www.inkandswitch.com/static/logo/malleable-software-small.svg",
+      "rect": {
+        "x": 256,
+        "y": 1686.734375,
+        "width": 24,
+        "height": 24,
+        "top": 1686.734375,
+        "right": 280,
+        "bottom": 1710.734375,
+        "left": 256
+      }
+    },
+    {
+      "alt": "",
+      "src": "https://www.inkandswitch.com/static/logo/local-first-software-small.svg",
+      "rect": {
+        "x": 286.90625,
+        "y": 1686.734375,
+        "width": 24,
+        "height": 24,
+        "top": 1686.734375,
+        "right": 310.90625,
+        "bottom": 1710.734375,
+        "left": 286.90625
+      }
+    },
+    {
+      "alt": "",
+      "src": "https://www.inkandswitch.com/static/logo/malleable-software-small.svg",
+      "rect": {
+        "x": 256,
+        "y": 1807.125,
+        "width": 24,
+        "height": 24,
+        "top": 1807.125,
+        "right": 280,
+        "bottom": 1831.125,
+        "left": 256
+      }
+    },
+    {
+      "alt": "",
+      "src": "https://www.inkandswitch.com/static/logo/programmable-ink-small.svg",
+      "rect": {
+        "x": 256,
+        "y": 1927.515625,
+        "width": 24,
+        "height": 24,
+        "top": 1927.515625,
+        "right": 280,
+        "bottom": 1951.515625,
+        "left": 256
+      }
+    },
+    {
+      "alt": "",
+      "src": "https://www.inkandswitch.com/static/logo/local-first-software-small.svg",
+      "rect": {
+        "x": 256,
+        "y": 2047.90625,
+        "width": 24,
+        "height": 24,
+        "top": 2047.90625,
+        "right": 280,
+        "bottom": 2071.90625,
+        "left": 256
+      }
+    },
+    {
+      "alt": "",
+      "src": "https://www.inkandswitch.com/static/logo/allume.svg",
+      "rect": {
+        "x": 256,
+        "y": 2227.90625,
+        "width": 42,
+        "height": 40,
+        "top": 2227.90625,
+        "right": 298,
+        "bottom": 2267.90625,
+        "left": 256
+      }
+    },
+    {
+      "alt": "",
+      "src": "https://www.inkandswitch.com/static/logo/automerge.svg",
+      "rect": {
+        "x": 576,
+        "y": 2227.90625,
+        "width": 42,
+        "height": 40,
+        "top": 2227.90625,
+        "right": 618,
+        "bottom": 2267.90625,
+        "left": 576
+      }
+    },
+    {
+      "alt": "",
+      "src": "https://www.inkandswitch.com/static/logo/supporters.svg",
+      "rect": {
+        "x": 256,
+        "y": 2575.90625,
+        "width": 42,
+        "height": 44,
+        "top": 2575.90625,
+        "right": 298,
+        "bottom": 2619.90625,
+        "left": 256
+      }
+    },
+    {
+      "alt": "",
+      "src": "https://www.inkandswitch.com/static/logo/local-first-software-small.svg",
+      "rect": {
+        "x": 256,
+        "y": 3105.90625,
+        "width": 24,
+        "height": 24,
+        "top": 3105.90625,
+        "right": 280,
+        "bottom": 3129.90625,
+        "left": 256
+      }
+    }
+  ],
+  "bodyBackground": "rgba(0, 0, 0, 0)",
+  "links": [
+    {
+      "text": "Local-first Software",
+      "href": "https://www.inkandswitch.com/local-first-software"
+    },
+    {
+      "text": "Local-first software",
+      "href": "https://www.inkandswitch.com/essay/local-first"
+    },
+    {
+      "text": "Local-first Software",
+      "href": "https://www.inkandswitch.com/local-first-software"
+    }
+  ]
+}

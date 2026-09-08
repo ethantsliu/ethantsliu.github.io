@@ -1,0 +1,481 @@
+{
+  "title": "Local-first software: You own your data, in spite of the cloud",
+  "url": "https://www.inkandswitch.com/essay/local-first/",
+  "headings": [
+    {
+      "text": "Local-first software",
+      "rect": {
+        "x": 288,
+        "y": 70.390625,
+        "width": 864,
+        "height": 40,
+        "top": 70.390625,
+        "right": 1152,
+        "bottom": 110.390625,
+        "left": 288
+      }
+    },
+    {
+      "text": "You own your data, in spite of the cloud",
+      "rect": {
+        "x": 288,
+        "y": 118.390625,
+        "width": 864,
+        "height": 32,
+        "top": 118.390625,
+        "right": 1152,
+        "bottom": 150.390625,
+        "left": 288
+      }
+    },
+    {
+      "text": "Contents",
+      "rect": {
+        "x": 272,
+        "y": 1086.390625,
+        "width": 896,
+        "height": 32,
+        "top": 1086.390625,
+        "right": 1168,
+        "bottom": 1118.390625,
+        "left": 272
+      }
+    },
+    {
+      "text": "Motivation: collaboration and ownership",
+      "rect": {
+        "x": 288,
+        "y": 1134.390625,
+        "width": 632,
+        "height": 28,
+        "top": 1134.390625,
+        "right": 920,
+        "bottom": 1162.390625,
+        "left": 288
+      }
+    },
+    {
+      "text": "Seven ideals for local-first software",
+      "rect": {
+        "x": 288,
+        "y": 1194.390625,
+        "width": 632,
+        "height": 28,
+        "top": 1194.390625,
+        "right": 920,
+        "bottom": 1222.390625,
+        "left": 288
+      }
+    },
+    {
+      "text": "Existing data storage and sharing models",
+      "rect": {
+        "x": 288,
+        "y": 1422.390625,
+        "width": 632,
+        "height": 28,
+        "top": 1422.390625,
+        "right": 920,
+        "bottom": 1450.390625,
+        "left": 288
+      }
+    },
+    {
+      "text": "Towards a better future",
+      "rect": {
+        "x": 288,
+        "y": 1530.390625,
+        "width": 632,
+        "height": 28,
+        "top": 1530.390625,
+        "right": 920,
+        "bottom": 1558.390625,
+        "left": 288
+      }
+    },
+    {
+      "text": "Conclusions",
+      "rect": {
+        "x": 288,
+        "y": 1662.390625,
+        "width": 632,
+        "height": 28,
+        "top": 1662.390625,
+        "right": 920,
+        "bottom": 1690.390625,
+        "left": 288
+      }
+    },
+    {
+      "text": "Motivation: collaboration and ownership",
+      "rect": {
+        "x": 288,
+        "y": 1810.390625,
+        "width": 864,
+        "height": 32,
+        "top": 1810.390625,
+        "right": 1152,
+        "bottom": 1842.390625,
+        "left": 288
+      }
+    },
+    {
+      "text": "Seven ideals for local-first software",
+      "rect": {
+        "x": 288,
+        "y": 3402.390625,
+        "width": 864,
+        "height": 32,
+        "top": 3402.390625,
+        "right": 1152,
+        "bottom": 3434.390625,
+        "left": 288
+      }
+    },
+    {
+      "text": "1. No spinners: your work at your fingertips",
+      "rect": {
+        "x": 288,
+        "y": 3938.390625,
+        "width": 864,
+        "height": 28,
+        "top": 3938.390625,
+        "right": 1152,
+        "bottom": 3966.390625,
+        "left": 288
+      }
+    },
+    {
+      "text": "2. Your work is not trapped on one device",
+      "rect": {
+        "x": 288,
+        "y": 4809.375,
+        "width": 864,
+        "height": 28,
+        "top": 4809.375,
+        "right": 1152,
+        "bottom": 4837.375,
+        "left": 288
+      }
+    }
+  ],
+  "images": [
+    {
+      "alt": "",
+      "src": "https://www.inkandswitch.com/static/logo-lockup.svg",
+      "rect": {
+        "x": 941.609375,
+        "y": 126.390625,
+        "width": 168,
+        "height": 57.90625,
+        "top": 126.390625,
+        "right": 1109.609375,
+        "bottom": 184.296875,
+        "left": 941.609375
+      }
+    },
+    {
+      "alt": "Server-to-server round-trip times between various locations worldwide",
+      "src": "https://www.inkandswitch.com/essay/local-first/world-ping-times.png",
+      "rect": {
+        "x": 288,
+        "y": 4126.390625,
+        "width": 615.953125,
+        "height": 260.984375,
+        "top": 4126.390625,
+        "right": 903.953125,
+        "bottom": 4387.375,
+        "left": 288
+      }
+    },
+    {
+      "alt": "Finder window showing conflicted files in Dropbox",
+      "src": "https://www.inkandswitch.com/essay/local-first/dropbox-conflict.png",
+      "rect": {
+        "x": 288,
+        "y": 6205.375,
+        "width": 615.96875,
+        "height": 389.390625,
+        "top": 6205.375,
+        "right": 903.96875,
+        "bottom": 6594.765625,
+        "left": 288
+      }
+    },
+    {
+      "alt": "A note with conflicting edits in Evernote",
+      "src": "https://www.inkandswitch.com/essay/local-first/evernote-conflict.png",
+      "rect": {
+        "x": 288,
+        "y": 6624.765625,
+        "width": 615.96875,
+        "height": 261.046875,
+        "top": 6624.765625,
+        "right": 903.96875,
+        "bottom": 6885.8125,
+        "left": 288
+      }
+    },
+    {
+      "alt": "Resolving a Git merge conflict with DiffMerge",
+      "src": "https://www.inkandswitch.com/essay/local-first/merge-conflict.png",
+      "rect": {
+        "x": 288,
+        "y": 6915.8125,
+        "width": 615.984375,
+        "height": 384.71875,
+        "top": 6915.8125,
+        "right": 903.984375,
+        "bottom": 7300.53125,
+        "left": 288
+      }
+    },
+    {
+      "alt": "Suggesting changes in Google Docs",
+      "src": "https://www.inkandswitch.com/essay/local-first/suggest-changes.png",
+      "rect": {
+        "x": 288,
+        "y": 7762.53125,
+        "width": 615.96875,
+        "height": 411.140625,
+        "top": 7762.53125,
+        "right": 903.96875,
+        "bottom": 8173.671875,
+        "left": 288
+      }
+    },
+    {
+      "alt": "A pull request on GitHub",
+      "src": "https://www.inkandswitch.com/essay/local-first/pull-request.png",
+      "rect": {
+        "x": 288,
+        "y": 8203.671875,
+        "width": 615.96875,
+        "height": 420.3125,
+        "top": 8203.671875,
+        "right": 903.96875,
+        "bottom": 8623.984375,
+        "left": 288
+      }
+    },
+    {
+      "alt": "Cuneiform script on clay tablet, ca. 3000 BCE",
+      "src": "https://www.inkandswitch.com/essay/local-first/cuneiform.jpg",
+      "rect": {
+        "x": 288,
+        "y": 8825.984375,
+        "width": 602,
+        "height": 462,
+        "top": 8825.984375,
+        "right": 890,
+        "bottom": 9287.984375,
+        "left": 288
+      }
+    },
+    {
+      "alt": "Offline indicator in Google Docs",
+      "src": "https://www.inkandswitch.com/essay/local-first/gdocs-offline.png",
+      "rect": {
+        "x": 288,
+        "y": 14003.984375,
+        "width": 615.953125,
+        "height": 214.734375,
+        "top": 14003.984375,
+        "right": 903.953125,
+        "bottom": 14218.71875,
+        "left": 288
+      }
+    },
+    {
+      "alt": "A negative user review of the Google Docs offline extension",
+      "src": "https://www.inkandswitch.com/essay/local-first/gdocs-extension.png",
+      "rect": {
+        "x": 288,
+        "y": 14392.71875,
+        "width": 615.953125,
+        "height": 112.390625,
+        "top": 14392.71875,
+        "right": 903.953125,
+        "bottom": 14505.109375,
+        "left": 288
+      }
+    },
+    {
+      "alt": "Offline error message in Figma",
+      "src": "https://www.inkandswitch.com/essay/local-first/figma-offline.png",
+      "rect": {
+        "x": 288,
+        "y": 14679.109375,
+        "width": 615.984375,
+        "height": 417.703125,
+        "top": 14679.109375,
+        "right": 903.984375,
+        "bottom": 15096.8125,
+        "left": 288
+      }
+    },
+    {
+      "alt": "The Dropbox mobile app showing a spinner while waiting to download a file",
+      "src": "https://www.inkandswitch.com/essay/local-first/dropbox-mobile.jpg",
+      "rect": {
+        "x": 288,
+        "y": 15824.8125,
+        "width": 616,
+        "height": 462.5,
+        "top": 15824.8125,
+        "right": 904,
+        "bottom": 16287.3125,
+        "left": 288
+      }
+    },
+    {
+      "alt": "The Firebase console, where data can be viewed and edited",
+      "src": "https://www.inkandswitch.com/essay/local-first/firebase-console.png",
+      "rect": {
+        "x": 288,
+        "y": 20009.3125,
+        "width": 615.953125,
+        "height": 299.375,
+        "top": 20009.3125,
+        "right": 903.953125,
+        "bottom": 20308.6875,
+        "left": 288
+      }
+    },
+    {
+      "alt": "The preferences dialog of Ulysses, with the iCloud option checked",
+      "src": "https://www.inkandswitch.com/essay/local-first/ulysses-sync.png",
+      "rect": {
+        "x": 288,
+        "y": 20506.6875,
+        "width": 615.96875,
+        "height": 370.234375,
+        "top": 20506.6875,
+        "right": 903.96875,
+        "bottom": 20876.921875,
+        "left": 288
+      }
+    },
+    {
+      "alt": "",
+      "src": "https://www.inkandswitch.com/essay/local-first/crdt-example.png",
+      "rect": {
+        "x": 288,
+        "y": 22796.921875,
+        "width": 615.96875,
+        "height": 245.234375,
+        "top": 22796.921875,
+        "right": 903.96875,
+        "bottom": 23042.15625,
+        "left": 288
+      }
+    },
+    {
+      "alt": "Screenshot of Trellis, a clone of Trello",
+      "src": "https://www.inkandswitch.com/essay/local-first/trellis.png",
+      "rect": {
+        "x": 288,
+        "y": 25186.15625,
+        "width": 615.96875,
+        "height": 305.71875,
+        "top": 25186.15625,
+        "right": 903.96875,
+        "bottom": 25491.875,
+        "left": 288
+      }
+    },
+    {
+      "alt": "Screenshot of the Pixelpusher user interface",
+      "src": "https://www.inkandswitch.com/essay/local-first/pixelpusher.png",
+      "rect": {
+        "x": 288,
+        "y": 25903.875,
+        "width": 615.984375,
+        "height": 428.578125,
+        "top": 25903.875,
+        "right": 903.984375,
+        "bottom": 26332.453125,
+        "left": 288
+      }
+    },
+    {
+      "alt": "Screenshot of PushPin, showing images and text cards on a canvas",
+      "src": "https://www.inkandswitch.com/essay/local-first/pushpin.jpg",
+      "rect": {
+        "x": 288,
+        "y": 26720.453125,
+        "width": 615.984375,
+        "height": 403.390625,
+        "top": 26720.453125,
+        "right": 903.984375,
+        "bottom": 27123.84375,
+        "left": 288
+      }
+    },
+    {
+      "alt": "Example Git commit history as visualized by GitX",
+      "src": "https://www.inkandswitch.com/essay/local-first/git-history.png",
+      "rect": {
+        "x": 288,
+        "y": 33367.84375,
+        "width": 615.953125,
+        "height": 249.28125,
+        "top": 33367.84375,
+        "right": 903.953125,
+        "bottom": 33617.125,
+        "left": 288
+      }
+    }
+  ],
+  "bodyBackground": "rgb(252, 252, 252)",
+  "links": [
+    {
+      "text": "in PDF format",
+      "href": "https://www.inkandswitch.com/essay/local-first/local-first.pdf"
+    },
+    {
+      "text": "Motivation: collaboration and ownership",
+      "href": "https://www.inkandswitch.com/essay/local-first/#motivation-collaboration-and-ownership"
+    },
+    {
+      "text": "Seven ideals for local-first software",
+      "href": "https://www.inkandswitch.com/essay/local-first/#seven-ideals-for-local-first-software"
+    },
+    {
+      "text": "1. No spinners: your work at your fingertips",
+      "href": "https://www.inkandswitch.com/essay/local-first/#1-no-spinners-your-work-at-your-fingertips"
+    },
+    {
+      "text": "2. Your work is not trapped on one device",
+      "href": "https://www.inkandswitch.com/essay/local-first/#2-your-work-is-not-trapped-on-one-device"
+    },
+    {
+      "text": "3. The network is optional",
+      "href": "https://www.inkandswitch.com/essay/local-first/#3-the-network-is-optional"
+    },
+    {
+      "text": "4. Seamless collaboration with your colleagues",
+      "href": "https://www.inkandswitch.com/essay/local-first/#4-seamless-collaboration-with-your-colleagues"
+    },
+    {
+      "text": "5. The Long Now",
+      "href": "https://www.inkandswitch.com/essay/local-first/#5-the-long-now"
+    },
+    {
+      "text": "6. Security and privacy by default",
+      "href": "https://www.inkandswitch.com/essay/local-first/#6-security-and-privacy-by-default"
+    },
+    {
+      "text": "7. You retain ultimate ownership and control",
+      "href": "https://www.inkandswitch.com/essay/local-first/#7-you-retain-ultimate-ownership-and-control"
+    },
+    {
+      "text": "Existing data storage and sharing models",
+      "href": "https://www.inkandswitch.com/essay/local-first/#existing-data-storage-and-sharing-models"
+    },
+    {
+      "text": "How application architecture affects user experience",
+      "href": "https://www.inkandswitch.com/essay/local-first/#how-application-architecture-affects-user-experience"
+    }
+  ]
+}

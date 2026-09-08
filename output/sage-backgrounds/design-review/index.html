@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Composition review — Ethan Liu</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#fff;color:#222;font:15px/1.65 system-ui,sans-serif}main{max-width:1440px;margin:auto;padding:48px 40px 72px}h1,h2{font-family:Georgia,serif;font-weight:400;line-height:1.15}h1{font-size:clamp(32px,4vw,52px);letter-spacing:-.035em;margin:14px 0 24px}h2{font-size:29px;margin:42px 0 18px}p{max-width:78ch;margin:12px 0}.eyebrow,figcaption{font-size:12px;color:#595959}.eyebrow{letter-spacing:.08em;text-transform:uppercase}.lead{font-size:18px;max-width:76ch}a{color:inherit;text-underline-offset:3px}button,input{font:inherit}button{cursor:pointer;background:none;color:#222;border:0;border-bottom:2px solid transparent;padding:8px 0;margin-right:20px}button[aria-pressed="true"]{border-bottom-color:#222}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid #222;outline-offset:4px}.controls{display:flex;align-items:center;flex-wrap:wrap;gap:12px 32px;border-top:1px solid #ddd;padding:16px 0;margin-top:32px}.controls label{font-size:13px}.comparison{display:grid;grid-template-columns:1fr 1fr;gap:24px}figure{margin:0;min-width:0}figcaption{display:flex;justify-content:space-between;gap:16px;margin:0 0 10px}.capture{border:1px solid #ddd;overflow:hidden;background:#f5f5f3}.capture img{width:100%;height:auto;display:block}.comparison.is-mobile .capture{max-width:390px;margin:auto}.comparison.is-mobile figcaption{max-width:390px;margin:0 auto 10px}.comparison.is-shapes img{filter:blur(5px)}.note{font-size:13px;color:#595959}table{border-collapse:collapse;width:100%;margin:20px 0;font-size:14px}th,td{padding:15px 20px 15px 0;border-bottom:1px solid #ddd;vertical-align:top;text-align:left}th{font-size:12px;font-weight:600}td:first-child{width:18%;font-weight:500}td:nth-child(2),td:nth-child(3){width:41%}.brief{max-width:850px}.brief li{padding-left:5px;margin:12px 0}.sources p{margin:18px 0}details{margin-top:30px;border-top:1px solid #ddd;padding-top:18px}summary{cursor:pointer;font-size:14px}.original{max-width:100%;margin-top:16px;border:1px solid #ddd}footer{font-size:12px;color:#595959;border-top:1px solid #ddd;margin-top:48px;padding-top:20px}@media(max-width:650px){main{padding:28px 20px 48px}.comparison{grid-template-columns:1fr;gap:28px}h1{font-size:35px}.lead{font-size:16px}th,td{padding-right:12px;font-size:12px}.controls{gap:12px 20px}}
+  </style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Design study · 8 September 2026</div>
+  <h1>The composition needs to change.</h1>
+  <p class="lead">I copied a surface texture and treated the artwork as an accessory. The reference’s appeal depends on the relationship between its image, typography, and open space. Changing opacity could not establish that relationship.</p>
+  <div class="controls">
+    <div role="group" aria-label="Screenshot size"><button type="button" data-device="desktop" aria-pressed="true">Desktop</button><button type="button" data-device="mobile" aria-pressed="false">Mobile</button></div>
+    <label><input type="checkbox" id="shapes"> View as shapes</label>
+  </div>
+  <div class="comparison" id="comparison">
+    <figure><figcaption><span>Wafer · live reference</span><a data-full="wafer" href="wafer-desktop.png" target="_blank" rel="noopener">Full size ↗</a></figcaption><div class="capture"><img data-site="wafer" src="wafer-desktop.png" width="1440" height="1000" alt="Wafer uses a large cloud scene with a prominent headline in its open central area."></div></figure>
+    <figure><figcaption><span>My current experiment</span><a data-full="current" href="current-desktop.png" target="_blank" rel="noopener">Full size ↗</a></figcaption><div class="capture"><img data-site="current" src="current-desktop.png" width="1440" height="1000" alt="The current experiment places a small feathered botanical oval above the existing biography and Latest list."></div></figure>
+  </div>
+  <p class="note">Both pages were captured at 1440 × 1000 and 390 × 844. “View as shapes” exposes the dominant visual groups, following NN/g’s <a href="https://www.nngroup.com/articles/visual-hierarchy-ux-definition/">hierarchy review technique</a>. Screenshots open at their original size.</p>
+  <h2>What the comparison shows</h2>
+  <table>
+    <thead><tr><th>Aspect</th><th>Wafer</th><th>My experiment</th></tr></thead>
+    <tbody>
+      <tr><td>Canvas</td><td>Large forms extend beyond the viewport. The background supplies the setting.</td><td>An enclosed oval creates a separate decorative object.</td></tr>
+      <tr><td>Hierarchy</td><td>A short, prominent headline anchors the scene.</td><td>The added image introduces another focal point above the same broad text rows.</td></tr>
+      <tr><td>Open space</td><td>The quiet area is where the main message belongs.</td><td>Empty space surrounds an ornament with little relation to the reading sequence.</td></tr>
+      <tr><td>Mobile</td><td>The scene is recropped around the message.</td><td>The illustration becomes a small badge above the name.</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Visual observations from <a href="https://www.wafer.ai/">Wafer</a> and the local experiment. The conclusion that the experiment feels pasted on is my design judgment.</p>
+  <div class="brief">
+    <h2>What the reading changes</h2>
+    <div class="sources">
+      <p><a href="https://www.nngroup.com/articles/aesthetic-minimalist-design/">NN/g: Aesthetic and Minimalist Design</a> separates clarity and usefulness from the visual minimalism trend. Aesthetics matter, and every element—including empty space—needs a purpose.</p>
+      <p><a href="https://www.nngroup.com/articles/visual-hierarchy-ux-definition/">NN/g: Visual Hierarchy</a> recommends defining content priorities before styling them. Relative size, contrast, and proximity establish the reading order.</p>
+      <p><a href="https://www.nngroup.com/articles/characteristics-minimalism/">NN/g: Characteristics of Minimalism</a> allows strong imagery within a restrained interface. Its descriptive study does not prove that pale colors, small images, or a particular layout will suit this site.</p>
+      <p><a href="https://www.vitsoe.com/gb/about/good-design">Dieter Rams via Vitsœ</a> emphasizes coherent detail and restraint. Applied here, fewer well-resolved decisions would be more useful than twelve interchangeable decorations.</p>
+    </div>
+    <h2>The next design brief</h2>
+    <p>This is a proposed direction informed by the comparison, not a tested redesign.</p>
+    <ol>
+      <li><strong>Compose the introduction as one region.</strong> Name, short introduction, contact details, and illustration should share a deliberate arrangement. Keep the academic serif identity.</li>
+      <li><strong>Give the artwork room at the outer edge.</strong> Use a large, clear form entering from the page boundary, with a naturally empty area for text. Replace the closed oval treatment.</li>
+      <li><strong>Build the asset for this layout.</strong> The current sage-filled landscape images need a different composition to meet a neutral reading surface naturally. Repeated masking is concealing that mismatch.</li>
+      <li><strong>Keep the reading sequence intact.</strong> The biography should lead directly into Latest. Set a comfortable text measure and consistent alignment; the artwork should not insert an extra section.</li>
+      <li><strong>Use one graphic language across pages.</strong> Preserve its scale and texture through deliberate desktop and mobile crops. Use the same accent roles consistently, with high-contrast prose.</li>
+    </ol>
+    <p>For the next pass, the review criteria are concrete: the image should feel attached to the page boundary; the name and work should lead attention; the graphic texture should be visible at normal size; the mobile layout should preserve that relationship.</p>
+    <h2>What I got wrong</h2>
+    <p>I interpreted “calm” as progressively smaller and fainter. I then treated your feedback as a request to reverse that intensity. Both responses kept the same faulty premise. Agent agreement on that premise was not evidence of a successful design, and functioning controls did not establish visual quality.</p>
+  </div>
+  <details><summary>Original site, before the background experiment</summary><a href="original-desktop.png" target="_blank" rel="noopener"><img class="original" src="original-desktop.png" width="1440" height="1000" loading="lazy" alt="Original academic homepage before the experimental background treatment."></a></details>
+  <footer>Research and comparison only. The interactive preview has not been redesigned in this pass.</footer>
+</main>
+<script>
+  const comparison = document.getElementById('comparison');
+  document.querySelectorAll('[data-device]').forEach(button => button.addEventListener('click', () => {
+    const device = button.dataset.device;
+    comparison.classList.toggle('is-mobile', device === 'mobile');
+    document.querySelectorAll('[data-device]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    document.querySelectorAll('[data-site]').forEach(img => {
+      img.src = `${img.dataset.site}-${device}.png`;
+      img.width = device === 'mobile' ? 390 : 1440;
+      img.height = device === 'mobile' ? 844 : 1000;
+    });
+    document.querySelectorAll('[data-full]').forEach(link => { link.href = `${link.dataset.full}-${device}.png`; });
+  }));
+  document.getElementById('shapes').addEventListener('change', event => comparison.classList.toggle('is-shapes', event.target.checked));
+</script>
+</body>
+</html>

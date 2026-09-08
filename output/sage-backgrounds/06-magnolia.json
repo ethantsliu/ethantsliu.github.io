@@ -1,0 +1,11 @@
+{
+  "title": "Magnolia",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "intent": "generate",
+  "prompt": "Use case: stylized-concept\nAsset type: wide decorative website background, original botanical alternative for a minimalist personal homepage\nPrimary request: one delicate magnolia branch with one or two buttercream blossoms and a few muted sage leaves curling gently into the lower-right edge.\nScene/backdrop: nearly flat pale sage / celadon field with faint paper grain; no landscape, sky, or clouds.\nStyle/medium: elegant organic editorial print, tiny ASCII-like glyph-shaped halftone and soft stippled dither create the shapes and shadows. The marks should feel like subtly irregular letterpress microtexture, not readable characters.\nComposition/framing: 16:9 wide landscape. Keep the central and upper 70 percent almost completely empty and nearly flat pale sage for website copy. A small asymmetrical branch emerges from off-canvas at the lower-right, extending inward only to the rightmost third and bottom quarter, cream blossoms facing slightly upward. Sparse, restrained detail and generous negative space.\nColor palette: pale sage #d8dfca, muted celadon #b9caba, buttercream #fff0bd petals, dusty teal #617f73 shadows; low saturation, soft low contrast.\nMaterials/textures: lightly textured botanical screenprint; crisp tiny microdots dissolve the petal edges and leaf shadows.\nConstraints: one finished background image, original composition, no text or readable lettering, no clouds, no UI, no logos, no border, no watermark, no multiple panels. Avoid making the flower large or central.",
+  "referenceViewed": "output/wafer-inspired/sage-clouds-v1.png",
+  "referencePassedToTool": false,
+  "source": "/Users/EthanLiu/.codex/generated_images/01a07fb4-4930-7030-a0f7-6a02e5059608/exec-0eec2bf3-4810-471a-97d5-1e2e185b8a20.png",
+  "output": "output/sage-backgrounds/06-magnolia.png"
+}

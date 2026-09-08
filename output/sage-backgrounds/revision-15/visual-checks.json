@@ -1,0 +1,287 @@
+[
+  {
+    "file": "site-preview",
+    "accent": "amber",
+    "theme": "light",
+    "width": 1440,
+    "data": {
+      "background": "rgb(255, 255, 255)",
+      "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+      "content": {
+        "x": 172,
+        "y": 167.234375,
+        "width": 1096,
+        "height": 1187,
+        "top": 167.234375,
+        "right": 1268,
+        "bottom": 1354.234375,
+        "left": 172
+      },
+      "wrapper": {
+        "x": 120,
+        "y": 0,
+        "width": 1200,
+        "height": 1489.34375,
+        "top": 0,
+        "right": 1320,
+        "bottom": 1489.34375,
+        "left": 120
+      },
+      "footer": null,
+      "image": {
+        "x": 636,
+        "y": 412.234375,
+        "width": 804,
+        "height": 1077.109375,
+        "top": 412.234375,
+        "right": 1440,
+        "bottom": 1489.34375,
+        "left": 636
+      },
+      "overflow": false,
+      "pageHeight": 1489
+    }
+  },
+  {
+    "file": "site-preview",
+    "accent": "amber",
+    "theme": "dark",
+    "width": 1440,
+    "data": {
+      "background": "rgb(0, 0, 0)",
+      "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+      "content": {
+        "x": 172,
+        "y": 167.234375,
+        "width": 1096,
+        "height": 1187,
+        "top": 167.234375,
+        "right": 1268,
+        "bottom": 1354.234375,
+        "left": 172
+      },
+      "wrapper": {
+        "x": 120,
+        "y": 0,
+        "width": 1200,
+        "height": 1489.34375,
+        "top": 0,
+        "right": 1320,
+        "bottom": 1489.34375,
+        "left": 120
+      },
+      "footer": null,
+      "image": {
+        "x": 636,
+        "y": 412.234375,
+        "width": 804,
+        "height": 1077.109375,
+        "top": 412.234375,
+        "right": 1440,
+        "bottom": 1489.34375,
+        "left": 636
+      },
+      "overflow": false,
+      "pageHeight": 1489
+    }
+  },
+  {
+    "file": "site-preview",
+    "accent": "blue",
+    "theme": "light",
+    "width": 1440,
+    "data": {
+      "background": "rgb(255, 255, 255)",
+      "filter": "brightness(1.055)",
+      "content": {
+        "x": 172,
+        "y": 167.234375,
+        "width": 1096,
+        "height": 1187,
+        "top": 167.234375,
+        "right": 1268,
+        "bottom": 1354.234375,
+        "left": 172
+      },
+      "wrapper": {
+        "x": 120,
+        "y": 0,
+        "width": 1200,
+        "height": 1489.34375,
+        "top": 0,
+        "right": 1320,
+        "bottom": 1489.34375,
+        "left": 120
+      },
+      "footer": null,
+      "image": {
+        "x": 636,
+        "y": 412.234375,
+        "width": 804,
+        "height": 1077.109375,
+        "top": 412.234375,
+        "right": 1440,
+        "bottom": 1489.34375,
+        "left": 636
+      },
+      "overflow": false,
+      "pageHeight": 1489
+    }
+  },
+  {
+    "file": "preview-work",
+    "accent": "amber",
+    "theme": "dark",
+    "width": 1440,
+    "data": {
+      "background": "rgb(0, 0, 0)",
+      "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+      "content": {
+        "x": 172,
+        "y": 154.78125,
+        "width": 1096,
+        "height": 226.09375,
+        "top": 154.78125,
+        "right": 1268,
+        "bottom": 380.875,
+        "left": 172
+      },
+      "wrapper": {
+        "x": 120,
+        "y": 0,
+        "width": 1200,
+        "height": 470.46875,
+        "top": 0,
+        "right": 1320,
+        "bottom": 470.46875,
+        "left": 120
+      },
+      "footer": {
+        "x": 0,
+        "y": 820,
+        "width": 1440,
+        "height": 180,
+        "top": 820,
+        "right": 1440,
+        "bottom": 1000,
+        "left": 0
+      },
+      "image": {
+        "x": 900,
+        "y": 820,
+        "width": 540,
+        "height": 617.328125,
+        "top": 820,
+        "right": 1440,
+        "bottom": 1437.328125,
+        "left": 900
+      },
+      "overflow": false,
+      "pageHeight": 1000
+    }
+  },
+  {
+    "file": "preview-research",
+    "accent": "blue",
+    "theme": "light",
+    "width": 1440,
+    "data": {
+      "background": "rgb(255, 255, 255)",
+      "filter": "brightness(1.055)",
+      "content": {
+        "x": 172,
+        "y": 154.78125,
+        "width": 1096,
+        "height": 243.75,
+        "top": 154.78125,
+        "right": 1268,
+        "bottom": 398.53125,
+        "left": 172
+      },
+      "wrapper": {
+        "x": 120,
+        "y": 0,
+        "width": 1200,
+        "height": 488.125,
+        "top": 0,
+        "right": 1320,
+        "bottom": 488.125,
+        "left": 120
+      },
+      "footer": {
+        "x": 0,
+        "y": 820,
+        "width": 1440,
+        "height": 180,
+        "top": 820,
+        "right": 1440,
+        "bottom": 1000,
+        "left": 0
+      },
+      "image": {
+        "x": 900,
+        "y": 820,
+        "width": 540,
+        "height": 617.328125,
+        "top": 820,
+        "right": 1440,
+        "bottom": 1437.328125,
+        "left": 900
+      },
+      "overflow": false,
+      "pageHeight": 1000
+    }
+  },
+  {
+    "file": "preview-essay",
+    "accent": "amber",
+    "theme": "light",
+    "width": 390,
+    "data": {
+      "background": "rgb(255, 255, 255)",
+      "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+      "content": {
+        "x": 68,
+        "y": 129.375,
+        "width": 254,
+        "height": 4659.28125,
+        "top": 129.375,
+        "right": 322,
+        "bottom": 4788.65625,
+        "left": 68
+      },
+      "wrapper": {
+        "x": 16,
+        "y": 16,
+        "width": 358,
+        "height": 4886.25,
+        "top": 16,
+        "right": 374,
+        "bottom": 4902.25,
+        "left": 16
+      },
+      "footer": {
+        "x": 0,
+        "y": 4902.25,
+        "width": 390,
+        "height": 140,
+        "top": 4902.25,
+        "right": 390,
+        "bottom": 5042.25,
+        "left": 0
+      },
+      "image": {
+        "x": -50,
+        "y": 4902.25,
+        "width": 440,
+        "height": 503.015625,
+        "top": 4902.25,
+        "right": 390,
+        "bottom": 5405.265625,
+        "left": -50
+      },
+      "overflow": false,
+      "pageHeight": 5042
+    }
+  }
+]

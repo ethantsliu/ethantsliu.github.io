@@ -1,0 +1,402 @@
+{
+  "format": "webp",
+  "encoder": "Pillow 9.2.0 / libwebp",
+  "resize": "Lanczos, aspect ratio preserved to nearest whole pixel",
+  "assets": [
+    {
+      "id": "01-ridgelines",
+      "source": {
+        "path": "01-ridgelines.png",
+        "width": 1672,
+        "height": 941,
+        "bytes": 1919677
+      },
+      "derivatives": {
+        "1280": {
+          "path": "web/01-ridgelines-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 58374,
+          "quality": 82
+        },
+        "640": {
+          "path": "web/01-ridgelines-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 11260,
+          "quality": 80
+        },
+        "thumb": {
+          "path": "web/01-ridgelines-thumb.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 4136,
+          "quality": 76
+        }
+      }
+    },
+    {
+      "id": "02-tidal",
+      "source": {
+        "path": "02-tidal.png",
+        "width": 1672,
+        "height": 941,
+        "bytes": 2168085
+      },
+      "derivatives": {
+        "1280": {
+          "path": "web/02-tidal-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 95462,
+          "quality": 82
+        },
+        "640": {
+          "path": "web/02-tidal-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 21688,
+          "quality": 80
+        },
+        "thumb": {
+          "path": "web/02-tidal-thumb.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 7978,
+          "quality": 76
+        }
+      }
+    },
+    {
+      "id": "03-meadow",
+      "source": {
+        "path": "03-meadow.png",
+        "width": 1672,
+        "height": 941,
+        "bytes": 2045807
+      },
+      "derivatives": {
+        "1280": {
+          "path": "web/03-meadow-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 48562,
+          "quality": 82
+        },
+        "640": {
+          "path": "web/03-meadow-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 13078,
+          "quality": 80
+        },
+        "thumb": {
+          "path": "web/03-meadow-thumb.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 5784,
+          "quality": 76
+        }
+      }
+    },
+    {
+      "id": "04-ginkgo",
+      "source": {
+        "path": "04-ginkgo.png",
+        "width": 1672,
+        "height": 941,
+        "bytes": 2532446
+      },
+      "derivatives": {
+        "1280": {
+          "path": "web/04-ginkgo-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 87130,
+          "quality": 82
+        },
+        "640": {
+          "path": "web/04-ginkgo-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 14922,
+          "quality": 80
+        },
+        "thumb": {
+          "path": "web/04-ginkgo-thumb.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 6326,
+          "quality": 76
+        }
+      }
+    },
+    {
+      "id": "05-dunes",
+      "source": {
+        "path": "05-dunes.png",
+        "width": 1672,
+        "height": 941,
+        "bytes": 2175644
+      },
+      "derivatives": {
+        "1280": {
+          "path": "web/05-dunes-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 59686,
+          "quality": 82
+        },
+        "640": {
+          "path": "web/05-dunes-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 11242,
+          "quality": 80
+        },
+        "thumb": {
+          "path": "web/05-dunes-thumb.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 3802,
+          "quality": 76
+        }
+      }
+    },
+    {
+      "id": "06-magnolia",
+      "source": {
+        "path": "06-magnolia.png",
+        "width": 1672,
+        "height": 941,
+        "bytes": 2276826
+      },
+      "derivatives": {
+        "1280": {
+          "path": "web/06-magnolia-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 49938,
+          "quality": 82
+        },
+        "640": {
+          "path": "web/06-magnolia-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 6570,
+          "quality": 80
+        },
+        "thumb": {
+          "path": "web/06-magnolia-thumb.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 2716,
+          "quality": 76
+        }
+      }
+    },
+    {
+      "id": "07-flow",
+      "source": {
+        "path": "07-flow.png",
+        "width": 1672,
+        "height": 941,
+        "bytes": 2262622
+      },
+      "derivatives": {
+        "1280": {
+          "path": "web/07-flow-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 69160,
+          "quality": 82
+        },
+        "640": {
+          "path": "web/07-flow-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 11836,
+          "quality": 80
+        },
+        "thumb": {
+          "path": "web/07-flow-thumb.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 3732,
+          "quality": 76
+        }
+      }
+    },
+    {
+      "id": "08-contours",
+      "source": {
+        "path": "08-contours.png",
+        "width": 1672,
+        "height": 941,
+        "bytes": 2098561
+      },
+      "derivatives": {
+        "1280": {
+          "path": "web/08-contours-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 56698,
+          "quality": 82
+        },
+        "640": {
+          "path": "web/08-contours-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 12688,
+          "quality": 80
+        },
+        "thumb": {
+          "path": "web/08-contours-thumb.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 4628,
+          "quality": 76
+        }
+      }
+    },
+    {
+      "id": "09-rain",
+      "source": {
+        "path": "09-rain.png",
+        "width": 1672,
+        "height": 941,
+        "bytes": 1660852
+      },
+      "derivatives": {
+        "1280": {
+          "path": "web/09-rain-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 48284,
+          "quality": 82
+        },
+        "640": {
+          "path": "web/09-rain-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 10846,
+          "quality": 80
+        },
+        "thumb": {
+          "path": "web/09-rain-thumb.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 3290,
+          "quality": 76
+        }
+      }
+    },
+    {
+      "id": "10-terraces",
+      "source": {
+        "path": "10-terraces.png",
+        "width": 1672,
+        "height": 941,
+        "bytes": 1641361
+      },
+      "derivatives": {
+        "1280": {
+          "path": "web/10-terraces-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 38136,
+          "quality": 82
+        },
+        "640": {
+          "path": "web/10-terraces-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 8734,
+          "quality": 80
+        },
+        "thumb": {
+          "path": "web/10-terraces-thumb.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 3674,
+          "quality": 76
+        }
+      }
+    },
+    {
+      "id": "11-fern",
+      "source": {
+        "path": "11-fern.png",
+        "width": 1672,
+        "height": 941,
+        "bytes": 2085421
+      },
+      "derivatives": {
+        "1280": {
+          "path": "web/11-fern-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 64196,
+          "quality": 82
+        },
+        "640": {
+          "path": "web/11-fern-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 14982,
+          "quality": 80
+        },
+        "thumb": {
+          "path": "web/11-fern-thumb.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 6802,
+          "quality": 76
+        }
+      }
+    },
+    {
+      "id": "12-lattice",
+      "source": {
+        "path": "12-lattice.png",
+        "width": 1672,
+        "height": 941,
+        "bytes": 1190757
+      },
+      "derivatives": {
+        "1280": {
+          "path": "web/12-lattice-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 12392,
+          "quality": 82
+        },
+        "640": {
+          "path": "web/12-lattice-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 3692,
+          "quality": 80
+        },
+        "thumb": {
+          "path": "web/12-lattice-thumb.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 1446,
+          "quality": 76
+        }
+      }
+    }
+  ],
+  "totals": {
+    "source_count": 12,
+    "derivative_count": 36,
+    "source_bytes": 24058059,
+    "derivative_bytes": 883870,
+    "bytes_by_variant": {
+      "1280": 688018,
+      "640": 141538,
+      "thumb": 54314
+    }
+  }
+}

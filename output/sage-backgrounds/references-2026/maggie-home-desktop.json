@@ -1,0 +1,343 @@
+{
+  "title": "Maggie Appleton",
+  "url": "https://maggieappleton.com/",
+  "headings": [
+    {
+      "text": "Essays",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "text": "Notes",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "text": "Patterns",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "text": "Smidgeons",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "text": "Talks",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "text": "Podcasts",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "text": "Library",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "text": "Antilibrary",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      }
+    },
+    {
+      "text": " Maggie \nmakes visual essays about programming, design, and anthropology.\n",
+      "rect": {
+        "x": 86,
+        "y": 143,
+        "width": 1200,
+        "height": 269.953125,
+        "top": 143,
+        "right": 1286,
+        "bottom": 412.953125,
+        "left": 86
+      }
+    },
+    {
+      "text": "\nDesigner, anthropologist, and mediocre developer\n Currently exploring AI & software engineering at\n    GitHub Next      ",
+      "rect": {
+        "x": 86,
+        "y": 451.453125,
+        "width": 1268,
+        "height": 91.53125,
+        "top": 451.453125,
+        "right": 1354,
+        "bottom": 542.984375,
+        "left": 86
+      }
+    },
+    {
+      "text": "The Garden",
+      "rect": {
+        "x": 86,
+        "y": 658.484375,
+        "width": 287.34375,
+        "height": 72.796875,
+        "top": 658.484375,
+        "right": 373.34375,
+        "bottom": 731.28125,
+        "left": 86
+      }
+    },
+    {
+      "text": "\nEssays\n      ",
+      "rect": {
+        "x": 86,
+        "y": 841.28125,
+        "width": 87.796875,
+        "height": 33,
+        "top": 841.28125,
+        "right": 173.796875,
+        "bottom": 874.28125,
+        "left": 86
+      }
+    }
+  ],
+  "images": [
+    {
+      "alt": "A Treatise on AI Chatbots Undermining the Enlightenment",
+      "src": "https://maggieappleton.com/_astro/ai-enlightenment@2x.D05Dfut-_ZA9QJo.webp",
+      "rect": {
+        "x": 109,
+        "y": 968.78125,
+        "width": 349.15625,
+        "height": 349.15625,
+        "top": 968.78125,
+        "right": 458.15625,
+        "bottom": 1317.9375,
+        "left": 109
+      }
+    },
+    {
+      "alt": "Growing a Human: The First 30 Weeks",
+      "src": "https://maggieappleton.com/_astro/growing@2x.BVm-B_ci_Z1TQ7M1.webp",
+      "rect": {
+        "x": 526.15625,
+        "y": 968.78125,
+        "width": 349.171875,
+        "height": 349.171875,
+        "top": 968.78125,
+        "right": 875.328125,
+        "bottom": 1317.953125,
+        "left": 526.15625
+      }
+    },
+    {
+      "alt": "The Dark Forest and Generative AI",
+      "src": "https://maggieappleton.com/_astro/ai-forest@2x.Dgu2JZ9k_Z1gYOuj.webp",
+      "rect": {
+        "x": 109,
+        "y": 1565.140625,
+        "width": 349.15625,
+        "height": 349.15625,
+        "top": 1565.140625,
+        "right": 458.15625,
+        "bottom": 1914.296875,
+        "left": 109
+      }
+    },
+    {
+      "alt": "Tools for Thought as Cultural Practices, not Computational Objects",
+      "src": "https://maggieappleton.com/_astro/tft@2x.DrGoTO0K_1npbQE.webp",
+      "rect": {
+        "x": 526.15625,
+        "y": 1565.140625,
+        "width": 349.171875,
+        "height": 349.171875,
+        "top": 1565.140625,
+        "right": 875.328125,
+        "bottom": 1914.3125,
+        "left": 526.15625
+      }
+    },
+    {
+      "alt": "Rain: A Natural and Cultural History",
+      "src": "",
+      "rect": {
+        "x": 530.65625,
+        "y": 2304.09375,
+        "width": 186.578125,
+        "height": 278.859375,
+        "top": 2304.09375,
+        "right": 717.234375,
+        "bottom": 2582.953125,
+        "left": 530.65625
+      }
+    },
+    {
+      "alt": "Age of Ambition: Chasing Fortune, Truth, and Faith in the New China",
+      "src": "",
+      "rect": {
+        "x": 739.234375,
+        "y": 2304.09375,
+        "width": 186.578125,
+        "height": 278.859375,
+        "top": 2304.09375,
+        "right": 925.8125,
+        "bottom": 2582.953125,
+        "left": 739.234375
+      }
+    },
+    {
+      "alt": "Cue the Sun! The Invention of Reality TV",
+      "src": "",
+      "rect": {
+        "x": 947.8125,
+        "y": 2304.09375,
+        "width": 186.578125,
+        "height": 278.859375,
+        "top": 2304.09375,
+        "right": 1134.390625,
+        "bottom": 2582.953125,
+        "left": 947.8125
+      }
+    },
+    {
+      "alt": "In Memoriam",
+      "src": "",
+      "rect": {
+        "x": 1156.390625,
+        "y": 2304.09375,
+        "width": 186.59375,
+        "height": 278.890625,
+        "top": 2304.09375,
+        "right": 1342.984375,
+        "bottom": 2582.984375,
+        "left": 1156.390625
+      }
+    },
+    {
+      "alt": "Yesteryear",
+      "src": "",
+      "rect": {
+        "x": 530.65625,
+        "y": 2786.140625,
+        "width": 186.578125,
+        "height": 278.859375,
+        "top": 2786.140625,
+        "right": 717.234375,
+        "bottom": 3065,
+        "left": 530.65625
+      }
+    },
+    {
+      "alt": "Soldiers and Kings: Survival and Hope in the World of Human Smuggling",
+      "src": "",
+      "rect": {
+        "x": 739.234375,
+        "y": 2786.140625,
+        "width": 186.578125,
+        "height": 278.859375,
+        "top": 2786.140625,
+        "right": 925.8125,
+        "bottom": 3065,
+        "left": 739.234375
+      }
+    },
+    {
+      "alt": "The Good Mother Myth",
+      "src": "",
+      "rect": {
+        "x": 947.8125,
+        "y": 2786.140625,
+        "width": 186.578125,
+        "height": 278.859375,
+        "top": 2786.140625,
+        "right": 1134.390625,
+        "bottom": 3065,
+        "left": 947.8125
+      }
+    },
+    {
+      "alt": "Empire of Pain: The Secret History of the Sackler Dynasty",
+      "src": "",
+      "rect": {
+        "x": 1156.390625,
+        "y": 2786.140625,
+        "width": 186.59375,
+        "height": 278.890625,
+        "top": 2786.140625,
+        "right": 1342.984375,
+        "bottom": 3065.03125,
+        "left": 1156.390625
+      }
+    }
+  ],
+  "bodyBackground": "rgb(246, 245, 241)",
+  "links": [
+    {
+      "text": "A Treatise on AI Chatbots Undermining the Enlightenment On chatbot sycophancy, passivity, and the case for more intellectually challenging companions  Essay        about 1 year ago",
+      "href": "https://maggieappleton.com/ai-enlightenment"
+    },
+    {
+      "text": "The Dark Forest and Generative AI Proving you're a human on a web flooded with generative AI content  Essay        over 3 years ago",
+      "href": "https://maggieappleton.com/ai-dark-forest"
+    }
+  ]
+}

@@ -1,0 +1,407 @@
+/* The original stylesheet owns the centered wrapper, masthead, and biography.
+   Editorial mode gives the illustration a place within the content. */
+html:has(.sage-preview:not(.show-original)) {
+  --bg: #ffffff;
+  --text: #252925;
+  --muted: #626760;
+  --divider: #dde4e8;
+  --accent: var(--text);
+  /* Saved greens for a future switch:
+     Original site: --accent-soft: #3f6b4f;
+                    --accent-soft-light: rgba(63, 107, 79, 0.2);
+     Sage study:    --accent-soft: #4c6757;
+                    --accent-soft-light: #4c675726;
+  */
+  --accent-soft: #4c6e83;
+  --accent-soft-light: #4c6e8326;
+  --dropdown-bg: none;
+  --dropdown-bg-color: var(--bg);
+  --art-filter: brightness(1.05);
+  --art-blend: multiply;
+  --sage-strength: 1;
+  background: var(--bg);
+}
+html:has(.sage-preview:not(.show-original))::after { display: none; }
+html:has(.sage-preview[data-collection="original"]:not(.show-original)) {
+  --art-filter: none;
+  --art-blend: normal;
+}
+html[data-theme="dark"]:has(.sage-preview:not(.show-original)) {
+  --bg: #000000;
+  --text: #e8edf2;
+  --muted: #aeb7c0;
+  --divider: #29323b;
+  /* Saved dark greens: --accent-soft: #bacbb7; original: #a6bca8; */
+  --accent-soft: #a5bfd3;
+  --accent-soft-light: #a5bfd333;
+  --night-art-filter: brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.6) hue-rotate(165deg) brightness(.8);
+  --art-filter: var(--night-art-filter);
+  --art-blend: screen;
+}
+html[data-theme="dark"]:has(.sage-preview[data-collection="original"]:not(.show-original)) {
+  --art-filter: var(--night-art-filter);
+}
+html:has(.sage-preview:not(.show-original)[data-accent="graphite"]) { --accent-soft: #545a54; }
+html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="graphite"]) { --accent-soft: #b9beb7; }
+/* Golden-hour comparison: warm highlights retain the drawing's cooler shadows.
+   The source artwork and saved blue treatment remain unchanged. */
+html:has(.sage-preview:not(.show-original)[data-accent="amber"]) {
+  --accent-soft: #8a642d;
+  --accent-soft-light: #8a642d26;
+  --warm-art-filter: sepia(.28) saturate(1.18) brightness(1.065);
+  --art-filter: var(--warm-art-filter);
+}
+html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="amber"]) {
+  --accent-soft: #c8aa70;
+  --accent-soft-light: #c8aa7033;
+  --night-art-filter: brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(.72);
+  --art-filter: var(--night-art-filter);
+}
+/* Previous green comparison, retained for restoration:
+html:has(.sage-preview:not(.show-original)[data-accent="original"]) { --accent-soft: #3f6b4f; }
+html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="original"]) { --accent-soft: #a6bca8; }
+*/
+.sage-preview:not(.show-original) ::selection { background: var(--accent-soft-light); color: var(--text); }
+.sage-preview { position: relative; min-height: 100vh; overflow-x: clip; }
+.sage-preview:not(.show-original) { background: var(--bg); }
+.sage-preview:not(.show-original)::before,
+.sage-preview:not(.show-original)::after { display: none; }
+.sage-preview:not(.show-original) :is(.feature-date, .research-year, .experience-meta, .writing-meta, .essay-meta, .project-meta) { color: var(--muted); }
+.sage-preview:not(.show-original) :is(.contact-email, .feature-label) { color: var(--accent-soft); }
+.sage-preview:not(.show-original) :is(.hummingbird-illustration, .magnolia-illustration) { display: none; }
+.sage-preview .preview-page-title { display: none; }
+.sage-preview :focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 5px; }
+.sage-preview:not(.show-original) .dropdown-btn { background: var(--bg); }
+.sage-preview #dropdownContent.is-open { display: block; opacity: 1; visibility: visible; pointer-events: auto; }
+/* No illustration creates a column, moves a paragraph, or separates Latest.
+   The opening crop uses the spare space to the right of the name and contact. */
+.sage-preview .sage-scene { display: none; pointer-events: none; }
+.sage-preview:not(.show-original) .sage-scene {
+  display: block; position: absolute; z-index: 0; inset: 0 0 auto;
+  height: 210px; overflow: hidden; mix-blend-mode: var(--art-blend);
+}
+.sage-preview .sage-scene::before {
+  content: ''; position: absolute; inset: 0;
+  background: var(--sage-art) right bottom / max(1100px, 100%) auto no-repeat;
+  opacity: var(--sage-strength); filter: var(--art-filter);
+  mask-image: linear-gradient(to right, transparent 40%, #000 74%), linear-gradient(#000 45%, transparent 100%);
+  mask-composite: intersect;
+}
+.sage-preview[data-family="botanical"] .sage-scene::before {
+  left: auto; width: 720px; background-size: 720px auto;
+  mask-image: linear-gradient(to right, transparent, #000 48%), linear-gradient(#000 45%, transparent 100%);
+}
+.sage-preview[data-family="edge"] .sage-scene::before { background-size: 1000px auto; background-position: right top; }
+/* Secondary pages keep their original header and reading positions. */
+.sage-preview:not(.home) > .sage-scene { display: none; }
+.sage-page-fragment { display: none; }
+.sage-preview:not(.home):not(.show-original) {
+  display: flex;
+  flex-direction: column;
+}
+.sage-preview:not(.home):not(.show-original) > .page-wrapper { flex-shrink: 0; }
+.sage-preview:not(.show-original) > .sage-page-fragment {
+  display: block;
+  flex: 0 0 180px;
+  height: 180px;
+  margin-top: auto;
+  overflow: hidden;
+  pointer-events: none;
+}
+.sage-page-fragment img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 540px;
+  max-width: none;
+  height: auto;
+  filter: var(--warm-art-filter, brightness(1.055));
+  mix-blend-mode: multiply;
+}
+html[data-theme="dark"] .sage-page-fragment img {
+  filter: var(--night-art-filter);
+  mix-blend-mode: screen;
+}
+@media (max-width: 600px) {
+  .sage-preview:not(.show-original) > .sage-page-fragment {
+    flex-basis: 140px;
+    height: 140px;
+    margin-left: -16px;
+    margin-right: -16px;
+    margin-bottom: -16px;
+  }
+  .sage-page-fragment img { width: 440px; }
+}
+/* A full-width closing landscape begins after the reading sequence. */
+.home.sage-preview:not(.show-original)[data-placement="closing"] { padding-bottom: 220px; }
+.home.sage-preview:not(.show-original)[data-placement="closing"] .sage-scene {
+  top: auto; bottom: 0; height: 260px;
+}
+.sage-preview[data-placement="closing"] .sage-scene::before {
+  background-size: max(1100px, 100%) auto;
+  mask-image: linear-gradient(transparent 0%, #000 30%);
+  mask-composite: add;
+}
+.sage-preview[data-placement="closing"][data-family="botanical"] .sage-scene::before {
+  width: 100%; background-size: max(1100px, 100%) auto;
+  background-position: center calc(100% + 12vw);
+}
+.home.sage-preview:not(.show-original)[data-placement="closing"][data-family="botanical"] { padding-bottom: 280px; }
+.home.sage-preview:not(.show-original)[data-placement="closing"][data-family="botanical"] .sage-scene { height: 320px; }
+.sage-preview[data-placement="closing"][data-art="06-magnolia"] .sage-scene::before {
+  left: auto; width: 1000px; background-size: 1000px auto;
+  background-position: right calc(100% + 70px);
+  mask-image: linear-gradient(to right, transparent, #000 45%), linear-gradient(transparent, #000 28%);
+  mask-composite: intersect;
+}
+.sage-preview[data-placement="closing"][data-family="edge"] .sage-scene::before { background-position: right 30%; }
+@media (max-width: 1000px) {
+  .sage-preview:not(.show-original) .sage-scene { height: 190px; }
+  .sage-preview .sage-scene::before {
+    background-size: 1000px auto;
+    mask-image: linear-gradient(to right, transparent 50%, #000 85%), linear-gradient(#000 30%, transparent 100%);
+  }
+  .sage-preview[data-family="botanical"] .sage-scene::before { width: 620px; background-size: 620px auto; }
+  .sage-preview[data-family="edge"] .sage-scene::before { background-size: 850px auto; }
+  .sage-preview[data-placement="closing"] .sage-scene::before { mask-image: linear-gradient(transparent, #000 30%); }
+}
+@media (max-width: 720px) {
+  /* Preserve the familiar compact mobile header, with a crop in its upper edge. */
+  .home.sage-preview:not(.show-original) { padding-left: 0; padding-right: 0; }
+  .home.sage-preview:not(.show-original) .page-wrapper { padding-left: 1.6rem; padding-right: 1.6rem; }
+  .sage-preview .dropdown-content { left: auto; right: 0; transform: none; }
+  .sage-preview:not(.show-original)[data-placement="opening"] .sage-scene { height: 126px; }
+  .sage-preview .sage-scene::before {
+    background-size: 700px auto;
+    mask-image: linear-gradient(to right, transparent 35%, #000 84%), linear-gradient(#000 10%, transparent 100%);
+  }
+  .sage-preview[data-family="botanical"] .sage-scene::before { width: 430px; background-size: 430px auto; mask-image: linear-gradient(to right, transparent 30%, #000 70%), linear-gradient(#000 10%, transparent 100%); }
+  .sage-preview[data-family="edge"] .sage-scene::before { background-size: 680px auto; }
+  .home.sage-preview:not(.show-original)[data-placement="closing"] { padding-bottom: 180px; }
+  .home.sage-preview:not(.show-original)[data-placement="closing"] .sage-scene { height: 210px; }
+  .sage-preview[data-placement="closing"] .sage-scene::before {
+    background-size: 850px auto;
+    mask-image: linear-gradient(transparent, #000 35%);
+  }
+  .home.sage-preview:not(.show-original)[data-placement="closing"][data-family="botanical"] { padding-bottom: 210px; }
+  .home.sage-preview:not(.show-original)[data-placement="closing"][data-family="botanical"] .sage-scene { height: 240px; }
+  .sage-preview[data-placement="closing"][data-family="botanical"] .sage-scene::before { background-size: 720px auto; background-position: left calc(100% + 70px); }
+  .sage-preview[data-placement="closing"][data-art="06-magnolia"] .sage-scene::before { width: 620px; background-size: 620px auto; background-position: right calc(100% + 35px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sage-preview *, .sage-preview *::before, .sage-preview *::after { transition: none !important; }
+}
+
+/* Every Latest entry shares a left reading column. A tall illustration
+   occupies the right side, with directional fades into the page paper. */
+.sage-preview .sage-editorial { display: none; }
+.home.sage-preview:not(.show-original)[data-placement="editorial"] > .sage-scene { display: none; }
+.sage-preview:not(.show-original)[data-placement="editorial"] .sage-source-list { display: none; }
+.sage-preview:not(.show-original)[data-placement="editorial"] .sage-editorial {
+  --art-bleed: max(52px, calc((100vw - 1096px) / 2));
+  --latest-width: min(680px, 70%);
+  --art-overlap: clamp(120px, 18vw, 240px);
+  display: grid;
+  grid-template-columns: var(--latest-width) minmax(0, 1fr);
+  column-gap: 24px;
+  align-items: stretch;
+}
+.home.sage-preview:not(.show-original)[data-placement="editorial"] .sage-editorial { position: relative; }
+.home.sage-preview:not(.show-original)[data-placement="editorial"] .list-section { position: relative; }
+.home.sage-preview:not(.show-original)[data-placement="editorial"] .section-subtitle {
+  display: block;
+  width: min(680px, 70%);
+  margin: 26px 0 22px;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--divider);
+  border-bottom: 0;
+  color: var(--accent-soft);
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 1;
+}
+.home.sage-preview:not(.show-original)[data-placement="editorial"] .section-subtitle::after { display: none; }
+.sage-editorial-picture {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background: var(--bg);
+  border-radius: 0;
+  pointer-events: none;
+  mask-image: linear-gradient(to right, transparent 0%, #000 28%), linear-gradient(to bottom, transparent 0%, #000 12%, #000 78%, transparent 100%);
+  mask-composite: intersect;
+}
+.sage-editorial-picture img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: right center;
+  opacity: var(--sage-strength);
+  filter: brightness(1.035);
+  mix-blend-mode: multiply;
+}
+.home .sage-editorial-picture {
+  --art-side-mask: linear-gradient(to right, transparent calc(var(--art-overlap) - 8px), #000 calc(var(--art-overlap) + 140px));
+  position: absolute;
+  inset: -88px calc(-1 * var(--art-bleed)) 0 auto;
+  width: min(1024px, calc(100% - var(--latest-width) - 24px + var(--art-bleed) + var(--art-overlap)));
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  mask-image: var(--art-side-mask), linear-gradient(to bottom, transparent 0, #0000000f 24px, #00000038 60px, #00000080 96px, #000000cc 132px, #000 168px, #000 78%, transparent 100%);
+}
+.home.sage-preview[data-family="landscape"] .sage-editorial-picture img { object-position: 78% center; }
+.home.sage-preview[data-collection="original"] .sage-editorial-picture img { height: 165%; top: -65%; }
+.home.sage-preview[data-family="edge"] .sage-editorial-picture {
+  mask-image: var(--art-side-mask), linear-gradient(to bottom, transparent 0, #0000000f 24px, #00000038 60px, #00000080 96px, #000000cc 132px, #000 168px, #000 65%, transparent 85%);
+}
+.home.sage-preview[data-portrait="true"] .sage-editorial-picture {
+  mask-image:
+    var(--art-side-mask),
+    linear-gradient(to bottom, transparent 0, #0000000f 24px, #00000038 60px, #00000080 96px, #000000cc 132px, #000 168px, #000 85%, transparent 100%);
+}
+.home.sage-preview[data-portrait="true"] .sage-editorial-picture img {
+  height: 100%;
+  top: 0;
+  object-fit: cover;
+  object-position: right center;
+}
+/* These illustrations have a complete upper silhouette and actual paper above
+   it. Keep that boundary intact; only blend sideways toward the reading area. */
+.home.sage-preview[data-natural-edge="true"] .sage-editorial-picture {
+  mask-image: var(--art-side-mask);
+  mask-composite: add;
+}
+.home.sage-preview[data-natural-edge="true"] .sage-editorial-picture img {
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: right top;
+}
+/* The cloud reference extends through its bottom edge; soften only that exit. */
+.home.sage-preview[data-natural-edge="true"][data-art="clouds-portrait"] .sage-editorial-picture img {
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 80px), transparent 100%);
+}
+html:not([data-theme="dark"]) .sage-preview[data-natural-edge="true"][data-art="clouds-portrait"] .sage-editorial-picture img {
+  filter: var(--warm-art-filter, brightness(1.055));
+}
+/* Let the generated near-white paper multiply to the page color without
+   leaving a warm rectangular boundary around these two drawings. */
+html:not([data-theme="dark"]) .sage-preview[data-natural-edge="true"]:is([data-art="ginkgo-portrait"], [data-art="tidal-portrait"]) .sage-editorial-picture img {
+  filter: var(--warm-art-filter, brightness(1.065));
+}
+html[data-theme="dark"] .sage-editorial-picture img { filter: var(--night-art-filter); mix-blend-mode: screen; }
+html[data-theme="dark"] .sage-preview[data-natural-edge="true"] .sage-editorial-picture img {
+  filter: var(--night-art-filter);
+}
+html:not([data-theme="dark"]) .sage-preview[data-accent="amber"] :is(.sage-editorial-picture img, .sage-page-fragment img) {
+  filter: var(--warm-art-filter);
+}
+
+/* Share the real footer dimensions so the clouds end at the page edge. */
+.home.sage-preview {
+  --visit-gap: 3rem;
+  --visit-size: .85rem;
+  --visit-leading: 1.7;
+  --page-end-space: 4rem;
+  --home-footer-tail: calc(var(--visit-gap) + var(--visit-size) * var(--visit-leading) + var(--page-end-space));
+}
+.home.sage-preview:not(.show-original) .visit-counter {
+  margin-top: var(--visit-gap);
+  font-size: var(--visit-size);
+  line-height: var(--visit-leading);
+}
+.home.sage-preview:not(.show-original) .page-wrapper { padding-bottom: var(--page-end-space); }
+@media (min-width: 761px) {
+  .home.sage-preview[data-art="clouds-portrait"] .sage-editorial-picture { bottom: calc(-1 * var(--home-footer-tail)); }
+  .home.sage-preview[data-art="clouds-portrait"] .sage-editorial-picture img {
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
+    object-position: right top;
+  }
+}
+.sage-recent-list {
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+  z-index: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.home .sage-recent-list .feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 7px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--divider);
+}
+.home .sage-recent-list .feature-item:first-child { padding-top: 0; }
+.home .sage-recent-list .feature-item:last-child { border-bottom: 0; padding-bottom: 0; }
+.home .sage-recent-list .feature-item::before { display: none; }
+.home .sage-recent-list .feature-title {
+  font-size: 1.06rem;
+  line-height: 1.35;
+  align-self: flex-start;
+  border: 0;
+  padding: 0;
+}
+.sage-entry-meta { display: flex; flex-wrap: wrap; gap: 8px 16px; line-height: 1.4; }
+.home .sage-entry-meta :is(.feature-label, .feature-date) {
+  font-size: .82rem;
+  line-height: inherit;
+  font-weight: 400;
+  min-width: 0;
+  text-align: left;
+}
+.home .sage-entry-meta .feature-date { color: var(--muted); }
+@media (max-width: 1000px) and (min-width: 761px) {
+  .home.sage-preview:not(.show-original)[data-placement="editorial"] .sage-editorial { --latest-width: 70%; }
+}
+@media (max-width: 760px) {
+  .sage-preview:not(.show-original)[data-placement="editorial"] .sage-editorial { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .home.sage-preview:not(.show-original)[data-placement="editorial"] .section-subtitle { width: 58%; }
+  .home .sage-editorial-picture {
+    position: relative;
+    inset: auto;
+    grid-column: 1;
+    grid-row: 1;
+    width: calc(100% + 52px);
+    height: 150px;
+    min-height: 0;
+    margin: -64px -26px 0;
+    mask-image: linear-gradient(to right, transparent 0%, #000 46%), linear-gradient(to bottom, transparent 0%, #000 16%, #000 72%, transparent 100%);
+  }
+  .home .sage-editorial-picture img { object-position: right 65%; }
+  .home.sage-preview[data-collection="original"] .sage-editorial-picture img { height: 100%; top: 0; }
+  .home.sage-preview[data-family="edge"] .sage-editorial-picture {
+    mask-image: linear-gradient(to right, transparent 0%, #000 46%), linear-gradient(to bottom, transparent 0%, #000 16%, #000 56%, transparent 86%);
+  }
+  .home.sage-preview[data-family="landscape"] .sage-editorial-picture img { object-position: center bottom; }
+  .home.sage-preview[data-family="botanical"] .sage-editorial-picture img { object-position: right bottom; }
+  .home.sage-preview[data-portrait="true"] .sage-editorial-picture {
+    mask-image: linear-gradient(to right, transparent 0%, #000 46%), linear-gradient(to bottom, transparent 0%, #000 16%, #000 66%, transparent 100%);
+  }
+  .home.sage-preview[data-portrait="true"] .sage-editorial-picture img { object-fit: cover; object-position: right 40%; }
+  .home.sage-preview[data-natural-edge="true"] .sage-editorial-picture,
+  .home.sage-preview[data-natural-edge="true"][data-art="clouds-portrait"] .sage-editorial-picture {
+    mask-image: linear-gradient(to right, transparent 0%, #000 46%), linear-gradient(to bottom, #000 70%, transparent 100%);
+    mask-composite: intersect;
+  }
+  .home.sage-preview[data-natural-edge="true"] .sage-editorial-picture img { object-position: right top; }
+  .home.sage-preview[data-natural-edge="true"][data-art="clouds-portrait"] .sage-editorial-picture img { mask-image: none; }
+  .sage-recent-list { grid-row: 2; }
+}
+
+/* A portrait remains the same complete drawing in the short comparison strips.
+   Its height determines the fit; a landscape-sized crop would leave only tips. */
+.sage-preview[data-portrait="true"] .sage-scene::before {
+  background-size: auto 100%;
+  background-position: right top;
+}

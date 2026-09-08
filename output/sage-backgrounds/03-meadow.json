@@ -1,0 +1,14 @@
+{
+  "name": "Meadow",
+  "slug": "03-meadow",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "source_path": "/Users/EthanLiu/.codex/generated_images/01a07fb3-b8c2-7880-9871-c49f91b04759/exec-00e8e5a6-9046-4131-bd00-d59c6413841a.png",
+  "reference_viewed": "output/wafer-inspired/sage-clouds-v1.png",
+  "prompt": "Use case: stylized-concept\nAsset type: wide 16:9 minimalist website background, original raster illustration\nPrimary request: A sparse meadow of delicate grasses and seed heads emerging from the lower corners. Airy botanical silhouettes, no clouds. Create a soothing low-contrast sage composition suitable behind a personal website.\nScene/backdrop: Muted pale sage and celadon color field with buttercream ambient light and dusty teal shadows. Use the subtle nostalgic digital-print texture of fine ASCII-like glyph halftone, microscopic square/round/dash marks and dithered edges that describe the plant forms rather than readable text.\nSubject: A small number of graceful grass stems and slender seed heads, gently bowed; scattered gauzy stems form a shallow meadow in the lower third. Larger seed heads sit near the lower far-left and lower far-right edges. Keep the botanical marks delicate, airy, organic, elegant and sparse.\nComposition/framing: Wide 16:9 landscape. Upper and central 60 percent must be almost flat pale sage, very quiet and uniform, absolutely no high-contrast marks. Concentrate the subtle botanical motif entirely in the lower third and edge margins. No dramatic horizon or focal spotlight. Image reaches every canvas edge.\nStyle/medium: Extremely refined dithered botanical illustration, soft low contrast, fine ASCII-like glyph halftone stippling describing volume, warm archival print softness. Palette only pale celadon, muted sage, buttercream, and dusty desaturated teal. Minimal texture in empty areas.\nConstraints: No clouds, no words or legible text, no typography, no logos, no UI, no frame, no watermarks, no people, no buildings, no oversaturated green, no high-contrast black shapes, no dense wallpaper pattern.",
+  "quality_notes": "Quiet pale sage center and upper area with delicate grasses at lower edges. Seed heads at side margins extend above the lower third. Organic forms use subtle glyph-like stippling with a soft paper grain; markedly gentler texture than the cloud reference.",
+  "dimensions": {
+    "width": 1672,
+    "height": 941
+  }
+}

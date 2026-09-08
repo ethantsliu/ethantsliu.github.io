@@ -1,0 +1,14 @@
+{
+  "title": "Fern",
+  "width": 1672,
+  "height": 941,
+  "use_case": "stylized-concept",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "prompt": "Use case: stylized-concept\nAsset type: minimal website background, wide 16:9 landscape.\nPrimary request: create one original quiet pale sage botanical background with two delicate fern fronds curling inward from the lower outside edges. No clouds.\nScene/backdrop: almost flat muted pale sage and celadon, with a barely perceptible warm buttercream glow; spacious and serene.\nSubject: two airy graceful fern fronds emerging from the lower left and lower right edges, curling gently inward; finely divided fernlets rendered like an elegant early computer botanical print.\nStyle/medium: delicate printmaking combined with fine ASCII-like micro marks and subtle stippled dithering integrated within the frond shapes; tactile yet very refined, softly lit and low contrast. Not literal letters or readable text.\nComposition/framing: artwork mostly confined to lower third and far side edges. Preserve central and upper 65 percent as nearly flat empty negative space for legible website typography. Unequal natural frond shapes, calm asymmetry, cropped stems at bottom edge.\nColor palette: pale sage/celadon background, buttercream illuminated leaflet edges, dusty teal shadows. Match the muted pale sage, cream, and dusty teal atmosphere of the previously viewed sage image, but use new fern subjects.\nMaterials/textures: micro printed botanical marks on very fine matte paper. Texture restrained and never noisy; no dense all-over grid.\nConstraints: one 16:9 image. No text, letters, logos, watermarks, UI, frames, borders, clouds, pots, flowers, insects, objects, or harsh black shadows. Keep the ferns delicate and the open area dominant.",
+  "reference_viewed": "output/wafer-inspired/sage-clouds-v1.png",
+  "reference_usage": "Viewed for palette and mood only; no image passed to generation tool",
+  "source_path": "/Users/EthanLiu/.codex/generated_images/01a07fb5-4f70-7910-bd57-ed369eccbb12/exec-ba350f49-4432-4139-9df6-1798fe265ed7.png",
+  "output_path": "output/sage-backgrounds/11-fern.png",
+  "quality_notes": "Airy central negative space, delicate low-contrast fern prints at both lower edges. Frond tips extend to roughly 36 percent from top at outer thirds; central column stays empty. Fine botanical dithering is subtler than reference."
+}

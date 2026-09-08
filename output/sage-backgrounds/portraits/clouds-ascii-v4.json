@@ -1,0 +1,34 @@
+{
+  "name": "Clouds ASCII v4 — HD palette preserved",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in targeted reference edit",
+  "generation_calls": 1,
+  "prompt": "Use case: style-transfer\nEdit target and ONLY reference: The attached clouds-hd illustration. Make a targeted edit of THIS image, retaining its identity, cloud masses, illumination, depth and colors.\nHighest-priority invariant: Preserve EXACTLY the original color palette and perceived tonal balance of the supplied image: the same luminous ivory highlights, the same soft cream light, the same muted blue-green/sage shadows, the same midtone distribution, saturation, shadow strength and color relationships. Sample every artwork color from this reference. Do not invent a new palette, increase contrast, darken the shadows, turn the ivory yellow, or make the clouds pale or washed out. Preserve the existing location and relationships of light and shadow on all major cloud volumes. At thumbnail size the new image should look almost like the same colored cloud painting.\nRequested texture change: Replace the engraved/stipple surface with clearly recognizable fine crisp MONOSPACED ASCII CHARACTERS that construct the SAME existing cloud volumes. Actual textual characters @ # % * + = - : . / |, each about 6–8 pixels tall in the native output, arranged on a fine monospaced grid. These distinct letters and symbols should be evident at normal website display size, not blurred dots. Use small color and character-density changes to recover the reference's full smooth luminous tonal gradations and rounded sculptural depth. The character outlines should be sharp; the overall color modeling should remain as gentle and dimensional as the original. Do not overlay a uniform glyph texture; render existing shading through character density, colored glyphs, and colored negative space. No photographic noise or engraving as a substitute for textual symbols.\nSmall composition change: Recompose or expand just enough above the existing upper clouds so the tallest lobes acquire complete, naturally uneven scalloped tops below a strip of genuinely empty near-white paper. Leave about 5 percent of the image height blank above the highest visible peak. Preserve the natural asymmetric relative heights of peaks, the overall right-side arrangement, the original main cloud shapes and the sideways dissolution toward the left. The cloud formation must not touch the top edge. Do not obscure the top with a gradient or haze. Preserve an irregular natural taper at bottom and avoid a hard horizontal cutoff.\nCanvas: Native near-square portrait 7:8 preferred, but preserving the reference's cloud identity, exact colors, and light/shadow composition takes priority over the aspect ratio. Native high resolution. OPAQUE near-white paper matching the original paper; all pixels fully opaque. No transparent background or alpha envelope. Crisp discrete lighter characters create the sideways transition into clean paper.\nChange only the drawing texture to fine legible ASCII and the small amount of framing needed for intact natural top silhouettes. No additional subjects, no new palette, no oversaturation, no darker forest green, no yellow-green shift, no fog, no blur, no soft alpha halo, no vertical white gradient, no frame, no oval vignette, no text words, no logos, no watermark. Preserve the luminous sculptural cream-and-muted-blue-green image the user already likes.",
+  "referenced_image_paths": [
+    "/Users/EthanLiu/Documents/Programming/ethantsliu.github.io/output/sage-backgrounds/portraits/clouds-hd.png"
+  ],
+  "reference_roles": [
+    "clouds-hd.png: sole edit target and sole palette, shading, subject and composition reference"
+  ],
+  "source_path": "/Users/EthanLiu/.codex/generated_images/01a07fb3-b8c2-7880-9871-c49f91b04759/exec-eb024367-62fd-46c2-9502-f22387d3570e.png",
+  "output_path": "output/sage-backgrounds/portraits/clouds-ascii-v4.png",
+  "requested_aspect_ratio": "7:8 preferred; reference preservation higher priority",
+  "actual_dimensions": {
+    "width": 1173,
+    "height": 1341
+  },
+  "actual_aspect_ratio": 0.8747203579418344,
+  "native_mode": "RGB",
+  "untouched_native_copy": true,
+  "locally_edited": false,
+  "upscaled": false,
+  "file_size_bytes": 2987612,
+  "inspection": {
+    "color_match": "Visually close to clouds-hd: ivory/cream highlights and muted cool blue-green/sage shadow family are retained, with the same luminous cloud masses and recognizable light/shadow relationships. Crisp dark glyph outlines increase perceived local edge contrast; no exact pixelwise palette match is claimed.",
+    "ascii": "Clear small monospaced ASCII-like marks replace the engraved texture, visibly constructing the cloud forms. Some generated character shapes remain stylized rather than strictly limited to the allowed alphabet.",
+    "background": "Opaque RGB near-white warm paper, no alpha haze or transparent background.",
+    "composition": "Main cloud clusters and sculptural illumination retain strong resemblance to HD reference. Natural uneven upper peaks now have paper above them, but highest peak is only about 1 percent below top rather than requested 5 percent. Cloud detail reaches the bottom edge on the right instead of completely tapering to empty paper.",
+    "clearance": "Leftmost 15 percent mostly clear with some sparse light cloud marks low down. The highest peak needs layout space above the image if more visual breathing room is required.",
+    "aspect_ratio": "1173x1341 closely matches requested 7:8."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Lattice",
+  "prompt": "Use case: stylized-concept\nAsset type: quiet decorative raster background for a minimalist personal website, widescreen 16:9, 2048x1152 preferred.\nPrimary request: an original abstract numerical landscape made from a softly warped lattice of fine points, a gentle mathematical surface undulating horizontally across the bottom third of the composition. No clouds. The fine lattice forms a graceful low shallow wave with subtle depth, disappearing gradually into a vast still field of pale sage. Tiny ASCII-like dots, short ticks, and a few minuscule plus-shaped marks in orderly grids follow the surface, creating a delicate retro computational halftone texture without readable characters.\nComposition: all recognizable form and most texture stay in the bottom 30 to 35 percent and very low corners. The upper and central 65 percent is clean nearly flat pale sage negative space, with only the faintest smooth buttercream light variation. The lower surface should stay soft, shallow, and low contrast, never turn into a mountain range. Quiet broad spacing and a calm editorial composition.\nPalette: muted pale sage and celadon, soft buttercream illumination, dusty teal marks; light matte finish, airy and restrained. Match the spirit of a pale sage atmospheric ASCII background, but create a mathematical lattice rather than a cloud scene.\nConstraints: subtle minimalist art suitable behind readable website text. No clouds, no objects, no lettering, no numbers, no code blocks, no diagram axes, no labels, no UI, no logos, no frame, no watermark. No dark colors, sharp high-contrast edges, neon, glossy 3D, or dense texture in the upper two thirds.",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "source": "/Users/EthanLiu/.codex/generated_images/01a07fb5-8095-79f0-89a5-aaee54fc2388/exec-8567bfdc-3874-41f9-9638-559a265b5ff9.png",
+  "destination": "/Users/EthanLiu/Documents/Programming/ethantsliu.github.io/output/sage-backgrounds/12-lattice.png",
+  "reference": "output/wafer-inspired/sage-clouds-v1.png (visually inspected; descriptive style guidance only)",
+  "output_hint": "Generated images are saved to /Users/EthanLiu/.codex/generated_images/01a07fb5-8095-79f0-89a5-aaee54fc2388 as /Users/EthanLiu/.codex/generated_images/01a07fb5-8095-79f0-89a5-aaee54fc2388/exec-8567bfdc-3874-41f9-9638-559a265b5ff9.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "width": 1672,
+  "height": 941,
+  "bytes": 1190757,
+  "quality_review": "Subtle fine teal lattice follows gentle shallow surface at bottom; vast quiet pale sage upper field; no text or clouds. Suitable for minimal footer or page edge."
+}

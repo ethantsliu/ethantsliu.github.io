@@ -1,0 +1,34 @@
+{
+  "name": "Clouds HD portrait",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "generation_calls": 1,
+  "prompt": "Use case: stylized-concept\nAsset type: HIGH-DEFINITION PORTRAIT 2:3 raster illustration for the complete visible artwork in a 600 by 900 CSS-pixel website column. Native tall composition; this is NOT a landscape to be cropped. Generate at the highest available native portrait resolution, ideally 2048x3072 pixels or 1536x2304 pixels, with exquisite fine detail.\nPrimary request: Original sculptural cream cumulus cloud banks growing along the right half of an almost-white paper canvas. Preserve the feeling of a computational cloud engraving with pale cream-lit bulging cloud lobes and rich desaturated sage and celadon shadows, but with smoother continuous forms and far finer texture than coarse terminal pixel art.\nComposition: Tall PORTRAIT 2:3 canvas. Recognizable clouds continue vertically from near the top through the lower 85 percent, with full rounded volumes along the right half, some cropped naturally through the right edge and upper-right edge. The leftmost 15 to 20 percent remains mostly clear neutral near-white paper #f7f7f3. The clouds dissolve gradually toward that left margin through exquisitely fine sparse engraving and tiny stippled marks. Lower clouds taper and dissolve organically into the paper with an irregular soft natural departure near the bottom. NO straight horizontal termination and NO hard bottom cutoff. Composition feels like a surrounding atmosphere extending beyond the outer edge of the page, with asymmetric coherent masses and elegant clear space.\nStyle and detail: HIGH DEFINITION detailed engraving, smoothly modeled continuous sculptural cloud volume, very fine sharp sage stipple and delicate curving engraved lines. Subtle minuscule computational grain in the shading provides a digital-print character. Make individual texture marks tiny and refined, not chunky and not visibly square at normal viewing size. Strong structured sage shadows and luminous warm-cream highlights; keep clear recognizable cloud silhouette and depth. Crisp fine texture and smooth tonal transitions, no foggy haze, no blur. The art should look sharp when the full portrait is displayed at 600x900 CSS pixels; detail is native, never an enlargement of low-resolution blocks.\nColor palette: Quiet neutral near-white #f7f7f3 outside the cloud formation, creamy ivory light, pale celadon midtones, muted sage shadows, small amounts of deep desaturated sage-teal in the deepest folds. No all-over green cast on the paper.\nConstraints: No words, no text, no glyph blocks, no coarse ASCII grid, no large terminal characters, no low-resolution pixel-art, no mosaic, no obvious halftone grid, no frame, no card, no oval vignette, no horizontal cutoff, no watermark, no UI, no buildings, no people. Do not make the image uniformly pale or foggy; the sculptural clouds require distinct sage-shadow contrast and fine sharp rendering.",
+  "source_path": "/Users/EthanLiu/.codex/generated_images/01a07fb3-b8c2-7880-9871-c49f91b04759/exec-a291db0e-6d12-4dc9-8ec5-59bfc21a11d3.png",
+  "output_path": "output/sage-backgrounds/portraits/clouds-hd.png",
+  "style_reference_viewed": "output/sage-backgrounds/scenes/s1-clouds.png",
+  "reference_image_passed": false,
+  "requested_dimensions": [
+    "2048x3072",
+    "1536x2304"
+  ],
+  "actual_dimensions": {
+    "width": 1024,
+    "height": 1536
+  },
+  "aspect_ratio": "2:3",
+  "untouched_native_copy": true,
+  "upscaled": false,
+  "file_size_bytes": 3084086,
+  "intended_css_dimensions": {
+    "width": 600,
+    "height": 900
+  },
+  "native_pixels_per_css_pixel": 1.7066666666666668,
+  "inspection": {
+    "quality": "Fine sharp engraved and stippled detail with smoothly modeled cream lobes and strong sage shadows; no coarse glyph grid, obvious pixel blocks, text, or watermark. Full-height native portrait composition.",
+    "clearance": "Leftmost 15 percent is mostly clear paper, with sparse fine stipple entering around middle and lower edges. Leftmost 20 percent contains small wisps and does not remain perfectly flat. Paper is subtly warm cream rather than an exact neutral #f7f7f3.",
+    "bottom": "Clouds taper irregularly through the lower region, with no straight horizontal cutoff. Fine cloud/stipple remains at the lower right edge rather than reaching entirely blank paper.",
+    "resolution_limitation": "Built-in output is 1024x1536 despite the prompt requesting 2048x3072 or 1536x2304. At 600x900 CSS dimensions it displays below native pixel size (1.71 source pixels per CSS pixel), avoiding the former landscape enlargement, but it does not provide a full 2x pixel ratio."
+  }
+}

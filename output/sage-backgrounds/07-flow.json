@@ -1,0 +1,13 @@
+{
+  "name": "Flow",
+  "asset": "07-flow.png",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "prompt": "Use case: stylized-concept.\nAsset type: original 16:9 wide raster background for a minimalist personal website, ideally 2048x1152.\nPrimary request: a restrained abstract flow field of fine streamlines curving around an implied invisible form, scientific yet organic, with absolutely no clouds or landscape.\nScene/backdrop: an almost flat, softly luminous pale sage and celadon field, warm cream highlights, low-saturation dusty teal markings. Palette approximately #dce4d0, #e7e9d5, #f2eed8, #93afa2; avoid strong contrast.\nSubject and composition: softly flowing parallel streams bend gracefully around an unseen smooth form below the lower-right edge. Concentrate all pronounced flowing forms in the lower third and slim side margins. The upper and central 60 percent must remain quiet almost flat pale sage with generous negative space for dark website copy. Asymmetrical, airy, restrained, intentional; tiny streamlines fade smoothly into empty sage rather than terminate abruptly.\nStyle/medium: nostalgic computational print texture, each fine streamline composed of tiny ASCII-like glyph fragments, minuscule dashes and fine stippled dither. Marks should read as texture, never legible words or code. Very subtle cream highlights, delicate soft surface grain. A poetic scientific engraving translated into low-contrast digital halftone.\nConstraints: background artwork only, no interface, no cards, no screens, no text, no axes, no numbers, no labels, no symbols with readable meaning, no logos, no border, no watermark, no neon, no hard gradients, no busy detail in the upper or central area.",
+  "source": "/Users/EthanLiu/.codex/generated_images/01a07fb4-75b7-7aa1-b63c-cc5dade0b317/exec-d886e30c-ea35-4c76-8e8e-3a5dcfce77f2.png",
+  "reference_inspected": "output/wafer-inspired/sage-clouds-v1.png",
+  "reference_input_to_tool": false,
+  "requested_aspect_ratio": "16:9",
+  "actual_dimensions": { "width": 1672, "height": 941 },
+  "assessment": "Fine dithered streamlines sweep around an implied invisible shape in the lower right, with a very quiet pale sage center and upper field. Suitable as a low-contrast hero background or bottom-edge fade."
+}
