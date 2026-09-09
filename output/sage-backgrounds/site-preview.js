@@ -33,8 +33,11 @@
   corner.setAttribute('aria-hidden', 'true');
   const cornerImage = document.createElement('img');
   cornerImage.alt = '';
-  cornerImage.width = 1024;
-  cornerImage.height = 1536;
+  const cornerArt = isHome
+    ? { file: 'cloud-corner-atmosphere-narrow-v1.webp', width: 724, height: 2172 }
+    : { file: 'cloud-corner-atmosphere-v1.webp', width: 1024, height: 1536 };
+  cornerImage.width = cornerArt.width;
+  cornerImage.height = cornerArt.height;
   cornerImage.decoding = 'async';
   corner.append(cornerImage);
   body.prepend(corner);
@@ -114,7 +117,7 @@
     if (!['small', 'medium', 'large'].includes(state.cornerSize)) state.cornerSize = 'medium';
     body.dataset.cornerSize = state.cornerSize;
     if (showCorner && window.innerWidth >= 1280 && !cornerImage.hasAttribute('src')) {
-      cornerImage.src = new URL('details/cloud-corner-rounded-v1.webp', location.href).href;
+      cornerImage.src = new URL(`details/${cornerArt.file}`, location.href).href;
     }
     if (sourceList && state.placement === 'editorial' && !state.original) {
       const large = new URL(scene.large, location.href).href;

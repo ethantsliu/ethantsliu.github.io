@@ -1,0 +1,29 @@
+{
+  "generator": "built-in imagegen",
+  "postprocessing": {
+    "original_png": "Unmodified copy of built-in tool output",
+    "webp": "cwebp -quiet -q 92 -m 6; native dimensions retained",
+    "resized": false,
+    "rotated": false,
+    "stretched": false
+  },
+  "intent": "Continuous overlapping natural cloud structure for secondary pages",
+  "dimensions": {
+    "width": 1024,
+    "height": 1536
+  },
+  "references": [
+    {
+      "path": "../references/nasa-cumulonimbus-africa.jpg",
+      "role": "natural cloud structure, scale and overlap",
+      "credit": "NASA",
+      "source": "https://science.nasa.gov/resource/cumulonimbus-cloud-over-africa/"
+    },
+    {
+      "path": "../portraits/clouds-ascii-v4.png",
+      "role": "upright ASCII texture and palette"
+    }
+  ],
+  "prompt": "Use case: stylized-concept.\nCreate a portrait 1024 x 1536 ASCII cloud illustration for the left edge of a minimal white website. It should feel like an arbitrary glimpse into REAL, CHAOTIC WEATHER.\nReference 1 is a real NASA cloud photograph: learn the irregular overlap, atmosphere, huge differences of scale, ragged small convection and wispy veils in its lower cloud field. Do not copy its anvil shape, horizon, earth, or blue background.\nReference 2 supplies the upright ASCII medium and palette only: luminous ivory, subdued blue-gray shadows, delicate muted sage, readable character texture.\nPaint ONE CONTINUOUS, irregular cloud field that spills in from beyond the top and left of the frame. Some great billows are mostly outside the image; smaller clouds vanish behind larger forms; thin vapor bridges cross uneven hollows. Mix broad soft volumes, stretched sheets, tiny turbulent edges and half-dissolved wisps under coherent soft light. Depth and occlusion should feel observed from nature, never assembled from cloud symbols. No counted groups, equal spacing, repeated domes, tidy gaps, neat outlines, triangular envelope, diagonal taper, vertical stripe, or decorative badge.\nLet its ragged atmospheric edge wander into open white sky and recede unpredictably. The right side is spacious clean white; near the lower edge only broken wisps remain before clear white sky. Do not arrange these transitions as a regular gradient or geometric shape.\nBuild the tones from small upright monospaced @ # + = : . marks on horizontal rows. Keep the character grid orderly while the CLOUD FORMS have natural complexity. Avoid random typographic noise, tiled patterns, stippling-only texture, overly uniform scallops, and cartoon icons. Pure flat #FFFFFF wherever there is no cloud. No objects, sun, land, horizon, words, logos, frames or borders.",
+  "source": "/Users/EthanLiu/.codex/generated_images/01a07fad-3b82-7432-b769-586331600ad0/exec-2320605c-f22b-42af-be56-809ab6861f38.png"
+}

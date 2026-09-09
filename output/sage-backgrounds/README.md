@@ -2,6 +2,19 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 21: continuous atmospheric clouds
+
+The upper-left artwork is now a continuous field of overlapping cloud masses, thin vapor, recessed shadows, and irregular openings. The previous counted groups and evenly spaced white gaps are gone. Natural cloud layering from a [NASA photograph](https://science.nasa.gov/resource/cumulonimbus-cloud-over-africa/) informed the structure; the main cloud portrait supplied the upright ASCII texture and restrained palette. Source credit is saved in `references/README.md`.
+
+The homepage uses a separate narrow native composition so its uneven outer edge survives the margin crop. Secondary pages use the broader cloud field at their approved 320px height. Homepage sizes remain 320px, 560px, and 680px; the 560px default stays larger than the secondary treatment. Native image proportions are preserved and content positions are unchanged. Both themes retain the existing colors and pure white/black backgrounds. This is an interactive preview revision.
+
+Both images were made with built-in imagegen, with original PNGs and native WebPs retained:
+
+- Homepage, 724 × 2172: [PNG](details/cloud-corner-atmosphere-narrow-v1.png), [WebP](details/cloud-corner-atmosphere-narrow-v1.webp), [exact prompt](details/cloud-corner-atmosphere-narrow-v1.prompt.txt), [provenance](details/cloud-corner-atmosphere-narrow-v1.provenance.json).
+- Secondary pages, 1024 × 1536: [PNG](details/cloud-corner-atmosphere-v1.png), [WebP](details/cloud-corner-atmosphere-v1.webp), [exact prompt](details/cloud-corner-atmosphere-v1.prompt.txt), [provenance](details/cloud-corner-atmosphere-v1.provenance.json).
+
+Checks and captures in `revision-21/` cover all six pages in both themes at 1440px and 390px, plus the largest size at 1280px and 1920px. Content geometry is unchanged, native 1:3/2:3 image proportions are preserved, and mobile remains free of the corner image. The shared toggle, homepage sizes, Original comparison, and navigation passed. External requests were blocked during screenshots. Independent visual review is recorded alongside them.
+
 ## Revision 20: rounded clouds with open sky between them
 
 The corner artwork now uses three distinct cumulus cloud groups with rounded billows, shadow pockets, and open white sky between them. Their widths vary without the previous continuous triangular taper. The homepage shows all three groups at its approved larger scale. Secondary pages retain their 320px corner area and show two cloud groups, ending in a natural white gap in the source before the third group. A short sideways blend protects the reading margin; there is no top or bottom fade.

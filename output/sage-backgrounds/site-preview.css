@@ -79,7 +79,7 @@ html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="origi
 @media (min-width: 1280px) {
   .sage-preview[data-corner-cloud="true"] > .sage-corner-cloud {
     --corner-height: 320px;
-    --corner-image-height: 456px;
+    --corner-image-height: var(--corner-height);
     display: block;
     position: absolute;
     top: 0;
@@ -94,7 +94,7 @@ html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="origi
      the approved 320px corner, independently of the homepage size choice. */
   .home.sage-preview[data-corner-cloud="true"] > .sage-corner-cloud {
     --corner-height: 560px;
-    --corner-image-height: var(--corner-height);
+    mask-image: linear-gradient(to right, #000 calc(100% - 8px), transparent 100%);
   }
   .home.sage-preview[data-corner-cloud="true"][data-corner-size="small"] > .sage-corner-cloud {
     --corner-height: 320px;
@@ -102,8 +102,8 @@ html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="origi
   .home.sage-preview[data-corner-cloud="true"][data-corner-size="large"] > .sage-corner-cloud {
     --corner-height: 680px;
   }
-  /* Keep the main billows at the left edge. Secondary pages show two cloud
-     groups, ending in the source's white sky gap before the third group. */
+  /* A narrow homepage composition preserves its wandering outer edge.
+     Both drawings retain their native proportions and upright characters. */
   .sage-preview > .sage-corner-cloud img {
     position: absolute;
     top: 0;
