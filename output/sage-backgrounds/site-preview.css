@@ -73,8 +73,7 @@ html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="origi
 .sage-preview :focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 5px; }
 .sage-preview:not(.show-original) .dropdown-btn { background: var(--bg); }
 .sage-preview #dropdownContent.is-open { display: block; opacity: 1; visibility: visible; pointer-events: auto; }
-/* Secondary pages retain their accepted small cloud in the outer margin.
-   The homepage uses its own broad composition below. */
+/* Corner artwork stays outside the centered reading layout. */
 .sage-preview > .sage-corner-cloud { display: none; }
 @media (min-width: 1280px) {
   .sage-preview[data-corner-cloud="true"] > .sage-corner-cloud {
@@ -113,16 +112,21 @@ html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="origi
     --corner-inset: 230px;
     top: -80px;
   }
-  /* Keep the whole flock in view. The source's empty right side can extend
-     beyond the gutter while its birds remain clear of the reading column. */
-  .home.sage-preview[data-corner-cloud="true"][data-corner-motif="cloud-flock"] > .sage-corner-cloud {
+  /* Secondary pages use the previous homepage flock size. Its empty right
+     side can extend beyond the gutter while the birds stay clear of text. */
+  .sage-preview[data-corner-cloud="true"][data-corner-scene="true"][data-corner-motif="cloud-flock"] > .sage-corner-cloud {
     --flock-scale: .9;
     --corner-width: clamp(calc(156px * var(--flock-scale)), calc(((100vw - 1096px) / 2 - 20px) * 1.66 * var(--flock-scale)), calc(420px * var(--flock-scale)));
+    --corner-height: calc(var(--corner-width) * var(--corner-aspect, 5 / 6));
+    width: var(--corner-width);
     top: 0;
     left: min(0px, calc((100vw - 1096px) / 2 - 20px - var(--corner-width) * .59));
+    overflow: visible;
+    mask-image: none;
   }
-  .home.sage-preview[data-corner-motif="cloud-flock"][data-corner-size="small"] > .sage-corner-cloud { --flock-scale: .7; }
-  .home.sage-preview[data-corner-motif="cloud-flock"][data-corner-size="large"] > .sage-corner-cloud { --flock-scale: 1; }
+  .home.sage-preview[data-corner-scene="true"][data-corner-motif="cloud-flock"] > .sage-corner-cloud { --flock-scale: 1.2; }
+  .home.sage-preview[data-corner-scene="true"][data-corner-motif="cloud-flock"][data-corner-size="small"] > .sage-corner-cloud { --flock-scale: .9; }
+  .home.sage-preview[data-corner-scene="true"][data-corner-motif="cloud-flock"][data-corner-size="large"] > .sage-corner-cloud { --flock-scale: 1.4; }
   /* Both drawings retain their native proportions and upright characters. */
   .sage-preview > .sage-corner-cloud img {
     position: absolute;

@@ -34,9 +34,7 @@
   corner.setAttribute('aria-hidden', 'true');
   const cornerImage = document.createElement('img');
   cornerImage.alt = '';
-  const cornerArt = isHome
-    ? { file: 'cloud-corner-expansive-v4.webp', width: 1374, height: 1145 }
-    : { file: 'cloud-corner-atmosphere-v1.webp', width: 1024, height: 1536 };
+  const cornerArt = { file: 'cloud-corner-expansive-v4.webp', width: 1374, height: 1145 };
   cornerImage.width = cornerArt.width;
   cornerImage.height = cornerArt.height;
   cornerImage.decoding = 'async';
@@ -125,16 +123,18 @@
     const showCorner = Boolean(state.corner) && !state.original && (!isHome || state.placement === 'editorial');
     if (!motifs.some(item => item.id === state.cornerMotif)) state.cornerMotif = 'cloud';
     body.dataset.cornerArtwork = String(showCorner);
-    body.dataset.cornerMotif = state.cornerMotif;
-    const selectedMotif = motifs.find(item => item.id === state.cornerMotif);
+    // Other pages share the flock while preserving the homepage comparison
+    // in navigation state, so returning to About restores the selected study.
+    const selectedMotif = motifs.find(item => item.id === (isHome ? state.cornerMotif : 'cloud-flock'));
+    body.dataset.cornerMotif = selectedMotif.id;
     body.dataset.cornerCombined = String(isHome && Boolean(selectedMotif.withCloud));
-    body.dataset.cornerScene = String(isHome && Boolean(selectedMotif.cornerScene));
+    body.dataset.cornerScene = String(Boolean(selectedMotif.cornerScene));
     const showCloud = Boolean(showCorner && (!isHome || state.cornerMotif === 'cloud' || selectedMotif.withCloud || selectedMotif.cornerScene));
     body.dataset.cornerCloud = String(showCloud);
     if (!['small', 'medium', 'large'].includes(state.cornerSize)) state.cornerSize = 'medium';
     body.dataset.cornerSize = state.cornerSize;
     if (showCloud && window.innerWidth >= 1280) {
-      const source = isHome && selectedMotif.cornerScene
+      const source = selectedMotif.cornerScene
         ? selectedMotif
         : { file: `details/${cornerArt.file}`, width: cornerArt.width, height: cornerArt.height };
       cornerImage.width = source.width;

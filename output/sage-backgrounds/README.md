@@ -2,6 +2,14 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 30: a shared flock, larger on About
+
+Work, Research, Writing, Archive, and the essay preview now use **Cranes & clouds** at the previous homepage's Medium size. About displays the same drawing one-third larger by default; Small restores the previous scale, and Large provides a further increase. Secondary pages keep their fixed smaller scale regardless of the homepage size control. The source drawing, native proportions, palette, lower-right clouds, and centered content positions remain intact.
+
+Navigation retains the chosen homepage study while the secondary pages consistently display the flock. Their source link opens the flock drawing, and the gallery explains the size difference. All six preview pages use revision 30 cache references. This update remains scoped to `output/sage-backgrounds/`.
+
+Checks in `revision-30/checks.json` cover all six pages at 1280, 1440, and 1920 pixels in both themes (36 layouts), plus 12 mobile/tablet cases. They verify the exact previous secondary scale, larger homepage scale, unchanged content geometry, native proportions, source selection, hidden mobile artwork without requests, page navigation and saved comparisons, source links, homepage size controls, and the existing GET-only visit counter. Representative light/dark screenshots are saved alongside the results.
+
 ## Revision 29: a loose flock among drifting clouds
 
 **Cranes & clouds** replaces the single crane in the primary comparisons. It is a newly composed scene with three birds of different sizes and wing positions, one broad overhead cloud bank, and a thinner broken veil below. The larger lower crane has a shallow gliding pose, the middle crane has a downward wing, and the smaller upper crane banks gently. Their silhouettes are different drawings, not duplicated or mirrored copies. The new cloud composition removes the previous sequence of substantial cloud lobes separated by a single bird.

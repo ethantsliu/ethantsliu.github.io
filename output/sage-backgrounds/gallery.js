@@ -31,7 +31,7 @@
   const primaryMotifChoices = document.getElementById("motif-choices");
   const earlierMotifChoices = document.getElementById("earlier-motif-choices");
   const earlierComparisons = document.getElementById("earlier-comparisons");
-  const pageFiles = Object.fromEntries(Object.entries({ about: "site-preview.html", work: "preview-work.html", research: "preview-research.html", archive: "preview-archive.html", writing: "preview-writing.html", essay: "preview-essay.html" }).map(([page, file]) => [page, `${file}?v=29`]));
+  const pageFiles = Object.fromEntries(Object.entries({ about: "site-preview.html", work: "preview-work.html", research: "preview-research.html", archive: "preview-archive.html", writing: "preview-writing.html", essay: "preview-essay.html" }).map(([page, file]) => [page, `${file}?v=30`]));
   const treatmentButtons = Array.from(document.querySelectorAll(".treatment-button"));
   const treatmentStrengths = { editorial: 100, opening: 100, closing: 100 };
   // Saved greens: sage { light: "#4c6757", dark: "#bacbb7" };
@@ -60,14 +60,15 @@
       const definition = motifs.find(item => item.id === id);
       button.querySelector(".motif-source").src = controls.theme.value === "dark" && definition.dark ? definition.dark : definition.file;
     }
-    const motifSource = controls.theme.value === "dark" && selectedMotif.dark ? selectedMotif.dark : selectedMotif.file;
+    const displayedMotif = isHome ? selectedMotif : motifs.find(item => item.id === "cloud-flock");
+    const motifSource = controls.theme.value === "dark" && displayedMotif.dark ? displayedMotif.dark : displayedMotif.file;
     document.getElementById("view-motif").href = motifSource.replace(/\.webp$/, ".png");
-    document.getElementById("view-motif").hidden = !isHome;
-    document.getElementById("view-motif").textContent = selectedMotif.withCloud ? "View detail drawing ↗" : "View source drawing ↗";
+    document.getElementById("view-motif").hidden = controls.original.checked;
+    document.getElementById("view-motif").textContent = displayedMotif.withCloud ? "View detail drawing ↗" : "View source drawing ↗";
     const motifNote = controls.original.checked
       ? "Showing the original site. Selecting a sky study returns to the artwork preview."
       : !isHome
-      ? "These studies are for the homepage. Selecting one returns to About; other pages keep their clouds."
+      ? "On wide screens, other pages share Cranes & clouds at the smaller size. Selecting a study returns to About."
       : controls.width.value === "mobile"
         ? "Corner artwork is hidden on mobile to keep the reading area clear. Open full page on a wide screen to compare."
         : !controls.corner.checked
@@ -86,7 +87,7 @@
       closing: "A full-width scene follows the content."
     };
     const secondaryNote = controls.corner.checked && controls.width.value !== "mobile"
-      ? "Small clouds at the upper-left and lower-right edges, clear of the reading area."
+      ? "A smaller flock at the upper left, with a cloud at the lower-right edge."
       : "Original layout, with a small cloud at the page’s lower-right edge.";
     document.getElementById("placement-note").textContent = controls.original.checked
       ? "The current site, for comparison."
@@ -118,7 +119,7 @@
       ? "Original site · Artwork hidden"
       : isHome
         ? `${controls.page.selectedOptions[0].textContent} · ${artwork.title} · ${controls.corner.checked && !controls.corner.disabled ? selectedMotif.title : "Clear upper-left"} · ${controls.accent.selectedOptions[0].textContent}`
-        : `${controls.page.selectedOptions[0].textContent} · ${controls.corner.checked ? "Cloud corners" : "Cloud fragment"} · ${controls.accent.selectedOptions[0].textContent}`;
+        : `${controls.page.selectedOptions[0].textContent} · ${controls.corner.checked ? "Cranes & clouds" : "Cloud fragment"} · ${controls.accent.selectedOptions[0].textContent}`;
 
     // A copied address keeps the current comparison, including the selected page.
     const saved = new URLSearchParams();
