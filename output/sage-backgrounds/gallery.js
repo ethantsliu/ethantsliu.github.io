@@ -25,7 +25,7 @@
   const status = document.getElementById("selection-status");
   const strengthValue = document.getElementById("strength-value");
   const cardElements = new Map();
-  const pageFiles = Object.fromEntries(Object.entries({ about: "site-preview.html", work: "preview-work.html", research: "preview-research.html", archive: "preview-archive.html", writing: "preview-writing.html", essay: "preview-essay.html" }).map(([page, file]) => [page, `${file}?v=18`]));
+  const pageFiles = Object.fromEntries(Object.entries({ about: "site-preview.html", work: "preview-work.html", research: "preview-research.html", archive: "preview-archive.html", writing: "preview-writing.html", essay: "preview-essay.html" }).map(([page, file]) => [page, `${file}?v=19`]));
   const treatmentButtons = Array.from(document.querySelectorAll(".treatment-button"));
   const treatmentStrengths = { editorial: 100, opening: 100, closing: 100 };
   // Saved greens: sage { light: "#4c6757", dark: "#bacbb7" };
@@ -44,8 +44,8 @@
     controls.art.disabled = !isHome;
     controls.placement.disabled = !isHome;
     controls.strength.disabled = !isHome;
-    controls.corner.disabled = !isHome || controls.original.checked || controls.placement.value !== "editorial" || controls.width.value === "mobile";
-    controls.cornerSize.disabled = controls.corner.disabled || !controls.corner.checked;
+    controls.corner.disabled = controls.original.checked || (isHome && controls.placement.value !== "editorial") || controls.width.value === "mobile";
+    controls.cornerSize.disabled = !isHome || controls.corner.disabled || !controls.corner.checked;
     const strength = Number(controls.strength.value);
     strengthValue.value = `${strength}%`;
     viewport.classList.toggle("is-mobile", controls.width.value === "mobile");
@@ -57,9 +57,12 @@
       opening: "A full-width scene opens the page.",
       closing: "A full-width scene follows the content."
     };
+    const secondaryNote = controls.corner.checked && controls.width.value !== "mobile"
+      ? "Small clouds at the upper-left and lower-right edges, clear of the reading area."
+      : "Original layout, with a small cloud at the page’s lower-right edge.";
     document.getElementById("placement-note").textContent = controls.original.checked
       ? "The current site, for comparison."
-      : isHome ? treatmentNotes[controls.placement.value] : "Original layout, with a small cloud at the page’s lower-right edge.";
+      : isHome ? treatmentNotes[controls.placement.value] : secondaryNote;
     jumpArtwork.hidden = controls.original.checked || (isHome && !["editorial", "closing"].includes(controls.placement.value));
     pageTop.hidden = jumpArtwork.hidden;
     document.getElementById("preview-navigation").hidden = jumpArtwork.hidden;
@@ -87,7 +90,7 @@
       ? "Original site · Artwork hidden"
       : isHome
         ? `${controls.page.selectedOptions[0].textContent} · ${artwork.title} · ${controls.accent.selectedOptions[0].textContent}`
-        : `${controls.page.selectedOptions[0].textContent} · Cloud fragment · ${controls.accent.selectedOptions[0].textContent}`;
+        : `${controls.page.selectedOptions[0].textContent} · ${controls.corner.checked ? "Cloud corners" : "Cloud fragment"} · ${controls.accent.selectedOptions[0].textContent}`;
 
     // A copied address keeps the current comparison, including the selected page.
     const saved = new URLSearchParams();

@@ -37,13 +37,13 @@
   cornerImage.height = 1536;
   cornerImage.decoding = 'async';
   corner.append(cornerImage);
-  if (isHome) body.prepend(corner);
+  body.prepend(corner);
   let state = {
     art: query.get('art') || fallback,
     placement: query.get('placement') || window.SAGE_DEFAULT_PLACEMENT || 'editorial',
     accent: query.get('accent') || 'blue', strength: query.get('strength') || 100,
     theme: query.get('theme') || 'light', original: query.get('original') === 'true',
-    corner: query.get('corner') === 'true',
+    corner: query.has('corner') ? query.get('corner') === 'true' : true,
     cornerSize: query.get('cornerSize') || 'medium'
   };
 
@@ -109,7 +109,7 @@
     body.dataset.naturalEdge = String(usePortrait && Boolean(scene.naturalEdge));
     body.dataset.accent = state.accent;
     body.classList.toggle('show-original', Boolean(state.original));
-    const showCorner = isHome && Boolean(state.corner) && !state.original && state.placement === 'editorial';
+    const showCorner = Boolean(state.corner) && !state.original && (!isHome || state.placement === 'editorial');
     body.dataset.cornerCloud = String(showCorner);
     if (!['small', 'medium', 'large'].includes(state.cornerSize)) state.cornerSize = 'medium';
     body.dataset.cornerSize = state.cornerSize;

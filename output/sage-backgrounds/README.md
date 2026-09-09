@@ -2,6 +2,14 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 19: larger at home, shared across the other pages
+
+The vertical upper-left cloud now appears by default throughout the preview. Work, Research, Writing, Archive, and the essay retain the approved 320px height. The homepage defaults to 560px, reaching down alongside the introduction; its Small comparison preserves the previous 320px size, and Large uses 680px. The **Homepage size** control does not change secondary-page artwork. The shared **Upper-left cloud** checkbox compares the decoration on/off on every page.
+
+All versions preserve the native portrait's proportions and original colors. The artwork stays in the outer margin, at least 20px clear of the header and reading content. It adds no spacing, remains hidden below 1280px, and respects Original mode. Secondary-page footer clouds are retained. The existing native 1024 × 1536 asset is unchanged. This revision updates the interactive preview only.
+
+Browser checks in `revision-19/` compare all six pages against their previous header, content, and footer geometry at 1440px and 390px in both themes. All positions match, with no overflow or mobile image request. Additional checks at 1280px and 1920px confirm native proportions and clear text margins. Gallery checks confirm that the shared toggle survives navigation/reload and that changing homepage size leaves secondary pages at 320px. Screenshots use blocked external requests.
+
 ## Revision 18: a vertical corner composition
 
 The upper-left cloud is now a new native portrait composition: it enters from the top and left edges, with connected cloud lobes tapering down the outer margin. Its ASCII characters stay upright. Small, Medium, and Large now display the portrait at 220px, 320px, and 420px tall, respectively, preserving its aspect ratio. Medium remains the default. The header and text remain in their original positions, at least 20px clear of the artwork; the corner remains hidden below 1280px and on secondary pages.

@@ -73,11 +73,11 @@ html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="origi
 .sage-preview :focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 5px; }
 .sage-preview:not(.show-original) .dropdown-btn { background: var(--bg); }
 .sage-preview #dropdownContent.is-open { display: block; opacity: 1; visibility: visible; pointer-events: auto; }
-/* Optional vertical cloud: only the spare outer margin on wide homepages.
+/* Shared vertical cloud: only the spare outer margin on wide screens.
    Its boundary stays at least 20px to the left of the existing header. */
-.home.sage-preview > .sage-corner-cloud { display: none; }
+.sage-preview > .sage-corner-cloud { display: none; }
 @media (min-width: 1280px) {
-  .home.sage-preview[data-corner-cloud="true"] > .sage-corner-cloud {
+  .sage-preview[data-corner-cloud="true"] > .sage-corner-cloud {
     --corner-height: 320px;
     display: block;
     position: absolute;
@@ -89,14 +89,19 @@ html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="origi
     pointer-events: none;
     mask-image: linear-gradient(to right, #000 calc(100% - min(30px, 25%)), transparent 100%);
   }
+  /* The homepage frames the full introduction; secondary pages retain
+     the approved 320px corner, independently of the homepage size choice. */
+  .home.sage-preview[data-corner-cloud="true"] > .sage-corner-cloud {
+    --corner-height: 560px;
+  }
   .home.sage-preview[data-corner-cloud="true"][data-corner-size="small"] > .sage-corner-cloud {
-    --corner-height: 220px;
+    --corner-height: 320px;
   }
   .home.sage-preview[data-corner-cloud="true"][data-corner-size="large"] > .sage-corner-cloud {
-    --corner-height: 420px;
+    --corner-height: 680px;
   }
   /* Native portrait proportions keep the characters upright and undistorted. */
-  .home.sage-preview > .sage-corner-cloud img {
+  .sage-preview > .sage-corner-cloud img {
     width: auto;
     height: 100%;
     max-width: none;

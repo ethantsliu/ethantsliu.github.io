@@ -1,0 +1,686 @@
+[
+  {
+    "page": "about",
+    "width": 1440,
+    "geometry": {
+      ".page-wrapper": {
+        "x": 120,
+        "y": 0,
+        "width": 1200,
+        "height": 1489.34375,
+        "top": 0,
+        "right": 1320,
+        "bottom": 1489.34375,
+        "left": 120
+      },
+      ".header-container": {
+        "x": 172,
+        "y": 41.59375,
+        "width": 1096,
+        "height": 111.25,
+        "top": 41.59375,
+        "right": 1268,
+        "bottom": 152.84375,
+        "left": 172
+      },
+      "#themeToggle": {
+        "x": 172,
+        "y": 45.6875,
+        "width": 22.59375,
+        "height": 25,
+        "top": 45.6875,
+        "right": 194.59375,
+        "bottom": 70.6875,
+        "left": 172
+      },
+      ".main-content": {
+        "x": 172,
+        "y": 167.234375,
+        "width": 1096,
+        "height": 1187,
+        "top": 167.234375,
+        "right": 1268,
+        "bottom": 1354.234375,
+        "left": 172
+      },
+      ".sage-page-fragment": null,
+      ".visit-counter": {
+        "x": 172,
+        "y": 1402.234375,
+        "width": 1096,
+        "height": 23.109375,
+        "top": 1402.234375,
+        "right": 1268,
+        "bottom": 1425.34375,
+        "left": 172
+      }
+    }
+  },
+  {
+    "page": "work",
+    "width": 1440,
+    "geometry": {
+      ".page-wrapper": {
+        "x": 120,
+        "y": 0,
+        "width": 1200,
+        "height": 470.46875,
+        "top": 0,
+        "right": 1320,
+        "bottom": 470.46875,
+        "left": 120
+      },
+      ".header-container": {
+        "x": 172,
+        "y": 41.59375,
+        "width": 1096,
+        "height": 33.1875,
+        "top": 41.59375,
+        "right": 1268,
+        "bottom": 74.78125,
+        "left": 172
+      },
+      "#themeToggle": {
+        "x": 172,
+        "y": 45.6875,
+        "width": 22.59375,
+        "height": 25,
+        "top": 45.6875,
+        "right": 194.59375,
+        "bottom": 70.6875,
+        "left": 172
+      },
+      ".main-content": {
+        "x": 172,
+        "y": 154.78125,
+        "width": 1096,
+        "height": 226.09375,
+        "top": 154.78125,
+        "right": 1268,
+        "bottom": 380.875,
+        "left": 172
+      },
+      ".sage-page-fragment": {
+        "x": 0,
+        "y": 820,
+        "width": 1440,
+        "height": 180,
+        "top": 820,
+        "right": 1440,
+        "bottom": 1000,
+        "left": 0
+      },
+      ".visit-counter": null
+    }
+  },
+  {
+    "page": "research",
+    "width": 1440,
+    "geometry": {
+      ".page-wrapper": {
+        "x": 120,
+        "y": 0,
+        "width": 1200,
+        "height": 488.125,
+        "top": 0,
+        "right": 1320,
+        "bottom": 488.125,
+        "left": 120
+      },
+      ".header-container": {
+        "x": 172,
+        "y": 41.59375,
+        "width": 1096,
+        "height": 33.1875,
+        "top": 41.59375,
+        "right": 1268,
+        "bottom": 74.78125,
+        "left": 172
+      },
+      "#themeToggle": {
+        "x": 172,
+        "y": 45.6875,
+        "width": 22.59375,
+        "height": 25,
+        "top": 45.6875,
+        "right": 194.59375,
+        "bottom": 70.6875,
+        "left": 172
+      },
+      ".main-content": {
+        "x": 172,
+        "y": 154.78125,
+        "width": 1096,
+        "height": 243.75,
+        "top": 154.78125,
+        "right": 1268,
+        "bottom": 398.53125,
+        "left": 172
+      },
+      ".sage-page-fragment": {
+        "x": 0,
+        "y": 820,
+        "width": 1440,
+        "height": 180,
+        "top": 820,
+        "right": 1440,
+        "bottom": 1000,
+        "left": 0
+      },
+      ".visit-counter": null
+    }
+  },
+  {
+    "page": "writing",
+    "width": 1440,
+    "geometry": {
+      ".page-wrapper": {
+        "x": 120,
+        "y": 0,
+        "width": 1200,
+        "height": 242.3125,
+        "top": 0,
+        "right": 1320,
+        "bottom": 242.3125,
+        "left": 120
+      },
+      ".header-container": {
+        "x": 172,
+        "y": 41.59375,
+        "width": 1096,
+        "height": 33.1875,
+        "top": 41.59375,
+        "right": 1268,
+        "bottom": 74.78125,
+        "left": 172
+      },
+      "#themeToggle": {
+        "x": 172,
+        "y": 45.6875,
+        "width": 22.59375,
+        "height": 25,
+        "top": 45.6875,
+        "right": 194.59375,
+        "bottom": 70.6875,
+        "left": 172
+      },
+      ".main-content": {
+        "x": 172,
+        "y": 122.78125,
+        "width": 1096,
+        "height": 61.9375,
+        "top": 122.78125,
+        "right": 1268,
+        "bottom": 184.71875,
+        "left": 172
+      },
+      ".sage-page-fragment": {
+        "x": 0,
+        "y": 820,
+        "width": 1440,
+        "height": 180,
+        "top": 820,
+        "right": 1440,
+        "bottom": 1000,
+        "left": 0
+      },
+      ".visit-counter": null
+    }
+  },
+  {
+    "page": "archive",
+    "width": 1440,
+    "geometry": {
+      ".page-wrapper": {
+        "x": 120,
+        "y": 0,
+        "width": 1200,
+        "height": 1145.03125,
+        "top": 0,
+        "right": 1320,
+        "bottom": 1145.03125,
+        "left": 120
+      },
+      ".header-container": {
+        "x": 172,
+        "y": 41.59375,
+        "width": 1096,
+        "height": 33.1875,
+        "top": 41.59375,
+        "right": 1268,
+        "bottom": 74.78125,
+        "left": 172
+      },
+      "#themeToggle": {
+        "x": 172,
+        "y": 45.6875,
+        "width": 22.59375,
+        "height": 25,
+        "top": 45.6875,
+        "right": 194.59375,
+        "bottom": 70.6875,
+        "left": 172
+      },
+      ".main-content": {
+        "x": 172,
+        "y": 106.78125,
+        "width": 1096,
+        "height": 980.65625,
+        "top": 106.78125,
+        "right": 1268,
+        "bottom": 1087.4375,
+        "left": 172
+      },
+      ".sage-page-fragment": {
+        "x": 0,
+        "y": 1145.03125,
+        "width": 1440,
+        "height": 180,
+        "top": 1145.03125,
+        "right": 1440,
+        "bottom": 1325.03125,
+        "left": 0
+      },
+      ".visit-counter": null
+    }
+  },
+  {
+    "page": "essay",
+    "width": 1440,
+    "geometry": {
+      ".page-wrapper": {
+        "x": 120,
+        "y": 0,
+        "width": 1200,
+        "height": 1916.984375,
+        "top": 0,
+        "right": 1320,
+        "bottom": 1916.984375,
+        "left": 120
+      },
+      ".header-container": {
+        "x": 172,
+        "y": 41.59375,
+        "width": 1096,
+        "height": 33.1875,
+        "top": 41.59375,
+        "right": 1268,
+        "bottom": 74.78125,
+        "left": 172
+      },
+      "#themeToggle": {
+        "x": 172,
+        "y": 45.6875,
+        "width": 22.59375,
+        "height": 25,
+        "top": 45.6875,
+        "right": 194.59375,
+        "bottom": 70.6875,
+        "left": 172
+      },
+      ".main-content": {
+        "x": 172,
+        "y": 114.78125,
+        "width": 776,
+        "height": 1688.609375,
+        "top": 114.78125,
+        "right": 948,
+        "bottom": 1803.390625,
+        "left": 172
+      },
+      ".sage-page-fragment": {
+        "x": 0,
+        "y": 1916.984375,
+        "width": 1440,
+        "height": 180,
+        "top": 1916.984375,
+        "right": 1440,
+        "bottom": 2096.984375,
+        "left": 0
+      },
+      ".visit-counter": null
+    }
+  },
+  {
+    "page": "about",
+    "width": 390,
+    "geometry": {
+      ".page-wrapper": {
+        "x": 0,
+        "y": 16,
+        "width": 390,
+        "height": 1970.25,
+        "top": 16,
+        "right": 390,
+        "bottom": 1986.25,
+        "left": 0
+      },
+      ".header-container": {
+        "x": 25.59375,
+        "y": 57.59375,
+        "width": 338.8125,
+        "height": 109.84375,
+        "top": 57.59375,
+        "right": 364.40625,
+        "bottom": 167.4375,
+        "left": 25.59375
+      },
+      "#themeToggle": {
+        "x": 25.59375,
+        "y": 60.984375,
+        "width": 22.59375,
+        "height": 25,
+        "top": 60.984375,
+        "right": 48.1875,
+        "bottom": 85.984375,
+        "left": 25.59375
+      },
+      ".main-content": {
+        "x": 25.59375,
+        "y": 181.828125,
+        "width": 338.8125,
+        "height": 1669.3125,
+        "top": 181.828125,
+        "right": 364.40625,
+        "bottom": 1851.140625,
+        "left": 25.59375
+      },
+      ".sage-page-fragment": null,
+      ".visit-counter": {
+        "x": 25.59375,
+        "y": 1899.140625,
+        "width": 338.8125,
+        "height": 23.109375,
+        "top": 1899.140625,
+        "right": 364.40625,
+        "bottom": 1922.25,
+        "left": 25.59375
+      }
+    }
+  },
+  {
+    "page": "work",
+    "width": 390,
+    "geometry": {
+      ".page-wrapper": {
+        "x": 16,
+        "y": 16,
+        "width": 358,
+        "height": 597.40625,
+        "top": 16,
+        "right": 374,
+        "bottom": 613.40625,
+        "left": 16
+      },
+      ".header-container": {
+        "x": 68,
+        "y": 57.59375,
+        "width": 254,
+        "height": 31.78125,
+        "top": 57.59375,
+        "right": 322,
+        "bottom": 89.375,
+        "left": 68
+      },
+      "#themeToggle": {
+        "x": 68,
+        "y": 60.984375,
+        "width": 22.59375,
+        "height": 25,
+        "top": 60.984375,
+        "right": 90.59375,
+        "bottom": 85.984375,
+        "left": 68
+      },
+      ".main-content": {
+        "x": 68,
+        "y": 169.375,
+        "width": 254,
+        "height": 354.4375,
+        "top": 169.375,
+        "right": 322,
+        "bottom": 523.8125,
+        "left": 68
+      },
+      ".sage-page-fragment": {
+        "x": 0,
+        "y": 860,
+        "width": 390,
+        "height": 140,
+        "top": 860,
+        "right": 390,
+        "bottom": 1000,
+        "left": 0
+      },
+      ".visit-counter": null
+    }
+  },
+  {
+    "page": "research",
+    "width": 390,
+    "geometry": {
+      ".page-wrapper": {
+        "x": 16,
+        "y": 16,
+        "width": 358,
+        "height": 749.5,
+        "top": 16,
+        "right": 374,
+        "bottom": 765.5,
+        "left": 16
+      },
+      ".header-container": {
+        "x": 68,
+        "y": 57.59375,
+        "width": 254,
+        "height": 31.78125,
+        "top": 57.59375,
+        "right": 322,
+        "bottom": 89.375,
+        "left": 68
+      },
+      "#themeToggle": {
+        "x": 68,
+        "y": 60.984375,
+        "width": 22.59375,
+        "height": 25,
+        "top": 60.984375,
+        "right": 90.59375,
+        "bottom": 85.984375,
+        "left": 68
+      },
+      ".main-content": {
+        "x": 68,
+        "y": 169.375,
+        "width": 254,
+        "height": 506.53125,
+        "top": 169.375,
+        "right": 322,
+        "bottom": 675.90625,
+        "left": 68
+      },
+      ".sage-page-fragment": {
+        "x": 0,
+        "y": 860,
+        "width": 390,
+        "height": 140,
+        "top": 860,
+        "right": 390,
+        "bottom": 1000,
+        "left": 0
+      },
+      ".visit-counter": null
+    }
+  },
+  {
+    "page": "writing",
+    "width": 390,
+    "geometry": {
+      ".page-wrapper": {
+        "x": 16,
+        "y": 16,
+        "width": 358,
+        "height": 240.90625,
+        "top": 16,
+        "right": 374,
+        "bottom": 256.90625,
+        "left": 16
+      },
+      ".header-container": {
+        "x": 68,
+        "y": 57.59375,
+        "width": 254,
+        "height": 31.78125,
+        "top": 57.59375,
+        "right": 322,
+        "bottom": 89.375,
+        "left": 68
+      },
+      "#themeToggle": {
+        "x": 68,
+        "y": 60.984375,
+        "width": 22.59375,
+        "height": 25,
+        "top": 60.984375,
+        "right": 90.59375,
+        "bottom": 85.984375,
+        "left": 68
+      },
+      ".main-content": {
+        "x": 68,
+        "y": 137.375,
+        "width": 254,
+        "height": 61.9375,
+        "top": 137.375,
+        "right": 322,
+        "bottom": 199.3125,
+        "left": 68
+      },
+      ".sage-page-fragment": {
+        "x": 0,
+        "y": 860,
+        "width": 390,
+        "height": 140,
+        "top": 860,
+        "right": 390,
+        "bottom": 1000,
+        "left": 0
+      },
+      ".visit-counter": null
+    }
+  },
+  {
+    "page": "archive",
+    "width": 390,
+    "geometry": {
+      ".page-wrapper": {
+        "x": 16,
+        "y": 16,
+        "width": 358,
+        "height": 2803.75,
+        "top": 16,
+        "right": 374,
+        "bottom": 2819.75,
+        "left": 16
+      },
+      ".header-container": {
+        "x": 68,
+        "y": 57.59375,
+        "width": 254,
+        "height": 31.78125,
+        "top": 57.59375,
+        "right": 322,
+        "bottom": 89.375,
+        "left": 68
+      },
+      "#themeToggle": {
+        "x": 68,
+        "y": 60.984375,
+        "width": 22.59375,
+        "height": 25,
+        "top": 60.984375,
+        "right": 90.59375,
+        "bottom": 85.984375,
+        "left": 68
+      },
+      ".main-content": {
+        "x": 68,
+        "y": 121.375,
+        "width": 254,
+        "height": 2640.78125,
+        "top": 121.375,
+        "right": 322,
+        "bottom": 2762.15625,
+        "left": 68
+      },
+      ".sage-page-fragment": {
+        "x": 0,
+        "y": 2819.75,
+        "width": 390,
+        "height": 140,
+        "top": 2819.75,
+        "right": 390,
+        "bottom": 2959.75,
+        "left": 0
+      },
+      ".visit-counter": null
+    }
+  },
+  {
+    "page": "essay",
+    "width": 390,
+    "geometry": {
+      ".page-wrapper": {
+        "x": 16,
+        "y": 16,
+        "width": 358,
+        "height": 4886.25,
+        "top": 16,
+        "right": 374,
+        "bottom": 4902.25,
+        "left": 16
+      },
+      ".header-container": {
+        "x": 68,
+        "y": 57.59375,
+        "width": 254,
+        "height": 31.78125,
+        "top": 57.59375,
+        "right": 322,
+        "bottom": 89.375,
+        "left": 68
+      },
+      "#themeToggle": {
+        "x": 68,
+        "y": 60.984375,
+        "width": 22.59375,
+        "height": 25,
+        "top": 60.984375,
+        "right": 90.59375,
+        "bottom": 85.984375,
+        "left": 68
+      },
+      ".main-content": {
+        "x": 68,
+        "y": 129.375,
+        "width": 254,
+        "height": 4659.28125,
+        "top": 129.375,
+        "right": 322,
+        "bottom": 4788.65625,
+        "left": 68
+      },
+      ".sage-page-fragment": {
+        "x": 0,
+        "y": 4902.25,
+        "width": 390,
+        "height": 140,
+        "top": 4902.25,
+        "right": 390,
+        "bottom": 5042.25,
+        "left": 0
+      },
+      ".visit-counter": null
+    }
+  }
+]
