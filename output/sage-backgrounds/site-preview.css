@@ -135,9 +135,10 @@ html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="origi
     top: -28px;
     left: calc(50% + 208px - var(--corner-width) * .35);
   }
-  /* The homepage name leaves more vertical room than the listing pages. */
+  /* The homepage leaves room to carry the flock farther right and lower. */
   .home.sage-preview[data-corner-cloud="true"][data-corner-scene="true"][data-corner-motif="crane-flock"][data-crane-placement="header"] > .sage-corner-cloud {
-    top: 12px;
+    top: 30px;
+    left: calc(50% + 318px - var(--corner-width) * .35);
   }
   /* Both drawings retain their native proportions and upright characters. */
   .sage-preview > .sage-corner-cloud img {

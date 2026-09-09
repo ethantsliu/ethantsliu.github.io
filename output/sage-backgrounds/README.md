@@ -2,6 +2,10 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 36: carry the homepage cranes farther right
+
+Moved the homepage's Beside title flock 110 pixels right and 18 pixels down, preserving its 216 × 180 source size. Its painted birds now sit farther into the open space toward the menu. Browser checks confirm clearance from visible text, contact links, and menu controls on all six preview pages; the homepage capture is in `revision-36/`. Secondary-page positions and the Outer margin comparison are unchanged.
+
 ## Revision 35: align the homepage flock with the name
 
 Moved the homepage's Beside title flock down another 40 pixels, from `top: -28px` to `top: 12px`, so the visible birds sit alongside the name. The 216 × 180 source size and horizontal anchor remain consistent across pages. Secondary pages retain their previous vertical position because their entries begin higher. The Outer margin comparison is unchanged. Browser checks confirm the 40-pixel movement and clear text/menu areas on all six pages; the homepage capture is in `revision-35/`.
