@@ -125,7 +125,7 @@
     body.dataset.cornerArtwork = String(showCorner);
     // Other pages share the flock while preserving the homepage comparison
     // in navigation state, so returning to About restores the selected study.
-    const selectedMotif = motifs.find(item => item.id === (isHome ? state.cornerMotif : 'cloud-flock'));
+    const selectedMotif = motifs.find(item => item.id === (isHome ? state.cornerMotif : 'crane-flock'));
     body.dataset.cornerMotif = selectedMotif.id;
     body.dataset.cornerCombined = String(isHome && Boolean(selectedMotif.withCloud));
     body.dataset.cornerScene = String(Boolean(selectedMotif.cornerScene));

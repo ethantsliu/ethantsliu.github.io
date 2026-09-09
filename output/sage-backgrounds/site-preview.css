@@ -114,19 +114,20 @@ html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="origi
   }
   /* Secondary pages use the previous homepage flock size. Its empty right
      side can extend beyond the gutter while the birds stay clear of text. */
-  .sage-preview[data-corner-cloud="true"][data-corner-scene="true"][data-corner-motif="cloud-flock"] > .sage-corner-cloud {
+  .sage-preview[data-corner-cloud="true"][data-corner-scene="true"]:is([data-corner-motif="cloud-flock"], [data-corner-motif="crane-flock"]) > .sage-corner-cloud {
     --flock-scale: .9;
     --corner-width: clamp(calc(156px * var(--flock-scale)), calc(((100vw - 1096px) / 2 - 20px) * 1.66 * var(--flock-scale)), calc(420px * var(--flock-scale)));
     --corner-height: calc(var(--corner-width) * var(--corner-aspect, 5 / 6));
     width: var(--corner-width);
     top: 0;
-    left: min(0px, calc((100vw - 1096px) / 2 - 20px - var(--corner-width) * .59));
+    left: min(0px, calc((100vw - 1096px) / 2 - 20px - var(--corner-width) * var(--flock-ink-edge, .59)));
     overflow: visible;
     mask-image: none;
   }
-  .home.sage-preview[data-corner-scene="true"][data-corner-motif="cloud-flock"] > .sage-corner-cloud { --flock-scale: 1.2; }
-  .home.sage-preview[data-corner-scene="true"][data-corner-motif="cloud-flock"][data-corner-size="small"] > .sage-corner-cloud { --flock-scale: .9; }
-  .home.sage-preview[data-corner-scene="true"][data-corner-motif="cloud-flock"][data-corner-size="large"] > .sage-corner-cloud { --flock-scale: 1.4; }
+  .home.sage-preview[data-corner-scene="true"]:is([data-corner-motif="cloud-flock"], [data-corner-motif="crane-flock"]) > .sage-corner-cloud { --flock-scale: 1.2; }
+  .home.sage-preview[data-corner-scene="true"]:is([data-corner-motif="cloud-flock"], [data-corner-motif="crane-flock"])[data-corner-size="small"] > .sage-corner-cloud { --flock-scale: .9; }
+  .home.sage-preview[data-corner-scene="true"]:is([data-corner-motif="cloud-flock"], [data-corner-motif="crane-flock"])[data-corner-size="large"] > .sage-corner-cloud { --flock-scale: 1.4; }
+  .sage-preview[data-corner-motif="crane-flock"] > .sage-corner-cloud { --flock-ink-edge: .6; }
   /* Both drawings retain their native proportions and upright characters. */
   .sage-preview > .sage-corner-cloud img {
     position: absolute;
@@ -138,6 +139,12 @@ html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="origi
   }
 }
 .sage-corner-cloud img { display: block; width: 100%; height: auto; filter: var(--warm-art-filter, brightness(1.055)); mix-blend-mode: multiply; }
+/* A narrow desktop gutter needs less enlargement to keep the flying bodies
+   visible; the homepage still remains larger than secondary pages. */
+@media (min-width: 1280px) and (max-width: 1365px) {
+  .home.sage-preview[data-corner-scene="true"][data-corner-motif="crane-flock"] > .sage-corner-cloud { --flock-scale: 1; }
+  .home.sage-preview[data-corner-scene="true"][data-corner-motif="crane-flock"][data-corner-size="large"] > .sage-corner-cloud { --flock-scale: 1.1; }
+}
 html[data-theme="dark"] .sage-corner-cloud img { filter: var(--night-art-filter); mix-blend-mode: screen; }
 /* Complete, independent sky motifs sit in the spare margin. Their width is
    limited by that margin, so neither the text nor the artwork is cropped. */

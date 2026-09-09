@@ -2,6 +2,16 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 31: cranes in open sky
+
+**Cranes** is the new default upper-left study on About and every secondary preview page. A built-in imagegen edit removes the entire upper-left cloud bank and lower wisps, leaving three cranes in different poses with looser horizontal spacing. It retains the ASCII texture and blue-green/gold palette. About keeps a larger flock; the extra enlargement tapers at narrow desktop widths so the birds' bodies remain visible. Secondary pages retain their previous smaller scale. The main cloud portrait and lower-right page fragments remain in their existing positions.
+
+The previous **Cranes & clouds** composition is saved under Earlier comparisons with its original `cloud-flock` ID and source drawing. The new `crane-flock` ID is separate. The gallery still has six primary studies, now with nine earlier comparisons; source links and page navigation follow the displayed drawing.
+
+Generated using **built-in imagegen**, with the revision 29 cranes-and-clouds drawing as the edit target: [original PNG](motifs/cranes-ascii-v1.png), [WebP delivery](motifs/cranes-ascii-v1.webp), [exact prompt](motifs/cranes-ascii-v1.prompt.txt), [provenance](motifs/cranes-ascii-v1.json). Both image files retain the native 1374 × 1145 dimensions. The PNG is unchanged; the WebP uses quality 94 without local raster cropping, repainting, resizing, or upscaling.
+
+Checks and light/dark screenshots are in `revision-31/`. Coverage includes all six pages at three desktop widths, mobile/tablet hiding, unchanged text and header positions, native proportions, the new and previous source drawings, homepage size controls, saved page navigation, theme switching, and the existing GET-only visit counter. This revision remains scoped to the preview collection under `output/sage-backgrounds/`.
+
 ## Revision 30: a shared flock, larger on About
 
 Work, Research, Writing, Archive, and the essay preview now use **Cranes & clouds** at the previous homepage's Medium size. About displays the same drawing one-third larger by default; Small restores the previous scale, and Large provides a further increase. Secondary pages keep their fixed smaller scale regardless of the homepage size control. The source drawing, native proportions, palette, lower-right clouds, and centered content positions remain intact.

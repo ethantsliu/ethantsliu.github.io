@@ -1,0 +1,8 @@
+Use case: precise-object-edit
+Asset type: ASCII artwork for the upper-left margin of a minimal personal website.
+Edit target: the attached cranes-and-clouds drawing.
+Primary request: remove ALL clouds, including the overhead bank and every lower wisp, and leave only three flying cranes against pure white (#ffffff).
+Keep the three cranes' recognizable anatomy, extended necks, trailing legs, different sizes, softly curved wings, and different wing positions. Keep their existing deep muted blue-green shadows and warm pale gold highlights. Keep exactly three cranes, no additional birds.
+Arrange them loosely at different heights and horizontal positions within the LEFT 58% of the canvas: the smallest near the upper right of that region, the medium bird farther left at mid-height, and the largest lower down and a little right of the medium bird. Leave generous, UNEQUAL white gaps between the birds. It should look like a moment in flight, not an emblem, regular diagonal, stacked row, V formation, or triangular flock symbol. Keep each entire bird visible inside the canvas; no clipped wings, feet, or beaks. The rightmost 40% of the canvas must remain completely empty white for the site's text.
+Preserve the current canvas aspect ratio and native size, 1374 by 1145, and the ASCII medium: individual UPRIGHT monospaced letters, digits, and punctuation with clear tiny white gaps. Birds must remain made of glyphs, not smooth filled silhouettes, engraved strokes, line art, or icons.
+There must be NO clouds, cloud-like stippling, haze, gradients, stars, sun, decorative trails, background texture, borders, labels, or watermarks. Remove orphan cloud characters around the birds. White must be clean white all the way to every edge.
