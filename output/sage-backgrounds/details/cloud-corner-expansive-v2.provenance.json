@@ -1,0 +1,24 @@
+{
+  "generator": "built-in imagegen",
+  "intent": "Selected homepage cloud with a natural clear opening around the existing header",
+  "dimensions": {
+    "width": 1374,
+    "height": 1145
+  },
+  "references": [
+    {
+      "path": "cloud-corner-expansive-v1.png",
+      "role": "ASCII cloud style, palette and atmospheric structure"
+    }
+  ],
+  "prompt": "Use case: style-transfer.\nRecompose the attached square ASCII cloud artwork into a NEW 1536 x 1280 landscape illustration for an upper-left webpage corner. Preserve its cloud medium, crisp upright ASCII glyphs, pale ivory sunlight, muted blue-gray shadows and natural atmospheric depth.\nThe current composition loses too much of its substantial cloud when placed beside website text. Change the LARGE-SCALE SILHOUETTE. Retain a substantial uneven left cloud mass, and bring a broad OVERHEAD billow across the very top. Make a deep open bay of perfectly white sky below that overhead cloud and to the right of the left mass. Do not merely crop the reference.\nLayout guidance for this image's native coordinates: a generous overhead cloud continues off the top edge and reaches roughly three quarters across the image, but that rightward reach stays in the upper fifth. Through the middle and lower parts of the image, leave the right two thirds as empty white sky. The left cloud has large overlapping volumetric billows extending unevenly into the left third, receding deeply and then surging outward unpredictably before dissolving by the bottom. This opening is for a website header; it must feel like clear sky with a natural cloud edge, never a box cut out around text.\nMake the visible large cloud volumes substantial and close, not a fine lace of little wisps. Mix broad shadowed cloud faces, brilliant irregular sunlit crests, torn thin veils, and occasional tiny evaporating fragments. Use asymmetrical overlap, irregular hollows and very unequal forms. It should feel like an arbitrary glimpse of real weather passing overhead and down the left side.\nThe outline should meander with deep scoops and surprising protrusions, NOT a triangular diagonal, straight vertical cutoff, clean L border, rectangular panel, symmetrical icon or sequence of evenly sized scallops. The majority of the central and lower-right canvas is pure #FFFFFF sky. Keep the bottom and right canvas boundaries pure white.\nNo website text, no labels, no frame, no blue sky background, no sun, no horizon, no land. Keep the ASCII character grid upright and sharp.",
+  "source": "/Users/EthanLiu/.codex/generated_images/01a07fad-3b82-7432-b769-586331600ad0/exec-090590c2-1678-4b14-9d8f-ef515571fb31.png",
+  "postprocessing": {
+    "original_png": "Unmodified copy of built-in tool output",
+    "webp": "cwebp -quiet -q 92 -m 6; native dimensions retained",
+    "resized": false,
+    "rotated": false,
+    "stretched": false
+  },
+  "presentation": "Native image proportions; viewport clips only the cloud extending past the top and left. No homepage CSS fade, shape mask, or gutter-width clipping."
+}

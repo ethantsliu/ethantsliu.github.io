@@ -1,0 +1,128 @@
+[
+  {
+    "width": 1280,
+    "size": "small",
+    "theme": "light",
+    "rect": {
+      "x": 92,
+      "y": 45.6875,
+      "width": 22.59375,
+      "height": 25
+    },
+    "color": "rgb(37, 41, 37)",
+    "backgroundFile": "/Users/EthanLiu/Documents/Programming/ethantsliu.github.io/output/sage-backgrounds/revision-22/accessibility/theme-background-1280-small-light.png",
+    "backgroundColors": [
+      [
+        255,
+        255,
+        255
+      ]
+    ],
+    "minimumContrast": 14.762196805687239
+  },
+  {
+    "width": 1280,
+    "size": "small",
+    "theme": "dark",
+    "rect": {
+      "x": 92,
+      "y": 45.6875,
+      "width": 22.59375,
+      "height": 25
+    },
+    "color": "rgb(232, 237, 242)",
+    "backgroundFile": "/Users/EthanLiu/Documents/Programming/ethantsliu.github.io/output/sage-backgrounds/revision-22/accessibility/theme-background-1280-small-dark.png",
+    "backgroundColors": [
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "minimumContrast": 17.826996685348224
+  },
+  {
+    "width": 1280,
+    "size": "medium",
+    "theme": "light",
+    "rect": {
+      "x": 92,
+      "y": 45.6875,
+      "width": 22.59375,
+      "height": 25
+    },
+    "color": "rgb(37, 41, 37)",
+    "backgroundFile": "/Users/EthanLiu/Documents/Programming/ethantsliu.github.io/output/sage-backgrounds/revision-22/accessibility/theme-background-1280-medium-light.png",
+    "backgroundColors": [
+      [
+        255,
+        255,
+        255
+      ]
+    ],
+    "minimumContrast": 14.762196805687239
+  },
+  {
+    "width": 1280,
+    "size": "medium",
+    "theme": "dark",
+    "rect": {
+      "x": 92,
+      "y": 45.6875,
+      "width": 22.59375,
+      "height": 25
+    },
+    "color": "rgb(232, 237, 242)",
+    "backgroundFile": "/Users/EthanLiu/Documents/Programming/ethantsliu.github.io/output/sage-backgrounds/revision-22/accessibility/theme-background-1280-medium-dark.png",
+    "backgroundColors": [
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "minimumContrast": 17.826996685348224
+  },
+  {
+    "width": 1280,
+    "size": "large",
+    "theme": "light",
+    "rect": {
+      "x": 92,
+      "y": 45.6875,
+      "width": 22.59375,
+      "height": 25
+    },
+    "color": "rgb(37, 41, 37)",
+    "backgroundFile": "/Users/EthanLiu/Documents/Programming/ethantsliu.github.io/output/sage-backgrounds/revision-22/accessibility/theme-background-1280-large-light.png",
+    "backgroundColors": [
+      [
+        255,
+        255,
+        255
+      ]
+    ],
+    "minimumContrast": 14.762196805687239
+  },
+  {
+    "width": 1280,
+    "size": "large",
+    "theme": "dark",
+    "rect": {
+      "x": 92,
+      "y": 45.6875,
+      "width": 22.59375,
+      "height": 25
+    },
+    "color": "rgb(232, 237, 242)",
+    "backgroundFile": "/Users/EthanLiu/Documents/Programming/ethantsliu.github.io/output/sage-backgrounds/revision-22/accessibility/theme-background-1280-large-dark.png",
+    "backgroundColors": [
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "minimumContrast": 17.826996685348224
+  }
+]

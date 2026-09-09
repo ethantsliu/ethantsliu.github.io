@@ -2,6 +2,14 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 22: an open cloud composition for the homepage
+
+The homepage now uses a broad cloud bank whose natural white opening surrounds the existing header. Its irregular billows extend beyond the top and left of the viewport. The old narrow gutter clipping and right-edge fade have been removed on the homepage, so successive cloud forms are no longer cut off at a shared vertical boundary. Larger cloud volumes and their ASCII texture relate to the existing lower-right portrait.
+
+The selected source is `details/cloud-corner-expansive-v2.png` (1374 × 1145), with native-size WebP delivery, exact prompt, and provenance beside it. The first square study is preserved as `cloud-corner-expansive-v1.*`. Both were created with the built-in imagegen tool. Neither PNG was resized, cropped, rotated, or stretched; CSS places the selected source partially outside the viewport at its original aspect ratio.
+
+Homepage sizes use 400, 500, and 600 CSS pixel widths. The offset responds to the original centered content so the image’s unpainted opening remains around the text at narrower desktop widths. Below 1280px the corner stays hidden. The accepted secondary-page artwork, main portrait, gold accents, text layout, and visit counter behavior remain unchanged. Browser checks and visual review are preserved in `revision-22/`.
+
 ## Revision 21: continuous atmospheric clouds
 
 The upper-left artwork is now a continuous field of overlapping cloud masses, thin vapor, recessed shadows, and irregular openings. The previous counted groups and evenly spaced white gaps are gone. Natural cloud layering from a [NASA photograph](https://science.nasa.gov/resource/cumulonimbus-cloud-over-africa/) informed the structure; the main cloud portrait supplied the upright ASCII texture and restrained palette. Source credit is saved in `references/README.md`.

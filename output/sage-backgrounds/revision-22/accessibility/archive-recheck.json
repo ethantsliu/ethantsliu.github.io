@@ -1,0 +1,18 @@
+{
+  "page": "archive",
+  "width": 1440,
+  "theme": "light",
+  "computedArtworkStylesIdentical": true,
+  "geometryIdentical": true,
+  "identicalScreenshotRounds": [
+    false,
+    false,
+    false
+  ],
+  "previousDifference": {
+    "pixels": 15,
+    "maximumChannelDifference": 1,
+    "location": "lower-right footer artwork",
+    "assessment": "Subpixel raster rounding; no layout, source or style difference."
+  }
+}

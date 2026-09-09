@@ -1,0 +1,3119 @@
+{
+  "home": [
+    {
+      "width": 1280,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "toggleContrast": 14.762196805687239,
+      "overflow": false,
+      "toggle": {
+        "color": "rgb(37, 41, 37)",
+        "background": "rgba(0, 0, 0, 0)",
+        "label": "Switch to dark theme",
+        "hit": true,
+        "rect": {
+          "x": 92,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 114.59375,
+          "bottom": 70.6875,
+          "left": 92
+        }
+      },
+      "paper": "#ffffff",
+      "text": "#252925",
+      "accent": "#8a642d",
+      "corner": {
+        "display": "block",
+        "pointer": "none",
+        "aria": "true",
+        "rect": {
+          "x": -155,
+          "y": -78,
+          "width": 500,
+          "height": 416.65625,
+          "top": -78,
+          "right": 345,
+          "bottom": 338.65625,
+          "left": -155
+        },
+        "headerClearance": -253,
+        "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-expansive-v2.webp",
+        "naturalWidth": 1374,
+        "naturalHeight": 1145,
+        "imageRect": {
+          "x": -155,
+          "y": -78,
+          "width": 499.984375,
+          "height": 416.65625,
+          "top": -78,
+          "right": 344.984375,
+          "bottom": 338.65625,
+          "left": -155
+        },
+        "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+        "mask": "none"
+      }
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "toggleContrast": 17.826996685348224,
+      "overflow": false,
+      "toggle": {
+        "color": "rgb(232, 237, 242)",
+        "background": "rgba(0, 0, 0, 0)",
+        "label": "Switch to light theme",
+        "hit": true,
+        "rect": {
+          "x": 92,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 114.59375,
+          "bottom": 70.6875,
+          "left": 92
+        }
+      },
+      "paper": "#000000",
+      "text": "#e8edf2",
+      "accent": "#c8aa70",
+      "corner": {
+        "display": "block",
+        "pointer": "none",
+        "aria": "true",
+        "rect": {
+          "x": -155,
+          "y": -78,
+          "width": 500,
+          "height": 416.65625,
+          "top": -78,
+          "right": 345,
+          "bottom": 338.65625,
+          "left": -155
+        },
+        "headerClearance": -253,
+        "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-expansive-v2.webp",
+        "naturalWidth": 1374,
+        "naturalHeight": 1145,
+        "imageRect": {
+          "x": -155,
+          "y": -78,
+          "width": 499.984375,
+          "height": 416.65625,
+          "top": -78,
+          "right": 344.984375,
+          "bottom": 338.65625,
+          "left": -155
+        },
+        "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+        "mask": "none"
+      }
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "toggleContrast": 14.762196805687239,
+      "overflow": false,
+      "toggle": {
+        "color": "rgb(37, 41, 37)",
+        "background": "rgba(0, 0, 0, 0)",
+        "label": "Switch to dark theme",
+        "hit": true,
+        "rect": {
+          "x": 172,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 194.59375,
+          "bottom": 70.6875,
+          "left": 172
+        }
+      },
+      "paper": "#ffffff",
+      "text": "#252925",
+      "accent": "#8a642d",
+      "corner": {
+        "display": "block",
+        "pointer": "none",
+        "aria": "true",
+        "rect": {
+          "x": -75,
+          "y": -78,
+          "width": 500,
+          "height": 416.65625,
+          "top": -78,
+          "right": 425,
+          "bottom": 338.65625,
+          "left": -75
+        },
+        "headerClearance": -253,
+        "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-expansive-v2.webp",
+        "naturalWidth": 1374,
+        "naturalHeight": 1145,
+        "imageRect": {
+          "x": -75,
+          "y": -78,
+          "width": 499.984375,
+          "height": 416.65625,
+          "top": -78,
+          "right": 424.984375,
+          "bottom": 338.65625,
+          "left": -75
+        },
+        "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+        "mask": "none"
+      }
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "toggleContrast": 17.826996685348224,
+      "overflow": false,
+      "toggle": {
+        "color": "rgb(232, 237, 242)",
+        "background": "rgba(0, 0, 0, 0)",
+        "label": "Switch to light theme",
+        "hit": true,
+        "rect": {
+          "x": 172,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 194.59375,
+          "bottom": 70.6875,
+          "left": 172
+        }
+      },
+      "paper": "#000000",
+      "text": "#e8edf2",
+      "accent": "#c8aa70",
+      "corner": {
+        "display": "block",
+        "pointer": "none",
+        "aria": "true",
+        "rect": {
+          "x": -75,
+          "y": -78,
+          "width": 500,
+          "height": 416.65625,
+          "top": -78,
+          "right": 425,
+          "bottom": 338.65625,
+          "left": -75
+        },
+        "headerClearance": -253,
+        "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-expansive-v2.webp",
+        "naturalWidth": 1374,
+        "naturalHeight": 1145,
+        "imageRect": {
+          "x": -75,
+          "y": -78,
+          "width": 499.984375,
+          "height": 416.65625,
+          "top": -78,
+          "right": 424.984375,
+          "bottom": 338.65625,
+          "left": -75
+        },
+        "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+        "mask": "none"
+      }
+    },
+    {
+      "width": 1920,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "toggleContrast": 14.762196805687239,
+      "overflow": false,
+      "toggle": {
+        "color": "rgb(37, 41, 37)",
+        "background": "rgba(0, 0, 0, 0)",
+        "label": "Switch to dark theme",
+        "hit": true,
+        "rect": {
+          "x": 412,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 434.59375,
+          "bottom": 70.6875,
+          "left": 412
+        }
+      },
+      "paper": "#ffffff",
+      "text": "#252925",
+      "accent": "#8a642d",
+      "corner": {
+        "display": "block",
+        "pointer": "none",
+        "aria": "true",
+        "rect": {
+          "x": -24,
+          "y": -78,
+          "width": 500,
+          "height": 416.65625,
+          "top": -78,
+          "right": 476,
+          "bottom": 338.65625,
+          "left": -24
+        },
+        "headerClearance": -64,
+        "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-expansive-v2.webp",
+        "naturalWidth": 1374,
+        "naturalHeight": 1145,
+        "imageRect": {
+          "x": -24,
+          "y": -78,
+          "width": 499.984375,
+          "height": 416.65625,
+          "top": -78,
+          "right": 475.984375,
+          "bottom": 338.65625,
+          "left": -24
+        },
+        "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+        "mask": "none"
+      }
+    },
+    {
+      "width": 1920,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "toggleContrast": 17.826996685348224,
+      "overflow": false,
+      "toggle": {
+        "color": "rgb(232, 237, 242)",
+        "background": "rgba(0, 0, 0, 0)",
+        "label": "Switch to light theme",
+        "hit": true,
+        "rect": {
+          "x": 412,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 434.59375,
+          "bottom": 70.6875,
+          "left": 412
+        }
+      },
+      "paper": "#000000",
+      "text": "#e8edf2",
+      "accent": "#c8aa70",
+      "corner": {
+        "display": "block",
+        "pointer": "none",
+        "aria": "true",
+        "rect": {
+          "x": -24,
+          "y": -78,
+          "width": 500,
+          "height": 416.65625,
+          "top": -78,
+          "right": 476,
+          "bottom": 338.65625,
+          "left": -24
+        },
+        "headerClearance": -64,
+        "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-expansive-v2.webp",
+        "naturalWidth": 1374,
+        "naturalHeight": 1145,
+        "imageRect": {
+          "x": -24,
+          "y": -78,
+          "width": 499.984375,
+          "height": 416.65625,
+          "top": -78,
+          "right": 475.984375,
+          "bottom": 338.65625,
+          "left": -24
+        },
+        "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+        "mask": "none"
+      }
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "toggleContrast": 14.762196805687239,
+      "overflow": false,
+      "toggle": {
+        "color": "rgb(37, 41, 37)",
+        "background": "rgba(0, 0, 0, 0)",
+        "label": "Switch to dark theme",
+        "hit": true,
+        "rect": {
+          "x": 25.59375,
+          "y": 60.984375,
+          "width": 22.59375,
+          "height": 25,
+          "top": 60.984375,
+          "right": 48.1875,
+          "bottom": 85.984375,
+          "left": 25.59375
+        }
+      },
+      "paper": "#ffffff",
+      "text": "#252925",
+      "accent": "#8a642d",
+      "corner": {
+        "display": "none",
+        "pointer": "auto",
+        "aria": "true",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "headerClearance": 25.59375,
+        "src": null,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "imageRect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+        "mask": "none"
+      }
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "toggleContrast": 17.826996685348224,
+      "overflow": false,
+      "toggle": {
+        "color": "rgb(232, 237, 242)",
+        "background": "rgba(0, 0, 0, 0)",
+        "label": "Switch to light theme",
+        "hit": true,
+        "rect": {
+          "x": 25.59375,
+          "y": 60.984375,
+          "width": 22.59375,
+          "height": 25,
+          "top": 60.984375,
+          "right": 48.1875,
+          "bottom": 85.984375,
+          "left": 25.59375
+        }
+      },
+      "paper": "#000000",
+      "text": "#e8edf2",
+      "accent": "#c8aa70",
+      "corner": {
+        "display": "none",
+        "pointer": "auto",
+        "aria": "true",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "headerClearance": 25.59375,
+        "src": null,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "imageRect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+        "mask": "none"
+      }
+    },
+    {
+      "query": "corner=true&cornerSize=large",
+      "width": 1440,
+      "overflow": false,
+      "theme": "light",
+      "toggle": {
+        "color": "rgb(37, 41, 37)",
+        "background": "rgba(0, 0, 0, 0)",
+        "label": "Switch to dark theme",
+        "hit": true,
+        "rect": {
+          "x": 172,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 194.59375,
+          "bottom": 70.6875,
+          "left": 172
+        }
+      },
+      "paper": "#ffffff",
+      "text": "#252925",
+      "accent": "#8a642d",
+      "corner": {
+        "display": "block",
+        "pointer": "none",
+        "aria": "true",
+        "rect": {
+          "x": -120,
+          "y": -108,
+          "width": 600,
+          "height": 500,
+          "top": -108,
+          "right": 480,
+          "bottom": 392,
+          "left": -120
+        },
+        "headerClearance": -308,
+        "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-expansive-v2.webp",
+        "naturalWidth": 1374,
+        "naturalHeight": 1145,
+        "imageRect": {
+          "x": -120,
+          "y": -108,
+          "width": 600,
+          "height": 500,
+          "top": -108,
+          "right": 480,
+          "bottom": 392,
+          "left": -120
+        },
+        "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+        "mask": "none"
+      }
+    },
+    {
+      "query": "corner=true&original=true",
+      "width": 1440,
+      "overflow": false,
+      "theme": "light",
+      "toggle": {
+        "color": "rgb(0, 0, 0)",
+        "background": "rgba(0, 0, 0, 0)",
+        "label": "Switch to dark theme",
+        "hit": true,
+        "rect": {
+          "x": 172,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 194.59375,
+          "bottom": 70.6875,
+          "left": 172
+        }
+      },
+      "paper": "#ffffff",
+      "text": "#000000",
+      "accent": "#3f6b4f",
+      "corner": {
+        "display": "none",
+        "pointer": "auto",
+        "aria": "true",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "headerClearance": 172,
+        "src": null,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "imageRect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "filter": "brightness(1.055)",
+        "mask": "none"
+      }
+    },
+    {
+      "query": "corner=false",
+      "width": 1440,
+      "overflow": false,
+      "theme": "light",
+      "toggle": {
+        "color": "rgb(37, 41, 37)",
+        "background": "rgba(0, 0, 0, 0)",
+        "label": "Switch to dark theme",
+        "hit": true,
+        "rect": {
+          "x": 172,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 194.59375,
+          "bottom": 70.6875,
+          "left": 172
+        }
+      },
+      "paper": "#ffffff",
+      "text": "#252925",
+      "accent": "#8a642d",
+      "corner": {
+        "display": "none",
+        "pointer": "auto",
+        "aria": "true",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "headerClearance": 172,
+        "src": null,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "imageRect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+        "mask": "none"
+      }
+    },
+    {
+      "boundary": true,
+      "width": 1279,
+      "overflow": false,
+      "theme": "light",
+      "toggle": {
+        "color": "rgb(37, 41, 37)",
+        "background": "rgba(0, 0, 0, 0)",
+        "label": "Switch to dark theme",
+        "hit": true,
+        "rect": {
+          "x": 91.5,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 114.09375,
+          "bottom": 70.6875,
+          "left": 91.5
+        }
+      },
+      "paper": "#ffffff",
+      "text": "#252925",
+      "accent": "#4c6e83",
+      "corner": {
+        "display": "none",
+        "pointer": "auto",
+        "aria": "true",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "headerClearance": 91.5,
+        "src": null,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "imageRect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "filter": "brightness(1.055)",
+        "mask": "none"
+      }
+    }
+  ],
+  "secondary": [
+    {
+      "page": "work",
+      "width": 1440,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "oldMetrics": {
+        "width": 1440,
+        "overflow": false,
+        "theme": "light",
+        "toggle": {
+          "color": "rgb(37, 41, 37)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to dark theme",
+          "hit": true,
+          "rect": {
+            "x": 172,
+            "y": 45.6875,
+            "width": 22.59375,
+            "height": 25,
+            "top": 45.6875,
+            "right": 194.59375,
+            "bottom": 70.6875,
+            "left": 172
+          }
+        },
+        "paper": "#ffffff",
+        "text": "#252925",
+        "accent": "#8a642d",
+        "corner": {
+          "display": "block",
+          "pointer": "none",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 152,
+            "height": 320,
+            "top": 0,
+            "right": 152,
+            "bottom": 320,
+            "left": 0
+          },
+          "headerClearance": 20,
+          "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-atmosphere-v1.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 213.328125,
+            "height": 320,
+            "top": 0,
+            "right": 213.328125,
+            "bottom": 320,
+            "left": 0
+          },
+          "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+          "mask": "linear-gradient(to right, rgb(0, 0, 0) calc(100% - min(22px, 25%)), rgba(0, 0, 0, 0) 100%)"
+        }
+      },
+      "newMetrics": {
+        "width": 1440,
+        "overflow": false,
+        "theme": "light",
+        "toggle": {
+          "color": "rgb(37, 41, 37)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to dark theme",
+          "hit": true,
+          "rect": {
+            "x": 172,
+            "y": 45.6875,
+            "width": 22.59375,
+            "height": 25,
+            "top": 45.6875,
+            "right": 194.59375,
+            "bottom": 70.6875,
+            "left": 172
+          }
+        },
+        "paper": "#ffffff",
+        "text": "#252925",
+        "accent": "#8a642d",
+        "corner": {
+          "display": "block",
+          "pointer": "none",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 152,
+            "height": 320,
+            "top": 0,
+            "right": 152,
+            "bottom": 320,
+            "left": 0
+          },
+          "headerClearance": 20,
+          "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-atmosphere-v1.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 213.328125,
+            "height": 320,
+            "top": 0,
+            "right": 213.328125,
+            "bottom": 320,
+            "left": 0
+          },
+          "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+          "mask": "linear-gradient(to right, rgb(0, 0, 0) calc(100% - min(22px, 25%)), rgba(0, 0, 0, 0) 100%)"
+        }
+      }
+    },
+    {
+      "page": "work",
+      "width": 1440,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "oldMetrics": {
+        "width": 1440,
+        "overflow": false,
+        "theme": "dark",
+        "toggle": {
+          "color": "rgb(232, 237, 242)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to light theme",
+          "hit": true,
+          "rect": {
+            "x": 172,
+            "y": 45.6875,
+            "width": 22.59375,
+            "height": 25,
+            "top": 45.6875,
+            "right": 194.59375,
+            "bottom": 70.6875,
+            "left": 172
+          }
+        },
+        "paper": "#000000",
+        "text": "#e8edf2",
+        "accent": "#c8aa70",
+        "corner": {
+          "display": "block",
+          "pointer": "none",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 152,
+            "height": 320,
+            "top": 0,
+            "right": 152,
+            "bottom": 320,
+            "left": 0
+          },
+          "headerClearance": 20,
+          "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-atmosphere-v1.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 213.328125,
+            "height": 320,
+            "top": 0,
+            "right": 213.328125,
+            "bottom": 320,
+            "left": 0
+          },
+          "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+          "mask": "linear-gradient(to right, rgb(0, 0, 0) calc(100% - min(22px, 25%)), rgba(0, 0, 0, 0) 100%)"
+        }
+      },
+      "newMetrics": {
+        "width": 1440,
+        "overflow": false,
+        "theme": "dark",
+        "toggle": {
+          "color": "rgb(232, 237, 242)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to light theme",
+          "hit": true,
+          "rect": {
+            "x": 172,
+            "y": 45.6875,
+            "width": 22.59375,
+            "height": 25,
+            "top": 45.6875,
+            "right": 194.59375,
+            "bottom": 70.6875,
+            "left": 172
+          }
+        },
+        "paper": "#000000",
+        "text": "#e8edf2",
+        "accent": "#c8aa70",
+        "corner": {
+          "display": "block",
+          "pointer": "none",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 152,
+            "height": 320,
+            "top": 0,
+            "right": 152,
+            "bottom": 320,
+            "left": 0
+          },
+          "headerClearance": 20,
+          "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-atmosphere-v1.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 213.328125,
+            "height": 320,
+            "top": 0,
+            "right": 213.328125,
+            "bottom": 320,
+            "left": 0
+          },
+          "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+          "mask": "linear-gradient(to right, rgb(0, 0, 0) calc(100% - min(22px, 25%)), rgba(0, 0, 0, 0) 100%)"
+        }
+      }
+    },
+    {
+      "page": "work",
+      "width": 390,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "oldMetrics": {
+        "width": 390,
+        "overflow": false,
+        "theme": "light",
+        "toggle": {
+          "color": "rgb(37, 41, 37)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to dark theme",
+          "hit": true,
+          "rect": {
+            "x": 68,
+            "y": 60.984375,
+            "width": 22.59375,
+            "height": 25,
+            "top": 60.984375,
+            "right": 90.59375,
+            "bottom": 85.984375,
+            "left": 68
+          }
+        },
+        "paper": "#ffffff",
+        "text": "#252925",
+        "accent": "#8a642d",
+        "corner": {
+          "display": "none",
+          "pointer": "auto",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "headerClearance": 68,
+          "src": null,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+          "mask": "none"
+        }
+      },
+      "newMetrics": {
+        "width": 390,
+        "overflow": false,
+        "theme": "light",
+        "toggle": {
+          "color": "rgb(37, 41, 37)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to dark theme",
+          "hit": true,
+          "rect": {
+            "x": 68,
+            "y": 60.984375,
+            "width": 22.59375,
+            "height": 25,
+            "top": 60.984375,
+            "right": 90.59375,
+            "bottom": 85.984375,
+            "left": 68
+          }
+        },
+        "paper": "#ffffff",
+        "text": "#252925",
+        "accent": "#8a642d",
+        "corner": {
+          "display": "none",
+          "pointer": "auto",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "headerClearance": 68,
+          "src": null,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+          "mask": "none"
+        }
+      }
+    },
+    {
+      "page": "work",
+      "width": 390,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "oldMetrics": {
+        "width": 390,
+        "overflow": false,
+        "theme": "dark",
+        "toggle": {
+          "color": "rgb(232, 237, 242)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to light theme",
+          "hit": true,
+          "rect": {
+            "x": 68,
+            "y": 60.984375,
+            "width": 22.59375,
+            "height": 25,
+            "top": 60.984375,
+            "right": 90.59375,
+            "bottom": 85.984375,
+            "left": 68
+          }
+        },
+        "paper": "#000000",
+        "text": "#e8edf2",
+        "accent": "#c8aa70",
+        "corner": {
+          "display": "none",
+          "pointer": "auto",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "headerClearance": 68,
+          "src": null,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+          "mask": "none"
+        }
+      },
+      "newMetrics": {
+        "width": 390,
+        "overflow": false,
+        "theme": "dark",
+        "toggle": {
+          "color": "rgb(232, 237, 242)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to light theme",
+          "hit": true,
+          "rect": {
+            "x": 68,
+            "y": 60.984375,
+            "width": 22.59375,
+            "height": 25,
+            "top": 60.984375,
+            "right": 90.59375,
+            "bottom": 85.984375,
+            "left": 68
+          }
+        },
+        "paper": "#000000",
+        "text": "#e8edf2",
+        "accent": "#c8aa70",
+        "corner": {
+          "display": "none",
+          "pointer": "auto",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "headerClearance": 68,
+          "src": null,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+          "mask": "none"
+        }
+      }
+    },
+    {
+      "page": "research",
+      "width": 1440,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "oldMetrics": {
+        "width": 1440,
+        "overflow": false,
+        "theme": "light",
+        "toggle": {
+          "color": "rgb(37, 41, 37)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to dark theme",
+          "hit": true,
+          "rect": {
+            "x": 172,
+            "y": 45.6875,
+            "width": 22.59375,
+            "height": 25,
+            "top": 45.6875,
+            "right": 194.59375,
+            "bottom": 70.6875,
+            "left": 172
+          }
+        },
+        "paper": "#ffffff",
+        "text": "#252925",
+        "accent": "#8a642d",
+        "corner": {
+          "display": "block",
+          "pointer": "none",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 152,
+            "height": 320,
+            "top": 0,
+            "right": 152,
+            "bottom": 320,
+            "left": 0
+          },
+          "headerClearance": 20,
+          "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-atmosphere-v1.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 213.328125,
+            "height": 320,
+            "top": 0,
+            "right": 213.328125,
+            "bottom": 320,
+            "left": 0
+          },
+          "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+          "mask": "linear-gradient(to right, rgb(0, 0, 0) calc(100% - min(22px, 25%)), rgba(0, 0, 0, 0) 100%)"
+        }
+      },
+      "newMetrics": {
+        "width": 1440,
+        "overflow": false,
+        "theme": "light",
+        "toggle": {
+          "color": "rgb(37, 41, 37)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to dark theme",
+          "hit": true,
+          "rect": {
+            "x": 172,
+            "y": 45.6875,
+            "width": 22.59375,
+            "height": 25,
+            "top": 45.6875,
+            "right": 194.59375,
+            "bottom": 70.6875,
+            "left": 172
+          }
+        },
+        "paper": "#ffffff",
+        "text": "#252925",
+        "accent": "#8a642d",
+        "corner": {
+          "display": "block",
+          "pointer": "none",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 152,
+            "height": 320,
+            "top": 0,
+            "right": 152,
+            "bottom": 320,
+            "left": 0
+          },
+          "headerClearance": 20,
+          "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-atmosphere-v1.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 213.328125,
+            "height": 320,
+            "top": 0,
+            "right": 213.328125,
+            "bottom": 320,
+            "left": 0
+          },
+          "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+          "mask": "linear-gradient(to right, rgb(0, 0, 0) calc(100% - min(22px, 25%)), rgba(0, 0, 0, 0) 100%)"
+        }
+      }
+    },
+    {
+      "page": "research",
+      "width": 1440,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "oldMetrics": {
+        "width": 1440,
+        "overflow": false,
+        "theme": "dark",
+        "toggle": {
+          "color": "rgb(232, 237, 242)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to light theme",
+          "hit": true,
+          "rect": {
+            "x": 172,
+            "y": 45.6875,
+            "width": 22.59375,
+            "height": 25,
+            "top": 45.6875,
+            "right": 194.59375,
+            "bottom": 70.6875,
+            "left": 172
+          }
+        },
+        "paper": "#000000",
+        "text": "#e8edf2",
+        "accent": "#c8aa70",
+        "corner": {
+          "display": "block",
+          "pointer": "none",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 152,
+            "height": 320,
+            "top": 0,
+            "right": 152,
+            "bottom": 320,
+            "left": 0
+          },
+          "headerClearance": 20,
+          "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-atmosphere-v1.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 213.328125,
+            "height": 320,
+            "top": 0,
+            "right": 213.328125,
+            "bottom": 320,
+            "left": 0
+          },
+          "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+          "mask": "linear-gradient(to right, rgb(0, 0, 0) calc(100% - min(22px, 25%)), rgba(0, 0, 0, 0) 100%)"
+        }
+      },
+      "newMetrics": {
+        "width": 1440,
+        "overflow": false,
+        "theme": "dark",
+        "toggle": {
+          "color": "rgb(232, 237, 242)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to light theme",
+          "hit": true,
+          "rect": {
+            "x": 172,
+            "y": 45.6875,
+            "width": 22.59375,
+            "height": 25,
+            "top": 45.6875,
+            "right": 194.59375,
+            "bottom": 70.6875,
+            "left": 172
+          }
+        },
+        "paper": "#000000",
+        "text": "#e8edf2",
+        "accent": "#c8aa70",
+        "corner": {
+          "display": "block",
+          "pointer": "none",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 152,
+            "height": 320,
+            "top": 0,
+            "right": 152,
+            "bottom": 320,
+            "left": 0
+          },
+          "headerClearance": 20,
+          "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-atmosphere-v1.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 213.328125,
+            "height": 320,
+            "top": 0,
+            "right": 213.328125,
+            "bottom": 320,
+            "left": 0
+          },
+          "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+          "mask": "linear-gradient(to right, rgb(0, 0, 0) calc(100% - min(22px, 25%)), rgba(0, 0, 0, 0) 100%)"
+        }
+      }
+    },
+    {
+      "page": "research",
+      "width": 390,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "oldMetrics": {
+        "width": 390,
+        "overflow": false,
+        "theme": "light",
+        "toggle": {
+          "color": "rgb(37, 41, 37)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to dark theme",
+          "hit": true,
+          "rect": {
+            "x": 68,
+            "y": 60.984375,
+            "width": 22.59375,
+            "height": 25,
+            "top": 60.984375,
+            "right": 90.59375,
+            "bottom": 85.984375,
+            "left": 68
+          }
+        },
+        "paper": "#ffffff",
+        "text": "#252925",
+        "accent": "#8a642d",
+        "corner": {
+          "display": "none",
+          "pointer": "auto",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "headerClearance": 68,
+          "src": null,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+          "mask": "none"
+        }
+      },
+      "newMetrics": {
+        "width": 390,
+        "overflow": false,
+        "theme": "light",
+        "toggle": {
+          "color": "rgb(37, 41, 37)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to dark theme",
+          "hit": true,
+          "rect": {
+            "x": 68,
+            "y": 60.984375,
+            "width": 22.59375,
+            "height": 25,
+            "top": 60.984375,
+            "right": 90.59375,
+            "bottom": 85.984375,
+            "left": 68
+          }
+        },
+        "paper": "#ffffff",
+        "text": "#252925",
+        "accent": "#8a642d",
+        "corner": {
+          "display": "none",
+          "pointer": "auto",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "headerClearance": 68,
+          "src": null,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+          "mask": "none"
+        }
+      }
+    },
+    {
+      "page": "research",
+      "width": 390,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "oldMetrics": {
+        "width": 390,
+        "overflow": false,
+        "theme": "dark",
+        "toggle": {
+          "color": "rgb(232, 237, 242)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to light theme",
+          "hit": true,
+          "rect": {
+            "x": 68,
+            "y": 60.984375,
+            "width": 22.59375,
+            "height": 25,
+            "top": 60.984375,
+            "right": 90.59375,
+            "bottom": 85.984375,
+            "left": 68
+          }
+        },
+        "paper": "#000000",
+        "text": "#e8edf2",
+        "accent": "#c8aa70",
+        "corner": {
+          "display": "none",
+          "pointer": "auto",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "headerClearance": 68,
+          "src": null,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+          "mask": "none"
+        }
+      },
+      "newMetrics": {
+        "width": 390,
+        "overflow": false,
+        "theme": "dark",
+        "toggle": {
+          "color": "rgb(232, 237, 242)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to light theme",
+          "hit": true,
+          "rect": {
+            "x": 68,
+            "y": 60.984375,
+            "width": 22.59375,
+            "height": 25,
+            "top": 60.984375,
+            "right": 90.59375,
+            "bottom": 85.984375,
+            "left": 68
+          }
+        },
+        "paper": "#000000",
+        "text": "#e8edf2",
+        "accent": "#c8aa70",
+        "corner": {
+          "display": "none",
+          "pointer": "auto",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "headerClearance": 68,
+          "src": null,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+          "mask": "none"
+        }
+      }
+    },
+    {
+      "page": "archive",
+      "width": 1440,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "pixelIdentical": false,
+      "oldMetrics": {
+        "width": 1440,
+        "overflow": false,
+        "theme": "light",
+        "toggle": {
+          "color": "rgb(37, 41, 37)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to dark theme",
+          "hit": true,
+          "rect": {
+            "x": 172,
+            "y": 45.6875,
+            "width": 22.59375,
+            "height": 25,
+            "top": 45.6875,
+            "right": 194.59375,
+            "bottom": 70.6875,
+            "left": 172
+          }
+        },
+        "paper": "#ffffff",
+        "text": "#252925",
+        "accent": "#8a642d",
+        "corner": {
+          "display": "block",
+          "pointer": "none",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 152,
+            "height": 320,
+            "top": 0,
+            "right": 152,
+            "bottom": 320,
+            "left": 0
+          },
+          "headerClearance": 20,
+          "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-atmosphere-v1.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 213.328125,
+            "height": 320,
+            "top": 0,
+            "right": 213.328125,
+            "bottom": 320,
+            "left": 0
+          },
+          "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+          "mask": "linear-gradient(to right, rgb(0, 0, 0) calc(100% - min(22px, 25%)), rgba(0, 0, 0, 0) 100%)"
+        }
+      },
+      "newMetrics": {
+        "width": 1440,
+        "overflow": false,
+        "theme": "light",
+        "toggle": {
+          "color": "rgb(37, 41, 37)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to dark theme",
+          "hit": true,
+          "rect": {
+            "x": 172,
+            "y": 45.6875,
+            "width": 22.59375,
+            "height": 25,
+            "top": 45.6875,
+            "right": 194.59375,
+            "bottom": 70.6875,
+            "left": 172
+          }
+        },
+        "paper": "#ffffff",
+        "text": "#252925",
+        "accent": "#8a642d",
+        "corner": {
+          "display": "block",
+          "pointer": "none",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 152,
+            "height": 320,
+            "top": 0,
+            "right": 152,
+            "bottom": 320,
+            "left": 0
+          },
+          "headerClearance": 20,
+          "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-atmosphere-v1.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 213.328125,
+            "height": 320,
+            "top": 0,
+            "right": 213.328125,
+            "bottom": 320,
+            "left": 0
+          },
+          "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+          "mask": "linear-gradient(to right, rgb(0, 0, 0) calc(100% - min(22px, 25%)), rgba(0, 0, 0, 0) 100%)"
+        }
+      }
+    },
+    {
+      "page": "archive",
+      "width": 1440,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "oldMetrics": {
+        "width": 1440,
+        "overflow": false,
+        "theme": "dark",
+        "toggle": {
+          "color": "rgb(232, 237, 242)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to light theme",
+          "hit": true,
+          "rect": {
+            "x": 172,
+            "y": 45.6875,
+            "width": 22.59375,
+            "height": 25,
+            "top": 45.6875,
+            "right": 194.59375,
+            "bottom": 70.6875,
+            "left": 172
+          }
+        },
+        "paper": "#000000",
+        "text": "#e8edf2",
+        "accent": "#c8aa70",
+        "corner": {
+          "display": "block",
+          "pointer": "none",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 152,
+            "height": 320,
+            "top": 0,
+            "right": 152,
+            "bottom": 320,
+            "left": 0
+          },
+          "headerClearance": 20,
+          "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-atmosphere-v1.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 213.328125,
+            "height": 320,
+            "top": 0,
+            "right": 213.328125,
+            "bottom": 320,
+            "left": 0
+          },
+          "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+          "mask": "linear-gradient(to right, rgb(0, 0, 0) calc(100% - min(22px, 25%)), rgba(0, 0, 0, 0) 100%)"
+        }
+      },
+      "newMetrics": {
+        "width": 1440,
+        "overflow": false,
+        "theme": "dark",
+        "toggle": {
+          "color": "rgb(232, 237, 242)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to light theme",
+          "hit": true,
+          "rect": {
+            "x": 172,
+            "y": 45.6875,
+            "width": 22.59375,
+            "height": 25,
+            "top": 45.6875,
+            "right": 194.59375,
+            "bottom": 70.6875,
+            "left": 172
+          }
+        },
+        "paper": "#000000",
+        "text": "#e8edf2",
+        "accent": "#c8aa70",
+        "corner": {
+          "display": "block",
+          "pointer": "none",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 152,
+            "height": 320,
+            "top": 0,
+            "right": 152,
+            "bottom": 320,
+            "left": 0
+          },
+          "headerClearance": 20,
+          "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-atmosphere-v1.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 213.328125,
+            "height": 320,
+            "top": 0,
+            "right": 213.328125,
+            "bottom": 320,
+            "left": 0
+          },
+          "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+          "mask": "linear-gradient(to right, rgb(0, 0, 0) calc(100% - min(22px, 25%)), rgba(0, 0, 0, 0) 100%)"
+        }
+      }
+    },
+    {
+      "page": "archive",
+      "width": 390,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "oldMetrics": {
+        "width": 390,
+        "overflow": false,
+        "theme": "light",
+        "toggle": {
+          "color": "rgb(37, 41, 37)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to dark theme",
+          "hit": true,
+          "rect": {
+            "x": 68,
+            "y": 60.984375,
+            "width": 22.59375,
+            "height": 25,
+            "top": 60.984375,
+            "right": 90.59375,
+            "bottom": 85.984375,
+            "left": 68
+          }
+        },
+        "paper": "#ffffff",
+        "text": "#252925",
+        "accent": "#8a642d",
+        "corner": {
+          "display": "none",
+          "pointer": "auto",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "headerClearance": 68,
+          "src": null,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+          "mask": "none"
+        }
+      },
+      "newMetrics": {
+        "width": 390,
+        "overflow": false,
+        "theme": "light",
+        "toggle": {
+          "color": "rgb(37, 41, 37)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to dark theme",
+          "hit": true,
+          "rect": {
+            "x": 68,
+            "y": 60.984375,
+            "width": 22.59375,
+            "height": 25,
+            "top": 60.984375,
+            "right": 90.59375,
+            "bottom": 85.984375,
+            "left": 68
+          }
+        },
+        "paper": "#ffffff",
+        "text": "#252925",
+        "accent": "#8a642d",
+        "corner": {
+          "display": "none",
+          "pointer": "auto",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "headerClearance": 68,
+          "src": null,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+          "mask": "none"
+        }
+      }
+    },
+    {
+      "page": "archive",
+      "width": 390,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "oldMetrics": {
+        "width": 390,
+        "overflow": false,
+        "theme": "dark",
+        "toggle": {
+          "color": "rgb(232, 237, 242)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to light theme",
+          "hit": true,
+          "rect": {
+            "x": 68,
+            "y": 60.984375,
+            "width": 22.59375,
+            "height": 25,
+            "top": 60.984375,
+            "right": 90.59375,
+            "bottom": 85.984375,
+            "left": 68
+          }
+        },
+        "paper": "#000000",
+        "text": "#e8edf2",
+        "accent": "#c8aa70",
+        "corner": {
+          "display": "none",
+          "pointer": "auto",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "headerClearance": 68,
+          "src": null,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+          "mask": "none"
+        }
+      },
+      "newMetrics": {
+        "width": 390,
+        "overflow": false,
+        "theme": "dark",
+        "toggle": {
+          "color": "rgb(232, 237, 242)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to light theme",
+          "hit": true,
+          "rect": {
+            "x": 68,
+            "y": 60.984375,
+            "width": 22.59375,
+            "height": 25,
+            "top": 60.984375,
+            "right": 90.59375,
+            "bottom": 85.984375,
+            "left": 68
+          }
+        },
+        "paper": "#000000",
+        "text": "#e8edf2",
+        "accent": "#c8aa70",
+        "corner": {
+          "display": "none",
+          "pointer": "auto",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "headerClearance": 68,
+          "src": null,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+          "mask": "none"
+        }
+      }
+    },
+    {
+      "page": "writing",
+      "width": 1440,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "oldMetrics": {
+        "width": 1440,
+        "overflow": false,
+        "theme": "light",
+        "toggle": {
+          "color": "rgb(37, 41, 37)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to dark theme",
+          "hit": true,
+          "rect": {
+            "x": 172,
+            "y": 45.6875,
+            "width": 22.59375,
+            "height": 25,
+            "top": 45.6875,
+            "right": 194.59375,
+            "bottom": 70.6875,
+            "left": 172
+          }
+        },
+        "paper": "#ffffff",
+        "text": "#252925",
+        "accent": "#8a642d",
+        "corner": {
+          "display": "block",
+          "pointer": "none",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 152,
+            "height": 320,
+            "top": 0,
+            "right": 152,
+            "bottom": 320,
+            "left": 0
+          },
+          "headerClearance": 20,
+          "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-atmosphere-v1.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 213.328125,
+            "height": 320,
+            "top": 0,
+            "right": 213.328125,
+            "bottom": 320,
+            "left": 0
+          },
+          "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+          "mask": "linear-gradient(to right, rgb(0, 0, 0) calc(100% - min(22px, 25%)), rgba(0, 0, 0, 0) 100%)"
+        }
+      },
+      "newMetrics": {
+        "width": 1440,
+        "overflow": false,
+        "theme": "light",
+        "toggle": {
+          "color": "rgb(37, 41, 37)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to dark theme",
+          "hit": true,
+          "rect": {
+            "x": 172,
+            "y": 45.6875,
+            "width": 22.59375,
+            "height": 25,
+            "top": 45.6875,
+            "right": 194.59375,
+            "bottom": 70.6875,
+            "left": 172
+          }
+        },
+        "paper": "#ffffff",
+        "text": "#252925",
+        "accent": "#8a642d",
+        "corner": {
+          "display": "block",
+          "pointer": "none",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 152,
+            "height": 320,
+            "top": 0,
+            "right": 152,
+            "bottom": 320,
+            "left": 0
+          },
+          "headerClearance": 20,
+          "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-atmosphere-v1.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 213.328125,
+            "height": 320,
+            "top": 0,
+            "right": 213.328125,
+            "bottom": 320,
+            "left": 0
+          },
+          "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+          "mask": "linear-gradient(to right, rgb(0, 0, 0) calc(100% - min(22px, 25%)), rgba(0, 0, 0, 0) 100%)"
+        }
+      }
+    },
+    {
+      "page": "writing",
+      "width": 1440,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "oldMetrics": {
+        "width": 1440,
+        "overflow": false,
+        "theme": "dark",
+        "toggle": {
+          "color": "rgb(232, 237, 242)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to light theme",
+          "hit": true,
+          "rect": {
+            "x": 172,
+            "y": 45.6875,
+            "width": 22.59375,
+            "height": 25,
+            "top": 45.6875,
+            "right": 194.59375,
+            "bottom": 70.6875,
+            "left": 172
+          }
+        },
+        "paper": "#000000",
+        "text": "#e8edf2",
+        "accent": "#c8aa70",
+        "corner": {
+          "display": "block",
+          "pointer": "none",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 152,
+            "height": 320,
+            "top": 0,
+            "right": 152,
+            "bottom": 320,
+            "left": 0
+          },
+          "headerClearance": 20,
+          "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-atmosphere-v1.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 213.328125,
+            "height": 320,
+            "top": 0,
+            "right": 213.328125,
+            "bottom": 320,
+            "left": 0
+          },
+          "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+          "mask": "linear-gradient(to right, rgb(0, 0, 0) calc(100% - min(22px, 25%)), rgba(0, 0, 0, 0) 100%)"
+        }
+      },
+      "newMetrics": {
+        "width": 1440,
+        "overflow": false,
+        "theme": "dark",
+        "toggle": {
+          "color": "rgb(232, 237, 242)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to light theme",
+          "hit": true,
+          "rect": {
+            "x": 172,
+            "y": 45.6875,
+            "width": 22.59375,
+            "height": 25,
+            "top": 45.6875,
+            "right": 194.59375,
+            "bottom": 70.6875,
+            "left": 172
+          }
+        },
+        "paper": "#000000",
+        "text": "#e8edf2",
+        "accent": "#c8aa70",
+        "corner": {
+          "display": "block",
+          "pointer": "none",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 152,
+            "height": 320,
+            "top": 0,
+            "right": 152,
+            "bottom": 320,
+            "left": 0
+          },
+          "headerClearance": 20,
+          "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-atmosphere-v1.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 213.328125,
+            "height": 320,
+            "top": 0,
+            "right": 213.328125,
+            "bottom": 320,
+            "left": 0
+          },
+          "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+          "mask": "linear-gradient(to right, rgb(0, 0, 0) calc(100% - min(22px, 25%)), rgba(0, 0, 0, 0) 100%)"
+        }
+      }
+    },
+    {
+      "page": "writing",
+      "width": 390,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "oldMetrics": {
+        "width": 390,
+        "overflow": false,
+        "theme": "light",
+        "toggle": {
+          "color": "rgb(37, 41, 37)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to dark theme",
+          "hit": true,
+          "rect": {
+            "x": 68,
+            "y": 60.984375,
+            "width": 22.59375,
+            "height": 25,
+            "top": 60.984375,
+            "right": 90.59375,
+            "bottom": 85.984375,
+            "left": 68
+          }
+        },
+        "paper": "#ffffff",
+        "text": "#252925",
+        "accent": "#8a642d",
+        "corner": {
+          "display": "none",
+          "pointer": "auto",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "headerClearance": 68,
+          "src": null,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+          "mask": "none"
+        }
+      },
+      "newMetrics": {
+        "width": 390,
+        "overflow": false,
+        "theme": "light",
+        "toggle": {
+          "color": "rgb(37, 41, 37)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to dark theme",
+          "hit": true,
+          "rect": {
+            "x": 68,
+            "y": 60.984375,
+            "width": 22.59375,
+            "height": 25,
+            "top": 60.984375,
+            "right": 90.59375,
+            "bottom": 85.984375,
+            "left": 68
+          }
+        },
+        "paper": "#ffffff",
+        "text": "#252925",
+        "accent": "#8a642d",
+        "corner": {
+          "display": "none",
+          "pointer": "auto",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "headerClearance": 68,
+          "src": null,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+          "mask": "none"
+        }
+      }
+    },
+    {
+      "page": "writing",
+      "width": 390,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "oldMetrics": {
+        "width": 390,
+        "overflow": false,
+        "theme": "dark",
+        "toggle": {
+          "color": "rgb(232, 237, 242)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to light theme",
+          "hit": true,
+          "rect": {
+            "x": 68,
+            "y": 60.984375,
+            "width": 22.59375,
+            "height": 25,
+            "top": 60.984375,
+            "right": 90.59375,
+            "bottom": 85.984375,
+            "left": 68
+          }
+        },
+        "paper": "#000000",
+        "text": "#e8edf2",
+        "accent": "#c8aa70",
+        "corner": {
+          "display": "none",
+          "pointer": "auto",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "headerClearance": 68,
+          "src": null,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+          "mask": "none"
+        }
+      },
+      "newMetrics": {
+        "width": 390,
+        "overflow": false,
+        "theme": "dark",
+        "toggle": {
+          "color": "rgb(232, 237, 242)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to light theme",
+          "hit": true,
+          "rect": {
+            "x": 68,
+            "y": 60.984375,
+            "width": 22.59375,
+            "height": 25,
+            "top": 60.984375,
+            "right": 90.59375,
+            "bottom": 85.984375,
+            "left": 68
+          }
+        },
+        "paper": "#000000",
+        "text": "#e8edf2",
+        "accent": "#c8aa70",
+        "corner": {
+          "display": "none",
+          "pointer": "auto",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "headerClearance": 68,
+          "src": null,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+          "mask": "none"
+        }
+      }
+    },
+    {
+      "page": "essay",
+      "width": 1440,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "oldMetrics": {
+        "width": 1440,
+        "overflow": false,
+        "theme": "light",
+        "toggle": {
+          "color": "rgb(37, 41, 37)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to dark theme",
+          "hit": true,
+          "rect": {
+            "x": 172,
+            "y": 45.6875,
+            "width": 22.59375,
+            "height": 25,
+            "top": 45.6875,
+            "right": 194.59375,
+            "bottom": 70.6875,
+            "left": 172
+          }
+        },
+        "paper": "#ffffff",
+        "text": "#252925",
+        "accent": "#8a642d",
+        "corner": {
+          "display": "block",
+          "pointer": "none",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 152,
+            "height": 320,
+            "top": 0,
+            "right": 152,
+            "bottom": 320,
+            "left": 0
+          },
+          "headerClearance": 20,
+          "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-atmosphere-v1.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 213.328125,
+            "height": 320,
+            "top": 0,
+            "right": 213.328125,
+            "bottom": 320,
+            "left": 0
+          },
+          "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+          "mask": "linear-gradient(to right, rgb(0, 0, 0) calc(100% - min(22px, 25%)), rgba(0, 0, 0, 0) 100%)"
+        }
+      },
+      "newMetrics": {
+        "width": 1440,
+        "overflow": false,
+        "theme": "light",
+        "toggle": {
+          "color": "rgb(37, 41, 37)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to dark theme",
+          "hit": true,
+          "rect": {
+            "x": 172,
+            "y": 45.6875,
+            "width": 22.59375,
+            "height": 25,
+            "top": 45.6875,
+            "right": 194.59375,
+            "bottom": 70.6875,
+            "left": 172
+          }
+        },
+        "paper": "#ffffff",
+        "text": "#252925",
+        "accent": "#8a642d",
+        "corner": {
+          "display": "block",
+          "pointer": "none",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 152,
+            "height": 320,
+            "top": 0,
+            "right": 152,
+            "bottom": 320,
+            "left": 0
+          },
+          "headerClearance": 20,
+          "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-atmosphere-v1.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 213.328125,
+            "height": 320,
+            "top": 0,
+            "right": 213.328125,
+            "bottom": 320,
+            "left": 0
+          },
+          "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+          "mask": "linear-gradient(to right, rgb(0, 0, 0) calc(100% - min(22px, 25%)), rgba(0, 0, 0, 0) 100%)"
+        }
+      }
+    },
+    {
+      "page": "essay",
+      "width": 1440,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "oldMetrics": {
+        "width": 1440,
+        "overflow": false,
+        "theme": "dark",
+        "toggle": {
+          "color": "rgb(232, 237, 242)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to light theme",
+          "hit": true,
+          "rect": {
+            "x": 172,
+            "y": 45.6875,
+            "width": 22.59375,
+            "height": 25,
+            "top": 45.6875,
+            "right": 194.59375,
+            "bottom": 70.6875,
+            "left": 172
+          }
+        },
+        "paper": "#000000",
+        "text": "#e8edf2",
+        "accent": "#c8aa70",
+        "corner": {
+          "display": "block",
+          "pointer": "none",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 152,
+            "height": 320,
+            "top": 0,
+            "right": 152,
+            "bottom": 320,
+            "left": 0
+          },
+          "headerClearance": 20,
+          "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-atmosphere-v1.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 213.328125,
+            "height": 320,
+            "top": 0,
+            "right": 213.328125,
+            "bottom": 320,
+            "left": 0
+          },
+          "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+          "mask": "linear-gradient(to right, rgb(0, 0, 0) calc(100% - min(22px, 25%)), rgba(0, 0, 0, 0) 100%)"
+        }
+      },
+      "newMetrics": {
+        "width": 1440,
+        "overflow": false,
+        "theme": "dark",
+        "toggle": {
+          "color": "rgb(232, 237, 242)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to light theme",
+          "hit": true,
+          "rect": {
+            "x": 172,
+            "y": 45.6875,
+            "width": 22.59375,
+            "height": 25,
+            "top": 45.6875,
+            "right": 194.59375,
+            "bottom": 70.6875,
+            "left": 172
+          }
+        },
+        "paper": "#000000",
+        "text": "#e8edf2",
+        "accent": "#c8aa70",
+        "corner": {
+          "display": "block",
+          "pointer": "none",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 152,
+            "height": 320,
+            "top": 0,
+            "right": 152,
+            "bottom": 320,
+            "left": 0
+          },
+          "headerClearance": 20,
+          "src": "http://127.0.0.1:8765/output/sage-backgrounds/details/cloud-corner-atmosphere-v1.webp",
+          "naturalWidth": 1024,
+          "naturalHeight": 1536,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 213.328125,
+            "height": 320,
+            "top": 0,
+            "right": 213.328125,
+            "bottom": 320,
+            "left": 0
+          },
+          "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+          "mask": "linear-gradient(to right, rgb(0, 0, 0) calc(100% - min(22px, 25%)), rgba(0, 0, 0, 0) 100%)"
+        }
+      }
+    },
+    {
+      "page": "essay",
+      "width": 390,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "oldMetrics": {
+        "width": 390,
+        "overflow": false,
+        "theme": "light",
+        "toggle": {
+          "color": "rgb(37, 41, 37)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to dark theme",
+          "hit": true,
+          "rect": {
+            "x": 68,
+            "y": 60.984375,
+            "width": 22.59375,
+            "height": 25,
+            "top": 60.984375,
+            "right": 90.59375,
+            "bottom": 85.984375,
+            "left": 68
+          }
+        },
+        "paper": "#ffffff",
+        "text": "#252925",
+        "accent": "#8a642d",
+        "corner": {
+          "display": "none",
+          "pointer": "auto",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "headerClearance": 68,
+          "src": null,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+          "mask": "none"
+        }
+      },
+      "newMetrics": {
+        "width": 390,
+        "overflow": false,
+        "theme": "light",
+        "toggle": {
+          "color": "rgb(37, 41, 37)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to dark theme",
+          "hit": true,
+          "rect": {
+            "x": 68,
+            "y": 60.984375,
+            "width": 22.59375,
+            "height": 25,
+            "top": 60.984375,
+            "right": 90.59375,
+            "bottom": 85.984375,
+            "left": 68
+          }
+        },
+        "paper": "#ffffff",
+        "text": "#252925",
+        "accent": "#8a642d",
+        "corner": {
+          "display": "none",
+          "pointer": "auto",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "headerClearance": 68,
+          "src": null,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "filter": "sepia(0.28) saturate(1.18) brightness(1.065)",
+          "mask": "none"
+        }
+      }
+    },
+    {
+      "page": "essay",
+      "width": 390,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "oldMetrics": {
+        "width": 390,
+        "overflow": false,
+        "theme": "dark",
+        "toggle": {
+          "color": "rgb(232, 237, 242)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to light theme",
+          "hit": true,
+          "rect": {
+            "x": 68,
+            "y": 60.984375,
+            "width": 22.59375,
+            "height": 25,
+            "top": 60.984375,
+            "right": 90.59375,
+            "bottom": 85.984375,
+            "left": 68
+          }
+        },
+        "paper": "#000000",
+        "text": "#e8edf2",
+        "accent": "#c8aa70",
+        "corner": {
+          "display": "none",
+          "pointer": "auto",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "headerClearance": 68,
+          "src": null,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+          "mask": "none"
+        }
+      },
+      "newMetrics": {
+        "width": 390,
+        "overflow": false,
+        "theme": "dark",
+        "toggle": {
+          "color": "rgb(232, 237, 242)",
+          "background": "rgba(0, 0, 0, 0)",
+          "label": "Switch to light theme",
+          "hit": true,
+          "rect": {
+            "x": 68,
+            "y": 60.984375,
+            "width": 22.59375,
+            "height": 25,
+            "top": 60.984375,
+            "right": 90.59375,
+            "bottom": 85.984375,
+            "left": 68
+          }
+        },
+        "paper": "#000000",
+        "text": "#e8edf2",
+        "accent": "#c8aa70",
+        "corner": {
+          "display": "none",
+          "pointer": "auto",
+          "aria": "true",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "headerClearance": 68,
+          "src": null,
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "imageRect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)",
+          "mask": "none"
+        }
+      }
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home",
+      "method": "GET"
+    },
+    {
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home",
+      "method": "GET"
+    },
+    {
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home",
+      "method": "GET"
+    },
+    {
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home",
+      "method": "GET"
+    },
+    {
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home",
+      "method": "GET"
+    },
+    {
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home",
+      "method": "GET"
+    },
+    {
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home",
+      "method": "GET"
+    },
+    {
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home",
+      "method": "GET"
+    },
+    {
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home",
+      "method": "GET"
+    },
+    {
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home",
+      "method": "GET"
+    },
+    {
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home",
+      "method": "GET"
+    },
+    {
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home",
+      "method": "GET"
+    },
+    {
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home",
+      "method": "GET"
+    },
+    {
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home",
+      "method": "GET"
+    },
+    {
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home",
+      "method": "GET"
+    },
+    {
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home",
+      "method": "GET"
+    },
+    {
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home",
+      "method": "GET"
+    },
+    {
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home",
+      "method": "GET"
+    },
+    {
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home",
+      "method": "GET"
+    },
+    {
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home",
+      "method": "GET"
+    }
+  ],
+  "errors": [],
+  "issues": [
+    {
+      "kind": "secondary-changed",
+      "page": "archive",
+      "width": 1440,
+      "theme": "light",
+      "diffs": [],
+      "pixelIdentical": false
+    }
+  ]
+}

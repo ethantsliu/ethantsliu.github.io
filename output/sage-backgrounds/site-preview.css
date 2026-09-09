@@ -73,8 +73,8 @@ html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="origi
 .sage-preview :focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 5px; }
 .sage-preview:not(.show-original) .dropdown-btn { background: var(--bg); }
 .sage-preview #dropdownContent.is-open { display: block; opacity: 1; visibility: visible; pointer-events: auto; }
-/* Shared vertical cloud: only the spare outer margin on wide screens.
-   Its boundary stays at least 20px to the left of the existing header. */
+/* Secondary pages retain their accepted small cloud in the outer margin.
+   The homepage uses its own broad composition below. */
 .sage-preview > .sage-corner-cloud { display: none; }
 @media (min-width: 1280px) {
   .sage-preview[data-corner-cloud="true"] > .sage-corner-cloud {
@@ -90,20 +90,30 @@ html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="origi
     pointer-events: none;
     mask-image: linear-gradient(to right, #000 calc(100% - min(22px, 25%)), transparent 100%);
   }
-  /* The homepage frames the full introduction; secondary pages retain
-     the approved 320px corner, independently of the homepage size choice. */
+  /* The homepage cloud extends beyond the top and left of the viewport.
+     Its painted white opening clears the header: preserve the natural edge
+     instead of cutting every billow at the same gutter boundary. */
   .home.sage-preview[data-corner-cloud="true"] > .sage-corner-cloud {
-    --corner-height: 560px;
-    mask-image: linear-gradient(to right, #000 calc(100% - 8px), transparent 100%);
+    --corner-width: 500px;
+    --corner-height: calc(var(--corner-width) * 5 / 6);
+    --corner-inset: 75px;
+    width: var(--corner-width);
+    top: -78px;
+    left: min(-24px, calc((100vw - 1440px) / 2 - var(--corner-inset)));
+    overflow: visible;
+    mask-image: none;
   }
   .home.sage-preview[data-corner-cloud="true"][data-corner-size="small"] > .sage-corner-cloud {
-    --corner-height: 320px;
+    --corner-width: 400px;
+    --corner-inset: 30px;
+    top: -58px;
   }
   .home.sage-preview[data-corner-cloud="true"][data-corner-size="large"] > .sage-corner-cloud {
-    --corner-height: 680px;
+    --corner-width: 600px;
+    --corner-inset: 120px;
+    top: -108px;
   }
-  /* A narrow homepage composition preserves its wandering outer edge.
-     Both drawings retain their native proportions and upright characters. */
+  /* Both drawings retain their native proportions and upright characters. */
   .sage-preview > .sage-corner-cloud img {
     position: absolute;
     top: 0;

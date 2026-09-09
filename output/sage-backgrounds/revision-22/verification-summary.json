@@ -1,0 +1,18 @@
+{
+  "result": "passed",
+  "homeChecks": 12,
+  "secondaryChecks": 20,
+  "gallery": "passed",
+  "contentGeometryUnchanged": true,
+  "secondaryArtworkStylesAndSourcesUnchanged": true,
+  "readOnlyCounter": true,
+  "reviewedVisualDifference": {
+    "page": "archive",
+    "width": 1440,
+    "theme": "light",
+    "changedPixels": 15,
+    "maxChannelDelta": 1,
+    "location": "footer artwork only",
+    "resolution": "Accepted raster rounding, with identical computed layout, source and artwork styles. All other secondary screenshots are identical."
+  }
+}
