@@ -132,7 +132,7 @@ html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="origi
      painted flock between the title and menu; its white canvas is wider. */
   .sage-preview[data-corner-cloud="true"][data-corner-scene="true"][data-corner-motif="crane-flock"][data-crane-placement="header"] > .sage-corner-cloud {
     --corner-width: 216px;
-    top: -38px;
+    top: -28px;
     left: calc(50% + 208px - var(--corner-width) * .35);
   }
   /* Both drawings retain their native proportions and upright characters. */

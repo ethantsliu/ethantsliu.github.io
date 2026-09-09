@@ -2,6 +2,10 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 34: slightly lower header cranes
+
+Moved the Beside title flock down 10 pixels across all preview pages. Size, horizontal position, and the Outer margin comparison stay the same. Checked visible-text and menu clearance on all six pages; the homepage capture is saved in `revision-34/`.
+
 ## Revision 33: cranes beside the title
 
 The default **Cranes** placement moves into the open header space between the homepage name and the 天 menu. The source displays at 216 × 180 CSS pixels across all wide-screen pages, with its painted birds centered about 208 pixels to the right of the centered wrapper's midpoint. An upward offset places the visible birds around the title's height and leaves clearance above Writing and Archive's first entries. The full flock fits without clipping its wings at the viewport edge, and header/content geometry is unchanged.
