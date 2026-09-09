@@ -1,0 +1,15 @@
+{
+  "gallery": "passed",
+  "sizeWidths": [
+    500,
+    600,
+    680
+  ],
+  "secondarySizeIndependent": true,
+  "stateSurvivesReload": true,
+  "originalRespected": true,
+  "mobileHidden": true,
+  "hoverNavigation": "passed",
+  "errors": [],
+  "writes": []
+}

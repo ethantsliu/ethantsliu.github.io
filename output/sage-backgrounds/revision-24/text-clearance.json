@@ -1,0 +1,581 @@
+{
+  "results": [
+    {
+      "width": 499.984375,
+      "size": "small",
+      "theme": "light",
+      "regions": {
+        "#themeToggle": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0,
+          "minimumContrast": 14.762196805687239
+        },
+        ".name-title": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".contact-bar": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:first-child": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(2)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(3)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        }
+      }
+    },
+    {
+      "width": 499.984375,
+      "size": "small",
+      "theme": "dark",
+      "regions": {
+        "#themeToggle": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0,
+          "minimumContrast": 17.826996685348224
+        },
+        ".name-title": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".contact-bar": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:first-child": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(2)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(3)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        }
+      }
+    },
+    {
+      "width": 600,
+      "size": "medium",
+      "theme": "light",
+      "regions": {
+        "#themeToggle": {
+          "maxChannelDifference": 123,
+          "paintedPixels": 132,
+          "minimumContrast": 5.821419783165809
+        },
+        ".name-title": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".contact-bar": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:first-child": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(2)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(3)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        }
+      }
+    },
+    {
+      "width": 600,
+      "size": "medium",
+      "theme": "dark",
+      "regions": {
+        "#themeToggle": {
+          "maxChannelDifference": 103,
+          "paintedPixels": 97,
+          "minimumContrast": 5.9547129696019825
+        },
+        ".name-title": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".contact-bar": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:first-child": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(2)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(3)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        }
+      }
+    },
+    {
+      "width": 679.984375,
+      "size": "large",
+      "theme": "light",
+      "regions": {
+        "#themeToggle": {
+          "maxChannelDifference": 113,
+          "paintedPixels": 75,
+          "minimumContrast": 7.80606253241175
+        },
+        ".name-title": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".contact-bar": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:first-child": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(2)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(3)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        }
+      }
+    },
+    {
+      "width": 679.984375,
+      "size": "large",
+      "theme": "dark",
+      "regions": {
+        "#themeToggle": {
+          "maxChannelDifference": 78,
+          "paintedPixels": 48,
+          "minimumContrast": 8.280792787703739
+        },
+        ".name-title": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".contact-bar": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:first-child": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(2)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(3)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        }
+      }
+    },
+    {
+      "width": 499.984375,
+      "size": "small",
+      "theme": "light",
+      "regions": {
+        "#themeToggle": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0,
+          "minimumContrast": 14.762196805687239
+        },
+        ".name-title": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".contact-bar": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:first-child": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(2)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(3)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        }
+      }
+    },
+    {
+      "width": 499.984375,
+      "size": "small",
+      "theme": "dark",
+      "regions": {
+        "#themeToggle": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0,
+          "minimumContrast": 17.826996685348224
+        },
+        ".name-title": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".contact-bar": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:first-child": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(2)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(3)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        }
+      }
+    },
+    {
+      "width": 600,
+      "size": "medium",
+      "theme": "light",
+      "regions": {
+        "#themeToggle": {
+          "maxChannelDifference": 123,
+          "paintedPixels": 132,
+          "minimumContrast": 5.821419783165809
+        },
+        ".name-title": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".contact-bar": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:first-child": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(2)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(3)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        }
+      }
+    },
+    {
+      "width": 600,
+      "size": "medium",
+      "theme": "dark",
+      "regions": {
+        "#themeToggle": {
+          "maxChannelDifference": 103,
+          "paintedPixels": 97,
+          "minimumContrast": 5.9547129696019825
+        },
+        ".name-title": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".contact-bar": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:first-child": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(2)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(3)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        }
+      }
+    },
+    {
+      "width": 679.984375,
+      "size": "large",
+      "theme": "light",
+      "regions": {
+        "#themeToggle": {
+          "maxChannelDifference": 113,
+          "paintedPixels": 75,
+          "minimumContrast": 7.80606253241175
+        },
+        ".name-title": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".contact-bar": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:first-child": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(2)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(3)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        }
+      }
+    },
+    {
+      "width": 679.984375,
+      "size": "large",
+      "theme": "dark",
+      "regions": {
+        "#themeToggle": {
+          "maxChannelDifference": 78,
+          "paintedPixels": 48,
+          "minimumContrast": 8.280792787703739
+        },
+        ".name-title": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".contact-bar": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:first-child": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(2)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(3)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        }
+      }
+    },
+    {
+      "width": 499.984375,
+      "size": "small",
+      "theme": "light",
+      "regions": {
+        "#themeToggle": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0,
+          "minimumContrast": 14.762196805687239
+        },
+        ".name-title": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".contact-bar": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:first-child": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(2)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(3)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        }
+      }
+    },
+    {
+      "width": 499.984375,
+      "size": "small",
+      "theme": "dark",
+      "regions": {
+        "#themeToggle": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0,
+          "minimumContrast": 17.826996685348224
+        },
+        ".name-title": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".contact-bar": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:first-child": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(2)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(3)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        }
+      }
+    },
+    {
+      "width": 600,
+      "size": "medium",
+      "theme": "light",
+      "regions": {
+        "#themeToggle": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0,
+          "minimumContrast": 14.762196805687239
+        },
+        ".name-title": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".contact-bar": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:first-child": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(2)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(3)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        }
+      }
+    },
+    {
+      "width": 600,
+      "size": "medium",
+      "theme": "dark",
+      "regions": {
+        "#themeToggle": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0,
+          "minimumContrast": 17.826996685348224
+        },
+        ".name-title": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".contact-bar": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:first-child": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(2)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(3)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        }
+      }
+    },
+    {
+      "width": 679.984375,
+      "size": "large",
+      "theme": "light",
+      "regions": {
+        "#themeToggle": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0,
+          "minimumContrast": 14.762196805687239
+        },
+        ".name-title": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".contact-bar": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:first-child": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(2)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(3)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        }
+      }
+    },
+    {
+      "width": 679.984375,
+      "size": "large",
+      "theme": "dark",
+      "regions": {
+        "#themeToggle": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0,
+          "minimumContrast": 17.826996685348224
+        },
+        ".name-title": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".contact-bar": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:first-child": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(2)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        },
+        ".intro p:nth-child(3)": {
+          "maxChannelDifference": 0,
+          "paintedPixels": 0
+        }
+      }
+    }
+  ],
+  "issues": []
+}

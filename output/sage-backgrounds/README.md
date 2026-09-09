@@ -2,6 +2,12 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 24: a larger homepage corner
+
+The existing cloud artwork is displayed 20% larger by default: 600 CSS pixels wide instead of 500. More of the overhead bank remains visible, with the cloud positioned to keep the name, contact row and biography clear. The source image, colors, proportions and centered content layout are unchanged. The gallery's Small option restores the previous 500px presentation; Large uses 680px. All sizes stay within the existing source's resolution at 2× display density.
+
+Checks in `revision-24/` cover all three sizes in both themes at 1280, 1440 and 1920 pixels, plus mobile and the five secondary pages. Every sampled text rectangle remains on plain white or black, and theme-control contrast remains above 4.5:1 over the artwork. The other pages retain their existing 320px corner. The preview counter remains read-only.
+
 ## Revision 23: rounded, less repetitive cloud contours
 
 The homepage corner retains the broad composition introduced in revision 22. Its pointed, branch-like tips have been redrawn as fuller, uneven cumulus forms. A broader lower-middle cloud interrupts the previous steadily shrinking edge. The layout, artwork sizes, upright ASCII texture, existing color filters, and accepted secondary-page artwork remain in place.

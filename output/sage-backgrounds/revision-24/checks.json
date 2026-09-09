@@ -1,0 +1,1407 @@
+{
+  "data": [
+    {
+      "width": 499.984375,
+      "size": "small",
+      "theme": "light",
+      "geometryUnchanged": true,
+      "overflow": false,
+      "mask": "none",
+      "pointer": "none",
+      "nativeWidth": 1374,
+      "nativeHeight": 1145,
+      "height": 416.65625,
+      "toggleColor": "rgb(37, 41, 37)",
+      "toggleClickable": true,
+      "boxes": {
+        "#themeToggle": {
+          "x": 92,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 114.59375,
+          "bottom": 70.6875,
+          "left": 92
+        },
+        ".name-title": {
+          "x": 92,
+          "y": 85.96875,
+          "width": 253.96875,
+          "height": 65.28125,
+          "top": 85.96875,
+          "right": 345.96875,
+          "bottom": 151.25,
+          "left": 92
+        },
+        ".contact-bar": {
+          "x": 92,
+          "y": 167.234375,
+          "width": 1096,
+          "height": 26.84375,
+          "top": 167.234375,
+          "right": 1188,
+          "bottom": 194.078125,
+          "left": 92
+        },
+        ".intro p:first-child": {
+          "x": 92,
+          "y": 226.078125,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 226.078125,
+          "right": 1188,
+          "bottom": 254.890625,
+          "left": 92
+        },
+        ".intro p:nth-child(2)": {
+          "x": 92,
+          "y": 272.484375,
+          "width": 1096,
+          "height": 86.4375,
+          "top": 272.484375,
+          "right": 1188,
+          "bottom": 358.921875,
+          "left": 92
+        },
+        ".intro p:nth-child(3)": {
+          "x": 92,
+          "y": 376.515625,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 376.515625,
+          "right": 1188,
+          "bottom": 405.328125,
+          "left": 92
+        }
+      },
+      "backdrop": "/tmp/sage-preview-check/revision-24/backdrop-1280-small-light.png"
+    },
+    {
+      "width": 499.984375,
+      "size": "small",
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "overflow": false,
+      "mask": "none",
+      "pointer": "none",
+      "nativeWidth": 1374,
+      "nativeHeight": 1145,
+      "height": 416.65625,
+      "toggleColor": "rgb(232, 237, 242)",
+      "toggleClickable": true,
+      "boxes": {
+        "#themeToggle": {
+          "x": 92,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 114.59375,
+          "bottom": 70.6875,
+          "left": 92
+        },
+        ".name-title": {
+          "x": 92,
+          "y": 85.96875,
+          "width": 253.96875,
+          "height": 65.28125,
+          "top": 85.96875,
+          "right": 345.96875,
+          "bottom": 151.25,
+          "left": 92
+        },
+        ".contact-bar": {
+          "x": 92,
+          "y": 167.234375,
+          "width": 1096,
+          "height": 26.84375,
+          "top": 167.234375,
+          "right": 1188,
+          "bottom": 194.078125,
+          "left": 92
+        },
+        ".intro p:first-child": {
+          "x": 92,
+          "y": 226.078125,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 226.078125,
+          "right": 1188,
+          "bottom": 254.890625,
+          "left": 92
+        },
+        ".intro p:nth-child(2)": {
+          "x": 92,
+          "y": 272.484375,
+          "width": 1096,
+          "height": 86.4375,
+          "top": 272.484375,
+          "right": 1188,
+          "bottom": 358.921875,
+          "left": 92
+        },
+        ".intro p:nth-child(3)": {
+          "x": 92,
+          "y": 376.515625,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 376.515625,
+          "right": 1188,
+          "bottom": 405.328125,
+          "left": 92
+        }
+      },
+      "backdrop": "/tmp/sage-preview-check/revision-24/backdrop-1280-small-dark.png"
+    },
+    {
+      "width": 600,
+      "size": "medium",
+      "theme": "light",
+      "geometryUnchanged": true,
+      "overflow": false,
+      "mask": "none",
+      "pointer": "none",
+      "nativeWidth": 1374,
+      "nativeHeight": 1145,
+      "height": 500,
+      "toggleColor": "rgb(37, 41, 37)",
+      "toggleClickable": true,
+      "boxes": {
+        "#themeToggle": {
+          "x": 92,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 114.59375,
+          "bottom": 70.6875,
+          "left": 92
+        },
+        ".name-title": {
+          "x": 92,
+          "y": 85.96875,
+          "width": 253.96875,
+          "height": 65.28125,
+          "top": 85.96875,
+          "right": 345.96875,
+          "bottom": 151.25,
+          "left": 92
+        },
+        ".contact-bar": {
+          "x": 92,
+          "y": 167.234375,
+          "width": 1096,
+          "height": 26.84375,
+          "top": 167.234375,
+          "right": 1188,
+          "bottom": 194.078125,
+          "left": 92
+        },
+        ".intro p:first-child": {
+          "x": 92,
+          "y": 226.078125,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 226.078125,
+          "right": 1188,
+          "bottom": 254.890625,
+          "left": 92
+        },
+        ".intro p:nth-child(2)": {
+          "x": 92,
+          "y": 272.484375,
+          "width": 1096,
+          "height": 86.4375,
+          "top": 272.484375,
+          "right": 1188,
+          "bottom": 358.921875,
+          "left": 92
+        },
+        ".intro p:nth-child(3)": {
+          "x": 92,
+          "y": 376.515625,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 376.515625,
+          "right": 1188,
+          "bottom": 405.328125,
+          "left": 92
+        }
+      },
+      "backdrop": "/tmp/sage-preview-check/revision-24/backdrop-1280-medium-light.png"
+    },
+    {
+      "width": 600,
+      "size": "medium",
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "overflow": false,
+      "mask": "none",
+      "pointer": "none",
+      "nativeWidth": 1374,
+      "nativeHeight": 1145,
+      "height": 500,
+      "toggleColor": "rgb(232, 237, 242)",
+      "toggleClickable": true,
+      "boxes": {
+        "#themeToggle": {
+          "x": 92,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 114.59375,
+          "bottom": 70.6875,
+          "left": 92
+        },
+        ".name-title": {
+          "x": 92,
+          "y": 85.96875,
+          "width": 253.96875,
+          "height": 65.28125,
+          "top": 85.96875,
+          "right": 345.96875,
+          "bottom": 151.25,
+          "left": 92
+        },
+        ".contact-bar": {
+          "x": 92,
+          "y": 167.234375,
+          "width": 1096,
+          "height": 26.84375,
+          "top": 167.234375,
+          "right": 1188,
+          "bottom": 194.078125,
+          "left": 92
+        },
+        ".intro p:first-child": {
+          "x": 92,
+          "y": 226.078125,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 226.078125,
+          "right": 1188,
+          "bottom": 254.890625,
+          "left": 92
+        },
+        ".intro p:nth-child(2)": {
+          "x": 92,
+          "y": 272.484375,
+          "width": 1096,
+          "height": 86.4375,
+          "top": 272.484375,
+          "right": 1188,
+          "bottom": 358.921875,
+          "left": 92
+        },
+        ".intro p:nth-child(3)": {
+          "x": 92,
+          "y": 376.515625,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 376.515625,
+          "right": 1188,
+          "bottom": 405.328125,
+          "left": 92
+        }
+      },
+      "backdrop": "/tmp/sage-preview-check/revision-24/backdrop-1280-medium-dark.png"
+    },
+    {
+      "width": 679.984375,
+      "size": "large",
+      "theme": "light",
+      "geometryUnchanged": true,
+      "overflow": false,
+      "mask": "none",
+      "pointer": "none",
+      "nativeWidth": 1374,
+      "nativeHeight": 1145,
+      "height": 566.65625,
+      "toggleColor": "rgb(37, 41, 37)",
+      "toggleClickable": true,
+      "boxes": {
+        "#themeToggle": {
+          "x": 92,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 114.59375,
+          "bottom": 70.6875,
+          "left": 92
+        },
+        ".name-title": {
+          "x": 92,
+          "y": 85.96875,
+          "width": 253.96875,
+          "height": 65.28125,
+          "top": 85.96875,
+          "right": 345.96875,
+          "bottom": 151.25,
+          "left": 92
+        },
+        ".contact-bar": {
+          "x": 92,
+          "y": 167.234375,
+          "width": 1096,
+          "height": 26.84375,
+          "top": 167.234375,
+          "right": 1188,
+          "bottom": 194.078125,
+          "left": 92
+        },
+        ".intro p:first-child": {
+          "x": 92,
+          "y": 226.078125,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 226.078125,
+          "right": 1188,
+          "bottom": 254.890625,
+          "left": 92
+        },
+        ".intro p:nth-child(2)": {
+          "x": 92,
+          "y": 272.484375,
+          "width": 1096,
+          "height": 86.4375,
+          "top": 272.484375,
+          "right": 1188,
+          "bottom": 358.921875,
+          "left": 92
+        },
+        ".intro p:nth-child(3)": {
+          "x": 92,
+          "y": 376.515625,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 376.515625,
+          "right": 1188,
+          "bottom": 405.328125,
+          "left": 92
+        }
+      },
+      "backdrop": "/tmp/sage-preview-check/revision-24/backdrop-1280-large-light.png"
+    },
+    {
+      "width": 679.984375,
+      "size": "large",
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "overflow": false,
+      "mask": "none",
+      "pointer": "none",
+      "nativeWidth": 1374,
+      "nativeHeight": 1145,
+      "height": 566.65625,
+      "toggleColor": "rgb(232, 237, 242)",
+      "toggleClickable": true,
+      "boxes": {
+        "#themeToggle": {
+          "x": 92,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 114.59375,
+          "bottom": 70.6875,
+          "left": 92
+        },
+        ".name-title": {
+          "x": 92,
+          "y": 85.96875,
+          "width": 253.96875,
+          "height": 65.28125,
+          "top": 85.96875,
+          "right": 345.96875,
+          "bottom": 151.25,
+          "left": 92
+        },
+        ".contact-bar": {
+          "x": 92,
+          "y": 167.234375,
+          "width": 1096,
+          "height": 26.84375,
+          "top": 167.234375,
+          "right": 1188,
+          "bottom": 194.078125,
+          "left": 92
+        },
+        ".intro p:first-child": {
+          "x": 92,
+          "y": 226.078125,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 226.078125,
+          "right": 1188,
+          "bottom": 254.890625,
+          "left": 92
+        },
+        ".intro p:nth-child(2)": {
+          "x": 92,
+          "y": 272.484375,
+          "width": 1096,
+          "height": 86.4375,
+          "top": 272.484375,
+          "right": 1188,
+          "bottom": 358.921875,
+          "left": 92
+        },
+        ".intro p:nth-child(3)": {
+          "x": 92,
+          "y": 376.515625,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 376.515625,
+          "right": 1188,
+          "bottom": 405.328125,
+          "left": 92
+        }
+      },
+      "backdrop": "/tmp/sage-preview-check/revision-24/backdrop-1280-large-dark.png"
+    },
+    {
+      "width": 499.984375,
+      "size": "small",
+      "theme": "light",
+      "geometryUnchanged": true,
+      "overflow": false,
+      "mask": "none",
+      "pointer": "none",
+      "nativeWidth": 1374,
+      "nativeHeight": 1145,
+      "height": 416.65625,
+      "toggleColor": "rgb(37, 41, 37)",
+      "toggleClickable": true,
+      "boxes": {
+        "#themeToggle": {
+          "x": 172,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 194.59375,
+          "bottom": 70.6875,
+          "left": 172
+        },
+        ".name-title": {
+          "x": 172,
+          "y": 85.96875,
+          "width": 253.96875,
+          "height": 65.28125,
+          "top": 85.96875,
+          "right": 425.96875,
+          "bottom": 151.25,
+          "left": 172
+        },
+        ".contact-bar": {
+          "x": 172,
+          "y": 167.234375,
+          "width": 1096,
+          "height": 26.84375,
+          "top": 167.234375,
+          "right": 1268,
+          "bottom": 194.078125,
+          "left": 172
+        },
+        ".intro p:first-child": {
+          "x": 172,
+          "y": 226.078125,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 226.078125,
+          "right": 1268,
+          "bottom": 254.890625,
+          "left": 172
+        },
+        ".intro p:nth-child(2)": {
+          "x": 172,
+          "y": 272.484375,
+          "width": 1096,
+          "height": 86.4375,
+          "top": 272.484375,
+          "right": 1268,
+          "bottom": 358.921875,
+          "left": 172
+        },
+        ".intro p:nth-child(3)": {
+          "x": 172,
+          "y": 376.515625,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 376.515625,
+          "right": 1268,
+          "bottom": 405.328125,
+          "left": 172
+        }
+      },
+      "backdrop": "/tmp/sage-preview-check/revision-24/backdrop-1440-small-light.png"
+    },
+    {
+      "width": 499.984375,
+      "size": "small",
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "overflow": false,
+      "mask": "none",
+      "pointer": "none",
+      "nativeWidth": 1374,
+      "nativeHeight": 1145,
+      "height": 416.65625,
+      "toggleColor": "rgb(232, 237, 242)",
+      "toggleClickable": true,
+      "boxes": {
+        "#themeToggle": {
+          "x": 172,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 194.59375,
+          "bottom": 70.6875,
+          "left": 172
+        },
+        ".name-title": {
+          "x": 172,
+          "y": 85.96875,
+          "width": 253.96875,
+          "height": 65.28125,
+          "top": 85.96875,
+          "right": 425.96875,
+          "bottom": 151.25,
+          "left": 172
+        },
+        ".contact-bar": {
+          "x": 172,
+          "y": 167.234375,
+          "width": 1096,
+          "height": 26.84375,
+          "top": 167.234375,
+          "right": 1268,
+          "bottom": 194.078125,
+          "left": 172
+        },
+        ".intro p:first-child": {
+          "x": 172,
+          "y": 226.078125,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 226.078125,
+          "right": 1268,
+          "bottom": 254.890625,
+          "left": 172
+        },
+        ".intro p:nth-child(2)": {
+          "x": 172,
+          "y": 272.484375,
+          "width": 1096,
+          "height": 86.4375,
+          "top": 272.484375,
+          "right": 1268,
+          "bottom": 358.921875,
+          "left": 172
+        },
+        ".intro p:nth-child(3)": {
+          "x": 172,
+          "y": 376.515625,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 376.515625,
+          "right": 1268,
+          "bottom": 405.328125,
+          "left": 172
+        }
+      },
+      "backdrop": "/tmp/sage-preview-check/revision-24/backdrop-1440-small-dark.png"
+    },
+    {
+      "width": 600,
+      "size": "medium",
+      "theme": "light",
+      "geometryUnchanged": true,
+      "overflow": false,
+      "mask": "none",
+      "pointer": "none",
+      "nativeWidth": 1374,
+      "nativeHeight": 1145,
+      "height": 500,
+      "toggleColor": "rgb(37, 41, 37)",
+      "toggleClickable": true,
+      "boxes": {
+        "#themeToggle": {
+          "x": 172,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 194.59375,
+          "bottom": 70.6875,
+          "left": 172
+        },
+        ".name-title": {
+          "x": 172,
+          "y": 85.96875,
+          "width": 253.96875,
+          "height": 65.28125,
+          "top": 85.96875,
+          "right": 425.96875,
+          "bottom": 151.25,
+          "left": 172
+        },
+        ".contact-bar": {
+          "x": 172,
+          "y": 167.234375,
+          "width": 1096,
+          "height": 26.84375,
+          "top": 167.234375,
+          "right": 1268,
+          "bottom": 194.078125,
+          "left": 172
+        },
+        ".intro p:first-child": {
+          "x": 172,
+          "y": 226.078125,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 226.078125,
+          "right": 1268,
+          "bottom": 254.890625,
+          "left": 172
+        },
+        ".intro p:nth-child(2)": {
+          "x": 172,
+          "y": 272.484375,
+          "width": 1096,
+          "height": 86.4375,
+          "top": 272.484375,
+          "right": 1268,
+          "bottom": 358.921875,
+          "left": 172
+        },
+        ".intro p:nth-child(3)": {
+          "x": 172,
+          "y": 376.515625,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 376.515625,
+          "right": 1268,
+          "bottom": 405.328125,
+          "left": 172
+        }
+      },
+      "backdrop": "/tmp/sage-preview-check/revision-24/backdrop-1440-medium-light.png"
+    },
+    {
+      "width": 600,
+      "size": "medium",
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "overflow": false,
+      "mask": "none",
+      "pointer": "none",
+      "nativeWidth": 1374,
+      "nativeHeight": 1145,
+      "height": 500,
+      "toggleColor": "rgb(232, 237, 242)",
+      "toggleClickable": true,
+      "boxes": {
+        "#themeToggle": {
+          "x": 172,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 194.59375,
+          "bottom": 70.6875,
+          "left": 172
+        },
+        ".name-title": {
+          "x": 172,
+          "y": 85.96875,
+          "width": 253.96875,
+          "height": 65.28125,
+          "top": 85.96875,
+          "right": 425.96875,
+          "bottom": 151.25,
+          "left": 172
+        },
+        ".contact-bar": {
+          "x": 172,
+          "y": 167.234375,
+          "width": 1096,
+          "height": 26.84375,
+          "top": 167.234375,
+          "right": 1268,
+          "bottom": 194.078125,
+          "left": 172
+        },
+        ".intro p:first-child": {
+          "x": 172,
+          "y": 226.078125,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 226.078125,
+          "right": 1268,
+          "bottom": 254.890625,
+          "left": 172
+        },
+        ".intro p:nth-child(2)": {
+          "x": 172,
+          "y": 272.484375,
+          "width": 1096,
+          "height": 86.4375,
+          "top": 272.484375,
+          "right": 1268,
+          "bottom": 358.921875,
+          "left": 172
+        },
+        ".intro p:nth-child(3)": {
+          "x": 172,
+          "y": 376.515625,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 376.515625,
+          "right": 1268,
+          "bottom": 405.328125,
+          "left": 172
+        }
+      },
+      "backdrop": "/tmp/sage-preview-check/revision-24/backdrop-1440-medium-dark.png"
+    },
+    {
+      "width": 679.984375,
+      "size": "large",
+      "theme": "light",
+      "geometryUnchanged": true,
+      "overflow": false,
+      "mask": "none",
+      "pointer": "none",
+      "nativeWidth": 1374,
+      "nativeHeight": 1145,
+      "height": 566.65625,
+      "toggleColor": "rgb(37, 41, 37)",
+      "toggleClickable": true,
+      "boxes": {
+        "#themeToggle": {
+          "x": 172,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 194.59375,
+          "bottom": 70.6875,
+          "left": 172
+        },
+        ".name-title": {
+          "x": 172,
+          "y": 85.96875,
+          "width": 253.96875,
+          "height": 65.28125,
+          "top": 85.96875,
+          "right": 425.96875,
+          "bottom": 151.25,
+          "left": 172
+        },
+        ".contact-bar": {
+          "x": 172,
+          "y": 167.234375,
+          "width": 1096,
+          "height": 26.84375,
+          "top": 167.234375,
+          "right": 1268,
+          "bottom": 194.078125,
+          "left": 172
+        },
+        ".intro p:first-child": {
+          "x": 172,
+          "y": 226.078125,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 226.078125,
+          "right": 1268,
+          "bottom": 254.890625,
+          "left": 172
+        },
+        ".intro p:nth-child(2)": {
+          "x": 172,
+          "y": 272.484375,
+          "width": 1096,
+          "height": 86.4375,
+          "top": 272.484375,
+          "right": 1268,
+          "bottom": 358.921875,
+          "left": 172
+        },
+        ".intro p:nth-child(3)": {
+          "x": 172,
+          "y": 376.515625,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 376.515625,
+          "right": 1268,
+          "bottom": 405.328125,
+          "left": 172
+        }
+      },
+      "backdrop": "/tmp/sage-preview-check/revision-24/backdrop-1440-large-light.png"
+    },
+    {
+      "width": 679.984375,
+      "size": "large",
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "overflow": false,
+      "mask": "none",
+      "pointer": "none",
+      "nativeWidth": 1374,
+      "nativeHeight": 1145,
+      "height": 566.65625,
+      "toggleColor": "rgb(232, 237, 242)",
+      "toggleClickable": true,
+      "boxes": {
+        "#themeToggle": {
+          "x": 172,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 194.59375,
+          "bottom": 70.6875,
+          "left": 172
+        },
+        ".name-title": {
+          "x": 172,
+          "y": 85.96875,
+          "width": 253.96875,
+          "height": 65.28125,
+          "top": 85.96875,
+          "right": 425.96875,
+          "bottom": 151.25,
+          "left": 172
+        },
+        ".contact-bar": {
+          "x": 172,
+          "y": 167.234375,
+          "width": 1096,
+          "height": 26.84375,
+          "top": 167.234375,
+          "right": 1268,
+          "bottom": 194.078125,
+          "left": 172
+        },
+        ".intro p:first-child": {
+          "x": 172,
+          "y": 226.078125,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 226.078125,
+          "right": 1268,
+          "bottom": 254.890625,
+          "left": 172
+        },
+        ".intro p:nth-child(2)": {
+          "x": 172,
+          "y": 272.484375,
+          "width": 1096,
+          "height": 86.4375,
+          "top": 272.484375,
+          "right": 1268,
+          "bottom": 358.921875,
+          "left": 172
+        },
+        ".intro p:nth-child(3)": {
+          "x": 172,
+          "y": 376.515625,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 376.515625,
+          "right": 1268,
+          "bottom": 405.328125,
+          "left": 172
+        }
+      },
+      "backdrop": "/tmp/sage-preview-check/revision-24/backdrop-1440-large-dark.png"
+    },
+    {
+      "width": 499.984375,
+      "size": "small",
+      "theme": "light",
+      "geometryUnchanged": true,
+      "overflow": false,
+      "mask": "none",
+      "pointer": "none",
+      "nativeWidth": 1374,
+      "nativeHeight": 1145,
+      "height": 416.65625,
+      "toggleColor": "rgb(37, 41, 37)",
+      "toggleClickable": true,
+      "boxes": {
+        "#themeToggle": {
+          "x": 412,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 434.59375,
+          "bottom": 70.6875,
+          "left": 412
+        },
+        ".name-title": {
+          "x": 412,
+          "y": 85.96875,
+          "width": 253.96875,
+          "height": 65.28125,
+          "top": 85.96875,
+          "right": 665.96875,
+          "bottom": 151.25,
+          "left": 412
+        },
+        ".contact-bar": {
+          "x": 412,
+          "y": 167.234375,
+          "width": 1096,
+          "height": 26.84375,
+          "top": 167.234375,
+          "right": 1508,
+          "bottom": 194.078125,
+          "left": 412
+        },
+        ".intro p:first-child": {
+          "x": 412,
+          "y": 226.078125,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 226.078125,
+          "right": 1508,
+          "bottom": 254.890625,
+          "left": 412
+        },
+        ".intro p:nth-child(2)": {
+          "x": 412,
+          "y": 272.484375,
+          "width": 1096,
+          "height": 86.4375,
+          "top": 272.484375,
+          "right": 1508,
+          "bottom": 358.921875,
+          "left": 412
+        },
+        ".intro p:nth-child(3)": {
+          "x": 412,
+          "y": 376.515625,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 376.515625,
+          "right": 1508,
+          "bottom": 405.328125,
+          "left": 412
+        }
+      },
+      "backdrop": "/tmp/sage-preview-check/revision-24/backdrop-1920-small-light.png"
+    },
+    {
+      "width": 499.984375,
+      "size": "small",
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "overflow": false,
+      "mask": "none",
+      "pointer": "none",
+      "nativeWidth": 1374,
+      "nativeHeight": 1145,
+      "height": 416.65625,
+      "toggleColor": "rgb(232, 237, 242)",
+      "toggleClickable": true,
+      "boxes": {
+        "#themeToggle": {
+          "x": 412,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 434.59375,
+          "bottom": 70.6875,
+          "left": 412
+        },
+        ".name-title": {
+          "x": 412,
+          "y": 85.96875,
+          "width": 253.96875,
+          "height": 65.28125,
+          "top": 85.96875,
+          "right": 665.96875,
+          "bottom": 151.25,
+          "left": 412
+        },
+        ".contact-bar": {
+          "x": 412,
+          "y": 167.234375,
+          "width": 1096,
+          "height": 26.84375,
+          "top": 167.234375,
+          "right": 1508,
+          "bottom": 194.078125,
+          "left": 412
+        },
+        ".intro p:first-child": {
+          "x": 412,
+          "y": 226.078125,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 226.078125,
+          "right": 1508,
+          "bottom": 254.890625,
+          "left": 412
+        },
+        ".intro p:nth-child(2)": {
+          "x": 412,
+          "y": 272.484375,
+          "width": 1096,
+          "height": 86.4375,
+          "top": 272.484375,
+          "right": 1508,
+          "bottom": 358.921875,
+          "left": 412
+        },
+        ".intro p:nth-child(3)": {
+          "x": 412,
+          "y": 376.515625,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 376.515625,
+          "right": 1508,
+          "bottom": 405.328125,
+          "left": 412
+        }
+      },
+      "backdrop": "/tmp/sage-preview-check/revision-24/backdrop-1920-small-dark.png"
+    },
+    {
+      "width": 600,
+      "size": "medium",
+      "theme": "light",
+      "geometryUnchanged": true,
+      "overflow": false,
+      "mask": "none",
+      "pointer": "none",
+      "nativeWidth": 1374,
+      "nativeHeight": 1145,
+      "height": 500,
+      "toggleColor": "rgb(37, 41, 37)",
+      "toggleClickable": true,
+      "boxes": {
+        "#themeToggle": {
+          "x": 412,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 434.59375,
+          "bottom": 70.6875,
+          "left": 412
+        },
+        ".name-title": {
+          "x": 412,
+          "y": 85.96875,
+          "width": 253.96875,
+          "height": 65.28125,
+          "top": 85.96875,
+          "right": 665.96875,
+          "bottom": 151.25,
+          "left": 412
+        },
+        ".contact-bar": {
+          "x": 412,
+          "y": 167.234375,
+          "width": 1096,
+          "height": 26.84375,
+          "top": 167.234375,
+          "right": 1508,
+          "bottom": 194.078125,
+          "left": 412
+        },
+        ".intro p:first-child": {
+          "x": 412,
+          "y": 226.078125,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 226.078125,
+          "right": 1508,
+          "bottom": 254.890625,
+          "left": 412
+        },
+        ".intro p:nth-child(2)": {
+          "x": 412,
+          "y": 272.484375,
+          "width": 1096,
+          "height": 86.4375,
+          "top": 272.484375,
+          "right": 1508,
+          "bottom": 358.921875,
+          "left": 412
+        },
+        ".intro p:nth-child(3)": {
+          "x": 412,
+          "y": 376.515625,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 376.515625,
+          "right": 1508,
+          "bottom": 405.328125,
+          "left": 412
+        }
+      },
+      "backdrop": "/tmp/sage-preview-check/revision-24/backdrop-1920-medium-light.png"
+    },
+    {
+      "width": 600,
+      "size": "medium",
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "overflow": false,
+      "mask": "none",
+      "pointer": "none",
+      "nativeWidth": 1374,
+      "nativeHeight": 1145,
+      "height": 500,
+      "toggleColor": "rgb(232, 237, 242)",
+      "toggleClickable": true,
+      "boxes": {
+        "#themeToggle": {
+          "x": 412,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 434.59375,
+          "bottom": 70.6875,
+          "left": 412
+        },
+        ".name-title": {
+          "x": 412,
+          "y": 85.96875,
+          "width": 253.96875,
+          "height": 65.28125,
+          "top": 85.96875,
+          "right": 665.96875,
+          "bottom": 151.25,
+          "left": 412
+        },
+        ".contact-bar": {
+          "x": 412,
+          "y": 167.234375,
+          "width": 1096,
+          "height": 26.84375,
+          "top": 167.234375,
+          "right": 1508,
+          "bottom": 194.078125,
+          "left": 412
+        },
+        ".intro p:first-child": {
+          "x": 412,
+          "y": 226.078125,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 226.078125,
+          "right": 1508,
+          "bottom": 254.890625,
+          "left": 412
+        },
+        ".intro p:nth-child(2)": {
+          "x": 412,
+          "y": 272.484375,
+          "width": 1096,
+          "height": 86.4375,
+          "top": 272.484375,
+          "right": 1508,
+          "bottom": 358.921875,
+          "left": 412
+        },
+        ".intro p:nth-child(3)": {
+          "x": 412,
+          "y": 376.515625,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 376.515625,
+          "right": 1508,
+          "bottom": 405.328125,
+          "left": 412
+        }
+      },
+      "backdrop": "/tmp/sage-preview-check/revision-24/backdrop-1920-medium-dark.png"
+    },
+    {
+      "width": 679.984375,
+      "size": "large",
+      "theme": "light",
+      "geometryUnchanged": true,
+      "overflow": false,
+      "mask": "none",
+      "pointer": "none",
+      "nativeWidth": 1374,
+      "nativeHeight": 1145,
+      "height": 566.65625,
+      "toggleColor": "rgb(37, 41, 37)",
+      "toggleClickable": true,
+      "boxes": {
+        "#themeToggle": {
+          "x": 412,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 434.59375,
+          "bottom": 70.6875,
+          "left": 412
+        },
+        ".name-title": {
+          "x": 412,
+          "y": 85.96875,
+          "width": 253.96875,
+          "height": 65.28125,
+          "top": 85.96875,
+          "right": 665.96875,
+          "bottom": 151.25,
+          "left": 412
+        },
+        ".contact-bar": {
+          "x": 412,
+          "y": 167.234375,
+          "width": 1096,
+          "height": 26.84375,
+          "top": 167.234375,
+          "right": 1508,
+          "bottom": 194.078125,
+          "left": 412
+        },
+        ".intro p:first-child": {
+          "x": 412,
+          "y": 226.078125,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 226.078125,
+          "right": 1508,
+          "bottom": 254.890625,
+          "left": 412
+        },
+        ".intro p:nth-child(2)": {
+          "x": 412,
+          "y": 272.484375,
+          "width": 1096,
+          "height": 86.4375,
+          "top": 272.484375,
+          "right": 1508,
+          "bottom": 358.921875,
+          "left": 412
+        },
+        ".intro p:nth-child(3)": {
+          "x": 412,
+          "y": 376.515625,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 376.515625,
+          "right": 1508,
+          "bottom": 405.328125,
+          "left": 412
+        }
+      },
+      "backdrop": "/tmp/sage-preview-check/revision-24/backdrop-1920-large-light.png"
+    },
+    {
+      "width": 679.984375,
+      "size": "large",
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "overflow": false,
+      "mask": "none",
+      "pointer": "none",
+      "nativeWidth": 1374,
+      "nativeHeight": 1145,
+      "height": 566.65625,
+      "toggleColor": "rgb(232, 237, 242)",
+      "toggleClickable": true,
+      "boxes": {
+        "#themeToggle": {
+          "x": 412,
+          "y": 45.6875,
+          "width": 22.59375,
+          "height": 25,
+          "top": 45.6875,
+          "right": 434.59375,
+          "bottom": 70.6875,
+          "left": 412
+        },
+        ".name-title": {
+          "x": 412,
+          "y": 85.96875,
+          "width": 253.96875,
+          "height": 65.28125,
+          "top": 85.96875,
+          "right": 665.96875,
+          "bottom": 151.25,
+          "left": 412
+        },
+        ".contact-bar": {
+          "x": 412,
+          "y": 167.234375,
+          "width": 1096,
+          "height": 26.84375,
+          "top": 167.234375,
+          "right": 1508,
+          "bottom": 194.078125,
+          "left": 412
+        },
+        ".intro p:first-child": {
+          "x": 412,
+          "y": 226.078125,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 226.078125,
+          "right": 1508,
+          "bottom": 254.890625,
+          "left": 412
+        },
+        ".intro p:nth-child(2)": {
+          "x": 412,
+          "y": 272.484375,
+          "width": 1096,
+          "height": 86.4375,
+          "top": 272.484375,
+          "right": 1508,
+          "bottom": 358.921875,
+          "left": 412
+        },
+        ".intro p:nth-child(3)": {
+          "x": 412,
+          "y": 376.515625,
+          "width": 1096,
+          "height": 28.8125,
+          "top": 376.515625,
+          "right": 1508,
+          "bottom": 405.328125,
+          "left": 412
+        }
+      },
+      "backdrop": "/tmp/sage-preview-check/revision-24/backdrop-1920-large-dark.png"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "display": "none",
+      "hasSrc": false,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "display": "none",
+      "hasSrc": false,
+      "overflow": false
+    }
+  ],
+  "secondaryPages": "same source and 320px treatment",
+  "writes": [],
+  "errors": []
+}
