@@ -2,6 +2,14 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 18: a vertical corner composition
+
+The upper-left cloud is now a new native portrait composition: it enters from the top and left edges, with connected cloud lobes tapering down the outer margin. Its ASCII characters stay upright. Small, Medium, and Large now display the portrait at 220px, 320px, and 420px tall, respectively, preserving its aspect ratio. Medium remains the default. The header and text remain in their original positions, at least 20px clear of the artwork; the corner remains hidden below 1280px and on secondary pages.
+
+Generated with built-in imagegen using the main cloud portrait as a style and palette reference. Files: [original PNG](details/cloud-corner-vertical-v1.png), [native WebP](details/cloud-corner-vertical-v1.webp), [exact prompt](details/cloud-corner-vertical-v1.prompt.txt), and [provenance](details/cloud-corner-vertical-v1.provenance.json). Native size is 1024 × 1536. The prior horizontal wisp and all earlier screenshots remain archived. This is a preview revision; production is unchanged.
+
+Checks in `revision-18/` cover all three sizes at 1280px, 1440px, 1920px, and 390px: native aspect ratio preserved, no content movement or horizontal overflow, and at least 20px header clearance. The image stays hidden and unfetched on a fresh mobile load. Gallery selection survives reload and navigation. Light/dark screenshots were captured with external requests blocked.
+
 ## Revision 17: a fuller upper-left cloud
 
 The optional upper-left cloud now defaults to **Medium**. It shows more of the cloud mass and extends farther down the outer margin, with a short sideways blend into the page. Larger screens can use up to 320px of margin instead of the earlier 160px cap. Header and content positions remain unchanged, with at least 20px clearance from the decoration.

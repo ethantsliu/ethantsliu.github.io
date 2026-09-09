@@ -1,0 +1,18 @@
+{
+  "generator": "built-in imagegen",
+  "intent": "New vertical corner composition using the existing portrait as a style and palette reference",
+  "reference": "../portraits/clouds-ascii-v4.png",
+  "source": "/Users/EthanLiu/.codex/generated_images/01a07fad-3b82-7432-b769-586331600ad0/exec-3be5d8c0-01e3-469d-9204-f5b507d0a6a6.png",
+  "dimensions": {
+    "width": 1024,
+    "height": 1536
+  },
+  "prompt": "Use case: stylized-concept.\nAsset type: a tall decorative ASCII cloud for the upper-left OUTER MARGIN of a minimal white website.\nInput image: style and palette reference ONLY. Create a new companion composition using its upright monospaced character texture, ivory highlights, muted blue-gray and subtle sage shadows.\nCanvas: portrait 1024 x 1536. Pure flat white (#FFFFFF) background. No paper texture, background tint, gray wash, frame, or border.\nComposition: one irregular VERTICAL cloud bank enters from BOTH the TOP and LEFT edges, largest near the top-left corner. Its cloud body continues down the left edge and narrows gradually toward a delicate tapered end around 82% of the canvas height. It must feel like an open piece of a larger sky outside the page, with several airy connected cumulus lobes descending along the left edge. At the top, cloud may occupy 65–80% of the canvas width; halfway down it occupies about 50%; at the bottom it tapers to 15%. The entire rightmost 15% and bottommost 12% must remain pure white. The outer right silhouette must be naturally irregular and open. No horizontal tail reaching across the canvas. No horizontal shelf, horizontal stripe, oval, medallion, enclosed blob, isolated icon, smoke column, tornado, or mountain.\nTexture: all shading visibly built from small, upright @ # + = : . characters in horizontal rows. Use clear character cells that remain recognizably textural at a website display size around 180 pixels wide and 270 pixels tall. Do not rotate the glyphs or make photographic grain. Cloud lobes should still read as clouds with luminous cream highlights and cool gray-blue shadow pockets. Match the reference's palette and contrast; do not turn the illustration yellow or orange, since the website applies its own gentle golden-hour tint.\nOnly cloud and white negative space. No words, letters forming readable text, sun, horizon, landscape, objects, logo, UI, drop shadow, or artificial gradients along the subject boundary.",
+  "postprocessing": {
+    "original_png": "Unmodified copy of the built-in tool output",
+    "webp_command": "cwebp -quiet -q 92 -m 6 output/sage-backgrounds/details/cloud-corner-vertical-v1.png -o output/sage-backgrounds/details/cloud-corner-vertical-v1.webp",
+    "resized": false,
+    "rotated": false,
+    "stretched": false
+  }
+}

@@ -73,37 +73,32 @@ html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="origi
 .sage-preview :focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 5px; }
 .sage-preview:not(.show-original) .dropdown-btn { background: var(--bg); }
 .sage-preview #dropdownContent.is-open { display: block; opacity: 1; visibility: visible; pointer-events: auto; }
-/* Optional companion wisp: only the spare outer margin on wide homepages.
+/* Optional vertical cloud: only the spare outer margin on wide homepages.
    Its boundary stays at least 20px to the left of the existing header. */
 .home.sage-preview > .sage-corner-cloud { display: none; }
 @media (min-width: 1280px) {
   .home.sage-preview[data-corner-cloud="true"] > .sage-corner-cloud {
+    --corner-height: 320px;
     display: block;
     position: absolute;
     top: 0;
     left: 0;
-    width: min(160px, calc((100vw - 1096px) / 2 - 20px));
-    aspect-ratio: 1;
+    width: min(calc(var(--corner-height) * 2 / 3), calc((100vw - 1096px) / 2 - 20px));
+    height: var(--corner-height);
     overflow: hidden;
     pointer-events: none;
+    mask-image: linear-gradient(to right, #000 calc(100% - min(30px, 25%)), transparent 100%);
   }
-  /* Medium and Large show more cloud mass along the outer edge. The image
-     remains below native resolution; a short sideways blend clears the text. */
-  .home.sage-preview[data-corner-cloud="true"]:not([data-corner-size="small"]) > .sage-corner-cloud {
-    --wisp-size: clamp(220px, calc((100vw - 1136px) * .95), 420px);
-    width: min(320px, calc((100vw - 1096px) / 2 - 20px));
-    height: var(--wisp-size);
-    aspect-ratio: auto;
-    mask-image: linear-gradient(to right, #000 calc(100% - min(44px, 35%)), transparent 100%);
+  .home.sage-preview[data-corner-cloud="true"][data-corner-size="small"] > .sage-corner-cloud {
+    --corner-height: 220px;
   }
   .home.sage-preview[data-corner-cloud="true"][data-corner-size="large"] > .sage-corner-cloud {
-    --wisp-size: clamp(280px, calc((100vw - 1136px) * 1.25), 520px);
+    --corner-height: 420px;
   }
-  .home.sage-preview:not([data-corner-size="small"]) > .sage-corner-cloud img {
-    position: absolute;
-    left: calc(var(--wisp-size) * -.1);
-    top: calc(var(--wisp-size) * -.16);
-    width: var(--wisp-size);
+  /* Native portrait proportions keep the characters upright and undistorted. */
+  .home.sage-preview > .sage-corner-cloud img {
+    width: auto;
+    height: 100%;
     max-width: none;
   }
 }
