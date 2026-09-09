@@ -1,0 +1,6 @@
+Use case: style-transfer
+Edit the attached ASCII bird, preserving its compact body, short tail, right-facing head, cream/gold and muted blue-gray colors, and pure white background. Output one full bird on the same landscape 3:2 canvas.
+Rendering correction: rebuild the subject from ONLY about 120–180 much LARGER, BOLDER monospaced ASCII glyphs @ # % O + = : . / *. No more than 24 columns across the entire wingspan. Each glyph about 55–70 native pixels high on this 1536px-wide canvas. All glyphs upright, with clear holes and substantial strokes, openly spaced; no fine microtype, painting, photographic texture, stipple or continuous outlines. This needs to read as actual colored ASCII when displayed at only 120 pixels wide. Simplify the anatomy and shading to achieve this coarse scale. The previous image has far too many tiny characters.
+Pure white #ffffff background and negative space, opaque and flat, no shadow, frame, words or watermarks. Preserve the complete bird with comfortable margins.
+
+Preserve the input's gentle banking posture and rounded near wing. Give the higher far wing a slightly softer, rounded tip rather than a long sharp taper. Keep the pose asymmetric and curved, the head small, and the tail very short. The rendering should be a simpler, coarser interpretation of this bird, not a new tall-winged swallow.

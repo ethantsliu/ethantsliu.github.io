@@ -1,0 +1,11 @@
+{
+  "mode": "built-in imagegen",
+  "prompt": "Use case: style-transfer\nEdit the attached ASCII bird, preserving its compact body, short tail, right-facing head, cream/gold and muted blue-gray colors, and pure white background. Output one full bird on the same landscape 3:2 canvas.\nRendering correction: rebuild the subject from ONLY about 120\u2013180 much LARGER, BOLDER monospaced ASCII glyphs @ # % O + = : . / *. No more than 24 columns across the entire wingspan. Each glyph about 55\u201370 native pixels high on this 1536px-wide canvas. All glyphs upright, with clear holes and substantial strokes, openly spaced; no fine microtype, painting, photographic texture, stipple or continuous outlines. This needs to read as actual colored ASCII when displayed at only 120 pixels wide. Simplify the anatomy and shading to achieve this coarse scale. The previous image has far too many tiny characters.\nPure white #ffffff background and negative space, opaque and flat, no shadow, frame, words or watermarks. Preserve the complete bird with comfortable margins.\n\nPose correction: LOWER BOTH WINGS into a shallow, almost level glide. In the input, the tips are much too high and form a dramatic V. Bring both tips down to approximately the same horizontal level as the head, with only a gentle relaxed arch through each wrist. The bird's silhouette should be wider and shallower, with the wings spanning three to four times its overall visible height. Keep one wing slightly farther back and foreshortened, natural rather than symmetrical. Small head and compact body, short subtly fanned tail, no upward spear-shaped wing or forked streamer tail. It should feel quietly buoyant beside clouds.",
+  "reference": "output/sage-backgrounds/motifs/bird-glide-ascii-v1.png",
+  "source": "/Users/EthanLiu/.codex/generated_images/01a07fad-3b82-7432-b769-586331600ad0/exec-38844dac-6592-404d-9f22-6099bbba2d8c.png",
+  "width": 1536,
+  "height": 1024,
+  "original": "bird-glide-ascii-v2.png",
+  "delivery": "bird-glide-ascii-v2.webp",
+  "conversion": "cwebp -q 94 -m 6; original dimensions; no crop or resize"
+}

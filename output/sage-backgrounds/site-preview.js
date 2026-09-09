@@ -126,7 +126,9 @@
     if (!motifs.some(item => item.id === state.cornerMotif)) state.cornerMotif = 'cloud';
     body.dataset.cornerArtwork = String(showCorner);
     body.dataset.cornerMotif = state.cornerMotif;
-    const showCloud = showCorner && (!isHome || state.cornerMotif === 'cloud');
+    const selectedMotif = motifs.find(item => item.id === state.cornerMotif);
+    body.dataset.cornerCombined = String(isHome && Boolean(selectedMotif.withCloud));
+    const showCloud = showCorner && (!isHome || state.cornerMotif === 'cloud' || selectedMotif.withCloud);
     body.dataset.cornerCloud = String(showCloud);
     if (!['small', 'medium', 'large'].includes(state.cornerSize)) state.cornerSize = 'medium';
     body.dataset.cornerSize = state.cornerSize;
@@ -134,7 +136,7 @@
       cornerImage.src = new URL(`details/${cornerArt.file}`, location.href).href;
     }
     if (isHome && showCorner && state.cornerMotif !== 'cloud' && window.innerWidth >= 1280) {
-      const selected = motifs.find(item => item.id === state.cornerMotif);
+      const selected = selectedMotif;
       const source = state.theme === 'dark' && selected.dark ? selected.dark : selected.file;
       motif.dataset.kind = selected.kind;
       motifImage.width = selected.width;

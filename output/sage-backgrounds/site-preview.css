@@ -143,8 +143,22 @@ html[data-theme="dark"] .sage-corner-cloud img { filter: var(--night-art-filter)
   .home.sage-preview[data-corner-artwork="true"][data-corner-motif="sun-moon"] > .sage-corner-motif { --motif-max: 160px; top: 103px; }
   .home.sage-preview[data-corner-artwork="true"][data-corner-motif="celestial"] > .sage-corner-motif { --motif-max: 210px; top: 68px; }
   .home.sage-preview[data-corner-artwork="true"][data-corner-motif="bi"] > .sage-corner-motif { --motif-max: 165px; top: 90px; }
+  /* The bird shares the cloud's opening. Cap its horizontal position when the
+     cloud reaches its wide-screen offset. Blend above the cloud's own layer
+     so the two drawings' paper backgrounds do not conceal each other. */
+  .home.sage-preview[data-corner-artwork="true"][data-corner-combined="true"] > .sage-corner-motif {
+    --motif-max: 160px;
+    --combined-right-limit: 303px;
+    left: calc(min(calc((100vw - 1096px) / 2 - 20px), var(--combined-right-limit)) - var(--motif-width));
+    top: 142px;
+    z-index: 2;
+    mix-blend-mode: multiply;
+  }
+  .home.sage-preview[data-corner-combined="true"][data-corner-size="small"] > .sage-corner-motif { --combined-right-limit: 281px; }
+  .home.sage-preview[data-corner-combined="true"][data-corner-size="large"] > .sage-corner-motif { --combined-right-limit: 325px; }
 }
 .sage-corner-motif img { display: block; width: 100%; height: auto; }
+html[data-theme="dark"] .home.sage-preview[data-corner-combined="true"] > .sage-corner-motif { mix-blend-mode: screen; }
 .sage-corner-motif[data-kind="raster"] img { filter: var(--warm-art-filter, brightness(1.055)); mix-blend-mode: multiply; }
 html[data-theme="dark"] .sage-corner-motif[data-kind="raster"] img { filter: var(--night-art-filter); mix-blend-mode: screen; }
 .sage-preview[data-accent="graphite"] .sage-corner-motif img { filter: grayscale(1) brightness(1.08); }

@@ -28,7 +28,7 @@
   const strengthValue = document.getElementById("strength-value");
   const cardElements = new Map();
   const motifButtons = new Map();
-  const pageFiles = Object.fromEntries(Object.entries({ about: "site-preview.html", work: "preview-work.html", research: "preview-research.html", archive: "preview-archive.html", writing: "preview-writing.html", essay: "preview-essay.html" }).map(([page, file]) => [page, `${file}?v=26`]));
+  const pageFiles = Object.fromEntries(Object.entries({ about: "site-preview.html", work: "preview-work.html", research: "preview-research.html", archive: "preview-archive.html", writing: "preview-writing.html", essay: "preview-essay.html" }).map(([page, file]) => [page, `${file}?v=27`]));
   const treatmentButtons = Array.from(document.querySelectorAll(".treatment-button"));
   const treatmentStrengths = { editorial: 100, opening: 100, closing: 100 };
   // Saved greens: sage { light: "#4c6757", dark: "#bacbb7" };
@@ -54,11 +54,12 @@
     for (const [id, button] of motifButtons) {
       button.setAttribute("aria-pressed", String(isHome && controls.corner.checked && !controls.corner.disabled && id === controls.cornerMotif.value));
       const definition = motifs.find(item => item.id === id);
-      button.querySelector("img").src = controls.theme.value === "dark" && definition.dark ? definition.dark : definition.file;
+      button.querySelector(".motif-source").src = controls.theme.value === "dark" && definition.dark ? definition.dark : definition.file;
     }
     const motifSource = controls.theme.value === "dark" && selectedMotif.dark ? selectedMotif.dark : selectedMotif.file;
     document.getElementById("view-motif").href = motifSource.replace(/\.webp$/, ".png");
     document.getElementById("view-motif").hidden = !isHome;
+    document.getElementById("view-motif").textContent = selectedMotif.withCloud ? "View bird drawing ↗" : "View source drawing ↗";
     const motifNote = controls.original.checked
       ? "Showing the original site. Selecting a sky study returns to the artwork preview."
       : !isHome
@@ -302,18 +303,30 @@
     button.setAttribute("aria-pressed", "false");
     button.setAttribute("aria-label", `Try ${motif.title} in the homepage upper-left margin`);
     const image = document.createElement("img");
+    image.className = "motif-source";
     image.src = motif.file;
     image.alt = "";
     image.width = motif.width;
     image.height = motif.height;
     const label = document.createElement("span");
     label.textContent = motif.title;
-    button.append(image, label);
+    if (motif.withCloud) {
+      const thumbnail = document.createElement("span");
+      thumbnail.className = "motif-thumbnail-combined";
+      const cloud = document.createElement("img");
+      cloud.className = "motif-cloud";
+      cloud.src = motifs.find(item => item.id === "cloud").file;
+      cloud.alt = "";
+      cloud.width = 1374;
+      cloud.height = 1145;
+      thumbnail.append(cloud, image);
+      button.append(thumbnail, label);
+    } else button.append(image, label);
     button.addEventListener("click", () => chooseMotif(motif.id));
     document.getElementById("motif-choices").append(button);
     motifButtons.set(motif.id, button);
   }
-  controls.cornerMotif.value = "bird";
+  controls.cornerMotif.value = "cloud-glide";
   controls.accent.value = "amber";
   const defaultArtwork = artworks.find((artwork) => artwork.id === (window.SAGE_DEFAULT_SCENE || "01-ridgelines")) || artworks[0];
   if (defaultArtwork) controls.art.value = defaultArtwork.id;

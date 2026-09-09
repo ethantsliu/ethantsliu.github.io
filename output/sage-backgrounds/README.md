@@ -2,6 +2,23 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 27: the previous cloud with two new birds
+
+The gallery opens with **Cloud + glide** and also offers **Cloud + turn**. Both pair the exact previous `cloud-corner-expansive-v4` drawing with a newly generated ASCII bird. The glide has shallow, outstretched wings; the turn has a compact body, a short tail, and gently uneven wings. Neither uses the earlier upright bird's long wing and forked tail. Previous cloud and Earlier bird remain available for direct comparison.
+
+The cloud keeps its existing source, size, position, and palette. A separate bird layer sits in the opening between its masses, blended above the cloud without an opaque paper rectangle. The bird keeps its native proportions and stays at least 20px outside the text column. The two layers share the upper-left artwork toggle and size control, and hide below 1280px. Secondary-page clouds, the main portrait beside Latest, and the centered content are preserved.
+
+Two first-pass drawings used the previous cloud as a style and palette reference. Two reference edits enlarged the ASCII-like glyphs; the gliding edit also lowered its wings. All four images used **built-in imagegen** and are saved at their native 1536 × 1024 dimensions. PNGs are unchanged copies of the generated output; WebP delivery copies use quality 94 with no cropping, resizing, repainting, or upscaling. The selected artwork is `v2`; the `v1` drawings and every exact prompt and provenance file remain archived in `motifs/`.
+
+| Selected bird | Original drawing | Exact prompt | Provenance |
+| --- | --- | --- | --- |
+| Shallow glide | [PNG](motifs/bird-glide-ascii-v2.png) | [Prompt](motifs/bird-glide-ascii-v2.prompt.txt) | [JSON](motifs/bird-glide-ascii-v2.json) |
+| Gentle turn | [PNG](motifs/bird-bank-ascii-v2.png) | [Prompt](motifs/bird-bank-ascii-v2.prompt.txt) | [JSON](motifs/bird-bank-ascii-v2.json) |
+
+Gallery thumbnails show both layers. View bird drawing opens the selected bird's original PNG, while Open full page shows the complete composition with the selected theme, size, and palette. Saved comparisons include `cornerMotif=cloud-glide` or `cornerMotif=cloud-bank`; earlier comparison URLs retain their original selection.
+
+Browser results and screenshots are in `revision-27/`. Checks cover 108 desktop combinations across all six bird/sky selections, three widths, three sizes, and both themes; five secondary pages; seven gallery choices; mobile hiding; source links and saved state; keyboard and hover navigation; and the GET-only visit counter. Content geometry is unchanged, with no overflow or console errors. Layer captures check that both drawings remain visible in light and dark mode. Publication is scoped to this preview collection under `output/sage-backgrounds/`.
+
 ## Revision 26: ASCII construction for every sky motif
 
 All four homepage corner choices now use the same character-built visual language as the accepted clouds. Bird, Sun / moon, Celestial, and Bi circle are rendered with visible letters and punctuation instead of natural-history engraving, stone texture, or clean SVG lines. Five final images cover the four choices, including a separate crescent for dark mode.

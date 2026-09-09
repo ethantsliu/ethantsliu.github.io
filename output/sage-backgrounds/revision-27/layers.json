@@ -1,0 +1,78 @@
+[
+  {
+    "theme": "light",
+    "motif": "cloud-glide",
+    "prefix": "output/sage-backgrounds/revision-27/cloud-glide-light-layers",
+    "birdBox": {
+      "x": 22.390625,
+      "y": 142,
+      "width": 129.59375,
+      "height": 86.390625
+    },
+    "visibleBirdPixelsInBounds": 2124,
+    "visibleCloudPixels": 31875,
+    "openPaperPixel": [
+      255,
+      255,
+      255
+    ],
+    "method": "Neutralize each drawing with white or black. Check visible ink in its region and the open-paper edge; exact cloud-pixel comparison is unsuitable because browser rasterization changes when layers are neutralized."
+  },
+  {
+    "theme": "light",
+    "motif": "cloud-bank",
+    "prefix": "output/sage-backgrounds/revision-27/cloud-bank-light-layers",
+    "birdBox": {
+      "x": 22.390625,
+      "y": 142,
+      "width": 129.59375,
+      "height": 86.390625
+    },
+    "visibleBirdPixelsInBounds": 2831,
+    "visibleCloudPixels": 31870,
+    "openPaperPixel": [
+      255,
+      255,
+      255
+    ],
+    "method": "Neutralize each drawing with white or black. Check visible ink in its region and the open-paper edge; exact cloud-pixel comparison is unsuitable because browser rasterization changes when layers are neutralized."
+  },
+  {
+    "theme": "dark",
+    "motif": "cloud-glide",
+    "prefix": "output/sage-backgrounds/revision-27/cloud-glide-dark-layers",
+    "birdBox": {
+      "x": 22.390625,
+      "y": 142,
+      "width": 129.59375,
+      "height": 86.390625
+    },
+    "visibleBirdPixelsInBounds": 1600,
+    "visibleCloudPixels": 25641,
+    "openPaperPixel": [
+      0,
+      0,
+      0
+    ],
+    "method": "Neutralize each drawing with white or black. Check visible ink in its region and the open-paper edge; exact cloud-pixel comparison is unsuitable because browser rasterization changes when layers are neutralized."
+  },
+  {
+    "theme": "dark",
+    "motif": "cloud-bank",
+    "prefix": "output/sage-backgrounds/revision-27/cloud-bank-dark-layers",
+    "birdBox": {
+      "x": 22.390625,
+      "y": 142,
+      "width": 129.59375,
+      "height": 86.390625
+    },
+    "visibleBirdPixelsInBounds": 2208,
+    "visibleCloudPixels": 25643,
+    "openPaperPixel": [
+      0,
+      0,
+      0
+    ],
+    "method": "Neutralize each drawing with white or black. Check visible ink in its region and the open-paper edge; exact cloud-pixel comparison is unsuitable because browser rasterization changes when layers are neutralized."
+  }
+]
