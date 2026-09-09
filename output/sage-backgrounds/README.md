@@ -2,6 +2,22 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 25: four alternatives for the homepage corner
+
+The gallery now offers **Bird in flight**, **Sun / moon**, **Celestial**, and **Bi circle**, alongside the previous cloud. Fresh gallery visits select the bird and Golden hour. Click a study to return to the homepage and see its upper-left artwork; the sun becomes a crescent when the theme changes. The Upper-left artwork checkbox also gives a clear-margin comparison. The Open full page link carries the selected artwork, theme, size and palette into a standalone preview.
+
+The four new motifs are shown whole, without cropping or edge masks. Their widths respond to the space beside the centered content and stay inside the margin at all three sizes. They hide below 1280px, following the existing corner behavior. The main portrait beside Latest, biography, contact row, navigation, original green comments, and secondary pages' accepted clouds are preserved. This revision changes the experiment under `output/sage-backgrounds/`; it does not change the production homepage.
+
+The shared `motifs.js` catalog supplies the gallery thumbnails and the actual preview sources. The saved URL includes `cornerMotif`; existing comparison links without that field continue to select the cloud. The underlying twenty-three background choices remain independent of this corner selection.
+
+- Bird: [original PNG](motifs/swallow-v1.png), [native WebP](motifs/swallow-v1.webp), [exact prompt](motifs/swallow-v1.prompt.txt), [provenance](motifs/swallow-v1.json). Native 1145 × 1374.
+- Bi-inspired circle: [original PNG](motifs/bi-v2.png), [native WebP](motifs/bi-v2.webp), [exact prompt](motifs/bi-v2.prompt.txt), [provenance](motifs/bi-v2.json). Native 1254 × 1254. The initial [SVG study](motifs/bi-v1.svg) is also retained.
+- Sun, moon and celestial drawing: authored directly as [sun SVG](motifs/sun-v1.svg), [moon SVG](motifs/moon-v1.svg) and [celestial SVG](motifs/celestial-v1.svg). The star drawing is abstract, not a scientific map of a constellation.
+
+Both raster illustrations were created with the **built-in imagegen tool**, one generation per final asset. Their original PNGs are unchanged; delivery WebPs use quality 92 at native dimensions. No CLI generation, local upscaling, raster repainting or cropping was used. The circle is a contemporary interpretation inspired by bi discs, not an artifact replica; the historical association with heaven is described by [the Walters Art Museum](https://art.thewalters.org/object/42.317/).
+
+Browser captures and results are saved in `revision-25/`. Checks cover the four new motifs at three desktop widths, all three sizes and both themes, plus mobile, secondary-page geometry, saved comparisons, theme synchronization, keyboard selection and hover navigation. The counter check uses a mocked existing count; the preview still issues GET only and production retains its own counter behavior. Screenshots show `offline` because visual capture blocks external requests.
+
 ## Revision 24: a larger homepage corner
 
 The existing cloud artwork is displayed 20% larger by default: 600 CSS pixels wide instead of 500. More of the overhead bank remains visible, with the cloud positioned to keep the name, contact row and biography clear. The source image, colors, proportions and centered content layout are unchanged. The gallery's Small option restores the previous 500px presentation; Large uses 680px. All sizes stay within the existing source's resolution at 2× display density.

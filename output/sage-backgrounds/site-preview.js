@@ -5,6 +5,7 @@
   const root = document.documentElement;
   const body = document.body;
   const isHome = body.classList.contains('home');
+  const motifs = window.SAGE_MOTIFS;
   if (!isHome) document.querySelector('.sage-scene')?.remove();
   // A small closing fragment stays in normal flow, clear of the reading area.
   // Secondary pages share this cloud motif independently of the homepage study.
@@ -41,13 +42,22 @@
   cornerImage.decoding = 'async';
   corner.append(cornerImage);
   body.prepend(corner);
+  const motif = document.createElement('div');
+  motif.className = 'sage-corner-motif';
+  motif.setAttribute('aria-hidden', 'true');
+  const motifImage = document.createElement('img');
+  motifImage.alt = '';
+  motifImage.decoding = 'async';
+  motif.append(motifImage);
+  if (isHome) body.prepend(motif);
   let state = {
     art: query.get('art') || fallback,
     placement: query.get('placement') || window.SAGE_DEFAULT_PLACEMENT || 'editorial',
     accent: query.get('accent') || 'blue', strength: query.get('strength') || 100,
     theme: query.get('theme') || 'light', original: query.get('original') === 'true',
     corner: query.has('corner') ? query.get('corner') === 'true' : true,
-    cornerSize: query.get('cornerSize') || 'medium'
+    cornerSize: query.get('cornerSize') || 'medium',
+    cornerMotif: query.get('cornerMotif') || 'cloud'
   };
 
   // Keep the source list intact for the Original and earlier placement comparisons.
@@ -113,11 +123,24 @@
     body.dataset.accent = state.accent;
     body.classList.toggle('show-original', Boolean(state.original));
     const showCorner = Boolean(state.corner) && !state.original && (!isHome || state.placement === 'editorial');
-    body.dataset.cornerCloud = String(showCorner);
+    if (!motifs.some(item => item.id === state.cornerMotif)) state.cornerMotif = 'cloud';
+    body.dataset.cornerArtwork = String(showCorner);
+    body.dataset.cornerMotif = state.cornerMotif;
+    const showCloud = showCorner && (!isHome || state.cornerMotif === 'cloud');
+    body.dataset.cornerCloud = String(showCloud);
     if (!['small', 'medium', 'large'].includes(state.cornerSize)) state.cornerSize = 'medium';
     body.dataset.cornerSize = state.cornerSize;
-    if (showCorner && window.innerWidth >= 1280 && !cornerImage.hasAttribute('src')) {
+    if (showCloud && window.innerWidth >= 1280 && !cornerImage.hasAttribute('src')) {
       cornerImage.src = new URL(`details/${cornerArt.file}`, location.href).href;
+    }
+    if (isHome && showCorner && state.cornerMotif !== 'cloud' && window.innerWidth >= 1280) {
+      const selected = motifs.find(item => item.id === state.cornerMotif);
+      const source = state.theme === 'dark' && selected.dark ? selected.dark : selected.file;
+      motif.dataset.kind = selected.kind;
+      motifImage.width = selected.width;
+      motifImage.height = selected.height;
+      const url = new URL(source, location.href).href;
+      if (motifImage.src !== url) motifImage.src = url;
     }
     if (sourceList && state.placement === 'editorial' && !state.original) {
       const large = new URL(scene.large, location.href).href;
@@ -162,8 +185,8 @@
       return;
     }
     if (event.data.type !== 'sage-preview') return;
-    const { art, placement, strength, theme, accent, original, corner, cornerSize } = event.data;
-    state = { art, placement, strength, theme, accent, original: Boolean(original), corner: Boolean(corner), cornerSize };
+    const { art, placement, strength, theme, accent, original, corner, cornerSize, cornerMotif } = event.data;
+    state = { art, placement, strength, theme, accent, original: Boolean(original), corner: Boolean(corner), cornerSize, cornerMotif };
     render();
   });
   window.addEventListener('resize', render);

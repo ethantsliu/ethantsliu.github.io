@@ -2,6 +2,7 @@
   "use strict";
 
   const artworks = window.SAGE_SCENES || [];
+  const motifs = window.SAGE_MOTIFS;
   const groups = [
     { id: "portrait", label: "Portrait studies", grid: document.getElementById("portrait-grid") },
     { id: "original", label: "Original studies", grid: document.getElementById("artwork-grid") },
@@ -18,14 +19,16 @@
     width: document.getElementById("width"),
     original: document.getElementById("original"),
     corner: document.getElementById("corner"),
-    cornerSize: document.getElementById("cornerSize")
+    cornerSize: document.getElementById("cornerSize"),
+    cornerMotif: document.getElementById("cornerMotif")
   };
   const frame = document.getElementById("site-preview");
   const viewport = document.getElementById("preview-viewport");
   const status = document.getElementById("selection-status");
   const strengthValue = document.getElementById("strength-value");
   const cardElements = new Map();
-  const pageFiles = Object.fromEntries(Object.entries({ about: "site-preview.html", work: "preview-work.html", research: "preview-research.html", archive: "preview-archive.html", writing: "preview-writing.html", essay: "preview-essay.html" }).map(([page, file]) => [page, `${file}?v=24`]));
+  const motifButtons = new Map();
+  const pageFiles = Object.fromEntries(Object.entries({ about: "site-preview.html", work: "preview-work.html", research: "preview-research.html", archive: "preview-archive.html", writing: "preview-writing.html", essay: "preview-essay.html" }).map(([page, file]) => [page, `${file}?v=25`]));
   const treatmentButtons = Array.from(document.querySelectorAll(".treatment-button"));
   const treatmentStrengths = { editorial: 100, opening: 100, closing: 100 };
   // Saved greens: sage { light: "#4c6757", dark: "#bacbb7" };
@@ -46,6 +49,21 @@
     controls.strength.disabled = !isHome;
     controls.corner.disabled = controls.original.checked || (isHome && controls.placement.value !== "editorial") || controls.width.value === "mobile";
     controls.cornerSize.disabled = !isHome || controls.corner.disabled || !controls.corner.checked;
+    controls.cornerMotif.disabled = controls.cornerSize.disabled;
+    const selectedMotif = motifs.find(item => item.id === controls.cornerMotif.value);
+    for (const [id, button] of motifButtons) {
+      button.setAttribute("aria-pressed", String(isHome && controls.corner.checked && !controls.corner.disabled && id === controls.cornerMotif.value));
+    }
+    const motifNote = controls.original.checked
+      ? "Showing the original site. Selecting a sky study returns to the artwork preview."
+      : !isHome
+      ? "These studies are for the homepage. Selecting one returns to About; other pages keep their clouds."
+      : controls.width.value === "mobile"
+        ? "Corner artwork is hidden on mobile to keep the reading area clear. Open full page on a wide screen to compare."
+        : !controls.corner.checked
+          ? "The upper-left margin is clear. Choose a study to bring the artwork back."
+          : `${selectedMotif.description} Shown on wide screens, where there is room beside the text.`;
+    document.getElementById("motif-note").textContent = motifNote;
     const strength = Number(controls.strength.value);
     strengthValue.value = `${strength}%`;
     viewport.classList.toggle("is-mobile", controls.width.value === "mobile");
@@ -89,13 +107,16 @@
     status.textContent = controls.original.checked
       ? "Original site · Artwork hidden"
       : isHome
-        ? `${controls.page.selectedOptions[0].textContent} · ${artwork.title} · ${controls.accent.selectedOptions[0].textContent}`
+        ? `${controls.page.selectedOptions[0].textContent} · ${artwork.title} · ${controls.corner.checked && !controls.corner.disabled ? selectedMotif.title : "Clear upper-left"} · ${controls.accent.selectedOptions[0].textContent}`
         : `${controls.page.selectedOptions[0].textContent} · ${controls.corner.checked ? "Cloud corners" : "Cloud fragment"} · ${controls.accent.selectedOptions[0].textContent}`;
 
     // A copied address keeps the current comparison, including the selected page.
     const saved = new URLSearchParams();
     saved.set("scene", "9");
     for (const [key, control] of Object.entries(controls)) saved.set(key, control.type === "checkbox" ? String(control.checked) : control.value);
+    const fullPage = new URL(pageFiles[controls.page.value], location.href);
+    for (const [key, value] of saved) if (!["page", "scene", "width"].includes(key)) fullPage.searchParams.set(key, value);
+    document.getElementById("open-preview").href = fullPage.href;
     try { history.replaceState(null, "", `#${saved}`); } catch { /* Some file viewers disallow history writes. */ }
 
     frame.contentWindow?.postMessage({
@@ -107,7 +128,8 @@
       theme: controls.theme.value,
       original: controls.original.checked,
       corner: controls.corner.checked,
-      cornerSize: controls.cornerSize.value
+      cornerSize: controls.cornerSize.value,
+      cornerMotif: controls.cornerMotif.value
     }, "*");
     if (previewReady && focusOnReady) {
       focusOnReady = false;
@@ -126,6 +148,21 @@
     });
     if (previewReady) focusArtwork();
     else focusOnReady = true;
+  }
+
+  function chooseMotif(id) {
+    controls.cornerMotif.value = id;
+    controls.page.value = "about";
+    controls.placement.value = "editorial";
+    controls.original.checked = false;
+    controls.corner.checked = true;
+    sendPreview();
+    // A corner comparison should be visible even after browsing lower entries.
+    frame.contentWindow?.postMessage({ type: "sage-focus", position: "top" }, "*");
+    document.querySelector(".corner-controls").scrollIntoView({
+      block: "start",
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth"
+    });
   }
 
   function focusArtwork() {
@@ -248,6 +285,31 @@
     controls.art.append(options);
   }
 
+  for (const motif of motifs) {
+    const option = document.createElement("option");
+    option.value = motif.id;
+    option.textContent = motif.title;
+    controls.cornerMotif.append(option);
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "motif-choice";
+    button.dataset.motif = motif.id;
+    button.setAttribute("aria-pressed", "false");
+    button.setAttribute("aria-label", `Try ${motif.title} in the homepage upper-left margin`);
+    const image = document.createElement("img");
+    image.src = motif.file;
+    image.alt = "";
+    image.width = motif.width;
+    image.height = motif.height;
+    const label = document.createElement("span");
+    label.textContent = motif.title;
+    button.append(image, label);
+    button.addEventListener("click", () => chooseMotif(motif.id));
+    document.getElementById("motif-choices").append(button);
+    motifButtons.set(motif.id, button);
+  }
+  controls.cornerMotif.value = "bird";
+  controls.accent.value = "amber";
   const defaultArtwork = artworks.find((artwork) => artwork.id === (window.SAGE_DEFAULT_SCENE || "01-ridgelines")) || artworks[0];
   if (defaultArtwork) controls.art.value = defaultArtwork.id;
   const defaultPlacement = window.SAGE_DEFAULT_PLACEMENT || "editorial";
@@ -270,8 +332,13 @@
         if (value.trim() && Number.isFinite(number)) control.value = String(Math.min(100, Math.max(5, number)));
       } else if (Array.from(control.options).some(option => option.value === value)) control.value = value;
     }
+    // Pre-motif comparison links continue to show the cloud they selected.
+    if (saved.has("scene") && !saved.has("cornerMotif")) controls.cornerMotif.value = "cloud";
   }
   restoreComparison();
+  if (new URLSearchParams(location.hash.slice(1)).has("cornerMotif")) {
+    requestAnimationFrame(() => document.querySelector(".corner-controls").scrollIntoView({ block: "start", behavior: "instant" }));
+  }
   // Links to another comparison can change only the hash of an already-open
   // gallery. Apply those selections without requiring a page reload.
   window.addEventListener("hashchange", () => {

@@ -1,0 +1,7 @@
+Use case: stylized-concept
+Asset type: small editorial artwork for the upper-left margin of a minimalist personal website.
+Primary request: a single annular jade-bi-inspired disc, seen straight on, drawn as a delicate antique intaglio print. A contemporary interpretation of a circle with a central opening, not a replica of a specific artifact.
+Subject: broad circular stone ring, softly irregular outer edge, round opening approximately one third of the outer diameter. The interesting feature is subtle natural mineral variation, scattered ancient-looking pits and fine broken ink marks across its face. No ornament, symbols, writing or radial pattern.
+Style/medium: fine warm charcoal and ochre stippled engraving, restrained pigment, natural mottled texture and tiny drypoint marks; airy, quiet, tactile, with no hard outlines. It should read as a delicate artwork of aged stone rather than a flat geometric icon, metallic washer or 3D product rendering.
+Color palette: pale honey, muted bronze, ivory and warm gray; limited moderate contrast, no green, saturated yellow, shiny highlights or black areas.
+Composition: square canvas, full circle visible with at least 12 percent clean white margin on every side. Centered front view, no perspective tilt, no cast shadow. Background and central opening are perfectly flat pure white #ffffff, no paper grain or gradient, no other objects, no text, watermark or border.

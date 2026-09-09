@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" fill="none">
+  <!-- A contemporary annular study inspired by bi discs; not an artifact replica. -->
+  <path fill-rule="evenodd" d="M110 27C157 25 192 62 192 110C193 157 157 193 110 192C62 194 26 157 27 110C26 65 62 28 110 27ZM110 76C91 76 76 90 76 110C76 129 91 144 110 144C130 143 145 129 144 110C144 90 129 76 110 76Z" fill="#b08c50" fill-opacity=".36"/>
+  <path d="M110 27C157 25 192 62 192 110C193 157 157 193 110 192C62 194 26 157 27 110C26 65 62 28 110 27Z" stroke="#8a642d" stroke-opacity=".5" stroke-width=".8"/>
+  <path d="M110 76C91 76 76 90 76 110C76 129 91 144 110 144C130 143 145 129 144 110C144 90 129 76 110 76Z" stroke="#8a642d" stroke-opacity=".4" stroke-width=".65"/>
+  <path d="M52 75C39 96 40 130 59 151M71 49C96 35 126 37 144 45M166 147C152 169 125 180 101 176" stroke="#8a642d" stroke-opacity=".22" stroke-width="1.2" stroke-linecap="round"/>
+</svg>

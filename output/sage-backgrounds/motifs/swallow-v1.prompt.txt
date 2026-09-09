@@ -1,0 +1,7 @@
+Use case: stylized-concept
+Asset type: isolated editorial illustration for the upper-left margin of a minimalist personal website.
+Primary request: one graceful swallow in flight, banking upward, with naturally asymmetric wings and a clearly visible small head and forked tail. A quiet, expressive study of open sky, not a logo.
+Style/medium: delicate warm charcoal and ochre drypoint print, fine irregular stipple and subtle tiny typewriter-like marks within the feathers. Elegant natural bird anatomy; hand-made imperfect marks. Restrained, legible silhouette at small display size.
+Composition/framing: portrait canvas, the whole single bird visible with generous clean space around all wing tips. One wing extends upward and the other sideways in a relaxed banking turn; the body rises toward the upper right. Bird occupies roughly 80% of canvas height and 80% of width. No scenery, frame, clouds, branches or additional birds.
+Color palette: muted bronze and warm gray-brown shadows, pale ivory feather highlights; warm golden-hour atmosphere. Avoid saturated yellow or green.
+Background: pure white #ffffff, perfectly clean and flat, no paper texture or background shading. No cast shadow, no border, no gradient, no text or watermark.

@@ -1,0 +1,10 @@
+{
+  "mode": "built-in imagegen",
+  "prompt": "Use case: stylized-concept\nAsset type: isolated editorial illustration for the upper-left margin of a minimalist personal website.\nPrimary request: one graceful swallow in flight, banking upward, with naturally asymmetric wings and a clearly visible small head and forked tail. A quiet, expressive study of open sky, not a logo.\nStyle/medium: delicate warm charcoal and ochre drypoint print, fine irregular stipple and subtle tiny typewriter-like marks within the feathers. Elegant natural bird anatomy; hand-made imperfect marks. Restrained, legible silhouette at small display size.\nComposition/framing: portrait canvas, the whole single bird visible with generous clean space around all wing tips. One wing extends upward and the other sideways in a relaxed banking turn; the body rises toward the upper right. Bird occupies roughly 80% of canvas height and 80% of width. No scenery, frame, clouds, branches or additional birds.\nColor palette: muted bronze and warm gray-brown shadows, pale ivory feather highlights; warm golden-hour atmosphere. Avoid saturated yellow or green.\nBackground: pure white #ffffff, perfectly clean and flat, no paper texture or background shading. No cast shadow, no border, no gradient, no text or watermark.",
+  "source": "/Users/EthanLiu/.codex/generated_images/01a07fad-3b82-7432-b769-586331600ad0/exec-3abbdbf5-bf04-48f6-9158-9946d8736a65.png",
+  "width": 1145,
+  "height": 1374,
+  "original": "swallow-v1.png",
+  "delivery": "swallow-v1.webp",
+  "conversion": "cwebp -q 92 -m 6; native dimensions, no crop or resize"
+}
