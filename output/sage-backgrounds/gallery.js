@@ -16,7 +16,8 @@
     strength: document.getElementById("strength"),
     theme: document.getElementById("theme"),
     width: document.getElementById("width"),
-    original: document.getElementById("original")
+    original: document.getElementById("original"),
+    corner: document.getElementById("corner")
   };
   const frame = document.getElementById("site-preview");
   const viewport = document.getElementById("preview-viewport");
@@ -42,6 +43,7 @@
     controls.art.disabled = !isHome;
     controls.placement.disabled = !isHome;
     controls.strength.disabled = !isHome;
+    controls.corner.disabled = !isHome || controls.original.checked || controls.placement.value !== "editorial" || controls.width.value === "mobile";
     const strength = Number(controls.strength.value);
     strengthValue.value = `${strength}%`;
     viewport.classList.toggle("is-mobile", controls.width.value === "mobile");
@@ -88,7 +90,7 @@
     // A copied address keeps the current comparison, including the selected page.
     const saved = new URLSearchParams();
     saved.set("scene", "9");
-    for (const [key, control] of Object.entries(controls)) saved.set(key, key === "original" ? String(control.checked) : control.value);
+    for (const [key, control] of Object.entries(controls)) saved.set(key, control.type === "checkbox" ? String(control.checked) : control.value);
     try { history.replaceState(null, "", `#${saved}`); } catch { /* Some file viewers disallow history writes. */ }
 
     frame.contentWindow?.postMessage({
@@ -98,7 +100,8 @@
       accent: controls.accent.value,
       strength,
       theme: controls.theme.value,
-      original: controls.original.checked
+      original: controls.original.checked,
+      corner: controls.corner.checked
     }, "*");
     if (previewReady && focusOnReady) {
       focusOnReady = false;
@@ -245,17 +248,17 @@
   controls.placement.value = Object.hasOwn(treatmentStrengths, defaultPlacement) ? defaultPlacement : "editorial";
   controls.strength.value = "100";
   controls.original.checked = false;
-  const defaults = Object.fromEntries(Object.entries(controls).map(([key, control]) => [key, key === "original" ? control.checked : control.value]));
+  const defaults = Object.fromEntries(Object.entries(controls).map(([key, control]) => [key, control.type === "checkbox" ? control.checked : control.value]));
   function restoreComparison() {
     const saved = new URLSearchParams(location.hash.slice(1));
     const currentVersion = saved.get("scene") === "9";
     for (const [key, control] of Object.entries(controls)) {
-      if (key === "original") control.checked = defaults[key];
+      if (control.type === "checkbox") control.checked = defaults[key];
       else control.value = defaults[key];
       if (!saved.has(key)) continue;
       if (!currentVersion && !["art", "page", "theme", "width", "accent"].includes(key)) continue;
       const value = saved.get(key);
-      if (key === "original") control.checked = value === "true";
+      if (control.type === "checkbox") control.checked = value === "true";
       else if (key === "strength") {
         const number = Number(value);
         if (value.trim() && Number.isFinite(number)) control.value = String(Math.min(100, Math.max(5, number)));

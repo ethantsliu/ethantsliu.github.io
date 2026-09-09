@@ -72,6 +72,10 @@ h2 { font-size: clamp(27px, 3vw, 36px); line-height: 1.12; letter-spacing: -.025
 .strength-control output { font-variant-numeric: tabular-nums; }
 .original-control { display: flex; flex: 0 0 auto; align-items: center; gap: 7px; height: 35px; font-size: 12px; white-space: nowrap; cursor: pointer; }
 .original-control input { width: 14px; height: 14px; margin: 0; accent-color: var(--accent); }
+.corner-option { display: flex; align-items: center; gap: 8px; width: fit-content; margin-top: 18px; font-size: 12px; cursor: pointer; }
+.corner-option input { width: 14px; height: 14px; margin: 0; accent-color: var(--accent); }
+.corner-option small { margin-left: 8px; color: var(--muted); font-size: 11px; }
+.corner-option:has(input:disabled) { color: var(--muted); cursor: default; }
 .preview-stage { overflow: hidden; background: #eff0eb; padding: 24px; }
 .preview-viewport { width: 100%; max-width: 100%; margin: 0 auto; background: var(--paper); box-shadow: 0 2px 15px #29352b0a; border: 1px solid #d5dcd1; }
 .preview-viewport.is-mobile { width: 390px; }

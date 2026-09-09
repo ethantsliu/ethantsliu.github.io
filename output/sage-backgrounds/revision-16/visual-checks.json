@@ -1,0 +1,30 @@
+[
+  {
+    "theme": "light",
+    "corner": {
+      "x": 0,
+      "y": 0,
+      "width": 152,
+      "height": 152
+    },
+    "image": {
+      "width": 1254,
+      "height": 1254,
+      "filter": "sepia(0.28) saturate(1.18) brightness(1.065)"
+    }
+  },
+  {
+    "theme": "dark",
+    "corner": {
+      "x": 0,
+      "y": 0,
+      "width": 152,
+      "height": 152
+    },
+    "image": {
+      "width": 1254,
+      "height": 1254,
+      "filter": "brightness(1.065) grayscale(1) invert(1) sepia(1) saturate(1.1) hue-rotate(-10deg) brightness(0.72)"
+    }
+  }
+]

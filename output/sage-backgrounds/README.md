@@ -2,6 +2,12 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 16: optional upper-left cloud
+
+The **Upper-left cloud** checkbox compares a small companion wisp in the homepage's outer left margin. It appears only in the editorial homepage treatment at widths of at least 1280px and remains at least 20px clear of the existing header. It creates no extra header spacing and is hidden on smaller screens and in the Original comparison. The existing main cloud portrait stays the same.
+
+The `corner=true` URL setting preserves this option through reloads and preview navigation. Both themes use the selected palette. The wisp is a separate built-in imagegen asset: [original PNG](details/cloud-wisp-v1.png), [native WebP](details/cloud-wisp-v1.webp), [exact prompt](details/cloud-wisp-v1.prompt.txt), and [provenance](details/cloud-wisp-v1.provenance.json). This is a preview option; production's `clouds.css` does not include it.
+
 ## Revision 15: small closing clouds and a Golden hour comparison
 
 Work, Research, Archive, Writing, and the essay now share a small cloud fragment at the lower-right page edge. A normal-flow footer follows the existing wrapper; on short pages it sits at the viewport bottom, and on long pages it follows the reading content. Its height is 180px on desktop and 140px on mobile. The original header and content positions, reading widths, gutters, and wrapper padding remain unchanged. The native portrait's upper silhouette needs no top fade, and its continuation is clipped at the page bottom. This motif is independent of the selected homepage artwork; homepage-only artwork controls remain disabled on secondary pages.

@@ -1,0 +1,29 @@
+{
+  "asset": "cloud-wisp-v1",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "intent": "New companion composition using the supplied portrait as a style and palette reference",
+  "generated_at_utc": "2026-09-09 04:02:56 UTC",
+  "reference_image": "output/sage-backgrounds/portraits/clouds-ascii-v4.webp",
+  "original_generated_file": "/Users/EthanLiu/.codex/generated_images/01a07fb6-4336-7fc3-b790-621e6154fd38/exec-14c3da26-97e2-4a9e-871b-f23bcd289316.png",
+  "original_png": "output/sage-backgrounds/details/cloud-wisp-v1.png",
+  "encoded_webp": "output/sage-backgrounds/details/cloud-wisp-v1.webp",
+  "requested_canvas": {
+    "width": 1024,
+    "height": 1024
+  },
+  "actual_native_canvas": {
+    "width": 1254,
+    "height": 1254
+  },
+  "generation_calls": 1,
+  "prompt": "Use case: stylized-concept.\nAsset type: a small decorative ASCII cloud wisp for the outer left margin of a minimal personal website.\nInput image: the supplied cloud portrait is a STYLE AND PALETTE REFERENCE ONLY. Make a genuinely new companion composition; do not crop, mirror, reproduce, or extend the portrait.\nCreate one square 1024 x 1024 image. The background must be perfectly flat pure white (#FFFFFF), including all four corners and the lower third. No paper tint, gradients in the empty background, texture outside the subject, frame, or checkerboard.\nSubject and composition: one airy, low horizontal cloud wisp enters from and is clipped by the LEFT canvas edge. It occupies roughly x=0–85% and y=20–65% of the square. A few soft connected cloud lobes taper toward the right into thin irregular wispy filaments. Its top and bottom silhouettes are naturally uneven and open, with generous pure white below. This is a light passing wisp, not a towering cumulus mass, enclosed oval, mountain, badge, or icon.\nStyle: retain the reference's muted blue-gray and subtle sage shadows, luminous ivory cloud highlights, and deliberate monospaced ASCII character construction. Build the shading visibly from discrete @ # + = : . characters on orderly small rows, rather than photographic grain, stippling, or smooth shading. Use relatively large clear character cells—roughly 40–50 columns across the cloud—so the construction remains visibly textural when the whole square is displayed at only 130–160 pixels. The darkest small areas should be muted blue-gray, never solid black. Keep the wisp lighter and less dense than the reference's main cloud mass but clearly visible against white.\nNo other objects, sun, horizon, landscape, words, labels, logos, UI, borders, or drop shadow. Only this single cloud wisp and pure white empty space.",
+  "postprocessing": {
+    "original_png": "Unmodified copy of built-in tool output",
+    "webp_command": "cwebp -quiet -q 92 -m 6 output/sage-backgrounds/details/cloud-wisp-v1.png -o output/sage-backgrounds/details/cloud-wisp-v1.webp",
+    "resized": false,
+    "cropped": false,
+    "flipped": false
+  },
+  "visual_assessment": "A single horizontal cloud enters from the left and narrows into a wispy right tail. The cloud uses visible character rows, muted blue-gray shadows, ivory highlights, and substantial white space above and below."
+}

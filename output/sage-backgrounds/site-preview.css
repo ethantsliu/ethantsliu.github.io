@@ -73,6 +73,23 @@ html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="origi
 .sage-preview :focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 5px; }
 .sage-preview:not(.show-original) .dropdown-btn { background: var(--bg); }
 .sage-preview #dropdownContent.is-open { display: block; opacity: 1; visibility: visible; pointer-events: auto; }
+/* Optional companion wisp: only the spare outer margin on wide homepages.
+   Its boundary stays at least 20px to the left of the existing header. */
+.home.sage-preview > .sage-corner-cloud { display: none; }
+@media (min-width: 1280px) {
+  .home.sage-preview[data-corner-cloud="true"] > .sage-corner-cloud {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: min(160px, calc((100vw - 1096px) / 2 - 20px));
+    aspect-ratio: 1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+}
+.sage-corner-cloud img { display: block; width: 100%; height: auto; filter: var(--warm-art-filter, brightness(1.055)); mix-blend-mode: multiply; }
+html[data-theme="dark"] .sage-corner-cloud img { filter: var(--night-art-filter); mix-blend-mode: screen; }
 /* No illustration creates a column, moves a paragraph, or separates Latest.
    The opening crop uses the spare space to the right of the name and contact. */
 .sage-preview .sage-scene { display: none; pointer-events: none; }

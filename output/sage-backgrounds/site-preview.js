@@ -28,11 +28,22 @@
   const query = new URLSearchParams(location.search);
   const pageFiles = { about: 'site-preview.html', work: 'preview-work.html', research: 'preview-research.html', writing: 'preview-writing.html', archive: 'preview-archive.html', essay: 'preview-essay.html' };
   const routes = { '': 'about', index: 'about', work: 'work', research: 'research', writing: 'writing', archive: 'archive', baylearn: 'essay' };
+  const corner = document.createElement('div');
+  corner.className = 'sage-corner-cloud';
+  corner.setAttribute('aria-hidden', 'true');
+  const cornerImage = document.createElement('img');
+  cornerImage.alt = '';
+  cornerImage.width = 1254;
+  cornerImage.height = 1254;
+  cornerImage.decoding = 'async';
+  corner.append(cornerImage);
+  if (isHome) body.prepend(corner);
   let state = {
     art: query.get('art') || fallback,
     placement: query.get('placement') || window.SAGE_DEFAULT_PLACEMENT || 'editorial',
     accent: query.get('accent') || 'blue', strength: query.get('strength') || 100,
-    theme: query.get('theme') || 'light', original: query.get('original') === 'true'
+    theme: query.get('theme') || 'light', original: query.get('original') === 'true',
+    corner: query.get('corner') === 'true'
   };
 
   // Keep the source list intact for the Original and earlier placement comparisons.
@@ -97,6 +108,11 @@
     body.dataset.naturalEdge = String(usePortrait && Boolean(scene.naturalEdge));
     body.dataset.accent = state.accent;
     body.classList.toggle('show-original', Boolean(state.original));
+    const showCorner = isHome && Boolean(state.corner) && !state.original && state.placement === 'editorial';
+    body.dataset.cornerCloud = String(showCorner);
+    if (showCorner && window.innerWidth >= 1280 && !cornerImage.hasAttribute('src')) {
+      cornerImage.src = new URL('details/cloud-wisp-v1.webp', location.href).href;
+    }
     if (sourceList && state.placement === 'editorial' && !state.original) {
       const large = new URL(scene.large, location.href).href;
       const small = new URL(scene.small, location.href).href;
@@ -140,8 +156,8 @@
       return;
     }
     if (event.data.type !== 'sage-preview') return;
-    const { art, placement, strength, theme, accent, original } = event.data;
-    state = { art, placement, strength, theme, accent, original: Boolean(original) };
+    const { art, placement, strength, theme, accent, original, corner } = event.data;
+    state = { art, placement, strength, theme, accent, original: Boolean(original), corner: Boolean(corner) };
     render();
   });
   window.addEventListener('resize', render);
