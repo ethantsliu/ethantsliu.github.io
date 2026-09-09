@@ -1,0 +1,8 @@
+Use case: precise-object-edit
+Edit this ASCII scene. Keep the overall cloud banks, cloud veil, colors, pure white ground, canvas size and exactly three cranes.
+Make only these targeted changes to the cranes:
+1. The largest lower crane: lower its two raised wings into a broad, shallow GLIDING pose. Its wing span can stay wide, but the upright wing should be less than half its present height. Rounded wing shoulders and softly stepped feather ends; no sharp fingers, spires, triangular points, tall straight wings, or symmetrical V shape. Keep its head, extended neck, body and trailing legs recognizable. Its far wing should be foreshortened, unlike the near wing.
+2. The smallest upper crane: give it a gentle banking pose, with one softly curved wing extended mostly sideways and the other foreshortened. Remove the sharp upright V. Keep its head and body in their present position.
+3. Keep the middle crane's downward wing pose and position; it provides contrast with the other two.
+Do not duplicate or mirror any bird. Keep each bird's different size and visible depth. Maintain blank white spaces around heads and necks; only existing slight cloud wisps near rear wings or legs may remain.
+Preserve the ASCII medium throughout: individual upright monospaced letters/punctuation with white gaps, matching the existing glyph size and palette. No smooth filled silhouettes, engraving, outline drawing, gradients, newly painted cloud shapes, frames, labels, or additional birds. The right-hand sky must remain empty pure white.

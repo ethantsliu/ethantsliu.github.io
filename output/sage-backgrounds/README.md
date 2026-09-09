@@ -2,6 +2,19 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 29: a loose flock among drifting clouds
+
+**Cranes & clouds** replaces the single crane in the primary comparisons. It is a newly composed scene with three birds of different sizes and wing positions, one broad overhead cloud bank, and a thinner broken veil below. The larger lower crane has a shallow gliding pose, the middle crane has a downward wing, and the smaller upper crane banks gently. Their silhouettes are different drawings, not duplicated or mirrored copies. The new cloud composition removes the previous sequence of substantial cloud lobes separated by a single bird.
+
+The source is displayed as a complete scene rather than extending the old crop across its birds. Its size follows the available margin, and a small minimum size keeps it readable on narrower desktops; a slight left offset protects the text where needed. The Small/Medium/Large control remains active. The centered header, biography, Latest list and main portrait retain their positions. The original drawing is still selectable as **Single crane** under Earlier comparisons, using its existing `cloud-crane` ID. The new flock has its own `cloud-flock` ID and is the fresh gallery default. All five other primary sky studies and eight earlier choices remain available.
+
+Both new images used **built-in imagegen**. The first pass used the previous cloud and single crane as style/anatomy references to compose a new scene. A targeted edit then softened the largest and smallest birds' wings while retaining the cloud structure and middle bird. Both passes are preserved as unchanged PNGs, with native-size WebP delivery copies at quality 94; no local raster cropping, repainting, resizing, or upscaling was used.
+
+- Selected drawing: [cranes-clouds-ascii-v2.png](motifs/cranes-clouds-ascii-v2.png), [WebP](motifs/cranes-clouds-ascii-v2.webp), [exact prompt](motifs/cranes-clouds-ascii-v2.prompt.txt), [provenance](motifs/cranes-clouds-ascii-v2.json). Native 1374 × 1145.
+- First pass: [cranes-clouds-ascii-v1.png](motifs/cranes-clouds-ascii-v1.png), [WebP](motifs/cranes-clouds-ascii-v1.webp), [exact prompt](motifs/cranes-clouds-ascii-v1.prompt.txt), [provenance](motifs/cranes-clouds-ascii-v1.json). Native 1374 × 1145.
+
+Checks in `revision-29/` cover all three sizes at 1280/1440/1920 widths in light and dark modes, mobile hiding without asset requests, native image proportions, unchanged content geometry, matching source links, saved comparisons, keyboard selection, hover navigation, and restoration of the original cloud when choosing Single crane or visiting Work. The visit counter remains a GET-only read. First-pass screenshots preserve the initial crop and subsequent framing comparison in separate folders. This revision is scoped to the preview collection under `output/sage-backgrounds/`.
+
 ## Revision 28: six more ASCII sky studies
 
 Six new comparisons lead the gallery: **Crane & clouds**, **Kite & clouds**, **Cloud light**, **Drifting feather**, **Meteor**, and **Heaven · ☰**. The crane and kite use the exact previous cloud as a separate layer; the crane has an extended neck and trailing legs, and the kite has a loose curved tail. Feather, meteor, and the three-band Heaven trigram are complete independent drawings in the outer margin. Cloud light is a reference-edited version of the cloud itself, with two small areas of scattered light near its inner edge.

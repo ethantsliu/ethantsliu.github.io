@@ -113,6 +113,16 @@ html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="origi
     --corner-inset: 230px;
     top: -80px;
   }
+  /* Keep the whole flock in view. The source's empty right side can extend
+     beyond the gutter while its birds remain clear of the reading column. */
+  .home.sage-preview[data-corner-cloud="true"][data-corner-motif="cloud-flock"] > .sage-corner-cloud {
+    --flock-scale: .9;
+    --corner-width: clamp(calc(156px * var(--flock-scale)), calc(((100vw - 1096px) / 2 - 20px) * 1.66 * var(--flock-scale)), calc(420px * var(--flock-scale)));
+    top: 0;
+    left: min(0px, calc((100vw - 1096px) / 2 - 20px - var(--corner-width) * .59));
+  }
+  .home.sage-preview[data-corner-motif="cloud-flock"][data-corner-size="small"] > .sage-corner-cloud { --flock-scale: .7; }
+  .home.sage-preview[data-corner-motif="cloud-flock"][data-corner-size="large"] > .sage-corner-cloud { --flock-scale: 1; }
   /* Both drawings retain their native proportions and upright characters. */
   .sage-preview > .sage-corner-cloud img {
     position: absolute;

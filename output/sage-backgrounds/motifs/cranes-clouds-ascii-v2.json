@@ -1,0 +1,13 @@
+{
+  "mode": "built-in imagegen",
+  "prompt": "Use case: precise-object-edit\nEdit this ASCII scene. Keep the overall cloud banks, cloud veil, colors, pure white ground, canvas size and exactly three cranes.\nMake only these targeted changes to the cranes:\n1. The largest lower crane: lower its two raised wings into a broad, shallow GLIDING pose. Its wing span can stay wide, but the upright wing should be less than half its present height. Rounded wing shoulders and softly stepped feather ends; no sharp fingers, spires, triangular points, tall straight wings, or symmetrical V shape. Keep its head, extended neck, body and trailing legs recognizable. Its far wing should be foreshortened, unlike the near wing.\n2. The smallest upper crane: give it a gentle banking pose, with one softly curved wing extended mostly sideways and the other foreshortened. Remove the sharp upright V. Keep its head and body in their present position.\n3. Keep the middle crane's downward wing pose and position; it provides contrast with the other two.\nDo not duplicate or mirror any bird. Keep each bird's different size and visible depth. Maintain blank white spaces around heads and necks; only existing slight cloud wisps near rear wings or legs may remain.\nPreserve the ASCII medium throughout: individual upright monospaced letters/punctuation with white gaps, matching the existing glyph size and palette. No smooth filled silhouettes, engraving, outline drawing, gradients, newly painted cloud shapes, frames, labels, or additional birds. The right-hand sky must remain empty pure white.",
+  "references": [
+    "output/sage-backgrounds/motifs/cranes-clouds-ascii-v1.png"
+  ],
+  "source": "/Users/EthanLiu/.codex/generated_images/01a07fad-3b82-7432-b769-586331600ad0/exec-e4251afd-191c-4dea-9b06-fb03e9c354a0.png",
+  "width": 1374,
+  "height": 1145,
+  "original": "cranes-clouds-ascii-v2.png",
+  "delivery": "cranes-clouds-ascii-v2.webp",
+  "conversion": "cwebp -q 94 -m 6; native dimensions; no crop, resize or repaint"
+}

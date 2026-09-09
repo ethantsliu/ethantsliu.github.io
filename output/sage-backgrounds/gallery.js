@@ -31,7 +31,7 @@
   const primaryMotifChoices = document.getElementById("motif-choices");
   const earlierMotifChoices = document.getElementById("earlier-motif-choices");
   const earlierComparisons = document.getElementById("earlier-comparisons");
-  const pageFiles = Object.fromEntries(Object.entries({ about: "site-preview.html", work: "preview-work.html", research: "preview-research.html", archive: "preview-archive.html", writing: "preview-writing.html", essay: "preview-essay.html" }).map(([page, file]) => [page, `${file}?v=28`]));
+  const pageFiles = Object.fromEntries(Object.entries({ about: "site-preview.html", work: "preview-work.html", research: "preview-research.html", archive: "preview-archive.html", writing: "preview-writing.html", essay: "preview-essay.html" }).map(([page, file]) => [page, `${file}?v=29`]));
   const treatmentButtons = Array.from(document.querySelectorAll(".treatment-button"));
   const treatmentStrengths = { editorial: 100, opening: 100, closing: 100 };
   // Saved greens: sage { light: "#4c6757", dark: "#bacbb7" };
@@ -334,7 +334,7 @@
   const earlierCount = earlierMotifChoices.childElementCount;
   document.getElementById("earlier-motif-count").textContent = `${earlierCount} studies`;
   earlierComparisons.hidden = earlierCount === 0;
-  controls.cornerMotif.value = (motifs.find(motif => motif.id === "cloud-crane") || motifs[0]).id;
+  controls.cornerMotif.value = (motifs.find(motif => motif.id === "cloud-flock") || motifs[0]).id;
   controls.accent.value = "amber";
   const defaultArtwork = artworks.find((artwork) => artwork.id === (window.SAGE_DEFAULT_SCENE || "01-ridgelines")) || artworks[0];
   if (defaultArtwork) controls.art.value = defaultArtwork.id;
