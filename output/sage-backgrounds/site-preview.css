@@ -128,6 +128,13 @@ html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="origi
   .home.sage-preview[data-corner-scene="true"][data-corner-motif="cloud-flock"][data-corner-size="small"] > .sage-corner-cloud { --flock-scale: .9; }
   .home.sage-preview[data-corner-scene="true"][data-corner-motif="cloud-flock"][data-corner-size="large"] > .sage-corner-cloud { --flock-scale: 1.4; }
   .sage-preview[data-corner-motif="crane-flock"] > .sage-corner-cloud { --flock-ink-edge: .6; }
+  /* The open header space has a consistent width across pages. Place the
+     painted flock between the title and menu; its white canvas is wider. */
+  .sage-preview[data-corner-cloud="true"][data-corner-scene="true"][data-corner-motif="crane-flock"][data-crane-placement="header"] > .sage-corner-cloud {
+    --corner-width: 216px;
+    top: -38px;
+    left: calc(50% + 208px - var(--corner-width) * .35);
+  }
   /* Both drawings retain their native proportions and upright characters. */
   .sage-preview > .sage-corner-cloud img {
     position: absolute;

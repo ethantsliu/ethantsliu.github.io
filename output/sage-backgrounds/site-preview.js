@@ -55,6 +55,7 @@
     theme: query.get('theme') || 'light', original: query.get('original') === 'true',
     corner: query.has('corner') ? query.get('corner') === 'true' : true,
     cornerSize: query.get('cornerSize') || 'medium',
+    cranePlacement: query.get('cranePlacement') || 'header',
     cornerMotif: query.get('cornerMotif') || 'cloud'
   };
 
@@ -133,6 +134,8 @@
     body.dataset.cornerCloud = String(showCloud);
     if (!['small', 'medium', 'large'].includes(state.cornerSize)) state.cornerSize = 'medium';
     body.dataset.cornerSize = state.cornerSize;
+    if (!['header', 'margin'].includes(state.cranePlacement)) state.cranePlacement = 'header';
+    body.dataset.cranePlacement = state.cranePlacement;
     if (showCloud && window.innerWidth >= 1280) {
       const source = selectedMotif.cornerScene
         ? selectedMotif
@@ -195,8 +198,8 @@
       return;
     }
     if (event.data.type !== 'sage-preview') return;
-    const { art, placement, strength, theme, accent, original, corner, cornerSize, cornerMotif } = event.data;
-    state = { art, placement, strength, theme, accent, original: Boolean(original), corner: Boolean(corner), cornerSize, cornerMotif };
+    const { art, placement, strength, theme, accent, original, corner, cornerSize, cornerMotif, cranePlacement } = event.data;
+    state = { art, placement, strength, theme, accent, original: Boolean(original), corner: Boolean(corner), cornerSize, cornerMotif, cranePlacement };
     render();
   });
   window.addEventListener('resize', render);

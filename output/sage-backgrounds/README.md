@@ -2,6 +2,14 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 33: cranes beside the title
+
+The default **Cranes** placement moves into the open header space between the homepage name and the 天 menu. The source displays at 216 × 180 CSS pixels across all wide-screen pages, with its painted birds centered about 208 pixels to the right of the centered wrapper's midpoint. An upward offset places the visible birds around the title's height and leaves clearance above Writing and Archive's first entries. The full flock fits without clipping its wings at the viewport edge, and header/content geometry is unchanged.
+
+The gallery's **Crane placement** control switches between **Beside title** and the previous **Outer margin** treatment. Placement persists through navigation, copied URLs, reloads, and theme changes, and applies consistently to secondary pages. Other artwork studies retain their previous positions. The existing cranes drawing, palette, main cloud portrait, lower-right fragments, and mobile hiding are preserved.
+
+Checks and screenshots in `revision-33/` cover six pages, three desktop widths and both themes, visible-text/menu clearance, identical header artwork bounds across pages, native proportions, the placement comparison, saved state and navigation, mobile hiding without loading the corner image, and the GET-only visit counter. This is a preview-only revision under `output/sage-backgrounds/`.
+
 ## Revision 32: consistent crane size across pages
 
 The upper-left **Cranes** drawing now uses the same smaller scale and placement on About, Work, Research, Writing, Archive, and the essay preview. Its responsive sizing follows the screen width consistently across all pages. Homepage enlargement and the narrow-desktop exception have been removed for this study. Saved homepage size settings no longer affect the cranes.

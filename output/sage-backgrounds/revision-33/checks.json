@@ -1,0 +1,647 @@
+{
+  "layouts": [
+    {
+      "viewportWidth": 1280,
+      "page": "about",
+      "theme": "light",
+      "bounds": {
+        "x": 772.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1280,
+      "page": "about",
+      "theme": "dark",
+      "bounds": {
+        "x": 772.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1280,
+      "page": "work",
+      "theme": "light",
+      "bounds": {
+        "x": 772.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1280,
+      "page": "work",
+      "theme": "dark",
+      "bounds": {
+        "x": 772.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1280,
+      "page": "research",
+      "theme": "light",
+      "bounds": {
+        "x": 772.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1280,
+      "page": "research",
+      "theme": "dark",
+      "bounds": {
+        "x": 772.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1280,
+      "page": "writing",
+      "theme": "light",
+      "bounds": {
+        "x": 772.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1280,
+      "page": "writing",
+      "theme": "dark",
+      "bounds": {
+        "x": 772.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1280,
+      "page": "archive",
+      "theme": "light",
+      "bounds": {
+        "x": 772.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1280,
+      "page": "archive",
+      "theme": "dark",
+      "bounds": {
+        "x": 772.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1280,
+      "page": "essay",
+      "theme": "light",
+      "bounds": {
+        "x": 772.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1280,
+      "page": "essay",
+      "theme": "dark",
+      "bounds": {
+        "x": 772.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1440,
+      "page": "about",
+      "theme": "light",
+      "bounds": {
+        "x": 852.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1440,
+      "page": "about",
+      "theme": "dark",
+      "bounds": {
+        "x": 852.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1440,
+      "page": "work",
+      "theme": "light",
+      "bounds": {
+        "x": 852.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1440,
+      "page": "work",
+      "theme": "dark",
+      "bounds": {
+        "x": 852.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1440,
+      "page": "research",
+      "theme": "light",
+      "bounds": {
+        "x": 852.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1440,
+      "page": "research",
+      "theme": "dark",
+      "bounds": {
+        "x": 852.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1440,
+      "page": "writing",
+      "theme": "light",
+      "bounds": {
+        "x": 852.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1440,
+      "page": "writing",
+      "theme": "dark",
+      "bounds": {
+        "x": 852.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1440,
+      "page": "archive",
+      "theme": "light",
+      "bounds": {
+        "x": 852.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1440,
+      "page": "archive",
+      "theme": "dark",
+      "bounds": {
+        "x": 852.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1440,
+      "page": "essay",
+      "theme": "light",
+      "bounds": {
+        "x": 852.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1440,
+      "page": "essay",
+      "theme": "dark",
+      "bounds": {
+        "x": 852.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1920,
+      "page": "about",
+      "theme": "light",
+      "bounds": {
+        "x": 1092.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1920,
+      "page": "about",
+      "theme": "dark",
+      "bounds": {
+        "x": 1092.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1920,
+      "page": "work",
+      "theme": "light",
+      "bounds": {
+        "x": 1092.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1920,
+      "page": "work",
+      "theme": "dark",
+      "bounds": {
+        "x": 1092.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1920,
+      "page": "research",
+      "theme": "light",
+      "bounds": {
+        "x": 1092.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1920,
+      "page": "research",
+      "theme": "dark",
+      "bounds": {
+        "x": 1092.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1920,
+      "page": "writing",
+      "theme": "light",
+      "bounds": {
+        "x": 1092.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1920,
+      "page": "writing",
+      "theme": "dark",
+      "bounds": {
+        "x": 1092.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1920,
+      "page": "archive",
+      "theme": "light",
+      "bounds": {
+        "x": 1092.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1920,
+      "page": "archive",
+      "theme": "dark",
+      "bounds": {
+        "x": 1092.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1920,
+      "page": "essay",
+      "theme": "light",
+      "bounds": {
+        "x": 1092.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    },
+    {
+      "viewportWidth": 1920,
+      "page": "essay",
+      "theme": "dark",
+      "bounds": {
+        "x": 1092.390625,
+        "y": -38,
+        "width": 216,
+        "height": 180
+      },
+      "geometryUnchanged": true,
+      "collision": false,
+      "pointer": "none",
+      "aria": "true",
+      "source": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cranes-ascii-v1.webp",
+      "overflow": false
+    }
+  ],
+  "mobile": [
+    {
+      "file": "site-preview.html",
+      "width": 390,
+      "hidden": true,
+      "unfetched": true
+    },
+    {
+      "file": "preview-work.html",
+      "width": 390,
+      "hidden": true,
+      "unfetched": true
+    },
+    {
+      "file": "site-preview.html",
+      "width": 1000,
+      "hidden": true,
+      "unfetched": true
+    },
+    {
+      "file": "preview-work.html",
+      "width": 1000,
+      "hidden": true,
+      "unfetched": true
+    }
+  ],
+  "errors": [],
+  "writes": [],
+  "gallery": "Header/margin switch, saved reload, full-page link, hover navigation, consistent size, theme switching, earlier studies, hiding and control state passed",
+  "counter": "GET-only",
+  "complete": true
+}
