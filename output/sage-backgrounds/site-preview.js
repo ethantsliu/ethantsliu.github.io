@@ -114,7 +114,7 @@
     if (!['small', 'medium', 'large'].includes(state.cornerSize)) state.cornerSize = 'medium';
     body.dataset.cornerSize = state.cornerSize;
     if (showCorner && window.innerWidth >= 1280 && !cornerImage.hasAttribute('src')) {
-      cornerImage.src = new URL('details/cloud-corner-vertical-v1.webp', location.href).href;
+      cornerImage.src = new URL('details/cloud-corner-rounded-v1.webp', location.href).href;
     }
     if (sourceList && state.placement === 'editorial' && !state.original) {
       const large = new URL(scene.large, location.href).href;

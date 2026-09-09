@@ -2,6 +2,14 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 20: rounded clouds with open sky between them
+
+The corner artwork now uses three distinct cumulus cloud groups with rounded billows, shadow pockets, and open white sky between them. Their widths vary without the previous continuous triangular taper. The homepage shows all three groups at its approved larger scale. Secondary pages retain their 320px corner area and show two cloud groups, ending in a natural white gap in the source before the third group. A short sideways blend protects the reading margin; there is no top or bottom fade.
+
+Generated with built-in imagegen using the original cloud portrait only as a style and palette reference. Files: [original PNG](details/cloud-corner-rounded-v1.png), [native WebP](details/cloud-corner-rounded-v1.webp), [exact prompt](details/cloud-corner-rounded-v1.prompt.txt), and [provenance](details/cloud-corner-rounded-v1.provenance.json). Native size is 1024 × 1536. The original asset is neither rotated nor stretched; previous assets and revisions remain archived. This is a preview revision.
+
+Checks and screenshots in `revision-20/` cover all six pages in both themes at 1440px and 390px, plus the largest size at 1280px and 1920px. Content geometry matches the previous version, native aspect ratios are preserved, and the shared toggle/navigation controls work. Screenshots use blocked external requests.
+
 ## Revision 19: larger at home, shared across the other pages
 
 The vertical upper-left cloud now appears by default throughout the preview. Work, Research, Writing, Archive, and the essay retain the approved 320px height. The homepage defaults to 560px, reaching down alongside the introduction; its Small comparison preserves the previous 320px size, and Large uses 680px. The **Homepage size** control does not change secondary-page artwork. The shared **Upper-left cloud** checkbox compares the decoration on/off on every page.
