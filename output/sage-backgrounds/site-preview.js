@@ -43,7 +43,8 @@
     placement: query.get('placement') || window.SAGE_DEFAULT_PLACEMENT || 'editorial',
     accent: query.get('accent') || 'blue', strength: query.get('strength') || 100,
     theme: query.get('theme') || 'light', original: query.get('original') === 'true',
-    corner: query.get('corner') === 'true'
+    corner: query.get('corner') === 'true',
+    cornerSize: query.get('cornerSize') || 'medium'
   };
 
   // Keep the source list intact for the Original and earlier placement comparisons.
@@ -110,6 +111,8 @@
     body.classList.toggle('show-original', Boolean(state.original));
     const showCorner = isHome && Boolean(state.corner) && !state.original && state.placement === 'editorial';
     body.dataset.cornerCloud = String(showCorner);
+    if (!['small', 'medium', 'large'].includes(state.cornerSize)) state.cornerSize = 'medium';
+    body.dataset.cornerSize = state.cornerSize;
     if (showCorner && window.innerWidth >= 1280 && !cornerImage.hasAttribute('src')) {
       cornerImage.src = new URL('details/cloud-wisp-v1.webp', location.href).href;
     }
@@ -156,8 +159,8 @@
       return;
     }
     if (event.data.type !== 'sage-preview') return;
-    const { art, placement, strength, theme, accent, original, corner } = event.data;
-    state = { art, placement, strength, theme, accent, original: Boolean(original), corner: Boolean(corner) };
+    const { art, placement, strength, theme, accent, original, corner, cornerSize } = event.data;
+    state = { art, placement, strength, theme, accent, original: Boolean(original), corner: Boolean(corner), cornerSize };
     render();
   });
   window.addEventListener('resize', render);

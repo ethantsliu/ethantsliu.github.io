@@ -2,6 +2,14 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 17: a fuller upper-left cloud
+
+The optional upper-left cloud now defaults to **Medium**. It shows more of the cloud mass and extends farther down the outer margin, with a short sideways blend into the page. Larger screens can use up to 320px of margin instead of the earlier 160px cap. Header and content positions remain unchanged, with at least 20px clearance from the decoration.
+
+The **Cloud size** control offers Small (the exact earlier presentation), Medium, and Large. `cornerSize=small`, `medium`, or `large` preserves the choice in direct preview links and gallery comparisons. The same native 1254px artwork is used throughout, displayed at no more than 520 CSS pixels; no new image or raster edits were made. The option remains hidden below 1280px and on secondary pages. Production is unchanged.
+
+Browser checks cover all three sizes at 1280px, 1440px, 1920px, and 390px. Header, name, theme control, and main-content rectangles match with the cloud on and off; there is no horizontal overflow. Size selection survives reload and preview navigation. Light/dark screenshots and results are saved in `revision-17/`; external requests were blocked during capture.
+
 ## Revision 16: optional upper-left cloud
 
 The **Upper-left cloud** checkbox compares a small companion wisp in the homepage's outer left margin. It appears only in the editorial homepage treatment at widths of at least 1280px and remains at least 20px clear of the existing header. It creates no extra header spacing and is hidden on smaller screens and in the Original comparison. The existing main cloud portrait stays the same.

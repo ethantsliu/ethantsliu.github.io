@@ -17,7 +17,8 @@
     theme: document.getElementById("theme"),
     width: document.getElementById("width"),
     original: document.getElementById("original"),
-    corner: document.getElementById("corner")
+    corner: document.getElementById("corner"),
+    cornerSize: document.getElementById("cornerSize")
   };
   const frame = document.getElementById("site-preview");
   const viewport = document.getElementById("preview-viewport");
@@ -44,6 +45,7 @@
     controls.placement.disabled = !isHome;
     controls.strength.disabled = !isHome;
     controls.corner.disabled = !isHome || controls.original.checked || controls.placement.value !== "editorial" || controls.width.value === "mobile";
+    controls.cornerSize.disabled = controls.corner.disabled || !controls.corner.checked;
     const strength = Number(controls.strength.value);
     strengthValue.value = `${strength}%`;
     viewport.classList.toggle("is-mobile", controls.width.value === "mobile");
@@ -101,7 +103,8 @@
       strength,
       theme: controls.theme.value,
       original: controls.original.checked,
-      corner: controls.corner.checked
+      corner: controls.corner.checked,
+      cornerSize: controls.cornerSize.value
     }, "*");
     if (previewReady && focusOnReady) {
       focusOnReady = false;
