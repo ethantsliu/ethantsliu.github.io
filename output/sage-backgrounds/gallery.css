@@ -80,14 +80,25 @@ h2 { font-size: clamp(27px, 3vw, 36px); line-height: 1.12; letter-spacing: -.025
 .corner-option:has(input:disabled) { color: var(--muted); cursor: default; }
 .corner-controls #open-preview { margin-left: auto; }
 .motif-choices { display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 10px; margin-top: 20px; }
+.motif-choices-primary { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 .motif-choice { display: flex; flex-direction: column; align-items: center; justify-content: end; gap: 10px; min-height: 108px; padding: 12px 8px; border: 1px solid var(--line); border-radius: 3px; background: transparent; font-size: 12px; }
 .motif-choice img { display: block; width: 76px; height: 64px; object-fit: contain; }
 .motif-thumbnail-combined { display: block; position: relative; width: 76px; height: 64px; }
 .motif-thumbnail-combined .motif-cloud { position: absolute; inset: 0; }
 .motif-thumbnail-combined .motif-source { position: absolute; width: 34px; height: 24px; left: 31px; top: 20px; mix-blend-mode: multiply; }
+.motif-choice[data-motif="cloud-kite"] .motif-source { width: 25px; height: 45px; left: 38px; top: 10px; }
 .motif-choice:hover { border-color: #8a642d; }
 .motif-choice[aria-pressed="true"] { border-color: #8a642d; background: #8a642d08; color: #755321; }
+.earlier-comparisons { margin-top: 14px; }
+.earlier-comparisons summary { width: fit-content; padding: 4px 0; color: var(--ink); cursor: pointer; font-size: 12px; line-height: 1.6; }
+.earlier-motif-count { margin-left: 8px; color: var(--muted); font-size: 11px; }
+.earlier-comparisons .motif-choices { margin-top: 12px; }
+.earlier-comparisons .motif-choice { min-height: 96px; }
+.earlier-comparisons .motif-choice > img { height: 52px; }
 .motif-note { margin: 12px 0 0; min-height: 1.6em; font-size: 11px; line-height: 1.6; color: var(--muted); }
+@media (min-width: 601px) and (max-width: 1050px) {
+  .motif-choices-primary { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 @media (max-width: 600px) {
   .motif-choices { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .motif-choice { min-height: 94px; }

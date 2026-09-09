@@ -1,0 +1,38 @@
+[
+  {
+    "motif": "cloud-crane",
+    "theme": "light",
+    "minimumContrast": 5.821,
+    "backgroundColorCount": 79
+  },
+  {
+    "motif": "cloud-kite",
+    "theme": "light",
+    "minimumContrast": 5.821,
+    "backgroundColorCount": 79
+  },
+  {
+    "motif": "cloud-light",
+    "theme": "light",
+    "minimumContrast": 7.822,
+    "backgroundColorCount": 83
+  },
+  {
+    "motif": "cloud-crane",
+    "theme": "dark",
+    "minimumContrast": 5.955,
+    "backgroundColorCount": 58
+  },
+  {
+    "motif": "cloud-kite",
+    "theme": "dark",
+    "minimumContrast": 5.955,
+    "backgroundColorCount": 58
+  },
+  {
+    "motif": "cloud-light",
+    "theme": "dark",
+    "minimumContrast": 8.371,
+    "backgroundColorCount": 60
+  }
+]

@@ -95,7 +95,7 @@ html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="origi
      instead of cutting every billow at the same gutter boundary. */
   .home.sage-preview[data-corner-cloud="true"] > .sage-corner-cloud {
     --corner-width: 600px;
-    --corner-height: calc(var(--corner-width) * 5 / 6);
+    --corner-height: calc(var(--corner-width) * var(--corner-aspect, 5 / 6));
     --corner-inset: 175px;
     width: var(--corner-width);
     top: -65px;
@@ -129,7 +129,7 @@ html[data-theme="dark"] .sage-corner-cloud img { filter: var(--night-art-filter)
    limited by that margin, so neither the text nor the artwork is cropped. */
 .sage-preview > .sage-corner-motif { --motif-max: 180px; --motif-scale: .9; display: none; pointer-events: none; }
 @media (min-width: 1280px) {
-  .home.sage-preview[data-corner-artwork="true"]:not([data-corner-motif="cloud"]) > .sage-corner-motif {
+  .home.sage-preview[data-corner-artwork="true"]:not([data-corner-motif="cloud"], [data-corner-scene="true"]) > .sage-corner-motif {
     --motif-room: calc((100vw - 1096px) / 2 - 28px);
     --motif-width: min(calc(var(--motif-max) * var(--motif-scale)), calc(var(--motif-room) * var(--motif-scale)));
     display: block;
@@ -156,6 +156,10 @@ html[data-theme="dark"] .sage-corner-cloud img { filter: var(--night-art-filter)
   }
   .home.sage-preview[data-corner-combined="true"][data-corner-size="small"] > .sage-corner-motif { --combined-right-limit: 281px; }
   .home.sage-preview[data-corner-combined="true"][data-corner-size="large"] > .sage-corner-motif { --combined-right-limit: 325px; }
+  .home.sage-preview[data-corner-artwork="true"][data-corner-motif="cloud-kite"] > .sage-corner-motif { --motif-max: 116px; top: 92px; }
+  .home.sage-preview[data-corner-artwork="true"][data-corner-motif="feather"] > .sage-corner-motif { --motif-max: 138px; top: 92px; }
+  .home.sage-preview[data-corner-artwork="true"][data-corner-motif="meteor"] > .sage-corner-motif { --motif-max: 180px; top: 88px; }
+  .home.sage-preview[data-corner-artwork="true"][data-corner-motif="heaven"] > .sage-corner-motif { --motif-max: 146px; top: 92px; }
 }
 .sage-corner-motif img { display: block; width: 100%; height: auto; }
 html[data-theme="dark"] .home.sage-preview[data-corner-combined="true"] > .sage-corner-motif { mix-blend-mode: screen; }

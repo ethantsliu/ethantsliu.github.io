@@ -1,0 +1,6 @@
+Use case: lighting-weather
+Input image 1 is the edit target: the accepted ASCII cloud corner. Keep its existing cloud shape, contours, grain of characters, color, exact framing and white background unchanged.
+Add a SMALL LOCALIZED suggestion of sunlight filtering from a cloud edge into the central-left gap. The new light must be contained entirely between 28% and 50% of the canvas width, and between 27% and 53% of the canvas height. Preserve the ENTIRE RIGHT HALF as pure white with no new marks at all: website text is placed there.
+Within that small gap, show two short soft streaks of pale ochre and muted warm grey ASCII characters. Use a few loose clusters of :, ., + and = that are denser near the cloud and quickly disperse into white, with a soft irregular scatter and white space. It should feel like illuminated air at a cloud edge, without drawn outlines, straight rows, rows of confetti, arrows, radial rays, long trailing dots, hard triangular beams or a smooth gradient wash.
+The light is subtle but readable at a 600px display width. Use medium-small characters consistent with the original cloud's glyph size; do not add enormous orange punctuation.
+No change to the cloud's shadow colors; no bird, sun disk, extra cloud, text, frame or logo. Keep original 6:5 proportions and clean white ground.

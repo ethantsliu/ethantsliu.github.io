@@ -1,0 +1,14 @@
+{
+  "mode": "built-in imagegen",
+  "prompt": "Use case: stylized-concept\nAsset type: high-definition ASCII illustration for the upper-left margin of a calm personal website.\nInput images: Image 1 is a cloud drawing, used ONLY as a reference for palette and character-built texture. Image 2 is an ASCII bird, used ONLY to demonstrate large, legible character construction. Draw a NEW subject, not another version of that bird.\nStyle: build the entire subject from discrete, bold upright monospaced ASCII letters and punctuation such as @ O # % + = / : . . Each glyph should remain individually visible with white spaces around it. Use coarse characters (roughly 35\u201355 pixels wide at a 1536-pixel canvas width), with no fine engraving, stippling, painterly underdrawing, smooth solid silhouette, or vector outline. The thumbnail will be only 100\u2013150 CSS pixels wide, so avoid micro-detail.\nPalette: muted blue-teal and charcoal-green ink in shaded parts, warm ivory and honey-gold highlights, matching the references. Restrained saturation. Plain PURE WHITE background #ffffff with no paper grain, tint, vignette, shadow, frame, or border. Keep all ink inside the canvas with a clear white perimeter. No written captions, logos, watermark, interface, or explanatory diagrams.\nPrimary request: one softly curved feather drifting vertically in open air. A rounded, gently leaning tip; asymmetric soft vanes; a slight twist along the shaft, fine lower barb separation. Draw this shape exclusively with bold upright ASCII characters. Give it a natural S-shaped overall gesture, a wide soft upper vane and a narrower lower quill. Not a sharp spear, leaf, quill pen, or symmetrical badge. Large enough to occupy 80% of a 2:3 portrait canvas height, with at least 10% white margin on all sides. No clouds, birds, additional feathers, or lettering.",
+  "references": [
+    "output/sage-backgrounds/details/cloud-corner-expansive-v4.png",
+    "output/sage-backgrounds/motifs/bird-glide-ascii-v2.png"
+  ],
+  "source": "/Users/EthanLiu/.codex/generated_images/01a07fad-3b82-7432-b769-586331600ad0/exec-a42cf6a0-0232-43e6-89c5-5cbd7f34877a.png",
+  "width": 1024,
+  "height": 1536,
+  "original": "feather-ascii-v1.png",
+  "delivery": "feather-ascii-v1.webp",
+  "conversion": "cwebp -q 94 -m 6; native dimensions; no crop, resize or repaint"
+}

@@ -1,0 +1,14 @@
+{
+  "mode": "built-in imagegen",
+  "prompt": "Use case: stylized-concept\nAsset type: high-definition ASCII illustration for the upper-left margin of a calm personal website.\nInput images: Image 1 is a cloud drawing, used ONLY as a reference for palette and character-built texture. Image 2 is an ASCII bird, used ONLY to demonstrate large, legible character construction. Draw a NEW subject, not another version of that bird.\nStyle: build the entire subject from discrete, bold upright monospaced ASCII letters and punctuation such as @ O # % + = / : . . Each glyph should remain individually visible with white spaces around it. Use coarse characters (roughly 35\u201355 pixels wide at a 1536-pixel canvas width), with no fine engraving, stippling, painterly underdrawing, smooth solid silhouette, or vector outline. The thumbnail will be only 100\u2013150 CSS pixels wide, so avoid micro-detail.\nPalette: muted blue-teal and charcoal-green ink in shaded parts, warm ivory and honey-gold highlights, matching the references. Restrained saturation. Plain PURE WHITE background #ffffff with no paper grain, tint, vignette, shadow, frame, or border. Keep all ink inside the canvas with a clear white perimeter. No written captions, logos, watermark, interface, or explanatory diagrams.\nPrimary request: one small hand-made paper kite held aloft, without people. A softly bowed, slightly asymmetric diamond of pale honey-gold paper, sparse cooler ASCII characters indicating its creases, gently tilted in a breeze. Place the kite near the upper-right third. Its single long loose tail drifts downward in an irregular lazy curve through the lower two-thirds, with only two tiny paper ties at unequal intervals. The thread and tail are visibly built from separate punctuation, with no smooth drawn lines. Organic and restrained, not a party toy, logo, perfect geometric icon, or a rigid repeating zigzag. Portrait 2:3 canvas. Keep the kite and its complete wandering tail inside the canvas, with white around all sides. No clouds in this asset.",
+  "references": [
+    "output/sage-backgrounds/details/cloud-corner-expansive-v4.png",
+    "output/sage-backgrounds/motifs/bird-glide-ascii-v2.png"
+  ],
+  "source": "/Users/EthanLiu/.codex/generated_images/01a07fad-3b82-7432-b769-586331600ad0/exec-3ce246e6-eb31-44ca-96b0-a76fa9683c7d.png",
+  "width": 1024,
+  "height": 1536,
+  "original": "kite-ascii-v1.png",
+  "delivery": "kite-ascii-v1.webp",
+  "conversion": "cwebp -q 94 -m 6; native dimensions; no crop, resize or repaint"
+}

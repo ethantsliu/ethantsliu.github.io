@@ -1,0 +1,14 @@
+{
+  "mode": "built-in imagegen",
+  "prompt": "Use case: stylized-concept\nAsset type: high-definition ASCII illustration for the upper-left margin of a calm personal website.\nInput images: Image 1 is a cloud drawing, used ONLY as a reference for palette and character-built texture. Image 2 is an ASCII bird, used ONLY to demonstrate large, legible character construction. Draw a NEW subject, not another version of that bird.\nStyle: build the entire subject from discrete, bold upright monospaced ASCII letters and punctuation such as @ O # % + = / : . . Each glyph should remain individually visible with white spaces around it. Use coarse characters (roughly 35\u201355 pixels wide at a 1536-pixel canvas width), with no fine engraving, stippling, painterly underdrawing, smooth solid silhouette, or vector outline. The thumbnail will be only 100\u2013150 CSS pixels wide, so avoid micro-detail.\nPalette: muted blue-teal and charcoal-green ink in shaded parts, warm ivory and honey-gold highlights, matching the references. Restrained saturation. Plain PURE WHITE background #ffffff with no paper grain, tint, vignette, shadow, frame, or border. Keep all ink inside the canvas with a clear white perimeter. No written captions, logos, watermark, interface, or explanatory diagrams.\nPrimary request: a single meteor in a quiet night-sky illustration, delivered as colored ink on PURE WHITE for website blending. A small irregular luminous honey-gold head toward the lower-right, with a loose blue-teal and gold tail trailing diagonally toward the upper-left. Its trail dissolves into scattered upright ASCII punctuation at uneven intervals. Use three irregular overlapping trails of unequal lengths and broken density, not a sharp triangular cone or geometrically straight shooting-star icon. No five-pointed star, no orbit, no field of extra stars, no black background. Square canvas with 10% white margin and a complete, readable diagonal composition.",
+  "references": [
+    "output/sage-backgrounds/details/cloud-corner-expansive-v4.png",
+    "output/sage-backgrounds/motifs/bird-glide-ascii-v2.png"
+  ],
+  "source": "/Users/EthanLiu/.codex/generated_images/01a07fad-3b82-7432-b769-586331600ad0/exec-84b8cc3d-2f19-45cb-9dc9-3cb6450e5aa7.png",
+  "width": 1254,
+  "height": 1254,
+  "original": "meteor-ascii-v1.png",
+  "delivery": "meteor-ascii-v1.webp",
+  "conversion": "cwebp -q 94 -m 6; native dimensions; no crop, resize or repaint"
+}

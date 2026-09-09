@@ -2,6 +2,27 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 28: six more ASCII sky studies
+
+Six new comparisons lead the gallery: **Crane & clouds**, **Kite & clouds**, **Cloud light**, **Drifting feather**, **Meteor**, and **Heaven · ☰**. The crane and kite use the exact previous cloud as a separate layer; the crane has an extended neck and trailing legs, and the kite has a loose curved tail. Feather, meteor, and the three-band Heaven trigram are complete independent drawings in the outer margin. Cloud light is a reference-edited version of the cloud itself, with two small areas of scattered light near its inner edge.
+
+The six new choices appear first, with the seven earlier corner studies under **Earlier comparisons**. A saved older selection opens that group automatically. Fresh visits start with Crane & clouds in Golden hour; existing comparison URLs retain their selections. Source links open the actual selected PNG, and the full-page link carries the complete comparison. The kite has a portrait thumbnail to keep its full tail visible. All twenty-three main background studies remain available.
+
+All seven new images used **built-in imagegen**. The first pass generated six subjects using the previous cloud and the coarse ASCII gliding bird as references. A second cloud-light edit kept its added marks near the cloud: the first attempt extended across the writing area and is archived, not selected. Its image files remain in `motifs/`, and its initial page captures are under `revision-28/first-pass-light/`. The final light edit uses only the original cloud as its reference. These are generated ASCII-like glyph textures rather than strictly machine-readable text.
+
+| Selected study | Original PNG | Exact prompt | Provenance | Native size |
+| --- | --- | --- | --- | --- |
+| Crane & clouds detail | [Crane](motifs/crane-ascii-v1.png) | [Prompt](motifs/crane-ascii-v1.prompt.txt) | [JSON](motifs/crane-ascii-v1.json) | 1536 × 1024 |
+| Kite & clouds detail | [Kite](motifs/kite-ascii-v1.png) | [Prompt](motifs/kite-ascii-v1.prompt.txt) | [JSON](motifs/kite-ascii-v1.json) | 1024 × 1536 |
+| Cloud light | [Cloud light](motifs/cloud-light-ascii-v2.png) | [Prompt](motifs/cloud-light-ascii-v2.prompt.txt) | [JSON](motifs/cloud-light-ascii-v2.json) | 1374 × 1145 |
+| Drifting feather | [Feather](motifs/feather-ascii-v1.png) | [Prompt](motifs/feather-ascii-v1.prompt.txt) | [JSON](motifs/feather-ascii-v1.json) | 1024 × 1536 |
+| Meteor | [Meteor](motifs/meteor-ascii-v1.png) | [Prompt](motifs/meteor-ascii-v1.prompt.txt) | [JSON](motifs/meteor-ascii-v1.json) | 1254 × 1254 |
+| Heaven · ☰ | [Heaven](motifs/heaven-ascii-v1.png) | [Prompt](motifs/heaven-ascii-v1.prompt.txt) | [JSON](motifs/heaven-ascii-v1.json) | 1254 × 1254 |
+
+Every PNG is an unchanged copy of its tool output. WebP delivery copies retain native dimensions at quality 94; no raster cropping, repainting, resizing, or upscaling was performed. The webpage preserves source proportions and uses the accepted warm/day and bronze/night presentation. Original blue and green treatments remain available or saved as before.
+
+The centered content, Latest list, main portrait, navigation, and secondary-page artwork retain their positions. Corner drawings remain decorative, ignore pointer events, and hide below 1280px. Preview visits read the existing counter with GET only. Screenshots and responsive, interaction, and secondary-page regression results are saved in `revision-28/`. This publication updates the comparison collection under `output/sage-backgrounds/`.
+
 ## Revision 27: the previous cloud with two new birds
 
 The gallery opens with **Cloud + glide** and also offers **Cloud + turn**. Both pair the exact previous `cloud-corner-expansive-v4` drawing with a newly generated ASCII bird. The glide has shallow, outstretched wings; the turn has a compact body, a short tail, and gently uneven wings. Neither uses the earlier upright bird's long wing and forked tail. Previous cloud and Earlier bird remain available for direct comparison.

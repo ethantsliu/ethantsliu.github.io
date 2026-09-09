@@ -28,7 +28,10 @@
   const strengthValue = document.getElementById("strength-value");
   const cardElements = new Map();
   const motifButtons = new Map();
-  const pageFiles = Object.fromEntries(Object.entries({ about: "site-preview.html", work: "preview-work.html", research: "preview-research.html", archive: "preview-archive.html", writing: "preview-writing.html", essay: "preview-essay.html" }).map(([page, file]) => [page, `${file}?v=27`]));
+  const primaryMotifChoices = document.getElementById("motif-choices");
+  const earlierMotifChoices = document.getElementById("earlier-motif-choices");
+  const earlierComparisons = document.getElementById("earlier-comparisons");
+  const pageFiles = Object.fromEntries(Object.entries({ about: "site-preview.html", work: "preview-work.html", research: "preview-research.html", archive: "preview-archive.html", writing: "preview-writing.html", essay: "preview-essay.html" }).map(([page, file]) => [page, `${file}?v=28`]));
   const treatmentButtons = Array.from(document.querySelectorAll(".treatment-button"));
   const treatmentStrengths = { editorial: 100, opening: 100, closing: 100 };
   // Saved greens: sage { light: "#4c6757", dark: "#bacbb7" };
@@ -51,6 +54,7 @@
     controls.cornerSize.disabled = !isHome || controls.corner.disabled || !controls.corner.checked;
     controls.cornerMotif.disabled = controls.cornerSize.disabled;
     const selectedMotif = motifs.find(item => item.id === controls.cornerMotif.value);
+    if (selectedMotif.study !== "sky-28") earlierComparisons.open = true;
     for (const [id, button] of motifButtons) {
       button.setAttribute("aria-pressed", String(isHome && controls.corner.checked && !controls.corner.disabled && id === controls.cornerMotif.value));
       const definition = motifs.find(item => item.id === id);
@@ -59,7 +63,7 @@
     const motifSource = controls.theme.value === "dark" && selectedMotif.dark ? selectedMotif.dark : selectedMotif.file;
     document.getElementById("view-motif").href = motifSource.replace(/\.webp$/, ".png");
     document.getElementById("view-motif").hidden = !isHome;
-    document.getElementById("view-motif").textContent = selectedMotif.withCloud ? "View bird drawing ↗" : "View source drawing ↗";
+    document.getElementById("view-motif").textContent = selectedMotif.withCloud ? "View detail drawing ↗" : "View source drawing ↗";
     const motifNote = controls.original.checked
       ? "Showing the original site. Selecting a sky study returns to the artwork preview."
       : !isHome
@@ -323,10 +327,14 @@
       button.append(thumbnail, label);
     } else button.append(image, label);
     button.addEventListener("click", () => chooseMotif(motif.id));
-    document.getElementById("motif-choices").append(button);
+    const motifGroup = motif.study === "sky-28" ? primaryMotifChoices : earlierMotifChoices;
+    motifGroup.append(button);
     motifButtons.set(motif.id, button);
   }
-  controls.cornerMotif.value = "cloud-glide";
+  const earlierCount = earlierMotifChoices.childElementCount;
+  document.getElementById("earlier-motif-count").textContent = `${earlierCount} studies`;
+  earlierComparisons.hidden = earlierCount === 0;
+  controls.cornerMotif.value = (motifs.find(motif => motif.id === "cloud-crane") || motifs[0]).id;
   controls.accent.value = "amber";
   const defaultArtwork = artworks.find((artwork) => artwork.id === (window.SAGE_DEFAULT_SCENE || "01-ridgelines")) || artworks[0];
   if (defaultArtwork) controls.art.value = defaultArtwork.id;

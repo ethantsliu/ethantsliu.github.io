@@ -1,0 +1,3070 @@
+{
+  "compositions": [
+    {
+      "width": 1280,
+      "id": "cloud-crane",
+      "theme": "light",
+      "size": "small",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 27.1875,
+        "y": 142,
+        "width": 44.796875,
+        "height": 29.859375,
+        "top": 142,
+        "right": 71.984375,
+        "bottom": 171.859375,
+        "left": 27.1875
+      },
+      "image": {
+        "x": 27.1875,
+        "y": 142,
+        "width": 44.796875,
+        "height": 29.859375,
+        "top": 142,
+        "right": 71.984375,
+        "bottom": 171.859375,
+        "left": 27.1875
+      },
+      "native": {
+        "width": 1536,
+        "height": 1024
+      },
+      "attributes": {
+        "width": 45,
+        "height": 30
+      },
+      "clearance": 20.015625,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/crane-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "cloud-crane",
+      "theme": "light",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 14.390625,
+        "y": 142,
+        "width": 57.59375,
+        "height": 38.390625,
+        "top": 142,
+        "right": 71.984375,
+        "bottom": 180.390625,
+        "left": 14.390625
+      },
+      "image": {
+        "x": 14.390625,
+        "y": 142,
+        "width": 57.59375,
+        "height": 38.390625,
+        "top": 142,
+        "right": 71.984375,
+        "bottom": 180.390625,
+        "left": 14.390625
+      },
+      "native": {
+        "width": 1536,
+        "height": 1024
+      },
+      "attributes": {
+        "width": 58,
+        "height": 38
+      },
+      "clearance": 20.015625,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/crane-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "cloud-crane",
+      "theme": "light",
+      "size": "large",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 8,
+        "y": 142,
+        "width": 64,
+        "height": 42.65625,
+        "top": 142,
+        "right": 72,
+        "bottom": 184.65625,
+        "left": 8
+      },
+      "image": {
+        "x": 8,
+        "y": 142,
+        "width": 64,
+        "height": 42.65625,
+        "top": 142,
+        "right": 72,
+        "bottom": 184.65625,
+        "left": 8
+      },
+      "native": {
+        "width": 1536,
+        "height": 1024
+      },
+      "attributes": {
+        "width": 64,
+        "height": 43
+      },
+      "clearance": 20,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/crane-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "cloud-crane",
+      "theme": "dark",
+      "size": "small",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 27.1875,
+        "y": 142,
+        "width": 44.796875,
+        "height": 29.859375,
+        "top": 142,
+        "right": 71.984375,
+        "bottom": 171.859375,
+        "left": 27.1875
+      },
+      "image": {
+        "x": 27.1875,
+        "y": 142,
+        "width": 44.796875,
+        "height": 29.859375,
+        "top": 142,
+        "right": 71.984375,
+        "bottom": 171.859375,
+        "left": 27.1875
+      },
+      "native": {
+        "width": 1536,
+        "height": 1024
+      },
+      "attributes": {
+        "width": 45,
+        "height": 30
+      },
+      "clearance": 20.015625,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/crane-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "cloud-crane",
+      "theme": "dark",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 14.390625,
+        "y": 142,
+        "width": 57.59375,
+        "height": 38.390625,
+        "top": 142,
+        "right": 71.984375,
+        "bottom": 180.390625,
+        "left": 14.390625
+      },
+      "image": {
+        "x": 14.390625,
+        "y": 142,
+        "width": 57.59375,
+        "height": 38.390625,
+        "top": 142,
+        "right": 71.984375,
+        "bottom": 180.390625,
+        "left": 14.390625
+      },
+      "native": {
+        "width": 1536,
+        "height": 1024
+      },
+      "attributes": {
+        "width": 58,
+        "height": 38
+      },
+      "clearance": 20.015625,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/crane-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "cloud-crane",
+      "theme": "dark",
+      "size": "large",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 8,
+        "y": 142,
+        "width": 64,
+        "height": 42.65625,
+        "top": 142,
+        "right": 72,
+        "bottom": 184.65625,
+        "left": 8
+      },
+      "image": {
+        "x": 8,
+        "y": 142,
+        "width": 64,
+        "height": 42.65625,
+        "top": 142,
+        "right": 72,
+        "bottom": 184.65625,
+        "left": 8
+      },
+      "native": {
+        "width": 1536,
+        "height": 1024
+      },
+      "attributes": {
+        "width": 64,
+        "height": 43
+      },
+      "clearance": 20,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/crane-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "cloud-kite",
+      "theme": "light",
+      "size": "small",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 27.1875,
+        "y": 92,
+        "width": 44.796875,
+        "height": 67.1875,
+        "top": 92,
+        "right": 71.984375,
+        "bottom": 159.1875,
+        "left": 27.1875
+      },
+      "image": {
+        "x": 27.1875,
+        "y": 92,
+        "width": 44.796875,
+        "height": 67.1875,
+        "top": 92,
+        "right": 71.984375,
+        "bottom": 159.1875,
+        "left": 27.1875
+      },
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "attributes": {
+        "width": 45,
+        "height": 67
+      },
+      "clearance": 20.015625,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/kite-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "cloud-kite",
+      "theme": "light",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 14.390625,
+        "y": 92,
+        "width": 57.59375,
+        "height": 86.390625,
+        "top": 92,
+        "right": 71.984375,
+        "bottom": 178.390625,
+        "left": 14.390625
+      },
+      "image": {
+        "x": 14.390625,
+        "y": 92,
+        "width": 57.59375,
+        "height": 86.390625,
+        "top": 92,
+        "right": 71.984375,
+        "bottom": 178.390625,
+        "left": 14.390625
+      },
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "attributes": {
+        "width": 58,
+        "height": 86
+      },
+      "clearance": 20.015625,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/kite-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "cloud-kite",
+      "theme": "light",
+      "size": "large",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 8,
+        "y": 92,
+        "width": 64,
+        "height": 96,
+        "top": 92,
+        "right": 72,
+        "bottom": 188,
+        "left": 8
+      },
+      "image": {
+        "x": 8,
+        "y": 92,
+        "width": 64,
+        "height": 96,
+        "top": 92,
+        "right": 72,
+        "bottom": 188,
+        "left": 8
+      },
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "attributes": {
+        "width": 64,
+        "height": 96
+      },
+      "clearance": 20,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/kite-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "cloud-kite",
+      "theme": "dark",
+      "size": "small",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 27.1875,
+        "y": 92,
+        "width": 44.796875,
+        "height": 67.1875,
+        "top": 92,
+        "right": 71.984375,
+        "bottom": 159.1875,
+        "left": 27.1875
+      },
+      "image": {
+        "x": 27.1875,
+        "y": 92,
+        "width": 44.796875,
+        "height": 67.1875,
+        "top": 92,
+        "right": 71.984375,
+        "bottom": 159.1875,
+        "left": 27.1875
+      },
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "attributes": {
+        "width": 45,
+        "height": 67
+      },
+      "clearance": 20.015625,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/kite-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "cloud-kite",
+      "theme": "dark",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 14.390625,
+        "y": 92,
+        "width": 57.59375,
+        "height": 86.390625,
+        "top": 92,
+        "right": 71.984375,
+        "bottom": 178.390625,
+        "left": 14.390625
+      },
+      "image": {
+        "x": 14.390625,
+        "y": 92,
+        "width": 57.59375,
+        "height": 86.390625,
+        "top": 92,
+        "right": 71.984375,
+        "bottom": 178.390625,
+        "left": 14.390625
+      },
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "attributes": {
+        "width": 58,
+        "height": 86
+      },
+      "clearance": 20.015625,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/kite-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "cloud-kite",
+      "theme": "dark",
+      "size": "large",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 8,
+        "y": 92,
+        "width": 64,
+        "height": 96,
+        "top": 92,
+        "right": 72,
+        "bottom": 188,
+        "left": 8
+      },
+      "image": {
+        "x": 8,
+        "y": 92,
+        "width": 64,
+        "height": 96,
+        "top": 92,
+        "right": 72,
+        "bottom": 188,
+        "left": 8
+      },
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "attributes": {
+        "width": 64,
+        "height": 96
+      },
+      "clearance": 20,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/kite-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "feather",
+      "theme": "light",
+      "size": "small",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 23.59375,
+        "y": 92,
+        "width": 44.796875,
+        "height": 67.1875,
+        "top": 92,
+        "right": 68.390625,
+        "bottom": 159.1875,
+        "left": 23.59375
+      },
+      "image": {
+        "x": 23.59375,
+        "y": 92,
+        "width": 44.796875,
+        "height": 67.1875,
+        "top": 92,
+        "right": 68.390625,
+        "bottom": 159.1875,
+        "left": 23.59375
+      },
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "attributes": {
+        "width": 45,
+        "height": 67
+      },
+      "clearance": 23.609375,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/feather-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "feather",
+      "theme": "light",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 17.1875,
+        "y": 92,
+        "width": 57.59375,
+        "height": 86.390625,
+        "top": 92,
+        "right": 74.78125,
+        "bottom": 178.390625,
+        "left": 17.1875
+      },
+      "image": {
+        "x": 17.1875,
+        "y": 92,
+        "width": 57.59375,
+        "height": 86.390625,
+        "top": 92,
+        "right": 74.78125,
+        "bottom": 178.390625,
+        "left": 17.1875
+      },
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "attributes": {
+        "width": 58,
+        "height": 86
+      },
+      "clearance": 17.21875,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/feather-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "feather",
+      "theme": "light",
+      "size": "large",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 14,
+        "y": 92,
+        "width": 64,
+        "height": 96,
+        "top": 92,
+        "right": 78,
+        "bottom": 188,
+        "left": 14
+      },
+      "image": {
+        "x": 14,
+        "y": 92,
+        "width": 64,
+        "height": 96,
+        "top": 92,
+        "right": 78,
+        "bottom": 188,
+        "left": 14
+      },
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "attributes": {
+        "width": 64,
+        "height": 96
+      },
+      "clearance": 14,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/feather-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "feather",
+      "theme": "dark",
+      "size": "small",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 23.59375,
+        "y": 92,
+        "width": 44.796875,
+        "height": 67.1875,
+        "top": 92,
+        "right": 68.390625,
+        "bottom": 159.1875,
+        "left": 23.59375
+      },
+      "image": {
+        "x": 23.59375,
+        "y": 92,
+        "width": 44.796875,
+        "height": 67.1875,
+        "top": 92,
+        "right": 68.390625,
+        "bottom": 159.1875,
+        "left": 23.59375
+      },
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "attributes": {
+        "width": 45,
+        "height": 67
+      },
+      "clearance": 23.609375,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/feather-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "feather",
+      "theme": "dark",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 17.1875,
+        "y": 92,
+        "width": 57.59375,
+        "height": 86.390625,
+        "top": 92,
+        "right": 74.78125,
+        "bottom": 178.390625,
+        "left": 17.1875
+      },
+      "image": {
+        "x": 17.1875,
+        "y": 92,
+        "width": 57.59375,
+        "height": 86.390625,
+        "top": 92,
+        "right": 74.78125,
+        "bottom": 178.390625,
+        "left": 17.1875
+      },
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "attributes": {
+        "width": 58,
+        "height": 86
+      },
+      "clearance": 17.21875,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/feather-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "feather",
+      "theme": "dark",
+      "size": "large",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 14,
+        "y": 92,
+        "width": 64,
+        "height": 96,
+        "top": 92,
+        "right": 78,
+        "bottom": 188,
+        "left": 14
+      },
+      "image": {
+        "x": 14,
+        "y": 92,
+        "width": 64,
+        "height": 96,
+        "top": 92,
+        "right": 78,
+        "bottom": 188,
+        "left": 14
+      },
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "attributes": {
+        "width": 64,
+        "height": 96
+      },
+      "clearance": 14,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/feather-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "meteor",
+      "theme": "light",
+      "size": "small",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 23.59375,
+        "y": 88,
+        "width": 44.796875,
+        "height": 44.796875,
+        "top": 88,
+        "right": 68.390625,
+        "bottom": 132.796875,
+        "left": 23.59375
+      },
+      "image": {
+        "x": 23.59375,
+        "y": 88,
+        "width": 44.796875,
+        "height": 44.796875,
+        "top": 88,
+        "right": 68.390625,
+        "bottom": 132.796875,
+        "left": 23.59375
+      },
+      "native": {
+        "width": 1254,
+        "height": 1254
+      },
+      "attributes": {
+        "width": 45,
+        "height": 45
+      },
+      "clearance": 23.609375,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/meteor-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "meteor",
+      "theme": "light",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 17.1875,
+        "y": 88,
+        "width": 57.59375,
+        "height": 57.59375,
+        "top": 88,
+        "right": 74.78125,
+        "bottom": 145.59375,
+        "left": 17.1875
+      },
+      "image": {
+        "x": 17.1875,
+        "y": 88,
+        "width": 57.59375,
+        "height": 57.59375,
+        "top": 88,
+        "right": 74.78125,
+        "bottom": 145.59375,
+        "left": 17.1875
+      },
+      "native": {
+        "width": 1254,
+        "height": 1254
+      },
+      "attributes": {
+        "width": 58,
+        "height": 58
+      },
+      "clearance": 17.21875,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/meteor-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "meteor",
+      "theme": "light",
+      "size": "large",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 14,
+        "y": 88,
+        "width": 64,
+        "height": 64,
+        "top": 88,
+        "right": 78,
+        "bottom": 152,
+        "left": 14
+      },
+      "image": {
+        "x": 14,
+        "y": 88,
+        "width": 64,
+        "height": 64,
+        "top": 88,
+        "right": 78,
+        "bottom": 152,
+        "left": 14
+      },
+      "native": {
+        "width": 1254,
+        "height": 1254
+      },
+      "attributes": {
+        "width": 64,
+        "height": 64
+      },
+      "clearance": 14,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/meteor-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "meteor",
+      "theme": "dark",
+      "size": "small",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 23.59375,
+        "y": 88,
+        "width": 44.796875,
+        "height": 44.796875,
+        "top": 88,
+        "right": 68.390625,
+        "bottom": 132.796875,
+        "left": 23.59375
+      },
+      "image": {
+        "x": 23.59375,
+        "y": 88,
+        "width": 44.796875,
+        "height": 44.796875,
+        "top": 88,
+        "right": 68.390625,
+        "bottom": 132.796875,
+        "left": 23.59375
+      },
+      "native": {
+        "width": 1254,
+        "height": 1254
+      },
+      "attributes": {
+        "width": 45,
+        "height": 45
+      },
+      "clearance": 23.609375,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/meteor-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "meteor",
+      "theme": "dark",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 17.1875,
+        "y": 88,
+        "width": 57.59375,
+        "height": 57.59375,
+        "top": 88,
+        "right": 74.78125,
+        "bottom": 145.59375,
+        "left": 17.1875
+      },
+      "image": {
+        "x": 17.1875,
+        "y": 88,
+        "width": 57.59375,
+        "height": 57.59375,
+        "top": 88,
+        "right": 74.78125,
+        "bottom": 145.59375,
+        "left": 17.1875
+      },
+      "native": {
+        "width": 1254,
+        "height": 1254
+      },
+      "attributes": {
+        "width": 58,
+        "height": 58
+      },
+      "clearance": 17.21875,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/meteor-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "meteor",
+      "theme": "dark",
+      "size": "large",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 14,
+        "y": 88,
+        "width": 64,
+        "height": 64,
+        "top": 88,
+        "right": 78,
+        "bottom": 152,
+        "left": 14
+      },
+      "image": {
+        "x": 14,
+        "y": 88,
+        "width": 64,
+        "height": 64,
+        "top": 88,
+        "right": 78,
+        "bottom": 152,
+        "left": 14
+      },
+      "native": {
+        "width": 1254,
+        "height": 1254
+      },
+      "attributes": {
+        "width": 64,
+        "height": 64
+      },
+      "clearance": 14,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/meteor-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "heaven",
+      "theme": "light",
+      "size": "small",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 23.59375,
+        "y": 92,
+        "width": 44.796875,
+        "height": 44.796875,
+        "top": 92,
+        "right": 68.390625,
+        "bottom": 136.796875,
+        "left": 23.59375
+      },
+      "image": {
+        "x": 23.59375,
+        "y": 92,
+        "width": 44.796875,
+        "height": 44.796875,
+        "top": 92,
+        "right": 68.390625,
+        "bottom": 136.796875,
+        "left": 23.59375
+      },
+      "native": {
+        "width": 1254,
+        "height": 1254
+      },
+      "attributes": {
+        "width": 45,
+        "height": 45
+      },
+      "clearance": 23.609375,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/heaven-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "heaven",
+      "theme": "light",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 17.1875,
+        "y": 92,
+        "width": 57.59375,
+        "height": 57.59375,
+        "top": 92,
+        "right": 74.78125,
+        "bottom": 149.59375,
+        "left": 17.1875
+      },
+      "image": {
+        "x": 17.1875,
+        "y": 92,
+        "width": 57.59375,
+        "height": 57.59375,
+        "top": 92,
+        "right": 74.78125,
+        "bottom": 149.59375,
+        "left": 17.1875
+      },
+      "native": {
+        "width": 1254,
+        "height": 1254
+      },
+      "attributes": {
+        "width": 58,
+        "height": 58
+      },
+      "clearance": 17.21875,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/heaven-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "heaven",
+      "theme": "light",
+      "size": "large",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 14,
+        "y": 92,
+        "width": 64,
+        "height": 64,
+        "top": 92,
+        "right": 78,
+        "bottom": 156,
+        "left": 14
+      },
+      "image": {
+        "x": 14,
+        "y": 92,
+        "width": 64,
+        "height": 64,
+        "top": 92,
+        "right": 78,
+        "bottom": 156,
+        "left": 14
+      },
+      "native": {
+        "width": 1254,
+        "height": 1254
+      },
+      "attributes": {
+        "width": 64,
+        "height": 64
+      },
+      "clearance": 14,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/heaven-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "heaven",
+      "theme": "dark",
+      "size": "small",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 23.59375,
+        "y": 92,
+        "width": 44.796875,
+        "height": 44.796875,
+        "top": 92,
+        "right": 68.390625,
+        "bottom": 136.796875,
+        "left": 23.59375
+      },
+      "image": {
+        "x": 23.59375,
+        "y": 92,
+        "width": 44.796875,
+        "height": 44.796875,
+        "top": 92,
+        "right": 68.390625,
+        "bottom": 136.796875,
+        "left": 23.59375
+      },
+      "native": {
+        "width": 1254,
+        "height": 1254
+      },
+      "attributes": {
+        "width": 45,
+        "height": 45
+      },
+      "clearance": 23.609375,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/heaven-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "heaven",
+      "theme": "dark",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 17.1875,
+        "y": 92,
+        "width": 57.59375,
+        "height": 57.59375,
+        "top": 92,
+        "right": 74.78125,
+        "bottom": 149.59375,
+        "left": 17.1875
+      },
+      "image": {
+        "x": 17.1875,
+        "y": 92,
+        "width": 57.59375,
+        "height": 57.59375,
+        "top": 92,
+        "right": 74.78125,
+        "bottom": 149.59375,
+        "left": 17.1875
+      },
+      "native": {
+        "width": 1254,
+        "height": 1254
+      },
+      "attributes": {
+        "width": 58,
+        "height": 58
+      },
+      "clearance": 17.21875,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/heaven-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "heaven",
+      "theme": "dark",
+      "size": "large",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 14,
+        "y": 92,
+        "width": 64,
+        "height": 64,
+        "top": 92,
+        "right": 78,
+        "bottom": 156,
+        "left": 14
+      },
+      "image": {
+        "x": 14,
+        "y": 92,
+        "width": 64,
+        "height": 64,
+        "top": 92,
+        "right": 78,
+        "bottom": 156,
+        "left": 14
+      },
+      "native": {
+        "width": 1254,
+        "height": 1254
+      },
+      "attributes": {
+        "width": 64,
+        "height": 64
+      },
+      "clearance": 14,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/heaven-ascii-v1.webp"
+    },
+    {
+      "width": 1440,
+      "id": "cloud-crane",
+      "theme": "light",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 22.390625,
+        "y": 142,
+        "width": 129.59375,
+        "height": 86.390625,
+        "top": 142,
+        "right": 151.984375,
+        "bottom": 228.390625,
+        "left": 22.390625
+      },
+      "image": {
+        "x": 22.390625,
+        "y": 142,
+        "width": 129.59375,
+        "height": 86.390625,
+        "top": 142,
+        "right": 151.984375,
+        "bottom": 228.390625,
+        "left": 22.390625
+      },
+      "native": {
+        "width": 1536,
+        "height": 1024
+      },
+      "attributes": {
+        "width": 130,
+        "height": 86
+      },
+      "clearance": 20.015625,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/crane-ascii-v1.webp"
+    },
+    {
+      "width": 1440,
+      "id": "cloud-crane",
+      "theme": "dark",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 22.390625,
+        "y": 142,
+        "width": 129.59375,
+        "height": 86.390625,
+        "top": 142,
+        "right": 151.984375,
+        "bottom": 228.390625,
+        "left": 22.390625
+      },
+      "image": {
+        "x": 22.390625,
+        "y": 142,
+        "width": 129.59375,
+        "height": 86.390625,
+        "top": 142,
+        "right": 151.984375,
+        "bottom": 228.390625,
+        "left": 22.390625
+      },
+      "native": {
+        "width": 1536,
+        "height": 1024
+      },
+      "attributes": {
+        "width": 130,
+        "height": 86
+      },
+      "clearance": 20.015625,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/crane-ascii-v1.webp"
+    },
+    {
+      "width": 1440,
+      "id": "cloud-kite",
+      "theme": "light",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 47.59375,
+        "y": 92,
+        "width": 104.390625,
+        "height": 156.578125,
+        "top": 92,
+        "right": 151.984375,
+        "bottom": 248.578125,
+        "left": 47.59375
+      },
+      "image": {
+        "x": 47.59375,
+        "y": 92,
+        "width": 104.390625,
+        "height": 156.578125,
+        "top": 92,
+        "right": 151.984375,
+        "bottom": 248.578125,
+        "left": 47.59375
+      },
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "attributes": {
+        "width": 104,
+        "height": 157
+      },
+      "clearance": 20.015625,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/kite-ascii-v1.webp"
+    },
+    {
+      "width": 1440,
+      "id": "cloud-kite",
+      "theme": "dark",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 47.59375,
+        "y": 92,
+        "width": 104.390625,
+        "height": 156.578125,
+        "top": 92,
+        "right": 151.984375,
+        "bottom": 248.578125,
+        "left": 47.59375
+      },
+      "image": {
+        "x": 47.59375,
+        "y": 92,
+        "width": 104.390625,
+        "height": 156.578125,
+        "top": 92,
+        "right": 151.984375,
+        "bottom": 248.578125,
+        "left": 47.59375
+      },
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "attributes": {
+        "width": 104,
+        "height": 157
+      },
+      "clearance": 20.015625,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/kite-ascii-v1.webp"
+    },
+    {
+      "width": 1440,
+      "id": "feather",
+      "theme": "light",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 23.890625,
+        "y": 92,
+        "width": 124.1875,
+        "height": 186.28125,
+        "top": 92,
+        "right": 148.078125,
+        "bottom": 278.28125,
+        "left": 23.890625
+      },
+      "image": {
+        "x": 23.890625,
+        "y": 92,
+        "width": 124.1875,
+        "height": 186.28125,
+        "top": 92,
+        "right": 148.078125,
+        "bottom": 278.28125,
+        "left": 23.890625
+      },
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "attributes": {
+        "width": 124,
+        "height": 186
+      },
+      "clearance": 23.921875,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/feather-ascii-v1.webp"
+    },
+    {
+      "width": 1440,
+      "id": "feather",
+      "theme": "dark",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 23.890625,
+        "y": 92,
+        "width": 124.1875,
+        "height": 186.28125,
+        "top": 92,
+        "right": 148.078125,
+        "bottom": 278.28125,
+        "left": 23.890625
+      },
+      "image": {
+        "x": 23.890625,
+        "y": 92,
+        "width": 124.1875,
+        "height": 186.28125,
+        "top": 92,
+        "right": 148.078125,
+        "bottom": 278.28125,
+        "left": 23.890625
+      },
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "attributes": {
+        "width": 124,
+        "height": 186
+      },
+      "clearance": 23.921875,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/feather-ascii-v1.webp"
+    },
+    {
+      "width": 1440,
+      "id": "meteor",
+      "theme": "light",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 21.1875,
+        "y": 88,
+        "width": 129.59375,
+        "height": 129.59375,
+        "top": 88,
+        "right": 150.78125,
+        "bottom": 217.59375,
+        "left": 21.1875
+      },
+      "image": {
+        "x": 21.1875,
+        "y": 88,
+        "width": 129.59375,
+        "height": 129.59375,
+        "top": 88,
+        "right": 150.78125,
+        "bottom": 217.59375,
+        "left": 21.1875
+      },
+      "native": {
+        "width": 1254,
+        "height": 1254
+      },
+      "attributes": {
+        "width": 130,
+        "height": 130
+      },
+      "clearance": 21.21875,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/meteor-ascii-v1.webp"
+    },
+    {
+      "width": 1440,
+      "id": "meteor",
+      "theme": "dark",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 21.1875,
+        "y": 88,
+        "width": 129.59375,
+        "height": 129.59375,
+        "top": 88,
+        "right": 150.78125,
+        "bottom": 217.59375,
+        "left": 21.1875
+      },
+      "image": {
+        "x": 21.1875,
+        "y": 88,
+        "width": 129.59375,
+        "height": 129.59375,
+        "top": 88,
+        "right": 150.78125,
+        "bottom": 217.59375,
+        "left": 21.1875
+      },
+      "native": {
+        "width": 1254,
+        "height": 1254
+      },
+      "attributes": {
+        "width": 130,
+        "height": 130
+      },
+      "clearance": 21.21875,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/meteor-ascii-v1.webp"
+    },
+    {
+      "width": 1440,
+      "id": "heaven",
+      "theme": "light",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 21.1875,
+        "y": 92,
+        "width": 129.59375,
+        "height": 129.59375,
+        "top": 92,
+        "right": 150.78125,
+        "bottom": 221.59375,
+        "left": 21.1875
+      },
+      "image": {
+        "x": 21.1875,
+        "y": 92,
+        "width": 129.59375,
+        "height": 129.59375,
+        "top": 92,
+        "right": 150.78125,
+        "bottom": 221.59375,
+        "left": 21.1875
+      },
+      "native": {
+        "width": 1254,
+        "height": 1254
+      },
+      "attributes": {
+        "width": 130,
+        "height": 130
+      },
+      "clearance": 21.21875,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/heaven-ascii-v1.webp"
+    },
+    {
+      "width": 1440,
+      "id": "heaven",
+      "theme": "dark",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 21.1875,
+        "y": 92,
+        "width": 129.59375,
+        "height": 129.59375,
+        "top": 92,
+        "right": 150.78125,
+        "bottom": 221.59375,
+        "left": 21.1875
+      },
+      "image": {
+        "x": 21.1875,
+        "y": 92,
+        "width": 129.59375,
+        "height": 129.59375,
+        "top": 92,
+        "right": 150.78125,
+        "bottom": 221.59375,
+        "left": 21.1875
+      },
+      "native": {
+        "width": 1254,
+        "height": 1254
+      },
+      "attributes": {
+        "width": 130,
+        "height": 130
+      },
+      "clearance": 21.21875,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/heaven-ascii-v1.webp"
+    },
+    {
+      "width": 1920,
+      "id": "cloud-crane",
+      "theme": "light",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 159,
+        "y": 142,
+        "width": 144,
+        "height": 96,
+        "top": 142,
+        "right": 303,
+        "bottom": 238,
+        "left": 159
+      },
+      "image": {
+        "x": 159,
+        "y": 142,
+        "width": 144,
+        "height": 96,
+        "top": 142,
+        "right": 303,
+        "bottom": 238,
+        "left": 159
+      },
+      "native": {
+        "width": 1536,
+        "height": 1024
+      },
+      "attributes": {
+        "width": 144,
+        "height": 96
+      },
+      "clearance": 109,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/crane-ascii-v1.webp"
+    },
+    {
+      "width": 1920,
+      "id": "cloud-crane",
+      "theme": "dark",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 159,
+        "y": 142,
+        "width": 144,
+        "height": 96,
+        "top": 142,
+        "right": 303,
+        "bottom": 238,
+        "left": 159
+      },
+      "image": {
+        "x": 159,
+        "y": 142,
+        "width": 144,
+        "height": 96,
+        "top": 142,
+        "right": 303,
+        "bottom": 238,
+        "left": 159
+      },
+      "native": {
+        "width": 1536,
+        "height": 1024
+      },
+      "attributes": {
+        "width": 144,
+        "height": 96
+      },
+      "clearance": 109,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/crane-ascii-v1.webp"
+    },
+    {
+      "width": 1920,
+      "id": "cloud-kite",
+      "theme": "light",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 198.59375,
+        "y": 92,
+        "width": 104.390625,
+        "height": 156.578125,
+        "top": 92,
+        "right": 302.984375,
+        "bottom": 248.578125,
+        "left": 198.59375
+      },
+      "image": {
+        "x": 198.59375,
+        "y": 92,
+        "width": 104.390625,
+        "height": 156.578125,
+        "top": 92,
+        "right": 302.984375,
+        "bottom": 248.578125,
+        "left": 198.59375
+      },
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "attributes": {
+        "width": 104,
+        "height": 157
+      },
+      "clearance": 109.015625,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/kite-ascii-v1.webp"
+    },
+    {
+      "width": 1920,
+      "id": "cloud-kite",
+      "theme": "dark",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 198.59375,
+        "y": 92,
+        "width": 104.390625,
+        "height": 156.578125,
+        "top": 92,
+        "right": 302.984375,
+        "bottom": 248.578125,
+        "left": 198.59375
+      },
+      "image": {
+        "x": 198.59375,
+        "y": 92,
+        "width": 104.390625,
+        "height": 156.578125,
+        "top": 92,
+        "right": 302.984375,
+        "bottom": 248.578125,
+        "left": 198.59375
+      },
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "attributes": {
+        "width": 104,
+        "height": 157
+      },
+      "clearance": 109.015625,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/kite-ascii-v1.webp"
+    },
+    {
+      "width": 1920,
+      "id": "feather",
+      "theme": "light",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 143.890625,
+        "y": 92,
+        "width": 124.1875,
+        "height": 186.28125,
+        "top": 92,
+        "right": 268.078125,
+        "bottom": 278.28125,
+        "left": 143.890625
+      },
+      "image": {
+        "x": 143.890625,
+        "y": 92,
+        "width": 124.1875,
+        "height": 186.28125,
+        "top": 92,
+        "right": 268.078125,
+        "bottom": 278.28125,
+        "left": 143.890625
+      },
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "attributes": {
+        "width": 124,
+        "height": 186
+      },
+      "clearance": 143.921875,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/feather-ascii-v1.webp"
+    },
+    {
+      "width": 1920,
+      "id": "feather",
+      "theme": "dark",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 143.890625,
+        "y": 92,
+        "width": 124.1875,
+        "height": 186.28125,
+        "top": 92,
+        "right": 268.078125,
+        "bottom": 278.28125,
+        "left": 143.890625
+      },
+      "image": {
+        "x": 143.890625,
+        "y": 92,
+        "width": 124.1875,
+        "height": 186.28125,
+        "top": 92,
+        "right": 268.078125,
+        "bottom": 278.28125,
+        "left": 143.890625
+      },
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "attributes": {
+        "width": 124,
+        "height": 186
+      },
+      "clearance": 143.921875,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/feather-ascii-v1.webp"
+    },
+    {
+      "width": 1920,
+      "id": "meteor",
+      "theme": "light",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 125,
+        "y": 88,
+        "width": 162,
+        "height": 162,
+        "top": 88,
+        "right": 287,
+        "bottom": 250,
+        "left": 125
+      },
+      "image": {
+        "x": 125,
+        "y": 88,
+        "width": 162,
+        "height": 162,
+        "top": 88,
+        "right": 287,
+        "bottom": 250,
+        "left": 125
+      },
+      "native": {
+        "width": 1254,
+        "height": 1254
+      },
+      "attributes": {
+        "width": 162,
+        "height": 162
+      },
+      "clearance": 125,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/meteor-ascii-v1.webp"
+    },
+    {
+      "width": 1920,
+      "id": "meteor",
+      "theme": "dark",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 125,
+        "y": 88,
+        "width": 162,
+        "height": 162,
+        "top": 88,
+        "right": 287,
+        "bottom": 250,
+        "left": 125
+      },
+      "image": {
+        "x": 125,
+        "y": 88,
+        "width": 162,
+        "height": 162,
+        "top": 88,
+        "right": 287,
+        "bottom": 250,
+        "left": 125
+      },
+      "native": {
+        "width": 1254,
+        "height": 1254
+      },
+      "attributes": {
+        "width": 162,
+        "height": 162
+      },
+      "clearance": 125,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/meteor-ascii-v1.webp"
+    },
+    {
+      "width": 1920,
+      "id": "heaven",
+      "theme": "light",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 140.296875,
+        "y": 92,
+        "width": 131.390625,
+        "height": 131.390625,
+        "top": 92,
+        "right": 271.6875,
+        "bottom": 223.390625,
+        "left": 140.296875
+      },
+      "image": {
+        "x": 140.296875,
+        "y": 92,
+        "width": 131.390625,
+        "height": 131.390625,
+        "top": 92,
+        "right": 271.6875,
+        "bottom": 223.390625,
+        "left": 140.296875
+      },
+      "native": {
+        "width": 1254,
+        "height": 1254
+      },
+      "attributes": {
+        "width": 131,
+        "height": 131
+      },
+      "clearance": 140.3125,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/heaven-ascii-v1.webp"
+    },
+    {
+      "width": 1920,
+      "id": "heaven",
+      "theme": "dark",
+      "size": "medium",
+      "fullScene": false,
+      "geometryUnchanged": true,
+      "box": {
+        "x": 140.296875,
+        "y": 92,
+        "width": 131.390625,
+        "height": 131.390625,
+        "top": 92,
+        "right": 271.6875,
+        "bottom": 223.390625,
+        "left": 140.296875
+      },
+      "image": {
+        "x": 140.296875,
+        "y": 92,
+        "width": 131.390625,
+        "height": 131.390625,
+        "top": 92,
+        "right": 271.6875,
+        "bottom": 223.390625,
+        "left": 140.296875
+      },
+      "native": {
+        "width": 1254,
+        "height": 1254
+      },
+      "attributes": {
+        "width": 131,
+        "height": 131
+      },
+      "clearance": 140.3125,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/heaven-ascii-v1.webp"
+    },
+    {
+      "width": 1280,
+      "id": "cloud-light",
+      "theme": "light",
+      "size": "small",
+      "fullScene": true,
+      "geometryUnchanged": true,
+      "box": {
+        "x": -180,
+        "y": -78,
+        "width": 500,
+        "height": 416.65625,
+        "top": -78,
+        "right": 320,
+        "bottom": 338.65625,
+        "left": -180
+      },
+      "image": {
+        "x": -180,
+        "y": -78,
+        "width": 499.984375,
+        "height": 416.65625,
+        "top": -78,
+        "right": 319.984375,
+        "bottom": 338.65625,
+        "left": -180
+      },
+      "native": {
+        "width": 1374,
+        "height": 1145
+      },
+      "attributes": {
+        "width": 500,
+        "height": 417
+      },
+      "clearance": -228,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cloud-light-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "id": "cloud-light",
+      "theme": "light",
+      "size": "medium",
+      "fullScene": true,
+      "geometryUnchanged": true,
+      "box": {
+        "x": -255,
+        "y": -65,
+        "width": 600,
+        "height": 500,
+        "top": -65,
+        "right": 345,
+        "bottom": 435,
+        "left": -255
+      },
+      "image": {
+        "x": -255,
+        "y": -65,
+        "width": 600,
+        "height": 500,
+        "top": -65,
+        "right": 345,
+        "bottom": 435,
+        "left": -255
+      },
+      "native": {
+        "width": 1374,
+        "height": 1145
+      },
+      "attributes": {
+        "width": 600,
+        "height": 500
+      },
+      "clearance": -253,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cloud-light-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "id": "cloud-light",
+      "theme": "light",
+      "size": "large",
+      "fullScene": true,
+      "geometryUnchanged": true,
+      "box": {
+        "x": -310,
+        "y": -80,
+        "width": 680,
+        "height": 566.65625,
+        "top": -80,
+        "right": 370,
+        "bottom": 486.65625,
+        "left": -310
+      },
+      "image": {
+        "x": -310,
+        "y": -80,
+        "width": 679.984375,
+        "height": 566.65625,
+        "top": -80,
+        "right": 369.984375,
+        "bottom": 486.65625,
+        "left": -310
+      },
+      "native": {
+        "width": 1374,
+        "height": 1145
+      },
+      "attributes": {
+        "width": 680,
+        "height": 567
+      },
+      "clearance": -278,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cloud-light-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "id": "cloud-light",
+      "theme": "dark",
+      "size": "small",
+      "fullScene": true,
+      "geometryUnchanged": true,
+      "box": {
+        "x": -180,
+        "y": -78,
+        "width": 500,
+        "height": 416.65625,
+        "top": -78,
+        "right": 320,
+        "bottom": 338.65625,
+        "left": -180
+      },
+      "image": {
+        "x": -180,
+        "y": -78,
+        "width": 499.984375,
+        "height": 416.65625,
+        "top": -78,
+        "right": 319.984375,
+        "bottom": 338.65625,
+        "left": -180
+      },
+      "native": {
+        "width": 1374,
+        "height": 1145
+      },
+      "attributes": {
+        "width": 500,
+        "height": 417
+      },
+      "clearance": -228,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cloud-light-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "id": "cloud-light",
+      "theme": "dark",
+      "size": "medium",
+      "fullScene": true,
+      "geometryUnchanged": true,
+      "box": {
+        "x": -255,
+        "y": -65,
+        "width": 600,
+        "height": 500,
+        "top": -65,
+        "right": 345,
+        "bottom": 435,
+        "left": -255
+      },
+      "image": {
+        "x": -255,
+        "y": -65,
+        "width": 600,
+        "height": 500,
+        "top": -65,
+        "right": 345,
+        "bottom": 435,
+        "left": -255
+      },
+      "native": {
+        "width": 1374,
+        "height": 1145
+      },
+      "attributes": {
+        "width": 600,
+        "height": 500
+      },
+      "clearance": -253,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cloud-light-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "id": "cloud-light",
+      "theme": "dark",
+      "size": "large",
+      "fullScene": true,
+      "geometryUnchanged": true,
+      "box": {
+        "x": -310,
+        "y": -80,
+        "width": 680,
+        "height": 566.65625,
+        "top": -80,
+        "right": 370,
+        "bottom": 486.65625,
+        "left": -310
+      },
+      "image": {
+        "x": -310,
+        "y": -80,
+        "width": 679.984375,
+        "height": 566.65625,
+        "top": -80,
+        "right": 369.984375,
+        "bottom": 486.65625,
+        "left": -310
+      },
+      "native": {
+        "width": 1374,
+        "height": 1145
+      },
+      "attributes": {
+        "width": 680,
+        "height": 567
+      },
+      "clearance": -278,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cloud-light-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "id": "cloud-light",
+      "theme": "light",
+      "size": "medium",
+      "fullScene": true,
+      "geometryUnchanged": true,
+      "box": {
+        "x": -175,
+        "y": -65,
+        "width": 600,
+        "height": 500,
+        "top": -65,
+        "right": 425,
+        "bottom": 435,
+        "left": -175
+      },
+      "image": {
+        "x": -175,
+        "y": -65,
+        "width": 600,
+        "height": 500,
+        "top": -65,
+        "right": 425,
+        "bottom": 435,
+        "left": -175
+      },
+      "native": {
+        "width": 1374,
+        "height": 1145
+      },
+      "attributes": {
+        "width": 600,
+        "height": 500
+      },
+      "clearance": -253,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cloud-light-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "id": "cloud-light",
+      "theme": "dark",
+      "size": "medium",
+      "fullScene": true,
+      "geometryUnchanged": true,
+      "box": {
+        "x": -175,
+        "y": -65,
+        "width": 600,
+        "height": 500,
+        "top": -65,
+        "right": 425,
+        "bottom": 435,
+        "left": -175
+      },
+      "image": {
+        "x": -175,
+        "y": -65,
+        "width": 600,
+        "height": 500,
+        "top": -65,
+        "right": 425,
+        "bottom": 435,
+        "left": -175
+      },
+      "native": {
+        "width": 1374,
+        "height": 1145
+      },
+      "attributes": {
+        "width": 600,
+        "height": 500
+      },
+      "clearance": -253,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cloud-light-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "id": "cloud-light",
+      "theme": "light",
+      "size": "medium",
+      "fullScene": true,
+      "geometryUnchanged": true,
+      "box": {
+        "x": -24,
+        "y": -65,
+        "width": 600,
+        "height": 500,
+        "top": -65,
+        "right": 576,
+        "bottom": 435,
+        "left": -24
+      },
+      "image": {
+        "x": -24,
+        "y": -65,
+        "width": 600,
+        "height": 500,
+        "top": -65,
+        "right": 576,
+        "bottom": 435,
+        "left": -24
+      },
+      "native": {
+        "width": 1374,
+        "height": 1145
+      },
+      "attributes": {
+        "width": 600,
+        "height": 500
+      },
+      "clearance": -164,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(255, 255, 255)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cloud-light-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "id": "cloud-light",
+      "theme": "dark",
+      "size": "medium",
+      "fullScene": true,
+      "geometryUnchanged": true,
+      "box": {
+        "x": -24,
+        "y": -65,
+        "width": 600,
+        "height": 500,
+        "top": -65,
+        "right": 576,
+        "bottom": 435,
+        "left": -24
+      },
+      "image": {
+        "x": -24,
+        "y": -65,
+        "width": 600,
+        "height": 500,
+        "top": -65,
+        "right": 576,
+        "bottom": 435,
+        "left": -24
+      },
+      "native": {
+        "width": 1374,
+        "height": 1145
+      },
+      "attributes": {
+        "width": 600,
+        "height": 500
+      },
+      "clearance": -164,
+      "pointer": "none",
+      "hiddenFromAT": true,
+      "toggleClickable": true,
+      "background": "rgb(0, 0, 0)",
+      "overflow": false,
+      "src": "http://127.0.0.1:8765/output/sage-backgrounds/motifs/cloud-light-ascii-v2.webp"
+    }
+  ],
+  "mobile": [
+    {
+      "id": "cloud-crane",
+      "theme": "light",
+      "hidden": true,
+      "unfetched": true,
+      "overflow": false
+    },
+    {
+      "id": "cloud-crane",
+      "theme": "dark",
+      "hidden": true,
+      "unfetched": true,
+      "overflow": false
+    },
+    {
+      "id": "cloud-kite",
+      "theme": "light",
+      "hidden": true,
+      "unfetched": true,
+      "overflow": false
+    },
+    {
+      "id": "cloud-kite",
+      "theme": "dark",
+      "hidden": true,
+      "unfetched": true,
+      "overflow": false
+    },
+    {
+      "id": "feather",
+      "theme": "light",
+      "hidden": true,
+      "unfetched": true,
+      "overflow": false
+    },
+    {
+      "id": "feather",
+      "theme": "dark",
+      "hidden": true,
+      "unfetched": true,
+      "overflow": false
+    },
+    {
+      "id": "meteor",
+      "theme": "light",
+      "hidden": true,
+      "unfetched": true,
+      "overflow": false
+    },
+    {
+      "id": "meteor",
+      "theme": "dark",
+      "hidden": true,
+      "unfetched": true,
+      "overflow": false
+    },
+    {
+      "id": "heaven",
+      "theme": "light",
+      "hidden": true,
+      "unfetched": true,
+      "overflow": false
+    },
+    {
+      "id": "heaven",
+      "theme": "dark",
+      "hidden": true,
+      "unfetched": true,
+      "overflow": false
+    },
+    {
+      "id": "cloud-light",
+      "theme": "light",
+      "hidden": true,
+      "unfetched": true,
+      "overflow": false
+    },
+    {
+      "id": "cloud-light",
+      "theme": "dark",
+      "hidden": true,
+      "unfetched": true,
+      "overflow": false
+    }
+  ],
+  "secondary": [
+    {
+      "name": "work",
+      "width": 1440,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "pixelIdentical": true
+    },
+    {
+      "name": "work",
+      "width": 1440,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "pixelIdentical": true
+    },
+    {
+      "name": "work",
+      "width": 390,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "pixelIdentical": true
+    },
+    {
+      "name": "work",
+      "width": 390,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "pixelIdentical": true
+    },
+    {
+      "name": "research",
+      "width": 1440,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "pixelIdentical": true
+    },
+    {
+      "name": "research",
+      "width": 1440,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "pixelIdentical": true
+    },
+    {
+      "name": "research",
+      "width": 390,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "pixelIdentical": true
+    },
+    {
+      "name": "research",
+      "width": 390,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "pixelIdentical": true
+    },
+    {
+      "name": "writing",
+      "width": 1440,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "pixelIdentical": true
+    },
+    {
+      "name": "writing",
+      "width": 1440,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "pixelIdentical": true
+    },
+    {
+      "name": "writing",
+      "width": 390,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "pixelIdentical": true
+    },
+    {
+      "name": "writing",
+      "width": 390,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "pixelIdentical": true
+    },
+    {
+      "name": "archive",
+      "width": 1440,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "pixelIdentical": true
+    },
+    {
+      "name": "archive",
+      "width": 1440,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "pixelIdentical": true
+    },
+    {
+      "name": "archive",
+      "width": 390,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "pixelIdentical": true
+    },
+    {
+      "name": "archive",
+      "width": 390,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "pixelIdentical": true
+    },
+    {
+      "name": "essay",
+      "width": 1440,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "decorativeResampling": null
+    },
+    {
+      "name": "essay",
+      "width": 1440,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "decorativeResampling": null
+    },
+    {
+      "name": "essay",
+      "width": 390,
+      "theme": "light",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "decorativeResampling": null
+    },
+    {
+      "name": "essay",
+      "width": 390,
+      "theme": "dark",
+      "geometryUnchanged": true,
+      "pixelIdentical": true,
+      "decorativeResampling": null
+    }
+  ],
+  "gallery": [
+    {
+      "id": "cloud-crane",
+      "reload": true,
+      "sourceLink": true,
+      "fullPageLink": true
+    },
+    {
+      "id": "cloud-kite",
+      "reload": true,
+      "sourceLink": true,
+      "fullPageLink": true
+    },
+    {
+      "id": "cloud-light",
+      "reload": true,
+      "sourceLink": true,
+      "fullPageLink": true
+    },
+    {
+      "id": "feather",
+      "reload": true,
+      "sourceLink": true,
+      "fullPageLink": true
+    },
+    {
+      "id": "meteor",
+      "reload": true,
+      "sourceLink": true,
+      "fullPageLink": true
+    },
+    {
+      "id": "heaven",
+      "reload": true,
+      "sourceLink": true,
+      "fullPageLink": true
+    },
+    {
+      "id": "cloud-glide",
+      "previousSavedSelection": true
+    },
+    {
+      "id": "cloud-bank",
+      "previousSavedSelection": true
+    },
+    {
+      "id": "cloud",
+      "previousSavedSelection": true
+    },
+    {
+      "id": "bird",
+      "previousSavedSelection": true
+    },
+    {
+      "id": "sun-moon",
+      "previousSavedSelection": true
+    },
+    {
+      "id": "celestial",
+      "previousSavedSelection": true
+    },
+    {
+      "id": "bi",
+      "previousSavedSelection": true
+    }
+  ],
+  "errors": [],
+  "writes": [],
+  "counterRequests": [
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    },
+    {
+      "method": "GET",
+      "url": "https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home"
+    }
+  ],
+  "mobileGallery": {
+    "selected": "meteor",
+    "width": 390,
+    "overflow": false,
+    "decorationsHidden": true,
+    "thumbnailDecoded": true
+  },
+  "complete": true
+}
