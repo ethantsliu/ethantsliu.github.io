@@ -1,0 +1,89 @@
+[
+  {
+    "width": 390,
+    "theme": "light",
+    "geometryMatchesPreview": true,
+    "counter": "one mocked PATCH +1",
+    "craneRequests": 0,
+    "noOverflow": true
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "geometryMatchesPreview": true,
+    "counter": "one mocked PATCH +1",
+    "craneRequests": 0,
+    "noOverflow": true
+  },
+  {
+    "width": 768,
+    "theme": "light",
+    "geometryMatchesPreview": true,
+    "counter": "one mocked PATCH +1",
+    "craneRequests": 0,
+    "noOverflow": true
+  },
+  {
+    "width": 768,
+    "theme": "dark",
+    "geometryMatchesPreview": true,
+    "counter": "one mocked PATCH +1",
+    "craneRequests": 0,
+    "noOverflow": true
+  },
+  {
+    "width": 1280,
+    "theme": "light",
+    "geometryMatchesPreview": true,
+    "counter": "one mocked PATCH +1",
+    "craneRequests": 1,
+    "noOverflow": true
+  },
+  {
+    "width": 1280,
+    "theme": "dark",
+    "geometryMatchesPreview": true,
+    "counter": "one mocked PATCH +1",
+    "craneRequests": 1,
+    "noOverflow": true
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "geometryMatchesPreview": true,
+    "counter": "one mocked PATCH +1",
+    "craneRequests": 1,
+    "noOverflow": true
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "geometryMatchesPreview": true,
+    "counter": "one mocked PATCH +1",
+    "craneRequests": 1,
+    "noOverflow": true
+  },
+  {
+    "width": 1920,
+    "theme": "light",
+    "geometryMatchesPreview": true,
+    "counter": "one mocked PATCH +1",
+    "craneRequests": 1,
+    "noOverflow": true
+  },
+  {
+    "width": 1920,
+    "theme": "dark",
+    "geometryMatchesPreview": true,
+    "counter": "one mocked PATCH +1",
+    "craneRequests": 1,
+    "noOverflow": true
+  },
+  {
+    "themePersists": true,
+    "hoverThenClick": true,
+    "escapeRestoresFocus": true,
+    "productionNavigation": true,
+    "touchToggle": true
+  }
+]

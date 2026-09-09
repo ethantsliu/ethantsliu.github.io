@@ -50,6 +50,25 @@ html:has(.cloud-site)::after,
 html[data-theme="dark"] .cloud-site .sun-icon { display: block; }
 html[data-theme="dark"] .cloud-site .moon-icon { display: none; }
 
+/* Approved homepage flock: use the drawing's painted center for placement.
+   Load the decorative artwork only where the header has room for it. */
+.home.cloud-site > .header-cranes { display: none; }
+@media (min-width: 1280px) {
+  .home.cloud-site > .header-cranes {
+    --crane-width: 216px;
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: calc(50% + 318px - var(--crane-width) * .35);
+    width: var(--crane-width);
+    height: calc(var(--crane-width) * 5 / 6);
+    background: url("photos/cranes-ascii.webp") center / contain no-repeat;
+    filter: var(--cloud-filter);
+    mix-blend-mode: var(--cloud-blend);
+    pointer-events: none;
+  }
+}
+
 /* The original secondary-page wrapper stays in place. Short pages put this
    small fragment at the viewport bottom; longer pages put it after the text. */
 .cloud-site:not(.home) { display: flex; flex-direction: column; }
