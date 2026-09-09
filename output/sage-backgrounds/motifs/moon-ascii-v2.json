@@ -1,0 +1,13 @@
+{
+  "mode": "built-in imagegen",
+  "intent": "reference edit for larger, bolder character construction",
+  "prompt": "Use case: style-transfer\nEdit target: the attached ASCII artwork. Preserve the single crescent moon, its complete curved silhouette and open white interior. Preserve the white background, full subject framing, and the cloud-inspired cream, pale ochre and muted cool blue-gray palette.\nEssential correction: the current glyphs become tiny dots on the website. Rebuild the drawing from substantially BIGGER, BOLDER, DISTINCTLY READABLE MONOSPACED CHARACTERS. Use only roughly 150\u2013400 characters in the entire image; at most 20\u201324 rows and 28 columns. Each glyph should be 55\u201375 native pixels tall. Use @ # % O + = : . / * with clear open counters and substantial strokes, all upright on horizontal baselines. Simplify the subject to obey this coarse grid. A few isolated . marks can soften an edge, but all shape must come from these large characters, not tiny dots or fine text. It should read unmistakably as colored ASCII even when the entire image is only 140 pixels wide.\nDo not preserve the current fine glyph density. Do preserve the identity and broad composition of this artwork. No underlying painted or filled shape, photographic texture, vector strokes, small-text overlay, engraving, grain, cast shadow or background tint. The canvas and all empty spaces are pure white #ffffff. One complete square artwork, no labels, text words, watermarks or borders.",
+  "reference": "output/sage-backgrounds/motifs/moon-ascii-v1.png",
+  "source": "/Users/EthanLiu/.codex/generated_images/01a07fad-3b82-7432-b769-586331600ad0/exec-b653f724-4590-455f-acfb-590b56ebd744.png",
+  "width": 1254,
+  "height": 1254,
+  "original": "moon-ascii-v2.png",
+  "delivery": "moon-ascii-v2.webp",
+  "conversion": "cwebp -q 94 -m 6; native dimensions; no crop, resize, or raster repainting",
+  "inspection": "Larger, bolder recognizable glyphs than v1. Stylized ASCII-like character construction; not a guarantee of exact glyph counts or a machine-readable alphabet."
+}

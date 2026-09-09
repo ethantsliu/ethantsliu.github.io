@@ -28,7 +28,7 @@
   const strengthValue = document.getElementById("strength-value");
   const cardElements = new Map();
   const motifButtons = new Map();
-  const pageFiles = Object.fromEntries(Object.entries({ about: "site-preview.html", work: "preview-work.html", research: "preview-research.html", archive: "preview-archive.html", writing: "preview-writing.html", essay: "preview-essay.html" }).map(([page, file]) => [page, `${file}?v=25`]));
+  const pageFiles = Object.fromEntries(Object.entries({ about: "site-preview.html", work: "preview-work.html", research: "preview-research.html", archive: "preview-archive.html", writing: "preview-writing.html", essay: "preview-essay.html" }).map(([page, file]) => [page, `${file}?v=26`]));
   const treatmentButtons = Array.from(document.querySelectorAll(".treatment-button"));
   const treatmentStrengths = { editorial: 100, opening: 100, closing: 100 };
   // Saved greens: sage { light: "#4c6757", dark: "#bacbb7" };
@@ -53,7 +53,12 @@
     const selectedMotif = motifs.find(item => item.id === controls.cornerMotif.value);
     for (const [id, button] of motifButtons) {
       button.setAttribute("aria-pressed", String(isHome && controls.corner.checked && !controls.corner.disabled && id === controls.cornerMotif.value));
+      const definition = motifs.find(item => item.id === id);
+      button.querySelector("img").src = controls.theme.value === "dark" && definition.dark ? definition.dark : definition.file;
     }
+    const motifSource = controls.theme.value === "dark" && selectedMotif.dark ? selectedMotif.dark : selectedMotif.file;
+    document.getElementById("view-motif").href = motifSource.replace(/\.webp$/, ".png");
+    document.getElementById("view-motif").hidden = !isHome;
     const motifNote = controls.original.checked
       ? "Showing the original site. Selecting a sky study returns to the artwork preview."
       : !isHome

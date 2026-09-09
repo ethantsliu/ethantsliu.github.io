@@ -2,6 +2,26 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 26: ASCII construction for every sky motif
+
+All four homepage corner choices now use the same character-built visual language as the accepted clouds. Bird, Sun / moon, Celestial, and Bi circle are rendered with visible letters and punctuation instead of natural-history engraving, stone texture, or clean SVG lines. Five final images cover the four choices, including a separate crescent for dark mode.
+
+The first generation of each new subject used `portraits/clouds-ascii-v4.png` as its style and palette reference. A second reference edit rebuilt each composition with larger, bolder characters because the finer first pass became faint at the actual corner size. The selected files are `*-ascii-v2`; the finer `v1` files and the previous non-ASCII studies remain archived. Glyphs are generated ASCII-like forms, not a guarantee of a strictly machine-readable alphabet or an exact character count.
+
+The new images use the same warm and night filters as the cloud artwork. The gallery thumbnail, page drawing, and View source drawing link follow the same selection, including the moon when dark mode is active. Source links open the original unfiltered PNG. The centered content, corner sizing, main cloud portrait, secondary-page clouds, and counter behavior are unchanged.
+
+| Final artwork | Original image | Exact prompt | Provenance |
+| --- | --- | --- | --- |
+| Bird | [PNG](motifs/bird-ascii-v2.png) | [Prompt](motifs/bird-ascii-v2.prompt.txt) | [JSON](motifs/bird-ascii-v2.json) |
+| Sun | [PNG](motifs/sun-ascii-v2.png) | [Prompt](motifs/sun-ascii-v2.prompt.txt) | [JSON](motifs/sun-ascii-v2.json) |
+| Moon | [PNG](motifs/moon-ascii-v2.png) | [Prompt](motifs/moon-ascii-v2.prompt.txt) | [JSON](motifs/moon-ascii-v2.json) |
+| Celestial | [PNG](motifs/celestial-ascii-v2.png) | [Prompt](motifs/celestial-ascii-v2.prompt.txt) | [JSON](motifs/celestial-ascii-v2.json) |
+| Bi circle | [PNG](motifs/bi-ascii-v2.png) | [Prompt](motifs/bi-ascii-v2.prompt.txt) | [JSON](motifs/bi-ascii-v2.json) |
+
+All ten new images (five first passes, five coarser edits) used the **built-in imagegen tool**. The bird is 1145 × 1374 native pixels; the other four are 1254 × 1254. Each PNG is an unchanged copy of the tool output. Delivery WebPs use quality 94 at native dimensions, with no local image repainting, resizing, cropping or upscaling.
+
+Browser captures and results are in `revision-26/`. Checks cover every motif in light and dark mode, all three sizes at 1280/1440/1920 widths, mobile hiding, secondary-page geometry, saved selections, matching source links, theme synchronization, keyboard selection, hover navigation, and the GET-only counter. The source image and page-size drawing were also inspected visually, including a Retina-scale header capture. Preview publication remains confined to `output/sage-backgrounds/`.
+
 ## Revision 25: four alternatives for the homepage corner
 
 The gallery now offers **Bird in flight**, **Sun / moon**, **Celestial**, and **Bi circle**, alongside the previous cloud. Fresh gallery visits select the bird and Golden hour. Click a study to return to the homepage and see its upper-left artwork; the sun becomes a crescent when the theme changes. The Upper-left artwork checkbox also gives a clear-margin comparison. The Open full page link carries the selected artwork, theme, size and palette into a standalone preview.

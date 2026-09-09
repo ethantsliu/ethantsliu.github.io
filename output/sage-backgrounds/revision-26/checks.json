@@ -1,0 +1,761 @@
+{
+  "compositions": [
+    {
+      "width": 1280,
+      "motif": "bird",
+      "theme": "light",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 23.609375,
+      "widthRendered": 44.796875,
+      "source": "bird-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "bird",
+      "theme": "light",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 17.21875,
+      "widthRendered": 57.59375,
+      "source": "bird-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "bird",
+      "theme": "light",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 14,
+      "widthRendered": 64,
+      "source": "bird-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "bird",
+      "theme": "dark",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 23.609375,
+      "widthRendered": 44.796875,
+      "source": "bird-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "bird",
+      "theme": "dark",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 17.21875,
+      "widthRendered": 57.59375,
+      "source": "bird-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "bird",
+      "theme": "dark",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 14,
+      "widthRendered": 64,
+      "source": "bird-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "sun-moon",
+      "theme": "light",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 23.609375,
+      "widthRendered": 44.796875,
+      "source": "sun-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "sun-moon",
+      "theme": "light",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 17.21875,
+      "widthRendered": 57.59375,
+      "source": "sun-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "sun-moon",
+      "theme": "light",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 14,
+      "widthRendered": 64,
+      "source": "sun-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "sun-moon",
+      "theme": "dark",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 23.609375,
+      "widthRendered": 44.796875,
+      "source": "moon-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "sun-moon",
+      "theme": "dark",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 17.21875,
+      "widthRendered": 57.59375,
+      "source": "moon-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "sun-moon",
+      "theme": "dark",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 14,
+      "widthRendered": 64,
+      "source": "moon-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "celestial",
+      "theme": "light",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 23.609375,
+      "widthRendered": 44.796875,
+      "source": "celestial-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "celestial",
+      "theme": "light",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 17.21875,
+      "widthRendered": 57.59375,
+      "source": "celestial-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "celestial",
+      "theme": "light",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 14,
+      "widthRendered": 64,
+      "source": "celestial-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "celestial",
+      "theme": "dark",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 23.609375,
+      "widthRendered": 44.796875,
+      "source": "celestial-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "celestial",
+      "theme": "dark",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 17.21875,
+      "widthRendered": 57.59375,
+      "source": "celestial-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "celestial",
+      "theme": "dark",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 14,
+      "widthRendered": 64,
+      "source": "celestial-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "bi",
+      "theme": "light",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 23.609375,
+      "widthRendered": 44.796875,
+      "source": "bi-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "bi",
+      "theme": "light",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 17.21875,
+      "widthRendered": 57.59375,
+      "source": "bi-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "bi",
+      "theme": "light",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 14,
+      "widthRendered": 64,
+      "source": "bi-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "bi",
+      "theme": "dark",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 23.609375,
+      "widthRendered": 44.796875,
+      "source": "bi-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "bi",
+      "theme": "dark",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 17.21875,
+      "widthRendered": 57.59375,
+      "source": "bi-ascii-v2.webp"
+    },
+    {
+      "width": 1280,
+      "motif": "bi",
+      "theme": "dark",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 14,
+      "widthRendered": 64,
+      "source": "bi-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "bird",
+      "theme": "light",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 35.609375,
+      "widthRendered": 100.796875,
+      "source": "bird-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "bird",
+      "theme": "light",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 21.21875,
+      "widthRendered": 129.59375,
+      "source": "bird-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "bird",
+      "theme": "light",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 14,
+      "widthRendered": 144,
+      "source": "bird-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "bird",
+      "theme": "dark",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 35.609375,
+      "widthRendered": 100.796875,
+      "source": "bird-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "bird",
+      "theme": "dark",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 21.21875,
+      "widthRendered": 129.59375,
+      "source": "bird-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "bird",
+      "theme": "dark",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 14,
+      "widthRendered": 144,
+      "source": "bird-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "sun-moon",
+      "theme": "light",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 35.609375,
+      "widthRendered": 100.796875,
+      "source": "sun-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "sun-moon",
+      "theme": "light",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 21.21875,
+      "widthRendered": 129.59375,
+      "source": "sun-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "sun-moon",
+      "theme": "light",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 14,
+      "widthRendered": 144,
+      "source": "sun-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "sun-moon",
+      "theme": "dark",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 35.609375,
+      "widthRendered": 100.796875,
+      "source": "moon-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "sun-moon",
+      "theme": "dark",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 21.21875,
+      "widthRendered": 129.59375,
+      "source": "moon-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "sun-moon",
+      "theme": "dark",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 14,
+      "widthRendered": 144,
+      "source": "moon-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "celestial",
+      "theme": "light",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 35.609375,
+      "widthRendered": 100.796875,
+      "source": "celestial-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "celestial",
+      "theme": "light",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 21.21875,
+      "widthRendered": 129.59375,
+      "source": "celestial-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "celestial",
+      "theme": "light",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 14,
+      "widthRendered": 144,
+      "source": "celestial-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "celestial",
+      "theme": "dark",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 35.609375,
+      "widthRendered": 100.796875,
+      "source": "celestial-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "celestial",
+      "theme": "dark",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 21.21875,
+      "widthRendered": 129.59375,
+      "source": "celestial-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "celestial",
+      "theme": "dark",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 14,
+      "widthRendered": 144,
+      "source": "celestial-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "bi",
+      "theme": "light",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 35.609375,
+      "widthRendered": 100.796875,
+      "source": "bi-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "bi",
+      "theme": "light",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 21.21875,
+      "widthRendered": 129.59375,
+      "source": "bi-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "bi",
+      "theme": "light",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 14,
+      "widthRendered": 144,
+      "source": "bi-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "bi",
+      "theme": "dark",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 35.609375,
+      "widthRendered": 100.796875,
+      "source": "bi-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "bi",
+      "theme": "dark",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 21.21875,
+      "widthRendered": 129.59375,
+      "source": "bi-ascii-v2.webp"
+    },
+    {
+      "width": 1440,
+      "motif": "bi",
+      "theme": "dark",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 14,
+      "widthRendered": 144,
+      "source": "bi-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "bird",
+      "theme": "light",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 143,
+      "widthRendered": 126,
+      "source": "bird-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "bird",
+      "theme": "light",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 125,
+      "widthRendered": 162,
+      "source": "bird-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "bird",
+      "theme": "light",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 116,
+      "widthRendered": 180,
+      "source": "bird-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "bird",
+      "theme": "dark",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 143,
+      "widthRendered": 126,
+      "source": "bird-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "bird",
+      "theme": "dark",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 125,
+      "widthRendered": 162,
+      "source": "bird-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "bird",
+      "theme": "dark",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 116,
+      "widthRendered": 180,
+      "source": "bird-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "sun-moon",
+      "theme": "light",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 150,
+      "widthRendered": 112,
+      "source": "sun-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "sun-moon",
+      "theme": "light",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 134,
+      "widthRendered": 144,
+      "source": "sun-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "sun-moon",
+      "theme": "light",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 126,
+      "widthRendered": 160,
+      "source": "sun-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "sun-moon",
+      "theme": "dark",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 150,
+      "widthRendered": 112,
+      "source": "moon-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "sun-moon",
+      "theme": "dark",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 134,
+      "widthRendered": 144,
+      "source": "moon-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "sun-moon",
+      "theme": "dark",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 126,
+      "widthRendered": 160,
+      "source": "moon-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "celestial",
+      "theme": "light",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 132.5,
+      "widthRendered": 147,
+      "source": "celestial-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "celestial",
+      "theme": "light",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 111.5,
+      "widthRendered": 189,
+      "source": "celestial-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "celestial",
+      "theme": "light",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 101,
+      "widthRendered": 210,
+      "source": "celestial-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "celestial",
+      "theme": "dark",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 132.5,
+      "widthRendered": 147,
+      "source": "celestial-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "celestial",
+      "theme": "dark",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 111.5,
+      "widthRendered": 189,
+      "source": "celestial-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "celestial",
+      "theme": "dark",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 101,
+      "widthRendered": 210,
+      "source": "celestial-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "bi",
+      "theme": "light",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 148.25,
+      "widthRendered": 115.5,
+      "source": "bi-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "bi",
+      "theme": "light",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 131.75,
+      "widthRendered": 148.5,
+      "source": "bi-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "bi",
+      "theme": "light",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 123.5,
+      "widthRendered": 165,
+      "source": "bi-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "bi",
+      "theme": "dark",
+      "size": "small",
+      "geometryUnchanged": true,
+      "clearance": 148.25,
+      "widthRendered": 115.5,
+      "source": "bi-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "bi",
+      "theme": "dark",
+      "size": "medium",
+      "geometryUnchanged": true,
+      "clearance": 131.75,
+      "widthRendered": 148.5,
+      "source": "bi-ascii-v2.webp"
+    },
+    {
+      "width": 1920,
+      "motif": "bi",
+      "theme": "dark",
+      "size": "large",
+      "geometryUnchanged": true,
+      "clearance": 123.5,
+      "widthRendered": 165,
+      "source": "bi-ascii-v2.webp"
+    }
+  ],
+  "secondary": [
+    {
+      "page": "work",
+      "originalGeometry": true,
+      "cornerHeight": 320,
+      "source": "cloud-corner-atmosphere-v1.webp"
+    },
+    {
+      "page": "research",
+      "originalGeometry": true,
+      "cornerHeight": 320,
+      "source": "cloud-corner-atmosphere-v1.webp"
+    },
+    {
+      "page": "writing",
+      "originalGeometry": true,
+      "cornerHeight": 320,
+      "source": "cloud-corner-atmosphere-v1.webp"
+    },
+    {
+      "page": "archive",
+      "originalGeometry": true,
+      "cornerHeight": 320,
+      "source": "cloud-corner-atmosphere-v1.webp"
+    },
+    {
+      "page": "essay",
+      "originalGeometry": true,
+      "cornerHeight": 320,
+      "source": "cloud-corner-atmosphere-v1.webp"
+    }
+  ],
+  "mobile": "All four hide without fetching decorative assets; no overflow",
+  "gallery": "All five choices, reload, full-page links, previous links, theme sync, original, mobile, keyboard and hover navigation passed",
+  "counter": "GET-only; renders mocked existing count 12,345",
+  "errors": [],
+  "writes": []
+}
