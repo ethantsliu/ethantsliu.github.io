@@ -96,7 +96,7 @@ html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="origi
   .home.sage-preview[data-corner-cloud="true"] > .sage-corner-cloud {
     --corner-width: 500px;
     --corner-height: calc(var(--corner-width) * 5 / 6);
-    --corner-inset: 75px;
+    --corner-inset: 100px;
     width: var(--corner-width);
     top: -78px;
     left: min(-24px, calc((100vw - 1440px) / 2 - var(--corner-inset)));
@@ -105,12 +105,12 @@ html[data-theme="dark"]:has(.sage-preview:not(.show-original)[data-accent="origi
   }
   .home.sage-preview[data-corner-cloud="true"][data-corner-size="small"] > .sage-corner-cloud {
     --corner-width: 400px;
-    --corner-inset: 30px;
+    --corner-inset: 80px;
     top: -58px;
   }
   .home.sage-preview[data-corner-cloud="true"][data-corner-size="large"] > .sage-corner-cloud {
     --corner-width: 600px;
-    --corner-inset: 120px;
+    --corner-inset: 180px;
     top: -108px;
   }
   /* Both drawings retain their native proportions and upright characters. */

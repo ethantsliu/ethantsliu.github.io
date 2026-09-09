@@ -2,6 +2,14 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 23: rounded, less repetitive cloud contours
+
+The homepage corner retains the broad composition introduced in revision 22. Its pointed, branch-like tips have been redrawn as fuller, uneven cumulus forms. A broader lower-middle cloud interrupts the previous steadily shrinking edge. The layout, artwork sizes, upright ASCII texture, existing color filters, and accepted secondary-page artwork remain in place.
+
+The selected native source is `details/cloud-corner-expansive-v4.png` (1374 × 1145), delivered as a WebP at the same dimensions. The intermediate `v3` study, both exact prompts, and provenance are preserved alongside it. Both are edits made with the built-in imagegen tool; their PNGs are unmodified copies. The homepage cloud moves slightly farther outside the left viewport to clear the text at every size.
+
+Checks in `revision-23/` cover all three sizes at 1280, 1440 and 1920 pixels in both themes, mobile visibility, and the five secondary preview pages. Pixel inspection of 108 text/control rectangles confirms pure white or pure black behind the theme button, name, contact row and biography. The layout is unchanged; no preview counter writes or script errors occurred.
+
 ## Revision 22: an open cloud composition for the homepage
 
 The homepage now uses a broad cloud bank whose natural white opening surrounds the existing header. Its irregular billows extend beyond the top and left of the viewport. The old narrow gutter clipping and right-edge fade have been removed on the homepage, so successive cloud forms are no longer cut off at a shared vertical boundary. Larger cloud volumes and their ASCII texture relate to the existing lower-right portrait.

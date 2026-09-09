@@ -34,7 +34,7 @@
   const cornerImage = document.createElement('img');
   cornerImage.alt = '';
   const cornerArt = isHome
-    ? { file: 'cloud-corner-expansive-v2.webp', width: 1374, height: 1145 }
+    ? { file: 'cloud-corner-expansive-v4.webp', width: 1374, height: 1145 }
     : { file: 'cloud-corner-atmosphere-v1.webp', width: 1024, height: 1536 };
   cornerImage.width = cornerArt.width;
   cornerImage.height = cornerArt.height;
