@@ -2,6 +2,12 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 32: consistent crane size across pages
+
+The upper-left **Cranes** drawing now uses the same smaller scale and placement on About, Work, Research, Writing, Archive, and the essay preview. Its responsive sizing follows the screen width consistently across all pages. Homepage enlargement and the narrow-desktop exception have been removed for this study. Saved homepage size settings no longer affect the cranes.
+
+The gallery hides the homepage size control while displaying Cranes; earlier studies retain their existing controls. Artwork, colors, and text layout are unchanged. Checks in `revision-32/` compare exact image bounds across all six pages at three desktop widths, verify identical bounds through navigation and theme changes, and confirm that saved size settings cannot reintroduce the difference. Changes remain scoped to the preview collection.
+
 ## Revision 31: cranes in open sky
 
 **Cranes** is the new default upper-left study on About and every secondary preview page. A built-in imagegen edit removes the entire upper-left cloud bank and lower wisps, leaving three cranes in different poses with looser horizontal spacing. It retains the ASCII texture and blue-green/gold palette. About keeps a larger flock; the extra enlargement tapers at narrow desktop widths so the birds' bodies remain visible. Secondary pages retain their previous smaller scale. The main cloud portrait and lower-right page fragments remain in their existing positions.

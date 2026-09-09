@@ -31,7 +31,7 @@
   const primaryMotifChoices = document.getElementById("motif-choices");
   const earlierMotifChoices = document.getElementById("earlier-motif-choices");
   const earlierComparisons = document.getElementById("earlier-comparisons");
-  const pageFiles = Object.fromEntries(Object.entries({ about: "site-preview.html", work: "preview-work.html", research: "preview-research.html", archive: "preview-archive.html", writing: "preview-writing.html", essay: "preview-essay.html" }).map(([page, file]) => [page, `${file}?v=31`]));
+  const pageFiles = Object.fromEntries(Object.entries({ about: "site-preview.html", work: "preview-work.html", research: "preview-research.html", archive: "preview-archive.html", writing: "preview-writing.html", essay: "preview-essay.html" }).map(([page, file]) => [page, `${file}?v=32`]));
   const treatmentButtons = Array.from(document.querySelectorAll(".treatment-button"));
   const treatmentStrengths = { editorial: 100, opening: 100, closing: 100 };
   // Saved greens: sage { light: "#4c6757", dark: "#bacbb7" };
@@ -51,9 +51,10 @@
     controls.placement.disabled = !isHome;
     controls.strength.disabled = !isHome;
     controls.corner.disabled = controls.original.checked || (isHome && controls.placement.value !== "editorial") || controls.width.value === "mobile";
-    controls.cornerSize.disabled = !isHome || controls.corner.disabled || !controls.corner.checked;
-    controls.cornerMotif.disabled = controls.cornerSize.disabled;
     const selectedMotif = motifs.find(item => item.id === controls.cornerMotif.value);
+    controls.cornerMotif.disabled = !isHome || controls.corner.disabled || !controls.corner.checked;
+    controls.cornerSize.disabled = controls.cornerMotif.disabled || selectedMotif.id === "crane-flock";
+    controls.cornerSize.closest(".corner-size-control").hidden = !isHome || selectedMotif.id === "crane-flock";
     if (selectedMotif.study !== "sky-28") earlierComparisons.open = true;
     for (const [id, button] of motifButtons) {
       button.setAttribute("aria-pressed", String(isHome && controls.corner.checked && !controls.corner.disabled && id === controls.cornerMotif.value));
@@ -68,7 +69,7 @@
     const motifNote = controls.original.checked
       ? "Showing the original site. Selecting a sky study returns to the artwork preview."
       : !isHome
-      ? "On wide screens, other pages share Cranes at the smaller size. Selecting a study returns to About."
+      ? "The cranes keep the same size across pages. Selecting a study returns to About."
       : controls.width.value === "mobile"
         ? "Corner artwork is hidden on mobile to keep the reading area clear. Open full page on a wide screen to compare."
         : !controls.corner.checked
@@ -87,7 +88,7 @@
       closing: "A full-width scene follows the content."
     };
     const secondaryNote = controls.corner.checked && controls.width.value !== "mobile"
-      ? "A smaller flock of cranes at the upper left, with a cloud at the lower-right edge."
+      ? "Cranes at the upper left, with a cloud at the lower-right edge."
       : "Original layout, with a small cloud at the page’s lower-right edge.";
     document.getElementById("placement-note").textContent = controls.original.checked
       ? "The current site, for comparison."

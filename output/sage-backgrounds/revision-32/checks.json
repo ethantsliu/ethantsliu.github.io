@@ -1,0 +1,188 @@
+{
+  "layouts": [
+    {
+      "viewportWidth": 1280,
+      "page": "about",
+      "sharedBounds": {
+        "x": -12.234375,
+        "y": 0,
+        "width": 140.390625,
+        "height": 117
+      }
+    },
+    {
+      "viewportWidth": 1280,
+      "page": "work",
+      "sharedBounds": {
+        "x": -12.234375,
+        "y": 0,
+        "width": 140.390625,
+        "height": 117
+      }
+    },
+    {
+      "viewportWidth": 1280,
+      "page": "research",
+      "sharedBounds": {
+        "x": -12.234375,
+        "y": 0,
+        "width": 140.390625,
+        "height": 117
+      }
+    },
+    {
+      "viewportWidth": 1280,
+      "page": "writing",
+      "sharedBounds": {
+        "x": -12.234375,
+        "y": 0,
+        "width": 140.390625,
+        "height": 117
+      }
+    },
+    {
+      "viewportWidth": 1280,
+      "page": "archive",
+      "sharedBounds": {
+        "x": -12.234375,
+        "y": 0,
+        "width": 140.390625,
+        "height": 117
+      }
+    },
+    {
+      "viewportWidth": 1280,
+      "page": "essay",
+      "sharedBounds": {
+        "x": -12.234375,
+        "y": 0,
+        "width": 140.390625,
+        "height": 117
+      }
+    },
+    {
+      "viewportWidth": 1440,
+      "page": "about",
+      "sharedBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 227.078125,
+        "height": 189.234375
+      }
+    },
+    {
+      "viewportWidth": 1440,
+      "page": "work",
+      "sharedBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 227.078125,
+        "height": 189.234375
+      }
+    },
+    {
+      "viewportWidth": 1440,
+      "page": "research",
+      "sharedBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 227.078125,
+        "height": 189.234375
+      }
+    },
+    {
+      "viewportWidth": 1440,
+      "page": "writing",
+      "sharedBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 227.078125,
+        "height": 189.234375
+      }
+    },
+    {
+      "viewportWidth": 1440,
+      "page": "archive",
+      "sharedBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 227.078125,
+        "height": 189.234375
+      }
+    },
+    {
+      "viewportWidth": 1440,
+      "page": "essay",
+      "sharedBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 227.078125,
+        "height": 189.234375
+      }
+    },
+    {
+      "viewportWidth": 1920,
+      "page": "about",
+      "sharedBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 378,
+        "height": 315
+      }
+    },
+    {
+      "viewportWidth": 1920,
+      "page": "work",
+      "sharedBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 378,
+        "height": 315
+      }
+    },
+    {
+      "viewportWidth": 1920,
+      "page": "research",
+      "sharedBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 378,
+        "height": 315
+      }
+    },
+    {
+      "viewportWidth": 1920,
+      "page": "writing",
+      "sharedBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 378,
+        "height": 315
+      }
+    },
+    {
+      "viewportWidth": 1920,
+      "page": "archive",
+      "sharedBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 378,
+        "height": 315
+      }
+    },
+    {
+      "viewportWidth": 1920,
+      "page": "essay",
+      "sharedBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 378,
+        "height": 315
+      }
+    }
+  ],
+  "errors": [],
+  "writes": [],
+  "gallery": "Identical artwork bounds across navigation and theme changes; saved size ignored for cranes; earlier cloud study size controls preserved",
+  "complete": true
+}
