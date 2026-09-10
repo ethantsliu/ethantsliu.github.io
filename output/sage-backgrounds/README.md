@@ -2,6 +2,10 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 38: identical crane placement on Home and Work
+
+Home and Work now share one header position rule as well as the same source size: `top: 30px`, horizontal anchor `calc(50% + 318px - 216px * .35)`, and 216 × 180 dimensions. Work moves to Home's approved placement. The production site and preview use the same coordinates. Checks in `revision-38/` compare exact bounds at 390, 1280, 1440, and 1920 pixels and confirm text/menu clearance.
+
 ## Revision 37: birds on Home and Work only
 
 The production Work page now shares the homepage's 216 × 180 crane drawing, with the previously approved Work header position. Home retains its final lower/right placement. Header birds appear only on Home and Work; the interactive preview and its controls now follow the same page selection. Research, Writing, Archive, and article pages keep their existing lower-right clouds without header birds.

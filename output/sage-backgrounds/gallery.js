@@ -32,7 +32,7 @@
   const primaryMotifChoices = document.getElementById("motif-choices");
   const earlierMotifChoices = document.getElementById("earlier-motif-choices");
   const earlierComparisons = document.getElementById("earlier-comparisons");
-  const pageFiles = Object.fromEntries(Object.entries({ about: "site-preview.html", work: "preview-work.html", research: "preview-research.html", archive: "preview-archive.html", writing: "preview-writing.html", essay: "preview-essay.html" }).map(([page, file]) => [page, `${file}?v=37`]));
+  const pageFiles = Object.fromEntries(Object.entries({ about: "site-preview.html", work: "preview-work.html", research: "preview-research.html", archive: "preview-archive.html", writing: "preview-writing.html", essay: "preview-essay.html" }).map(([page, file]) => [page, `${file}?v=38`]));
   const treatmentButtons = Array.from(document.querySelectorAll(".treatment-button"));
   const treatmentStrengths = { editorial: 100, opening: 100, closing: 100 };
   // Saved greens: sage { light: "#4c6757", dark: "#bacbb7" };
@@ -76,7 +76,7 @@
       : !hasHeaderArtwork
       ? "Header artwork appears only on About and Work. Selecting a study returns to About."
       : !isHome
-      ? "Work uses the same crane size as About. Selecting a study returns to About."
+      ? "Work uses the same crane size and position as About. Selecting a study returns to About."
       : controls.width.value === "mobile"
         ? "Corner artwork is hidden on mobile to keep the reading area clear. Open full page on a wide screen to compare."
         : !controls.corner.checked
