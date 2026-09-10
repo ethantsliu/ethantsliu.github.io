@@ -2,6 +2,12 @@
 
 Open the [interactive gallery](https://xn--rss.to/output/sage-backgrounds/) for the complete comparison, or use `/output/sage-backgrounds/` on the local static server. All twenty landscape studies remain selectable, alongside three separate native ASCII portrait studies. Original artwork, prompts, delivery images, reference captures, and revision checks are preserved here. The earliest three cloud concepts and their prompts are in `../wafer-inspired/`.
 
+## Revision 37: birds on Home and Work only
+
+The production Work page now shares the homepage's 216 × 180 crane drawing, with the previously approved Work header position. Home retains its final lower/right placement. Header birds appear only on Home and Work; the interactive preview and its controls now follow the same page selection. Research, Writing, Archive, and article pages keep their existing lower-right clouds without header birds.
+
+Desktop and mobile browser checks confirm page selection, matching production/preview bounds, text and menu clearance, no crane downloads on excluded pages or narrow screens, and gallery control availability. Work captures in both themes and results are saved in `revision-37/`.
+
 ## Revision 36: carry the homepage cranes farther right
 
 Moved the homepage's Beside title flock 110 pixels right and 18 pixels down, preserving its 216 × 180 source size. Its painted birds now sit farther into the open space toward the menu. Browser checks confirm clearance from visible text, contact links, and menu controls on all six preview pages; the homepage capture is in `revision-36/`. Secondary-page positions and the Outer margin comparison are unchanged.

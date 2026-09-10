@@ -5,6 +5,7 @@
   const root = document.documentElement;
   const body = document.body;
   const isHome = body.classList.contains('home');
+  const hasHeaderArtwork = isHome || body.classList.contains('work-page');
   const motifs = window.SAGE_MOTIFS;
   if (!isHome) document.querySelector('.sage-scene')?.remove();
   // A small closing fragment stays in normal flow, clear of the reading area.
@@ -121,10 +122,10 @@
     body.dataset.naturalEdge = String(usePortrait && Boolean(scene.naturalEdge));
     body.dataset.accent = state.accent;
     body.classList.toggle('show-original', Boolean(state.original));
-    const showCorner = Boolean(state.corner) && !state.original && (!isHome || state.placement === 'editorial');
+    const showCorner = hasHeaderArtwork && Boolean(state.corner) && !state.original && (!isHome || state.placement === 'editorial');
     if (!motifs.some(item => item.id === state.cornerMotif)) state.cornerMotif = 'cloud';
     body.dataset.cornerArtwork = String(showCorner);
-    // Other pages share the flock while preserving the homepage comparison
+    // Work shares the flock while preserving the homepage comparison
     // in navigation state, so returning to About restores the selected study.
     const selectedMotif = motifs.find(item => item.id === (isHome ? state.cornerMotif : 'crane-flock'));
     body.dataset.cornerMotif = selectedMotif.id;

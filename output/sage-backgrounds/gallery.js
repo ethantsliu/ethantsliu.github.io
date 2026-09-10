@@ -32,7 +32,7 @@
   const primaryMotifChoices = document.getElementById("motif-choices");
   const earlierMotifChoices = document.getElementById("earlier-motif-choices");
   const earlierComparisons = document.getElementById("earlier-comparisons");
-  const pageFiles = Object.fromEntries(Object.entries({ about: "site-preview.html", work: "preview-work.html", research: "preview-research.html", archive: "preview-archive.html", writing: "preview-writing.html", essay: "preview-essay.html" }).map(([page, file]) => [page, `${file}?v=36`]));
+  const pageFiles = Object.fromEntries(Object.entries({ about: "site-preview.html", work: "preview-work.html", research: "preview-research.html", archive: "preview-archive.html", writing: "preview-writing.html", essay: "preview-essay.html" }).map(([page, file]) => [page, `${file}?v=37`]));
   const treatmentButtons = Array.from(document.querySelectorAll(".treatment-button"));
   const treatmentStrengths = { editorial: 100, opening: 100, closing: 100 };
   // Saved greens: sage { light: "#4c6757", dark: "#bacbb7" };
@@ -48,15 +48,16 @@
     const artwork = artworks.find((item) => item.id === controls.art.value);
     if (!artwork) return;
     const isHome = controls.page.value === "about";
+    const hasHeaderArtwork = isHome || controls.page.value === "work";
     controls.art.disabled = !isHome;
     controls.placement.disabled = !isHome;
     controls.strength.disabled = !isHome;
-    controls.corner.disabled = controls.original.checked || (isHome && controls.placement.value !== "editorial") || controls.width.value === "mobile";
+    controls.corner.disabled = !hasHeaderArtwork || controls.original.checked || (isHome && controls.placement.value !== "editorial") || controls.width.value === "mobile";
     const selectedMotif = motifs.find(item => item.id === controls.cornerMotif.value);
     controls.cornerMotif.disabled = !isHome || controls.corner.disabled || !controls.corner.checked;
     controls.cornerSize.disabled = controls.cornerMotif.disabled || selectedMotif.id === "crane-flock";
     controls.cornerSize.closest(".corner-size-control").hidden = !isHome || selectedMotif.id === "crane-flock";
-    const showsCranes = !isHome || selectedMotif.id === "crane-flock";
+    const showsCranes = hasHeaderArtwork && (!isHome || selectedMotif.id === "crane-flock");
     controls.cranePlacement.closest(".crane-placement-control").hidden = !showsCranes;
     controls.cranePlacement.disabled = !showsCranes || controls.corner.disabled || !controls.corner.checked;
     if (selectedMotif.study !== "sky-28") earlierComparisons.open = true;
@@ -68,12 +69,14 @@
     const displayedMotif = isHome ? selectedMotif : motifs.find(item => item.id === "crane-flock");
     const motifSource = controls.theme.value === "dark" && displayedMotif.dark ? displayedMotif.dark : displayedMotif.file;
     document.getElementById("view-motif").href = motifSource.replace(/\.webp$/, ".png");
-    document.getElementById("view-motif").hidden = controls.original.checked;
+    document.getElementById("view-motif").hidden = controls.original.checked || !hasHeaderArtwork;
     document.getElementById("view-motif").textContent = displayedMotif.withCloud ? "View detail drawing ↗" : "View source drawing ↗";
     const motifNote = controls.original.checked
       ? "Showing the original site. Selecting a sky study returns to the artwork preview."
+      : !hasHeaderArtwork
+      ? "Header artwork appears only on About and Work. Selecting a study returns to About."
       : !isHome
-      ? "The cranes keep the same size and placement across pages. Selecting a study returns to About."
+      ? "Work uses the same crane size as About. Selecting a study returns to About."
       : controls.width.value === "mobile"
         ? "Corner artwork is hidden on mobile to keep the reading area clear. Open full page on a wide screen to compare."
         : !controls.corner.checked
@@ -91,7 +94,7 @@
       opening: "A full-width scene opens the page.",
       closing: "A full-width scene follows the content."
     };
-    const secondaryNote = controls.corner.checked && controls.width.value !== "mobile"
+    const secondaryNote = hasHeaderArtwork && controls.corner.checked && controls.width.value !== "mobile"
       ? `${controls.cranePlacement.value === "header" ? "Cranes in the open header space" : "Cranes in the outer margin"}, with a cloud at the lower-right edge.`
       : "Original layout, with a small cloud at the page’s lower-right edge.";
     document.getElementById("placement-note").textContent = controls.original.checked
@@ -124,7 +127,7 @@
       ? "Original site · Artwork hidden"
       : isHome
         ? `${controls.page.selectedOptions[0].textContent} · ${artwork.title} · ${controls.corner.checked && !controls.corner.disabled ? selectedMotif.title : "Clear header"} · ${controls.accent.selectedOptions[0].textContent}`
-        : `${controls.page.selectedOptions[0].textContent} · ${controls.corner.checked ? "Cranes" : "Cloud fragment"} · ${controls.accent.selectedOptions[0].textContent}`;
+        : `${controls.page.selectedOptions[0].textContent} · ${hasHeaderArtwork && controls.corner.checked && !controls.corner.disabled ? "Cranes" : "Cloud fragment"} · ${controls.accent.selectedOptions[0].textContent}`;
 
     // A copied address keeps the current comparison, including the selected page.
     const saved = new URLSearchParams();

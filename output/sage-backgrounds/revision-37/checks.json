@@ -1,0 +1,61 @@
+[
+  {
+    "file": "index",
+    "width": 1440,
+    "birdsVisible": true,
+    "previewMatches": true,
+    "textClear": true
+  },
+  {
+    "file": "work",
+    "width": 390,
+    "birdsVisible": false,
+    "previewMatches": true,
+    "textClear": true
+  },
+  {
+    "file": "work",
+    "width": 1280,
+    "birdsVisible": true,
+    "previewMatches": true,
+    "textClear": true
+  },
+  {
+    "file": "work",
+    "width": 1440,
+    "birdsVisible": true,
+    "previewMatches": true,
+    "textClear": true
+  },
+  {
+    "file": "research",
+    "width": 1440,
+    "birdsVisible": false,
+    "previewMatches": true,
+    "textClear": true
+  },
+  {
+    "file": "writing",
+    "width": 1440,
+    "birdsVisible": false,
+    "previewMatches": true,
+    "textClear": true
+  },
+  {
+    "file": "archive",
+    "width": 1440,
+    "birdsVisible": false,
+    "previewMatches": true,
+    "textClear": true
+  },
+  {
+    "file": "baylearn",
+    "width": 1440,
+    "birdsVisible": false,
+    "previewMatches": true,
+    "textClear": true
+  },
+  {
+    "galleryControlsFollowPage": true
+  }
+]
