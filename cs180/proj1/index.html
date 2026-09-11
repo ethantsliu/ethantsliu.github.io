@@ -8,7 +8,6 @@
   <title>Images of the Russian Empire — CS 180 · Ethan Liu</title>
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to project</a>
@@ -96,76 +95,177 @@
 
     <section class="project-section results-section" id="results" aria-labelledby="results-title">
       <header class="section-heading"><p class="section-number">05</p><div><p class="section-kicker">Results</p><h2 id="results-title">Comparing the<br>reconstructions</h2></div></header>
-      <div class="gallery-toolbar"><p>Switch methods to compare.<br><span>Click an image to enlarge.</span></p><div class="method-toggle" role="group" aria-label="Gallery alignment method"><button type="button" data-method="raw" aria-pressed="true">Raw-pixel L2</button><button type="button" data-method="edges" aria-pressed="false">Edge-based L2</button></div></div>
-      <p class="gallery-status" aria-live="polite">Showing raw-pixel L2 · 3 single-scale JPEGs and 14 pyramid TIFFs.</p>
-      <div class="results-grid"><figure class="result-card" data-image="cathedral" data-title="Cathedral" data-raw-offsets="G (2, 5) · R (3, 12)" data-edges-offsets="G (2, 5) · R (3, 12)">
-  <a href="assets/cathedral-raw.jpg" aria-label="Open Cathedral reconstruction"><img src="assets/cathedral-raw.jpg" alt="Cathedral, reconstructed with raw-pixel L2 alignment" width="390" height="341" loading="lazy" decoding="async"></a>
-  <figcaption><div class="card-heading"><h3>Cathedral</h3><span>JPEG · Single scale</span></div><div class="offset-caption">G (2, 5) · R (3, 12)</div></figcaption>
-</figure>
-<figure class="result-card" data-image="church" data-title="Church" data-raw-offsets="G (4, 25) · R (214, 63)" data-edges-offsets="G (4, 25) · R (-4, 58)">
-  <a href="assets/church-raw.jpg" aria-label="Open Church reconstruction"><img src="assets/church-raw.jpg" alt="Church, reconstructed with raw-pixel L2 alignment" width="1600" height="1410" loading="lazy" decoding="async"></a>
-  <figcaption><div class="card-heading"><h3>Church</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (4, 25) · R (214, 63)</div></figcaption>
-</figure>
-<figure class="result-card" data-image="emir" data-title="Emir" data-raw-offsets="G (24, 49) · R (57, 103)" data-edges-offsets="G (24, 49) · R (40, 107)">
-  <a href="assets/emir-raw.jpg" aria-label="Open Emir reconstruction"><img src="assets/emir-raw.jpg" alt="Emir, reconstructed with raw-pixel L2 alignment" width="1600" height="1387" loading="lazy" decoding="async"></a>
-  <figcaption><div class="card-heading"><h3>Emir</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (24, 49) · R (57, 103)</div></figcaption>
-</figure>
-<figure class="result-card" data-image="harvesters" data-title="Harvesters" data-raw-offsets="G (16, 59) · R (13, 124)" data-edges-offsets="G (18, 60) · R (13, 124)">
-  <a href="assets/harvesters-raw.jpg" aria-label="Open Harvesters reconstruction"><img src="assets/harvesters-raw.jpg" alt="Harvesters, reconstructed with raw-pixel L2 alignment" width="1600" height="1398" loading="lazy" decoding="async"></a>
-  <figcaption><div class="card-heading"><h3>Harvesters</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (16, 59) · R (13, 124)</div></figcaption>
-</figure>
-<figure class="result-card" data-image="icon" data-title="Icon" data-raw-offsets="G (17, 41) · R (23, 90)" data-edges-offsets="G (16, 39) · R (23, 90)">
-  <a href="assets/icon-raw.jpg" aria-label="Open Icon reconstruction"><img src="assets/icon-raw.jpg" alt="Icon, reconstructed with raw-pixel L2 alignment" width="1600" height="1387" loading="lazy" decoding="async"></a>
-  <figcaption><div class="card-heading"><h3>Icon</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (17, 41) · R (23, 90)</div></figcaption>
-</figure>
-<figure class="result-card" data-image="ilemselga" data-title="Ilemselga" data-raw-offsets="G (7, 39) · R (11, 130)" data-edges-offsets="G (7, 40) · R (11, 131)">
-  <a href="assets/ilemselga-raw.jpg" aria-label="Open Ilemselga reconstruction"><img src="assets/ilemselga-raw.jpg" alt="Ilemselga, reconstructed with raw-pixel L2 alignment" width="1600" height="1377" loading="lazy" decoding="async"></a>
-  <figcaption><div class="card-heading"><h3>Ilemselga</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (7, 39) · R (11, 130)</div></figcaption>
-</figure>
-<figure class="result-card" data-image="melons" data-title="Melons" data-raw-offsets="G (11, 82) · R (13, 178)" data-edges-offsets="G (10, 80) · R (13, 176)">
-  <a href="assets/melons-raw.jpg" aria-label="Open Melons reconstruction"><img src="assets/melons-raw.jpg" alt="Melons, reconstructed with raw-pixel L2 alignment" width="1600" height="1375" loading="lazy" decoding="async"></a>
-  <figcaption><div class="card-heading"><h3>Melons</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (11, 82) · R (13, 178)</div></figcaption>
-</figure>
-<figure class="result-card" data-image="monastery" data-title="Monastery" data-raw-offsets="G (2, -3) · R (2, 3)" data-edges-offsets="G (2, -3) · R (2, 3)">
-  <a href="assets/monastery-raw.jpg" aria-label="Open Monastery reconstruction"><img src="assets/monastery-raw.jpg" alt="Monastery, reconstructed with raw-pixel L2 alignment" width="391" height="341" loading="lazy" decoding="async"></a>
-  <figcaption><div class="card-heading"><h3>Monastery</h3><span>JPEG · Single scale</span></div><div class="offset-caption">G (2, -3) · R (2, 3)</div></figcaption>
-</figure>
-<figure class="result-card" data-image="religous_painting" data-title="Religious Painting" data-raw-offsets="G (3, 28) · R (7, 68)" data-edges-offsets="G (6, 30) · R (6, 69)">
-  <a href="assets/religous_painting-raw.jpg" aria-label="Open Religious Painting reconstruction"><img src="assets/religous_painting-raw.jpg" alt="Religious Painting, reconstructed with raw-pixel L2 alignment" width="1600" height="1365" loading="lazy" decoding="async"></a>
-  <figcaption><div class="card-heading"><h3>Religious Painting</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (3, 28) · R (7, 68)</div></figcaption>
-</figure>
-<figure class="result-card" data-image="self_portrait" data-title="Self Portrait" data-raw-offsets="G (29, 79) · R (36, 176)" data-edges-offsets="G (29, 78) · R (37, 175)">
-  <a href="assets/self_portrait-raw.jpg" aria-label="Open Self Portrait reconstruction"><img src="assets/self_portrait-raw.jpg" alt="Self Portrait, reconstructed with raw-pixel L2 alignment" width="1600" height="1365" loading="lazy" decoding="async"></a>
-  <figcaption><div class="card-heading"><h3>Self Portrait</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (29, 79) · R (36, 176)</div></figcaption>
-</figure>
-<figure class="result-card" data-image="siren" data-title="Siren" data-raw-offsets="G (-6, 49) · R (-25, 96)" data-edges-offsets="G (-7, 49) · R (-24, 96)">
-  <a href="assets/siren-raw.jpg" aria-label="Open Siren reconstruction"><img src="assets/siren-raw.jpg" alt="Siren, reconstructed with raw-pixel L2 alignment" width="1600" height="1362" loading="lazy" decoding="async"></a>
-  <figcaption><div class="card-heading"><h3>Siren</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (-6, 49) · R (-25, 96)</div></figcaption>
-</figure>
-<figure class="result-card" data-image="three_generations" data-title="Three Generations" data-raw-offsets="G (14, 53) · R (11, 112)" data-edges-offsets="G (12, 54) · R (9, 111)">
-  <a href="assets/three_generations-raw.jpg" aria-label="Open Three Generations reconstruction"><img src="assets/three_generations-raw.jpg" alt="Three Generations, reconstructed with raw-pixel L2 alignment" width="1600" height="1382" loading="lazy" decoding="async"></a>
-  <figcaption><div class="card-heading"><h3>Three Generations</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (14, 53) · R (11, 112)</div></figcaption>
-</figure>
-<figure class="result-card" data-image="tobolsk" data-title="Tobolsk" data-raw-offsets="G (3, 3) · R (3, 6)" data-edges-offsets="G (2, 3) · R (3, 6)">
-  <a href="assets/tobolsk-raw.jpg" aria-label="Open Tobolsk reconstruction"><img src="assets/tobolsk-raw.jpg" alt="Tobolsk, reconstructed with raw-pixel L2 alignment" width="396" height="341" loading="lazy" decoding="async"></a>
-  <figcaption><div class="card-heading"><h3>Tobolsk</h3><span>JPEG · Single scale</span></div><div class="offset-caption">G (3, 3) · R (3, 6)</div></figcaption>
-</figure>
-<figure class="result-card" data-image="wharf" data-title="Wharf" data-raw-offsets="G (-7, 15) · R (-16, 83)" data-edges-offsets="G (-7, 15) · R (-17, 83)">
-  <a href="assets/wharf-raw.jpg" aria-label="Open Wharf reconstruction"><img src="assets/wharf-raw.jpg" alt="Wharf, reconstructed with raw-pixel L2 alignment" width="1600" height="1380" loading="lazy" decoding="async"></a>
-  <figcaption><div class="card-heading"><h3>Wharf</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (-7, 15) · R (-16, 83)</div></figcaption>
-</figure>
-<figure class="result-card" data-image="peasant_girls" data-title="Peasant Girls" data-raw-offsets="G (10, -16) · R (17, 11)" data-edges-offsets="G (6, -12) · R (15, 13)">
-  <a href="assets/peasant_girls-raw.jpg" aria-label="Open Peasant Girls reconstruction"><img src="assets/peasant_girls-raw.jpg" alt="Peasant Girls, reconstructed with raw-pixel L2 alignment" width="1600" height="1380" loading="lazy" decoding="async"></a>
-  <figcaption><div class="card-heading"><h3>Peasant Girls <a class="source-link" href="https://www.loc.gov/item/2018678943/" aria-label="Library of Congress source for Peasant Girls">↗</a></h3><span>Selected · TIFF</span></div><div class="offset-caption">G (10, -16) · R (17, 11)</div></figcaption>
-</figure>
-<figure class="result-card" data-image="lock_keeper" data-title="Lock Keeper" data-raw-offsets="G (-23, 52) · R (-55, 107)" data-edges-offsets="G (-23, 55) · R (-57, 108)">
-  <a href="assets/lock_keeper-raw.jpg" aria-label="Open Lock Keeper reconstruction"><img src="assets/lock_keeper-raw.jpg" alt="Lock Keeper, reconstructed with raw-pixel L2 alignment" width="1600" height="1386" loading="lazy" decoding="async"></a>
-  <figcaption><div class="card-heading"><h3>Lock Keeper <a class="source-link" href="https://www.loc.gov/item/2018678762/" aria-label="Library of Congress source for Lock Keeper">↗</a></h3><span>Selected · TIFF</span></div><div class="offset-caption">G (-23, 52) · R (-55, 107)</div></figcaption>
-</figure>
-<figure class="result-card" data-image="prisoners" data-title="Austrian Prisoners" data-raw-offsets="G (8, 35) · R (17, 124)" data-edges-offsets="G (10, 35) · R (20, 124)">
-  <a href="assets/prisoners-raw.jpg" aria-label="Open Austrian Prisoners reconstruction"><img src="assets/prisoners-raw.jpg" alt="Austrian Prisoners, reconstructed with raw-pixel L2 alignment" width="1600" height="1372" loading="lazy" decoding="async"></a>
-  <figcaption><div class="card-heading"><h3>Austrian Prisoners <a class="source-link" href="https://www.loc.gov/item/2018679203/" aria-label="Library of Congress source for Austrian Prisoners">↗</a></h3><span>Selected · TIFF</span></div><div class="offset-caption">G (8, 35) · R (17, 124)</div></figcaption>
-</figure></div>
+      <p class="gallery-instruction">Click an image to enlarge.</p>
+      <div class="results-grid"><article class="result-pair" data-image="cathedral" aria-labelledby="result-cathedral">
+  <div class="card-heading"><h3 id="result-cathedral">Cathedral</h3><span>JPEG · Single scale</span></div>
+  <div class="comparison-images"><figure class="result-card">
+    <a href="assets/cathedral-raw.jpg" aria-label="Open Cathedral: Before · Raw-pixel L2"><img src="assets/cathedral-raw.jpg" alt="Cathedral, before · raw-pixel l2" width="390" height="341" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">Before · Raw-pixel L2</span><div class="offset-caption">G (2, 5) · R (3, 12)</div></figcaption>
+  </figure><figure class="result-card">
+    <a href="assets/cathedral-edges.jpg" aria-label="Open Cathedral: After · Edge-based L2"><img src="assets/cathedral-edges.jpg" alt="Cathedral, after · edge-based l2" width="390" height="341" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">After · Edge-based L2</span><div class="offset-caption">G (2, 5) · R (3, 12)</div></figcaption>
+  </figure></div>
+</article>
+<article class="result-pair" data-image="church" aria-labelledby="result-church">
+  <div class="card-heading"><h3 id="result-church">Church</h3><span>TIFF · Pyramid</span></div>
+  <div class="comparison-images"><figure class="result-card">
+    <a href="assets/church-raw.jpg" aria-label="Open Church: Before · Raw-pixel L2"><img src="assets/church-raw.jpg" alt="Church, before · raw-pixel l2" width="1600" height="1410" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">Before · Raw-pixel L2</span><div class="offset-caption">G (4, 25) · R (214, 63)</div></figcaption>
+  </figure><figure class="result-card">
+    <a href="assets/church-edges.jpg" aria-label="Open Church: After · Edge-based L2"><img src="assets/church-edges.jpg" alt="Church, after · edge-based l2" width="1600" height="1410" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">After · Edge-based L2</span><div class="offset-caption">G (4, 25) · R (-4, 58)</div></figcaption>
+  </figure></div>
+</article>
+<article class="result-pair" data-image="emir" aria-labelledby="result-emir">
+  <div class="card-heading"><h3 id="result-emir">Emir</h3><span>TIFF · Pyramid</span></div>
+  <div class="comparison-images"><figure class="result-card">
+    <a href="assets/emir-raw.jpg" aria-label="Open Emir: Before · Raw-pixel L2"><img src="assets/emir-raw.jpg" alt="Emir, before · raw-pixel l2" width="1600" height="1387" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">Before · Raw-pixel L2</span><div class="offset-caption">G (24, 49) · R (57, 103)</div></figcaption>
+  </figure><figure class="result-card">
+    <a href="assets/emir-edges.jpg" aria-label="Open Emir: After · Edge-based L2"><img src="assets/emir-edges.jpg" alt="Emir, after · edge-based l2" width="1600" height="1387" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">After · Edge-based L2</span><div class="offset-caption">G (24, 49) · R (40, 107)</div></figcaption>
+  </figure></div>
+</article>
+<article class="result-pair" data-image="harvesters" aria-labelledby="result-harvesters">
+  <div class="card-heading"><h3 id="result-harvesters">Harvesters</h3><span>TIFF · Pyramid</span></div>
+  <div class="comparison-images"><figure class="result-card">
+    <a href="assets/harvesters-raw.jpg" aria-label="Open Harvesters: Before · Raw-pixel L2"><img src="assets/harvesters-raw.jpg" alt="Harvesters, before · raw-pixel l2" width="1600" height="1398" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">Before · Raw-pixel L2</span><div class="offset-caption">G (16, 59) · R (13, 124)</div></figcaption>
+  </figure><figure class="result-card">
+    <a href="assets/harvesters-edges.jpg" aria-label="Open Harvesters: After · Edge-based L2"><img src="assets/harvesters-edges.jpg" alt="Harvesters, after · edge-based l2" width="1600" height="1398" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">After · Edge-based L2</span><div class="offset-caption">G (18, 60) · R (13, 124)</div></figcaption>
+  </figure></div>
+</article>
+<article class="result-pair" data-image="icon" aria-labelledby="result-icon">
+  <div class="card-heading"><h3 id="result-icon">Icon</h3><span>TIFF · Pyramid</span></div>
+  <div class="comparison-images"><figure class="result-card">
+    <a href="assets/icon-raw.jpg" aria-label="Open Icon: Before · Raw-pixel L2"><img src="assets/icon-raw.jpg" alt="Icon, before · raw-pixel l2" width="1600" height="1387" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">Before · Raw-pixel L2</span><div class="offset-caption">G (17, 41) · R (23, 90)</div></figcaption>
+  </figure><figure class="result-card">
+    <a href="assets/icon-edges.jpg" aria-label="Open Icon: After · Edge-based L2"><img src="assets/icon-edges.jpg" alt="Icon, after · edge-based l2" width="1600" height="1387" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">After · Edge-based L2</span><div class="offset-caption">G (16, 39) · R (23, 90)</div></figcaption>
+  </figure></div>
+</article>
+<article class="result-pair" data-image="ilemselga" aria-labelledby="result-ilemselga">
+  <div class="card-heading"><h3 id="result-ilemselga">Ilemselga</h3><span>TIFF · Pyramid</span></div>
+  <div class="comparison-images"><figure class="result-card">
+    <a href="assets/ilemselga-raw.jpg" aria-label="Open Ilemselga: Before · Raw-pixel L2"><img src="assets/ilemselga-raw.jpg" alt="Ilemselga, before · raw-pixel l2" width="1600" height="1377" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">Before · Raw-pixel L2</span><div class="offset-caption">G (7, 39) · R (11, 130)</div></figcaption>
+  </figure><figure class="result-card">
+    <a href="assets/ilemselga-edges.jpg" aria-label="Open Ilemselga: After · Edge-based L2"><img src="assets/ilemselga-edges.jpg" alt="Ilemselga, after · edge-based l2" width="1600" height="1377" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">After · Edge-based L2</span><div class="offset-caption">G (7, 40) · R (11, 131)</div></figcaption>
+  </figure></div>
+</article>
+<article class="result-pair" data-image="melons" aria-labelledby="result-melons">
+  <div class="card-heading"><h3 id="result-melons">Melons</h3><span>TIFF · Pyramid</span></div>
+  <div class="comparison-images"><figure class="result-card">
+    <a href="assets/melons-raw.jpg" aria-label="Open Melons: Before · Raw-pixel L2"><img src="assets/melons-raw.jpg" alt="Melons, before · raw-pixel l2" width="1600" height="1375" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">Before · Raw-pixel L2</span><div class="offset-caption">G (11, 82) · R (13, 178)</div></figcaption>
+  </figure><figure class="result-card">
+    <a href="assets/melons-edges.jpg" aria-label="Open Melons: After · Edge-based L2"><img src="assets/melons-edges.jpg" alt="Melons, after · edge-based l2" width="1600" height="1375" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">After · Edge-based L2</span><div class="offset-caption">G (10, 80) · R (13, 176)</div></figcaption>
+  </figure></div>
+</article>
+<article class="result-pair" data-image="monastery" aria-labelledby="result-monastery">
+  <div class="card-heading"><h3 id="result-monastery">Monastery</h3><span>JPEG · Single scale</span></div>
+  <div class="comparison-images"><figure class="result-card">
+    <a href="assets/monastery-raw.jpg" aria-label="Open Monastery: Before · Raw-pixel L2"><img src="assets/monastery-raw.jpg" alt="Monastery, before · raw-pixel l2" width="391" height="341" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">Before · Raw-pixel L2</span><div class="offset-caption">G (2, -3) · R (2, 3)</div></figcaption>
+  </figure><figure class="result-card">
+    <a href="assets/monastery-edges.jpg" aria-label="Open Monastery: After · Edge-based L2"><img src="assets/monastery-edges.jpg" alt="Monastery, after · edge-based l2" width="391" height="341" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">After · Edge-based L2</span><div class="offset-caption">G (2, -3) · R (2, 3)</div></figcaption>
+  </figure></div>
+</article>
+<article class="result-pair" data-image="religous_painting" aria-labelledby="result-religous_painting">
+  <div class="card-heading"><h3 id="result-religous_painting">Religious Painting</h3><span>TIFF · Pyramid</span></div>
+  <div class="comparison-images"><figure class="result-card">
+    <a href="assets/religous_painting-raw.jpg" aria-label="Open Religious Painting: Before · Raw-pixel L2"><img src="assets/religous_painting-raw.jpg" alt="Religious Painting, before · raw-pixel l2" width="1600" height="1365" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">Before · Raw-pixel L2</span><div class="offset-caption">G (3, 28) · R (7, 68)</div></figcaption>
+  </figure><figure class="result-card">
+    <a href="assets/religous_painting-edges.jpg" aria-label="Open Religious Painting: After · Edge-based L2"><img src="assets/religous_painting-edges.jpg" alt="Religious Painting, after · edge-based l2" width="1600" height="1365" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">After · Edge-based L2</span><div class="offset-caption">G (6, 30) · R (6, 69)</div></figcaption>
+  </figure></div>
+</article>
+<article class="result-pair" data-image="self_portrait" aria-labelledby="result-self_portrait">
+  <div class="card-heading"><h3 id="result-self_portrait">Self Portrait</h3><span>TIFF · Pyramid</span></div>
+  <div class="comparison-images"><figure class="result-card">
+    <a href="assets/self_portrait-raw.jpg" aria-label="Open Self Portrait: Before · Raw-pixel L2"><img src="assets/self_portrait-raw.jpg" alt="Self Portrait, before · raw-pixel l2" width="1600" height="1365" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">Before · Raw-pixel L2</span><div class="offset-caption">G (29, 79) · R (36, 176)</div></figcaption>
+  </figure><figure class="result-card">
+    <a href="assets/self_portrait-edges.jpg" aria-label="Open Self Portrait: After · Edge-based L2"><img src="assets/self_portrait-edges.jpg" alt="Self Portrait, after · edge-based l2" width="1600" height="1365" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">After · Edge-based L2</span><div class="offset-caption">G (29, 78) · R (37, 175)</div></figcaption>
+  </figure></div>
+</article>
+<article class="result-pair" data-image="siren" aria-labelledby="result-siren">
+  <div class="card-heading"><h3 id="result-siren">Siren</h3><span>TIFF · Pyramid</span></div>
+  <div class="comparison-images"><figure class="result-card">
+    <a href="assets/siren-raw.jpg" aria-label="Open Siren: Before · Raw-pixel L2"><img src="assets/siren-raw.jpg" alt="Siren, before · raw-pixel l2" width="1600" height="1362" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">Before · Raw-pixel L2</span><div class="offset-caption">G (-6, 49) · R (-25, 96)</div></figcaption>
+  </figure><figure class="result-card">
+    <a href="assets/siren-edges.jpg" aria-label="Open Siren: After · Edge-based L2"><img src="assets/siren-edges.jpg" alt="Siren, after · edge-based l2" width="1600" height="1362" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">After · Edge-based L2</span><div class="offset-caption">G (-7, 49) · R (-24, 96)</div></figcaption>
+  </figure></div>
+</article>
+<article class="result-pair" data-image="three_generations" aria-labelledby="result-three_generations">
+  <div class="card-heading"><h3 id="result-three_generations">Three Generations</h3><span>TIFF · Pyramid</span></div>
+  <div class="comparison-images"><figure class="result-card">
+    <a href="assets/three_generations-raw.jpg" aria-label="Open Three Generations: Before · Raw-pixel L2"><img src="assets/three_generations-raw.jpg" alt="Three Generations, before · raw-pixel l2" width="1600" height="1382" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">Before · Raw-pixel L2</span><div class="offset-caption">G (14, 53) · R (11, 112)</div></figcaption>
+  </figure><figure class="result-card">
+    <a href="assets/three_generations-edges.jpg" aria-label="Open Three Generations: After · Edge-based L2"><img src="assets/three_generations-edges.jpg" alt="Three Generations, after · edge-based l2" width="1600" height="1382" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">After · Edge-based L2</span><div class="offset-caption">G (12, 54) · R (9, 111)</div></figcaption>
+  </figure></div>
+</article>
+<article class="result-pair" data-image="tobolsk" aria-labelledby="result-tobolsk">
+  <div class="card-heading"><h3 id="result-tobolsk">Tobolsk</h3><span>JPEG · Single scale</span></div>
+  <div class="comparison-images"><figure class="result-card">
+    <a href="assets/tobolsk-raw.jpg" aria-label="Open Tobolsk: Before · Raw-pixel L2"><img src="assets/tobolsk-raw.jpg" alt="Tobolsk, before · raw-pixel l2" width="396" height="341" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">Before · Raw-pixel L2</span><div class="offset-caption">G (3, 3) · R (3, 6)</div></figcaption>
+  </figure><figure class="result-card">
+    <a href="assets/tobolsk-edges.jpg" aria-label="Open Tobolsk: After · Edge-based L2"><img src="assets/tobolsk-edges.jpg" alt="Tobolsk, after · edge-based l2" width="396" height="341" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">After · Edge-based L2</span><div class="offset-caption">G (2, 3) · R (3, 6)</div></figcaption>
+  </figure></div>
+</article>
+<article class="result-pair" data-image="wharf" aria-labelledby="result-wharf">
+  <div class="card-heading"><h3 id="result-wharf">Wharf</h3><span>TIFF · Pyramid</span></div>
+  <div class="comparison-images"><figure class="result-card">
+    <a href="assets/wharf-raw.jpg" aria-label="Open Wharf: Before · Raw-pixel L2"><img src="assets/wharf-raw.jpg" alt="Wharf, before · raw-pixel l2" width="1600" height="1380" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">Before · Raw-pixel L2</span><div class="offset-caption">G (-7, 15) · R (-16, 83)</div></figcaption>
+  </figure><figure class="result-card">
+    <a href="assets/wharf-edges.jpg" aria-label="Open Wharf: After · Edge-based L2"><img src="assets/wharf-edges.jpg" alt="Wharf, after · edge-based l2" width="1600" height="1380" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">After · Edge-based L2</span><div class="offset-caption">G (-7, 15) · R (-17, 83)</div></figcaption>
+  </figure></div>
+</article>
+<article class="result-pair" data-image="peasant_girls" aria-labelledby="result-peasant_girls">
+  <div class="card-heading"><h3 id="result-peasant_girls">Peasant Girls <a class="source-link" href="https://www.loc.gov/item/2018678943/" aria-label="Library of Congress source for Peasant Girls">↗</a></h3><span>Selected · TIFF</span></div>
+  <div class="comparison-images"><figure class="result-card">
+    <a href="assets/peasant_girls-raw.jpg" aria-label="Open Peasant Girls: Before · Raw-pixel L2"><img src="assets/peasant_girls-raw.jpg" alt="Peasant Girls, before · raw-pixel l2" width="1600" height="1380" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">Before · Raw-pixel L2</span><div class="offset-caption">G (10, -16) · R (17, 11)</div></figcaption>
+  </figure><figure class="result-card">
+    <a href="assets/peasant_girls-edges.jpg" aria-label="Open Peasant Girls: After · Edge-based L2"><img src="assets/peasant_girls-edges.jpg" alt="Peasant Girls, after · edge-based l2" width="1600" height="1380" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">After · Edge-based L2</span><div class="offset-caption">G (6, -12) · R (15, 13)</div></figcaption>
+  </figure></div>
+</article>
+<article class="result-pair" data-image="lock_keeper" aria-labelledby="result-lock_keeper">
+  <div class="card-heading"><h3 id="result-lock_keeper">Lock Keeper <a class="source-link" href="https://www.loc.gov/item/2018678762/" aria-label="Library of Congress source for Lock Keeper">↗</a></h3><span>Selected · TIFF</span></div>
+  <div class="comparison-images"><figure class="result-card">
+    <a href="assets/lock_keeper-raw.jpg" aria-label="Open Lock Keeper: Before · Raw-pixel L2"><img src="assets/lock_keeper-raw.jpg" alt="Lock Keeper, before · raw-pixel l2" width="1600" height="1386" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">Before · Raw-pixel L2</span><div class="offset-caption">G (-23, 52) · R (-55, 107)</div></figcaption>
+  </figure><figure class="result-card">
+    <a href="assets/lock_keeper-edges.jpg" aria-label="Open Lock Keeper: After · Edge-based L2"><img src="assets/lock_keeper-edges.jpg" alt="Lock Keeper, after · edge-based l2" width="1600" height="1386" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">After · Edge-based L2</span><div class="offset-caption">G (-23, 55) · R (-57, 108)</div></figcaption>
+  </figure></div>
+</article>
+<article class="result-pair" data-image="prisoners" aria-labelledby="result-prisoners">
+  <div class="card-heading"><h3 id="result-prisoners">Austrian Prisoners <a class="source-link" href="https://www.loc.gov/item/2018679203/" aria-label="Library of Congress source for Austrian Prisoners">↗</a></h3><span>Selected · TIFF</span></div>
+  <div class="comparison-images"><figure class="result-card">
+    <a href="assets/prisoners-raw.jpg" aria-label="Open Austrian Prisoners: Before · Raw-pixel L2"><img src="assets/prisoners-raw.jpg" alt="Austrian Prisoners, before · raw-pixel l2" width="1600" height="1372" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">Before · Raw-pixel L2</span><div class="offset-caption">G (8, 35) · R (17, 124)</div></figcaption>
+  </figure><figure class="result-card">
+    <a href="assets/prisoners-edges.jpg" aria-label="Open Austrian Prisoners: After · Edge-based L2"><img src="assets/prisoners-edges.jpg" alt="Austrian Prisoners, after · edge-based l2" width="1600" height="1372" loading="lazy" decoding="async"></a>
+    <figcaption><span class="method-label">After · Edge-based L2</span><div class="offset-caption">G (10, 35) · R (20, 124)</div></figcaption>
+  </figure></div>
+</article></div>
       <details class="offset-details"><summary>All alignment offsets <span>17 images · both methods</span></summary><div class="table-scroll" role="region" aria-label="Alignment offsets table" tabindex="0"><table><caption>Full-resolution (x, y) shifts relative to blue. Positive = right / down.</caption><thead><tr><th scope="col">Image</th><th scope="col">Search</th><th scope="col">Pixel L2 · G</th><th scope="col">Pixel L2 · R</th><th scope="col">Edge L2 · G</th><th scope="col">Edge L2 · R</th></tr></thead><tbody><tr><th scope="row">Cathedral</th><td>single-scale</td><td>(2, 5)</td><td>(3, 12)</td><td>(2, 5)</td><td>(3, 12)</td></tr>
 <tr><th scope="row">Church</th><td>pyramid</td><td>(4, 25)</td><td>(214, 63)</td><td>(4, 25)</td><td>(-4, 58)</td></tr>
 <tr><th scope="row">Emir</th><td>pyramid</td><td>(24, 49)</td><td>(57, 103)</td><td>(24, 49)</td><td>(40, 107)</td></tr>
