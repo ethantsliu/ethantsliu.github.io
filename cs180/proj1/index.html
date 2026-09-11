@@ -83,6 +83,7 @@
         </div>
         <label class="comparison-control" for="emir-reveal"><span>Compare the Emir <small>Drag to reveal · use arrow keys for precision</small></span><input type="range" id="emir-reveal" min="0" max="100" value="50" aria-label="Amount of raw-pixel alignment shown" aria-valuetext="50 percent raw-pixel alignment shown"></label>
       </div>
+      <div class="failure-note"><h3>Church and Emir</h3><p>Pixel-based L2 misaligns the Church photo's red channel at 214,63, whereas when we use edges, we get (-4, 58). For Emir, when we use edges, it changes the red from (57, 103) to (40, 107), reducing color fringes. Differences in brightness between channels can lead to a wrong initial shift. Since we only search within ±2 pixels at each finer level, we might not be able to fix it.</p></div>
     </section>
 
     <section class="project-section results-section" id="results" aria-labelledby="results-title">
