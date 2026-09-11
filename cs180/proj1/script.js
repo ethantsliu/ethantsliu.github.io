@@ -18,6 +18,6 @@ buttons.forEach(button => {
       card.querySelector('a').href = path;
       card.querySelector('.offset-caption').textContent = card.dataset[`${method}Offsets`];
     });
-    document.querySelector('.gallery-status').textContent = `Showing ${label} · 3 single-scale JPEGs and 11 pyramid TIFFs.`;
+    document.querySelector('.gallery-status').textContent = `Showing ${label} · 3 single-scale JPEGs and 14 pyramid TIFFs.`;
   });
 });

@@ -27,3 +27,9 @@ tobolsk,raw,3,3,3,6,0.141
 tobolsk,edges,2,3,3,6,0.126
 wharf,raw,-7,15,-16,83,1.097
 wharf,edges,-7,15,-17,83,1.262
+peasant_girls,raw,10,-16,17,11,1.319
+peasant_girls,edges,6,-12,15,13,1.326
+lock_keeper,raw,-23,52,-55,107,1.291
+lock_keeper,edges,-23,55,-57,108,1.352
+prisoners,raw,8,35,17,124,1.241
+prisoners,edges,10,35,20,124,1.306

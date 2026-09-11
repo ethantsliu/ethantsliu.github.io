@@ -577,6 +577,132 @@
         1600,
         1380
       ]
+    },
+    {
+      "id": "peasant_girls",
+      "source": "peasant_girls.tif",
+      "source_dimensions": [
+        3712,
+        9607
+      ],
+      "channel_dimensions": [
+        3712,
+        3202
+      ],
+      "display_dimensions": [
+        1600,
+        1380
+      ],
+      "mode": "pyramid",
+      "selection": "additional",
+      "source_url": "https://www.loc.gov/item/2018678943/",
+      "download_url": "https://tile.loc.gov/storage-services/master/pnp/prok/01000/01043u.tif",
+      "raw": {
+        "green_xy": [
+          10,
+          -16
+        ],
+        "red_xy": [
+          17,
+          11
+        ],
+        "seconds": 1.319
+      },
+      "edges": {
+        "green_xy": [
+          6,
+          -12
+        ],
+        "red_xy": [
+          15,
+          13
+        ],
+        "seconds": 1.326
+      }
+    },
+    {
+      "id": "lock_keeper",
+      "source": "lock_keeper.tif",
+      "source_dimensions": [
+        3761,
+        9773
+      ],
+      "channel_dimensions": [
+        3761,
+        3257
+      ],
+      "display_dimensions": [
+        1600,
+        1386
+      ],
+      "mode": "pyramid",
+      "selection": "additional",
+      "source_url": "https://www.loc.gov/item/2018678762/",
+      "download_url": "https://tile.loc.gov/storage-services/master/pnp/prok/00800/00882u.tif",
+      "raw": {
+        "green_xy": [
+          -23,
+          52
+        ],
+        "red_xy": [
+          -55,
+          107
+        ],
+        "seconds": 1.291
+      },
+      "edges": {
+        "green_xy": [
+          -23,
+          55
+        ],
+        "red_xy": [
+          -57,
+          108
+        ],
+        "seconds": 1.352
+      }
+    },
+    {
+      "id": "prisoners",
+      "source": "prisoners.tif",
+      "source_dimensions": [
+        3809,
+        9802
+      ],
+      "channel_dimensions": [
+        3809,
+        3267
+      ],
+      "display_dimensions": [
+        1600,
+        1372
+      ],
+      "mode": "pyramid",
+      "selection": "additional",
+      "source_url": "https://www.loc.gov/item/2018679203/",
+      "download_url": "https://tile.loc.gov/storage-services/master/pnp/prok/00200/00279u.tif",
+      "raw": {
+        "green_xy": [
+          8,
+          35
+        ],
+        "red_xy": [
+          17,
+          124
+        ],
+        "seconds": 1.241
+      },
+      "edges": {
+        "green_xy": [
+          10,
+          35
+        ],
+        "red_xy": [
+          20,
+          124
+        ],
+        "seconds": 1.306
+      }
     }
   ]
 }

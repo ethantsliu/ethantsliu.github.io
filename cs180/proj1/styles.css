@@ -123,3 +123,5 @@ th { color: var(--blue); }td:not(:first-child) { font-family: ui-monospace, mono
 }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
 @media print { .project-nav, .method-toggle, .comparison-control { display: none; }.hero { min-height: auto; }.hero-photo { transform: none; }.project-section { break-inside: auto; }.section-heading, .result-card { break-inside: avoid; }.results-grid { grid-template-columns: 1fr 1fr; }.offset-details > * { display: block; }.table-scroll { overflow: visible; } }
+
+.result-card .source-link { display: inline; background: none; font: .7em var(--sans); text-decoration: none; }
