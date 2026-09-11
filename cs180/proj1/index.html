@@ -75,13 +75,21 @@
       <header class="section-heading"><p class="section-number">04</p><div><p class="section-kicker">Bells &amp; whistles</p><h2 id="edges-title">Aligning with<br><em>edge features</em></h2></div></header>
       <div class="intro-copy"><p class="large-copy">Different filters change brightness, but often preserve edges.</p><div><p>The Emir’s blue robe looks different across channels, which can mislead pixel-based L2. I instead compare edge maps (the sum of absolute differences from each pixel’s upper and left neighbors). Then I apply the resulting shifts to the original channels to preserve their colors.</p></div></div>
       <div class="edge-formula"><span>Edge feature</span><code>E(y, x) = |I(y, x) − I(y−1, x)| + |I(y, x) − I(y, x−1)|</code></div>
-      <div class="comparison" style="--reveal: 50%">
-        <div class="comparison-images">
-          <img class="comparison-base" src="assets/emir-edges.jpg" alt="Emir reconstructed using edge-based L2 alignment" width="1600" height="1387" loading="lazy">
-          <img class="comparison-before" src="assets/emir-raw.jpg" alt="Emir reconstructed using raw-pixel L2 alignment for comparison" width="1600" height="1387" loading="lazy">
-          <span class="comparison-label label-before">Raw-pixel L2</span><span class="comparison-label label-after">Edge-based L2</span><span class="comparison-line" aria-hidden="true"><b>↔</b></span>
-        </div>
-        <label class="comparison-control" for="emir-reveal"><span>Compare the Emir <small>Drag to reveal · use arrow keys for precision</small></span><input type="range" id="emir-reveal" min="0" max="100" value="50" aria-label="Amount of raw-pixel alignment shown" aria-valuetext="50 percent raw-pixel alignment shown"></label>
+      <div class="comparison-pairs">
+        <section class="comparison-pair" aria-labelledby="church-comparison-title">
+          <h3 id="church-comparison-title">Church</h3>
+          <div class="comparison-images">
+            <figure><a href="assets/church-raw.jpg"><img src="assets/church-raw.jpg" alt="Church before edge alignment, with a misaligned red channel" width="1600" height="1410" loading="lazy"></a><figcaption>Before · Raw-pixel L2</figcaption></figure>
+            <figure><a href="assets/church-edges.jpg"><img src="assets/church-edges.jpg" alt="Church after edge alignment, with reduced color fringes" width="1600" height="1410" loading="lazy"></a><figcaption>After · Edge-based L2</figcaption></figure>
+          </div>
+        </section>
+        <section class="comparison-pair" aria-labelledby="emir-comparison-title">
+          <h3 id="emir-comparison-title">Emir</h3>
+          <div class="comparison-images">
+            <figure><a href="assets/emir-raw.jpg"><img src="assets/emir-raw.jpg" alt="Emir before edge alignment, with color fringes around his face and robe" width="1600" height="1387" loading="lazy"></a><figcaption>Before · Raw-pixel L2</figcaption></figure>
+            <figure><a href="assets/emir-edges.jpg"><img src="assets/emir-edges.jpg" alt="Emir after edge alignment, with reduced color fringes" width="1600" height="1387" loading="lazy"></a><figcaption>After · Edge-based L2</figcaption></figure>
+          </div>
+        </section>
       </div>
       <div class="failure-note"><h3>Church and Emir</h3><p>Pixel-based L2 misaligns the Church photo's red channel at 214,63, whereas when we use edges, we get (-4, 58). For Emir, when we use edges, it changes the red from (57, 103) to (40, 107), reducing color fringes. Differences in brightness between channels can lead to a wrong initial shift. Since we only search within ±2 pixels at each finer level, we might not be able to fix it.</p></div>
     </section>

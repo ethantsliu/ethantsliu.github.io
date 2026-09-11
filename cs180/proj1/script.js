@@ -1,9 +1,3 @@
-const reveal = document.querySelector('#emir-reveal');
-reveal.addEventListener('input', () => {
-  reveal.closest('.comparison').style.setProperty('--reveal', `${reveal.value}%`);
-  reveal.setAttribute('aria-valuetext', `${reveal.value} percent raw-pixel alignment shown`);
-});
-
 const buttons = document.querySelectorAll('[data-method]');
 buttons.forEach(button => {
   button.addEventListener('click', () => {
