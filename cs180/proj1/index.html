@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CS 180 Project 1 by Ethan Liu: aligning the Prokudin-Gorskii photographs with image pyramids, L2 distance, and edge features.">
+  <meta name="theme-color" content="#041e42">
+  <title>Images of the Russian Empire — CS 180 · Ethan Liu</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to project</a>
+  <header class="site-header">
+    <a class="berkeley-mark" href="../index.html" aria-label="Back to CS 180 Project 0">
+      <span class="mark-monogram" aria-hidden="true">B</span><span class="mark-name">UC Berkeley</span>
+    </a>
+    <div class="course-tag"><a href="../index.html">Project 0</a><span class="course-divider" aria-hidden="true"></span><span>CS 180 · Fall 2026</span></div>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="project-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Programming Project <span>#1</span></p>
+        <h1 id="project-title">Images of the<br><em>Russian Empire</em></h1>
+        <a class="hero-link" href="#results">See the results <span aria-hidden="true">↗</span></a>
+      </div>
+      <figure class="hero-photo">
+        <div class="hero-photo-mat"><img src="assets/emir-edges.jpg" alt="The Emir of Bukhara seated in a vivid blue patterned robe, reconstructed from three monochrome exposures" width="1600" height="1387" fetchpriority="high"></div>
+        <figcaption><span>The Emir of Bukhara</span><span>B + G + R → RGB</span></figcaption>
+        <span class="registration registration-top" aria-hidden="true">+</span><span class="registration registration-bottom" aria-hidden="true">+</span>
+      </figure>
+      <div class="hero-meta"><span>Intro to Computer Vision &amp;<br>Computational Photography</span><span>Ethan Liu</span><span>September 2026</span></div>
+    </section>
+    <nav class="project-nav" aria-label="Project sections">
+      <a href="#process"><span>01</span> The process</a><a href="#single-scale"><span>02</span> Single scale</a><a href="#pyramid"><span>03</span> Pyramids</a><a href="#edges"><span>04</span> Better features</a><a href="#results"><span>05</span> Results</a>
+    </nav>
+
+    <section class="project-section" id="process" aria-labelledby="process-title">
+      <header class="section-heading"><p class="section-number">01</p><div><p class="section-kicker">Background</p><h2 id="process-title">Recovering color<br>from three exposures</h2></div></header>
+      <div class="intro-copy"><p class="large-copy">The color is already in the scans!</p><div><p>I split each scan into three equal sections, ordered blue, green, and red. Since the exposures don’t line up exactly, I keep blue fixed and find shifts for green and red, then combine them in RGB order.</p></div></div>
+      <div class="channel-strip">
+        <figure><img src="assets/cathedral-blue.jpg" alt="Cathedral's blue-filter grayscale exposure" width="390" height="341" loading="lazy"><figcaption><b class="channel-dot blue-dot">B</b> Top exposure</figcaption></figure>
+        <figure><img src="assets/cathedral-green.jpg" alt="Cathedral's green-filter grayscale exposure" width="390" height="341" loading="lazy"><figcaption><b class="channel-dot green-dot">G</b> Middle exposure</figcaption></figure>
+        <figure><img src="assets/cathedral-red.jpg" alt="Cathedral's red-filter grayscale exposure" width="390" height="341" loading="lazy"><figcaption><b class="channel-dot red-dot">R</b> Bottom exposure</figcaption></figure>
+        <figure class="combined-channel"><img src="assets/cathedral-edges.jpg" alt="The three cathedral exposures combined after alignment" width="390" height="341" loading="lazy"><figcaption><b>RGB</b> Aligned result</figcaption></figure>
+      </div>
+      <p class="figure-note">Cathedral separated into its three channels. <a href="assets/cathedral-plate.jpg">View the original stacked plate ↗</a></p>
+      <p class="figure-note">Offsets are <strong>(x, y)</strong> in original-resolution pixels, relative to blue. Positive values move right and down.</p>
+    </section>
+
+    <section class="project-section single-section" id="single-scale" aria-labelledby="single-title">
+      <header class="section-heading"><p class="section-number">02</p><div><p class="section-kicker">Starting with the JPEGs</p><h2 id="single-title">Single-scale<br>alignment</h2></div></header>
+      <div class="method-layout"><div><p>I decided to test shifts from −15 to +15 pixels along each axis using <code>np.roll</code> and select the lowest L2 distance to a reference, in this case blue.</p><p>When scoring, we need to avoid matching the scan borders, so I exclude <code>min(height,width) // 10</code> pixels from each side.</p></div><div class="formula-card"><p class="section-kicker">L2 distance</p><p class="formula">L₂(Δx, Δy) = √∑ (C<sub>shifted</sub> − B)²</p><p>C is green or red; B is blue.</p><div class="metric-stat"><strong>961</strong><span>candidate shifts<br>per channel</span></div></div></div>
+      <div class="lowres-grid"><figure class="result-card">
+  <a href="assets/cathedral-raw.jpg" aria-label="Open Cathedral reconstruction"><img src="assets/cathedral-raw.jpg" alt="Cathedral, reconstructed with raw-pixel L2 alignment" width="390" height="341" loading="lazy" decoding="async"></a>
+  <figcaption><div class="card-heading"><h3>Cathedral</h3><span>JPEG · Single scale</span></div><div class="offset-caption">G (2, 5) · R (3, 12)</div></figcaption>
+</figure>
+<figure class="result-card">
+  <a href="assets/monastery-raw.jpg" aria-label="Open Monastery reconstruction"><img src="assets/monastery-raw.jpg" alt="Monastery, reconstructed with raw-pixel L2 alignment" width="391" height="341" loading="lazy" decoding="async"></a>
+  <figcaption><div class="card-heading"><h3>Monastery</h3><span>JPEG · Single scale</span></div><div class="offset-caption">G (2, -3) · R (2, 3)</div></figcaption>
+</figure>
+<figure class="result-card">
+  <a href="assets/tobolsk-raw.jpg" aria-label="Open Tobolsk reconstruction"><img src="assets/tobolsk-raw.jpg" alt="Tobolsk, reconstructed with raw-pixel L2 alignment" width="396" height="341" loading="lazy" decoding="async"></a>
+  <figcaption><div class="card-heading"><h3>Tobolsk</h3><span>JPEG · Single scale</span></div><div class="offset-caption">G (3, 3) · R (3, 6)</div></figcaption>
+</figure></div>
+    </section>
+
+    <section class="project-section pyramid-section" id="pyramid" aria-labelledby="pyramid-title">
+      <header class="section-heading light-heading"><p class="section-number">03</p><div><p class="section-kicker">Working with larger scans</p><h2 id="pyramid-title">Image pyramids</h2></div></header>
+      <div class="pyramid-layout"><div><p class="large-copy">If we downsample/downsize the image, then it will make larger shifts much cheaper to find!</p><p>We start at 1/16 resolution. This makes things significantly cheaper; so a 160-pixel shift becomes just 10 pixels here! So for channels larger than 1,000 pixels along the shorter side, let’s do that.</p><p>Then, at each finer level, I double the estimated shift and search within 2 pixels plus minus of it, continuing to full resolution. Each level uses L2 with the same border exclusion.</p></div><ol class="pyramid-steps" aria-label="Five pyramid levels from coarse to fine"><li><b>1/16</b><span>Find the initial shift</span><em>±15 px</em></li><li><b>1/8</b><span>Double &amp; refine</span><em>±2 px</em></li><li><b>1/4</b><span>Double &amp; refine</span><em>±2 px</em></li><li><b>1/2</b><span>Double &amp; refine</span><em>±2 px</em></li><li><b>1/1</b><span>Refine at full size</span><em>±2 px</em></li></ol></div>
+    </section>
+
+    <section class="project-section" id="edges" aria-labelledby="edges-title">
+      <header class="section-heading"><p class="section-number">04</p><div><p class="section-kicker">Bells &amp; whistles</p><h2 id="edges-title">Aligning with<br><em>edge features</em></h2></div></header>
+      <div class="intro-copy"><p class="large-copy">Different filters change brightness, but often preserve edges.</p><div><p>The Emir’s blue robe looks different across channels, which can mislead pixel-based L2. I instead compare edge maps (the sum of absolute differences from each pixel’s upper and left neighbors). Then I apply the resulting shifts to the original channels to preserve their colors.</p></div></div>
+      <div class="edge-formula"><span>Edge feature</span><code>E(y, x) = |I(y, x) − I(y−1, x)| + |I(y, x) − I(y, x−1)|</code></div>
+      <div class="comparison" style="--reveal: 50%">
+        <div class="comparison-images">
+          <img class="comparison-base" src="assets/emir-edges.jpg" alt="Emir reconstructed using edge-based L2 alignment" width="1600" height="1387" loading="lazy">
+          <img class="comparison-before" src="assets/emir-raw.jpg" alt="Emir reconstructed using raw-pixel L2 alignment for comparison" width="1600" height="1387" loading="lazy">
+          <span class="comparison-label label-before">Raw-pixel L2</span><span class="comparison-label label-after">Edge-based L2</span><span class="comparison-line" aria-hidden="true"><b>↔</b></span>
+        </div>
+        <label class="comparison-control" for="emir-reveal"><span>Compare the Emir <small>Drag to reveal · use arrow keys for precision</small></span><input type="range" id="emir-reveal" min="0" max="100" value="50" aria-label="Amount of raw-pixel alignment shown" aria-valuetext="50 percent raw-pixel alignment shown"></label>
+      </div>
+    </section>
+
+    <section class="project-section results-section" id="results" aria-labelledby="results-title">
+      <header class="section-heading"><p class="section-number">05</p><div><p class="section-kicker">Results</p><h2 id="results-title">Comparing the<br>reconstructions</h2></div></header>
+      <div class="gallery-toolbar"><p>Switch methods to compare.<br><span>Click an image to enlarge.</span></p><div class="method-toggle" role="group" aria-label="Gallery alignment method"><button type="button" data-method="raw" aria-pressed="true">Raw-pixel L2</button><button type="button" data-method="edges" aria-pressed="false">Edge-based L2</button></div></div>
+      <p class="gallery-status" aria-live="polite">Showing raw-pixel L2 · 3 single-scale JPEGs and 11 pyramid TIFFs.</p>
+      <div class="results-grid"><figure class="result-card" data-image="cathedral" data-title="Cathedral" data-raw-offsets="G (2, 5) · R (3, 12)" data-edges-offsets="G (2, 5) · R (3, 12)">
+  <a href="assets/cathedral-raw.jpg" aria-label="Open Cathedral reconstruction"><img src="assets/cathedral-raw.jpg" alt="Cathedral, reconstructed with raw-pixel L2 alignment" width="390" height="341" loading="lazy" decoding="async"></a>
+  <figcaption><div class="card-heading"><h3>Cathedral</h3><span>JPEG · Single scale</span></div><div class="offset-caption">G (2, 5) · R (3, 12)</div></figcaption>
+</figure>
+<figure class="result-card" data-image="church" data-title="Church" data-raw-offsets="G (4, 25) · R (214, 63)" data-edges-offsets="G (4, 25) · R (-4, 58)">
+  <a href="assets/church-raw.jpg" aria-label="Open Church reconstruction"><img src="assets/church-raw.jpg" alt="Church, reconstructed with raw-pixel L2 alignment" width="1600" height="1410" loading="lazy" decoding="async"></a>
+  <figcaption><div class="card-heading"><h3>Church</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (4, 25) · R (214, 63)</div></figcaption>
+</figure>
+<figure class="result-card" data-image="emir" data-title="Emir" data-raw-offsets="G (24, 49) · R (57, 103)" data-edges-offsets="G (24, 49) · R (40, 107)">
+  <a href="assets/emir-raw.jpg" aria-label="Open Emir reconstruction"><img src="assets/emir-raw.jpg" alt="Emir, reconstructed with raw-pixel L2 alignment" width="1600" height="1387" loading="lazy" decoding="async"></a>
+  <figcaption><div class="card-heading"><h3>Emir</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (24, 49) · R (57, 103)</div></figcaption>
+</figure>
+<figure class="result-card" data-image="harvesters" data-title="Harvesters" data-raw-offsets="G (16, 59) · R (13, 124)" data-edges-offsets="G (18, 60) · R (13, 124)">
+  <a href="assets/harvesters-raw.jpg" aria-label="Open Harvesters reconstruction"><img src="assets/harvesters-raw.jpg" alt="Harvesters, reconstructed with raw-pixel L2 alignment" width="1600" height="1398" loading="lazy" decoding="async"></a>
+  <figcaption><div class="card-heading"><h3>Harvesters</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (16, 59) · R (13, 124)</div></figcaption>
+</figure>
+<figure class="result-card" data-image="icon" data-title="Icon" data-raw-offsets="G (17, 41) · R (23, 90)" data-edges-offsets="G (16, 39) · R (23, 90)">
+  <a href="assets/icon-raw.jpg" aria-label="Open Icon reconstruction"><img src="assets/icon-raw.jpg" alt="Icon, reconstructed with raw-pixel L2 alignment" width="1600" height="1387" loading="lazy" decoding="async"></a>
+  <figcaption><div class="card-heading"><h3>Icon</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (17, 41) · R (23, 90)</div></figcaption>
+</figure>
+<figure class="result-card" data-image="ilemselga" data-title="Ilemselga" data-raw-offsets="G (7, 39) · R (11, 130)" data-edges-offsets="G (7, 40) · R (11, 131)">
+  <a href="assets/ilemselga-raw.jpg" aria-label="Open Ilemselga reconstruction"><img src="assets/ilemselga-raw.jpg" alt="Ilemselga, reconstructed with raw-pixel L2 alignment" width="1600" height="1377" loading="lazy" decoding="async"></a>
+  <figcaption><div class="card-heading"><h3>Ilemselga</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (7, 39) · R (11, 130)</div></figcaption>
+</figure>
+<figure class="result-card" data-image="melons" data-title="Melons" data-raw-offsets="G (11, 82) · R (13, 178)" data-edges-offsets="G (10, 80) · R (13, 176)">
+  <a href="assets/melons-raw.jpg" aria-label="Open Melons reconstruction"><img src="assets/melons-raw.jpg" alt="Melons, reconstructed with raw-pixel L2 alignment" width="1600" height="1375" loading="lazy" decoding="async"></a>
+  <figcaption><div class="card-heading"><h3>Melons</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (11, 82) · R (13, 178)</div></figcaption>
+</figure>
+<figure class="result-card" data-image="monastery" data-title="Monastery" data-raw-offsets="G (2, -3) · R (2, 3)" data-edges-offsets="G (2, -3) · R (2, 3)">
+  <a href="assets/monastery-raw.jpg" aria-label="Open Monastery reconstruction"><img src="assets/monastery-raw.jpg" alt="Monastery, reconstructed with raw-pixel L2 alignment" width="391" height="341" loading="lazy" decoding="async"></a>
+  <figcaption><div class="card-heading"><h3>Monastery</h3><span>JPEG · Single scale</span></div><div class="offset-caption">G (2, -3) · R (2, 3)</div></figcaption>
+</figure>
+<figure class="result-card" data-image="religous_painting" data-title="Religious Painting" data-raw-offsets="G (3, 28) · R (7, 68)" data-edges-offsets="G (6, 30) · R (6, 69)">
+  <a href="assets/religous_painting-raw.jpg" aria-label="Open Religious Painting reconstruction"><img src="assets/religous_painting-raw.jpg" alt="Religious Painting, reconstructed with raw-pixel L2 alignment" width="1600" height="1365" loading="lazy" decoding="async"></a>
+  <figcaption><div class="card-heading"><h3>Religious Painting</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (3, 28) · R (7, 68)</div></figcaption>
+</figure>
+<figure class="result-card" data-image="self_portrait" data-title="Self Portrait" data-raw-offsets="G (29, 79) · R (36, 176)" data-edges-offsets="G (29, 78) · R (37, 175)">
+  <a href="assets/self_portrait-raw.jpg" aria-label="Open Self Portrait reconstruction"><img src="assets/self_portrait-raw.jpg" alt="Self Portrait, reconstructed with raw-pixel L2 alignment" width="1600" height="1365" loading="lazy" decoding="async"></a>
+  <figcaption><div class="card-heading"><h3>Self Portrait</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (29, 79) · R (36, 176)</div></figcaption>
+</figure>
+<figure class="result-card" data-image="siren" data-title="Siren" data-raw-offsets="G (-6, 49) · R (-25, 96)" data-edges-offsets="G (-7, 49) · R (-24, 96)">
+  <a href="assets/siren-raw.jpg" aria-label="Open Siren reconstruction"><img src="assets/siren-raw.jpg" alt="Siren, reconstructed with raw-pixel L2 alignment" width="1600" height="1362" loading="lazy" decoding="async"></a>
+  <figcaption><div class="card-heading"><h3>Siren</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (-6, 49) · R (-25, 96)</div></figcaption>
+</figure>
+<figure class="result-card" data-image="three_generations" data-title="Three Generations" data-raw-offsets="G (14, 53) · R (11, 112)" data-edges-offsets="G (12, 54) · R (9, 111)">
+  <a href="assets/three_generations-raw.jpg" aria-label="Open Three Generations reconstruction"><img src="assets/three_generations-raw.jpg" alt="Three Generations, reconstructed with raw-pixel L2 alignment" width="1600" height="1382" loading="lazy" decoding="async"></a>
+  <figcaption><div class="card-heading"><h3>Three Generations</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (14, 53) · R (11, 112)</div></figcaption>
+</figure>
+<figure class="result-card" data-image="tobolsk" data-title="Tobolsk" data-raw-offsets="G (3, 3) · R (3, 6)" data-edges-offsets="G (2, 3) · R (3, 6)">
+  <a href="assets/tobolsk-raw.jpg" aria-label="Open Tobolsk reconstruction"><img src="assets/tobolsk-raw.jpg" alt="Tobolsk, reconstructed with raw-pixel L2 alignment" width="396" height="341" loading="lazy" decoding="async"></a>
+  <figcaption><div class="card-heading"><h3>Tobolsk</h3><span>JPEG · Single scale</span></div><div class="offset-caption">G (3, 3) · R (3, 6)</div></figcaption>
+</figure>
+<figure class="result-card" data-image="wharf" data-title="Wharf" data-raw-offsets="G (-7, 15) · R (-16, 83)" data-edges-offsets="G (-7, 15) · R (-17, 83)">
+  <a href="assets/wharf-raw.jpg" aria-label="Open Wharf reconstruction"><img src="assets/wharf-raw.jpg" alt="Wharf, reconstructed with raw-pixel L2 alignment" width="1600" height="1380" loading="lazy" decoding="async"></a>
+  <figcaption><div class="card-heading"><h3>Wharf</h3><span>TIFF · Pyramid</span></div><div class="offset-caption">G (-7, 15) · R (-16, 83)</div></figcaption>
+</figure></div>
+      <details class="offset-details"><summary>All alignment offsets <span>14 images · both methods</span></summary><div class="table-scroll" role="region" aria-label="Alignment offsets table" tabindex="0"><table><caption>Full-resolution (x, y) shifts relative to blue. Positive = right / down.</caption><thead><tr><th scope="col">Image</th><th scope="col">Search</th><th scope="col">Pixel L2 · G</th><th scope="col">Pixel L2 · R</th><th scope="col">Edge L2 · G</th><th scope="col">Edge L2 · R</th></tr></thead><tbody><tr><th scope="row">Cathedral</th><td>single-scale</td><td>(2, 5)</td><td>(3, 12)</td><td>(2, 5)</td><td>(3, 12)</td></tr>
+<tr><th scope="row">Church</th><td>pyramid</td><td>(4, 25)</td><td>(214, 63)</td><td>(4, 25)</td><td>(-4, 58)</td></tr>
+<tr><th scope="row">Emir</th><td>pyramid</td><td>(24, 49)</td><td>(57, 103)</td><td>(24, 49)</td><td>(40, 107)</td></tr>
+<tr><th scope="row">Harvesters</th><td>pyramid</td><td>(16, 59)</td><td>(13, 124)</td><td>(18, 60)</td><td>(13, 124)</td></tr>
+<tr><th scope="row">Icon</th><td>pyramid</td><td>(17, 41)</td><td>(23, 90)</td><td>(16, 39)</td><td>(23, 90)</td></tr>
+<tr><th scope="row">Ilemselga</th><td>pyramid</td><td>(7, 39)</td><td>(11, 130)</td><td>(7, 40)</td><td>(11, 131)</td></tr>
+<tr><th scope="row">Melons</th><td>pyramid</td><td>(11, 82)</td><td>(13, 178)</td><td>(10, 80)</td><td>(13, 176)</td></tr>
+<tr><th scope="row">Monastery</th><td>single-scale</td><td>(2, -3)</td><td>(2, 3)</td><td>(2, -3)</td><td>(2, 3)</td></tr>
+<tr><th scope="row">Religious Painting</th><td>pyramid</td><td>(3, 28)</td><td>(7, 68)</td><td>(6, 30)</td><td>(6, 69)</td></tr>
+<tr><th scope="row">Self Portrait</th><td>pyramid</td><td>(29, 79)</td><td>(36, 176)</td><td>(29, 78)</td><td>(37, 175)</td></tr>
+<tr><th scope="row">Siren</th><td>pyramid</td><td>(-6, 49)</td><td>(-25, 96)</td><td>(-7, 49)</td><td>(-24, 96)</td></tr>
+<tr><th scope="row">Three Generations</th><td>pyramid</td><td>(14, 53)</td><td>(11, 112)</td><td>(12, 54)</td><td>(9, 111)</td></tr>
+<tr><th scope="row">Tobolsk</th><td>single-scale</td><td>(3, 3)</td><td>(3, 6)</td><td>(2, 3)</td><td>(3, 6)</td></tr>
+<tr><th scope="row">Wharf</th><td>pyramid</td><td>(-7, 15)</td><td>(-16, 83)</td><td>(-7, 15)</td><td>(-17, 83)</td></tr></tbody></table></div><p class="download-links"><a href="assets/offsets.csv" download>Download offsets (CSV) ↗</a><a href="assets/results.json" download>Run details (JSON) ↗</a></p></details>
+    </section>
+
+  </main>
+  <footer><div class="footer-mark"><span class="mark-monogram" aria-hidden="true">B</span><span>CS 180 · Project 1</span></div><p>Reconstructed by Ethan Liu</p><div class="footer-links"><a href="../index.html">← Project 0</a><a href="https://cal-cs180.github.io/fa26/hw/proj1/index.html">Assignment ↗</a><a href="https://www.loc.gov/collections/prokudin-gorskii/">Photo archive ↗</a></div></footer>
+</body>
+</html>

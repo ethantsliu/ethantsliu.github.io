@@ -1,0 +1,582 @@
+{
+  "source_script_sha256": "d2e74ddf720dc2a0f6605b63a4da49e6742b14b49220161593c2bfce2e8985fd",
+  "offset_convention": "(x, y), positive right/down, green and red shifted relative to blue",
+  "parameters": {
+    "metric": "L2",
+    "initial_search_radius": 15,
+    "refinement_radius": 2,
+    "pyramid_factors": [
+      16,
+      8,
+      4,
+      2,
+      1
+    ],
+    "pyramid_threshold": 1000,
+    "border_crop": "min(level.shape) // 10 pixels on every side",
+    "downsampling": "strided subsampling, no prefilter",
+    "input": "OpenCV 8-bit grayscale / 255"
+  },
+  "images": [
+    {
+      "id": "cathedral",
+      "source": "cathedral.jpg",
+      "source_dimensions": [
+        390,
+        1024
+      ],
+      "channel_dimensions": [
+        390,
+        341
+      ],
+      "mode": "single-scale",
+      "raw": {
+        "green_xy": [
+          2,
+          5
+        ],
+        "red_xy": [
+          3,
+          12
+        ],
+        "seconds": 0.116
+      },
+      "edges": {
+        "green_xy": [
+          2,
+          5
+        ],
+        "red_xy": [
+          3,
+          12
+        ],
+        "seconds": 0.118,
+        "saved_output_mean_absolute_error": 0.027824
+      },
+      "display_dimensions": [
+        390,
+        341
+      ]
+    },
+    {
+      "id": "church",
+      "source": "church.tif",
+      "source_dimensions": [
+        3634,
+        9607
+      ],
+      "channel_dimensions": [
+        3634,
+        3202
+      ],
+      "mode": "pyramid",
+      "raw": {
+        "green_xy": [
+          4,
+          25
+        ],
+        "red_xy": [
+          214,
+          63
+        ],
+        "seconds": 1.016
+      },
+      "edges": {
+        "green_xy": [
+          4,
+          25
+        ],
+        "red_xy": [
+          -4,
+          58
+        ],
+        "seconds": 1.139,
+        "saved_output_mean_absolute_error": 0.007828
+      },
+      "display_dimensions": [
+        1600,
+        1410
+      ]
+    },
+    {
+      "id": "emir",
+      "source": "emir.tif",
+      "source_dimensions": [
+        3702,
+        9627
+      ],
+      "channel_dimensions": [
+        3702,
+        3209
+      ],
+      "mode": "pyramid",
+      "raw": {
+        "green_xy": [
+          24,
+          49
+        ],
+        "red_xy": [
+          57,
+          103
+        ],
+        "seconds": 1.153
+      },
+      "edges": {
+        "green_xy": [
+          24,
+          49
+        ],
+        "red_xy": [
+          40,
+          107
+        ],
+        "seconds": 1.15,
+        "saved_output_mean_absolute_error": 0.007865
+      },
+      "display_dimensions": [
+        1600,
+        1387
+      ]
+    },
+    {
+      "id": "harvesters",
+      "source": "harvesters.tif",
+      "source_dimensions": [
+        3683,
+        9656
+      ],
+      "channel_dimensions": [
+        3683,
+        3218
+      ],
+      "mode": "pyramid",
+      "raw": {
+        "green_xy": [
+          16,
+          59
+        ],
+        "red_xy": [
+          13,
+          124
+        ],
+        "seconds": 1.038
+      },
+      "edges": {
+        "green_xy": [
+          18,
+          60
+        ],
+        "red_xy": [
+          13,
+          124
+        ],
+        "seconds": 1.189,
+        "saved_output_mean_absolute_error": 0.007494
+      },
+      "display_dimensions": [
+        1600,
+        1398
+      ]
+    },
+    {
+      "id": "icon",
+      "source": "icon.tif",
+      "source_dimensions": [
+        3741,
+        9732
+      ],
+      "channel_dimensions": [
+        3741,
+        3244
+      ],
+      "mode": "pyramid",
+      "raw": {
+        "green_xy": [
+          17,
+          41
+        ],
+        "red_xy": [
+          23,
+          90
+        ],
+        "seconds": 1.082
+      },
+      "edges": {
+        "green_xy": [
+          16,
+          39
+        ],
+        "red_xy": [
+          23,
+          90
+        ],
+        "seconds": 1.237,
+        "saved_output_mean_absolute_error": 0.009999
+      },
+      "display_dimensions": [
+        1600,
+        1387
+      ]
+    },
+    {
+      "id": "ilemselga",
+      "source": "ilemselga.tif",
+      "source_dimensions": [
+        3800,
+        9812
+      ],
+      "channel_dimensions": [
+        3800,
+        3270
+      ],
+      "mode": "pyramid",
+      "raw": {
+        "green_xy": [
+          7,
+          39
+        ],
+        "red_xy": [
+          11,
+          130
+        ],
+        "seconds": 1.082
+      },
+      "edges": {
+        "green_xy": [
+          7,
+          40
+        ],
+        "red_xy": [
+          11,
+          131
+        ],
+        "seconds": 1.241,
+        "saved_output_mean_absolute_error": 0.007388
+      },
+      "display_dimensions": [
+        1600,
+        1377
+      ]
+    },
+    {
+      "id": "melons",
+      "source": "melons.tif",
+      "source_dimensions": [
+        3770,
+        9724
+      ],
+      "channel_dimensions": [
+        3770,
+        3241
+      ],
+      "mode": "pyramid",
+      "raw": {
+        "green_xy": [
+          11,
+          82
+        ],
+        "red_xy": [
+          13,
+          178
+        ],
+        "seconds": 1.048
+      },
+      "edges": {
+        "green_xy": [
+          10,
+          80
+        ],
+        "red_xy": [
+          13,
+          176
+        ],
+        "seconds": 1.221,
+        "saved_output_mean_absolute_error": 0.00782
+      },
+      "display_dimensions": [
+        1600,
+        1375
+      ]
+    },
+    {
+      "id": "monastery",
+      "source": "monastery.jpg",
+      "source_dimensions": [
+        391,
+        1024
+      ],
+      "channel_dimensions": [
+        391,
+        341
+      ],
+      "mode": "single-scale",
+      "raw": {
+        "green_xy": [
+          2,
+          -3
+        ],
+        "red_xy": [
+          2,
+          3
+        ],
+        "seconds": 0.246
+      },
+      "edges": {
+        "green_xy": [
+          2,
+          -3
+        ],
+        "red_xy": [
+          2,
+          3
+        ],
+        "seconds": 0.121,
+        "saved_output_mean_absolute_error": 0.023164
+      },
+      "display_dimensions": [
+        391,
+        341
+      ]
+    },
+    {
+      "id": "religous_painting",
+      "source": "religous_painting.tif",
+      "source_dimensions": [
+        3742,
+        9579
+      ],
+      "channel_dimensions": [
+        3742,
+        3193
+      ],
+      "mode": "pyramid",
+      "raw": {
+        "green_xy": [
+          3,
+          28
+        ],
+        "red_xy": [
+          7,
+          68
+        ],
+        "seconds": 1.054
+      },
+      "edges": {
+        "green_xy": [
+          6,
+          30
+        ],
+        "red_xy": [
+          6,
+          69
+        ],
+        "seconds": 1.148,
+        "saved_output_mean_absolute_error": 0.008627
+      },
+      "display_dimensions": [
+        1600,
+        1365
+      ]
+    },
+    {
+      "id": "self_portrait",
+      "source": "self_portrait.tif",
+      "source_dimensions": [
+        3810,
+        9754
+      ],
+      "channel_dimensions": [
+        3810,
+        3251
+      ],
+      "mode": "pyramid",
+      "raw": {
+        "green_xy": [
+          29,
+          79
+        ],
+        "red_xy": [
+          36,
+          176
+        ],
+        "seconds": 1.189
+      },
+      "edges": {
+        "green_xy": [
+          29,
+          78
+        ],
+        "red_xy": [
+          37,
+          175
+        ],
+        "seconds": 1.287,
+        "saved_output_mean_absolute_error": 0.008152
+      },
+      "display_dimensions": [
+        1600,
+        1365
+      ]
+    },
+    {
+      "id": "siren",
+      "source": "siren.tif",
+      "source_dimensions": [
+        3817,
+        9752
+      ],
+      "channel_dimensions": [
+        3817,
+        3250
+      ],
+      "mode": "pyramid",
+      "raw": {
+        "green_xy": [
+          -6,
+          49
+        ],
+        "red_xy": [
+          -25,
+          96
+        ],
+        "seconds": 1.096
+      },
+      "edges": {
+        "green_xy": [
+          -7,
+          49
+        ],
+        "red_xy": [
+          -24,
+          96
+        ],
+        "seconds": 1.176,
+        "saved_output_mean_absolute_error": 0.00893
+      },
+      "display_dimensions": [
+        1600,
+        1362
+      ]
+    },
+    {
+      "id": "three_generations",
+      "source": "three_generations.tif",
+      "source_dimensions": [
+        3714,
+        9629
+      ],
+      "channel_dimensions": [
+        3714,
+        3209
+      ],
+      "mode": "pyramid",
+      "raw": {
+        "green_xy": [
+          14,
+          53
+        ],
+        "red_xy": [
+          11,
+          112
+        ],
+        "seconds": 1.138
+      },
+      "edges": {
+        "green_xy": [
+          12,
+          54
+        ],
+        "red_xy": [
+          9,
+          111
+        ],
+        "seconds": 1.163,
+        "saved_output_mean_absolute_error": 0.006967
+      },
+      "display_dimensions": [
+        1600,
+        1382
+      ]
+    },
+    {
+      "id": "tobolsk",
+      "source": "tobolsk.jpg",
+      "source_dimensions": [
+        396,
+        1024
+      ],
+      "channel_dimensions": [
+        396,
+        341
+      ],
+      "mode": "single-scale",
+      "raw": {
+        "green_xy": [
+          3,
+          3
+        ],
+        "red_xy": [
+          3,
+          6
+        ],
+        "seconds": 0.141
+      },
+      "edges": {
+        "green_xy": [
+          2,
+          3
+        ],
+        "red_xy": [
+          3,
+          6
+        ],
+        "seconds": 0.126,
+        "saved_output_mean_absolute_error": 0.036431
+      },
+      "display_dimensions": [
+        396,
+        341
+      ]
+    },
+    {
+      "id": "wharf",
+      "source": "wharf.tif",
+      "source_dimensions": [
+        3761,
+        9734
+      ],
+      "channel_dimensions": [
+        3761,
+        3244
+      ],
+      "mode": "pyramid",
+      "raw": {
+        "green_xy": [
+          -7,
+          15
+        ],
+        "red_xy": [
+          -16,
+          83
+        ],
+        "seconds": 1.097
+      },
+      "edges": {
+        "green_xy": [
+          -7,
+          15
+        ],
+        "red_xy": [
+          -17,
+          83
+        ],
+        "seconds": 1.262,
+        "saved_output_mean_absolute_error": 0.008867
+      },
+      "display_dimensions": [
+        1600,
+        1380
+      ]
+    }
+  ]
+}
