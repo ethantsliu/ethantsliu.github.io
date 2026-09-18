@@ -142,7 +142,12 @@ html[data-theme="dark"] .cloud-site .moon-icon { display: none; }
   overflow: hidden;
   background: var(--bg);
   pointer-events: none;
-  mask-image: linear-gradient(to right, transparent calc(var(--art-overlap) - 8px), #000 calc(var(--art-overlap) + 140px));
+  mask-image: linear-gradient(to right,
+    transparent calc(var(--art-overlap) - 80px),
+    rgb(0 0 0 / .08) calc(var(--art-overlap) - 24px),
+    rgb(0 0 0 / .35) calc(var(--art-overlap) + 48px),
+    rgb(0 0 0 / .72) calc(var(--art-overlap) + 128px),
+    #000 calc(var(--art-overlap) + 220px));
 }
 .cloud-artwork img {
   position: absolute;
@@ -156,6 +161,30 @@ html[data-theme="dark"] .cloud-site .moon-icon { display: none; }
   filter: var(--cloud-filter);
   mix-blend-mode: var(--cloud-blend);
   mask-image: linear-gradient(to bottom, #000 calc(100% - 80px), transparent 100%);
+}
+
+/* Carry the rules into the cloud, dissolving them as the artwork gains detail. */
+@media (min-width: 761px) {
+  .home.cloud-site .list-section { --rule-tail: clamp(140px, 18vw, 240px); }
+  .home.cloud-site .section-subtitle { border-top-color: transparent; }
+  .home.cloud-site .section-subtitle::before,
+  .home .latest-list .feature-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: calc(-1 * var(--rule-tail));
+    height: 1px;
+    background: linear-gradient(to right,
+      var(--divider) 0,
+      var(--divider) calc(100% - var(--rule-tail) - 48px),
+      color-mix(in srgb, var(--divider) 78%, transparent) calc(100% - var(--rule-tail) + 32px),
+      color-mix(in srgb, var(--divider) 32%, transparent) calc(100% - 64px),
+      transparent 100%);
+    pointer-events: none;
+  }
+  .home.cloud-site .section-subtitle::before { top: -1px; }
+  .home .latest-list .feature-item { position: relative; border-bottom-color: transparent; }
+  .home .latest-list .feature-item:not(:last-child)::after { bottom: -1px; }
 }
 
 @media (max-width: 1000px) and (min-width: 761px) {
