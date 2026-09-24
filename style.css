@@ -1088,6 +1088,10 @@ html[data-theme="dark"] .dropdown-content {
   font-size: 0.98em;
 }
 
+.work-page .experience-location {
+  color: var(--accent-soft);
+}
+
 .work-page .experience-title a {
   color: var(--text);
   text-decoration: none;
@@ -1145,6 +1149,10 @@ html[data-theme="dark"] .dropdown-content {
 
 .author-name {
   color: var(--text);
+}
+
+.research-page .author-name {
+  color: var(--accent-soft);
 }
 
 /*──────────────────────────────────────────────────────────────────────────────
