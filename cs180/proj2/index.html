@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CS180 Project 2 - Fun with Filters and Frequencies</title>
+  <style>
+    body { max-width: 1000px; margin: 40px auto; padding: 0 20px; font: 17px/1.55 Arial, sans-serif; color: #222; }
+    h1, h2, h3 { line-height: 1.2; }
+    section { margin: 50px 0; }
+    img { display: block; width: 100%; margin: 18px 0 30px; }
+    pre { overflow-x: auto; background: #f4f4f4; padding: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Fun with Filters and Frequencies</h1>
+  <p>I used course images, Proj 0 photos, and Proj 1 cathedral.</p>
+
+  <section>
+    <h2>Part 1: Filters and Edges</h2>
+    <h3>1.1 Convolutions from Scratch</h3>
+    <p>I first filtered my grayscale selfie with a 9×9 box filter and Dₓ/Dᵧ. Both NumPy convolutions flip the filter and use zero padding. On an 80×80 crop, four loops took 0.1573 s, two loops 0.0160 s, and SciPy 0.0009 s (both matched SciPy). Note that zero padding darkens the borders.</p>
+    <img src="results/1_1_selfie.jpg" alt="Selfie, box filter, and x and y finite differences">
+    <p>Convolution code:</p>
+    <pre><code>padded, flipped = pad_and_flip(image, kernel)
+for y in range(image.shape[0]):
+    for x in range(image.shape[1]):
+        for j in range(kernel.shape[0]):
+            for i in range(kernel.shape[1]):
+                result[y, x] += padded[y + j, x + i] * flipped[j, i]
+
+for y in range(image.shape[0]):
+    for x in range(image.shape[1]):
+        result[y, x] = np.sum(padded[y:y + h, x:x + w] * flipped)</code></pre>
+    <p><code>pad_and_flip</code> uses <code>np.pad</code> and <code>kernel[::-1, ::-1]</code>.</p>
+
+    <h3>1.2 Finite Difference Operator</h3>
+    <p>For cameraman, I used <code>Dₓ = [1, −1]</code>, its transpose, and magnitude <code>√(Dₓ² + Dᵧ²)</code>. At threshold 0.15, the main edges and some grass texture remain.</p>
+    <img src="results/1_2_edges.jpg" alt="Cameraman derivatives, gradient magnitude, and thresholded edges">
+
+    <h3>1.3 Derivative of Gaussian</h3>
+    <p>I built a Gaussian with <code>cv2.getGaussianKernel</code> (σ = 2). Smoothing removes many grass edges, and then convolving the Gaussian with Dₓ/Dᵧ gives DoG filters, whose interior results match the two-step method within 1.4×10⁻¹⁵. After smoothing, I used threshold 0.08.</p>
+    <img src="results/1_3_dog.jpg" alt="Gaussian smoothing and derivative-of-Gaussian results on cameraman">
+  </section>
+
+  <section>
+    <h2>Part 2: Applications</h2>
+    <h3>2.1 Image Sharpening</h3>
+    <p>High frequencies are the original minus its Gaussian blur, so I added them back with amount α = 1.5. The single unsharp-mask filter is <code>(1 + α)δ − αG</code>.</p>
+    <img src="results/2_1_taj.jpg" alt="Taj Mahal original, blur, high frequencies, and sharpened result">
+    <p>Larger amounts strengthen edges and noise, whereas sharpening a blurred cathedral restores contrast but not the details.</p>
+    <img src="results/2_1_amounts.jpg" alt="Taj Mahal with three sharpening amounts">
+    <img src="results/2_1_recovery.jpg" alt="Original, blurred, and sharpened-after-blur cathedral">
+
+    <h3>2.2 Hybrid Images</h3>
+    <p>I aligned each pair with two points, then added one low-pass image to another's high frequencies. Low/high σ values: Nutmeg-Derek 3/2, distant-close selfie 9/5, wide-zoomed building 10/5. The Derek-Nutmeg figures show alignment, filtering, and Fourier log magnitudes.</p>
+    <img src="results/2_2_derek_nutmeg.jpg" alt="Original and aligned Derek and Nutmeg images with final hybrid">
+    <img src="results/2_2_fourier.jpg" alt="Fourier spectra of the aligned inputs, filtered images, and hybrid">
+    <img src="results/2_2_custom.jpg" alt="Original pairs and final selfie and building hybrid images">
+    <p>The building hybrid is pretty subtle since both inputs show the same building.</p>
+
+    <h3>2.3 Gaussian and Laplacian Stacks</h3>
+    <p>Gaussian stacks blur without downsampling, whereas laplacian stacks store differences and the final blur, so their levels sum to the original.</p>
+    <img src="results/2_3_stacks.jpg" alt="Gaussian and Laplacian stacks for apple and orange">
+
+    <h3>2.4 Multiresolution Blending</h3>
+    <p>I weight each Laplacian level by its Gaussian-blurred mask and sum the levels.</p>
+    <img src="results/2_4_oraple.jpg" alt="Apple, vertical mask, orange, and oraple">
+    <img src="results/2_4_figure_342.jpg" alt="Twelve-panel Figure 3.42 recreation">
+    <p>My custom blends join two cactus views at a vertical seam and two selfies with an oval face mask.</p>
+    <img src="results/2_4_cactus.jpg" alt="Custom cactus blend with a vertical mask">
+    <p>Masked inputs and Laplacian contributions for the selfie blend:</p>
+    <img src="results/2_4_face.jpg" alt="Custom selfie blend with an irregular mask, masked inputs, and Laplacian contributions">
+  </section>
+
+  <section>
+    <h2>What I Learned</h2>
+    <p>Gaussian blur separates image frequencies, whereas blurring a mask across scales smooths a blend's seam.</p>
+  </section>
+</body>
+</html>
