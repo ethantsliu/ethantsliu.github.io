@@ -73,10 +73,11 @@
       text-decoration: underline;
     }
   </style>
-  <link rel="stylesheet" href="clouds.css" />
+  <link rel="stylesheet" href="clouds.css?v=20" />
   <script src="site.js" defer></script>
 </head>
 <body data-pond="off" class="cloud-site">
+  <div class="header-cranes" aria-hidden="true"></div>
   <div class="page-wrapper page-essay-wide">
     <header class="header-container">
       <div class="header-top">
@@ -120,7 +121,7 @@
           <h2 id="serial-pre-norm-block"><strong>Serial pre-norm block</strong></h2>
           <p>The common two-step form is: \(h = x + \mathrm{Attn}(\mathrm{Norm}(x))\) and \(y = h + \mathrm{MLP}(\mathrm{Norm}(h))\).</p>
 
-          <p>Substitute \(h\) into \(y\): \(y = x + \mathrm{Attn}(\mathrm{Norm}(x)) + \mathrm{MLP}(\mathrm{Norm}(x + \mathrm{Attn}(\mathrm{Norm}(x))))\).</p>
+          <p>Substitute \(h\) into \(y\): <span class="inline-equation" tabindex="0" aria-label="Serial transformer equation">\(y = x + \mathrm{Attn}(\mathrm{Norm}(x)) + \mathrm{MLP}(\mathrm{Norm}(x + \mathrm{Attn}(\mathrm{Norm}(x))))\)</span>.</p>
 
           <h2 id="parallel-block"><strong>Parallel block</strong></h2>
           <p>The parallel variant uses: \(y = x + \mathrm{Attn}(\mathrm{Norm}(x)) + \mathrm{MLP}(\mathrm{Norm}(x))\).</p>

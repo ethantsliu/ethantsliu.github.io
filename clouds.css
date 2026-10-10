@@ -49,9 +49,9 @@ html:has(.cloud-site)::after,
 .cloud-site .dropdown-content.is-open { display: block; opacity: 1; visibility: visible; pointer-events: auto; }
 html[data-theme="dark"] .cloud-site .sun-icon { display: block; }
 html[data-theme="dark"] .cloud-site .moon-icon { display: none; }
+.work-page .experience-date-mobile { display: none; }
 
-/* Home and Work share the flock; use its painted center for placement.
-   Load the decorative artwork only where the header has room for it. */
+/* Home and Work share the flock; use its painted center for placement. */
 .cloud-site > .header-cranes { display: none; }
 @media (min-width: 1280px) {
   .cloud-site:is(.home, .work-page) > .header-cranes {
@@ -191,62 +191,191 @@ html[data-theme="dark"] .cloud-site .moon-icon { display: none; }
   .latest-layout { --latest-width: 70%; }
 }
 @media (max-width: 760px) {
-  /* The portrait's paper is warm (#faf8f4); a white page makes its crop visible. */
-  html:not([data-theme="dark"]):has(.cloud-site) {
-    --bg: #faf8f4;
-    --divider: #deded8;
+  .cloud-site .dropdown-content {
+    --menu-scale: .85;
+    min-width: calc(120px * var(--menu-scale));
+    max-width: calc(180px * var(--menu-scale));
+    border-radius: calc(10px * var(--menu-scale));
+    margin-top: calc(.2rem * var(--menu-scale));
+    padding: calc(.2rem * var(--menu-scale)) calc(.35rem * var(--menu-scale));
   }
+  .cloud-site .dropdown-content a {
+    font-size: calc(.9rem * var(--menu-scale));
+    padding: calc(.2rem * var(--menu-scale)) calc(.65rem * var(--menu-scale));
+    background-position: center calc(100% - .16rem * var(--menu-scale));
+  }
+  .cloud-site .dropdown-content a:hover {
+    background-size: calc(100% - 1.3rem * var(--menu-scale)) 1px;
+  }
+  .work-page .experience-date-desktop { display: none; }
+  .work-page .experience-date-mobile { display: inline; }
+  /* Use the same compact reading scale across listings and articles. */
+  .cloud-site:not(.home) { font-size: .97rem; }
+  .cloud-site:not(.home) :is(.experience-title, .research-title, .writing-title,
+    .project-title, .project-desc, .page-intro, .blog-subtitle, .writing-subtitle) {
+    font-size: .97rem;
+  }
+  .cloud-site:not(.home) :is(.experience-meta, .research-authors, .research-links,
+    .research-year, .writing-meta, .project-meta, .essay-meta, .blog-meta, .back-link) {
+    font-size: .85rem;
+  }
+  .cloud-site.work-page .experience-title {
+    font-size: .97rem;
+  }
+  .work-page .experience-separator { display: none; }
+  .cloud-site.work-page .experience-company {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin-top: .3rem;
+    font-size: .87rem;
+    color: var(--text);
+  }
+  .cloud-site.work-page .experience-meta {
+    font-size: .75rem;
+  }
+  .cloud-site.work-page .experience-location { color: var(--accent-soft); }
+  .cloud-site .project-tag { font-size: .75rem; }
+  .cloud-site .writing-index { font-size: 1rem; }
+  .cloud-site .essay-title { font-size: 1.15rem; line-height: 1.4; }
+  .cloud-site .blog-hero-title { font-size: 1.4rem; line-height: 1.3; }
+  .cloud-site :is(.essay-content, .blog-content) { min-width: 0; font-size: 1rem; }
+  .cloud-site :is(.essay-content, .blog-content) :is(p, ul, ol, li) {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .cloud-site :is(.essay-content, .blog-content) h2 { font-size: 1.1rem; }
+  .cloud-site :is(.essay-content, .blog-content) :is(h3, h4) { font-size: 1rem; }
+  .cloud-site :is(.essay-content, .blog-content) :is(ul, ol) { padding-left: 1.2rem; margin-left: 0; }
+  .cloud-site :is(.essay-container, .blog-container) { margin: 1.75rem 0 0; padding: 0; }
+  .cloud-site .back-link { margin-bottom: 1.25rem; }
+  .cloud-site :is(.essay-meta, .blog-meta) { margin-bottom: 1.5rem; }
+  .cloud-site .main-content { overflow-wrap: anywhere; }
+  .cloud-site .blog-layout { gap: 1.5rem; }
+  .cloud-site .blog-toc { min-width: 0; max-width: 100%; }
+  .cloud-site .blog-toc a { font-size: .85rem; }
+  .cloud-site .blog-toc :is(.toc-sub, .toc-sub-sub) a { font-size: .78rem; }
+  .cloud-site :is(.essay-content, .blog-content) :is(pre, .math-block) {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-wrap: normal;
+  }
+  .cloud-site :is(.essay-content, .blog-content) mjx-container[display="true"] {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .cloud-site .inline-equation {
+    display: inline-block;
+    max-width: 100%;
+    padding: .15em 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    vertical-align: middle;
+  }
+  .cloud-site :is(.essay-content, .blog-content) table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    font-size: .85rem;
+    overflow-wrap: normal;
+  }
+  .cloud-site :is(.essay-content, .blog-content) img { max-width: 100%; height: auto; }
   .cloud-site > .page-cloud {
-    mask-image: radial-gradient(ellipse 85% 105% at 88% 100%, #000 32%, transparent 100%);
+    --mobile-cloud-height: clamp(200px, 60vw, 280px);
+    flex-basis: var(--mobile-cloud-height);
+    height: var(--mobile-cloud-height);
+    width: min(100%, 460px);
+    align-self: flex-end;
+    background: var(--bg);
+    mask-image:
+      linear-gradient(to right, transparent, #000 28%),
+      linear-gradient(to bottom, transparent, #000 18%, #000 65%, transparent);
+    mask-composite: intersect;
   }
-  .latest-layout { grid-template-columns: minmax(0, 1fr); gap: 8px; }
-  .home.cloud-site .section-subtitle { width: 58%; }
+  .cloud-site .page-cloud img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right 40%;
+  }
+  /* Compact mobile type, with a larger reduction for the name. */
+  .home.cloud-site { --visit-size: .78rem; }
+  .home.cloud-site .name-title {
+    font-size: clamp(1.2rem, 5.2vw, 1.35rem);
+    letter-spacing: -.2px;
+  }
+  .home.cloud-site .contact-bar { font-size: .87rem; }
+  .home.cloud-site .intro p,
+  .home.cloud-site .latest-list .feature-title { font-size: .97rem; }
+  .home.cloud-site .latest-meta :is(.feature-label, .feature-date) { font-size: .75rem; }
+  .latest-layout {
+    --art-bleed: 3.25rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .home.cloud-site .section-subtitle { width: 100%; font-size: 1rem; }
+  /* Give the clouds their own space after the list on narrow screens.
+     Bleed into the right edge and fade into the page instead of placing a
+     cropped strip between the section heading and its first entry. */
   .cloud-artwork {
     position: relative;
     inset: auto;
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 2;
     justify-self: end;
-    width: min(100%, 360px);
-    height: 148px;
+    width: min(calc(100% + var(--art-bleed)), 460px);
+    height: clamp(200px, 60vw, 280px);
     min-height: 0;
-    margin: -65px -16px 0 0;
-    background: transparent;
+    margin: 28px calc(-1 * var(--art-bleed)) -24px 0;
+    background: var(--bg);
     mask-image:
-      linear-gradient(to right, transparent, #000 20%, #000 76%, transparent),
-      linear-gradient(to bottom, transparent, #000 22%, #000 72%, transparent);
+      linear-gradient(to right, transparent, #000 28%),
+      linear-gradient(to bottom, transparent, #000 18%, #000 65%, transparent);
     mask-composite: intersect;
   }
   .cloud-artwork img {
     height: 100%;
     object-fit: cover;
-    object-position: right 16%;
+    object-position: right 40%;
     mask-image: none;
   }
-  .latest-list { grid-row: 2; }
+  .latest-list { grid-row: 1; }
 }
 @media (max-width: 720px) {
+  /* Put the small flock to the right of the name, below the menu control.
+     Account for the image's blank right margin when aligning the birds. */
+  body.cloud-site > .header-cranes {
+    --crane-width: clamp(96px, 28vw, 120px);
+    display: block;
+    position: absolute;
+    top: 1.35rem;
+    left: calc(100% - 1.6rem - 44px - var(--crane-width) * .7);
+    width: var(--crane-width);
+    height: calc(var(--crane-width) * 5 / 6);
+    background: url("photos/cranes-ascii.webp") center / contain no-repeat;
+    filter: var(--cloud-filter);
+    mix-blend-mode: var(--cloud-blend);
+    pointer-events: none;
+  }
   .cloud-site { padding: 0; }
   .cloud-site > .page-wrapper,
   .home.cloud-site .page-wrapper { padding: 1.6rem 1.6rem 2.8rem; }
+  .latest-layout { --art-bleed: 1.6rem; }
   .cloud-site .research { margin-top: 2.25rem; }
   .cloud-site .research-entry { margin-top: 0; margin-bottom: 2.25rem; }
-  .cloud-site .writing-list { margin-top: 2.25rem; }
+  .cloud-site .research-title-row { flex-direction: column; gap: .35rem; }
+  .cloud-site .research-year { margin-top: 0; }
+  .cloud-site .writing-list { margin: 2.25rem 0 0; align-items: stretch; gap: 2rem; }
+  .cloud-site .writing-entry { text-align: left; }
   .cloud-site .projects-grid { grid-template-columns: minmax(0, 1fr); gap: 1rem; margin-top: 1.5rem; }
+  .cloud-site .project-card { min-width: 0; padding: 1rem; }
   .cloud-site .theme-toggle,
   .cloud-site .dropdown-btn { width: 44px; height: 44px; padding: 0; }
   .home.cloud-site .contact-bar { gap: .2rem .9rem; }
   .home.cloud-site .contact-email { flex-basis: 100%; }
   .home.cloud-site .divider-dot { display: none; }
   .cloud-site .dropdown-content { left: auto; right: 0; transform: none; }
-}
-@media (max-width: 600px) {
-  .cloud-site > .page-cloud {
-    flex-basis: 160px;
-    height: 160px;
-    margin: auto 0 0;
-  }
-  .page-cloud img { width: 440px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .cloud-site *, .cloud-site *::before, .cloud-site *::after { transition: none !important; }
