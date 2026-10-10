@@ -41,6 +41,9 @@ html:has(.cloud-site)::after,
 .cloud-site::before,
 .cloud-site::after { display: none; }
 .cloud-site { position: relative; min-height: 100vh; overflow-x: clip; background: var(--bg); }
+/* Paint the light-mode body's white backdrop explicitly rather than relying
+   on the root canvas to provide a backdrop for the artwork. */
+html:not([data-theme="dark"]) body.cloud-site { background: var(--bg); }
 .cloud-site ::selection { background: var(--accent-soft-light); color: var(--text); }
 .cloud-site :is(.feature-date, .research-year, .experience-meta, .writing-meta, .essay-meta, .project-meta) { color: var(--muted); }
 .cloud-site :is(.contact-email, .feature-label) { color: var(--accent-soft); }
@@ -53,6 +56,15 @@ html[data-theme="dark"] .cloud-site .moon-icon { display: none; }
 
 /* Home and Work share the flock; use its painted center for placement. */
 .cloud-site > .header-cranes { display: none; }
+/* Filter the artwork inside its blending layer, rather than asking iOS to
+   filter and blend the same element in one compositing step. */
+.cloud-site > .header-cranes::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("photos/cranes-ascii.webp") center / contain no-repeat;
+  filter: var(--cloud-filter);
+}
 @media (min-width: 1280px) {
   .cloud-site:is(.home, .work-page) > .header-cranes {
     --crane-width: 216px;
@@ -62,8 +74,6 @@ html[data-theme="dark"] .cloud-site .moon-icon { display: none; }
     left: calc(50% + 318px - var(--crane-width) * .35);
     width: var(--crane-width);
     height: calc(var(--crane-width) * 5 / 6);
-    background: url("photos/cranes-ascii.webp") center / contain no-repeat;
-    filter: var(--cloud-filter);
     mix-blend-mode: var(--cloud-blend);
     pointer-events: none;
   }
@@ -353,8 +363,6 @@ html[data-theme="dark"] .cloud-site .moon-icon { display: none; }
     left: calc(100% - 1.6rem - 44px - var(--crane-width) * .7);
     width: var(--crane-width);
     height: calc(var(--crane-width) * 5 / 6);
-    background: url("photos/cranes-ascii.webp") center / contain no-repeat;
-    filter: var(--cloud-filter);
     mix-blend-mode: var(--cloud-blend);
     pointer-events: none;
   }
