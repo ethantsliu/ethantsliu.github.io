@@ -1,4 +1,12 @@
 /* Golden hour: the approved cloud portrait, with clear space for reading. */
+@font-face {
+  font-family: 'Tian Serif';
+  src: url('fonts/tian-serif.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  unicode-range: U+5929, U+9002;
+}
 html:has(.cloud-site) {
   --bg: #ffffff;
   --text: #252925;
@@ -201,6 +209,9 @@ html[data-theme="dark"] .cloud-site .moon-icon { display: none; }
   .latest-layout { --latest-width: 70%; }
 }
 @media (max-width: 760px) {
+  html:has(.cloud-site) {
+    --serif-stack: 'CMU Serif', 'Tian Serif', 'Songti SC', 'STSong', 'Noto Serif CJK SC', 'Source Han Serif SC', 'SimSun', serif;
+  }
   .cloud-site .dropdown-content {
     --menu-scale: .85;
     min-width: calc(120px * var(--menu-scale));
@@ -353,6 +364,11 @@ html[data-theme="dark"] .cloud-site .moon-icon { display: none; }
   .latest-list { grid-row: 1; }
 }
 @media (max-width: 720px) {
+  /* Mobile uses an ordinary transparent canvas: no paper rectangle, live
+     image filter, or blend mode is needed to match the page's white. */
+  body.cloud-site > .header-cranes::before { display: none; }
+  body.cloud-site > .header-cranes.has-transparent-birds { mix-blend-mode: normal; }
+  .header-cranes canvas { display: block; width: 100%; height: 100%; }
   /* Put the small flock to the right of the name, below the menu control.
      Account for the image's blank right margin when aligning the birds. */
   body.cloud-site > .header-cranes {
