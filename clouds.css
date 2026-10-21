@@ -208,6 +208,29 @@ html[data-theme="dark"] .cloud-site .moon-icon { display: none; }
 @media (max-width: 1000px) and (min-width: 761px) {
   .latest-layout { --latest-width: 70%; }
 }
+
+/* Compact reading text on desktop; mobile keeps its existing scale. */
+@media (min-width: 761px) {
+  .home.cloud-site .name-title {
+    font-size: 30px;
+  }
+
+  .home.cloud-site .contact-bar {
+    font-size: 13px;
+  }
+
+  .home.cloud-site .contact-bar .divider-dot {
+    font-size: inherit;
+  }
+
+  .home.cloud-site :is(.intro p, .latest-list .feature-title,
+    .latest-meta .feature-label, .latest-meta .feature-date, .visit-counter),
+  .cloud-site :is(.essay-content, .blog-content),
+  .cloud-site :is(.essay-content, .blog-content) :is(p, ul, ol, li, blockquote, table, figcaption) {
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 760px) {
   html:has(.cloud-site) {
     --serif-stack: 'CMU Serif', 'Tian Serif', 'Songti SC', 'STSong', 'Noto Serif CJK SC', 'Source Han Serif SC', 'SimSun', serif;
