@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <script>
+    // Restore the chosen theme before the page is painted.
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+    } catch { document.documentElement.dataset.theme = 'light'; }
+  </script>
+  <title>Intuition as Compressed Verification | Ethan Liu</title>
+  <link rel="preload" href="fonts/cmunrm.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    .essay-container {
+      width: 100%;
+      margin: 2.2rem auto 3rem;
+      padding: 0 1rem;
+      text-align: left;
+    }
+
+    .essay-title {
+      font-size: 1.32rem;
+      font-family: var(--serif-stack);
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.55rem;
+      letter-spacing: -0.3px;
+    }
+
+    .essay-meta {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 1.9rem;
+      font-family: var(--serif-stack);
+    }
+
+    .essay-content p {
+      margin-bottom: 1.05rem;
+      font-size: 1.14rem;
+      line-height: 1.8;
+      color: var(--text);
+    }
+
+    .essay-content blockquote {
+      margin: 0 0 1.05rem;
+      padding-left: 1.2rem;
+      border-left: 2px solid var(--divider);
+    }
+
+    .essay-content blockquote p:last-child {
+      margin-bottom: 0;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1.8rem;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.92rem;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--muted);
+      text-decoration: underline;
+    }
+  </style>
+  <link rel="stylesheet" href="clouds.css?v=22" />
+  <script src="site.js?v=2" defer></script>
+</head>
+<body data-pond="off" class="cloud-site">
+  <div class="header-cranes" aria-hidden="true"></div>
+  <div class="page-wrapper page-essay-wide">
+    <header class="header-container">
+      <div class="header-top">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme">
+      <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+        <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
+        <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"/>
+        <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"/>
+        <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"/>
+      </svg>
+        </button>
+        <div class="dropdown" id="dropdown">
+          <button class="dropdown-btn" id="dropdownBtn" type="button" aria-controls="dropdownContent" aria-expanded="false">天</button>
+          <div class="dropdown-content" id="dropdownContent">
+            <a href="/">about</a>
+            <a href="work">work</a>
+            <a href="research">research</a>
+            <a href="archive">archive</a>
+            <a href="writing" style="color: var(--accent); text-decoration: underline;">writing</a>
+          </div>
+        </div>
+      </div>
+      
+    </header>
+
+    <main class="main-content">
+    <article class="essay-container essay-wide">
+      <a href="writing" class="back-link">← back to writing</a>
+
+      <h1 class="essay-title">Intuition as Compressed Verification</h1>
+      <div class="essay-meta">Ethan TS. Liu | <time datetime="2026-10-19">October 19, 2026</time> &middot; 5 min read</div>
+
+      <div class="essay-content">
+        <p>Recently, mathematicians have found themselves to be some of the first intellectual workers to be disrupted by AI. A field that many consider to be the pinnacle of human intelligence is now at risk of being washed away.</p>
+
+        <p>Have you ever been humbled by a topology or abstract algebra midterm, or spent hours staring at a problem when someone else intuited the solution just by glancing at it?</p>
+
+        <p>There is a certain level of "genius" that you have no choice but to appreciate. Some people just see things. They might not see the solution immediately, but they see the path, or think that some path is likely to work out. This internal world model for prediction is developed through a lifetime of scrubbing problems, aka experience, which allows them to reduce the cost of search for a solution (in theory).</p>
+
+        <p>However, with Lean, AI's cost of search is reduced at an even greater magnitude. It can verify things in a matter of seconds, whereas mathematicians may take hours to weeks. Certainly, on this second axis, AI outperforms mathematicians.</p>
+
+        <p>Let's give humans the benefit of the doubt, and say that intuition is much stronger than the reasoning chains that AI can produce from its vast training data. 1-1, right?</p>
+
+        <p>But there is a third axis: scaling. A single mathematician, constrained by mental energy, time, and caffeine, faces the prospect of competing against thousands of AI agents, a "fleet" or "swarm", which can explore different approaches in parallel. With tools like Lean, the agents can continuously test their approaches and reasoning magnitudes of more times than a human mathematician. The sheer volume and speed of iteration triumphs over human intuition.</p>
+
+        <p>"But hold on," the reader objects, "Some of the problems that have been solved have been done without Lean!"</p>
+
+        <p>This is true. Lean is not the primary driver; in fact, with Navier-Stokes, OpenAI spent approx. 10,000 agents exploring the problem, then generated proposed solution in 88 hours, and then spent another 17 hours formalizing and verifying it.</p>
+
+        <p>In fact, AI scales the entire mathematical process. The central advantage, is not that it can only verify faster, but that things scale cheaply (relative to the physical world, as tokens are much cheaper and more reliable than human willpower and cortisol). Math itself is vulnerable because it has unusually strong verification mechanisms (both formal and informal).</p>
+
+        <p>Now, let's move on from math. Certainly, there are other intellectual fields (scientific research, software) which are also susceptible to AI disruption. But these require longer and/or more expensive verification loops. If you assume generation is not the bottleneck (a valid assumption, given the "AI slop" you see in articles and codebases nowadays), then AI is bottlenecked by either time or resources (compute, money, wetlab machines).</p>
+
+        <p>More importantly, the data needed to develop intuition isn't equally accessible across all of these fields. Longer loops mean you have less data, less decision points, and therefore lower chance of "sight" of patterns. The learning signal is especially scarce where you have uncertainty.</p>
+
+        <p>All of this is still without moving into the physical world. As taken from my substack on <a href="https://substack.com/home/post/p-200079379">Moravec's Paradox</a>:</p>
+
+        <blockquote cite="https://substack.com/home/post/p-200079379">
+          <p>Part of the reason AI seems so daunting is that tasks which are easy to us (mobility, dexterity), are taken for granted. They are such vital aspects of our daily life that don’t require a shred of cognitive thought. Imagine this: suppose we were thinking machines just as artificial intelligence is now, and were not able to interact with the physical world (and if we were, only on a very limited basis via robot dogs, Waymos, and the sort). The value of movement and perception would skyrocket! Many of us “knowledge workers”, deprived of touch and sensation, would pay a king’s ransom for the scarce ability to physically manipulate the world through environmental interaction.</p>
+
+          <p>We confuse abundance with simplicity. Because nearly every able-bodied adult can walk across a room, open a refrigerator, and pour a glass of water, these actions are considered trivial. But this hides the physical complexity. If only one person in a thousand could physically manipulate the world, hand dexterity would not be considered menial, but rather, a superpower.</p>
+        </blockquote>
+
+        <p>Now, since I wrote this, robots have made remarkable progress, moving into factories and physical tasks, and foundational models have become more capable at generalizing across these tasks at few-shot. There are two reasons: 1) robots are being used to do repeatable tasks, and 2) part of this advance is because robot training and testing is increasingly being done in simulated environments. Training in simulation is both cheap and has a shorter loop. The fixed cost of creating a good simulation is very much worth it when compared to the cost of real-environment training.</p>
+
+        <p>The fundamental bottleneck has always been the cost of experience, and now, it is being removed. Obviously a simulation isn't exact verification like Lean (sim-to-real gap), and this has been known and done since 2017. Most of the recent advances have been scaling (GPU-accelerated parallel frameworks), as well as just quality improvements (better physics engines, better rendering, sensor modeling, etc.)</p>
+
+        <p>Intuition has always been scarce because experience is always expensive. Every person only has one lifetime to develop intuition. This limits how many "experiments", "proofs", "prototypes" people can run.</p>
+
+        <p>In a sense, intuition is compressed verification: the accumulated outcomes of past experiences, distilled into a single prediction or inkling.</p>
+
+        <p>But what happens when verification itself becomes cheap?</p>
+
+        <p>When thousands of agents can explore millions of possibilities in parallel, the previously-large advantage of knowing which path to take is much smaller. Computation, iteration, and feedback starts to replace intuition.</p>
+
+        <p>Obviously, intuition isn't useless. The search space of solutions, if high-dimensional, is massive. Even machines need to know where to look. But the economics of intelligence have definitely changed. You just need to know what paths to look at in general, or have a general idea of which paths to look at, then send your agent fleet to explore all subpaths of those, instead of needing to do so and refine things yourself.</p>
+
+        <p>We will soon have abundant intelligence, both capable and cheap. This brings us back to Moravec's Paradox, but in reverse: we might begin to take intelligence for granted just as we have always taken basic physical abilities for granted.</p>
+      </div>
+    </article>
+  </main>
+
+
+  </div>
+
+  <div class="page-cloud" aria-hidden="true">
+    <img src="photos/clouds-portrait.webp" width="1173" height="1341" alt="" loading="lazy" decoding="async" />
+  </div>
+</body>
+</html>
