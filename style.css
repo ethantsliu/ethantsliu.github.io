@@ -1999,10 +1999,10 @@ a:hover,
 
 .work-page .experience-meta .meta-sep {
   display: inline-block;
-  margin: 0 0.5em;
-  font-size: 0.7em;
+  margin: 0 0.45em;
+  font-size: 1em;
   line-height: 1;
-  vertical-align: 0.12em;
+  vertical-align: 0;
   color: var(--muted);
-  opacity: 0.55;
+  opacity: 0.8;
 }
