@@ -1996,3 +1996,13 @@ a:hover,
 .home .feature-title {
   border-bottom-color: transparent !important;
 }
+
+.work-page .experience-meta .meta-sep {
+  display: inline-block;
+  margin: 0 0.5em;
+  font-size: 0.7em;
+  line-height: 1;
+  vertical-align: 0.12em;
+  color: var(--muted);
+  opacity: 0.55;
+}
