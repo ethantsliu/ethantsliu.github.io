@@ -1,93 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CS180 Project 4A - Image Warping and Mosaicing</title>
-  <style>
-    body { max-width: 1000px; margin: 40px auto; padding: 0 20px; font: 17px/1.55 Arial, sans-serif; color: #222; }
-    h1, h2, h3 { line-height: 1.2; }
-    section { margin: 50px 0; }
-    img { display: block; width: 100%; height: auto; margin: 18px 0 30px; }
-    pre { overflow-x: auto; background: #f4f4f4; padding: 16px; }
-    figure { margin: 24px 0 30px; }
-    figure img { margin: 18px 0 10px; }
-    figcaption { font-size: 15px; color: #555; }
-    .medium { max-width: 640px; }
-    @media print {
-      pre { overflow: visible; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; }
-      h2, h3, h4 { break-after: avoid; }
-      figure, table { break-inside: avoid; }
-      p { orphans: 3; widows: 3; }
-    }
-  </style>
+  <meta http-equiv="refresh" content="0; url=../proj4/">
+  <link rel="canonical" href="https://xn--rss.to/cs180/proj4/">
+  <title>CS180 Project 4</title>
 </head>
 <body>
-  <h1>Image Warping and Mosaicing</h1>
-
-<p>For this project, we are trying to do some warping and mosaicing. I shot three scenes by rotating my phone in place, and then recovered a homography for each pair of photos, and blended the photos into mosaics. I happened to be in Gateway when I needed photos, so I took three scenes: the lower level lobby (B1), a classroom, and a kitchen.</p>
-
-<section id="shoot">
-<h2>A.1 Shoot the Pictures</h2>
-<p>I took 3 photos of each scene with an iPhone at 1x zoom. To make sure the transform between views is a homography, I turned the phone about its own position and stayed in place. Neighboring photos overlap by roughly half, and I used the building photo from a previous project for the warp and rectification examples.</p>
-<figure><a href="results/mosaic_kitchen_sources.jpg"><img src="results/mosaic_kitchen_sources.jpg" width="907" height="350" loading="lazy" decoding="async" alt="Kitchen left, center, and right photos."></a><figcaption>Kitchen: left, center, and right.</figcaption></figure>
-<figure><a href="results/mosaic_classroom_sources.jpg"><img src="results/mosaic_classroom_sources.jpg" width="907" height="350" loading="lazy" decoding="async" alt="Classroom left, center, and right photos."></a><figcaption>Classroom: left, center, and right.</figcaption></figure>
-<figure><a href="results/mosaic_lobby_sources.jpg"><img src="results/mosaic_lobby_sources.jpg" width="907" height="350" loading="lazy" decoding="async" alt="Lobby left, center, and right photos."></a><figcaption>Lobby: left, center, and right.</figcaption></figure>
-</section>
-
-<section id="homography">
-<h2>A.2 Recover Homographies</h2>
-<p>A homography maps a point (x, y) to (u, v) by computing (a, b, c) = H · (x, y, 1) and dividing: u = a/c and v = b/c. I set the bottom right entry to 1 so we can solve for the other eight. Each correspondence (x, y) → (u, v) gives two linear equations after multiplying out the division:</p>
-<p>[x, y, 1, 0, 0, 0, −ux, −uy] · h = u<br>[0, 0, 0, x, y, 1, −vx, −vy] · h = v</p>
-<p>Stacking these rows for n correspondences gives a 2nx8 system, which can be solved with least squares for h (Ah = b). Then I reshape h into the 3x3 matrix. As a sanity check, computeH recovers a known homography from five synthetic points to within 1e-6.</p>
-<p>I clicked 9 to 13 pairs per image pair using the correspondence tool, choosing various sharp corners on different objects. The images on the right are all the center images for each scene.</p>
-<figure><a href="results/corr_kitchen_left.jpg"><img src="results/corr_kitchen_left.jpg" width="816" height="405" loading="lazy" decoding="async" alt="Correspondences between the kitchen left and center photos."></a><figcaption>Kitchen left → center, 13 pairs.</figcaption></figure>
-<figure><a href="results/corr_kitchen_right.jpg"><img src="results/corr_kitchen_right.jpg" width="816" height="405" loading="lazy" decoding="async" alt="Correspondences between the kitchen right and center photos."></a><figcaption>Kitchen right → center, 9 pairs.</figcaption></figure>
-<figure><a href="results/corr_classroom_left.jpg"><img src="results/corr_classroom_left.jpg" width="816" height="405" loading="lazy" decoding="async" alt="Correspondences between the classroom left and center photos."></a><figcaption>Classroom left → center, 9 pairs.</figcaption></figure>
-<figure><a href="results/corr_classroom_right.jpg"><img src="results/corr_classroom_right.jpg" width="816" height="405" loading="lazy" decoding="async" alt="Correspondences between the classroom right and center photos."></a><figcaption>Classroom right → center, 9 pairs.</figcaption></figure>
-<figure><a href="results/corr_lobby_left.jpg"><img src="results/corr_lobby_left.jpg" width="816" height="405" loading="lazy" decoding="async" alt="Correspondences between the lobby left and center photos."></a><figcaption>Lobby left → center, 9 pairs.</figcaption></figure>
-<figure><a href="results/corr_lobby_right.jpg"><img src="results/corr_lobby_right.jpg" width="816" height="405" loading="lazy" decoding="async" alt="Correspondences between the lobby right and center photos."></a><figcaption>Lobby right → center, 9 pairs.</figcaption></figure>
-<p>Here are our recovered matrices:</p>
-<pre>kitchen left → center          kitchen right → center
-[ 1.3664  −0.0997  −528.3283]  [ 0.6936   0.0147   295.5176]
-[ 0.2655   1.0037  −104.4475]  [−0.1874   0.8135   112.5203]
-[ 0.0004  −0.0002     1.0000]  [−0.0003  −0.0001     1.0000]
-
-classroom left → center        classroom right → center
-[ 1.4906   0.0157  −655.3539]  [ 0.6379  −0.0371   455.1067]
-[ 0.3212   1.2438  −187.2321]  [−0.2216   0.8821   107.1158]
-[ 0.0005  −0.0001     1.0000]  [−0.0003   0.0000     1.0000]
-
-lobby left → center            lobby right → center
-[ 1.5486  −0.0553  −555.6979]  [ 0.6607   0.0599   341.1015]
-[ 0.4199   1.3645  −311.5881]  [−0.2740   0.9108    81.7685]
-[ 0.0005   0.0000     1.0000]  [−0.0003   0.0000     1.0000]</pre>
-<p>The left images are enlarged and shifted left, the right images are shrunk and shifted right, and the small bottom-row entries add the perspective.</p>
-</section>
-
-<section id="warp">
-<h2>A.3 Warp the Images</h2>
-<p>I warp by inverse mapping. The four corners of the input image go through H to predict the output bounding box. Then, every output pixel in that box is sent through the inverse of H back to the input image. Pixels that are outside the input become black and are marked as empty using a mask.</p>
-<p>I then implemented two ways to sample the input at non-integer locations. <b>Nearest neighbor</b> rounds the coordinates and copies one pixel. <b>Bilinear</b> takes the four surrounding pixels and weights them by the fractional distances.</p>
-<figure><a href="results/warp_building.jpg"><img src="results/warp_building.jpg" width="1149" height="427" loading="lazy" decoding="async" alt="Building photo and its warp by a test homography with both interpolation methods."></a><figcaption>The building photo warped by a hand-made homography with each method.</figcaption></figure>
-<figure class="medium"><a href="results/warp_building_crop.jpg"><img src="results/warp_building_crop.jpg" width="639" height="324" loading="lazy" decoding="async" alt="Close-up of a window after nearest-neighbor and bilinear warping."></a><figcaption>Close-up of a window in the building pic. As we can see, nearest neighbor leaves jagged, stairy steps along lines, whereas bilinear is much smoother but a bit softer.</figcaption></figure>
-<p>For the building warp above, nearest neighbor takes 0.08 s and bilinear 0.22 s. Bilinear reads and mixes four pixels per output pixel instead of copying one, so it is about three times slower, but it removes the jagged edges. I decided to use bilinear for the mosaics.</p>
-
-<h3 id="rectify">Rectification</h3>
-<p>To test the warp on one image, I clicked four corners of a rectangular shape and then computed the homography to send them to a different sized rectangle. For the building, the front of one of the balconies maps to 300x200; for the classroom, a square ceiling tile maps to 400x400. The output is then warped over a fixed region around the target rectangle. I did this because the floor corners of the classroom photo do not map anywhere sensible in a view that looks straight up at the ceiling.</p>
-<figure><a href="results/rectify_building.jpg"><img src="results/rectify_building.jpg" width="763" height="427" loading="lazy" decoding="async" alt="Building photo and its rectification using one balcony front."></a><figcaption>Building: the balcony front and the whole facade become frontal.</figcaption></figure>
-<figure class="medium"><a href="results/rectify_building_crop.jpg"><img src="results/rectify_building_crop.jpg" width="639" height="230" loading="lazy" decoding="async" alt="The rectified balcony front with both interpolation methods."></a><figcaption>The rectified balcony front, nearest neighbor and bilinear.</figcaption></figure>
-<figure><a href="results/rectify_classroom_center.jpg"><img src="results/rectify_classroom_center.jpg" width="763" height="427" loading="lazy" decoding="async" alt="Classroom photo and its rectification using one ceiling tile."></a><figcaption>Classroom: the ceiling becomes a square grid seen straight on.</figcaption></figure>
-<figure class="medium"><a href="results/rectify_classroom_center_crop.jpg"><img src="results/rectify_classroom_center_crop.jpg" width="639" height="324" loading="lazy" decoding="async" alt="The rectified ceiling tile with both interpolation methods."></a><figcaption>The rectified tile, nearest neighbor and bilinear.</figcaption></figure>
-</section>
-
-<section id="mosaic">
-<h2>A.4 Blend the Images into a Mosaic</h2>
-<p>To blend into a mosaic, the center photo stays the same and the left and right photos are warped into its frame. For blending, each warped image gets a weight equal to the distance from each pixel to the nearest edge of that image (the distance transform of its alpha mask). The mosaic is the weighted average of the 3 images.</p>
-<figure><a href="results/mosaic_kitchen.jpg"><img src="results/mosaic_kitchen.jpg" width="950" height="722" loading="lazy" decoding="async" alt="Kitchen mosaic."></a><figcaption>Kitchen mosaic.</figcaption></figure>
-<figure><a href="results/mosaic_classroom.jpg"><img src="results/mosaic_classroom.jpg" width="950" height="806" loading="lazy" decoding="async" alt="Classroom mosaic."></a><figcaption>Classroom mosaic.</figcaption></figure>
-<figure><a href="results/mosaic_lobby.jpg"><img src="results/mosaic_lobby.jpg" width="950" height="830" loading="lazy" decoding="async" alt="Lobby mosaic."></a><figcaption>Lobby mosaic.</figcaption></figure>
-<p>The geometry lines up across all 3 scenes! Unfortunately the phone sometimes chose a different exposure for each shot, so some regions are brighter than others.</p>
-</section>
+<p>This page moved to <a href="../proj4/">cs180/proj4/</a>.</p>
 </body>
 </html>
