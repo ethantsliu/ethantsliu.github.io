@@ -195,25 +195,68 @@
     const visitCount = document.getElementById('visitCount');
     if (!visitCount) return;
 
+    // Recovered from KVdb on November 12, 2026, before migrating to Abacus.
+    const savedCount = 5656;
+    const api = 'https://abacus.jasoncameron.dev';
+    const counter = 'ethantsliu.github.io/home';
+    const cacheKey = 'homeVisitCount';
+
+    function displayCount(value, title = '') {
+      visitCount.textContent = value.toLocaleString('en-US');
+      if (title) visitCount.title = title;
+      else visitCount.removeAttribute('title');
+    }
+
+    let lastCount = savedCount;
     try {
-      const response = await fetch('https://kvdb.io/36kTtgyo6xk2FrK7jvTJtm/home', {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'text/plain' },
-        body: '+1',
-        cache: 'no-store',
-      });
-      if (!response.ok) {
-        const errorText = await response.text().catch(() => '');
-        throw new Error(`Visit counter request failed (${response.status}) ${errorText}`.trim());
+      const cachedCount = Number(localStorage.getItem(cacheKey));
+      if (Number.isSafeInteger(cachedCount) && cachedCount > lastCount) lastCount = cachedCount;
+    } catch {
+      // The saved count still displays when browser storage is unavailable.
+    }
+    displayCount(lastCount, 'Last saved visit count; connecting to live counter');
+
+    async function requestCount(action) {
+      const controller = new AbortController();
+      const timeout = window.setTimeout(() => controller.abort(), 8000);
+      try {
+        const response = await fetch(`${api}/${action}/${counter}`, {
+          cache: 'no-store',
+          signal: controller.signal,
+        });
+        if (!response.ok) throw new Error(`Visit counter request failed (${response.status})`);
+        const { value } = await response.json();
+        if (!Number.isSafeInteger(value) || value < savedCount) {
+          throw new Error('Visit counter returned an invalid total');
+        }
+        return value;
+      } finally {
+        window.clearTimeout(timeout);
       }
-      const parsedValue = parseInt(await response.text(), 10);
-      if (!Number.isFinite(parsedValue)) throw new Error('Visit counter payload missing numeric value');
-      visitCount.textContent = parsedValue.toLocaleString('en-US');
-      visitCount.removeAttribute('title');
-    } catch (error) {
-      visitCount.textContent = 'offline';
-      visitCount.title = 'Visit counter temporarily unavailable';
-      console.error('Visit counter error:', error);
+    }
+
+    let value;
+    let title = '';
+    try {
+      value = await requestCount('hit');
+    } catch {
+      // A failed response may still have recorded the visit. Read, never
+      // increment a second time, so a transient failure cannot double-count.
+      try {
+        value = await requestCount('get');
+        title = 'Saved visit count; this visit could not be confirmed';
+      } catch (error) {
+        displayCount(lastCount, 'Last saved visit count; live counter temporarily unavailable');
+        console.warn('Visit counter temporarily unavailable:', error);
+        return;
+      }
+    }
+
+    displayCount(value, title);
+    try {
+      localStorage.setItem(cacheKey, String(value));
+    } catch {
+      // A successful server update does not depend on browser storage.
     }
   }
 
