@@ -201,7 +201,7 @@
 
           <p>In <a href="https://github.com/KellerJordan/modded-nanogpt">NanoGPT</a>&#8217;s current speedrun record (<a href="https://github.com/KellerJordan/modded-nanogpt/pull/360">#360</a>, 39.9 seconds), each of the ANVIL optimizer's six maps is \(X \leftarrow XP\) with \(P = aI + bA + cA^2\) and \(A = X^\top X\). Together, these six maps push every singular value of \(X\) toward 1, approximating \(UV^\top\) as Muon's Newton&ndash;Schulz does. Since the MLP matrices are \(2816 \times 768\), the Gram matrix \(A\) is only \(768 \times 768\). We can note that, after calculating our current map's Gram matrix, the next map's Gram matrix doesn't need \(X\) at all:</p>
 
-          <div class="math-block">\[ (XP)^\top (XP) \;=\; P\,(X^\top X)\,P \;=\; PAP \]</div>
+          <div class="math-block">\[ (XP)^\top (XP) \;=\; P^\top (X^\top X)\,P \;=\; PAP \quad \text{(since $P$ is symmetric)} \]</div>
 
           <p>So let's build a chain of two on the small side! With \(P_i = a_iI + b_iA_{i-1} + c_iA_{i-1}^2\):</p>
 
