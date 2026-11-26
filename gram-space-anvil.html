@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <script>
+    // Restore the chosen theme before the page is painted.
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+    } catch { document.documentElement.dataset.theme = 'light'; }
+  </script>
+  <title>Does a Faster Optimizer Kernel Speed Up the NanoGPT Speedrun? | Ethan Liu</title>
+  <link rel="preload" href="fonts/cmunrm.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .essay-container {
+      width: 100%;
+      margin: 2.2rem auto 3rem;
+      padding: 0 1rem;
+      text-align: left;
+    }
+
+    .essay-title {
+      font-size: 1.32rem;
+      font-family: var(--serif-stack);
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.55rem;
+      letter-spacing: -0.3px;
+    }
+
+    .essay-meta {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 1.9rem;
+      font-family: var(--serif-stack);
+    }
+
+    .essay-content p {
+      margin-bottom: 1.05rem;
+      font-size: 1.14rem;
+      line-height: 1.8;
+      color: var(--text);
+    }
+
+    .essay-content h2 {
+      font-size: 1.25rem;
+      margin-top: 1.75rem;
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: -0.2px;
+    }
+
+    .essay-content b, .essay-content strong {
+      font-weight: 600;
+      font-synthesis-weight: none;
+    }
+
+    .essay-content pre {
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+      background: rgba(128, 128, 128, 0.08);
+      padding: 0.9rem 1rem;
+      overflow-x: auto;
+      border-radius: 6px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      margin: 1.2rem 0;
+    }
+
+    .essay-content pre code {
+      background: none;
+      padding: 0;
+      font-size: inherit;
+    }
+
+    .essay-content code {
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+      background: rgba(128, 128, 128, 0.12);
+      padding: 0.1em 0.3em;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    .essay-content table {
+      border-collapse: collapse;
+      margin: 1.2rem auto;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .essay-content th, .essay-content td {
+      padding: 0.4rem 0.8rem;
+      border-bottom: 1px solid var(--muted);
+    }
+
+    .essay-content th {
+      text-align: left;
+    }
+
+    .essay-content img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 1.4rem auto;
+      border-radius: 4px;
+    }
+
+    .essay-content ul {
+      margin: 1rem 0;
+      padding-left: 1.4rem;
+    }
+
+    .essay-content ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1.8rem;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.92rem;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--muted);
+      text-decoration: underline;
+    }
+
+    .essay-content .chart { width: 100%; max-width: 720px; height: auto; display: block; margin: 1.6rem auto; }
+    .chart text { fill: var(--text); font-family: inherit; }
+    .chart .ax { stroke: var(--muted); stroke-width: 1; }
+    .chart .grid { stroke: var(--muted); stroke-width: 0.5; opacity: 0.22; }
+    .chart .tick { font-size: 12px; fill: var(--muted); }
+    .chart .lbl { font-size: 13px; fill: var(--muted); }
+    .chart .vlbl { font-size: 12px; fill: var(--text); }
+    .chart .b1 { fill: var(--muted); }
+    .chart .b2 { fill: var(--accent); }
+    .chart .b3 { fill: var(--accent); opacity: 0.45; }
+    .chart .l1 { stroke: var(--text); stroke-width: 1.5; fill: none; }
+    .chart .l2 { stroke: var(--accent); stroke-width: 1.5; fill: none; }
+    .chart .dash { stroke-dasharray: 6 4; }
+    .chart rect.l1 { fill: var(--text); stroke: none; }
+    .chart rect.l2 { fill: var(--accent); stroke: none; }
+    .chart .d1 { fill: var(--text); }
+    .chart .d2 { fill: var(--accent); }
+    .chart .fpline { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 6 4; }
+    .chart .lden { stroke: var(--muted); stroke-width: 1.5; fill: none; stroke-dasharray: 6 4; }
+    .chart rect.lden { fill: var(--muted); stroke: none; }
+    .chart .dden { fill: var(--muted); }
+  </style>
+  <link rel="stylesheet" href="clouds.css?v=23" />
+  <script src="site.js?v=2" defer></script>
+</head>
+<body data-pond="off" class="cloud-site">
+  <div class="header-cranes" aria-hidden="true"></div>
+  <div class="page-wrapper page-essay-wide">
+    <header class="header-container">
+      <div class="header-top">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
+            <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"/>
+            <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"/>
+            <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </button>
+        <div class="dropdown" id="dropdown">
+          <button class="dropdown-btn" id="dropdownBtn" type="button" aria-controls="dropdownContent" aria-expanded="false">天</button>
+          <div class="dropdown-content" id="dropdownContent">
+            <a href="/">about</a>
+            <a href="work">work</a>
+            <a href="research">research</a>
+            <a href="archive" style="color: var(--accent); text-decoration: underline;">archive</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-content">
+      <div class="essay-container essay-wide">
+        <a href="archive" class="back-link">← back to archive</a>
+        <h1 class="essay-title">Does a Faster Optimizer Kernel Speed Up the NanoGPT Speedrun?</h1>
+        <div class="essay-meta">Ethan TS. Liu | November 25, 2026</div>
+
+        <div class="essay-content">
+
+          <h2 id="the-shortcut"><strong>The shortcut</strong></h2>
+
+          <p>In <a href="https://github.com/KellerJordan/modded-nanogpt">NanoGPT</a>&#8217;s current speedrun record (<a href="https://github.com/KellerJordan/modded-nanogpt/pull/360">#360</a>, 39.9 seconds), each of the ANVIL optimizer's six maps is \(X \leftarrow XP\) with \(P = aI + bA + cA^2\) and \(A = X^\top X\). Together, these six maps push every singular value of \(X\) toward 1, approximating \(UV^\top\) as Muon's Newton&ndash;Schulz does. Since the MLP matrices are \(2816 \times 768\), the Gram matrix \(A\) is only \(768 \times 768\). We can note that, after calculating our current map's Gram matrix, the next map's Gram matrix doesn't need \(X\) at all:</p>
+
+          <div class="math-block">\[ (XP)^\top (XP) \;=\; P\,(X^\top X)\,P \;=\; PAP \]</div>
+
+          <p>So let's build a chain of two on the small side! With \(P_i = a_iI + b_iA_{i-1} + c_iA_{i-1}^2\):</p>
+
+          <div class="math-block">\[ \begin{aligned} \text{original:}\quad & A_0 = X^\top X, && X_1 = XP_1, && A_1 = X_1^\top X_1, && X_2 = X_1P_2 \\ \text{ours:}\quad & A_0 = X^\top X, && A_1 = P_1A_0P_1, && Q = P_1P_2, && X_2 = XQ \end{aligned} \]</div>
+
+          <p>Both result in the same \(X_2\), but the original touches the tall matrix with dims \(2816 \times 768\) four times, whereas we only do this twice (at the cost of three \(768 \times 768\) products). It turns out this trick is already known. It appears in an appendix of <a href="https://arxiv.org/abs/2505.16932">Polar Express</a>, and <a href="https://tridao.me/blog/2026/gram-newton-schulz/">Gram Newton-Schulz</a> builds on it further. But there are still a couple of details we need to work out before it actually runs fast.</p>
+
+          <p>But if we can build a chain of two, why not a chain of six? Actually, the problem is the numerical representation itself. Our runs are in bf16. The Gram matrix's eigenvalues are \(\sigma^2\), so a direction with \(\sigma = 0.01\) becomes \(10^{-4}\), which is just too far below the rounding error of the large entries.</p>
+
+          <p>How far below? bf16 keeps only 8 significant bits, so every stored number carries a relative rounding error of about \(2^{-8} \approx 0.004\). The entries of \(A\) are dominated by the largest directions, so with the largest \(\sigma = 1\):</p>
+
+          <div class="math-block">\[ \text{noise in } A \approx 2^{-8} \approx 0.004, \qquad \sigma = 0.5 \mapsto 0.25, \quad \sigma = 0.06 \mapsto 0.0036, \quad \sigma = 0.01 \mapsto 0.0001 \]</div>
+
+          <p>So any direction with \(\sigma \lesssim 0.06\) is already risky. Sorting the 768 singular values from largest to smallest, \(\sigma_1 \ge \sigma_2 \ge \dots \ge \sigma_{768}\), let's make two test matrices: one where they fall off steeply (\(\sigma_i = 1/i\)) and one where they fall off gently (\(\sigma_i = 1/\sqrt{i}\)):</p>
+
+          <svg class="chart" viewBox="0 0 680 320" role="img" aria-label="eigenvalues of the Gram matrix against bfloat16 rounding noise"><text class="tick" x="340" y="18" text-anchor="middle">eigenvalues of A against the bfloat16 rounding noise (largest &#963; = 1)</text><rect x="80" y="116.2" width="420" height="137.8" style="fill:var(--muted);opacity:0.12"/><line class="grid" x1="80" y1="44.0" x2="500" y2="44.0"/><text class="tick" x="74" y="48.0" text-anchor="end">1</text><line class="grid" x1="80" y1="104.0" x2="500" y2="104.0"/><text class="tick" x="74" y="108.0" text-anchor="end">10<tspan dy="-5" font-size="9">&#8722;2</tspan></text><line class="grid" x1="80" y1="164.0" x2="500" y2="164.0"/><text class="tick" x="74" y="168.0" text-anchor="end">10<tspan dy="-5" font-size="9">&#8722;4</tspan></text><line class="grid" x1="80" y1="224.0" x2="500" y2="224.0"/><text class="tick" x="74" y="228.0" text-anchor="end">10<tspan dy="-5" font-size="9">&#8722;6</tspan></text><text class="tick" x="80.0" y="272" text-anchor="middle">1</text><text class="tick" x="225.6" y="272" text-anchor="middle">10</text><text class="tick" x="371.1" y="272" text-anchor="middle">100</text><text class="tick" x="500.0" y="272" text-anchor="middle">768</text><line class="ax" x1="80" y1="44" x2="80" y2="254"/><line class="ax" x1="80" y1="254" x2="500" y2="254"/><line class="fpline" x1="80" y1="116.2" x2="500" y2="116.2"/><text class="vlbl" x="88" y="110.2">bf16 noise &#8776; 0.004</text><text class="tick" x="88" y="246">buried in the noise</text><polyline class="l1" points="80.0,44.0 123.8,62.1 149.5,72.6 167.6,80.1 181.7,85.9 193.3,90.7 203.0,94.7 218.9,101.3 225.6,104.0 237.1,108.8 246.8,112.8 259.1,117.8 269.4,122.1 278.2,125.7 290.7,130.8 301.0,135.1 311.6,139.5 322.0,143.8 332.2,147.9 342.9,152.4 352.9,156.5 363.8,161.0 374.2,165.3 384.7,169.6 395.0,173.9 405.4,178.1 415.9,182.4 426.5,186.8 437.1,191.2 447.6,195.5 458.0,199.8 468.6,204.2 479.0,208.5 489.5,212.8 500.0,217.1"/><text class="vlbl" x="506" y="221.1">steep: &#963;&#7522; = 1/i</text><polyline class="l2" points="80.0,44.0 123.8,53.0 149.5,58.3 167.6,62.1 181.7,65.0 193.3,67.3 203.0,69.4 218.9,72.6 225.6,74.0 237.1,76.4 246.8,78.4 259.1,80.9 269.4,83.0 278.2,84.9 290.7,87.4 301.0,89.6 311.6,91.7 322.0,93.9 332.2,96.0 342.9,98.2 352.9,100.3 363.8,102.5 374.2,104.6 384.7,106.8 395.0,108.9 405.4,111.1 415.9,113.2 426.5,115.4 437.1,117.6 447.6,119.8 458.0,121.9 468.6,124.1 479.0,126.2 489.5,128.4 500.0,130.6"/><text class="vlbl" x="506" y="134.6">gentle: &#963;&#7522; = 1/&#8730;i</text><text class="lbl" x="290.0" y="296" text-anchor="middle">i = rank of the singular value, &#963;&#8321; &#8805; &#963;&#8322; &#8805; &#8230; &#8805; &#963;&#8327;&#8326;&#8328; (log scale)</text><text class="lbl" x="18" y="149.0" text-anchor="middle" transform="rotate(-90 18 149.0)">&#963;&#7522;&#178; (eigenvalue of A)</text></svg>
+
+          <p>Going back to \(X\) refreshes those small directions, whereas chaining on the Gram matrix just feeds the same noise through map after map. Let's check this with a CPU emulation of the bfloat16 arithmetic, on a matrix with many small singular values, and measure how far the result lands from the exact one, \(\lVert \tilde X_6 - X_6 \rVert_F / \lVert X_6 \rVert_F\):</p>
+
+          <svg class="chart" viewBox="0 0 680 318" role="img" aria-label="error by chain length"><text class="tick" x="340" y="18" text-anchor="middle">how far the bfloat16 result lands from the exact one</text><line class="grid" x1="263.9" y1="38" x2="263.9" y2="236"/><text class="tick" x="263.9" y="254" text-anchor="middle">1%</text><line class="grid" x1="427.0" y1="38" x2="427.0" y2="236"/><text class="tick" x="427.0" y="254" text-anchor="middle">10%</text><line class="grid" x1="590.0" y1="38" x2="590.0" y2="236"/><text class="tick" x="590.0" y="254" text-anchor="middle">100%</text><line class="ax" x1="215" y1="236" x2="590" y2="236"/><text class="lbl" x="402" y="280" text-anchor="middle">relative error &#8214;bf16 &#8722; exact&#8214; / &#8214;exact&#8214; (log scale)</text><text class="tick" x="402" y="302" text-anchor="middle">the steep test matrix (2816&#215;768, &#963;&#7522; = 1/i), CPU emulation of bfloat16</text><text class="tick" x="198" y="34" text-anchor="end">chains (all six maps always run)</text><text class="tick" x="198" y="60" text-anchor="end">1+1+1+1+1+1 (original)</text><line class="grid" x1="215" y1="56" x2="590" y2="56"/><circle class="d1" cx="350.6" cy="56" r="5"/><text class="vlbl" x="360.6" y="60">3.4%</text><text class="vlbl" x="198" y="94" text-anchor="end">2+2+2 (ours)</text><line class="grid" x1="215" y1="90" x2="590" y2="90"/><circle class="d2" cx="282.5" cy="90" r="5"/><text class="vlbl" x="292.5" y="94">1.3%</text><text class="tick" x="198" y="128" text-anchor="end">3+3</text><line class="grid" x1="215" y1="124" x2="590" y2="124"/><circle class="d1" cx="316.4" cy="124" r="5"/><text class="vlbl" x="326.4" y="128">2.1%</text><text class="tick" x="198" y="162" text-anchor="end">4+2</text><line class="grid" x1="215" y1="158" x2="590" y2="158"/><circle class="d1" cx="431.1" cy="158" r="5"/><text class="vlbl" x="441.1" y="162">10.6%</text><text class="tick" x="198" y="196" text-anchor="end">5+1</text><line class="grid" x1="215" y1="192" x2="590" y2="192"/><text class="vlbl" x="598" y="196">diverges &#8594;</text><text class="tick" x="198" y="230" text-anchor="end">6</text><line class="grid" x1="215" y1="226" x2="590" y2="226"/><text class="vlbl" x="598" y="230">diverges &#8594;</text></svg>
+
+          <p>Chains of two or three are fine, but a chain of four reaches about 11% error, and as you go further, chains of five and six just diverge. On this steep matrix ours actually beats the original, but on the gentle one it's slightly worse (0.74% vs 0.62%), so overall the accuracy is about the same. However, the emulation turned out to be too optimistic. Chains of three passed this test, and then went NaN at step 400 in one of three training runs! (A chain of four diverged before the clock even started.) Chains of two were fine in all 16 of our training runs, so that's what we use. Gram Newton-Schulz makes a similar choice: it runs five iterations as a chain of two followed by a chain of three.</p>
+
+          <p>The second detail is the small products themselves. Since \(A_0 = X^\top X\) is symmetric, and every other small matrix is a polynomial in it,</p>
+
+          <div class="math-block">\[ P_1 = a_1I + \underbrace{b_1A_0 + c_1A_0^2}_{B_1}, \qquad A_1 = P_1A_0P_1, \qquad Q = P_1P_2 \]</div>
+
+          <p>they are all symmetric too, so \(M_{ij} = M_{ji}\). (In floating point they're only nearly symmetric, so mirroring actually makes them exactly what they should be.) This means we need only compute the lower triangle and mirror it over. A \(768 \times 768\) output is a \(6 \times 6\) grid of \(128 \times 128\) tiles, and the lower triangle is 21 of those 36, so we get skip about 42% of the work. Every small product here also has the same shape,</p>
+
+          <div class="math-block">\[ S\,(aI + B) \;=\; aS + SB, \qquad \text{e.g. } Q = P_1(a_2I + B_2), \]</div>
+
+          <p>with \(S\) and \(B\) both symmetric, so a single kernel that computes \(aS + SB\) on one triangle covers all of them. The original already has a half-matrix Triton kernel for \(X^\top X\) and \(B = bA + cA^2\), so ours is just that kernel with a second input. Again, Gram Newton-Schulz ends up with this same idea, using symmetric kernels for exactly these products.</p>
+
+          <p>Note that we only do this for the MLP matrices. For the square attention matrices, the Gram matrix is just as big as \(X\), so there is nothing to save, and the update actually gets slower (0.79&times;). The small \(256 \times 768\) group is also too small for this to pay off.</p>
+
+          <h2 id="results"><strong>Does it help?</strong></h2>
+
+          <p>In isolation, yes. On one H100, the MLP map sequence goes from 0.396 ms to 0.304 ms, which is 1.30&times; faster. To be fair, the trainer compiles the original maps (with torch.compile) and against a compiled copy the speedup is 1.21&times;. And once we include the rest of the MLP update (the momentum, the normalization, and writing the weights), it's only 1.08&times;.</p>
+
+          <p>So what happens in an actual training run? We ran ten paired seeds on 8&times;H100, and the step loop is faster in all ten pairs, by \(0.054 \pm 0.006\) ms per step (mean &plusmn; s.e.), or about 0.065 s per run. However, on the official whole-run clock, the saving is only \(0.047 \pm 0.021\) s (\(p = 0.049\)) (unfortunately, three of the ten pairs are actually slower!). The time outside the step loop varies by about a tenth of a second between runs, which is more than our entire effect... :( </p>
+
+          <h2 id="ceiling"><strong>The ceiling</strong></h2>
+
+          <p>Let's try just skipping the six maps entirely and see how much time that saves. This run can't actually train (its loss ends around 3.46), but it represents the upper limit of how much time any faster implementation of these maps could possibly save. In isolation, the maps cost 0.593 ms per step across all the weight groups, or 1.8% of a 33.5 ms step. In training, removing them saves only \(0.209 \pm 0.005\) ms per step, about 0.25 s of the step loop, or 0.6% of the run!</p>
+
+          <svg class="chart" viewBox="0 0 680 260" role="img" aria-label="saving per step, isolated versus in training"><text class="tick" x="340" y="18" text-anchor="middle">saving per step against the original</text><rect class="b1" x="200" y="30" width="12" height="12" rx="2"/><text class="tick" x="217" y="40">isolated, one H100</text><rect class="b2" x="370" y="30" width="12" height="12" rx="2"/><text class="tick" x="387" y="40">in training, 8xH100 (10 paired seeds)</text><line class="grid" x1="210.0" y1="56" x2="210.0" y2="200"/><text class="tick" x="210.0" y="216" text-anchor="middle">0.0</text><line class="grid" x1="342.3" y1="56" x2="342.3" y2="200"/><text class="tick" x="342.3" y="216" text-anchor="middle">0.2</text><line class="grid" x1="474.6" y1="56" x2="474.6" y2="200"/><text class="tick" x="474.6" y="216" text-anchor="middle">0.4</text><line class="grid" x1="606.9" y1="56" x2="606.9" y2="200"/><text class="tick" x="606.9" y="216" text-anchor="middle">0.6</text><line class="ax" x1="210" y1="56" x2="210" y2="200"/><text class="lbl" x="425" y="244" text-anchor="middle">milliseconds per step</text><text class="vlbl" x="198" y="84" text-anchor="end">remove all six maps</text><text class="tick" x="198" y="100" text-anchor="end">(all weight groups)</text><rect class="b1" x="210" y="66" width="392.3" height="20" rx="2"/><text class="vlbl" x="608.3" y="81">0.593</text><rect class="b2" x="210" y="90" width="138.3" height="20" rx="2"/><text class="vlbl" x="354.3" y="105">0.209</text><text class="vlbl" x="198" y="154" text-anchor="end">Gram-space order</text><text class="tick" x="198" y="170" text-anchor="end">(MLP group only)</text><rect class="b1" x="210" y="136" width="24.5" height="20" rx="2"/><text class="vlbl" x="240.5" y="151">0.037</text><rect class="b2" x="210" y="160" width="35.7" height="20" rx="2"/><text class="vlbl" x="251.7" y="175">0.054</text></svg>
+
+          <p>However, only about a third of the maps' isolated cost actually shows up in a training step, presumably because the rest overlaps with other work on the GPU. Strangely, if you implement this change, it actually saves more in training (0.054 ms) than in the microbenchmark (0.037 ms). I'm not sure why, but this is a good reminder that isolated timings don't predict much in a hyper-optimized trainer such as this one. For reference, an open PR that cuts the six maps down to four <a href="https://github.com/KellerJordan/modded-nanogpt/pull/393">reports 0.19 s</a>, which checks out, fitting under our 0.25 s ceiling.</p>
+
+          <h2 id="why-so-small"><strong>Why so small?</strong></h2>
+
+          <p>The first reason is simply that the exposed optimizer time is tiny to begin with. The second reason is a bit more interesting. The Gram-space order cuts the MLP group's arithmetic by about a third (104 to 71 GFLOP per GPU per step), but the map time by only about a quarter.</p>
+            
+          <p>Why? Well, a \(768 \times 768\) product has 27% of the arithmetic of a \(2816 \times 768\) one, but our kernel only launches 63 thread blocks for it across the three MLP matrices, which is fewer than the H100's 132 SMs.</p>
+
+          <p>Where does 63 come from? The original stacks all its MLP weights into 24 matrices of \(2816 \times 768\) (an up and a down projection for each of 12 MLP slots), and the optimizer work is split across the 8 GPUs, so each GPU only updates \(24 / 8 = 3\) of them. Our kernel then cuts each output into \(128 \times 128\) tiles and gives each tile its own thread block, which runs on one SM (one of the GPU's 132 processors):</p>
+
+          <div class="math-block">\[ \begin{aligned} 2816 \times 768 \text{ output:}\quad & \tfrac{2816}{128} \times \tfrac{768}{128} = 22 \times 6 = 132 \text{ tiles}, && 3 \times 132 = 396 \text{ blocks} \\ 768 \times 768 \text{ output, one triangle:}\quad & \underbrace{1 + 2 + \dots + 6}_{\text{row } k \text{ has } k \text{ tiles on or below the diagonal}} = 21 \text{ of } 36 \text{ tiles}, && 3 \times 21 = 63 \text{ blocks} \end{aligned} \]</div>
+
+          <p>So with the same tiles, a big output would give every SM about three blocks of work, whereas a small product leaves roughly half of the 132 SMs with nothing to do. (The big products actually run on cuBLAS, which picks its own tile sizes, so the 396 is only illustrative. The 63 is exact for our kernel.)</p>
+
+          <p>At this size, latency rather than arithmetic probably sets the time. A rough model of a kernel's time is</p>
+
+          <div class="math-block">\[ t_{\text{kernel}} \;\approx\; t_{\text{launch}} \;+\; \max\!\Big(\frac{\text{FLOPs}}{\text{GPU throughput}},\;\; t_{\text{one block}}\Big) \]</div>
+
+          <p>When every SM is busy, the first term in the max wins, so fewer FLOPs means less time. But with 63 blocks on 132 SMs, there is only one round of blocks, and the kernel is bottlenecked by its slowest block. That block's time is set by how long it takes to load its inputs from memory and run its loop, plus the fixed cost of launching the kernel. So, fewer tiles just means more idle SMs, not a faster kernel. So trading big products for small ones is a win on paper, but not here on the GPU. Counting FLOPs, which is how we first estimated the gain, was just the wrong model here. (disclaimer: I didn't separately measure memory, launch, and scheduling costs, so this is my explanation, not a measurement)</p>
+
+          <h2 id="references"><strong>References</strong></h2>
+          <ul>
+            <li>Keller Jordan et al., <a href="https://github.com/KellerJordan/modded-nanogpt">modded-nanogpt</a></li>
+            <li>Amsel, Persson, Musco and Gower, <a href="https://arxiv.org/abs/2505.16932">The Polar Express: Optimal Matrix Sign Methods and Their Application to the Muon Algorithm</a> (2025)</li>
+            <li>Zhang, Amsel, Chen and Dao, <a href="https://tridao.me/blog/2026/gram-newton-schulz/">Gram Newton-Schulz: A Fast, Hardware-Aware Newton-Schulz Algorithm for Muon</a> (2026)</li>
+            <li><a href="https://github.com/KellerJordan/modded-nanogpt/discussions/405">Discussion</a> on the speedrun repo</li>
+            <li><a href="https://github.com/ethantsliu/182-project">Code</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="page-cloud" aria-hidden="true">
+    <img src="photos/clouds-portrait.webp" width="1173" height="1341" alt="" loading="lazy" decoding="async" />
+  </div>
+</body>
+</html>
