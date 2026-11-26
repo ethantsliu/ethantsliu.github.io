@@ -267,7 +267,7 @@
 
           <div class="math-block">\[ t_{\text{kernel}} \;\approx\; t_{\text{launch}} \;+\; \max\!\Big(\frac{\text{FLOPs}}{\text{GPU throughput}},\;\; t_{\text{one block}}\Big) \]</div>
 
-          <p>When every SM is busy, the first term in the max wins, so fewer FLOPs means less time. But with 63 blocks on 132 SMs, there is only one round of blocks, and the kernel is bottlenecked by its slowest block. That block's time is set by how long it takes to load its inputs from memory and run its loop, plus the fixed cost of launching the kernel. So, fewer tiles just means more idle SMs, not a faster kernel. So trading big products for small ones is a win on paper, but not here on the GPU. Counting FLOPs, which is how we first estimated the gain, was just the wrong model here. (disclaimer: I didn't separately measure memory, launch, and scheduling costs, so this is my explanation, not a measurement)</p>
+          <p>When every SM is busy, the first term in the max wins, so fewer FLOPs means less time. But with 63 blocks on 132 SMs, there is only one round of blocks, and the kernel is bottlenecked by its slowest block. That block's time is set by how long it takes to load its inputs from memory and run its loop, plus the fixed cost of launching the kernel. So, fewer tiles just means more idle SMs, not a faster kernel. So trading big products for small ones is a win on paper, but not here on the GPU. Counting FLOPs, which is how we first estimated the gain, was just the wrong model here. (Disclaimer: We did not separately measure memory, launch, and scheduling costs.)</p>
 
           <h2 id="references"><strong>References</strong></h2>
           <ul>
@@ -275,8 +275,10 @@
             <li>Amsel, Persson, Musco and Gower, <a href="https://arxiv.org/abs/2505.16932">The Polar Express: Optimal Matrix Sign Methods and Their Application to the Muon Algorithm</a> (2025)</li>
             <li>Zhang, Amsel, Chen and Dao, <a href="https://tridao.me/blog/2026/gram-newton-schulz/">Gram Newton-Schulz: A Fast, Hardware-Aware Newton-Schulz Algorithm for Muon</a> (2026)</li>
             <li><a href="https://github.com/KellerJordan/modded-nanogpt/discussions/405">Discussion</a> on the speedrun repo</li>
-            <li><a href="https://github.com/ethantsliu/gram-space-anvil">Code</a></li>
+            <li><a href="https://github.com/ethantsliu/182-project">Code</a></li>
           </ul>
+
+          <p><em>Work done for EECS 182 at UC Berkeley.</em></p>
         </div>
       </div>
     </div>
